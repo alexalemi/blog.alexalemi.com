@@ -4,6 +4,15 @@
       "src": "deeplearning.md",
       "date": "2020-06-04",
       "id": "promise-of-deep-learning",
-      "description": "My take on what deep learning has accomplished so far and what we can do with it."
+      "description": "My take on what deep learning has accomplished so far and what we can do with it.",
+      "hidden": true
+    },
+    {
+      "title": "Debate",
+      "src": "debate.md",
+      "date": "2020-06-06",
+      "id": "debate",
+      "description": "My take on debate as structured argument.",
+      "hidden": true
     }
 ]

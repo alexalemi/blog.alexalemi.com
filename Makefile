@@ -1,0 +1,2 @@
+parent:
+	cd .. && $(MAKE)
