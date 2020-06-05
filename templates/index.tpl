@@ -236,27 +236,17 @@
         <h2><a href="#writing">Writing</a></h2>
 
         <ul>
-        
-          
+        {% for a in posts %}
+          {% if a.src %}
             <li>
-             <cite><a href="deeplearning.html">The Promise of Deep Learning</a></cite>
+             <cite><a href="{{ a.src.replace('.md', '.html') }}">{{ a.title }}</a></cite>
              <p>
-               <date>2020-06-04</date>
-               My take on what deep learning has accomplished so far and what we can do with it.
+               <date>{{ a.date }}</date>
+               {{ a.description }}
              </p>
             </li>
-          
-        
-          
-            <li>
-             <cite><a href="debate.html">Debate</a></cite>
-             <p>
-               <date>2020-06-06</date>
-               My take on debate as structured argument.
-             </p>
-            </li>
-          
-        
+          {% endif %}
+        {% endfor %}
   
         </ul>
 
