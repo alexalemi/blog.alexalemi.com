@@ -232,25 +232,22 @@
     </main>
 
     <!--- Writings section --->
-    <section id="writing">
-        <h2><a href="#writing">Writing</a></h2>
+      <ul>
+      {% for a in posts %}
+        {% if not a.hidden %}
+          <li>
+          <article>
+           <cite><a href="{{ a.src.replace('.md', '.html') }}">{{ a.title }}</a></cite>
+           <p>
+             <date>{{ a.date }}</date>
+             <summary>{{ a.description }}</summary>
+           </p>
+          </article>
+          </li>
+        {% endif %}
+      {% endfor %}
 
-        <ul>
-        {% for a in posts %}
-          {% if a.src %}
-            <li>
-             <cite><a href="{{ a.src.replace('.md', '.html') }}">{{ a.title }}</a></cite>
-             <p>
-               <date>{{ a.date }}</date>
-               {{ a.description }}
-             </p>
-            </li>
-          {% endif %}
-        {% endfor %}
-  
-        </ul>
-
-    </section>
+      </ul>
 
 </body>
 </html>
