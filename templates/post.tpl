@@ -163,14 +163,14 @@
             text-decoration: none;
         }
 
-        svg {
-            margin-left: 7px;
-            margin-right: 7px;
-            height: 25px;
-            width: 25px;
+        header svg {
+             margin-left: 7px;
+             margin-right: 7px;
+             height: 25px;
+             width: 25px;
         }
 
-        svg path {
+        header svg path {
             fill: var(--accent-color);
         }
 
@@ -221,9 +221,7 @@
       <h1>{{ title }}<h1>
       <p>Alexander A. Alemi. <time datetime='{{ date }}'>{{ date }}</time></p>
     </header>
-
     {{ content }} 
-
   </article>
 
   <footer>
