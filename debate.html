@@ -210,8 +210,8 @@
   <header>
     <h3>Alex Alemi's Blog</h3>
     <nav>
-      <a href='../' />Home</a> | 
-      <a href='./' />Index</a> |
+      <a href='https://alexalemi.com' />Home</a> | 
+      <a href='https://blog.alexalemi.com' />Index</a> |
       <a rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml" />RSS</a>
     </nav>
   </header>
