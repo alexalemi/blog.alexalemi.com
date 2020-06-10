@@ -1,5 +1,13 @@
 [
     {
+      "title": "Why KL?",
+      "src": "kl.md",
+      "date": "2020-06-10",
+      "id": "why-kl",
+      "description": "Why is the KL divergence so special?",
+      "hidden": true
+    },
+    {
       "title": "The Promise of Deep Learning",
       "src": "deeplearning.md",
       "date": "2020-06-04",
