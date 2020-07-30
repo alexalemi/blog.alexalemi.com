@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name='viewport'
+      content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <title>blog.alexalemi.com Why KL?</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153903138-1"></script>
@@ -34,172 +35,16 @@
     </script>
 
     <!-- Inline CSS -->
-    <style>
-        /* Browser reset */
-        html {
-            box-sizing: border-box;
-            line-height: 1.15;
-            -webkit-text-size-adjust: 100%;
-        }
-
-        /* Variables */
-        :root {
-          --accent-color: #3685B5;  
-          /* Dark Slate Gray */
-          --default-color: #2B2D54;
-
-          --em-color: #0471A6;
-          --highlight-color: #5C9FB3;
-
-          --alt-color: DimGray;
-          /* offwhite */
-          --bg-color: #fefefe;
-        }
-
-        *,
-        *::before,
-        *::after {
-            box-sizing: inherit;
-        }
-
-
-        body {
-
-            /* Nice light gray background to offset the text a little */
-            background-color: var(--bg-color);
-            color: var(--default-color);
-            margin: 0 auto;
-            max-width: 50em;
-
-            /* System fonts as fallbacks */
-            font-family: "Lato", sans-serif;
-            line-height: 1.5;
-            padding: 2em 1em;
-            scroll-behavior: smooth;
-        }
-
-        h1,
-        h2,
-        strong {
-            color: var(--default-color);
-            font-family: "Muli", sans-serif;
-        }
-
-        h2 {
-            margin-top: 1em;
-        }
-
-        a {
-            color: var(--em-color);
-        }
-
-        a:hover {
-            color: var(--highlight-color);
-        }
-
-        h2 a {
-          text-decoration: none;
-          color: var(--default-color);
-        }
-
-        .headshot {
-            float: right;
-            width: 14em;
-            padding-left: 2em;
-        }
-
-        .headshot img {
-            width: 100%;
-        }
-
-        @media (max-width: 650px) {
-            .headshot {
-                width: 10em;
-            }
-        }
-
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-flow: row;
-        }
-
-        header p {
-          align-items: right;
-          font-size: 0.6em;
-          font-weight: normal;
-        }
-
-        footer {
-          margin: 3em;
-          align-items: right;
-          font-size: 0.5em;
-        }
-
-        @media (max-width: 650px) {
-            header {
-                display: flex;
-                align-items: baseline;
-                flex-flow: column;
-            }
-
-            .social-links {
-                margin-top: 0.5em;
-            }
-        }
-
-        @media (max-width: 390px) {
-            header {
-                width: 8em;
-            }
-
-            .social-links {
-                width: 8em;
-            }
-        }
-
-        .social-links a {
-            text-decoration: none;
-        }
-
-        header svg {
-             margin-left: 7px;
-             margin-right: 7px;
-             height: 25px;
-             width: 25px;
-        }
-
-        header svg path {
-            fill: var(--accent-color);
-        }
-
-        section ul {
-          list-style: none;
-        }
-
-        section ul li {
-          margin: 0 0 1.3em 0;
-          line-height: 1;
-        }
-
-        section ul li p {
-          color: var(--alt-color);
-          font-size: 0.8em;
-          padding: none;
-        }
-
-        section ul li p date {
-          color: var(--default-color);
-          font-style: normal;
-        }
-
-        section ul li cite {
-          font-style: normal;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="assets/style.css"/>
 
     <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        processEscapes: true
+      }};
+    </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </head>
@@ -221,12 +66,105 @@
       <h1>Why KL?<h1>
       <p>Alexander A. Alemi. <time datetime='2020-06-10'>2020-06-10</time></p>
     </header>
-    <h1>Information</h1>
+    <div class="content">
+    <p>The <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">Kullback-Liebler
+divergence</a>,
+or KL divergence, or relative entropy, or relative information, or information
+gain, or information divergence (it goes by a lot of different names) is unique
+amongst the ways to measure the difference between two probability
+distributions.  It holds a special and privileged place, being used to define
+all of the core concepts in information theory, such as mutual information.</p>
+<p>Why is the relative information so special and where does it come from?
+How should you interpret it? What is a nat anyway?  What does that mean?  In this
+note, I'll try to give a better understanding and set of intuitions about
+what KL is, why its interesting, where it comes from and what its good for.</p>
+<h2>Whither Continuous Entropy</h2>
+<p>The relative entropy really is the proper way to define entropy.  For all
+of the things that Shannon got right, he flubbed a bit when he defined the
+entropy of a distribution as:
+$$ H(P) = -\sum_i p_i \log p_i $$</p>
+<p>Why do I say he flubbed?  Because this notion of entropy doesn't generalize
+to continuous distributions.  The continuous analog:
+$$ H(P) = -\int dx\, p(x) \log p(x) $$
+isn't <em>reparameterization independent</em>.  Consider for instance the distribution
+of adult human heights:</p>
+<figure>
+  <center>
+  <img src="figures/adult_heights.png"
+    alt="Distribution of adult heights.">
+  <figcaption>Distribution of adult heights.</figcaption>
+  </center>
+</figure>
+<aside>
+Data taken from 
+<a href="https://ourworldindata.org/human-height">ourworldindata.org</a>.
+<p>Note that you may have heard that
+<a href="https://www.johndcook.com/blog/2008/07/20/why-heights-are-normally-distributed/">heights are normally distributed</a>. Adult male (or female) heights are normally distributed,
+but differ in their means and variances, making the
+<a href="https://www.johndcook.com/blog/2008/11/25/distribution-of-adult-heights/">distribution of adult heights a mixture distribution</a>.</p>
+</aside>
+<p>If you measure the continuous entropy of this distribution measured
+in centimeters you get 5.4 bits.  If you instead measure the entropy
+of the same distribution in feet you get 4 bits.  If you instead
+were to measure heights in meters it would be -1.3 bits!</p>
+<h1>OLD</h1>
 <p>Why is KL unique and special?  What is it that is so great.</p>
 <p>Go over the proof in the Arthur paper, but extend it to make more sense
 of what happens in the linear decomposition case.  Use the Ariel Caticha
 paper to connect this with bayesian inference.</p>
+<p>First let's see if we can recreate the argument in the Arthur Hobson article.</p>
+<p>At our core we are interested in some axiomatically pure way to measure the
+amount of information in the update from some prior set of beliefs about some
+outcomes to some new setting of beliefs.</p>
+<p>$ I(p; q) $ is the information in moving from a distribution $ q $ to a new distribution $ p $.</p>
+<p>We are going to require that the function be:</p>
+<ol>
+<li>Continuous in each of its probabilities.</li>
+<li>Permutation invariant.</li>
+<li>$ I = 0 $ if $ p = q $</li>
+<li>If we go from a uniform distribution over $ n_0 $
+things to one over $ n $ things, we want $ I $ to
+be an increasing function of $ n_0 $ and a decreasing
+function of $ n $ for any $ n_0 \geq n $.</li>
+<li>Linear Composition.</li>
+</ol>
+<p>This is the same basically as in Shannon's Case.</p>
+<h2>Shannon's Original Proof</h2>
+<p>Originally, Shannon provided a nice proof that entropy was uniquely the best measure, suppose you have a
+list of probabilities, if there is a measure $ H(p_1, p_2, \dots) $ it should have the following
+properties:</p>
+<ol>
+<li>$ H $ should be continuous in all the $p_i$.</li>
+<li>If all of the $p_i$ are equal, then $H$ should be a monotonic increasing function of $n$.
+There should be more uncertainty with more events.</li>
+<li>If a choice can be broken down into two successive choices, the original $H$ should be a weighted sum of the individual values of $H$.</li>
+</ol>
+<p>The appendix then establishes that the only $H$ satisfying the above three assumptions is of the form:</p>
+<p>$$ H = -K \sum_i p_i \log p_i $$</p>
+<p>Repeating the argument from his appendix, we first let $H(1/n, 1/n, \dots, 1/n) = A(n)$, from the third condition we could break things up
+and instead of considering a choice amongst $s^m$ equally likely outcomes we could first do a series of $m$ choices each from $s$ possible
+outcomes and require that:</p>
+<p>$$ A(s^m) = m A(s) $$
+we could just as well do:
+$$ A(t^n) = n A(t) $$
+now we could take a large $n$ and find an $m$ such that:
+$$ s^m \leq t^n \lt s^{(m+1)} $$
+taking logarithms of both sides:
+$$ m \log s \leq n \log t \lt (m+1) \log s $$
+dividing by $n \log s$ we get:
+$$ \frac m n \leq \frac{\log t}{\log s} \lt \frac{m}{n} + \frac 1 n $$
+or in other words:
+$$ \left| \frac m n - \frac{\log t }{\log s} \right| \lt \epsilon $$
+From monotonicity we have that</p>
+<p>$$ A(s^m) \leq A(t^n) \leq A(s^{m+1}) $$
+$$ m A(s) \leq n A(t) \leq (m+1) A(s) $$
+dividing by $n A(s)$ we get
+$$ \left| \frac m n - \frac{A(t)}{A(s)} \right| \lt \epsilon $$</p>
+<p>combining these two we get
+$$ \left| \frac{A(t)}{A(s)} - \frac{\log t}{\log s} \right| \leq 2 \epsilon $$
+$$ A(t) = -K \log t $$</p>
  
+    </div>
   </article>
 
   <footer>

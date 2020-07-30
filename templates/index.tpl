@@ -252,7 +252,6 @@
           </li>
         {% endif %}
       {% endfor %}
-
       </ul>
 
 </body>
