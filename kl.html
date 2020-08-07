@@ -125,12 +125,12 @@ and fully specifying our set of beliefs requires 3 independent probabilities.</p
   See for instance the RDT Cellex Inc. <a href="https://www.centerforhealthsecurity.org/resources/COVID-19/serology/Serology-based-tests-for-COVID-19.html">SARS-COV-2 Test</a>.
 </aside>
 <p>What our our prior beliefs?
-Let's imagine while we are concerned we might have had the disease, but if you are being honest,
-you almost certainly didn't have it,<sup><a href="#kent">xx</a></sup>
+Let's imagine while we are concerned we might have had the disease, but if we are being honest,
+we almost certainly didn't,<sup><a href="#kent">xx</a></sup>
 so we'll put our prior belief in having had the disease at 7%. $(q(D) = 0.07)$.
 How do we expect the antibody test to go if we have it done?
 You do a bit of research and discover
-that if you had been exposed to the disease, the sensitivity or <em>true positive rate</em> of the
+that if you had had the disease, the sensitivity or <em>true positive rate</em> of the
 test you're about to take is 93.8% $(q(T|D) = 0.938)$.
 The specificity or <em>true negative rate</em> of that
 same test is 95.6% $(q(\overline T | \overline D) = 0.956)$. <sup><a href="#covid">xx</a></sup></p>
@@ -202,9 +202,9 @@ it has to be dimensionless.  Imagine $x$ has units of a length, here our integra
 measure $dx$ has units of a length, and the densities $p(x), q(x)$ would
 have units of an inverse length.  In order to be dimensionally consistent
 our functional must take the form:<sup><a href="#caveat">3</a></sup>
-$$ I[p;q] = \int dx\, q(x) f\left( \frac{p(x)}{q(x)} \right). $$</p>
+$$ I[p;q] = \int dx\, p(x) f\left( \frac{p(x)}{q(x)} \right). $$</p>
 <aside> <sup id="caveat">3</sup>
-  We could have just as well written it as $I[p;q] = \int dx\, p(x) g\left( \frac{p(x)}{q(x)} \right)$ (that is, the form
+  We could have just as well written it as $I[p;q] = \int dx\, q(x) g\left( \frac{p(x)}{q(x)} \right)$ (that is, the form
   of an <a href="https://en.wikipedia.org/wiki/F-divergence">f-divergence</a>), but 
   this is equivalent to the way we wrote it with $f(\mathcal{X}) = \mathcal{X} g(\mathcal X)$.
   Putting the $p(x)$ as the integral measure better aligns with what we are about to do next.
@@ -283,7 +283,7 @@ prior set of beliefs are described by the joint distribution $q(\theta,x) = q(x|
 a <em>likelihood</em> $q(x|\theta)$ of how we expect the data to be distributed given
 the parameter values and some <em>prior</em> $q(\theta)$ set of beliefs about what values
 those parameters can take.  If we make an observation and see some value for our observable $x=X$,
-what out our new beliefs be?  If we search for the joint distribution $p(x,\theta)$ that is
+what ought our new beliefs be?  If we search for the joint distribution $p(x,\theta)$ that is
 as close as possible to our previous beliefs $q(x,\theta)$ but that no longer has any
 uncertainty about the value the observable will take $(p(x) = \delta(x-X))$ we see
 that minimizing the information gain:
@@ -298,9 +298,8 @@ of Bayesian inference.</p>
 used <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">Bayes Theorem</a>
 for a long time, the way its normally presented, it is just a trivial statement
 about how joint distributions factor.
-$$ q(\theta, D) = q(\theta) q(D|\theta) = q(D) q(\theta|D) $$
-implies
-$$ q(\theta|D) = \frac{q(D|\theta) q(\theta)}{q(D)}. $$
+$$ q(\theta, D) = q(\theta) q(D|\theta) = q(D) q(\theta|D)  \implies
+q(\theta|D) = \frac{q(D|\theta) q(\theta)}{q(D)}. $$
 But, this is just a statement about distribution
 $q$, our prior beliefs.  It tells us nothing about how we should update those
 beliefs in light of observations.  However, the previous argument demonstrates
@@ -308,13 +307,84 @@ that if you want to set your updated beliefs such that they are as close
 as possible to your prior beliefs while being consistent with your
 observations, you should set your updated beliefs according to
 Bayes rule run on the prior beliefs.</p>
-<h2>Units</h2>
+<h2>Interpretations</h2>
+<p>We have just seen how we can motivate the relative entropy as the <em>information gain</em> when we move from
+one distribution to another.  Can we develop a better intuition for the actual value the KL takes?</p>
+<h3>Coding</h3>
+<p>Let's start with a coding perspective.  Imagine we have a simple 4-letter
+alphabet that we want to communicate over the wire.
+If the four letter occurred with different probabilities:
+$p(A)=1/2, p(B)=1/4, p(C)=p(D)=1/8$, with an optimally designed <a
+href="https://en.wikipedia.org/wiki/Huffman_coding">Huffman Code</a> we could
+encode our letters with a variable length code: $A:0, B:10, C:110, D:111$, and
+on average we'd only be spending $1/2 + 2/4 + 3/8 + 3/8 = 7/4$ bits per letter.</p>
+<figure>
+  <center>
+  <table>
+    <thead><th><th>A<th>B<th>C<th>D
+    <tr><td>$p$<td>1/2<td>1/4<td>1/8<td>1/8
+    <tr><td>p-code<td>0<td>10<td>110<td>111
+    <tr><td>$q$<td>1/4<td>1/4<td>1/4<td>1/4
+    <tr><td>q-code<td>00<td>01<td>10<td>11
+  </table>
+  <figcaption>
+    Table 2: A simple example of two different distributions over a 4 letter alphabet.
+  </figcaption>
+  </center>
+</figure>
+<p>Imagine however we didn't know what the true distribution of letters were and instead
+designed an optimal code using a different distribution $q$.  If we believed
+each of the 4 letters were equally likely $(q(A)=q(B)=q(C)=q(D)=1/4)$, the optimal way to
+encode messages would just assign a two bit code to each letter $(A : 00, B:01, C:10,
+D:11)$.  If we used this suboptimal code to send messages that were actually distributed
+as $p$ it would cost $2/2 + 2/4 + 2/8 + 2/8 = 2$ bits per letter.  Our incorrect
+belief leads to a $2 - 7/4 = 1/4$ of a bit inefficiency.  For these two distributions,
+it shouldn't come as a suprise that the information gain is precisely 1/4 bits:
+$$ I[p;q] = \sum_i p_i \log_2 \frac{p_i}{q_i} = 1/4 \textrm{ bits}. $$</p>
+<p>For an optimally designed code, the code lengths go as $-\log p(x)$ for any symbol $x$.
+Our information gain can be interpreted as a difference in expected code lengths under $p$:
+$$ I[p;q] = \mathbb{E}_p[ -\log q ] - \mathbb{E}_p[-\log p ]. $$
+The information gain $I[p;q]$ measures the <em>excess encoding cost</em> for trying to encode messages
+from $p$ using a code designed for $q$.</p>
+<h3>Expected Weight of Evidence</h3>
+<p>Above we saw that we can motivate Bayesian inference as choosing a posterior belief distribution
+that has the minimal information gain over our prior distribution of beliefs while being consistent
+with our observations.  This guides us towards forming better belief distributions, but what if we
+just have two different belief distributions and wish to decide between them?</p>
+<p>Really what we want to know is what is the probability that our beliefs are correct in light of evidence?
+Symbolically you might write this as $p(P|E)$ where $P$ is some belief distribution $P$ and $E$ is some
+evidence, data or observations. If we run Bayes Theorem we can see that:
+$$ p(P|E) = \frac{p(E|P) p(P)}{p(E)}. $$
+We can update our belief in our beliefs being correct by setting our updated
+weight in the belief $p(P|E)$ to be proportional to our initial weight $p(E)$ times
+the <em>likelihood</em> that the evidence we observed would have been generated if our belief was true $(p(E|P))$.
+Proportional because we would need to know how likely the evidence would be $p(E)$ amongst all possible
+beliefs.  This last part, the <a href="https://en.wikipedia.org/wiki/Marginal_likelihood"><i>marginal likelihood</i></a>
+is notoriously difficult to compute. In principle it is asking us to evaluate how likely
+the evidence would be from all possible models.</p>
+<p>However, we can make further progress if we content ourselfs to not necessarily knowing the
+absolute probability our model or beliefs are correct, but instead just its probability relative
+to some other model.  If we consider the ratio of two different models $P$ and $Q$ we have:
+$$ \frac{p(P|E)}{p(Q|E)} = \frac{p(E|P)}{p(E|Q)} \frac{p(P)}{p(Q)}. $$
+Notice that the marginal likelihoods cancel out.  This is saying that whatever prior relative odds for the two models
+being correct, if we compute the <a href="https://en.wikipedia.org/wiki/Bayes_factor"><i>Bayes factor</i></a>
+$\left( \frac{p(E|P)}{p(E|Q)} \right)$, it tells us how the relative probabilities of the two beliefs should update
+inlight of the evidence. Taking a log on both sides:
+$$ \log \frac{p(P|E)}{p(Q|E)} = \log \frac{p(E|P)}{p(E|Q)} + \log \frac{p(P)}{p(Q)},$$
+turns this multiplicative factor into an additive one.</p>
+<p>If what we are deciding between is two different probability distributions, you may recognize that this additive <i>weight of evidence</i>
+for $p$ over $q$ when we observe $x$ is precisely the integrand in our information gain:
+$$ w[x; p,q] =  \log \frac{p(x)}{q(x)}. $$
+The log ratio of two probability distributions measures by how much you should update your prior log odds between the two distributions being
+correct.  The KL divergence is just then the expected weight of evidence if we draw samples from $p(x)$ itself:
+$$ I[p;q] = \mathbb{E}_p\left[ \log \frac{p(x)}{q(x)} \right] = \mathbb{E}_p \left[ w[x; p,q] \right]$$</p>
+<h2>How loud is the Evidence?</h2>
 <p>Our measurement of the amount of information was only unique up to a choice of multiplicative constant.  This is equivalent to
 our choice of base for the logarithm.  We can think of this as the <em>units</em> we use to measure our information.  The traditional choices
 would be to use the base-2 logarithm and measure the information in <em>bits</em>,<sup><a href="#bit">xx</a></sup>
 or to use the more mathematically convenient natural
 logarithm and measure the information in <em>nats</em>.  Another option is to measure the information in
-<a href="https://en.wikipedia.org/wiki/Hartley_(unit)"><em>decibans</em></a> or <em>decibels</em> or <em>Hartley</em>s, wherein
+<a href="https://en.wikipedia.org/wiki/Hartley_(unit)"><em>decibans</em></a> or <em>decibels</em> or <em>Hartley's</em>, wherein
 we use ten times the base-10 logarithm.</p>
 <aside> <sup id="bit">xx</sup>
  <i>bit</i> being short for <i>binary digit</i>.  
@@ -326,10 +396,14 @@ we use ten times the base-10 logarithm.</p>
  For more discussion about the history and etymology of these and related units see section 4.8.1 of
  <a href="https://books.google.com/books/about/Probability_Theory.html?id=tTN4HuUNXjgC&source=kp_book_description"><i>Probability Theory: The Logic of Science</i> by E.T. Jaynes</a>.
 </aside>
-<p>$$ I[p;q] = 10 \int dx\, p(x) \log_{10} \frac{p(x)}{q(x)}\, \textrm{dB} $$</p>
-<p>The nice thing about measuring information in decibels is first that people already have some familiarity with
-the unit (a difference of 10 dB being a factor of 10, 3 dB being a factor of 2),
-and secondly that it seems like 1 dB roughly corresponds the smallest detectable value that people
+$$ I[p;q] = 10 \int dx\, p(x) \log_{10} \frac{p(x)}{q(x)}\, \textrm{dB} $$
+<p>The nice thing about measuring information in decibans or <a href="https://en.wikipedia.org/wiki/Decibel">decibels</a>
+is the people already have some familiarity with the unit, such as for measuring the <em>loudness</em> of sounds.
+Its always a comparative measurement, for sound taking $10 \log_{10} \frac{P}{P_0}$ of the power
+to some reference or baseline power.  In the same way we could besides just measuring the KL between two distributions,
+measure the comparative difference between any two probabilities on the log scale:
+$$ 10 \log_{10} \frac{p(x)}{q(x)} \textrm{ dB}. $$</p>
+<p>Secondly that it seems like 1 dB roughly corresponds the smallest detectable value that people
 notice in terms of a change in underlying distribution, being the difference between <i>even chance</i>
 and <i>moderate probability</i> or <i>better than even chance</i>.</p>
 <aside id="quantifying"><sup>xx</sup> 
@@ -379,10 +453,10 @@ in Figure xx is a large visual representation you can play with.</p>
   <center>
    <svg height="300" width="300" viewBox="-2 -2 25 25"> <circle r="10" cx="10" cy="10" fill="white" stroke="black" stroke-width=0.2 /> <circle r="5" cx="10" cy="10" fill="whitesmoke" id="progress-11" stroke="#1f77b4" stroke-width="10" stroke-dasharray="3.141 3.141" /></svg>
    <br />
-   <input value=0 type='number' style="width: 4em" id="percent" onchange="fraction(11, document.getElementById('percent').value);">
+   <input value=0 type='number' style="width: 4em" id="percent" onchange="updatePercent();">
    <label for="percent">dB</label>
    <br/>
-   <input id="slider" style="width: 65%;" type="range" min="-30" step="0.1" max="30" value="0" class="slider" id="slider"
+   <input id="slider" style="width: 65%;" type="range" min="-23" step="0.1" max="23" value="0" class="slider" id="slider"
    oninput="updateSlider();" >
   <figcaption>Figure xx: A larger visual representation of decibels as a probability that you can play with. Here the set value
   of decibels measure the weight of evidence between the spinner giving a blue versus a white outcome.</figcaption>
@@ -390,14 +464,6 @@ in Figure xx is a large visual representation you can play with.</p>
 </figure>
 <p>A ban seems to correspond to the Kent's Estimative Probability of something being
 &quot;almost certain&quot;.</p>
-<h2>Weight of Evidence</h2>
-<h2>Interpretations</h2>
-<h3>Expected Weight of Evidence</h3>
-<p>Likelihoods</p>
-<p>difference of likelihoods as a form of model selection. Connection to number
-of samples and stuff.</p>
-<h3>Coding Cost</h3>
-<p>Encoding a sample from $p$ according to a code designed for $q$ costs the excess bits.</p>
 <h2>Examples and Magnitudes</h2>
 <h2>Whither Continuous Entropy</h2>
 <p>The relative entropy really is the proper way to define entropy.  For all
@@ -449,7 +515,6 @@ function fraction(i, db) {
   let fill = CIRCUMFERENCE / SEGMENTS * p;
   let space = CIRCUMFERENCE / SEGMENTS * (1-p);
   let val = fill + " " + space;
-  console.log("val = ", val);
   progress.style.strokeDasharray = val;
 }
 
@@ -465,8 +530,8 @@ function updateSlider() {
 
 function updatePercent() {
   let value = document.getElementById("percent").value;
-  fraction(11, value);
   document.getElementById("slider").value = value;
+  fraction(11, value);
 }
 </script>
  
