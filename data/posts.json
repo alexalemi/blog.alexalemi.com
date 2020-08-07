@@ -2,9 +2,8 @@
     {
       "title": "Why KL?",
       "src": "kl.md",
-      "date": "2020-06-10",
+      "date": "2020-08-07",
       "id": "why-kl",
-      "description": "Why is the KL divergence so special?",
-      "hidden": true
+      "description": "Why is the KL divergence so special?"
     }
 ]
