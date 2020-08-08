@@ -451,10 +451,13 @@ in Figure xx is a large visual representation you can play with.
 A ban seems to correspond to the Kent's Estimative Probability of something being
 "almost certain".
 
-
-
-
 ## Examples and Magnitudes
+
+### Births
+
+### Brandeis Dice
+
+### MNIST
 
 ## Whither Continuous Entropy
 
