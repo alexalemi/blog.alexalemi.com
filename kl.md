@@ -9,7 +9,7 @@ distributions.  It holds a special and privileged place, being used to define
 all of the core concepts in information theory, such as mutual information.
 
 Why is the relative information so special and where does it come from? 
-How should you interpret it? What is a nat anyway?  What does that mean?  In this
+How should you interpret it? What is a nat anyway?  In this
 note, I'll try to give a better understanding and set of intuitions about
 what KL is, why its interesting, where it comes from and what its good for.
 
@@ -18,8 +18,10 @@ what KL is, why its interesting, where it comes from and what its good for.
 Imagine we have some prior set of beliefs.  In light of some kind of evidence, 
 we update our beliefs.  How *much* did we update our beliefs?  How do we quantify
 the *magnitude* of that update?  What are some properties we might want this 
-hypothetical function to have?  Let's denote $I[p; q]$ the function that measures
+hypothetical function to have?  Let $I[p; q]$ denote the function that measures
 the information required for the move from beliefs $q$ to $p$. <sup><a href="#hobson">1</a></sup>
+
+NOTE: not clear $q$ and $p$ are probability distributions.
 
 <aside> <sup id="hobson">1</sup> 
   What follows is my own reconstruction of the fabulous paper: 
@@ -30,9 +32,9 @@ the information required for the move from beliefs $q$ to $p$. <sup><a href="#ho
 
 We want our information function to satisfy the following properties:
   
-  1. Its **continuous**.  A small change in the distributions makes a small change in the amount of information in the move.
+  1. It's **continuous**.  A small change in the distributions makes a small change in the amount of information in the move.
   2. It's permutation or **reparameterization independent**.  It doesn't matter if we change the units we've specified our distributions in or if we relabel the sides of our dice.
-  3. We want it to be **positive** and have the value $I = 0$ if and only if $p = q$.
+  3. We want it to be **non-negative** and have the value $I = 0$ if and only if $p = q$.  If $p=q$ we haven't updated our beliefs and so have no information gain.
   4. We want it to be **monotonic** in a natural sense.  If we, for instance start with some uniform distribution over the 24 people in a game of [Guess Who?](https://en.wikipedia.org/wiki/Guess_Who%3F) and then update to only 5 remaining suspects, $I$ should be larger than if there were still 12 remaining suspects.
   5. Finally we want our information function to **decompose** in a natural and **linear** way.<sup><a href="#renyi">xx</a></sup>
 
@@ -82,7 +84,7 @@ same test is 95.6% $(q(\overline T | \overline D) = 0.956)$. <sup><a href="#covi
   <img width="45%" src="figures/KLdiagram.svg"
     alt="Joint characterization of distribution.">
   <figcaption>
-  Figure xx. Two equivalent ways to express the joint distribution $q(\mathcal{D}\mathcal{T})$.
+  Figure xx. Two equivalent ways to express the joint distribution $q(\mathcal{T}\mathcal{D})$.
   </figcaption>
   </center>
 </figure>
@@ -115,16 +117,19 @@ branches, as measured by our updated beliefs $(p(\mathcal{D}))$.
 More generally we are requiring that our information function satisfies a natural *chain rule*:
 $$ I[ p(X,Y); q(X,Y) ] = I[ p(X); q(X) ] + \mathbb{E}_{p(X)} \left[ I[ p(Y|X); q(Y|X) ] \right] $$
 
-Notice that it is here, in this sort of structural independence that we make our information function manifestly asymmetric. Here our $p$ 
-distribution becomes distinguished over our $q$ as it is the one we use to weight the child informations.  This makes sense if we imagine or if
-$p$ is the actual distribution that events are drawn from, for it means that this will correspond to the informations we would observe
-in expectation.  
+Notice that it is here, in this sort of structural independence that we make
+our information function manifestly asymmetric.  Here our $p$ distribution
+becomes distinguished over our $q$ as it is the one we use to weight the child
+contributions.  This makes sense if we imagine or if $p$ is the actual
+distribution that events are drawn from, for it means that this will correspond
+to the informations we would observe in expectation.  
 
-The interesting thing is that if you want your information function to satisfy all of these seemingly reasonable properties, that is
-enough to determine it *uniquely*.  The only function satisfying all of these properties is the relative entropy, or KL divergence we
-all know and love:
+The interesting thing is that if you want your information function to satisfy
+all of these seemingly reasonable properties, that is enough to determine it
+*uniquely*.  The only function satisfying all of these properties is the
+relative entropy, or KL divergence we all know and love:
 $$
-  I[p;q] = \int dx\, p(x) \log \frac{p(x)}{q(x)}
+  I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x)}
 $$
 
 See <a href="https://link.springer.com/article/10.1007/BF01106578">
@@ -143,19 +148,19 @@ distributions $p$ and $q$.  We seek a functional that takes our two distribution
 and gives back our information gain and we seek one that is *local* in the physics sense, 
 meaning that our *functional* can be written as the integral of a *function* depending
 only on the values the probability densities take at each point:
-$$ I[p;q] = \int dx\, \mathcal{A}(x, p(x), q(x)). $$
+$$ I[p;q] = \int \mathrm dx\, \mathcal{A}(x, p(x), q(x)). $$
 
 Our requirement that our information gain be
 *reparameterization independent* means it has to
 be invariant to any remapping of our coordinates, or in other words,
 it has to be dimensionless.  Imagine $x$ has units of a length, here our integral
-measure $dx$ has units of a length, and the densities $p(x), q(x)$ would 
+measure $\mathrm dx$ has units of a length, and the densities $p(x), q(x)$ would 
 have units of an inverse length.  In order to be dimensionally consistent
 our functional must take the form:<sup><a href="#caveat">3</a></sup>
-$$ I[p;q] = \int dx\, p(x) f\left( \frac{p(x)}{q(x)} \right). $$
+$$ I[p;q] = \int \mathrm dx\, p(x) f\left( \frac{p(x)}{q(x)} \right). $$
 
 <aside> <sup id="caveat">3</sup>
-  We could have just as well written it as $I[p;q] = \int dx\, q(x) g\left( \frac{p(x)}{q(x)} \right)$ (that is, the form
+  We could have just as well written it as $I[p;q] = \int \mathrm dx\, q(x) g\left( \frac{p(x)}{q(x)} \right)$ (that is, the form
   of an <a href="https://en.wikipedia.org/wiki/F-divergence">f-divergence</a>), but 
   this is equivalent to the way we wrote it with $f(\mathcal{X}) = \mathcal{X} g(\mathcal X)$.
   Putting the $p(x)$ as the integral measure better aligns with what we are about to do next.
@@ -163,15 +168,15 @@ $$ I[p;q] = \int dx\, p(x) f\left( \frac{p(x)}{q(x)} \right). $$
 
 Finally, our decomposability requirement above when written out in terms of
 continuous densities takes the form:
-$$ I[ p(x,y); q(x,y) ] = I[ p(x); q(x) ] + \int dx\, p(x) I[p(y|x) ; q(y|x)] $$
+$$ I[ p(x,y); q(x,y) ] = I[ p(x); q(x) ] + \int \mathrm dx\, p(x) I[p(y|x) ; q(y|x)] $$
   
 Combining this linear decomposition requirement with our requirement for the
 form required and pushing some equations around gives us:
 $$
 \begin{align}
-  I[ p(x,y); q(x,y) ] &= I[p(x); q(x)] + \int dx\, p(x) I[p(y|x); q(y|x)] \\
-  \int dx\, dy\, p(x,y) f\left(\frac{p(x,y)}{q(x,y)} \right)&= \int dx\, p(x) f\left(\frac{p(x)}{q(x)} \right) + \int dx\, p(x) \int dy\, p(y|x) f\left(\frac{p(y|x)}{q(y|x)} \right) \\
-  \int dx\, dy\, p(x) p(y|x) f\left(\frac{p(x)p(y|x)}{q(x)q(y|x)} \right)&= \int dx\, dy\, p(x) p(y|x) \left[ f\left(\frac{p(x)}{q(x)} \right) + f\left(\frac{p(y|x)}{q(y|x)} \right)\right] .
+  I[ p(x,y); q(x,y) ] &= I[p(x); q(x)] + \int \mathrm dx\, p(x) I[p(y|x); q(y|x)] \\
+  \int \mathrm dx\, \mathrm dy\, p(x,y) f\left(\frac{p(x,y)}{q(x,y)} \right)&= \int \mathrm dx\, p(x) f\left(\frac{p(x)}{q(x)} \right) + \int \mathrm dx\, p(x) \int dy\, p(y|x) f\left(\frac{p(y|x)}{q(y|x)} \right) \\
+  \int \mathrm dx\, \mathrm dy\, p(x) p(y|x) f\left(\frac{p(x)p(y|x)}{q(x)q(y|x)} \right)&= \int dx\, dy\, p(x) p(y|x) \left[ f\left(\frac{p(x)}{q(x)} \right) + f\left(\frac{p(y|x)}{q(y|x)} \right)\right] .
 \end{align}
 $$
 Notice that this demonstrates that our function $f$ must satisfy the property:
@@ -180,7 +185,7 @@ This well known functional equation has a unique (up to a multiplicative constan
 $$ f(x) = c \log x. $$
 We can roll the choice of multiplicative constant into our choice of basis for the logarithm and arrive at our final form
 for our information gain:
-$$ I[p;q] = \int dx\, p(x) \log \frac{p(x)}{q(x)}. $$
+$$ I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x)}. $$
 
 
 ## Bayes Rule
@@ -247,11 +252,11 @@ what ought our new beliefs be?  If we search for the joint distribution $p(x,\th
 as close as possible to our previous beliefs $q(x,\theta)$ but that no longer has any
 uncertainty about the value the observable will take $(p(x) = \delta(x-X))$ we see
 that minimizing the information gain:
-$$ I[p;q] = I[p(x);q(x)] + \int dx\, p(x) \, I[p(\theta|x); q(\theta|x)], $$
+$$ I[p;q] = I[p(x);q(x)] + \int \mathrm dx\, p(x) \, I[p(\theta|x); q(\theta|x)], $$
 is accomplished if we set $p(\theta|x) = q(\theta|x)$, yielding the updated joint:
 $$ p(x,\theta) = p(x)p(\theta|x) = \delta(x-X) q(\theta|x) $$
 and the marginal beliefs about the parameters to be:
-$$ p(\theta) = \int dx\, p(x,\theta) = \int dx\, \delta(x-X) q(\theta|x) = q(\theta|X), $$
+$$ p(\theta) = \int \mathrm dx\, p(x,\theta) = \int \mathrm dx\, \delta(x-X) q(\theta|x) = q(\theta|X), $$
 or precisely what you probably thought it should have been anyway if you've heard
 of Bayesian inference.
 
@@ -372,7 +377,7 @@ we use ten times the base-10 logarithm.
  For more discussion about the history and etymology of these and related units see section 4.8.1 of
  <a href="https://books.google.com/books/about/Probability_Theory.html?id=tTN4HuUNXjgC&source=kp_book_description"><i>Probability Theory: The Logic of Science</i> by E.T. Jaynes</a>.
 </aside>
-$$ I[p;q] = 10 \int dx\, p(x) \log_{10} \frac{p(x)}{q(x)}\, \textrm{dB} $$
+$$ I[p;q] = 10 \int \mathrm dx\, p(x) \log_{10} \frac{p(x)}{q(x)}\, \textrm{dB} $$
 
 The nice thing about measuring information in decibans or <a href="https://en.wikipedia.org/wiki/Decibel">decibels</a> 
 is the people already have some familiarity with the unit, such as for measuring the *loudness* of sounds. 
@@ -419,9 +424,9 @@ in Figure xx is a large visual representation you can play with.
     <td><svg height="30" width="30" viewBox="0 0 20 20"> <circle r="10" cx="10" cy="10" fill="white" /> <circle r="5" cx="10" cy="10" fill="whitesmoke" id="progress-5" stroke="#1f77b4" stroke-width="10" stroke-dasharray="0.942 2.200" /></svg>
   <tr><td>6<td>3.98<td>4:1<td>80%
     <td><svg height="30" width="30" viewBox="0 0 20 20"> <circle r="10" cx="10" cy="10" fill="white" /> <circle r="5" cx="10" cy="10" fill="whitesmoke" id="progress-6" stroke="#1f77b4" stroke-width="10" stroke-dasharray="0.942 2.200" /></svg>
-  <tr><td>7<td>6.31<td>5:1<td>86%
+  <tr><td>7<td>5.01<td>5:1<td>86%
     <td><svg height="30" width="30" viewBox="0 0 20 20"> <circle r="10" cx="10" cy="10" fill="white" /> <circle r="5" cx="10" cy="10" fill="whitesmoke" id="progress-7" stroke="#1f77b4" stroke-width="10" stroke-dasharray="0.942 2.200" /></svg>
-  <tr><td>8<td>7.94<td>6:1<td>89%
+  <tr><td>8<td>6.31<td>6:1<td>86%
     <td><svg height="30" width="30" viewBox="0 0 20 20"> <circle r="10" cx="10" cy="10" fill="white" /> <circle r="5" cx="10" cy="10" fill="whitesmoke" id="progress-8" stroke="#1f77b4" stroke-width="10" stroke-dasharray="0.942 2.200" /></svg>
   <tr><td>9<td>7.94<td>8:1<td>89%
     <td><svg height="30" width="30" viewBox="0 0 20 20"> <circle r="10" cx="10" cy="10" fill="white" /> <circle r="5" cx="10" cy="10" fill="whitesmoke" id="progress-9" stroke="#1f77b4" stroke-width="10" stroke-dasharray="0.942 2.200" /></svg>
@@ -468,7 +473,7 @@ $$ H(P) = -\sum_i p_i \log p_i $$
 
 Why do I say he flubbed?  Because this notion of entropy doesn't generalize
 to continuous distributions.  The continuous analog:
-$$ H(P) = -\int dx\, p(x) \log p(x) $$
+$$ H(P) = -\int \mathrm dx\, p(x) \log p(x) $$
 isn't *reparameterization independent*.  Consider for instance the distribution
 of adult human heights: <sup><a href="#bimodal">3</a></sup> 
 <figure>
