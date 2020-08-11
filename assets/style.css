@@ -157,6 +157,15 @@ table td {
   vertical-align: top;
 }
 
+
+.listing article cite {
+  font-size: 2em;
+}
+
+.listing date {
+  float: right;
+}
+
 /*
 @media print {
   * {
