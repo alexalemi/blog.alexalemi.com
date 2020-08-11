@@ -36,7 +36,7 @@ We want our information function to satisfy the following properties:
   2. It's permutation or **reparameterization independent**.  It doesn't matter if we change the units we've specified our distributions in or if we relabel the sides of our dice.
   3. We want it to be **non-negative** and have the value $I = 0$ if and only if $p = q$.  If $p=q$ we haven't updated our beliefs and so have no information gain.
   4. We want it to be **monotonic** in a natural sense.  If we, for instance start with some uniform distribution over the 24 people in a game of [Guess Who?](https://en.wikipedia.org/wiki/Guess_Who%3F) and then update to only 5 remaining suspects, $I$ should be larger than if there were still 12 remaining suspects.
-  5. Finally we want our information function to **decompose** in a natural and **linear** way.<sup><a href="#renyi">xx</a></sup>
+  5. Finally we want our information function to **decompose** in a natural and **linear** way.<sup><a href="#renyi">2</a></sup>
 
 <aside> <sup id="renyi">2</sup>
   If one relaxes the requirement for linear decomposition and instead just requires that our information
@@ -58,24 +58,24 @@ did have the disease.  $\overline D$ denotes we actually didn't.
 With two binary random variables, there are 4 possible outcomes $(\{ DT, D\overline T, \overline D T, \overline D \overline T\})$
 and fully specifying our set of beliefs requires 3 independent probabilities.
 
-<aside> <sup id="kent">xx</sup>
+<aside> <sup id="kent">3</sup>
   An &ldquo;<i>Almost Certainly Not</i>&rdquo; is 7% on
   the <a href="https://en.wikipedia.org/wiki/Words_of_estimative_probability">Kent's words of Estimative Probability</a> list.
 </aside>
-<aside> <sup id="covid">xx</sup>
+<aside> <sup id="covid">4</sup>
   See for instance the RDT Cellex Inc. <a href="https://www.centerforhealthsecurity.org/resources/COVID-19/serology/Serology-based-tests-for-COVID-19.html">SARS-COV-2 Test</a>.
 </aside>
 
 What our our prior beliefs?
 Let's imagine while we are concerned we might have had the disease, but if we are being honest, 
-we almost certainly didn't,<sup><a href="#kent">xx</a></sup>
+we almost certainly didn't,<sup><a href="#kent">3</a></sup>
 so we'll put our prior belief in having had the disease at 7%. $(q(D) = 0.07)$.
 How do we expect the antibody test to go if we have it done?
 You do a bit of research and discover
 that if you had had the disease, the sensitivity or *true positive rate* of the
 test you're about to take is 93.8% $(q(T|D) = 0.938)$.
 The specificity or *true negative rate* of that
-same test is 95.6% $(q(\overline T | \overline D) = 0.956)$. <sup><a href="#covid">xx</a></sup> 
+same test is 95.6% $(q(\overline T | \overline D) = 0.956)$. <sup><a href="#covid">4</a></sup> 
 
 <figure id="#conditional" class="right">
   <center>
@@ -84,14 +84,14 @@ same test is 95.6% $(q(\overline T | \overline D) = 0.956)$. <sup><a href="#covi
   <img width="45%" src="figures/KLdiagram.svg"
     alt="Joint characterization of distribution.">
   <figcaption>
-  Figure xx. Two equivalent ways to express the joint distribution $q(\mathcal{D}\mathcal{T})$.
+  Figure 1. Two equivalent ways to express the joint distribution $q(\mathcal{D}\mathcal{T})$.
   </figcaption>
   </center>
 </figure>
 We've just specified our prior beliefs with 3 numbers, imagining our process as having two steps,
 first we either had the disease or not $(q(\mathcal{D}))$ and then, conditioned on that
 we get the result of our test $(q(\mathcal{T}|\mathcal{D}))$.  
-Equivalently, we could have just given the joint probability distribution, as shown in Figure xx.
+Equivalently, we could have just given the joint probability distribution, as shown in Figure 1.
 
 The point now is that if we were to update our beliefs, in the diagram on the right there is just a single 
 distribution $q(\mathcal{D},\mathcal{T})$, in the one on the left there are essentially three different distributions 
@@ -136,9 +136,9 @@ See <a href="https://link.springer.com/article/10.1007/BF01106578">
 <b>A New Theorem of Information Theory</b> by Arthur Hobson
 </a> for a complete proof,
 but here I'll offer a more colloquial argument that one
-given by Ariel Caticha.<sup><a href="#caticha">2</a></sup>  
+given by Ariel Caticha.<sup><a href="#caticha">5</a></sup>  
 
-<aside> <sup id="caticha">2</sup>
+<aside> <sup id="caticha">5</sup>
   <i>Lectures on Probability, Entropy and Statistcal Physics</i> by
   Ariel Caticha. <a href="https://arxiv.org/abs/0808.0012">arXiv:0808.0012</a>
 </aside>
@@ -156,10 +156,10 @@ be invariant to any remapping of our coordinates, or in other words,
 it has to be dimensionless.  Imagine $x$ has units of a length, here our integral
 measure $\mathrm dx$ has units of a length, and the densities $p(x), q(x)$ would 
 have units of an inverse length.  In order to be dimensionally consistent
-our functional must take the form:<sup><a href="#caveat">3</a></sup>
+our functional must take the form:<sup><a href="#caveat">6</a></sup>
 $$ I[p;q] = \int \mathrm dx\, p(x) f\left( \frac{p(x)}{q(x)} \right). $$
 
-<aside> <sup id="caveat">3</sup>
+<aside> <sup id="caveat">6</sup>
   We could have just as well written it as $I[p;q] = \int \mathrm dx\, q(x) g\left( \frac{p(x)}{q(x)} \right)$ (that is, the form
   of an <a href="https://en.wikipedia.org/wiki/F-divergence">f-divergence</a>), but 
   this is equivalent to the way we wrote it with $f(\mathcal{X}) = \mathcal{X} g(\mathcal X)$.
@@ -198,7 +198,7 @@ $$ I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x)} = -\int \mathrm dx \, 
 
 ## Bayes Rule
 
-<aside> <sup id="caticha2">xx</sup>
+<aside> <sup id="caticha2">7</sup>
   I first saw this form of motivation for Bayes Rule in
   <i>Lectures on Probability, Entropy and Statistcal Physics</i> by
   Ariel Caticha. <a href="https://arxiv.org/abs/0808.0012">arXiv:0808.0012</a>
@@ -206,7 +206,7 @@ $$ I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x)} = -\int \mathrm dx \, 
 Having identified the right way to measure how much information is gained when we update a distribution
 from $q$ to $p$, why don't we put this to practical use and try to figure out how we 
 <i>ought</i> to update
-our beliefs in light of evidence or observations.<sup><a href="#caticha2">xx</a></sup>
+our beliefs in light of evidence or observations.<sup><a href="#caticha2">7</a></sup>
 
 Returning to our disease testing example, let's say you get the test done and receive a
 positive result $(\mathcal T = T)$.
@@ -235,7 +235,7 @@ $$ p(D|T) = q(D|T) = \frac{q(T|D)q(D)}{q(T|D)q(D) + q(T|\overline D)q(\overline 
 Furthermore, the marginal distribution of our updated beliefs about our disease status is:
 $$ p(D) = p(D|T)p(T) = q(D|T) = 0.616$$
 In this particular case our updated belief is only 3 to 2 on 
-that we actually had the disease, despite our positive test result. In Figure xx 
+that we actually had the disease, despite our positive test result. In Figure 2
 we show both our prior in this factorization as well as our new beliefs.
 <figure id="#posterior" class="right">
   <center>
@@ -244,7 +244,7 @@ we show both our prior in this factorization as well as our new beliefs.
   <img width="35%" src="figures/KLdiagram2p.svg"
     alt="Posterior distribution of beliefs.">
   <figcaption>
-  Figure xx. Our prior (left, blue, notice that we've swapped the order of the conditioning) and updated (right, orange) beliefs after observing that the test was positive.
+  Figure 2. Our prior (left, blue, notice that we've swapped the order of the conditioning) and updated (right, orange) beliefs after observing that the test was positive.
   </figcaption>
   </center>
 </figure>
@@ -331,12 +331,12 @@ statement more precise, we need a better language to talk about the magnitudes o
 
 Our measurement of the amount of information was only unique up to a choice of multiplicative constant.  This is equivalent to
 our choice of base for the logarithm.  We can think of this as the *units* we use to measure our information.  The traditional choices
-would be to use the base-2 logarithm and measure the information in *bits*,<sup><a href="#bit">xx</a></sup>
+would be to use the base-2 logarithm and measure the information in *bits*,<sup><a href="#bit">8</a></sup>
 or to use the more mathematically convenient natural
 logarithm and measure the information in *nats*.  Another option is to measure the information in
 <a href="https://en.wikipedia.org/wiki/Hartley_(unit)">*decibans*</a> or *decibels* or *Hartley's*, wherein
 we use ten times the base-10 logarithm.
-<aside> <sup id="bit">xx</sup>
+<aside> <sup id="bit">8</sup>
  <i>bit</i> being short for <i>binary digit</i>.  
  <i>nat</i> is then short for <i>natural digit</i>.
  People sometimes suggest <i>dit</i> for the base-10 </i>decimal digit</i>.
@@ -364,7 +364,7 @@ here we are computing the log *odds* of an event happening on the decibel scale.
 
 
 Below in Table 1 is a summary of the correspondence between decibans and odds or probabilities, and
-in Figure xx is a large visual representation you can play with.
+in Figure 3 is a large visual representation you can play with.
 <figure>
 <center>
 <table>
@@ -413,7 +413,7 @@ in Figure xx is a large visual representation you can play with.
    <br/>
    <input id="slider" style="width: 65%;" type="range" min="-23" step="0.1" max="23" value="0" class="slider" id="slider"
    oninput="updateSlider();" >
-  <figcaption>Figure xx: A larger visual representation of decibels as a probability that you can play with. Here the set value
+  <figcaption>Figure 3: A larger visual representation of decibels as a probability that you can play with. Here the set value
   of decibels measure the weight of evidence between the spinner giving a blue versus a white outcome.</figcaption>
   </center>
 </figure>
@@ -424,12 +424,12 @@ decibels is that it seems like 1 dB roughly corresponds the smallest detectable 
 notice in terms of a change in underlying distribution, being the difference between <i>even chance</i>
 and 5 to 4 odds, <i>moderate probability</i> or <i>better than even chance</i>.
 
-<aside id="quantifying"><sup>xx</sup> 
+<aside id="quantifying"><sup>9</sup> 
   <a href="https://projecteuclid.org/euclid.ss/1177012242"><i>Quantifying Probabilistic Expressions</i> by
   Frederick Mosteller and Cleo Youtz</a>.
 </aside>
 Additionally, $10 \textrm{ dB}$ corresponds to 10 to 1 odds, or 91% probability, which people associate
-with events being <i>almost certain</i> or happening <i>almost always</i>. <sup><a href="#quantifying">xx</a></sup>.
+with events being <i>almost certain</i> or happening <i>almost always</i>. <sup><a href="#quantifying">9</a></sup>.
 
 The traditional statistical threshold for reported results is a <a href="https://en.wikipedia.org/wiki/P-value">p-value</a>
 of 0.05, which is often <a href="https://en.wikipedia.org/wiki/Misuse_of_p-values">misinterpreted</a>
@@ -497,12 +497,12 @@ The biggest complication is that we don't actually know what the true distributi
 sample data.  Luckily for us, as far as this as an objective for $\theta$ goes, we can treat the entropy of $p(x)$ as
 a constant.  This motivates the traditional maximum likelihood objective:
 $$ \max \int \mathrm dx \, \log q(x;\theta). $$
-<aside id="gpt3">
+<aside id="gpt3"><sup>10</sup>
   For instance, in the latest <a href="https://arxiv.org/abs/2005.14165">GPT-3</a> model trained by OpenAI,
   was trained on less than half of the training set. (See Table 2.2 in the paper.) 
 </aside>
 If we had an infinite dataset, maximum likelihood is the same as minimizing the relative entropy between the real world and 
-our model.  Unfortunately, we don't often has infinite datasets.<sup><a href="#gpt3">xx</a></sup>
+our model.  Unfortunately, we don't often has infinite datasets.<sup><a href="#gpt3">10</a></sup>
 On finite datasets, maximum likelihood can still be interpreted as minimizing a KL divergence, but now
 the KL divergence between the *empirical distribution* $\hat p(x) = \sum_i \delta(x - x_i) $
 and our model $q(x;\theta)$.
@@ -517,11 +517,11 @@ the same measure, but provided they are:
 
 $$ L_1 - L_2 = \mathbb{E}\left[ \log q_1(x) \right] - \mathbb{E}\left[ \log q_2(x) \right] = \mathbb{E}\left[ \log \frac{q_1(x)}{q_2(x)} \right] $$
 
-<aside id="mnist">
+<aside id="mnist"><sup>11</sup>
   The entirety of which can fit in a <a href="https://twitter.com/alemi/status/1042658244609499137">tweet</a>.
 </aside>
 Given the size of tests sets we have for modern image datasets, this means that very small changes in likelihood can be 
-interpreted as large confidences in the superiorities of models.  Take for instance something as simple as binary static MNIST.<sup><a href="#mnist">xx</a></sup>  Here, with 10,000 test set images, a difference in likelihoods of 0.0013 dB or 0.0004 nats corresponds to 13 dB of evidence for the one model over the second.
+interpreted as large confidences in the superiorities of models.  Take for instance something as simple as binary static MNIST.<sup><a href="#mnist">11</a></sup>  Here, with 10,000 test set images, a difference in likelihoods of 0.0013 dB or 0.0004 nats corresponds to 13 dB of evidence for the one model over the second.
 
 ## Appendix A: Whither Continuous Entropy
 
@@ -534,16 +534,16 @@ Why do I say he flubbed?  Because this notion of entropy doesn't generalize
 to continuous distributions.  The continuous analog:
 $$ H(P) = -\int \mathrm dx\, p(x) \log p(x) $$
 isn't *reparameterization independent*.  Consider for instance the distribution
-of adult human heights: <sup><a href="#bimodal">3</a></sup> 
+of adult human heights: <sup><a href="#bimodal">12</a></sup> 
 <figure>
   <center>
   <img src="figures/adult_heights.svg"
     alt="Distribution of adult heights.">
-  <figcaption>Figure 1. Distribution of adult heights. <sup><a href="#ourworld">3</a></sup></figcaption>
+  <figcaption>Figure 1. Distribution of adult heights. <sup><a href="#ourworld">13</a></sup></figcaption>
   </center>
 </figure>
 
-<aside> <sup id="bimodal">2</sup>
+<aside> <sup id="bimodal">12</sup>
   Note that you may have heard that 
   <a href="https://www.johndcook.com/blog/2008/07/20/why-heights-are-normally-distributed/">heights are normally distributed</a>.
   Adult male (or female) heights are normally distributed, but differ in their means and variances, making the 
@@ -551,7 +551,7 @@ of adult human heights: <sup><a href="#bimodal">3</a></sup>
 </aside>
 
 
-<aside> <sup id="ourworld">3</sup>
+<aside> <sup id="ourworld">13</sup>
   Data taken from 
   <a href="https://ourworldindata.org/human-height">ourworldindata.org</a>.
 </aside>
@@ -560,9 +560,9 @@ of adult human heights: <sup><a href="#bimodal">3</a></sup>
 If you measure the continuous entropy of this distribution measured
 in centimeters you get 5.4 bits.  If you instead measure the entropy
 of the same distribution in feet you get 4 bits.  If you instead
-were to measure heights in meters it would be -1.3 bits! <sup><a href="#negative">4</a></sup>
+were to measure heights in meters it would be -1.3 bits! <sup><a href="#negative">14</a></sup>
 
-<aside> <sup id="negative">4</sup>
+<aside> <sup id="negative">14</sup>
   It seems strange to have a negative entropy, but in this case it is basically
   reflecting the fact that in terms of meters, the human height distribution doesn't
   span a whole meter in breadth, so it actually takes fewer *relative* bits
