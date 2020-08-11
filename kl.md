@@ -36,7 +36,7 @@ We want our information function to satisfy the following properties:
   2. It's permutation or **reparameterization independent**.  It doesn't matter if we change the units we've specified our distributions in or if we relabel the sides of our dice.
   3. We want it to be **non-negative** and have the value $I = 0$ if and only if $p = q$.  If $p=q$ we haven't updated our beliefs and so have no information gain.
   4. We want it to be **monotonic** in a natural sense.  If we, for instance start with some uniform distribution over the 24 people in a game of [Guess Who?](https://en.wikipedia.org/wiki/Guess_Who%3F) and then update to only 5 remaining suspects, $I$ should be larger than if there were still 12 remaining suspects.
-  5. Finally we want our information function to **decompose** in a natural and **linear** way.<sup><a href="#renyi">2</a></sup>
+  5. Finally we want our information function to **decompose** in a natural and **linear** way.<sup><a href="#renyi">2</a></sup> In particular, we want to be able to relate the information between two joint distributions in terms of the information between its marginal and conditional distributions.
 
 <aside> <sup id="renyi">2</sup>
   If one relaxes the requirement for linear decomposition and instead just requires that our information

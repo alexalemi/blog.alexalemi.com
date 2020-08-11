@@ -98,7 +98,7 @@ the information required for the move from beliefs $q$ to $p$. <sup><a href="#ho
 <li>It's permutation or <strong>reparameterization independent</strong>.  It doesn't matter if we change the units we've specified our distributions in or if we relabel the sides of our dice.</li>
 <li>We want it to be <strong>non-negative</strong> and have the value $I = 0$ if and only if $p = q$.  If $p=q$ we haven't updated our beliefs and so have no information gain.</li>
 <li>We want it to be <strong>monotonic</strong> in a natural sense.  If we, for instance start with some uniform distribution over the 24 people in a game of <a href="https://en.wikipedia.org/wiki/Guess_Who%3F">Guess Who?</a> and then update to only 5 remaining suspects, $I$ should be larger than if there were still 12 remaining suspects.</li>
-<li>Finally we want our information function to <strong>decompose</strong> in a natural and <strong>linear</strong> way.<sup><a href="#renyi">2</a></sup></li>
+<li>Finally we want our information function to <strong>decompose</strong> in a natural and <strong>linear</strong> way.<sup><a href="#renyi">2</a></sup> In particular, we want to be able to relate the information between two joint distributions in terms of the information between its marginal and conditional distributions.</li>
 </ol>
 <aside> <sup id="renyi">2</sup>
   If one relaxes the requirement for linear decomposition and instead just requires that our information
