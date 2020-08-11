@@ -15,13 +15,13 @@ what KL is, why its interesting, where it comes from and what its good for.
 
 ## Information Gain
 
-Imagine we have some prior set of beliefs.  In light of some kind of evidence, 
-we update our beliefs.  How *much* did we update our beliefs?  How do we quantify
+Imagine we have some prior set of beliefs summarized as a probability distribution $q$. 
+In light of some kind of evidence, we update our beliefs to a new distribution $p$.
+How *much* did we update our beliefs?  How do we quantify
 the *magnitude* of that update?  What are some properties we might want this 
 hypothetical function to have?  Let $I[p; q]$ denote the function that measures
 the information required for the move from beliefs $q$ to $p$. <sup><a href="#hobson">1</a></sup>
 
-NOTE: not clear $q$ and $p$ are probability distributions.
 
 <aside> <sup id="hobson">1</sup> 
   What follows is my own reconstruction of the fabulous paper: 
@@ -84,7 +84,7 @@ same test is 95.6% $(q(\overline T | \overline D) = 0.956)$. <sup><a href="#covi
   <img width="45%" src="figures/KLdiagram.svg"
     alt="Joint characterization of distribution.">
   <figcaption>
-  Figure xx. Two equivalent ways to express the joint distribution $q(\mathcal{T}\mathcal{D})$.
+  Figure xx. Two equivalent ways to express the joint distribution $q(\mathcal{D}\mathcal{T})$.
   </figcaption>
   </center>
 </figure>
@@ -94,16 +94,16 @@ we get the result of our test $(q(\mathcal{T}|\mathcal{D}))$.
 Equivalently, we could have just given the joint probability distribution, as shown in Figure xx.
 
 The point now is that if we were to update our beliefs, in the diagram on the right there is just a single 
-distribution $q(\mathcal{T},\mathcal{D})$, in the one on the left there are essentially three different distributions 
+distribution $q(\mathcal{D},\mathcal{T})$, in the one on the left there are essentially three different distributions 
 $(q(\mathcal{D}), q(\mathcal{T}|D), q(\mathcal{T}| \overline D))$ and we want
-some sort of *structural* constitency between the two sides:
+some sort of *structural* consistency between the two sides:
 $$
 I[p(\mathcal{D}\mathcal{T}); q(\mathcal{D}\mathcal{T})] \quad \textrm{versus} \quad
 I[p(\mathcal{D}); q(\mathcal{D})], I[p(\mathcal{T}|D); q(\mathcal{T}|D)],
 I[p(\mathcal{T}|\overline D), q(\mathcal{T}|\overline D)] . 
 $$
 
-The consistenty we will require is that our information measure decomposes linearly between
+The consistency we will require is that our information measure decomposes linearly between
 these two different descriptions. The information between the joints should be a weighted 
 linear combination of the informations of three constituent distributions.
 In this particular case we will require:
@@ -187,6 +187,14 @@ We can roll the choice of multiplicative constant into our choice of basis for t
 for our information gain:
 $$ I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x)}. $$
 
+As for the non-negativity, our final form satisfies that property.  Because we have that $\log x \leq x -1$:
+$$ I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x)} = -\int \mathrm dx \, p(x) \log \frac{q(x)}{p(x)} \geq
+-\int \mathrm dx\, p(x) \left( \frac{q(x)}{p(x)} - 1 \right) = 0. $$
+<aside>
+  <img width="100%" src="figures/logbound.svg"
+    alt="Visual demonstration of log x < x - 1.">
+</aside>
+
 
 ## Bayes Rule
 
@@ -200,7 +208,8 @@ from $q$ to $p$, why don't we put this to practical use and try to figure out ho
 <i>ought</i> to update
 our beliefs in light of evidence or observations.<sup><a href="#caticha2">xx</a></sup>
 
-Returning to our disease testing example, let's say you get the test done and receive a positive result.
+Returning to our disease testing example, let's say you get the test done and receive a
+positive result $(\mathcal T = T)$.
 What should your new distribution of beliefs be? Well, first off if we've observed the results of the test
 we should probably have our updated beliefs reflect the observation we made, making it consistent with our
 observation, setting $p(T) = 1$, but this doesn't fully specify $p$ we need two more numbers.  How should
@@ -274,53 +283,10 @@ as possible to your prior beliefs while being consistent with your
 observations, you should set your updated beliefs according to
 Bayes rule run on the prior beliefs.
 
-## Interpretations
+## Expected Weight of Evidence
 
-We have just seen how we can motivate the relative entropy as the *information gain* when we move from
-one distribution to another.  Can we develop a better intuition for the actual value the KL takes?  
-
-### Coding
-
-Let's start with a coding perspective.  Imagine we have a simple 4-letter
-alphabet that we want to communicate over the wire. 
-If the four letter occurred with different probabilities:
-$p(A)=1/2, p(B)=1/4, p(C)=p(D)=1/8$, with an optimally designed <a
-href="https://en.wikipedia.org/wiki/Huffman_coding">Huffman Code</a> we could
-encode our letters with a variable length code: $A:0, B:10, C:110, D:111$, and
-on average we'd only be spending $1/2 + 2/4 + 3/8 + 3/8 = 7/4$ bits per letter.
-
-<figure>
-  <center>
-  <table>
-    <thead><th><th>A<th>B<th>C<th>D
-    <tr><td>$p$<td>1/2<td>1/4<td>1/8<td>1/8
-    <tr><td>p-code<td>0<td>10<td>110<td>111
-    <tr><td>$q$<td>1/4<td>1/4<td>1/4<td>1/4
-    <tr><td>q-code<td>00<td>01<td>10<td>11
-  </table>
-  <figcaption>
-    Table 2: A simple example of two different distributions over a 4 letter alphabet.
-  </figcaption>
-  </center>
-</figure>
-
-Imagine however we didn't know what the true distribution of letters were and instead
-designed an optimal code using a different distribution $q$.  If we believed
-each of the 4 letters were equally likely $(q(A)=q(B)=q(C)=q(D)=1/4)$, the optimal way to 
-encode messages would just assign a two bit code to each letter $(A : 00, B:01, C:10,
-D:11)$.  If we used this suboptimal code to send messages that were actually distributed
-as $p$ it would cost $2/2 + 2/4 + 2/8 + 2/8 = 2$ bits per letter.  Our incorrect
-belief leads to a $2 - 7/4 = 1/4$ of a bit inefficiency.  For these two distributions,
-it shouldn't come as a suprise that the information gain is precisely 1/4 bits:
-$$ I[p;q] = \sum_i p_i \log_2 \frac{p_i}{q_i} = 1/4 \textrm{ bits}. $$
-
-For an optimally designed code, the code lengths go as $-\log p(x)$ for any symbol $x$.
-Our information gain can be interpreted as a difference in expected code lengths under $p$:
-$$ I[p;q] = \mathbb{E}_p[ -\log q ] - \mathbb{E}_p[-\log p ]. $$
-The information gain $I[p;q]$ measures the *excess encoding cost* for trying to encode messages
-from $p$ using a code designed for $q$.
-
-### Expected Weight of Evidence
+Traditionally, KL is interpreted from a coding perspective, a view I've included in an appendix below,
+but here I offer a different perspective from the viewpoint of model selection.
 
 Above we saw that we can motivate Bayesian inference as choosing a posterior belief distribution
 that has the minimal information gain over our prior distribution of beliefs while being consistent
@@ -339,14 +305,14 @@ beliefs.  This last part, the <a href="https://en.wikipedia.org/wiki/Marginal_li
 is notoriously difficult to compute. In principle it is asking us to evaluate how likely
 the evidence would be from all possible models.  
 
-However, we can make further progress if we content ourselfs to not necessarily knowing the 
+However, we can make further progress if we content ourselves to not necessarily knowing the 
 absolute probability our model or beliefs are correct, but instead just its probability relative
 to some other model.  If we consider the ratio of two different models $P$ and $Q$ we have:
 $$ \frac{p(P|E)}{p(Q|E)} = \frac{p(E|P)}{p(E|Q)} \frac{p(P)}{p(Q)}. $$
 Notice that the marginal likelihoods cancel out.  This is saying that whatever prior relative odds for the two models
 being correct, if we compute the <a href="https://en.wikipedia.org/wiki/Bayes_factor"><i>Bayes factor</i></a> 
 $\left( \frac{p(E|P)}{p(E|Q)} \right)$, it tells us how the relative probabilities of the two beliefs should update
-inlight of the evidence. Taking a log on both sides:
+in light of the evidence. Taking a log on both sides:
 $$ \log \frac{p(P|E)}{p(Q|E)} = \log \frac{p(E|P)}{p(E|Q)} + \log \frac{p(P)}{p(Q)},$$
 turns this multiplicative factor into an additive one.
 
@@ -357,6 +323,9 @@ The log ratio of two probability distributions measures by how much you should u
 correct.  The KL divergence is just then the expected weight of evidence if we draw samples from $p(x)$ itself:
 $$ I[p;q] = \mathbb{E}_p\left[ \log \frac{p(x)}{q(x)} \right] = \mathbb{E}_p \left[ w[x; p,q] \right]$$
 
+So, one way to interpret the relative entropy is that if our data was actually coming from distribution $p$ and we had some other
+hypothesis $q$, the $I[p;q]$ measures on average how much we should believe $p$ over $q$ on each observation.  In order to make that
+statement more precise, we need a better language to talk about the magnitudes of these quantities.
 
 ## How loud is the Evidence?
 
@@ -386,23 +355,13 @@ to some reference or baseline power.  In the same way we could besides just meas
 measure the comparative difference between any two probabilities on the log scale:
 $$ 10 \log_{10} \frac{p(x)}{q(x)} \textrm{ dB}. $$
 
+In particular, we could get some feeling for these quantities by comparing the probability something happens to the 
+probability it doesn't.  Consider a simple binary outcome and taking $q=1-p$, in this case the weight of evidence
+that the thing happens versus it doesn't upon observing it happen once is:
+$$ 10 \log_{10} \frac{p}{1-p} \text{ dB}. $$
+This essentially gives us a new scale to measure probabilities on, instead of expressing probabilities as a number between 0 and 1,
+here we are computing the log *odds* of an event happening on the decibel scale.
 
-
-
-Secondly that it seems like 1 dB roughly corresponds the smallest detectable value that people
-notice in terms of a change in underlying distribution, being the difference between <i>even chance</i>
-and <i>moderate probability</i> or <i>better than even chance</i>.
-
-<aside id="quantifying"><sup>xx</sup> 
-  <a href="https://projecteuclid.org/euclid.ss/1177012242"><i>Quantifying Probabilistic Expressions</i> by
-  Frederick Mosteller and Cleo Youtz</a>.
-</aside>
-Additionally, $10 \textrm{ dB}$ corresponds to 10 to 1 odds, or 91% probability, which people associate
-with events being <i>almost certain</i> or happening <i>almost always</i>. <sup><a href="#quantifying">xx</a></sup>.
-
-We have the conversions:
-$$ 1 \textrm{ nat} = \frac{10}{\log 10} \textrm{ dB} = 4.34 \textrm{ dB} $$
-$$ 1 \textrm{ bit} = \frac{10}{\log_2 10} \textrm{ dB} = 3.01 \textrm{ dB} $$
 
 Below in Table 1 is a summary of the correspondence between decibans and odds or probabilities, and
 in Figure xx is a large visual representation you can play with.
@@ -424,7 +383,7 @@ in Figure xx is a large visual representation you can play with.
     <td><svg height="30" width="30" viewBox="0 0 20 20"> <circle r="10" cx="10" cy="10" fill="white" /> <circle r="5" cx="10" cy="10" fill="whitesmoke" id="progress-5" stroke="#1f77b4" stroke-width="10" stroke-dasharray="0.942 2.200" /></svg>
   <tr><td>6<td>3.98<td>4:1<td>80%
     <td><svg height="30" width="30" viewBox="0 0 20 20"> <circle r="10" cx="10" cy="10" fill="white" /> <circle r="5" cx="10" cy="10" fill="whitesmoke" id="progress-6" stroke="#1f77b4" stroke-width="10" stroke-dasharray="0.942 2.200" /></svg>
-  <tr><td>7<td>5.01<td>5:1<td>86%
+  <tr><td>7<td>5.01<td>5:1<td>83%
     <td><svg height="30" width="30" viewBox="0 0 20 20"> <circle r="10" cx="10" cy="10" fill="white" /> <circle r="5" cx="10" cy="10" fill="whitesmoke" id="progress-7" stroke="#1f77b4" stroke-width="10" stroke-dasharray="0.942 2.200" /></svg>
   <tr><td>8<td>6.31<td>6:1<td>86%
     <td><svg height="30" width="30" viewBox="0 0 20 20"> <circle r="10" cx="10" cy="10" fill="white" /> <circle r="5" cx="10" cy="10" fill="whitesmoke" id="progress-8" stroke="#1f77b4" stroke-width="10" stroke-dasharray="0.942 2.200" /></svg>
@@ -432,6 +391,12 @@ in Figure xx is a large visual representation you can play with.
     <td><svg height="30" width="30" viewBox="0 0 20 20"> <circle r="10" cx="10" cy="10" fill="white" /> <circle r="5" cx="10" cy="10" fill="whitesmoke" id="progress-9" stroke="#1f77b4" stroke-width="10" stroke-dasharray="0.942 2.200" /></svg>
   <tr><td>10<td>10<td>10:1<td>91%
     <td><svg height="30" width="30" viewBox="0 0 20 20"> <circle r="10" cx="10" cy="10" fill="white" /> <circle r="5" cx="10" cy="10" fill="whitesmoke" id="progress-10" stroke="#1f77b4" stroke-width="10" stroke-dasharray="0.942 2.200" /></svg>
+  <tr><td>11<td>12.6<td>25:2<td>92.6%
+    <td><svg height="30" width="30" viewBox="0 0 20 20"> <circle r="10" cx="10" cy="10" fill="white" /> <circle r="5" cx="10" cy="10" fill="whitesmoke" id="progress-11" stroke="#1f77b4" stroke-width="10" stroke-dasharray="0.942 2.200" /></svg>
+  <tr><td>12<td>15.8<td>16:1<td>94%
+    <td><svg height="30" width="30" viewBox="0 0 20 20"> <circle r="10" cx="10" cy="10" fill="white" /> <circle r="5" cx="10" cy="10" fill="whitesmoke" id="progress-12" stroke="#1f77b4" stroke-width="10" stroke-dasharray="0.942 2.200" /></svg>
+  <tr><td>13<td>20<td>20:1<td>95%
+    <td><svg height="30" width="30" viewBox="0 0 20 20"> <circle r="10" cx="10" cy="10" fill="white" /> <circle r="5" cx="10" cy="10" fill="whitesmoke" id="progress-13" stroke="#1f77b4" stroke-width="10" stroke-dasharray="0.942 2.200" /></svg>
 </table>
 </center>
   <figcaption>
@@ -441,7 +406,7 @@ in Figure xx is a large visual representation you can play with.
 
 <figure id="bigspin">
   <center>
-   <svg height="300" width="300" viewBox="-2 -2 25 25"> <circle r="10" cx="10" cy="10" fill="white" stroke="black" stroke-width=0.2 /> <circle r="5" cx="10" cy="10" fill="whitesmoke" id="progress-11" stroke="#1f77b4" stroke-width="10" stroke-dasharray="3.141 3.141" /></svg>
+   <svg height="300" width="300" viewBox="-2 -2 25 25"> <circle r="10" cx="10" cy="10" fill="white" stroke="black" stroke-width=0.2 /> <circle r="5" cx="10" cy="10" fill="whitesmoke" id="progress-100" stroke="#1f77b4" stroke-width="9.9" stroke-dasharray="3.141 3.141" /></svg>
    <br />
    <input value=0 type='number' style="width: 4em" id="percent" onchange="updatePercent();">
    <label for="percent">dB</label>
@@ -453,18 +418,112 @@ in Figure xx is a large visual representation you can play with.
   </center>
 </figure>
 
-A ban seems to correspond to the Kent's Estimative Probability of something being
-"almost certain".
+
+Another nice property of measuring evidence and probabilities in
+decibels is that it seems like 1 dB roughly corresponds the smallest detectable value that people
+notice in terms of a change in underlying distribution, being the difference between <i>even chance</i>
+and 5 to 4 odds, <i>moderate probability</i> or <i>better than even chance</i>.
+
+<aside id="quantifying"><sup>xx</sup> 
+  <a href="https://projecteuclid.org/euclid.ss/1177012242"><i>Quantifying Probabilistic Expressions</i> by
+  Frederick Mosteller and Cleo Youtz</a>.
+</aside>
+Additionally, $10 \textrm{ dB}$ corresponds to 10 to 1 odds, or 91% probability, which people associate
+with events being <i>almost certain</i> or happening <i>almost always</i>. <sup><a href="#quantifying">xx</a></sup>.
+
+The traditional statistical threshold for reported results is a <a href="https://en.wikipedia.org/wiki/P-value">p-value</a>
+of 0.05, which is often <a href="https://en.wikipedia.org/wiki/Misuse_of_p-values">misinterpreted</a>
+to mean that the probability the null hypothesis is less than
+5%.  While this isn't what the p-value measures, if we obtain more than 13 dB of evidence against some 
+null hypothesis, this does mean that the relative odds that it is correct have decreased by a factor of 20,
+taking us below 20 to 1 against if we started with even odds.
+
+We have the conversions:
+$$ 1 \textrm{ nat} = \frac{10}{\log 10} \textrm{ dB} = 4.34 \textrm{ dB} $$
+$$ 1 \textrm{ bit} = \frac{10}{\log_2 10} \textrm{ dB} = 3.01 \textrm{ dB} $$
 
 ## Examples and Magnitudes
 
+### Double headed Coin
+
+Let's say I have two coins in my pocket, the first is an ordinary unbiased coin, the second is doubled headed.
+I give you one of them and you start flipping the coin.  You get a heads, then another heads, then another.  How many
+heads would you need to see in a row until you're sure you've been given the doubled headed coin?  Let's
+work out the relative entropy between these two distributions.  On the one hand we have $p(H)=1, p(\overline H) =0$,
+and the other $q(H) = q(\overline H)= 0.5$.
+
+$$ I[p;q] = 10 \sum_i p_i \log_{10} \frac{p_i}{q_i} = -10 \log_{10} 2 = 3.01 \text{ dB} $$
+
+The relative entropy of a sure thing and a coin flip is 3 decibels.  This means that if we want to be more sure than 20 to 1
+that we have the doubled headed coin we'd need to observe 5 heads in a row, giving us 15 dB of evidence.
+
 ### Births
 
-### Brandeis Dice
+Perhaps the first hypothesis test to be resolved with modern statistics was the question of whether more male or female
+babies are born.  Using data from 1745 to 1770, Laplace found that in those 26 years, 251,527 boys and 241,945 girls were born.
+This gives a fraction of male births of $\sim 51\%$.
+Is this just a statistical fluke, or are boys more common than girls at birth?  What Laplace did was to analytically
+work out the Bayesian posterior distribution for the probability that a male baby was born using a uniform prior, obtaining
+a $\operatorname{Beta}(251528, 241946)$ distribution, for which the probability that the probability a male is born
+is less than or equal to $1/2$ is 
+$$ \int_0^{1/2} \mathrm dx \, \operatorname{Beta}(x; 251528, 241946) \sim 10^{-42}$$
+enough for Laplace to declare that he was *morally certain* that males
+are born more frequently than females.
 
-### MNIST
+Let's work out the weight of evidence in this case, let's say we were comparing two hypotheses, the first
+that males are born 51% of the time, and the second that they are born 50% of the time.  With Laplace's data, the
+total weight of evidence in this case is:
 
-## Whither Continuous Entropy
+$$ 2515270 \log_{10} \frac{0.51}{0.50} + 2419450 \log_{10} \frac{0.49}{0.50} = 404 \text{ dB} $$
+a whopping 400 decibels of evidence for males being born 51% of the time rather than 50%.  
+At the same time, I'm not sure most people are aware that males are born with a higher proportion and it doesn't
+seem to effect most people's lives.  Why is that?  Well, let's evaluate the relative entropy between
+a 51% Bernoulli and a 50% Bernoulli:
+$$ I = 5.1 \log_{10}\frac{0.51}{0.50} + 4.9 \log_{10} \frac{0.49}{0.50} = 8.7 \times 10^{-4} \text{ dB}. $$
+Notice that the relative entropy is quite small.  On average, if the true distribution was 51%, the evidence
+we accumulate on each observed birth is less than 8 *microbels*.  This means that on average in order to be reasonably
+sure that the 51% hypothesis is true, we'd have to observe $\sim \frac{13}{8.7 \times 10^{-4}} \sim 15,000$ births.
+This makes clear how with enough data we could both be very sure that males are born with a higher frequency
+than females, but at the same time this could have very little impact on our individual lives.
+
+### Likelihoods and Learning
+
+What we would really like to do is learn a model of some real life distribution.  If the true distribution of data is $p(x)$,
+and we have some kind of parametric model $q(x;\theta)$, we would like to set our model parameters $\theta$ so that
+we get as close as possible to the true distribution.  In other words, we want to minimize the relative entropy from
+the *real world* to our *model*:
+$$\min I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x;\theta)}. $$
+The biggest complication is that we don't actually know what the true distribution of the data is. We can however,
+sample data.  Luckily for us, as far as this as an objective for $\theta$ goes, we can treat the entropy of $p(x)$ as
+a constant.  This motivates the traditional maximum likelihood objective:
+$$ \max \int \mathrm dx \, \log q(x;\theta). $$
+<aside id="gpt3">
+  For instance, in the latest <a href="https://arxiv.org/abs/2005.14165">GPT-3</a> model trained by OpenAI,
+  was trained on less than half of the training set. (See Table 2.2 in the paper.) 
+</aside>
+If we had an infinite dataset, maximum likelihood is the same as minimizing the relative entropy between the real world and 
+our model.  Unfortunately, we don't often has infinite datasets.<sup><a href="#gpt3">xx</a></sup>
+On finite datasets, maximum likelihood can still be interpreted as minimizing a KL divergence, but now
+the KL divergence between the *empirical distribution* $\hat p(x) = \sum_i \delta(x - x_i) $
+and our model $q(x;\theta)$.
+
+Unfortunately, the cross entropy is no longer reparameterization invariant a
+point I elaborate in an appendix below, and so is difficult to interpret
+directly, but if we take the difference of any two cross entropies, we can
+still interpret that as the weight of evidence for one model with regards to
+the other.  Because of the lack of reparameterization independence, care must
+be taken to ensure that the likelihoods of the two models are evaluated using
+the same measure, but provided they are:
+
+$$ L_1 - L_2 = \mathbb{E}\left[ \log q_1(x) \right] - \mathbb{E}\left[ \log q_2(x) \right] = \mathbb{E}\left[ \log \frac{q_1(x)}{q_2(x)} \right] $$
+
+<aside id="mnist">
+  The entirety of which can fit in a <a href="https://twitter.com/alemi/status/1042658244609499137">tweet</a>.
+</aside>
+Given the size of tests sets we have for modern image datasets, this means that very small changes in likelihood can be 
+interpreted as large confidences in the superiorities of models.  Take for instance something as simple as binary static MNIST.<sup><a href="#mnist">xx</a></sup>  Here, with 10,000 test set images, a difference in likelihoods of 0.0013 dB or 0.0004 nats corresponds to 13 dB of evidence for the one model over the second.
+
+## Appendix A: Whither Continuous Entropy
 
 The relative entropy really is the proper way to define entropy.  For all
 of the things that Shannon got right, he flubbed a bit when he defined the
@@ -513,6 +572,48 @@ were to measure heights in meters it would be -1.3 bits! <sup><a href="#negative
 
 
 
+## Appendix B: Coding Interpretation
+
+The traditional interpretation offered for the KL is from the coding
+perspective.
+Imagine we have a simple 4-letter
+alphabet that we want to communicate over the wire. 
+If the four letter occurred with different probabilities:
+$p(A)=1/2, p(B)=1/4, p(C)=p(D)=1/8$, with an optimally designed <a
+href="https://en.wikipedia.org/wiki/Huffman_coding">Huffman Code</a> we could
+encode our letters with a variable length code: $A:0, B:10, C:110, D:111$, and
+on average we'd only be spending $1/2 + 2/4 + 3/8 + 3/8 = 7/4$ bits per letter.
+
+<figure>
+  <center>
+  <table>
+    <thead><th><th>A<th>B<th>C<th>D
+    <tr><td>$p$<td>1/2<td>1/4<td>1/8<td>1/8
+    <tr><td>p-code<td>0<td>10<td>110<td>111
+    <tr><td>$q$<td>1/4<td>1/4<td>1/4<td>1/4
+    <tr><td>q-code<td>00<td>01<td>10<td>11
+  </table>
+  <figcaption>
+    Table 2: A simple example of two different distributions over a 4 letter alphabet.
+  </figcaption>
+  </center>
+</figure>
+
+Imagine however we didn't know what the true distribution of letters were and instead
+designed an optimal code using a different distribution $q$.  If we believed
+each of the 4 letters were equally likely $(q(A)=q(B)=q(C)=q(D)=1/4)$, the optimal way to 
+encode messages would just assign a two bit code to each letter $(A : 00, B:01, C:10,
+D:11)$.  If we used this suboptimal code to send messages that were actually distributed
+as $p$ it would cost $2/2 + 2/4 + 2/8 + 2/8 = 2$ bits per letter.  Our incorrect
+belief leads to a $2 - 7/4 = 1/4$ of a bit inefficiency.  For these two distributions,
+it shouldn't come as a surprise that the information gain is precisely 1/4 bits:
+$$ I[p;q] = \sum_i p_i \log_2 \frac{p_i}{q_i} = 1/4 \textrm{ bits}. $$
+
+For an optimally designed code, the code lengths go as $-\log p(x)$ for any symbol $x$.
+Our information gain can be interpreted as a difference in expected code lengths under $p$:
+$$ I[p;q] = \mathbb{E}_p[ -\log q ] - \mathbb{E}_p[-\log p ]. $$
+The information gain $I[p;q]$ measures the *excess encoding cost* for trying to encode messages
+from $p$ using a code designed for $q$.
 
 
 
@@ -535,20 +636,20 @@ function fraction(i, db) {
   progress.style.strokeDasharray = val;
 }
 
-for (let i = 0; i <= 10; i++) {
+for (let i = 0; i <= 13; i++) {
   fraction(i,i);
 }
 
 function updateSlider() {
   let value = document.getElementById("slider").value;
-  fraction(11, value);
+  fraction(100, value);
   document.getElementById("percent").value = value;
 }
 
 function updatePercent() {
   let value = document.getElementById("percent").value;
   document.getElementById("slider").value = value;
-  fraction(11, value);
+  fraction(100, value);
 }
 </script>
 
