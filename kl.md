@@ -135,7 +135,7 @@ $$
 See <a href="https://link.springer.com/article/10.1007/BF01106578">
 <b>A New Theorem of Information Theory</b> by Arthur Hobson
 </a> for a complete proof,
-but here I'll offer a more colloquial argument that one
+but here I'll offer a more colloquial argument like the one
 given by Ariel Caticha.<sup><a href="#caticha">5</a></sup>  
 
 <aside> <sup id="caticha">5</sup>
