@@ -15,12 +15,16 @@ what KL is, why its interesting, where it comes from and what its good for.
 
 ## Information Gain
 
+Let's see if we can motivate the form of the KL axiomatically.
+
 Imagine we have some prior set of beliefs summarized as a probability distribution $q$. 
 In light of some kind of evidence, we update our beliefs to a new distribution $p$.
 How *much* did we update our beliefs?  How do we quantify
 the *magnitude* of that update?  What are some properties we might want this 
 hypothetical function to have?  Let $I[p; q]$ denote the function that measures
-the information required for the move from beliefs $q$ to $p$. <sup><a href="#hobson">1</a></sup>
+how much we moved beliefs when we switch from beliefs $q$ to beliefs $p$.  We'll
+call this amount of update the *information gain* when we move from $q$ to $p$.
+<sup><a href="#hobson">1</a></sup>
 
 
 <aside> <sup id="hobson">1</sup> 
@@ -33,7 +37,7 @@ the information required for the move from beliefs $q$ to $p$. <sup><a href="#ho
 We want our information function to satisfy the following properties:
   
   1. It's **continuous**.  A small change in the distributions makes a small change in the amount of information in the move.
-  2. It's permutation or **reparameterization independent**.  It doesn't matter if we change the units we've specified our distributions in or if we relabel the sides of our dice.
+  2. It's permutation or **reparameterization independent**.  It doesn't matter if we change the units we've specified our distributions in or if we relabel the sides of our dice, the answer shouldn't change.
   3. We want it to be **non-negative** and have the value $I = 0$ if and only if $p = q$.  If $p=q$ we haven't updated our beliefs and so have no information gain.
   4. We want it to be **monotonic** in a natural sense.  If we, for instance start with some uniform distribution over the 24 people in a game of [Guess Who?](https://en.wikipedia.org/wiki/Guess_Who%3F) and then update to only 5 remaining suspects, $I$ should be larger than if there were still 12 remaining suspects.
   5. Finally we want our information function to **decompose** in a natural and **linear** way.<sup><a href="#renyi">2</a></sup> In particular, we want to be able to relate the information between two joint distributions in terms of the information between its marginal and conditional distributions.
@@ -66,7 +70,7 @@ and fully specifying our set of beliefs requires 3 independent probabilities.
   See for instance the RDT Cellex Inc. <a href="https://www.centerforhealthsecurity.org/resources/COVID-19/serology/Serology-based-tests-for-COVID-19.html">SARS-COV-2 Test</a>.
 </aside>
 
-What our our prior beliefs?
+What are our prior beliefs?
 Let's imagine while we are concerned we might have had the disease, but if we are being honest, 
 we almost certainly didn't,<sup><a href="#kent">3</a></sup>
 so we'll put our prior belief in having had the disease at 7%. $(q(D) = 0.07)$.
@@ -98,7 +102,7 @@ distribution $q(\mathcal{D},\mathcal{T})$, in the one on the left there are esse
 $(q(\mathcal{D}), q(\mathcal{T}|D), q(\mathcal{T}| \overline D))$ and we want
 some sort of *structural* consistency between the two sides:
 $$
-I[p(\mathcal{D}\mathcal{T}); q(\mathcal{D}\mathcal{T})] \quad \textrm{versus} \quad
+I[p(\mathcal{D},\mathcal{T}); q(\mathcal{D}\mathcal{T})] \quad \textrm{versus} \quad
 I[p(\mathcal{D}); q(\mathcal{D})], I[p(\mathcal{T}|D); q(\mathcal{T}|D)],
 I[p(\mathcal{T}|\overline D), q(\mathcal{T}|\overline D)] . 
 $$
@@ -107,7 +111,7 @@ The consistency we will require is that our information measure decomposes linea
 these two different descriptions. The information between the joints should be a weighted 
 linear combination of the informations of three constituent distributions.
 In this particular case we will require:
-$$ I[p(\mathcal{D}\mathcal{T}); q(\mathcal{D}\mathcal{T})] =  I[p(\mathcal{D}); q(\mathcal{D})] + p(D) I[p(\mathcal{T}|D); q(\mathcal{T}|D)] + p(\overline D) I[p(\mathcal{T}|\overline D), q(\mathcal{T}|\overline D)] .
+$$ I[p(\mathcal{D},\mathcal{T}); q(\mathcal{D},\mathcal{T})] =  I[p(\mathcal{D}); q(\mathcal{D})] + p(D) I[p(\mathcal{T}|D); q(\mathcal{T}|D)] + p(\overline D) I[p(\mathcal{T}|\overline D), q(\mathcal{T}|\overline D)] .
 $$
 In words: The information in the full joint update is the information update for
 your belief in whether or not you had the disease $(q(\mathcal D))$ *plus* the informations
@@ -212,7 +216,7 @@ Returning to our disease testing example, let's say you get the test done and re
 positive result $(\mathcal T = T)$.
 What should your new distribution of beliefs be? Well, first off if we've observed the results of the test
 we should probably have our updated beliefs reflect the observation we made, making it consistent with our
-observation, setting $p(T) = 1$, but this doesn't fully specify $p$ we need two more numbers.  How should
+observation, setting $p(T) = 1$, but this doesn't fully specify $p$; we need two more numbers.  How should
 we set those?
 
 Why don't we aim to be conservative and try to find the new set of beliefs
@@ -220,13 +224,15 @@ that are as close as possible to our prior beliefs while still being consistent 
 observation that we've made.  
 Namely, let's look now for a joint distribution $p(\mathcal T, \mathcal D)$ 
 that is as close as possible to $q(\mathcal T, \mathcal D)$ but for which we have that $p(T)=1$.
+$$ \DeclareMathOperator{\argmin}{arg\,min} $$
+$$ \argmin_{p(\mathcal D, \mathcal T)} I[p(\mathcal D, \mathcal T); q(\mathcal D, \mathcal T)] \quad \text{ s.t. }\quad p(T) = 1 $$
 Now that we know
 how to measure how much information is gained in updating our beliefs, we will
 find the $p$ that minimizes this update while still being true to the observation we made.
 Writing $p(\mathcal D,\mathcal T) = p(\mathcal T)p(\mathcal D|\mathcal T)$ 
 and using our linear decomposition rule from above (the other way around), we have:
 $$ I[p(\mathcal D,\mathcal T); q(\mathcal D,\mathcal T)] = I[p(\mathcal T);q(\mathcal T)] + I[p(\mathcal D|T);q(\mathcal D|T)]. $$
-Because we've decided to peg $p(T)=1$ in order to be consistent with our 
+Because we've decided to fix $p(T)=1$ in order to be consistent with our 
 observation, the way to minimize the information between the joints is to set $p(\mathcal D|T)=q(\mathcal D|T)$ so
 that our second term vanishes, in this particular case this means:
 $$ p(T)=1 $$ 
@@ -652,7 +658,6 @@ function updatePercent() {
   fraction(100, value);
 }
 </script>
-
 
 
 
