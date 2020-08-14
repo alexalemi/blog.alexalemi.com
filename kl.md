@@ -4,14 +4,14 @@ divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence),
 or KL divergence, or relative entropy, or relative information, or information
 gain, or expected weight of evidence, or information divergence 
 (it goes by a lot of different names) is unique
-amongst the ways to measure the difference between two probability
+among the ways to measure the difference between two probability
 distributions.  It holds a special and privileged place, being used to define
 all of the core concepts in information theory, such as mutual information.
 
 Why is the relative information so special and where does it come from? 
 How should you interpret it? What is a nat anyway?  In this
 note, I'll try to give a better understanding and set of intuitions about
-what KL is, why its interesting, where it comes from and what its good for.
+what KL is, why it's interesting, where it comes from and what its good for.
 
 ## Information Gain
 
@@ -40,7 +40,7 @@ We want our information function to satisfy the following properties:
   2. It's permutation or **reparameterization independent**.  It doesn't matter if we change the units we've specified our distributions in or if we relabel the sides of our dice, the answer shouldn't change.
   3. We want it to be **non-negative** and have the value $I = 0$ if and only if $p = q$.  If $p=q$ we haven't updated our beliefs and so have no information gain.
   4. We want it to be **monotonic** in a natural sense.  If we, for instance start with some uniform distribution over the 24 people in a game of [Guess Who?](https://en.wikipedia.org/wiki/Guess_Who%3F) and then update to only 5 remaining suspects, $I$ should be larger than if there were still 12 remaining suspects.
-  5. Finally we want our information function to **decompose** in a natural and **linear** way.<sup><a href="#renyi">2</a></sup> In particular, we want to be able to relate the information between two joint distributions in terms of the information between its marginal and conditional distributions.
+  5. Finally we want our information function to **decompose** in a natural and **linear** way.<sup><a href="#renyi">2</a></sup> In particular, we want to be able to relate the information between two joint distributions in terms of the information between their marginal and conditional distributions.
 
 <aside> <sup id="renyi">2</sup>
   If one relaxes the requirement for linear decomposition and instead just requires that our information
@@ -102,7 +102,7 @@ distribution $q(\mathcal{D},\mathcal{T})$, in the one on the left there are esse
 $(q(\mathcal{D}), q(\mathcal{T}|D), q(\mathcal{T}| \overline D))$ and we want
 some sort of *structural* consistency between the two sides:
 $$
-I[p(\mathcal{D},\mathcal{T}); q(\mathcal{D}\mathcal{T})] \quad \textrm{versus} \quad
+I[p(\mathcal{D},\mathcal{T}); q(\mathcal{D},\mathcal{T})] \quad \textrm{versus} \quad
 I[p(\mathcal{D}); q(\mathcal{D})], I[p(\mathcal{T}|D); q(\mathcal{T}|D)],
 I[p(\mathcal{T}|\overline D), q(\mathcal{T}|\overline D)] . 
 $$
@@ -234,7 +234,7 @@ and using our linear decomposition rule from above (the other way around), we ha
 $$ I[p(\mathcal D,\mathcal T); q(\mathcal D,\mathcal T)] = I[p(\mathcal T);q(\mathcal T)] + I[p(\mathcal D|T);q(\mathcal D|T)]. $$
 Because we've decided to fix $p(T)=1$ in order to be consistent with our 
 observation, the way to minimize the information between the joints is to set $p(\mathcal D|T)=q(\mathcal D|T)$ so
-that our second term vanishes, in this particular case this means:
+that our second term vanishes. In this particular case this means:
 $$ p(T)=1 $$ 
 $$ p(D|T) = q(D|T) = \frac{q(T|D)q(D)}{q(T|D)q(D) + q(T|\overline D)q(\overline D)} = 0.616 $$
 
@@ -300,12 +300,12 @@ with our observations.  This guides us towards forming better belief distributio
 just have two different belief distributions and wish to decide between them? 
 
 Really what we want to know is what is the probability that our beliefs are correct in light of evidence?
-Symbolically you might write this as $p(P|E)$ where $P$ is some belief distribution $P$ and $E$ is some
+Symbolically you might write this as $p(P|E)$ where $P$ is some belief distribution and $E$ is some
 evidence, data or observations. If we run Bayes Theorem we can see that:
 $$ p(P|E) = \frac{p(E|P) p(P)}{p(E)}. $$
 We can update our belief in our beliefs being correct by setting our updated
-weight in the belief $p(P|E)$ to be proportional to our initial weight $p(E)$ times
-the *likelihood* that the evidence we observed would have been generated if our belief was true $(p(E|P))$.
+weight in the belief $p(P|E)$ to be proportional to our initial weight $p(P)$ times
+the *likelihood* that the evidence we observed would have been generated if our belief was true $(p(E|P))$.  The probability of the evidence given the belief $P$ is just the likelihood $P(E)$.
 Proportional because we would need to know how likely the evidence would be $p(E)$ amongst all possible
 beliefs.  This last part, the <a href="https://en.wikipedia.org/wiki/Marginal_likelihood"><i>marginal likelihood</i></a>
 is notoriously difficult to compute. In principle it is asking us to evaluate how likely
@@ -365,7 +365,8 @@ In particular, we could get some feeling for these quantities by comparing the p
 probability it doesn't.  Consider a simple binary outcome and taking $q=1-p$, in this case the weight of evidence
 that the thing happens versus it doesn't upon observing it happen once is:
 $$ 10 \log_{10} \frac{p}{1-p} \text{ dB}. $$
-This essentially gives us a new scale to measure probabilities on, instead of expressing probabilities as a number between 0 and 1,
+This essentially gives us a new scale to measure probabilities on. 
+Instead of expressing probabilities as a number between 0 and 1,
 here we are computing the log *odds* of an event happening on the decibel scale.
 
 
@@ -504,11 +505,11 @@ sample data.  Luckily for us, as far as this as an objective for $\theta$ goes, 
 a constant.  This motivates the traditional maximum likelihood objective:
 $$ \max \int \mathrm dx \, \log q(x;\theta). $$
 <aside id="gpt3"><sup>10</sup>
-  For instance, in the latest <a href="https://arxiv.org/abs/2005.14165">GPT-3</a> model trained by OpenAI,
+  For instance, the latest <a href="https://arxiv.org/abs/2005.14165">GPT-3</a> model trained by OpenAI,
   was trained on less than half of the training set. (See Table 2.2 in the paper.) 
 </aside>
 If we had an infinite dataset, maximum likelihood is the same as minimizing the relative entropy between the real world and 
-our model.  Unfortunately, we don't often has infinite datasets.<sup><a href="#gpt3">10</a></sup>
+our model.  Unfortunately, we don't often have infinite datasets.<sup><a href="#gpt3">10</a></sup>
 On finite datasets, maximum likelihood can still be interpreted as minimizing a KL divergence, but now
 the KL divergence between the *empirical distribution* $\hat p(x) = \sum_i \delta(x - x_i) $
 and our model $q(x;\theta)$.
@@ -526,7 +527,7 @@ $$ L_1 - L_2 = \mathbb{E}\left[ \log q_1(x) \right] - \mathbb{E}\left[ \log q_2(
 <aside id="mnist"><sup>11</sup>
   The entirety of which can fit in a <a href="https://twitter.com/alemi/status/1042658244609499137">tweet</a>.
 </aside>
-Given the size of tests sets we have for modern image datasets, this means that very small changes in likelihood can be 
+Given the size of test sets we have for modern image datasets, this means that very small changes in likelihood can be 
 interpreted as large confidences in the superiorities of models.  Take for instance something as simple as binary static MNIST.<sup><a href="#mnist">11</a></sup>  Here, with 10,000 test set images, a difference in likelihoods of 0.0013 dB or 0.0004 nats corresponds to 13 dB of evidence for the one model over the second.
 
 ## Appendix A: Whither Continuous Entropy
@@ -584,7 +585,7 @@ The traditional interpretation offered for the KL is from the coding
 perspective.
 Imagine we have a simple 4-letter
 alphabet that we want to communicate over the wire. 
-If the four letter occurred with different probabilities:
+If the four letters occurred with different probabilities:
 $p(A)=1/2, p(B)=1/4, p(C)=p(D)=1/8$, with an optimally designed <a
 href="https://en.wikipedia.org/wiki/Huffman_coding">Huffman Code</a> we could
 encode our letters with a variable length code: $A:0, B:10, C:110, D:111$, and
@@ -605,7 +606,7 @@ on average we'd only be spending $1/2 + 2/4 + 3/8 + 3/8 = 7/4$ bits per letter.
   </center>
 </figure>
 
-Imagine however we didn't know what the true distribution of letters were and instead
+Imagine however we didn't know what the true distribution of letters was and instead
 designed an optimal code using a different distribution $q$.  If we believed
 each of the 4 letters were equally likely $(q(A)=q(B)=q(C)=q(D)=1/4)$, the optimal way to 
 encode messages would just assign a two bit code to each letter $(A : 00, B:01, C:10,
