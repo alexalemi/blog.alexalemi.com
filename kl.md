@@ -566,7 +566,7 @@ of adult human heights: <sup><a href="#bimodal">12</a></sup>
 
 If you measure the continuous entropy of this distribution measured
 in centimeters you get 5.4 bits.  If you instead measure the entropy
-of the same distribution in feet you get 4 bits.  If you instead
+of the same distribution in feet you get 0.43 bits.  If you instead
 were to measure heights in meters it would be -1.3 bits! <sup><a href="#negative">14</a></sup>
 
 <aside> <sup id="negative">14</sup>
