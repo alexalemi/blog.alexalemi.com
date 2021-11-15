@@ -1,8 +1,26 @@
 [
     {
+      "title": "Diffusion from a Rate Distortion Perspective",
+      "src": "diffusion.md",
+      "date": "2021-10-25",
+      "tags": ["machine learning"],
+      "id": "diffusion",
+      "description": "Taking a look at diffusion from an information theoretic and rate distortion perspective.",
+      "hidden": true
+    },
+    {
+      "title": "Blogging",
+      "src": "blogging.md",
+      "date": "2021-11-15",
+      "tags": ["general"],
+      "id": "blogging",
+      "description": "I miss blogging and reading other researchers blogs."
+    },
+    {
       "title": "Why KL?",
       "src": "kl.md",
       "date": "2020-08-07",
+      "tags": ["machine learning", "information theory"],
       "id": "why-kl",
       "description": "Why is the KL divergence so special?",
       "featured": true

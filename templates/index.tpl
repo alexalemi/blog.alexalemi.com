@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>blog.alexalemi.com</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153903138-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5SW43T5NT"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'UA-153903138-1');
+    gtag('config', 'G-F5SW43T5NT');
     </script>
 
     <!-- RSS Feed -->
@@ -84,6 +84,7 @@
     <!-- Bio and stuff -->
     <main>
       <p>Some of <a href="https://alexalemi.com">my</a> thoughts...</p>
+      <p>If you have feedback, please reach out on <a href="https://twitter.com/alemi">twitter</a> or have a discussion on <a href="https://github.com/alexalemi/blog.alexalemi.com/discussions">github</a>.
     </main>
 
     <!--- Writings section --->
