@@ -6,7 +6,18 @@
       "tags": ["machine learning"],
       "id": "diffusion",
       "description": "Taking a look at diffusion from an information theoretic and rate distortion perspective.",
-      "hidden": true
+      "hidden": true,
+      "draft": true
+    },
+    {
+      "title": "Earth's gravitational field",
+      "src": "gravity.md",
+      "date": "2021-11-16",
+      "tags": ["physics"],
+      "id": "gravity",
+      "description": "Taking a closer look at the earths gravitational field.",
+      "hidden": true,
+      "draft": true
     },
     {
       "title": "Blogging",
