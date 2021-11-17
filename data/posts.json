@@ -20,6 +20,15 @@
       "draft": true
     },
     {
+      "title": "Bayes as Efficient Beliefs",
+      "src": "efficient-beliefs.md",
+      "date": "2021-10-25",
+      "tags": ["machine learning"],
+      "id": "efficient-beliefs",
+      "description": "I like to think about Bayesian inference as holding efficient beliefs.",
+      "draft": true
+    },
+    {
       "title": "Blogging",
       "src": "blogging.md",
       "date": "2021-11-15",
