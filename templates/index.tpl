@@ -90,7 +90,7 @@
     <!--- Writings section --->
     <div class="listing">
       {% for a in posts %}
-        {% if not a.hidden %}
+        {% if not a.hidden and not a.draft %}
           <article>
            <cite><a href="{{ a.src.replace('.md', '.html') }}">{{ a.title }}</a></cite>
            <p>
