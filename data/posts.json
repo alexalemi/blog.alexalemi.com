@@ -1,5 +1,13 @@
 [
     {
+      "title": "A Simple Demonstrations of Benford's Law",
+      "src": "benford.md",
+      "date": "2022-05-03",
+      "tags": ["math"],
+      "id": "benford",
+      "description": "Benford's law is a natural consequence of scale invariance, this is relatively easy to see in the face of a circular sliderule."
+    },
+    {
       "title": "Diffusion from a Rate Distortion Perspective",
       "src": "diffusion.md",
       "date": "2021-10-25",

@@ -1,0 +1,75 @@
+
+[Benford's Law](https://en.wikipedia.org/wiki/Benford%27s_law) is the
+observation that in a list of "naturally occuring numbers",
+the plurality of numbers will begin with a 1.
+This often catches people by surprise, but if you go and pull random numbers from a book or newspaper you can expect the leading digits to follow the following distribution:
+
+
+<figure id="#benford" class="right">
+  <center>
+  <img width="95%" src="figures/benford-distribution.svg"
+    alt="Benford's distribution.">
+  <figcaption>
+  Figure 1. The distribution of leading digits in naturall occuring numbers.
+  </figcaption>
+  </center>
+</figure>
+
+Nearly a third of all naturally occuring numbers begin with a 1.  Why?
+Perhaps the simplest way to see this is to realize that if there is going to be some kind of distribution for naturally occuring numbers, that distribution ought to be reparameterization independent.  It shouldn't matter whether we use English or metric units.  If there is going to be a universal leading digit distribution, its gotta be invariant to a change of units.  Changing units is accomplished via multiplication, so whatever the universal distribution of leading digits is, it needs to be invariant to multiplication.
+
+## See it
+
+Perhaps the easiest way to *see* Benford's law is to look at a Circular [slide rule](https://en.wikipedia.org/wiki/Slide_rule):<sup><a href="#kl-1">1</a></sup>
+<figure id="#circular-slide-rule" class="right">
+  <center>
+  <img width="95%" src="figures/circular-slide-rule.jpg"
+    alt="Circular slide rule.">
+  <figcaption>
+  Figure 2. An old soviet circular slide rule.  The inner dial is the main dial.  Notice that the digits follow Benford's law.
+  </figcaption>
+  </center>
+</figure>
+
+<aside> <sup id="kl-1">1</sup>
+This is a picture of one of my <a href="https://collection.maas.museum/object/383283">Soviet KL-1 circular slide rules</a>, which I'll release in the public domain under <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>. You can see a demo of how to use these slide rules <a href="https://www.youtube.com/watch?v=Kuzdjy3HpWg">here</a>.
+</aside>
+
+If you look at the inner dial, you'll notice that the digits are spaced just like our Benford's law distribution was in Figure 1.  This is not an accident.  Slide rules work by physically manifesting multiplication as a sort of addition.  On this circular slide rule, if you add the angle a number appears at on the inner dial to the angle some other number appears at, the resulting angle will point to their product.  Since slide rules only track the significand,<sup><a href="#significand">2</a></sup> circular slide rules cleverly wrap around.<sup><a href="#sliderule">3</a></sup>
+
+<aside> <sup id="significand">2</sup>
+The <a href="https://en.wikipedia.org/wiki/Significand"><em>significand</em></a> is the front part of a number when written in scientific notation, that is its the significant digits expressed as a number between 1 and 10.  For example, the significand of 2342.1231 is 2.3421231, the significand of 0.00234 is 2.34.  You simply move the decimal point to be just to the right of the first non-zero digit.
+As a formula its $\frac{|x|}{10^{\lfloor \log_{10} |x| \rfloor}}$.
+</aside>
+
+<aside> <sup id="#sliderule">3</sup>
+If you want to play with a circular sliderule yourself, you can try <a href="https://alexalemi.com/random/sliderule.html">this one I built</a>.
+</aside>
+
+Whatever the universal leading digit distribution is, or more specifically whatever the universal distribution of significands is, provided one exists, it would have to be invariant to any multiplication.  It would have to be invariant to the addition of any random angle on the circular slide rule, i.e. it would have to be circularly symmetric, i.e. it would have to uniform on the slide rule dial.
+
+This thought process is enough to give us the distribution in Benford's law.  The digits on the circular slide rule are located so that,
+$$ \theta(x) = 2 \pi \log_{10} x, $$
+for the numbers from 1 to 10.  This ensures that 1 is at $\theta=0$ and $10$ is at $\theta = 2\pi$.  It also ensures that if we try to locate the angle of a product of numbers $x$ and $y$, we can do so by simply adding their angles:<sup><a href="#theory">4</a></sup>
+$$ \theta(x y) = 2\pi \log_{10}( x y ) = 2 \pi \log_{10} x + 2 \pi \log_{10} y = \theta(x) + \theta(y). $$
+<aside> <sup id="#theory">4</sup>
+This is all there really is to how slide rules work, they turn multiplication into addition.  Addition is something easy to do with linear or circular rules: you <em>add</em> distances or angles by simply <em>sticking them next to each other</em>. $\log (xy) = \log x + \log y$.  We have the benefit of hindsight and knowledge of logarithms, though this idea, the desire to have a function that would enable turning multiplication into a simple sort of sticking together was was lead <a href="https://en.wikipedia.org/wiki/John_Napier">John Napier</a> to the logarithm function in the first place! If you want to learn more about slide rules, I recommend <a href="https://www.sliderulemuseum.com/Manuals/M220_AnEasyIntroductionToTheSlideRule_IsaacAsimov_1965.pdf">Asimov's book</a>.
+</aside>
+Knowing how the digits are arranged, we can easily determine the fraction of the circle allotted to each one:
+$$ f(d) = \log_{10}(d+1) - \log_{10}(d) = \log_{10}\left( 1 - \frac{1}{d} \right). $$
+This is the formula you'll see <a href="https://en.wikipedia.org/wiki/Benford\%27s_law">elsewhere</a>.  Most of the discussion surrounding Benford's law focusses on the first digit alone, but our visual argument also suggests that we can easily determine the distribution for significands themselves, not just the first digit.  For instance, looking at the sliderule, we can see that its nearly as likely that a number should have "10" as its first <em>two</em> digits<sup><a href="#1.1">5</a></sup> as it is that we'd find a naturally occuring number beginning with a 9.
+<aside> <sup id="#1.1">5</sup>
+Specifically that the significand should be between 1.0 and 1.1.
+</aside>
+
+We've already said that with a random multiplication being like a random spin of the circular slide rule pointer, the universal distribution of significands should just be uniform on the slide rule.  Performing a change of basis, if we know the distribution $p(\theta)$ of angles along the circle is uniform, we can work out the distribution $p(x)$ of significands by requiring we conserve all of the probability mass:
+$$ p(\theta) \, d\theta &= p(x) \, dx $$
+combined with what we already know as the relationship between our significands and their angles: $\theta = 2\pi \log_{10} x$. This allows us to transform the uniform distribution of angles $p(\theta) = \frac{1}{2\pi}$ into:
+$$ p(x) = \frac{1}{x \log 10 }. $$
+We've recovered a nice [power law](https://en.wikipedia.org/wiki/Power_law) or "scale-free" distribution for the significands, something we could have guessed or worked out from our requirement that the distribution be invariant to scale.
+
+We may have just gone around in a circle,<sup><a href="#pun">6</a></sup> but I hope you agree that there is something very visceral about seeing Benford's law play out on the face of the circular sliderule.
+<aside> <sup id="#pun">6</sup>
+Pun very much intended.
+</aside>
+
