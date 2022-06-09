@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name='viewport'
+      content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <title>blog.alexalemi.com Model Selection, the three families</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5SW43T5NT"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-F5SW43T5NT');
+    </script>
+
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml" />
+
+    <!-- Fonts -->
+    <script type="text/javascript">
+        WebFontConfig = {
+            google: { families: [ 'Muli', 'Lato' ] }
+        };
+        (function() {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+
+    <!-- Inline CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/style.css"/>
+
+    <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        processEscapes: true
+      }};
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+
+
+  <header>
+    <h3>Alex Alemi's Blog</h3>
+    <nav>
+      <a href='https://blog.alexalemi.com' />Index</a> |
+      <a href='https://alexalemi.com' />About Me</a> | 
+      <a rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml" />RSS</a>
+    </nav>
+  </header>
+
+  <article>
+    <header>
+      <h1>Model Selection, the three families<h1>
+      <p>Alexander A. Alemi. <time datetime='2022-06-08'>2022-06-08</time></p>
+    </header>
+    <div class="content">
+    <p>How do we choose between hypotheses?</p>
+<p>The way I see it there are broadly three different families of model selection criterion, there are those that focus on prediction, those that focus on correctness and those that strike a balance between the two.</p>
+<h2>Prediction</h2>
+<p>A lot of the time the only thing we really care about is how well our model can make future predictions.  If the true data distribution is some $\nu(x)$ and we have a model $p(x)$ a <a href="kl.html">very natural way</a> to score the effectiveness of the model is to measure the KL divergence between the two.</p>
+<p>$$ \int dx\, \nu(x) \log \frac{\nu(x)}{p(x)} $$</p>
+<p>AIC, WAIC, Cross validation, all that.</p>
+<h2>Correctness</h2>
+<p>BIC, marginal likelihood, free energy, all that.</p>
+<h2>In between</h2>
+<p>MDL, ELBO, things like that.</p>
+<h2>Final word?</h2>
+ 
+    </div>
+  </article>
+
+  <script src="https://giscus.app/client.js"
+        data-repo="alexalemi/blog.alexalemi.com"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkyNjk2OTU4MzU="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOEBM7W84B_4Ke"
+        data-mapping="pathname"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+  </script>
+
+  <footer>
+    <!-- <p>
+    &copy; 2020 Alexander A. Alemi
+    </p>
+    -->
+  </footer>
+
+
+
+</body>
+</html>

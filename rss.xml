@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Tue, 03 May 2022 23:29:58 +0000</lastBuildDate><item><title>Why KL?</title><link>https://blog.alexalemi.com/kl.html</link><description>Why is the KL divergence so special?</description><content:encoded>&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Liebler
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Wed, 08 Jun 2022 15:17:58 +0000</lastBuildDate><item><title>Why KL?</title><link>https://blog.alexalemi.com/kl.html</link><description>Why is the KL divergence so special?</description><content:encoded>&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Liebler
 divergence&lt;/a&gt;,
 or KL divergence, or relative entropy, or relative information, or information
 gain, or expected weight of evidence, or information divergence
@@ -592,10 +592,10 @@ This often catches people by surprise, but if you go and pull random numbers fro
   &lt;/figcaption&gt;
   &lt;/center&gt;
 &lt;/figure&gt;
-&lt;p&gt;Nearly a third of all naturally occuring numbers begin with a 1.  Why is this?
+&lt;p&gt;Nearly a third of all naturally occuring numbers begin with a 1.  Why?
 Perhaps the simplest way to see this is to realize that if there is going to be some kind of distribution for naturally occuring numbers, that distribution ought to be reparameterization independent.  It shouldn't matter whether we use English or metric units.  If there is going to be a universal leading digit distribution, its gotta be invariant to a change of units.  Changing units is accomplished via multiplication, so whatever the universal distribution of leading digits is, it needs to be invariant to multiplication.&lt;/p&gt;
 &lt;h2&gt;See it&lt;/h2&gt;
-&lt;p&gt;Perhaps the easiest way to &lt;em&gt;see&lt;/em&gt; Benford's law is to look at a Circular &lt;a href="https://en.wikipedia.org/wiki/Slide_rule"&gt;slide rule&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;Perhaps the easiest way to &lt;em&gt;see&lt;/em&gt; Benford's law is to look at a Circular &lt;a href="https://en.wikipedia.org/wiki/Slide_rule"&gt;slide rule&lt;/a&gt;:&lt;sup&gt;&lt;a href="#kl-1"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;figure id="#circular-slide-rule" class="right"&gt;
   &lt;center&gt;
   &lt;img width="95%" src="figures/circular-slide-rule.jpg"
@@ -605,30 +605,38 @@ Perhaps the simplest way to see this is to realize that if there is going to be 
   &lt;/figcaption&gt;
   &lt;/center&gt;
 &lt;/figure&gt;
-If you look at the inner dial, you'll notice that the digits are spaced just like our Benford's law distribution was in Figure 1.  This is not an accident.  Slide rules work by physically manifesting multiplication as a sort of addition.  On this circular slide rule, if you add the angle a number appears at on the inner dial to the angle some other number appears at, the resulting angle will point to their product.  Since slide rules only track the significand,&lt;sup&gt;&lt;a href="#significand"&gt;1&lt;/a&gt;&lt;/sup&gt; circular slide rules cleverly wrap around.&lt;sup&gt;&lt;a href="#sliderule"&gt;2&lt;/a&gt;&lt;/sup&gt;
-&lt;aside&gt; &lt;sup id="significand"&gt;1&lt;/sup&gt;
+&lt;aside&gt; &lt;sup id="kl-1"&gt;1&lt;/sup&gt;
+This is a picture of one of my &lt;a href="https://collection.maas.museum/object/383283"&gt;Soviet KL-1 circular slide rules&lt;/a&gt;, which I'll release in the public domain under &lt;a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en"&gt;CC0&lt;/a&gt;. You can see a demo of how to use these slide rules &lt;a href="https://www.youtube.com/watch?v=Kuzdjy3HpWg"&gt;here&lt;/a&gt;.
+&lt;/aside&gt;
+&lt;p&gt;If you look at the inner dial, you'll notice that the digits are spaced just like our Benford's law distribution was in Figure 1.  This is not an accident.  Slide rules work by physically manifesting multiplication as a sort of addition.  On this circular slide rule, if you add the angle a number appears at on the inner dial to the angle some other number appears at, the resulting angle will point to their product.  Since slide rules only track the significand,&lt;sup&gt;&lt;a href="#significand"&gt;2&lt;/a&gt;&lt;/sup&gt; circular slide rules cleverly wrap around.&lt;sup&gt;&lt;a href="#sliderule"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;aside&gt; &lt;sup id="significand"&gt;2&lt;/sup&gt;
 The &lt;a href="https://en.wikipedia.org/wiki/Significand"&gt;&lt;em&gt;significand&lt;/em&gt;&lt;/a&gt; is the front part of a number when written in scientific notation, that is its the significant digits expressed as a number between 1 and 10.  For example, the significand of 2342.1231 is 2.3421231, the significand of 0.00234 is 2.34.  You simply move the decimal point to be just to the right of the first non-zero digit.
 As a formula its $\frac{|x|}{10^{\lfloor \log_{10} |x| \rfloor}}$.
 &lt;/aside&gt;
-&lt;aside&gt; &lt;sup id="#sliderule"&gt;2&lt;/sup&gt;
+&lt;aside&gt; &lt;sup id="#sliderule"&gt;3&lt;/sup&gt;
 If you want to play with a circular sliderule yourself, you can try &lt;a href="https://alexalemi.com/random/sliderule.html"&gt;this one I built&lt;/a&gt;.
 &lt;/aside&gt;
 &lt;p&gt;Whatever the universal leading digit distribution is, or more specifically whatever the universal distribution of significands is, provided one exists, it would have to be invariant to any multiplication.  It would have to be invariant to the addition of any random angle on the circular slide rule, i.e. it would have to be circularly symmetric, i.e. it would have to uniform on the slide rule dial.&lt;/p&gt;
 &lt;p&gt;This thought process is enough to give us the distribution in Benford's law.  The digits on the circular slide rule are located so that,
 $$ \theta(x) = 2 \pi \log_{10} x, $$
-for the numbers from 1 to 10.  This ensures that 1 is at $\theta=0$ and $10$ is at $\theta = 2\pi$.  It also ensures that if we try to locate the angle of a product of numbers $x$ and $y$, we can do so by simply adding their angles:&lt;sup&gt;&lt;a href="#theory"&gt;3&lt;/a&gt;&lt;/sup&gt;
+for the numbers from 1 to 10.  This ensures that 1 is at $\theta=0$ and $10$ is at $\theta = 2\pi$.  It also ensures that if we try to locate the angle of a product of numbers $x$ and $y$, we can do so by simply adding their angles:&lt;sup&gt;&lt;a href="#theory"&gt;4&lt;/a&gt;&lt;/sup&gt;
 $$ \theta(x y) = 2\pi \log_{10}( x y ) = 2 \pi \log_{10} x + 2 \pi \log_{10} y = \theta(x) + \theta(y). $$&lt;/p&gt;
-&lt;aside&gt; &lt;sup id="#theory"&gt;3&lt;/sup&gt;
-This is all there really is to how slide rules work, they turn multiplication into addition.  Addition is something easy to do with linear or circular rules: you &lt;em&gt;add&lt;/em&gt; distances or angles by simply &lt;em&gt;sticking them next to each other&lt;/em&gt;. $\log (xy) = \log x + \log y$.  We have the benefit of hindsight and knowledge of logarithms, though this idea, the desire to have a function that would enable turning multiplication into a simple sort of sticking together was was lead &lt;a href="https://en.wikipedia.org/wiki/John_Napier"&gt;John Napier&lt;/a&gt; to the logarithm function in the first place!
+&lt;aside&gt; &lt;sup id="#theory"&gt;4&lt;/sup&gt;
+This is all there really is to how slide rules work, they turn multiplication into addition.  Addition is something easy to do with linear or circular rules: you &lt;em&gt;add&lt;/em&gt; distances or angles by simply &lt;em&gt;sticking them next to each other&lt;/em&gt;. $\log (xy) = \log x + \log y$.  We have the benefit of hindsight and knowledge of logarithms, though this idea, the desire to have a function that would enable turning multiplication into a simple sort of sticking together was was lead &lt;a href="https://en.wikipedia.org/wiki/John_Napier"&gt;John Napier&lt;/a&gt; to the logarithm function in the first place! If you want to learn more about slide rules, I recommend &lt;a href="https://www.sliderulemuseum.com/Manuals/M220_AnEasyIntroductionToTheSlideRule_IsaacAsimov_1965.pdf"&gt;Asimov's book&lt;/a&gt;.
 &lt;/aside&gt;
 Knowing how the digits are arranged, we can easily determine the fraction of the circle allotted to each one:
 $$ f(d) = \log_{10}(d+1) - \log_{10}(d) = \log_{10}\left( 1 - \frac{1}{d} \right). $$
-This is the formula you'll see &lt;a href="https://en.wikipedia.org/wiki/Benford\%27s_law"&gt;elsewhere&lt;/a&gt;.  Most of the discussion surrounding Benford's law focusses on the first digit alone, but our visual argument also suggests that we can easily determine the distribution for significands themselves, not just the first digit.  For instance, looking at the sliderule, we can see that its nearly as likely that a number should have "10" as its first &lt;em&gt;two&lt;/em&gt; digits&lt;sup&gt;&lt;a href="#1.1"&gt;4&lt;/a&gt;&lt;/sup&gt; as it is that we'd find a naturally occuring number beginning with a 9.
-&lt;aside&gt; &lt;sup id="#1.1"&gt;4&lt;/sup&gt;
+This is the formula you'll see &lt;a href="https://en.wikipedia.org/wiki/Benford\%27s_law"&gt;elsewhere&lt;/a&gt;.  Most of the discussion surrounding Benford's law focusses on the first digit alone, but our visual argument also suggests that we can easily determine the distribution for significands themselves, not just the first digit.  For instance, looking at the sliderule, we can see that its nearly as likely that a number should have "10" as its first &lt;em&gt;two&lt;/em&gt; digits&lt;sup&gt;&lt;a href="#1.1"&gt;5&lt;/a&gt;&lt;/sup&gt; as it is that we'd find a naturally occuring number beginning with a 9.
+&lt;aside&gt; &lt;sup id="#1.1"&gt;5&lt;/sup&gt;
 Specifically that the significand should be between 1.0 and 1.1.
 &lt;/aside&gt;
 &lt;p&gt;We've already said that with a random multiplication being like a random spin of the circular slide rule pointer, the universal distribution of significands should just be uniform on the slide rule.  Performing a change of basis, if we know the distribution $p(\theta)$ of angles along the circle is uniform, we can work out the distribution $p(x)$ of significands by requiring we conserve all of the probability mass:
 $$ p(\theta) \, d\theta &amp;amp;= p(x) \, dx $$
-combined with what we already know as the relationship between our significands and their angles ($\theta = 2\pi \log_{10} x$), allows us to transform the uniform distribution of angles $p(\theta) = \frac{1}{2\pi}$ into:
-$$ p(x) = \frac{1}{x \log 10 }. $$&lt;/p&gt;
+combined with what we already know as the relationship between our significands and their angles: $\theta = 2\pi \log_{10} x$. This allows us to transform the uniform distribution of angles $p(\theta) = \frac{1}{2\pi}$ into:
+$$ p(x) = \frac{1}{x \log 10 }. $$
+We've recovered a nice &lt;a href="https://en.wikipedia.org/wiki/Power_law"&gt;power law&lt;/a&gt; or &amp;quot;scale-free&amp;quot; distribution for the significands, something we could have guessed or worked out from our requirement that the distribution be invariant to scale.&lt;/p&gt;
+&lt;p&gt;We may have just gone around in a circle,&lt;sup&gt;&lt;a href="#pun"&gt;6&lt;/a&gt;&lt;/sup&gt; but I hope you agree that there is something very visceral about seeing Benford's law play out on the face of the circular sliderule.&lt;/p&gt;
+&lt;aside&gt; &lt;sup id="#pun"&gt;6&lt;/sup&gt;
+Pun very much intended.
+&lt;/aside&gt;
 </content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/benford.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Tue, 03 May 2022 00:00:00 -0400</pubDate></item></channel></rss>
