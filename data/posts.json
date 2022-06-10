@@ -10,10 +10,10 @@
     },
     {
       "title": "KL and M&Ms",
-      "src": "m&ms.md",
+      "src": "m-and-ms.md",
       "date": "2022-06-08",
       "tags": ["kl divergence", "bayesian inference"],
-      "id": "m&ms",
+      "id": "m-and-ms",
       "description": "Trying to understand KL divergence from M&Ms.",
       "draft": true
     },
