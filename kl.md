@@ -2,16 +2,16 @@
 The [Kullback-Liebler
 divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence),
 or KL divergence, or relative entropy, or relative information, or information
-gain, or expected weight of evidence, or information divergence 
+gain, or expected weight of evidence, or information divergence
 (it goes by a lot of different names) is unique
 among the ways to measure the difference between two probability
 distributions.  It holds a special and privileged place, being used to define
 all of the core concepts in information theory, such as mutual information.
 
-Why is the relative information so special and where does it come from? 
+Why is the relative information so special and where does it come from?
 How should you interpret it? What is a nat anyway?  In this
 note, I'll try to give a better understanding and set of intuitions about
-what KL is, why it's interesting, where it comes from and what its good for.
+what KL is, why it's interesting, where it comes from and what it's good for.
 
 ## Information Gain
 
@@ -39,8 +39,8 @@ We want our information function to satisfy the following properties:
   1. It's **continuous**.  A small change in the distributions makes a small change in the amount of information in the move.
   2. It's permutation or **reparameterization independent**.  It doesn't matter if we change the units we've specified our distributions in or if we relabel the sides of our dice, the answer shouldn't change.
   3. We want it to be **non-negative** and have the value $I = 0$ if and only if $p = q$.  If $p=q$ we haven't updated our beliefs and so have no information gain.
-  4. We want it to be **monotonic** in a natural sense.  If we, for instance start with some uniform distribution over the 24 people in a game of [Guess Who?](https://en.wikipedia.org/wiki/Guess_Who%3F) and then update to only 5 remaining suspects, $I$ should be larger than if there were still 12 remaining suspects.
-  5. Finally we want our information function to **decompose** in a natural and **linear** way.<sup><a href="#renyi">2</a></sup> In particular, we want to be able to relate the information between two joint distributions in terms of the information between their marginal and conditional distributions.
+  4. We want it to be **monotonic** in a natural sense.  If we, for instance, start with some uniform distribution over the 24 people in a game of [Guess Who?](https://en.wikipedia.org/wiki/Guess_Who%3F) and then update to only 5 remaining suspects, $I$ should be larger than if there were still 12 remaining suspects.
+  5. Finally, we want our information function to **decompose** in a natural and **linear** way.<sup><a href="#renyi">2</a></sup> In particular, we want to be able to relate the information between two joint distributions in terms of the information between their marginal and conditional distributions.
 
 <aside> <sup id="renyi">2</sup>
   If one relaxes the requirement for linear decomposition and instead just requires that our information
@@ -93,7 +93,7 @@ same test is 95.6% $(q(\overline T | \overline D) = 0.956)$. <sup><a href="#covi
   </center>
 </figure>
 We've just specified our prior beliefs with 3 numbers, imagining our process as having two steps,
-first we either had the disease or not $(q(\mathcal{D}))$ and then, conditioned on that
+first, we either had the disease or not $(q(\mathcal{D}))$ and then, conditioned on that
 we get the result of our test $(q(\mathcal{T}|\mathcal{D}))$.  
 Equivalently, we could have just given the joint probability distribution, as shown in Figure 1.
 
@@ -126,7 +126,7 @@ our information function manifestly asymmetric.  Here our $p$ distribution
 becomes distinguished over our $q$ as it is the one we use to weight the child
 contributions.  This makes sense if we imagine or if $p$ is the actual
 distribution that events are drawn from, for it means that this will correspond
-to the informations we would observe in expectation.  
+to the information we would observe in expectation.  
 
 The interesting thing is that if you want your information function to satisfy
 all of these seemingly reasonable properties, that is enough to determine it
@@ -204,7 +204,7 @@ $$ I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x)} = -\int \mathrm dx \, 
 
 <aside> <sup id="caticha2">7</sup>
   I first saw this form of motivation for Bayes Rule in
-  <i>Lectures on Probability, Entropy and Statistcal Physics</i> by
+  <i>Lectures on Probability, Entropy and Statistical Physics</i> by
   Ariel Caticha. <a href="https://arxiv.org/abs/0808.0012">arXiv:0808.0012</a>
 </aside>
 Having identified the right way to measure how much information is gained when we update a distribution
@@ -219,9 +219,9 @@ we should probably have our updated beliefs reflect the observation we made, mak
 observation, setting $p(T) = 1$, but this doesn't fully specify $p$; we need two more numbers.  How should
 we set those?
 
-Why don't we aim to be conservative and try to find the new set of beliefs
+Why don't we aim to be conservative and try to find a new set of beliefs
 that are as close as possible to our prior beliefs while still being consistent with the
-observation that we've made.  
+observation that we've made?  
 Namely, let's look now for a joint distribution $p(\mathcal T, \mathcal D)$ 
 that is as close as possible to $q(\mathcal T, \mathcal D)$ but for which we have that $p(T)=1$.
 $$ \DeclareMathOperator{\argmin}{arg\,min} $$
@@ -277,7 +277,7 @@ of Bayesian inference.
 
 Although, if you stop to think about it, even though many of us know of and have
 used <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">Bayes Theorem</a> 
-for a long time, the way its normally presented, it is just a trivial statement
+for a long time, the way it's normally presented, it is just a trivial statement
 about how joint distributions factor.
 $$ q(\theta, D) = q(\theta) q(D|\theta) = q(D) q(\theta|D)  \implies
  q(\theta|D) = \frac{q(D|\theta) q(\theta)}{q(D)}. $$
@@ -287,7 +287,7 @@ beliefs in light of observations.  However, the previous argument demonstrates
 that if you want to set your updated beliefs such that they are as close
 as possible to your prior beliefs while being consistent with your 
 observations, you should set your updated beliefs according to
-Bayes rule run on the prior beliefs.
+Bayes' rule run on the prior beliefs.
 
 ## Expected Weight of Evidence
 
@@ -301,14 +301,14 @@ just have two different belief distributions and wish to decide between them?
 
 Really what we want to know is what is the probability that our beliefs are correct in light of evidence?
 Symbolically you might write this as $p(P|E)$ where $P$ is some belief distribution and $E$ is some
-evidence, data or observations. If we run Bayes Theorem we can see that:
+evidence, data, or observations. If we run Bayes Theorem we can see that:
 $$ p(P|E) = \frac{p(E|P) p(P)}{p(E)}. $$
 We can update our belief in our beliefs being correct by setting our updated
 weight in the belief $p(P|E)$ to be proportional to our initial weight $p(P)$ times
 the *likelihood* that the evidence we observed would have been generated if our belief was true $(p(E|P))$.  The probability of the evidence given the belief $P$ is just the likelihood $P(E)$.
 Proportional because we would need to know how likely the evidence would be $p(E)$ amongst all possible
-beliefs.  This last part, the <a href="https://en.wikipedia.org/wiki/Marginal_likelihood"><i>marginal likelihood</i></a>
-is notoriously difficult to compute. In principle it is asking us to evaluate how likely
+beliefs. This last part, the <a href="https://en.wikipedia.org/wiki/Marginal_likelihood"><i>marginal likelihood</i></a>
+is notoriously difficult to compute. In principle, it is asking us to evaluate how likely
 the evidence would be from all possible models.  
 
 However, we can make further progress if we content ourselves to not necessarily knowing the 
@@ -329,7 +329,7 @@ The log ratio of two probability distributions measures by how much you should u
 correct.  The KL divergence is just then the expected weight of evidence if we draw samples from $p(x)$ itself:
 $$ I[p;q] = \mathbb{E}_p\left[ \log \frac{p(x)}{q(x)} \right] = \mathbb{E}_p \left[ w[x; p,q] \right]$$
 
-So, one way to interpret the relative entropy is that if our data was actually coming from distribution $p$ and we had some other
+So, one way to interpret the relative entropy is that if our data was actually coming from the distribution $p$ and we had some other
 hypothesis $q$, the $I[p;q]$ measures on average how much we should believe $p$ over $q$ on each observation.  In order to make that
 statement more precise, we need a better language to talk about the magnitudes of these quantities.
 
@@ -356,13 +356,13 @@ $$ I[p;q] = 10 \int \mathrm dx\, p(x) \log_{10} \frac{p(x)}{q(x)}\, \textrm{dB} 
 
 The nice thing about measuring information in decibans or <a href="https://en.wikipedia.org/wiki/Decibel">decibels</a> 
 is the people already have some familiarity with the unit, such as for measuring the *loudness* of sounds. 
-Its always a comparative measurement, for sound taking $10 \log_{10} \frac{P}{P_0}$ of the power
+It's always a comparative measurement, for sound taking $10 \log_{10} \frac{P}{P_0}$ of the power
 to some reference or baseline power.  In the same way we could besides just measuring the KL between two distributions,
 measure the comparative difference between any two probabilities on the log scale:
 $$ 10 \log_{10} \frac{p(x)}{q(x)} \textrm{ dB}. $$
 
 In particular, we could get some feeling for these quantities by comparing the probability something happens to the 
-probability it doesn't.  Consider a simple binary outcome and taking $q=1-p$, in this case the weight of evidence
+probability it doesn't.  Consider a simple binary outcome and taking $q=1-p$, in this case, the weight of evidence
 that the thing happens versus it doesn't upon observing it happen once is:
 $$ 10 \log_{10} \frac{p}{1-p} \text{ dB}. $$
 This essentially gives us a new scale to measure probabilities on. 
@@ -451,18 +451,18 @@ $$ 1 \textrm{ bit} = \frac{10}{\log_2 10} \textrm{ dB} = 3.01 \textrm{ dB} $$
 
 ## Examples and Magnitudes
 
-### Double headed Coin
+### Double-headed Coin
 
-Let's say I have two coins in my pocket, the first is an ordinary unbiased coin, the second is doubled headed.
+Let's say I have two coins in my pocket, the first is an ordinary unbiased coin, and the second is doubled-headed.
 I give you one of them and you start flipping the coin.  You get a heads, then another heads, then another.  How many
-heads would you need to see in a row until you're sure you've been given the doubled headed coin?  Let's
+heads would you need to see in a row until you're sure you've been given the doubled-headed coin?  Let's
 work out the relative entropy between these two distributions.  On the one hand we have $p(H)=1, p(\overline H) =0$,
 and the other $q(H) = q(\overline H)= 0.5$.
 
 $$ I[p;q] = 10 \sum_i p_i \log_{10} \frac{p_i}{q_i} = -10 \log_{10} 2 = 3.01 \text{ dB} $$
 
 The relative entropy of a sure thing and a coin flip is 3 decibels.  This means that if we want to be more sure than 20 to 1
-that we have the doubled headed coin we'd need to observe 5 heads in a row, giving us 15 dB of evidence.
+that we have the doubled-headed coin we'd need to observe 5 heads in a row, giving us 15 dB of evidence.
 
 ### Births
 
@@ -484,14 +484,14 @@ total weight of evidence in this case is:
 $$ 2515270 \log_{10} \frac{0.51}{0.50} + 2419450 \log_{10} \frac{0.49}{0.50} = 404 \text{ dB} $$
 a whopping 400 decibels of evidence for males being born 51% of the time rather than 50%.  
 At the same time, I'm not sure most people are aware that males are born with a higher proportion and it doesn't
-seem to effect most people's lives.  Why is that?  Well, let's evaluate the relative entropy between
+seem to affect most people's lives.  Why is that?  Well, let's evaluate the relative entropy between
 a 51% Bernoulli and a 50% Bernoulli:
 $$ I = 5.1 \log_{10}\frac{0.51}{0.50} + 4.9 \log_{10} \frac{0.49}{0.50} = 8.7 \times 10^{-4} \text{ dB}. $$
 Notice that the relative entropy is quite small.  On average, if the true distribution was 51%, the evidence
 we accumulate on each observed birth is less than 8 *microbels*.  This means that on average in order to be reasonably
 sure that the 51% hypothesis is true, we'd have to observe $\sim \frac{13}{8.7 \times 10^{-4}} \sim 15,000$ births.
 This makes clear how with enough data we could both be very sure that males are born with a higher frequency
-than females, but at the same time this could have very little impact on our individual lives.
+than females, but at the same time, this could have very little impact on our individual lives.
 
 ### Likelihoods and Learning
 
@@ -500,8 +500,7 @@ and we have some kind of parametric model $q(x;\theta)$, we would like to set ou
 we get as close as possible to the true distribution.  In other words, we want to minimize the relative entropy from
 the *real world* to our *model*:
 $$\min I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x;\theta)}. $$
-The biggest complication is that we don't actually know what the true distribution of the data is. We can however,
-sample data.  Luckily for us, as far as this as an objective for $\theta$ goes, we can treat the entropy of $p(x)$ as
+The biggest complication is that we don't actually know what the true distribution of the data is. We can, however, sample data.  Luckily for us, as far as this as an objective for $\theta$ goes, we can treat the entropy of $p(x)$ as
 a constant.  This motivates the traditional maximum likelihood objective:
 $$ \max \int \mathrm dx \, \log q(x;\theta). $$
 <aside id="gpt3"><sup>10</sup>
@@ -570,7 +569,7 @@ of the same distribution in feet you get 0.43 bits.  If you instead
 were to measure heights in meters it would be -1.3 bits! <sup><a href="#negative">14</a></sup>
 
 <aside> <sup id="negative">14</sup>
-  It seems strange to have a negative entropy, but in this case it is basically
+  It seems strange to have a negative entropy, but in this case, it is basically
   reflecting the fact that in terms of meters, the human height distribution doesn't
   span a whole meter in breadth, so it actually takes fewer *relative* bits
   to specify a human height in meters than it would take to specify any

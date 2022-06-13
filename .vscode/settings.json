@@ -1,0 +1,13 @@
+{
+    "grammarly.selectors": [
+        {
+            "language": "markdown",
+            "scheme": "file",
+            "pattern": "knots.md"
+        },
+        {
+            "language": "markdown",
+            "scheme": "file"
+        }
+    ]
+}

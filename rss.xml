@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Fri, 10 Jun 2022 15:38:12 +0000</lastBuildDate><item><title>Why KL?</title><link>https://blog.alexalemi.com/kl.html</link><description>Why is the KL divergence so special?</description><content:encoded>&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Liebler
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Mon, 13 Jun 2022 19:48:13 +0000</lastBuildDate><item><title>Why KL?</title><link>https://blog.alexalemi.com/kl.html</link><description>Why is the KL divergence so special?</description><content:encoded>&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Liebler
 divergence&lt;/a&gt;,
 or KL divergence, or relative entropy, or relative information, or information
 gain, or expected weight of evidence, or information divergence
@@ -10,7 +10,7 @@ all of the core concepts in information theory, such as mutual information.&lt;/
 &lt;p&gt;Why is the relative information so special and where does it come from?
 How should you interpret it? What is a nat anyway?  In this
 note, I'll try to give a better understanding and set of intuitions about
-what KL is, why it's interesting, where it comes from and what its good for.&lt;/p&gt;
+what KL is, why it's interesting, where it comes from and what it's good for.&lt;/p&gt;
 &lt;h2&gt;Information Gain&lt;/h2&gt;
 &lt;p&gt;Let's see if we can motivate the form of the KL axiomatically.&lt;/p&gt;
 &lt;p&gt;Imagine we have some prior set of beliefs summarized as a probability distribution $q$.
@@ -32,8 +32,8 @@ call this amount of update the &lt;em&gt;information gain&lt;/em&gt; when we mov
 &lt;li&gt;It's &lt;strong&gt;continuous&lt;/strong&gt;.  A small change in the distributions makes a small change in the amount of information in the move.&lt;/li&gt;
 &lt;li&gt;It's permutation or &lt;strong&gt;reparameterization independent&lt;/strong&gt;.  It doesn't matter if we change the units we've specified our distributions in or if we relabel the sides of our dice, the answer shouldn't change.&lt;/li&gt;
 &lt;li&gt;We want it to be &lt;strong&gt;non-negative&lt;/strong&gt; and have the value $I = 0$ if and only if $p = q$.  If $p=q$ we haven't updated our beliefs and so have no information gain.&lt;/li&gt;
-&lt;li&gt;We want it to be &lt;strong&gt;monotonic&lt;/strong&gt; in a natural sense.  If we, for instance start with some uniform distribution over the 24 people in a game of &lt;a href="https://en.wikipedia.org/wiki/Guess_Who%3F"&gt;Guess Who?&lt;/a&gt; and then update to only 5 remaining suspects, $I$ should be larger than if there were still 12 remaining suspects.&lt;/li&gt;
-&lt;li&gt;Finally we want our information function to &lt;strong&gt;decompose&lt;/strong&gt; in a natural and &lt;strong&gt;linear&lt;/strong&gt; way.&lt;sup&gt;&lt;a href="#renyi"&gt;2&lt;/a&gt;&lt;/sup&gt; In particular, we want to be able to relate the information between two joint distributions in terms of the information between their marginal and conditional distributions.&lt;/li&gt;
+&lt;li&gt;We want it to be &lt;strong&gt;monotonic&lt;/strong&gt; in a natural sense.  If we, for instance, start with some uniform distribution over the 24 people in a game of &lt;a href="https://en.wikipedia.org/wiki/Guess_Who%3F"&gt;Guess Who?&lt;/a&gt; and then update to only 5 remaining suspects, $I$ should be larger than if there were still 12 remaining suspects.&lt;/li&gt;
+&lt;li&gt;Finally, we want our information function to &lt;strong&gt;decompose&lt;/strong&gt; in a natural and &lt;strong&gt;linear&lt;/strong&gt; way.&lt;sup&gt;&lt;a href="#renyi"&gt;2&lt;/a&gt;&lt;/sup&gt; In particular, we want to be able to relate the information between two joint distributions in terms of the information between their marginal and conditional distributions.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;aside&gt; &lt;sup id="renyi"&gt;2&lt;/sup&gt;
   If one relaxes the requirement for linear decomposition and instead just requires that our information
@@ -82,7 +82,7 @@ same test is 95.6% $(q(\overline T | \overline D) = 0.956)$. &lt;sup&gt;&lt;a hr
   &lt;/center&gt;
 &lt;/figure&gt;
 We've just specified our prior beliefs with 3 numbers, imagining our process as having two steps,
-first we either had the disease or not $(q(\mathcal{D}))$ and then, conditioned on that
+first, we either had the disease or not $(q(\mathcal{D}))$ and then, conditioned on that
 we get the result of our test $(q(\mathcal{T}|\mathcal{D}))$.  
 Equivalently, we could have just given the joint probability distribution, as shown in Figure 1.
 &lt;p&gt;The point now is that if we were to update our beliefs, in the diagram on the right there is just a single
@@ -111,7 +111,7 @@ our information function manifestly asymmetric.  Here our $p$ distribution
 becomes distinguished over our $q$ as it is the one we use to weight the child
 contributions.  This makes sense if we imagine or if $p$ is the actual
 distribution that events are drawn from, for it means that this will correspond
-to the informations we would observe in expectation.&lt;/p&gt;
+to the information we would observe in expectation.&lt;/p&gt;
 &lt;p&gt;The interesting thing is that if you want your information function to satisfy
 all of these seemingly reasonable properties, that is enough to determine it
 &lt;em&gt;uniquely&lt;/em&gt;.  The only function satisfying all of these properties is the
@@ -177,7 +177,7 @@ $$ I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x)} = -\int \mathrm dx \, 
 &lt;h2&gt;Bayes Rule&lt;/h2&gt;
 &lt;aside&gt; &lt;sup id="caticha2"&gt;7&lt;/sup&gt;
   I first saw this form of motivation for Bayes Rule in
-  &lt;i&gt;Lectures on Probability, Entropy and Statistcal Physics&lt;/i&gt; by
+  &lt;i&gt;Lectures on Probability, Entropy and Statistical Physics&lt;/i&gt; by
   Ariel Caticha. &lt;a href="https://arxiv.org/abs/0808.0012"&gt;arXiv:0808.0012&lt;/a&gt;
 &lt;/aside&gt;
 Having identified the right way to measure how much information is gained when we update a distribution
@@ -190,9 +190,9 @@ What should your new distribution of beliefs be? Well, first off if we've observ
 we should probably have our updated beliefs reflect the observation we made, making it consistent with our
 observation, setting $p(T) = 1$, but this doesn't fully specify $p$; we need two more numbers.  How should
 we set those?&lt;/p&gt;
-&lt;p&gt;Why don't we aim to be conservative and try to find the new set of beliefs
+&lt;p&gt;Why don't we aim to be conservative and try to find a new set of beliefs
 that are as close as possible to our prior beliefs while still being consistent with the
-observation that we've made.&lt;br /&gt;
+observation that we've made?&lt;br /&gt;
 Namely, let's look now for a joint distribution $p(\mathcal T, \mathcal D)$
 that is as close as possible to $q(\mathcal T, \mathcal D)$ but for which we have that $p(T)=1$.
 $$ \DeclareMathOperator{\argmin}{arg\,min} $$
@@ -245,7 +245,7 @@ or precisely what you probably thought it should have been anyway if you've hear
 of Bayesian inference.&lt;/p&gt;
 &lt;p&gt;Although, if you stop to think about it, even though many of us know of and have
 used &lt;a href="https://en.wikipedia.org/wiki/Bayes%27_theorem"&gt;Bayes Theorem&lt;/a&gt;
-for a long time, the way its normally presented, it is just a trivial statement
+for a long time, the way it's normally presented, it is just a trivial statement
 about how joint distributions factor.
 $$ q(\theta, D) = q(\theta) q(D|\theta) = q(D) q(\theta|D)  \implies
 q(\theta|D) = \frac{q(D|\theta) q(\theta)}{q(D)}. $$
@@ -255,7 +255,7 @@ beliefs in light of observations.  However, the previous argument demonstrates
 that if you want to set your updated beliefs such that they are as close
 as possible to your prior beliefs while being consistent with your
 observations, you should set your updated beliefs according to
-Bayes rule run on the prior beliefs.&lt;/p&gt;
+Bayes' rule run on the prior beliefs.&lt;/p&gt;
 &lt;h2&gt;Expected Weight of Evidence&lt;/h2&gt;
 &lt;p&gt;Traditionally, KL is interpreted from a coding perspective, a view I've included in an appendix below,
 but here I offer a different perspective from the viewpoint of model selection.&lt;/p&gt;
@@ -265,14 +265,14 @@ with our observations.  This guides us towards forming better belief distributio
 just have two different belief distributions and wish to decide between them?&lt;/p&gt;
 &lt;p&gt;Really what we want to know is what is the probability that our beliefs are correct in light of evidence?
 Symbolically you might write this as $p(P|E)$ where $P$ is some belief distribution and $E$ is some
-evidence, data or observations. If we run Bayes Theorem we can see that:
+evidence, data, or observations. If we run Bayes Theorem we can see that:
 $$ p(P|E) = \frac{p(E|P) p(P)}{p(E)}. $$
 We can update our belief in our beliefs being correct by setting our updated
 weight in the belief $p(P|E)$ to be proportional to our initial weight $p(P)$ times
 the &lt;em&gt;likelihood&lt;/em&gt; that the evidence we observed would have been generated if our belief was true $(p(E|P))$.  The probability of the evidence given the belief $P$ is just the likelihood $P(E)$.
 Proportional because we would need to know how likely the evidence would be $p(E)$ amongst all possible
-beliefs.  This last part, the &lt;a href="https://en.wikipedia.org/wiki/Marginal_likelihood"&gt;&lt;i&gt;marginal likelihood&lt;/i&gt;&lt;/a&gt;
-is notoriously difficult to compute. In principle it is asking us to evaluate how likely
+beliefs. This last part, the &lt;a href="https://en.wikipedia.org/wiki/Marginal_likelihood"&gt;&lt;i&gt;marginal likelihood&lt;/i&gt;&lt;/a&gt;
+is notoriously difficult to compute. In principle, it is asking us to evaluate how likely
 the evidence would be from all possible models.&lt;/p&gt;
 &lt;p&gt;However, we can make further progress if we content ourselves to not necessarily knowing the
 absolute probability our model or beliefs are correct, but instead just its probability relative
@@ -290,7 +290,7 @@ $$ w[x; p,q] =  \log \frac{p(x)}{q(x)}. $$
 The log ratio of two probability distributions measures by how much you should update your prior log odds between the two distributions being
 correct.  The KL divergence is just then the expected weight of evidence if we draw samples from $p(x)$ itself:
 $$ I[p;q] = \mathbb{E}_p\left[ \log \frac{p(x)}{q(x)} \right] = \mathbb{E}_p \left[ w[x; p,q] \right]$$&lt;/p&gt;
-&lt;p&gt;So, one way to interpret the relative entropy is that if our data was actually coming from distribution $p$ and we had some other
+&lt;p&gt;So, one way to interpret the relative entropy is that if our data was actually coming from the distribution $p$ and we had some other
 hypothesis $q$, the $I[p;q]$ measures on average how much we should believe $p$ over $q$ on each observation.  In order to make that
 statement more precise, we need a better language to talk about the magnitudes of these quantities.&lt;/p&gt;
 &lt;h2&gt;How loud is the Evidence?&lt;/h2&gt;
@@ -314,12 +314,12 @@ we use ten times the base-10 logarithm.&lt;/p&gt;
 $$ I[p;q] = 10 \int \mathrm dx\, p(x) \log_{10} \frac{p(x)}{q(x)}\, \textrm{dB} $$
 &lt;p&gt;The nice thing about measuring information in decibans or &lt;a href="https://en.wikipedia.org/wiki/Decibel"&gt;decibels&lt;/a&gt;
 is the people already have some familiarity with the unit, such as for measuring the &lt;em&gt;loudness&lt;/em&gt; of sounds.
-Its always a comparative measurement, for sound taking $10 \log_{10} \frac{P}{P_0}$ of the power
+It's always a comparative measurement, for sound taking $10 \log_{10} \frac{P}{P_0}$ of the power
 to some reference or baseline power.  In the same way we could besides just measuring the KL between two distributions,
 measure the comparative difference between any two probabilities on the log scale:
 $$ 10 \log_{10} \frac{p(x)}{q(x)} \textrm{ dB}. $$&lt;/p&gt;
 &lt;p&gt;In particular, we could get some feeling for these quantities by comparing the probability something happens to the
-probability it doesn't.  Consider a simple binary outcome and taking $q=1-p$, in this case the weight of evidence
+probability it doesn't.  Consider a simple binary outcome and taking $q=1-p$, in this case, the weight of evidence
 that the thing happens versus it doesn't upon observing it happen once is:
 $$ 10 \log_{10} \frac{p}{1-p} \text{ dB}. $$
 This essentially gives us a new scale to measure probabilities on.
@@ -398,15 +398,15 @@ taking us below 20 to 1 against if we started with even odds.&lt;/p&gt;
 $$ 1 \textrm{ nat} = \frac{10}{\log 10} \textrm{ dB} = 4.34 \textrm{ dB} $$
 $$ 1 \textrm{ bit} = \frac{10}{\log_2 10} \textrm{ dB} = 3.01 \textrm{ dB} $$&lt;/p&gt;
 &lt;h2&gt;Examples and Magnitudes&lt;/h2&gt;
-&lt;h3&gt;Double headed Coin&lt;/h3&gt;
-&lt;p&gt;Let's say I have two coins in my pocket, the first is an ordinary unbiased coin, the second is doubled headed.
+&lt;h3&gt;Double-headed Coin&lt;/h3&gt;
+&lt;p&gt;Let's say I have two coins in my pocket, the first is an ordinary unbiased coin, and the second is doubled-headed.
 I give you one of them and you start flipping the coin.  You get a heads, then another heads, then another.  How many
-heads would you need to see in a row until you're sure you've been given the doubled headed coin?  Let's
+heads would you need to see in a row until you're sure you've been given the doubled-headed coin?  Let's
 work out the relative entropy between these two distributions.  On the one hand we have $p(H)=1, p(\overline H) =0$,
 and the other $q(H) = q(\overline H)= 0.5$.&lt;/p&gt;
 &lt;p&gt;$$ I[p;q] = 10 \sum_i p_i \log_{10} \frac{p_i}{q_i} = -10 \log_{10} 2 = 3.01 \text{ dB} $$&lt;/p&gt;
 &lt;p&gt;The relative entropy of a sure thing and a coin flip is 3 decibels.  This means that if we want to be more sure than 20 to 1
-that we have the doubled headed coin we'd need to observe 5 heads in a row, giving us 15 dB of evidence.&lt;/p&gt;
+that we have the doubled-headed coin we'd need to observe 5 heads in a row, giving us 15 dB of evidence.&lt;/p&gt;
 &lt;h3&gt;Births&lt;/h3&gt;
 &lt;p&gt;Perhaps the first hypothesis test to be resolved with modern statistics was the question of whether more male or female
 babies are born.  Using data from 1745 to 1770, Laplace found that in those 26 years, 251,527 boys and 241,945 girls were born.
@@ -424,22 +424,21 @@ total weight of evidence in this case is:&lt;/p&gt;
 &lt;p&gt;$$ 2515270 \log_{10} \frac{0.51}{0.50} + 2419450 \log_{10} \frac{0.49}{0.50} = 404 \text{ dB} $$
 a whopping 400 decibels of evidence for males being born 51% of the time rather than 50%.&lt;br /&gt;
 At the same time, I'm not sure most people are aware that males are born with a higher proportion and it doesn't
-seem to effect most people's lives.  Why is that?  Well, let's evaluate the relative entropy between
+seem to affect most people's lives.  Why is that?  Well, let's evaluate the relative entropy between
 a 51% Bernoulli and a 50% Bernoulli:
 $$ I = 5.1 \log_{10}\frac{0.51}{0.50} + 4.9 \log_{10} \frac{0.49}{0.50} = 8.7 \times 10^{-4} \text{ dB}. $$
 Notice that the relative entropy is quite small.  On average, if the true distribution was 51%, the evidence
 we accumulate on each observed birth is less than 8 &lt;em&gt;microbels&lt;/em&gt;.  This means that on average in order to be reasonably
 sure that the 51% hypothesis is true, we'd have to observe $\sim \frac{13}{8.7 \times 10^{-4}} \sim 15,000$ births.
 This makes clear how with enough data we could both be very sure that males are born with a higher frequency
-than females, but at the same time this could have very little impact on our individual lives.&lt;/p&gt;
+than females, but at the same time, this could have very little impact on our individual lives.&lt;/p&gt;
 &lt;h3&gt;Likelihoods and Learning&lt;/h3&gt;
 &lt;p&gt;What we would really like to do is learn a model of some real life distribution.  If the true distribution of data is $p(x)$,
 and we have some kind of parametric model $q(x;\theta)$, we would like to set our model parameters $\theta$ so that
 we get as close as possible to the true distribution.  In other words, we want to minimize the relative entropy from
 the &lt;em&gt;real world&lt;/em&gt; to our &lt;em&gt;model&lt;/em&gt;:
 $$\min I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x;\theta)}. $$
-The biggest complication is that we don't actually know what the true distribution of the data is. We can however,
-sample data.  Luckily for us, as far as this as an objective for $\theta$ goes, we can treat the entropy of $p(x)$ as
+The biggest complication is that we don't actually know what the true distribution of the data is. We can, however, sample data.  Luckily for us, as far as this as an objective for $\theta$ goes, we can treat the entropy of $p(x)$ as
 a constant.  This motivates the traditional maximum likelihood objective:
 $$ \max \int \mathrm dx \, \log q(x;\theta). $$&lt;/p&gt;
 &lt;aside id="gpt3"&gt;&lt;sup&gt;10&lt;/sup&gt;
@@ -496,7 +495,7 @@ in centimeters you get 5.4 bits.  If you instead measure the entropy
 of the same distribution in feet you get 0.43 bits.  If you instead
 were to measure heights in meters it would be -1.3 bits! &lt;sup&gt;&lt;a href="#negative"&gt;14&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;aside&gt; &lt;sup id="negative"&gt;14&lt;/sup&gt;
-  It seems strange to have a negative entropy, but in this case it is basically
+  It seems strange to have a negative entropy, but in this case, it is basically
   reflecting the fact that in terms of meters, the human height distribution doesn't
   span a whole meter in breadth, so it actually takes fewer *relative* bits
   to specify a human height in meters than it would take to specify any
@@ -639,4 +638,229 @@ We've recovered a nice &lt;a href="https://en.wikipedia.org/wiki/Power_law"&gt;p
 &lt;aside&gt; &lt;sup id="#pun"&gt;6&lt;/sup&gt;
 Pun very much intended.
 &lt;/aside&gt;
-</content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/benford.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Tue, 03 May 2022 00:00:00 -0400</pubDate></item></channel></rss>
+</content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/benford.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Tue, 03 May 2022 00:00:00 -0400</pubDate></item><item><title>Knots</title><link>https://blog.alexalemi.com/knots.html</link><description>A short list of useful knots to know.</description><content:encoded>&lt;p&gt;Years ago I decided that I didn't know how to tie any knots and needed to
+remedy the situation.  Unfortunately, if you start to look into knots you
+discover there is a &lt;a href="https://en.wikipedia.org/wiki/List_of_knots"&gt;whole slew of them&lt;/a&gt;.
+It's easy to dive deep and try out
+dozens of different knots and then be left not remembering how to tie any of
+them.  So, I decided I was going to try to pick the best knot for each of a few
+different scenarios and then focus on learning and retaining those knots well.&lt;/p&gt;
+&lt;p&gt;I can say that having done this nearly a decade ago, it's paid off.  It's not the
+kind of thing that comes up very often, but when it does, knowing what to do
+with a rope has proven a very useful skill.  So, which knots do I recommend?&lt;/p&gt;
+&lt;p&gt;Most sources of this type tend to focus on specific jobs or activities, the
+best boating knots, scouting knots, climbing knots, etc.  I don't do any of
+those things.  Instead, I want to know how to not embarrass myself if I find
+myself needing to accomplish some kind of task with a rope.  So, for each of
+the common use cases for a rope, I've tried to identify the &amp;quot;best&amp;quot; knot to use.
+Best, in this case, means some combination of ease of tying, ease of remembering,
+and strength and ability of the knot. A lot of knots will have &amp;quot;false friends&amp;quot;
+of a sort, very closely related knots that are often much worse in their
+characteristics.  I tried to pay special attention here, as I don't very often
+use knots so I need to ensure the ones I focus on learning are robust in the
+sense that even if I haven't tied it for a few years I'm unlikely to make a
+grave mistake.&lt;/p&gt;
+&lt;h2&gt;Tying off&lt;/h2&gt;
+&lt;p&gt;If I'm being honest, the most common knot I tie, nearly every day is the
+&lt;a href="https://www.animatedknots.com/square-knot"&gt;Square knot&lt;/a&gt;, also known as the
+&lt;a href="https://en.wikipedia.org/wiki/Reef_knot"&gt;reef knot&lt;/a&gt;.  This is because its the
+knot I use to tie my shoes, or tie off garbage bags, that sort of thing.&lt;/p&gt;
+&lt;figure class="right"&gt;
+  &lt;center&gt;
+  &lt;img width="70%" src="figures/knots/reef.jpg" /&gt;
+  &lt;figcaption&gt;
+    &lt;small&gt;
+    &lt;a title="beautiful [but deadly] square knot" href="https://flickr.com/photos/wwworks/5623339500"&gt;beautiful [but deadly] square knot&lt;/a&gt; flickr photo by &lt;a href="https://flickr.com/people/wwworks"&gt;woodleywonderworks&lt;/a&gt; shared under a &lt;a href="https://creativecommons.org/licenses/by/2.0/"&gt;Creative Commons (BY) license&lt;/a&gt;
+    &lt;/small&gt;
+  &lt;/figcaption&gt;
+  &lt;/center&gt;
+&lt;/figure&gt;
+&lt;p&gt;The knot is very common and nearly everyone knows it, but one thing I've
+discovered is that a good fraction of people tie the knot incorrectly!
+By far, the most useful thing I learned all those years ago when I decided to
+dive into knots was that I had been tying my shoes wrong &lt;em&gt;my entire life&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;To tie a proper reef knot, you have to alternate which rope goes on top.  The
+mnemonic is &lt;em&gt;right over left, then left over right&lt;/em&gt;, if you instead do &lt;em&gt;right
+over right then right over right&lt;/em&gt; as I did most of my life, you end up with the
+far worse knot, the &lt;a href="https://en.wikipedia.org/wiki/Granny_knot"&gt;Granny Knot&lt;/a&gt;,
+instead.&lt;/p&gt;
+&lt;p&gt;Throughout my childhood and young adult life, it always seemed as though my
+shoelaces would come untied, I often had to revert to double knotting them to
+try to get them to last the whole day.  The problem the entire time was that I
+was tying the wrong knot.  I've since caught many of my friends and family
+having the exact same problem.  If you spend a few minutes tying both a proper
+square knot and a granny knot you can immediately learn to tell the difference.
+The telltale sign when looking at someone's shoes is to check to see if the
+loops are &lt;em&gt;crooked&lt;/em&gt;.  Proper shoelace loops should lie down the sides of the
+shoe.  If a granny knot is tied, they tend to rotate and lie parallel to the
+shoe but perpendicular to the laces.  For more info, see &lt;a href="https://www.fieggen.com/shoelace/grannyknot.htm"&gt;Ian Fieggen's
+site&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Now, as I said, the square knot is by far the most common knot I tie, which is
+a bit unfortunate because the knot itself is pretty poor. It should &lt;em&gt;not&lt;/em&gt; be used
+in any sort of critical situation.  Aside from tying off garbage bags and
+shoelaces, it shouldn't be used at all.  &lt;em&gt;It should never be used to join two
+ropes&lt;/em&gt;. Ashley&lt;sup&gt;&lt;a href="#ashley"&gt;1&lt;/a&gt;&lt;/sup&gt; claimed that reef knots have
+caused more deaths than all other knots combined.  Given their familiarity, I
+imagine many people use them to join ropes not realizing their tendency to slip
+until it's too late.  Learn how to tie a square knot properly but also learn
+alternatives to use for basically all use cases.&lt;/p&gt;
+&lt;aside&gt; &lt;sup id="ashley"&gt;1&lt;/sup&gt; 
+  Ashley of &lt;a href="https://en.wikipedia.org/wiki/The_Ashley_Book_of_Knots"&gt;&lt;i&gt;The Ashley Book of Knots&lt;/i&gt;&lt;/a&gt;,
+   a truly remarkable book.  Published in 1944 it remains the goto reference on
+   knots. Ashley spent 11 years compiling over 3800 numbered entries and 7000
+   of his own illustrations.  It's an extremely impressive bit of scholarship.
+&lt;/aside&gt;
+&lt;h3&gt;Shoelaces&lt;/h3&gt;
+&lt;p&gt;Speaking of Ian Fieggen, I actually use his
+&lt;a href="https://www.animatedknots.com/shoelace-bow-knot-fieggen-method"&gt;quick method&lt;/a&gt; to try
+my shoes these days. It only takes a few minutes to learn and then you can use
+it for the rest of your life, I recommend checking it out.&lt;/p&gt;
+&lt;figure&gt;
+&lt;center&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/_O-xaJrao1w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/center&gt;
+&lt;figurecaption&gt;A very fast method of tying your shoes.
+&lt;/figurecaption&gt;
+&lt;/figure&gt;
+&lt;h2&gt;Loop at end of the rope&lt;/h2&gt;
+&lt;p&gt;The next most common use case I find myself in is wanting to tie a loop at the
+end of a rope.  For this I think the
+&lt;a href="https://www.animatedknots.com/bowline-knot"&gt;Bowline&lt;/a&gt; is the goto answer.&lt;/p&gt;
+&lt;figure class="right"&gt;
+  &lt;center&gt;
+  &lt;img width="50%" src="figures/knots/bowline.jpg" /&gt;
+  &lt;figcaption&gt;
+    &lt;small&gt;
+      "Bowline knot", 
+      by &lt;a href="https://en.wikipedia.org/wiki/Bowline#/media/File:Palstek_innen.jpg"&gt;Markus Bärlocher&lt;/a&gt;,
+      in the public domain.
+    &lt;/small&gt;
+  &lt;/figcaption&gt;
+  &lt;/center&gt;
+&lt;/figure&gt;
+&lt;p&gt;The Bowline is often described as the &amp;quot;king of knots&amp;quot;.  It's a nice knot to
+know.  The loop formed doesn't collapse, so can be used to make a handle, to
+tie a rope around a hole, pole, or other objects.  If you make a Bowline in the
+end and then pass the rest of the rope through you can make a type of lasso or
+slipknot. Even after being used the knot is usually easy to untie.&lt;/p&gt;
+&lt;p&gt;Tying the knot is simple and easy to remember, especially with the common
+mnemonic: &lt;em&gt;&amp;quot;The rabbit comes up the hole, runs around the tree then back down
+the hole.&amp;quot;&lt;/em&gt;  One thing to pay special attention to is to ensure that the free
+end of the rope is left on the inside of the loop.&lt;/p&gt;
+&lt;h2&gt;Loop in the middle of the rope&lt;/h2&gt;
+&lt;p&gt;Next, if you need a loop in a the middle of a rope and don't have access to the ends, use the
+&lt;a href="https://www.animatedknots.com/alpine-butterfly-loop-knot"&gt;Alpine Butterfly&lt;/a&gt;.  This is a great midline loop knot, it doesn't
+collapse, can be loaded from any direction or the loop itself.  It is easy to untie after being loaded.&lt;/p&gt;
+&lt;figure&gt;
+  &lt;center&gt;
+  &lt;img width="50%" src="figures/knots/alpine-butterfly.jpg" /&gt;
+  &lt;figcaption&gt;
+    &lt;small&gt;
+      "Alpine butterfly knot", 
+      by &lt;a href="https://commons.wikimedia.org/wiki/File:Alpine_butterfly_knot_WPK.jpg"&gt;WikipedianYknOK&lt;/a&gt;,
+      licensed under
+      &lt;a href="https://creativecommons.org/licenses/by-sa/3.0"&gt;CC BY-SA 3.0&lt;/a&gt;
+    &lt;/small&gt;
+  &lt;/figcaption&gt;
+  &lt;/center&gt;
+&lt;/figure&gt;
+&lt;p&gt;It's also very easy to tie if you know the hand wrap method on &lt;a href="https://www.animatedknots.com/alpine-butterfly-loop-knot"&gt;Grog's site&lt;/a&gt;.&lt;br /&gt;
+Using this method, its very difficult to mess up the knot.&lt;/p&gt;
+&lt;h2&gt;Bend, joining two ropes&lt;/h2&gt;
+&lt;p&gt;To &lt;em&gt;bend&lt;/em&gt; or join two ropes together, we don't actually need a new knot, we can reuse the
+&lt;a href="https://www.animatedknots.com/alpine-butterfly-bend-knot"&gt;Alpine Butterfly&lt;/a&gt;.&lt;/p&gt;
+&lt;figure&gt;
+  &lt;center&gt;
+  &lt;img width="50%" src="figures/knots/alpine-butterfly-bend.jpg" /&gt;
+  &lt;figcaption&gt;
+    &lt;small&gt;
+      "AlpineButterflyBend", 
+      by &lt;a href="https://commons.wikimedia.org/wiki/File:AlpineButterflyBend.JPG"&gt;Cobanyastigi&lt;/a&gt;,
+      in the public domain.
+    &lt;/small&gt;
+  &lt;/figcaption&gt;
+  &lt;/center&gt;
+&lt;/figure&gt;
+&lt;p&gt;To tie this, use the same hand wrapping method but start with the first rope
+which you take up to the top of your hand and pinch between your middle
+fingers, then add the second rope to the same spot and continue the wrap.  Pull
+both ends down and under the two wraps and you've got an alpine butterfly but
+with the two ends of the ropes playing the role of the loop.&lt;/p&gt;
+&lt;p&gt;We get another use case without having to remember a new knot.&lt;/p&gt;
+&lt;h2&gt;Hitch, attaching a rope to an object&lt;/h2&gt;
+&lt;p&gt;I have to admit, while last time I looked into knots I managed to learn all the
+rest of the knots you see listed here, but I didn't manage to remember the hitch I
+had picked.&lt;br /&gt;
+This is unfortunate because I've found myself needing to tie a rope to a pole
+or tree at times.  One option is to simply tie a Bowline loop around the object
+in question, which I've used in the past, but I've felt bad for not having a proper hitch in my
+arsenal.
+Since I forgot the hitch I picked last time around, I clearly made a poor choice,
+so when preparing this blog post, I started over.&lt;/p&gt;
+&lt;p&gt;After looking around again,
+I've decided that going forward, my chosen hitch will be the
+&lt;a href="https://www.youtube.com/watch?v=nMJkfMPc6J8"&gt;Backhand Hitch&lt;/a&gt;.&lt;/p&gt;
+&lt;center&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/nMJkfMPc6J8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/center&gt;
+&lt;p&gt;The backhand hitch is a
+&lt;a href="https://www.animatedknots.com/munter-mule-combination-hitch-knot"&gt;Munter hitch&lt;/a&gt; with
+&lt;a href="https://www.animatedknots.com/two-half-hitches-knot"&gt;Two Half Hitches&lt;/a&gt; to
+finish it off. It appears to be gaining in popularity, with
+&lt;a href="https://youtu.be/gv1e4kkgbrI"&gt;many&lt;/a&gt; &lt;a href="https://youtu.be/M4ktpEtz_5c"&gt;extolling&lt;/a&gt;
+its &lt;a href="https://youtu.be/IQDEns_AiP0"&gt;benefits&lt;/a&gt;.  It's a secure knot that is not only
+easy to untie but can hold a load while being untied due to the Munter hitch
+at the base.&lt;/p&gt;
+&lt;p&gt;As I said I don't have a whole lot of personal experience with this knot, but I'll try
+to retain it going forward.&lt;/p&gt;
+&lt;h3&gt;Trucker's Hitch&lt;/h3&gt;
+&lt;p&gt;Another reason I like the Backhand hitch is that it sets us up well to make use of another kind of popular hitch,
+the &lt;a href="https://youtu.be/IQDEns_AiP0"&gt;Trucker's Hitch&lt;/a&gt;&lt;sup&gt;&lt;a href="#ylvis"&gt;2&lt;/a&gt;&lt;/sup&gt;.  I think of the Trucker's hitch
+less as a particular knot as more as a sort of principle for how to tie down loads.  A trucker's hitch involves tying a mid-line
+loop in a rope which you then use a pulley to get three-to-one leverage as you try to pull the line tight.  After that, you simply tie
+it off when it's appropriately tight. The three-to-one leverage you get really helps tighten the rope.&lt;/p&gt;
+&lt;aside&gt; &lt;sup id="ylvis"&gt;2&lt;/sup&gt; 
+  For a not-so-informative but definitely entertaining overview of the Trucker's Hitch, 
+  see the music video by &lt;a href="https://youtu.be/TUHgGK-tImY"&gt;Ylvis&lt;/a&gt; (of &lt;a href="https://youtu.be/jofNR_WkoCE"&gt;What Does the Fox Say?&lt;/a&gt; fame). 
+  &lt;i&gt;Also note that at &lt;a href="https://youtu.be/TUHgGK-tImY?t=99"&gt;3:23 in the video&lt;/a&gt;,
+  you can tell that they tied their double shoelace bow in the incorrect Granny Knot orientation&lt;/i&gt;.
+&lt;/aside&gt;
+&lt;p&gt;For our midline loop, we can use the Alpine butterfly from above.  After pulling tight, we need to secure the rope,
+and for that, we can finish the Trucker's hitch with the same &lt;a href="https://www.animatedknots.com/two-half-hitches-knot"&gt;Two Half Hitch&lt;/a&gt;
+structure we use to finish the Munter Hitch in the Backhand Hitch, here around both of the ropes at the same time.&lt;/p&gt;
+&lt;p&gt;Even though it's composed of the other pieces we've discussed so far, it's worth practicing the Trucker's hitch altogether, and with some regularity.  It's
+the kind of thing that if you can recall immediately can be a big help, but if you have to look it up, it's not really worth it.&lt;/p&gt;
+&lt;h2&gt;Necktie&lt;/h2&gt;
+&lt;p&gt;I don't often wear a tie, but when I do I use the &lt;a href="https://www.animatedknots.com/tie-a-pratt-necktie-knot"&gt;Pratt knot&lt;/a&gt;.
+A modern, relatively slim, nicely symmetrical tie knot.  It has served me well, and I like that it starts with the tie reversed.&lt;/p&gt;
+&lt;figure&gt;
+  &lt;center&gt;
+  &lt;img width="50%" src="figures/knots/pratt.png" /&gt;
+  &lt;figcaption&gt;
+    &lt;small&gt;
+      "Blue Pratt Knot", 
+      by &lt;a href="https://commons.wikimedia.org/wiki/File:Pratt_Knot.png"&gt;Kris Alekseych Karlov&lt;/a&gt;,
+      in the public domain.
+    &lt;/small&gt;
+  &lt;/figcaption&gt;
+  &lt;/center&gt;
+&lt;/figure&gt;
+&lt;h2&gt;Binding&lt;/h2&gt;
+&lt;p&gt;If you want to very securely close off a bag or sack, so well that you'll have to cut the rope
+to get it open again, look no further than the &lt;a href="https://www.animatedknots.com/constrictor-knot-twisting-method"&gt;Constrictor Knot&lt;/a&gt;.
+It can also be tied &lt;a href="https://www.animatedknots.com/constrictor-knot-rope-end-method"&gt;in the end of a rope&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Stopper Knot&lt;/h2&gt;
+&lt;p&gt;Finally, though I don't think it's the most important use case, a surprisingly
+common one is needing to put a stopper knot in a rope, just something to keep
+the rope from slipping through a hole.  Nearly everyone knows the [Overhand &lt;a href="https://www.animatedknots.com/overhand-knot"&gt;knot&lt;/a&gt;, however, I think fewer people know that there are superior alternatives.  The overhand knot tends to bind, being difficult to untie if
+pulled taught, and isn't particularly big a stopping knot, to begin with.&lt;/p&gt;
+&lt;p&gt;If the desire is to have a large stopper knot, the &lt;a href="https://www.animatedknots.com/double-overhand-stopper-knot"&gt;Double overhand&lt;/a&gt;
+is much better than the ordinary overhand knot and very easy to tie, simply add an additional turn while tying the overhand knot.
+When pulled tight it forms a neatly symmetrical stopper, but tends to bind tight, perhaps tighter than the overhand knot.&lt;/p&gt;
+&lt;p&gt;If you want a stopper knot that can be untied, the &lt;a href="https://www.animatedknots.com/figure-8-knot"&gt;Figure 8&lt;/a&gt;
+knot works well, and could also be described as adding an additional to the overhand knot, but this time on the outside of the knot.&lt;/p&gt;
+&lt;h2&gt;Try them out&lt;/h2&gt;
+&lt;p&gt;Get yourself a piece of rope, and a free half-hour or so, and try out some of these knots.
+If you focus on a short list of a handful of knots,
+one for each situation you might need to use a rope for, I think you'll find it time well spent.&lt;/p&gt;
+</content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/knots.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Mon, 13 Jun 2022 00:00:00 -0400</pubDate></item></channel></rss>

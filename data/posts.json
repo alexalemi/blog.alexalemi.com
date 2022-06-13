@@ -2,11 +2,10 @@
     {
       "title": "Knots",
       "src": "knots.md",
-      "date": "2022-06-09",
+      "date": "2022-06-13",
       "tags": ["fun"],
       "id": "knots",
-      "description": "A short list of useful knots to know.",
-      "draft": true
+      "description": "A short list of useful knots to know."
     },
     {
       "title": "KL and M&Ms",
