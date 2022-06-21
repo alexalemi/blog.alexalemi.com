@@ -1,5 +1,14 @@
 [
     {
+      "title": "Efficient Beliefs",
+      "src": "efficient-beliefs.md",
+      "date": "2022-06-22",
+      "tags": ["machine learning", "bayesian inference"],
+      "id": "efficient-beliefs",
+      "description": "I like to think about Bayesian inference as holding efficient beliefs, phrasing the task of inference as minimizing an objective defined in the space of all possible beliefs.",
+      "draft": true
+    },
+    {
       "title": "Knots",
       "src": "knots.md",
       "date": "2022-06-13",
@@ -60,15 +69,6 @@
       "id": "gravity",
       "description": "Taking a closer look at the earths gravitational field.",
       "hidden": true,
-      "draft": true
-    },
-    {
-      "title": "Bayes as Efficient Beliefs",
-      "src": "efficient-beliefs.md",
-      "date": "2021-10-25",
-      "tags": ["machine learning"],
-      "id": "efficient-beliefs",
-      "description": "I like to think about Bayesian inference as holding efficient beliefs.",
       "draft": true
     },
     {
