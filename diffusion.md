@@ -14,7 +14,7 @@ Let's say we want to build a latent-variable model, $q(x, z)$ where the likeliho
 
 
 <aside><sup id="#kl">2</sup>
- <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">Kullback-Leibler Divergence</a>, for more background on KL see <a href="kl.html">other post</a>.
+ <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">Kullback-Leibler Divergence</a>, for more background on KL see my <a href="kl.html">other post</a>.
 </aside>
 
 <aside><sup id="#brakets">3</sup>
