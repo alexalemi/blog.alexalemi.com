@@ -2,7 +2,7 @@
 
 Diffusion models have made quite a splash, especially after the open-source release of [Stable Diffusion](https://huggingface.co/spaces/stabilityai/stable-diffusion).  What are diffusion models, where does the loss come from and what does a simple example look like? I've recently helped open-source a simple, pedagogical, self-contained 
 [example colab](https://colab.research.google.com/github/google-research/vdm/blob/main/colab/SimpleDiffusionColab.ipynb)
-[of](of) a diffusion model trained on EMNIST, which you can find as part of the [Variational Diffusion Models (VDM)](https://arxiv.org/abs/2107.00630) [github page](https://github.com/google-research/vdm). In this post, I wanted to give some more background and a simple way to motivate where the loss function comes from.
+of a diffusion model trained on EMNIST, which you can find as part of the [Variational Diffusion Models (VDM)](https://arxiv.org/abs/2107.00630) [github page](https://github.com/google-research/vdm). In this post, I wanted to give some more background and a simple way to motivate where the loss function comes from.
 
 ## Non-negativity of KL
 
@@ -79,7 +79,7 @@ The only difference is that instead of a two-step forward process, in diffusion 
 
 In particular, in most diffusion models we fix the forward process to be a Markov chain:
 $$ p(x, z_0, z_1, z_2, \cdots, z_{T-1}, z_T) = p(x) p(z_0|x) p(z_1|z_0) \cdots p(z_T|z_{T-1}), $$
-which starts with a sample from a natural image distribution $p(x)$ and then adds $T$ steps of additive Gaussian noise $p(z_t| z_{t-1})  \sim \mathcal N(\alpha_{t|t-1} z_{t-1}, \sigma_{t|t-1}^2) $.
+which starts with a sample from a natural image distribution $p(x)$ and then adds $T$ steps of additive Gaussian noise $p(z_t| z_{t-1})  \sim \mathcal N(\alpha_{t} z_{t-1}, \sigma_{t}^2) $.
 
 <figure id="#diffusion-forward">
  <img src="figures/diffusion-forward.svg"
@@ -107,7 +107,7 @@ This takes an ordinary image and then adds more and more noise to it until it lo
 </figure>
 
 One particularly nice thing about using Gaussians for every step of the forward process here is that the composition of a bunch of conditional Gaussians is itself Gaussian so we will have a closed form for the marginal distribution at any intermediate time:
-$$ p(z_t|x) = \mathcal N(\alpha_t x, \sigma_t^2 I ).$$ 
+$$ p(z_t|x) = \mathcal N(\tilde \alpha_t x, \tilde \sigma_t^2 I ).$$ 
 
 
 With a forward process defined, we parameterize or learn the reverse process, a Markov chain that operates in the opposite direction:
@@ -169,18 +169,18 @@ We'll model the reverse process as if it were the exact reversed conditional for
 	$$ \hat x_t = (z_t - \sigma_t \hat \epsilon_t) / \alpha_t $$
 </aside>
 
-The actual parametric model in a diffusion model is this bit, $\hat x(z_t, t)$ it is a neural network that takes as input the noisy image $z_t$ and the step we are on in the diffusion process $t$ and has the job of trying to predict what the corresponding clean image was that generated the noisy image.  In most diffusion models this is implemented as a [U-Net](https://en.wikipedia.org/wiki/U-Net) style architecture. In practice, it's been found that if instead of predicting the clean image $\hat x$, you instead predict the noise $\hat \epsilon$ from the noisy image, you get better-looking samples.<sup><a href="#epshat">8</a></sup> The full reverse generative model then consists of many steps of looking at a noisy image, trying to infer the clean one, rinse and repeat.
+The actual parametric model in a diffusion model is this bit, $\hat x(z_t, t)$ it is a neural network that takes as input the noisy image $z_t$ and the step we are on in the diffusion process $t$ and has the job of trying to predict what the corresponding clean image was that generated the noisy image.  In most diffusion models this is implemented as a [U-Net](https://en.wikipedia.org/wiki/U-Net) style architecture. In practice, it's been found that if instead of predicting the clean image $\hat x$, you instead predict the noise $\hat \epsilon$ from the noisy image, you get better-looking samples.<sup><a href="#epshat">8</a></sup> The full reverse generative model then consists of many steps of looking at a noisy image, trying to infer the clean one; rinse and repeat.
 
-With these choices in place, we can now look at the full KLs and organize terms.
+With these choices in place, we can now look at the full joint KL and organize terms.
 
 $$ \left\langle \log p(x) - \log q(x|z_0) + \log \frac{p(z_T|x)}{q(z_T)}  + \sum_{i=0}^{T-1} \log \frac{p(z_i|z_{i+1},x)}{q(z_i|z_{i+1})} \right\rangle_q $$
 
-The last trick we're going to use is that we're going to avoid computing all of the terms in our sum by simply not computing all of the terms in our sum.  We'll approximate the sum with Monte Carlo, we'll simply randomly choose one of the terms and upweight it appropriately.
+The last trick we're going to use is that we're going to avoid computing all of the terms in our sum by simply not computing all of the terms in our sum.  We'll approximate the sum with Monte Carlo: we'll simply randomly choose one of the terms and upweight it appropriately.
 At that point, we have the loss function used to train VDM models.  A very nice thing about the VDM loss is that it is clear that we are optimizing a bound on the marginal likelihood of our generative model.  As you can learn in the [VDM Paper](https://arxiv.org/abs/2107.00630), many of the diffusion models you've heard about correspond to a *weighted* form of this same objective, where different terms in the sum get different weights.
 
 After going through all of the fancy math, the analytic KL divergences involved in the diffusion loss simplify quite nicely:
 $$ \left\langle \log p(x) - \log q(x|z_0) + \log \frac{p(z_T|x)}{q(z_T)} + \frac 1 2 \sum_{t=0}^{T-1} \beta_t \left\lVert \epsilon - \hat \epsilon(z_t,t) \right\rVert^2  \right\rangle $$
-For VDM diffusion the weight terms $\beta_t$ depend on your choice of *noise-schedule*.  For most diffusion models, these $\beta_t$ weights are conventionally set to 1.
+For VDM diffusion the weight terms $\beta_t$ depend on your choice of *noise-schedule*.  For most other diffusion models in the wild, these $\beta_t$ weights are conventionally set to 1.
 
 ## Closing Thoughts
 
@@ -192,7 +192,7 @@ Though, if that were the case, shouldn't we have expected deep hierarchical mode
 
 Diffusion models avoid this by structuring their forward process in such a way that all of the steps share a great deal of structural similarity.  This allows diffusion to approximate a sum of a potentially large number of steps by a single randomly chosen step.  If each step looks more or less the same, you can get a good estimate for the whole sum by looking at an individual, random, term.
 
-The last trick up its sleeve is even if you managed to design a deep hierarchical generative model with this property if you wanted to get to some intermediate position in the hierarchy you'd still have to run roughly half of the full forward process.  That would still be expensive in general.  Here Diffusion avoids that entirely.  By fixing the forward process to be a sequence of conditional Gaussians, as boring as those are for a forward process they are also beautiful in that they enable exact analytic marginalization to intermediate steps.  You can very quickly mimic the result of adding hundreds of steps of additive Gaussian noise by simply adding a moderate amount of Gaussian noise in a single shot.
+The last trick up its sleeve is, even if you managed to design a deep hierarchical generative model with this structural homogeneity property, if you wanted to get to some intermediate position in the hierarchy you'd still have to run roughly half of the full forward process.  That would still be expensive in general.  Here Diffusion avoids that entirely.  By fixing the forward process to be a sequence of conditional Gaussians, as boring as those are for a forward process they are also beautiful in that they enable exact analytic marginalization to intermediate steps.  You can very quickly mimic the result of adding hundreds of steps of additive Gaussian noise by simply adding a moderate amount of Gaussian noise in a single shot.
 
 So, ultimately, what do I think is one of the main reasons diffusion models are such powerful models? I think it's because they are very powerful generative models.  Sampling from them is generally rather expensive.  Drawing a sample means running the full reverse process, which might mean calling the central score net a thousand or so times.  That is a very powerful and very expressive generative model, but magically, we can train that generative model's likelihood without ever having to actually instantiate the full generative process at training time due to our sequence of sundry tricks.
 
