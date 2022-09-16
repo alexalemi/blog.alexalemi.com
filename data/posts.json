@@ -1,5 +1,13 @@
 [
     {
+      "title": "A Simple Derivation of the VAE and Diffusion Loss",
+      "src": "diffusion.md",
+      "date": "2022-09-15",
+      "tags": ["machine learning"],
+      "id": "diffusion",
+      "description": "Deriving the Diffusion and VAE losses from the non-negativity of KL."
+    },
+    {
       "title": "Efficient Beliefs",
       "src": "efficient-beliefs.md",
       "date": "2022-06-22",
@@ -50,14 +58,6 @@
       "tags": ["math"],
       "id": "benford",
       "description": "Benford's law is a natural consequence of scale invariance, this is relatively easy to see in the face of a circular sliderule."
-    },
-    {
-      "title": "A Simple Derivation of the VAE and Diffusion Loss",
-      "src": "diffusion.md",
-      "date": "2022-09-15",
-      "tags": ["machine learning"],
-      "id": "diffusion",
-      "description": "Deriving the Diffusion and VAE losses from the non-negativity of KL."
     },
     {
       "title": "Earth's gravitational field",
