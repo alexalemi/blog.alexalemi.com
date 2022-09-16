@@ -147,7 +147,7 @@ but instead we'll rearrange this to be a product of a bunch of conditional rever
 $$ 
 \begin{align}
 p(x, z_0, z_1, z_2,\cdots, z_N) &= p(z_0,z_1,z_2,\cdots, z_T|x) p(x) \\
-&= p(z_0|z_1,\cdots,z_T,x)p(z_1|z_2,\cdots,z_T,x)p(z_T|x)p(x) \\
+&= p(z_0|z_1,\cdots,z_T,x)p(z_1|z_2,\cdots,z_T,x)\cdots p(z_T|x)p(x) \\
 &= p(z_0|z_1,x)p(z_1|z_2,x)\cdots p(z_{T-1}|z_{T},x)p(z_T|x)p(x)
 \end{align}$$
 For the Gaussian diffusion, we can analytically figure out what these conditional reverse steps should be for the forward process $p(z_{t-1}|z_t,x)$. These distributions compute the probability of seeing a particular noisy image from the previous step if we get to observe both the noisy image as well as the original image.
@@ -198,4 +198,4 @@ So, ultimately, what do I think is one of the main reasons diffusion models are 
 
 I'm excited to see where this all goes and hope this post and the [colab](https://colab.sandbox.google.com/github/google-research/vdm/blob/main/colab/SimpleDiffusionColab.ipynb) help to introduce these magical models to a wider audience.
 
-<small>Special thanks to [Ben Poole](https://twitter.com/poolio) and [Pavel Izmailov](https://twitter.com/pavel_izmailov) for helpful feedback on this post.</small>
+<small>Special thanks to [Ben Poole](https://twitter.com/poolio), [Pavel Izmailov](https://twitter.com/pavel_izmailov), and [Christopher Suter](https://twitter.com/def_chris_suter) for helpful feedback on this post.</small>

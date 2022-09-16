@@ -1382,11 +1382,11 @@ whole thing efficient.  To see the code in all its detail, please check out the 
 </g>
 </svg></span>
 but instead we'll rearrange this to be a product of a bunch of conditional reverse steps (as a <em>top-down</em> forward process):
-<span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="74.399ex" height="9.176ex" style="vertical-align: -4.005ex;" viewBox="0 -2226.5 32032.9 3950.7" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-15-Title">
+<span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="76.666ex" height="9.176ex" style="vertical-align: -4.005ex;" viewBox="0 -2226.5 33008.9 3950.7" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-15-Title">
 <title id="MathJax-SVG-15-Title"> 
 \begin{align}
 p(x, z_0, z_1, z_2,\cdots, z_N) &amp;= p(z_0,z_1,z_2,\cdots, z_T|x) p(x) \\
-&amp;= p(z_0|z_1,\cdots,z_T,x)p(z_1|z_2,\cdots,z_T,x)p(z_T|x)p(x) \\
+&amp;= p(z_0|z_1,\cdots,z_T,x)p(z_1|z_2,\cdots,z_T,x)\cdots p(z_T|x)p(x) \\
 &amp;= p(z_0|z_1,x)p(z_1|z_2,x)\cdots p(z_{T-1}|z_{T},x)p(z_T|x)p(x)
 \end{align}</title>
 <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
@@ -1499,19 +1499,20 @@ p(x, z_0, z_1, z_2,\cdots, z_N) &amp;= p(z_0,z_1,z_2,\cdots, z_T|x) p(x) \\
  <use xlink:href="#MJMAIN-2C" x="15348" y="0"></use>
  <use xlink:href="#MJMATHI-78" x="15793" y="0"></use>
  <use xlink:href="#MJMAIN-29" x="16365" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="16755" y="0"></use>
- <use xlink:href="#MJMAIN-28" x="17258" y="0"></use>
-<g transform="translate(17648,0)">
+ <use xlink:href="#MJMAIN-22EF" x="16921" y="0"></use>
+ <use xlink:href="#MJMATHI-70" x="18261" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="18764" y="0"></use>
+<g transform="translate(19154,0)">
  <use xlink:href="#MJMATHI-7A" x="0" y="0"></use>
  <use transform="scale(0.707)" xlink:href="#MJMATHI-54" x="658" y="-213"></use>
 </g>
- <use xlink:href="#MJMAIN-7C" x="18711" y="0"></use>
- <use xlink:href="#MJMATHI-78" x="18990" y="0"></use>
- <use xlink:href="#MJMAIN-29" x="19562" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="19952" y="0"></use>
- <use xlink:href="#MJMAIN-28" x="20455" y="0"></use>
- <use xlink:href="#MJMATHI-78" x="20845" y="0"></use>
- <use xlink:href="#MJMAIN-29" x="21417" y="0"></use>
+ <use xlink:href="#MJMAIN-7C" x="20217" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="20496" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="21068" y="0"></use>
+ <use xlink:href="#MJMATHI-70" x="21458" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="21961" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="22351" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="22923" y="0"></use>
 </g>
 <g transform="translate(0,-1376)">
  <use xlink:href="#MJMAIN-3D" x="277" y="0"></use>
@@ -1919,7 +1920,7 @@ For VDM diffusion the weight terms $\beta_t$ depend on your choice of <em>noise-
 <p>The last trick up its sleeve is, even if you managed to design a deep hierarchical generative model with this structural homogeneity property, if you wanted to get to some intermediate position in the hierarchy you'd still have to run roughly half of the full forward process.  That would still be expensive in general.  Here Diffusion avoids that entirely.  By fixing the forward process to be a sequence of conditional Gaussians, as boring as those are for a forward process they are also beautiful in that they enable exact analytic marginalization to intermediate steps.  You can very quickly mimic the result of adding hundreds of steps of additive Gaussian noise by simply adding a moderate amount of Gaussian noise in a single shot.</p>
 <p>So, ultimately, what do I think is one of the main reasons diffusion models are such powerful models? I think it's because they are very powerful generative models.  Sampling from them is generally rather expensive.  Drawing a sample means running the full reverse process, which might mean calling the central score net a thousand or so times.  That is a very powerful and very expressive generative model, but magically, we can train that generative model's likelihood without ever having to actually instantiate the full generative process at training time due to our sequence of sundry tricks.</p>
 <p>I'm excited to see where this all goes and hope this post and the <a href="https://colab.sandbox.google.com/github/google-research/vdm/blob/main/colab/SimpleDiffusionColab.ipynb">colab</a> help to introduce these magical models to a wider audience.</p>
-<p><small>Special thanks to <a href="https://twitter.com/poolio">Ben Poole</a> and <a href="https://twitter.com/pavel_izmailov">Pavel Izmailov</a> for helpful feedback on this post.</small></p>
+<p><small>Special thanks to <a href="https://twitter.com/poolio">Ben Poole</a>, <a href="https://twitter.com/pavel_izmailov">Pavel Izmailov</a>, and <a href="https://twitter.com/def_chris_suter">Christopher Suter</a> for helpful feedback on this post.</small></p>
  
     </div>
   </article>

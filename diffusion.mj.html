@@ -175,7 +175,7 @@ but instead we'll rearrange this to be a product of a bunch of conditional rever
 $$ 
 \begin{align}
 p(x, z_0, z_1, z_2,\cdots, z_N) &amp;= p(z_0,z_1,z_2,\cdots, z_T|x) p(x) \\
-&amp;= p(z_0|z_1,\cdots,z_T,x)p(z_1|z_2,\cdots,z_T,x)p(z_T|x)p(x) \\
+&amp;= p(z_0|z_1,\cdots,z_T,x)p(z_1|z_2,\cdots,z_T,x)\cdots p(z_T|x)p(x) \\
 &amp;= p(z_0|z_1,x)p(z_1|z_2,x)\cdots p(z_{T-1}|z_{T},x)p(z_T|x)p(x)
 \end{align}$$
 For the Gaussian diffusion, we can analytically figure out what these conditional reverse steps should be for the forward process $p(z_{t-1}|z_t,x)$. These distributions compute the probability of seeing a particular noisy image from the previous step if we get to observe both the noisy image as well as the original image.</p>
@@ -209,7 +209,7 @@ For VDM diffusion the weight terms $\beta_t$ depend on your choice of <em>noise-
 <p>The last trick up its sleeve is, even if you managed to design a deep hierarchical generative model with this structural homogeneity property, if you wanted to get to some intermediate position in the hierarchy you'd still have to run roughly half of the full forward process.  That would still be expensive in general.  Here Diffusion avoids that entirely.  By fixing the forward process to be a sequence of conditional Gaussians, as boring as those are for a forward process they are also beautiful in that they enable exact analytic marginalization to intermediate steps.  You can very quickly mimic the result of adding hundreds of steps of additive Gaussian noise by simply adding a moderate amount of Gaussian noise in a single shot.</p>
 <p>So, ultimately, what do I think is one of the main reasons diffusion models are such powerful models? I think it's because they are very powerful generative models.  Sampling from them is generally rather expensive.  Drawing a sample means running the full reverse process, which might mean calling the central score net a thousand or so times.  That is a very powerful and very expressive generative model, but magically, we can train that generative model's likelihood without ever having to actually instantiate the full generative process at training time due to our sequence of sundry tricks.</p>
 <p>I'm excited to see where this all goes and hope this post and the <a href="https://colab.sandbox.google.com/github/google-research/vdm/blob/main/colab/SimpleDiffusionColab.ipynb">colab</a> help to introduce these magical models to a wider audience.</p>
-<p><small>Special thanks to <a href="https://twitter.com/poolio">Ben Poole</a> and <a href="https://twitter.com/pavel_izmailov">Pavel Izmailov</a> for helpful feedback on this post.</small></p>
+<p><small>Special thanks to <a href="https://twitter.com/poolio">Ben Poole</a>, <a href="https://twitter.com/pavel_izmailov">Pavel Izmailov</a>, and <a href="https://twitter.com/def_chris_suter">Christopher Suter</a> for helpful feedback on this post.</small></p>
  
     </div>
   </article>
