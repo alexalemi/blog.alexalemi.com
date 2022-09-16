@@ -5,7 +5,8 @@
       "date": "2022-09-15",
       "tags": ["machine learning"],
       "id": "diffusion",
-      "description": "Deriving the Diffusion and VAE losses from the non-negativity of KL."
+      "description": "Deriving the Diffusion and VAE losses from the non-negativity of KL.",
+      "featured": true
     },
     {
       "title": "Efficient Beliefs",
