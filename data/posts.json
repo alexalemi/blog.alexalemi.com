@@ -1,5 +1,15 @@
 [
     {
+      "title": "Non-equilibrium Thermodynamics Results from Seemingly Nothing",
+      "src": "non-equilibrium.md",
+      "date": "2022-09-16",
+      "tags": ["physics"],
+      "id": "non-equilibrium",
+      "description": "Deriving some classic results in non-equilibrium thermodynamics from seemingly nothing.",
+      "featured": true,
+      "draft": true
+    },
+    {
       "title": "A Path to the VDM Diffusion Loss",
       "src": "diffusion.md",
       "date": "2022-09-15",

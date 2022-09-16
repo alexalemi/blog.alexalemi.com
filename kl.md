@@ -191,13 +191,14 @@ We can roll the choice of multiplicative constant into our choice of basis for t
 for our information gain:
 $$ I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x)}. $$
 
-As for the non-negativity, our final form satisfies that property.  Because we have that $\log x \leq x -1$:
+<p id="#non-negative-proof">As for the non-negativity, our final form satisfies that property.  Because we have that $\log x \leq x -1$:
 $$ I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x)} = -\int \mathrm dx \, p(x) \log \frac{q(x)}{p(x)} \geq
 -\int \mathrm dx\, p(x) \left( \frac{q(x)}{p(x)} - 1 \right) = 0. $$
 <aside>
   <img width="100%" src="figures/logbound.svg"
     alt="Visual demonstration of log x < x - 1.">
 </aside>
+</p>
 
 
 ## Bayes Rule
