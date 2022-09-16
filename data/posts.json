@@ -1,6 +1,6 @@
 [
     {
-      "title": "A Simple Derivation of the VAE and Diffusion Loss",
+      "title": "A Path to the VDM Diffusion Loss",
       "src": "diffusion.md",
       "date": "2022-09-15",
       "tags": ["machine learning"],
