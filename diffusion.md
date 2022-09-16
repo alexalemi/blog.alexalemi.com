@@ -198,3 +198,4 @@ So, ultimately, what do I think is one of the main reasons diffusion models are 
 
 I'm excited to see where this all goes and hope this post and the [colab](https://colab.sandbox.google.com/github/google-research/vdm/blob/main/colab/SimpleDiffusionColab.ipynb) help to introduce these magical models to a wider audience.
 
+<small>Special thanks to [Ben Poole](https://twitter.com/poolio) and [Pavel Izmailov](https://twitter.com/pavel_izmailov) for helpful feedback on this post.</small>
