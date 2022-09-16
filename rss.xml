@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Fri, 16 Sep 2022 17:02:28 +0000</lastBuildDate><item><title>Why KL?</title><link>https://blog.alexalemi.com/kl.html</link><description>Why is the KL divergence so special?</description><content:encoded>&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Liebler
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Fri, 16 Sep 2022 19:08:49 +0000</lastBuildDate><item><title>Why KL?</title><link>https://blog.alexalemi.com/kl.html</link><description>Why is the KL divergence so special?</description><content:encoded>&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Liebler
 divergence&lt;/a&gt;,
 or KL divergence, or relative entropy, or relative information, or information
 gain, or expected weight of evidence, or information divergence
@@ -167,13 +167,14 @@ $$ f(x) = c \log x. $$
 We can roll the choice of multiplicative constant into our choice of basis for the logarithm and arrive at our final form
 for our information gain:
 $$ I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x)}. $$&lt;/p&gt;
-&lt;p&gt;As for the non-negativity, our final form satisfies that property.  Because we have that $\log x \leq x -1$:
+&lt;p id="#non-negative-proof"&gt;As for the non-negativity, our final form satisfies that property.  Because we have that $\log x \leq x -1$:
 $$ I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x)} = -\int \mathrm dx \, p(x) \log \frac{q(x)}{p(x)} \geq
--\int \mathrm dx\, p(x) \left( \frac{q(x)}{p(x)} - 1 \right) = 0. $$&lt;/p&gt;
+-\int \mathrm dx\, p(x) \left( \frac{q(x)}{p(x)} - 1 \right) = 0. $$
 &lt;aside&gt;
   &lt;img width="100%" src="figures/logbound.svg"
     alt="Visual demonstration of log x &lt; x - 1."&gt;
 &lt;/aside&gt;
+&lt;/p&gt;
 &lt;h2&gt;Bayes Rule&lt;/h2&gt;
 &lt;aside&gt; &lt;sup id="caticha2"&gt;7&lt;/sup&gt;
   I first saw this form of motivation for Bayes Rule in
@@ -578,7 +579,7 @@ function updatePercent() {
 &lt;p&gt;Finally, it's cliche but we all know that the best way to learn is through teaching. Taking the time to try to explain a new concept you're struggling with can really help solidify it in your own mind.  I've found that many of the things I've learned best were things I worked through for previous blog posts of mine.&lt;/p&gt;
 &lt;p&gt;I want to start blogging again. I've set up this small site to do that. It's remarkable how easy it is these days.  This site is being hosted on &lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt; which gives free space for anyone to start hosting their own static content. Using systems like &lt;a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll"&gt;Jekyll&lt;/a&gt; the actual practice of making the website can be quite simple these days.  In my case I wrote some &lt;a href="https://github.com/alexalemi/alexalemi.github.io/tree/master/src"&gt;custom python scripts&lt;/a&gt; to convert my &lt;a href="https://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; posts to html. This blog itself lives in its own &lt;a href="https://github.com/alexalemi/blog.alexalemi.com/"&gt;github repo&lt;/a&gt;.  &lt;a href="https://www.mathjax.org/"&gt;MathJax&lt;/a&gt; allows for beautiful $\LaTeX$ math rendering.
 For discussions or comments, I'll try out &lt;a href="https://giscus.app/"&gt;giscus&lt;/a&gt; which is a nifty system enabling comments through &lt;a href="https://github.com/alexalemi/blog.alexalemi.com/discussions"&gt;github discussions&lt;/a&gt;. People can also reach out on &lt;a href="https://twitter.com/alemi"&gt;twitter&lt;/a&gt;. I also think it's important to support &lt;a href="https://atthis.link/blog/2021/rss.html"&gt;rss&lt;/a&gt; which I've done here.&lt;/p&gt;
-</content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/blogging.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Mon, 15 Nov 2021 00:00:00 -0500</pubDate></item><item><title>A Simple Demonstrations of Benford's Law</title><link>https://blog.alexalemi.com/benford.html</link><description>Benford's law is a natural consequence of scale invariance, this is relatively easy to see in the face of a circular sliderule.</description><content:encoded>&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Benford%27s_law"&gt;Benford's Law&lt;/a&gt; is the
+</content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/blogging.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Mon, 15 Nov 2021 00:00:00 -0500</pubDate></item><item><title>A Simple Demonstration of Benford's Law</title><link>https://blog.alexalemi.com/benford.html</link><description>Benford's law is a natural consequence of scale invariance, this is relatively easy to see in the face of a circular sliderule.</description><content:encoded>&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Benford%27s_law"&gt;Benford's Law&lt;/a&gt; is the
 observation that in a list of &amp;quot;naturally occuring numbers&amp;quot;,
 the plurality of numbers will begin with a 1.
 This often catches people by surprise, but if you go and pull random numbers from a book or newspaper you can expect the leading digits to follow the following distribution:&lt;/p&gt;
@@ -872,7 +873,7 @@ of a diffusion model trained on EMNIST, which you can find as part of the &lt;a 
 &lt;/aside&gt;
 &lt;p&gt;Let's say we want to build a latent-variable model, $q(x, z)$ where the likelihood of the data ($p(x)$), has high marginal likelihood: $\log q(x)$. Unfortunately, computing $\log q(x)$ involves an intractable integral over the latent variable, $z$.&lt;sup&gt;&lt;a href="#p-and-q"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;aside&gt;&lt;sup id="#kl"&gt;2&lt;/sup&gt;
- &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Leibler Divergence&lt;/a&gt;
+ &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Leibler Divergence&lt;/a&gt;, for more background on KL see my &lt;a href="kl.html"&gt;other post&lt;/a&gt;.
 &lt;/aside&gt;
 &lt;aside&gt;&lt;sup id="#brakets"&gt;3&lt;/sup&gt;
 	I use &lt;a href="https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation"&gt;brakets&lt;/a&gt; to show expectations and unless noted, always with respect to the full $p$ distribution.
@@ -971,7 +972,7 @@ but instead we'll rearrange this to be a product of a bunch of conditional rever
 $$ 
 \begin{align}
 p(x, z_0, z_1, z_2,\cdots, z_N) &amp;amp;= p(z_0,z_1,z_2,\cdots, z_T|x) p(x) \\
-&amp;amp;= p(z_0|z_1,\cdots,z_T,x)p(z_1|z_2,\cdots,z_T,x)p(z_T|x)p(x) \\
+&amp;amp;= p(z_0|z_1,\cdots,z_T,x)p(z_1|z_2,\cdots,z_T,x)\cdots p(z_T|x)p(x) \\
 &amp;amp;= p(z_0|z_1,x)p(z_1|z_2,x)\cdots p(z_{T-1}|z_{T},x)p(z_T|x)p(x)
 \end{align}$$
 For the Gaussian diffusion, we can analytically figure out what these conditional reverse steps should be for the forward process $p(z_{t-1}|z_t,x)$. These distributions compute the probability of seeing a particular noisy image from the previous step if we get to observe both the noisy image as well as the original image.&lt;/p&gt;
@@ -1005,5 +1006,5 @@ For VDM diffusion the weight terms $\beta_t$ depend on your choice of &lt;em&gt;
 &lt;p&gt;The last trick up its sleeve is, even if you managed to design a deep hierarchical generative model with this structural homogeneity property, if you wanted to get to some intermediate position in the hierarchy you'd still have to run roughly half of the full forward process.  That would still be expensive in general.  Here Diffusion avoids that entirely.  By fixing the forward process to be a sequence of conditional Gaussians, as boring as those are for a forward process they are also beautiful in that they enable exact analytic marginalization to intermediate steps.  You can very quickly mimic the result of adding hundreds of steps of additive Gaussian noise by simply adding a moderate amount of Gaussian noise in a single shot.&lt;/p&gt;
 &lt;p&gt;So, ultimately, what do I think is one of the main reasons diffusion models are such powerful models? I think it's because they are very powerful generative models.  Sampling from them is generally rather expensive.  Drawing a sample means running the full reverse process, which might mean calling the central score net a thousand or so times.  That is a very powerful and very expressive generative model, but magically, we can train that generative model's likelihood without ever having to actually instantiate the full generative process at training time due to our sequence of sundry tricks.&lt;/p&gt;
 &lt;p&gt;I'm excited to see where this all goes and hope this post and the &lt;a href="https://colab.sandbox.google.com/github/google-research/vdm/blob/main/colab/SimpleDiffusionColab.ipynb"&gt;colab&lt;/a&gt; help to introduce these magical models to a wider audience.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Special thanks to &lt;a href="https://twitter.com/poolio"&gt;Ben Poole&lt;/a&gt; and &lt;a href="https://twitter.com/pavel_izmailov"&gt;Pavel Izmailov&lt;/a&gt; for helpful feedback on this post.&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Special thanks to &lt;a href="https://twitter.com/poolio"&gt;Ben Poole&lt;/a&gt;, &lt;a href="https://twitter.com/pavel_izmailov"&gt;Pavel Izmailov&lt;/a&gt;, and &lt;a href="https://twitter.com/def_chris_suter"&gt;Christopher Suter&lt;/a&gt; for helpful feedback on this post.&lt;/small&gt;&lt;/p&gt;
 </content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/diffusion.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Thu, 15 Sep 2022 00:00:00 -0400</pubDate></item></channel></rss>
