@@ -52,14 +52,12 @@
       "description": "Benford's law is a natural consequence of scale invariance, this is relatively easy to see in the face of a circular sliderule."
     },
     {
-      "title": "Diffusion from a Rate Distortion Perspective",
+      "title": "A Simple Derivation of the VAE and Diffusion Loss",
       "src": "diffusion.md",
-      "date": "2021-10-25",
+      "date": "2022-09-15",
       "tags": ["machine learning"],
       "id": "diffusion",
-      "description": "Taking a look at diffusion from an information theoretic and rate distortion perspective.",
-      "hidden": true,
-      "draft": true
+      "description": "Deriving the Diffusion and VAE losses from the non-negativity of KL."
     },
     {
       "title": "Earth's gravitational field",
