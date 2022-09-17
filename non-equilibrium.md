@@ -1,6 +1,8 @@
 
 Let's see if we can very quickly prove the Jarzynski Equality and related non-equilibrium statistical mechanics results.  Much like the mathematical underpinnings of thermodynamics are pretty mathematically simple, e.g. the existence of a convex surface on which mixed partial derivatives commute, I believe most of the results in non-equilibrium statistical mechanics are similarly due to a rhetorical reinterpretation of a simple mathematical manipulation.
 
+This post will assume some familiarity with physics.
+
 ## Basic Facts
 
 The underlying math in our case are two facts, one that probability distributions are normalized:
@@ -175,4 +177,4 @@ $$ \textsf{ELBO} \equiv D + R \geq H. $$
 
 We've managed to derive several non-equilibrium statistical mechanical equalities and inequalities seemingly from nothing.  All of these results were powered by the facts we opened with, that probability distributions integrate to one and that KL divergences are positive.  The only challenge here was one of semantics.  To get power out of such trivial mathematical manipulations required us to make judicious choices in how we interpreted them.
 
-<small>Special thanks to Srinivas Vasudevan for helpful feedback on this post.</small>
+<small>Special thanks to Sam Schoenholz and Srinivas Vasudevan for helpful feedback on this post.</small>
