@@ -1,0 +1,39 @@
+[
+    {
+      "title": "KL and M&Ms",
+      "src": "m-and-ms.md",
+      "date": "2022-06-08",
+      "tags": ["kl divergence", "bayesian inference"],
+      "id": "m-and-ms",
+      "description": "Trying to understand KL divergence from M&Ms.",
+      "draft": true
+    },
+    {
+      "title": "Model Selection, the three families",
+      "src": "model-selection.md",
+      "date": "2022-06-08",
+      "tags": ["bayesian inference"],
+      "id": "model-selection",
+      "description": "Looking at and trying to come to terms with the three families of model selection.",
+      "draft": true
+    },
+    {
+      "title": "Inference and Prediction",
+      "src": "inference-and-prediction.md",
+      "date": "2022-06-08",
+      "tags": ["bayesian inference"],
+      "id": "inference-and-prediction",
+      "description": "There is a difference between the scientific pursuit of inference, trying to figure out what the real answer is, and prediction, trying to figure out what will come.",
+      "draft": true
+    },
+    {
+      "title": "Earth's gravitational field",
+      "src": "gravity.md",
+      "date": "2021-11-16",
+      "tags": ["physics"],
+      "id": "gravity",
+      "description": "Taking a closer look at the earths gravitational field.",
+      "hidden": true,
+      "draft": true
+    }
+]
