@@ -180,7 +180,7 @@ At that point, we have the loss function used to train VDM models.  A very nice 
 
 After going through all of the fancy math, the analytic KL divergences involved in the diffusion loss simplify quite nicely:
 $$ \left\langle \log p(x) - \log q(x|z_0) + \log \frac{p(z_T|x)}{q(z_T)} + \frac 1 2 \sum_{t=0}^{T-1} \beta_t \left\lVert \epsilon - \hat \epsilon(z_t,t) \right\rVert^2  \right\rangle $$
-For VDM diffusion the weight terms $\beta_t$ depend on your choice of *noise-schedule*.  For most other diffusion models in the wild, these $\beta_t$ weights are conventionally set to 1.
+For variational diffusion the weight terms $\beta_t$ depend on your choice of *noise-schedule*.  For most other diffusion models in the wild, these $\beta_t$ weights are conventionally set to 1.
 
 ## Closing Thoughts
 
@@ -194,8 +194,8 @@ Diffusion models avoid this by structuring their forward process in such a way t
 
 The last trick up its sleeve is, even if you managed to design a deep hierarchical generative model with this structural homogeneity property, if you wanted to get to some intermediate position in the hierarchy you'd still have to run roughly half of the full forward process.  That would still be expensive in general.  Here Diffusion avoids that entirely.  By fixing the forward process to be a sequence of conditional Gaussians, as boring as those are for a forward process they are also beautiful in that they enable exact analytic marginalization to intermediate steps.  You can very quickly mimic the result of adding hundreds of steps of additive Gaussian noise by simply adding a moderate amount of Gaussian noise in a single shot.
 
-So, ultimately, what do I think is one of the main reasons diffusion models are such powerful models? I think it's because they are very powerful generative models.  Sampling from them is generally rather expensive.  Drawing a sample means running the full reverse process, which might mean calling the central score net a thousand or so times.  That is a very powerful and very expressive generative model, but magically, we can train that generative model's likelihood without ever having to actually instantiate the full generative process at training time due to our sequence of sundry tricks.
+So, ultimately, what do I think is one of the main reasons diffusion models do so well? I think it's because they *can* do so well! I think it's because they are very powerful, expressive, generative models.  Sampling from them is generally rather expensive.  Drawing a sample means running the full reverse process, which might mean calling the central score net a thousand or so times.  That is a very powerful and very expressive generative model, but magically, we can train that generative model's likelihood without ever having to actually instantiate the full generative process at training time due to our sequence of sundry tricks.
 
 I'm excited to see where this all goes and hope this post and the [colab](https://colab.sandbox.google.com/github/google-research/vdm/blob/main/colab/SimpleDiffusionColab.ipynb) help to introduce these magical models to a wider audience.
 
-<small>Special thanks to [Ben Poole](https://twitter.com/poolio), [Pavel Izmailov](https://twitter.com/pavel_izmailov), and [Christopher Suter](https://twitter.com/def_chris_suter) for helpful feedback on this post.</small>
+<small>Special thanks to [Ben Poole](https://twitter.com/poolio), [Pavel Izmailov](https://twitter.com/pavel_izmailov), [Christopher Suter](https://twitter.com/def_chris_suter), and Sergey Ioffe for helpful feedback on this post.</small>

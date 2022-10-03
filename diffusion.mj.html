@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name='viewport'
       content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
-    <title>blog.alexalemi.com A Path to the VDM Diffusion Loss</title>
+    <title>blog.alexalemi.com A Path to the Variational Diffusion Loss</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5SW43T5NT"></script>
     <script>
@@ -63,7 +63,7 @@
 
   <article>
     <header>
-      <h1>A Path to the VDM Diffusion Loss<h1>
+      <h1>A Path to the Variational Diffusion Loss<h1>
       <p>Alexander A. Alemi. <time datetime='2022-09-15'>2022-09-15</time></p>
     </header>
     <div class="content">
@@ -200,16 +200,16 @@ We'll model the reverse process as if it were the exact reversed conditional for
 At that point, we have the loss function used to train VDM models.  A very nice thing about the VDM loss is that it is clear that we are optimizing a bound on the marginal likelihood of our generative model.  As you can learn in the <a href="https://arxiv.org/abs/2107.00630">VDM Paper</a>, many of the diffusion models you've heard about correspond to a <em>weighted</em> form of this same objective, where different terms in the sum get different weights.</p>
 <p>After going through all of the fancy math, the analytic KL divergences involved in the diffusion loss simplify quite nicely:
 $$ \left\langle \log p(x) - \log q(x|z_0) + \log \frac{p(z_T|x)}{q(z_T)} + \frac 1 2 \sum_{t=0}^{T-1} \beta_t \left\lVert \epsilon - \hat \epsilon(z_t,t) \right\rVert^2  \right\rangle $$
-For VDM diffusion the weight terms $\beta_t$ depend on your choice of <em>noise-schedule</em>.  For most other diffusion models in the wild, these $\beta_t$ weights are conventionally set to 1.</p>
+For variational diffusion the weight terms $\beta_t$ depend on your choice of <em>noise-schedule</em>.  For most other diffusion models in the wild, these $\beta_t$ weights are conventionally set to 1.</p>
 <h2>Closing Thoughts</h2>
 <p>So, why are diffusion models so interesting?  Well, first and foremost, the reason they are drawing so much attention is that they have shown tremendous performance.  It feels like for the first time we have models that are able to generate very high resolution, very high fidelity natural images. Projects like <a href="https://openai.com/dall-e-2/">DALL-E2</a>, <a href="https://imagen.research.google/">Imagen</a>, and <a href="https://github.com/CompVis/stable-diffusion#stable-diffusion-v1">Stable Diffusion</a> show really impressive results.  What is the magic driving these models?</p>
 <p>At a high level, I think we can say that diffusion models really sort of realize the dream of latent variable models.  Sometimes, when you are faced with a problem that is too difficult, you can crack it if you consider an even harder, related problem.  As I tried to demonstrate here, even for simple latent variable models like VAEs and especially for diffusion models, one reason we can point to for their success is that instead of directly modeling the distribution over images, they instead model a much larger joint distribution.  That larger joint distribution is strictly speaking a bigger thing to attempt to model, but here we get to design the forward process in such a way that even if there are many pieces to the forward process, those pieces individually are easier to tackle.</p>
 <p>Though, if that were the case, shouldn't we have expected deep hierarchical models to perform similarly awesomely?  Probably, though here I think there is another real trick that diffusion has up its sleeve.  For a general deep hierarchical generative model, even if by splitting the problem up into smaller pieces you might have split it up into easier-to-model tasks, to evaluate the joint KL you still need to evaluate all of those terms.  That is, as your model becomes richer a more computationally expressive because of its depth, so does the cost of training your model as you have to evaluate all of the layers at each step in the training process.</p>
 <p>Diffusion models avoid this by structuring their forward process in such a way that all of the steps share a great deal of structural similarity.  This allows diffusion to approximate a sum of a potentially large number of steps by a single randomly chosen step.  If each step looks more or less the same, you can get a good estimate for the whole sum by looking at an individual, random, term.</p>
 <p>The last trick up its sleeve is, even if you managed to design a deep hierarchical generative model with this structural homogeneity property, if you wanted to get to some intermediate position in the hierarchy you'd still have to run roughly half of the full forward process.  That would still be expensive in general.  Here Diffusion avoids that entirely.  By fixing the forward process to be a sequence of conditional Gaussians, as boring as those are for a forward process they are also beautiful in that they enable exact analytic marginalization to intermediate steps.  You can very quickly mimic the result of adding hundreds of steps of additive Gaussian noise by simply adding a moderate amount of Gaussian noise in a single shot.</p>
-<p>So, ultimately, what do I think is one of the main reasons diffusion models are such powerful models? I think it's because they are very powerful generative models.  Sampling from them is generally rather expensive.  Drawing a sample means running the full reverse process, which might mean calling the central score net a thousand or so times.  That is a very powerful and very expressive generative model, but magically, we can train that generative model's likelihood without ever having to actually instantiate the full generative process at training time due to our sequence of sundry tricks.</p>
+<p>So, ultimately, what do I think is one of the main reasons diffusion models do so well? I think it's because they <em>can</em> do so well! I think it's because they are very powerful, expressive, generative models.  Sampling from them is generally rather expensive.  Drawing a sample means running the full reverse process, which might mean calling the central score net a thousand or so times.  That is a very powerful and very expressive generative model, but magically, we can train that generative model's likelihood without ever having to actually instantiate the full generative process at training time due to our sequence of sundry tricks.</p>
 <p>I'm excited to see where this all goes and hope this post and the <a href="https://colab.sandbox.google.com/github/google-research/vdm/blob/main/colab/SimpleDiffusionColab.ipynb">colab</a> help to introduce these magical models to a wider audience.</p>
-<p><small>Special thanks to <a href="https://twitter.com/poolio">Ben Poole</a>, <a href="https://twitter.com/pavel_izmailov">Pavel Izmailov</a>, and <a href="https://twitter.com/def_chris_suter">Christopher Suter</a> for helpful feedback on this post.</small></p>
+<p><small>Special thanks to <a href="https://twitter.com/poolio">Ben Poole</a>, <a href="https://twitter.com/pavel_izmailov">Pavel Izmailov</a>, <a href="https://twitter.com/def_chris_suter">Christopher Suter</a>, and Sergey Ioffe for helpful feedback on this post.</small></p>
  
     </div>
   </article>

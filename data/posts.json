@@ -10,12 +10,12 @@
       "draft": true
     },
     {
-      "title": "A Path to the VDM Diffusion Loss",
+      "title": "A Path to the Variational Diffusion Loss",
       "src": "diffusion.md",
       "date": "2022-09-15",
       "tags": ["machine learning"],
       "id": "diffusion",
-      "description": "Deriving the Diffusion and VAE losses from the non-negativity of KL.",
+      "description": "Deriving the (Variational) Diffusion and VAE losses from the non-negativity of KL.",
       "featured": true
     },
     {
