@@ -136,9 +136,9 @@ Just as in the case of a VAE, here, the hope is that it might actually be easier
 
 ### Various Sundry Tricks
 
-The joint KL is equivalent to the VDM loss, however, in practice, to make this loss efficient to train, diffusion models leverage a lot of the known structure
-of the forward process to power a very clever parameterization of the reverse process, some tricky rearranging of terms, and some stochastic approximation to make the
-whole thing efficient.  To see the code in all its detail, please check out the [example colab](https://colab.research.google.com/github/google-research/vdm/blob/main/colab/SimpleDiffusionColab.ipynb) as well as its accompanying text that walks through some of these details in more detail.
+The joint KL is equivalent to the VDM loss. However, in practice, to make this loss efficient to train, diffusion models leverage a lot of the known structure
+of the forward process to power a very clever parameterization of the reverse process. This requires some tricky rearranging of terms and some stochastic approximation to make the whole thing efficient.  
+To see the code in all its detail, please check out the [example colab](https://colab.research.google.com/github/google-research/vdm/blob/main/colab/SimpleDiffusionColab.ipynb) as well as its accompanying text that walks through some of these details in more detail.
 
 
 To utilize our knowledge of the forward process, we're actually going to rewrite the forward process not as a sequence of conditional Gaussian steps (a *bottom-up* forward process):
@@ -198,4 +198,4 @@ So, ultimately, what do I think is one of the main reasons diffusion models do s
 
 I'm excited to see where this all goes and hope this post and the [colab](https://colab.sandbox.google.com/github/google-research/vdm/blob/main/colab/SimpleDiffusionColab.ipynb) help to introduce these magical models to a wider audience.
 
-<small>Special thanks to [Ben Poole](https://twitter.com/poolio), [Pavel Izmailov](https://twitter.com/pavel_izmailov), [Christopher Suter](https://twitter.com/def_chris_suter), and Sergey Ioffe for helpful feedback on this post.</small>
+<small>Special thanks to [Ben Poole](https://twitter.com/poolio), [Pavel Izmailov](https://twitter.com/pavel_izmailov), [Christopher Suter](https://twitter.com/def_chris_suter), and Sergey Ioffe, and [Ian Fischer](https://twitter.com/itfische) for helpful feedback on this post.</small>
