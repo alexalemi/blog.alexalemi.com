@@ -6,8 +6,7 @@
       "tags": ["physics"],
       "id": "non-equilibrium",
       "description": "Deriving some classic results in non-equilibrium thermodynamics from seemingly nothing.",
-      "featured": true,
-      "draft": true
+      "featured": true
     },
     {
       "title": "A Path to the Variational Diffusion Loss",

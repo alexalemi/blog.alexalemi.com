@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name='viewport'
       content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
-    <title>blog.alexalemi.com Non-equilibrium Thermodynamics Results from Seemingly Nothing</title>
+    <title>blog.alexalemi.com Non-equilibrium Thermodynamics Results Seemingly from Nothing</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5SW43T5NT"></script>
     <script>
@@ -63,7 +63,7 @@
 
   <article>
     <header>
-      <h1>Non-equilibrium Thermodynamics Results from Seemingly Nothing<h1>
+      <h1>Non-equilibrium Thermodynamics Results Seemingly from Nothing<h1>
       <p>Alexander A. Alemi. <time datetime='2022-09-16'>2022-09-16</time></p>
     </header>
     <div class="content">
@@ -83,7 +83,7 @@ $$ \frac{q(x_0, x_1)}{p(x_0, x_1)} $$
 Clearly we have a tremendous freedom here in our choices for the distributions $p$ and $q$. Mathematically it's uninteresting but we can start to build some rhetorical weight by factoring our two distributions in two distinct ways:
 $$ \frac{q(x_1) q(x_0|x_1)}{p(x_0)p(x_1|x_0)} $$
 Despite still not having done anything, we can start to build an interpretation here. Imagine $x_0$ and $x_1$ as being two configurations of a system, with $x_1$ happening <em>after</em> $x_0$.  Now, though we're allowed by the chain rule to factor distributions any way we wish, here we've chosen to factor $p$ to be suggestive of some kind of <em>forward process</em> wherein we first sample some $x_0$ from a distribution $p(x_0)$ and then evolve it according to some potentially stochastic process to generate our next state $x_1$ conditioned on the first: $p(x_1|x_0)$.  At the same time, we've factored $q$ the other way, evocative of a <em>reverse process</em> that starts at $x_1$ and then evolves backward to $x_0$.</p>
-<p>To make further progress, let's specialize a bit.  Let's imagine that $x_0$ and $x_1$ are configurations of a physical system evolving according to Hamiltonian dynamics, with a Hamiltonian governed by some kind of control parameter $\lambda$.  Let's further <em>imagine</em> that at the beginning of either our forward or reverse process our system is in thermodynamic equilibrium, and in particular in a <a href="https://en.wikipedia.org/wiki/Canonical_ensemble">canonical ensemble</a>:<sup><a href="#beta">2</a></sup></p>
+<p>To make further progress, let's specialize a bit.  Let's imagine that $x_0$ and $x_1$ are configurations of a physical system evolving according to Hamiltonian dynamics, with a Hamiltonian governed by some kind of control parameter $\lambda$.  Let's further <em>imagine</em> that at the beginning of either our forward or reverse process our system is in thermodynamic equilibrium at the same temperature, and in particular in a <a href="https://en.wikipedia.org/wiki/Canonical_ensemble">canonical ensemble</a>:<sup><a href="#beta">2</a></sup></p>
 <aside><sup id="#beta">2</sup>
 $\beta$ is the <a href="https://en.wikipedia.org/wiki/Thermodynamic_beta">inverse temperature</a> $1/(k_B T)$
 </aside>
@@ -94,7 +94,7 @@ $$
 \end{align}
 $$
 <p>Simply substituting these expressions into our density ratio we find:</p>
-<p>$$ \frac{q(x_0,x_1)}{p(x_0,x_1)} = \frac{Z(\beta,\lambda_0)}{Z(\beta, \lambda_1)} e^{\beta \left( H(x_1,\lambda_1) - H(x_0, \lambda_0) \right)} \frac{q(x_0|x_1)}{p(x_1|x_0)}. $$</p>
+<p>$$ \frac{q(x_0,x_1)}{p(x_0,x_1)} = \frac{Z(\beta,\lambda_0)}{Z(\beta, \lambda_1)} e^{-\beta \left( H(x_1,\lambda_1) - H(x_0, \lambda_0) \right)} \frac{q(x_0|x_1)}{p(x_1|x_0)}. $$</p>
 <p>We can clean this up a bit and give it a cleaner physical interpretation.  Let's identify the change in the Hamiltonian with the work:
 $$ W \equiv H(x_1,\lambda_1) - H(x_0, \lambda_0). $$
 And let's use the standard definition of the free energy:

@@ -22,7 +22,7 @@ Clearly we have a tremendous freedom here in our choices for the distributions $
 $$ \frac{q(x_1) q(x_0|x_1)}{p(x_0)p(x_1|x_0)} $$
 Despite still not having done anything, we can start to build an interpretation here. Imagine $x_0$ and $x_1$ as being two configurations of a system, with $x_1$ happening *after* $x_0$.  Now, though we're allowed by the chain rule to factor distributions any way we wish, here we've chosen to factor $p$ to be suggestive of some kind of *forward process* wherein we first sample some $x_0$ from a distribution $p(x_0)$ and then evolve it according to some potentially stochastic process to generate our next state $x_1$ conditioned on the first: $p(x_1|x_0)$.  At the same time, we've factored $q$ the other way, evocative of a *reverse process* that starts at $x_1$ and then evolves backward to $x_0$.  
 
-To make further progress, let's specialize a bit.  Let's imagine that $x_0$ and $x_1$ are configurations of a physical system evolving according to Hamiltonian dynamics, with a Hamiltonian governed by some kind of control parameter $\lambda$.  Let's further *imagine* that at the beginning of either our forward or reverse process our system is in thermodynamic equilibrium, and in particular in a [canonical ensemble](https://en.wikipedia.org/wiki/Canonical_ensemble):<sup><a href="#beta">2</a></sup>
+To make further progress, let's specialize a bit.  Let's imagine that $x_0$ and $x_1$ are configurations of a physical system evolving according to Hamiltonian dynamics, with a Hamiltonian governed by some kind of control parameter $\lambda$.  Let's further *imagine* that at the beginning of either our forward or reverse process our system is in thermodynamic equilibrium at the same temperature, and in particular in a [canonical ensemble](https://en.wikipedia.org/wiki/Canonical_ensemble):<sup><a href="#beta">2</a></sup>
 <aside><sup id="#beta">2</sup>
 $\beta$ is the <a href="https://en.wikipedia.org/wiki/Thermodynamic_beta">inverse temperature</a> $1/(k_B T)$
 </aside>
@@ -35,7 +35,7 @@ $$
 
 Simply substituting these expressions into our density ratio we find:
 
-$$ \frac{q(x_0,x_1)}{p(x_0,x_1)} = \frac{Z(\beta,\lambda_0)}{Z(\beta, \lambda_1)} e^{\beta \left( H(x_1,\lambda_1) - H(x_0, \lambda_0) \right)} \frac{q(x_0|x_1)}{p(x_1|x_0)}. $$
+$$ \frac{q(x_0,x_1)}{p(x_0,x_1)} = \frac{Z(\beta,\lambda_0)}{Z(\beta, \lambda_1)} e^{-\beta \left( H(x_1,\lambda_1) - H(x_0, \lambda_0) \right)} \frac{q(x_0|x_1)}{p(x_1|x_0)}. $$
 
 We can clean this up a bit and give it a cleaner physical interpretation.  Let's identify the change in the Hamiltonian with the work:
 $$ W \equiv H(x_1,\lambda_1) - H(x_0, \lambda_0). $$
