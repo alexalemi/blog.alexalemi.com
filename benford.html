@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>blog.alexalemi.com A Simple Demonstrations of Benford's Law</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>blog.alexalemi.com A Simple Demonstration of Benford's Law</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-F5SW43T5NT"></script>
     <script>
@@ -131,10 +131,8 @@
   </header>
 
   <article>
-    <header>
-      <h1>A Simple Demonstrations of Benford's Law</h1><h1>
-      <p>Alexander A. Alemi. <time datetime="2022-05-03">2022-05-03</time></p>
-    </h1></header>
+		<h1>A Simple Demonstration of Benford's Law</h1>
+		<p>Alexander A. Alemi. <time datetime="2022-05-03">2022-05-03</time></p>
     <div class="content">
     <p><a href="https://en.wikipedia.org/wiki/Benford%27s_law">Benford's Law</a> is the
 observation that in a list of "naturally occuring numbers",
@@ -330,7 +328,24 @@ This is the formula you'll see <a href="https://en.wikipedia.org/wiki/Benford\%2
 Specifically that the significand should be between 1.0 and 1.1.
 </aside>
 <p>We've already said that with a random multiplication being like a random spin of the circular slide rule pointer, the universal distribution of significands should just be uniform on the slide rule.  Performing a change of basis, if we know the distribution $p(\theta)$ of angles along the circle is uniform, we can work out the distribution $p(x)$ of significands by requiring we conserve all of the probability mass:
-<span class="mjpage mjpage__block"></span>
+<span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="17.192ex" height="2.843ex" style="vertical-align: -0.838ex; margin-left: -0.089ex;" viewBox="-38.5 -863.1 7401.9 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-4-Title">
+<title id="MathJax-SVG-4-Title"> p(\theta) \, d\theta = p(x) \, dx </title>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#MJMATHI-70" x="0" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="503" y="0"></use>
+ <use xlink:href="#MJMATHI-3B8" x="893" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="1362" y="0"></use>
+ <use xlink:href="#MJMATHI-64" x="1918" y="0"></use>
+ <use xlink:href="#MJMATHI-3B8" x="2442" y="0"></use>
+ <use xlink:href="#MJMAIN-3D" x="3189" y="0"></use>
+ <use xlink:href="#MJMATHI-70" x="4245" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="4749" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="5138" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="5711" y="0"></use>
+ <use xlink:href="#MJMATHI-64" x="6267" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="6790" y="0"></use>
+</g>
+</svg></span>
 combined with what we already know as the relationship between our significands and their angles: $\theta = 2\pi \log_{10} x$. This allows us to transform the uniform distribution of angles $p(\theta) = \frac{1}{2\pi}$ into:
 <span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="16.38ex" height="5.676ex" style="vertical-align: -2.338ex; margin-left: -0.089ex;" viewBox="-38.5 -1437.2 7052.4 2443.8" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-5-Title">
 <title id="MathJax-SVG-5-Title"> p(x) = \frac{1}{x \log 10 }. </title>

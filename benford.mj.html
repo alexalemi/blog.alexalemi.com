@@ -3,9 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name='viewport'
-      content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
-    <title>blog.alexalemi.com A Simple Demonstrations of Benford's Law</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' /> 
+    <title>blog.alexalemi.com A Simple Demonstration of Benford's Law</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5SW43T5NT"></script>
     <script>
@@ -62,10 +61,8 @@
   </header>
 
   <article>
-    <header>
-      <h1>A Simple Demonstrations of Benford's Law<h1>
-      <p>Alexander A. Alemi. <time datetime='2022-05-03'>2022-05-03</time></p>
-    </header>
+		<h1>A Simple Demonstration of Benford's Law</h1>
+		<p>Alexander A. Alemi. <time datetime='2022-05-03'>2022-05-03</time></p>
     <div class="content">
     <p><a href="https://en.wikipedia.org/wiki/Benford%27s_law">Benford's Law</a> is the
 observation that in a list of &quot;naturally occuring numbers&quot;,
@@ -119,7 +116,7 @@ This is the formula you'll see <a href="https://en.wikipedia.org/wiki/Benford\%2
 Specifically that the significand should be between 1.0 and 1.1.
 </aside>
 <p>We've already said that with a random multiplication being like a random spin of the circular slide rule pointer, the universal distribution of significands should just be uniform on the slide rule.  Performing a change of basis, if we know the distribution $p(\theta)$ of angles along the circle is uniform, we can work out the distribution $p(x)$ of significands by requiring we conserve all of the probability mass:
-$$ p(\theta) \, d\theta &amp;= p(x) \, dx $$
+$$ p(\theta) \, d\theta = p(x) \, dx $$
 combined with what we already know as the relationship between our significands and their angles: $\theta = 2\pi \log_{10} x$. This allows us to transform the uniform distribution of angles $p(\theta) = \frac{1}{2\pi}$ into:
 $$ p(x) = \frac{1}{x \log 10 }. $$
 We've recovered a nice <a href="https://en.wikipedia.org/wiki/Power_law">power law</a> or &quot;scale-free&quot; distribution for the significands, something we could have guessed or worked out from our requirement that the distribution be invariant to scale.</p>

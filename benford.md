@@ -63,7 +63,7 @@ Specifically that the significand should be between 1.0 and 1.1.
 </aside>
 
 We've already said that with a random multiplication being like a random spin of the circular slide rule pointer, the universal distribution of significands should just be uniform on the slide rule.  Performing a change of basis, if we know the distribution $p(\theta)$ of angles along the circle is uniform, we can work out the distribution $p(x)$ of significands by requiring we conserve all of the probability mass:
-$$ p(\theta) \, d\theta &= p(x) \, dx $$
+$$ p(\theta) \, d\theta = p(x) \, dx $$
 combined with what we already know as the relationship between our significands and their angles: $\theta = 2\pi \log_{10} x$. This allows us to transform the uniform distribution of angles $p(\theta) = \frac{1}{2\pi}$ into:
 $$ p(x) = \frac{1}{x \log 10 }. $$
 We've recovered a nice [power law](https://en.wikipedia.org/wiki/Power_law) or "scale-free" distribution for the significands, something we could have guessed or worked out from our requirement that the distribution be invariant to scale.

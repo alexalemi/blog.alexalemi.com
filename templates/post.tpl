@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name='viewport'
-      content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' /> 
     <title>blog.alexalemi.com {{title}}</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5SW43T5NT"></script>
@@ -62,10 +61,8 @@
   </header>
 
   <article>
-    <header>
-      <h1>{{ title }}<h1>
-      <p>Alexander A. Alemi. <time datetime='{{ date }}'>{{ date }}</time></p>
-    </header>
+		<h1>{{ title }}</h1>
+		<p>Alexander A. Alemi. <time datetime='{{ date }}'>{{ date }}</time></p>
     <div class="content">
     {{ content }} 
     </div>
