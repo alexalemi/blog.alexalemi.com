@@ -1,7 +1,7 @@
 /* Browser reset */
 html {
     box-sizing: border-box;
-    line-height: 1.15;
+    /* line-height: 1.15; */
     -webkit-text-size-adjust: 100%;
 }
 /* Variables */
@@ -26,7 +26,7 @@ html {
 
 body {
   /* Nice light gray background to offset the text a little */
-  width: fit-content;
+  /* width: fit-content; */
   background-color: var(--bg-color);
   color: var(--default-color);
   /* margin: 0 auto;
@@ -63,6 +63,18 @@ h2 a {
   text-decoration: none;
   color: var(--default-color);
 }
+
+.mjpage {
+	max-width: 100%;	
+	overflow: scroll;
+}
+
+/* 
+.mjpage svg {
+	width: auto;
+	overflow: scroll;
+}
+*/
 
 header {
   display: flex;
