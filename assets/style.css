@@ -4,6 +4,8 @@ html {
     /* line-height: 1.15; */
     -webkit-text-size-adjust: 100%;
 }
+
+
 /* Variables */
 :root {
   --accent-color: #3685B5;  
@@ -64,17 +66,21 @@ h2 a {
   color: var(--default-color);
 }
 
-.mjpage {
-	max-width: 100%;	
-	overflow: scroll;
-}
 
-/* 
-.mjpage svg {
-	width: auto;
-	overflow: scroll;
+.mjpage__block {
+	/* text-align: center;
+	margin: 1em 0em;
+	position: relative;
+	display: block!important;
+	max-height: none;
+	min-width: 0;
+	min-height: 0;
+	width: 100%
+	text-indent: 0; */
+  width: auto!important;
+  max-width: 100%;
+	overflow: auto;
 }
-*/
 
 header {
   display: flex;
