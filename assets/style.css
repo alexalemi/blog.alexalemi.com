@@ -25,7 +25,7 @@ html {
 */
 
 body {
-    /* Nice light gray background to offset the text a little */
+  /* Nice light gray background to offset the text a little */
   width: 100%;
   background-color: var(--bg-color);
   color: var(--default-color);
