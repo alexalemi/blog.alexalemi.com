@@ -1,0 +1,233 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>blog.alexalemi.com The Method of Imaginary Results</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-F5SW43T5NT"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-F5SW43T5NT');
+    </script>
+
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml">
+
+    <!-- Fonts -->
+    <script type="text/javascript">
+        WebFontConfig = {
+            google: { families: [ 'Muli', 'Lato' ] }
+        };
+        (function() {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+
+    <script defer="" src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        processEscapes: true
+      }};
+    </script>
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Inline CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+<style type="text/css">
+                            .mjpage .MJX-monospace {
+                            font-family: monospace
+                            }
+
+                            .mjpage .MJX-sans-serif {
+                            font-family: sans-serif
+                            }
+
+                            .mjpage {
+                            display: inline;
+                            font-style: normal;
+                            font-weight: normal;
+                            line-height: normal;
+                            font-size: 100%;
+                            font-size-adjust: none;
+                            text-indent: 0;
+                            text-align: left;
+                            text-transform: none;
+                            letter-spacing: normal;
+                            word-spacing: normal;
+                            word-wrap: normal;
+                            white-space: nowrap;
+                            float: none;
+                            direction: ltr;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            border: 0;
+                            padding: 0;
+                            margin: 0
+                            }
+
+                            .mjpage * {
+                            transition: none;
+                            -webkit-transition: none;
+                            -moz-transition: none;
+                            -ms-transition: none;
+                            -o-transition: none
+                            }
+
+                            .mjx-svg-href {
+                            fill: blue;
+                            stroke: blue
+                            }
+
+                            .MathJax_SVG_LineBox {
+                            display: table!important
+                            }
+
+                            .MathJax_SVG_LineBox span {
+                            display: table-cell!important;
+                            width: 10000em!important;
+                            min-width: 0;
+                            max-width: none;
+                            padding: 0;
+                            border: 0;
+                            margin: 0
+                            }
+
+                            .mjpage__block {
+                            text-align: center;
+                            margin: 1em 0em;
+                            position: relative;
+                            display: block!important;
+                            text-indent: 0;
+                            max-width: none;
+                            max-height: none;
+                            min-width: 0;
+                            min-height: 0;
+                            width: 100%
+                            }</style></head>
+
+<body>
+
+
+  <header>
+    <h3>Alex Alemi's Blog</h3>
+    <nav>
+      <a href="https://blog.alexalemi.com">Index</a> |
+      <a href="https://alexalemi.com">About Me</a> | 
+      <a rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml">RSS</a>
+    </nav>
+  </header>
+
+  <article>
+		<h1>The Method of Imaginary Results</h1>
+		<p>Alexander A. Alemi. <time datetime="2022-10-25">2022-10-25</time></p>
+    <div class="content">
+    <p>Performing Bayesian inference requires a full joint distribution over both our
+data and parameters $p(D,\theta)$.  In the usual way of doing things, we
+specify that joint distribution by providing two pieces: a likelihood
+$p(D|\theta)$ that specifies how we believe the data would be
+generated if we happened to know the exact parameter values and some prior
+$p(\theta)$ over parameters that represents our state of belief about what the
+parameters are before we look at any data.</p>
+<p>Most people don't have any deep philosophical issues with specifying a
+likelihood $p(D|\theta)$. We're aware that our likelihoods might not be
+perfect, that they are some approximation of what is happening in the real
+world but we have opinions about them, we feel as though we can reason about
+whether a given likelihood is good or bad for some situation.</p>
+<p>I believe I can model a series of $D$ heads in $N$ coin flips with a <a href="https://en.wikipedia.org/wiki/Binomial_distribution">Binomial
+likelihood</a> for instance,
+and I don't really have any qualms about that:</p>
+<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="29.23ex" height="6.176ex" style="vertical-align: -2.505ex; margin-left: -0.089ex;" viewBox="-38.5 -1580.7 12584.9 2659.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+<title id="MathJax-SVG-1-Title"> p(D|\theta) = {N \choose D} \theta^D (1-\theta)^{N-D}</title>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#MJMATHI-70" x="0" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="503" y="0"></use>
+ <use xlink:href="#MJMATHI-44" x="893" y="0"></use>
+ <use xlink:href="#MJMAIN-7C" x="1721" y="0"></use>
+ <use xlink:href="#MJMATHI-3B8" x="2000" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="2469" y="0"></use>
+ <use xlink:href="#MJMAIN-3D" x="3136" y="0"></use>
+<g transform="translate(4193,0)">
+ <use xlink:href="#MJSZ3-28" x="0" y="-1"></use>
+<g transform="translate(736,0)">
+ <use xlink:href="#MJMATHI-4E" x="0" y="676"></use>
+ <use xlink:href="#MJMATHI-44" x="30" y="-686"></use>
+</g>
+ <use xlink:href="#MJSZ3-29" x="1625" y="-1"></use>
+</g>
+<g transform="translate(6554,0)">
+ <use xlink:href="#MJMATHI-3B8" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-44" x="663" y="583"></use>
+</g>
+ <use xlink:href="#MJMAIN-28" x="7709" y="0"></use>
+ <use xlink:href="#MJMAIN-31" x="8099" y="0"></use>
+ <use xlink:href="#MJMAIN-2212" x="8822" y="0"></use>
+ <use xlink:href="#MJMATHI-3B8" x="9822" y="0"></use>
+<g transform="translate(10292,0)">
+ <use xlink:href="#MJMAIN-29" x="0" y="0"></use>
+<g transform="translate(389,412)">
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-4E" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMAIN-2212" x="888" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-44" x="1667" y="0"></use>
+</g>
+</g>
+</g>
+</svg></span></p>
+<p>I might decide to model the heights of my pea plants with a <a href="https://en.wikipedia.org/wiki/Normal_distribution">Normal
+Distribution</a> or perform a
+<a href="https://en.wikipedia.org/wiki/Linear_regression">linear fit</a> to some data, or
+do image classification with some <a href="https://en.wikipedia.org/wiki/Convolutional_neural_network">convolutional neural
+network</a> or
+<a href="https://en.wikipedia.org/wiki/Transformer_(machine_learning_model)">transformer</a>. In any case, I often have a good idea of what I should use as a likelihood $p(D|\theta)$.</p>
+<aside><sup id="#yesterday">1</sup>
+This quote is often attributed to Lindley (1970), but I see no such occurance in that work. Looking around the original quote appears to be "Today's posterior is tomorrow's prior." From <a href="https://people.umass.edu/stanek/pubhlth892d/Lindley-The-Statist-2000.pdf"><i>The Philosophy of Statistics</i></a> by Dennis V Lindley, The Statistician 2000.  There do not appear to be any earlier occurrences of "today's prior" used in the sense of Bayesian inference that appear on Google Scholar.
+</aside>
+<p>Choosing the prior $p(\theta)$ is what all the fuss is about.  This is the part that raises various philosophical issues.  This is the part that, if we are being honest, is much harder.  What do I believe the bias of a coin is before I ever flip the coin?  I'm not really sure to be honest.  In many contexts I might have previously done some experiments, in which case I could use yesterday's posterior as today's prior.<sup><a href="#yesterday">1</a></sup></p>
+<aside><sup id="#indifference">2</sup>
+Originally coined the <i>principle of insufficient reason</i> by Johannes on Kries, John Maynard Keyes renamed it the <i>principle of indifference</i>. <a href="https://en.wikipedia.org/wiki/Principle_of_indifference#History">[wiki]</a>
+</aside>
+<aside><sup id="#jaynes-priors">3</sup>
+    <a href="https://bayes.wustl.edu/etj/articles/prior.pdf"><i>Prior Probabilities</i></a> by Edwin T. Jaynes. 1968
+</aside>
+<aside><sup id="#reference">4</sup>
+See for instance <a href="https://arxiv.org/pdf/0904.0156.pdf"><i>A Formal Definition of Reference Priors</i></a> by Berger, Bernardo and Sun.  For a more modern take I really like see <a href="https://arxiv.org/abs/1705.01166"><i>Maximizing the information learned from finite data selects a simple model</i></a> by Mattingly et al. and <a href="https://arxiv.org/abs/2205.03343"><i>Far from Asymptopia</i></a> by Abbott and Machta.
+</aside>
+<p>However lacking previous experiments, I often feel at a loss. There are many frameworks for designing priors that people have proposed.  Laplace originally motivated a flat prior for the Bernoulli likelihood by appealing to the <em>principle of indifference</em>.<sup><a href="#indifference">2</a></sup>
+<a href="https://en.wikipedia.org/wiki/Jeffreys_prior">Jeffreys</a> taught us how to build priors that were reparameterization-independent.
+Jaynes would argue for choosing priors by appealing to symmetries.<sup><a href="#jaynes-priors">3</a></sup> Bernardo suggested choosing priors to maximize the information you extract from data, so called <i>reference priors</i>.<sup><a href="#reference">4</a></sup>. Gelman and friends tout <i>weakly informative priors</i>.
+There are even whole <a href="https://github.com/stan-dev/stan/wiki/Prior-Choice-Recommendations">lists of common recommendations</a></p>
+<h2>Coin Example</h2>
+<h2>Mixture</h2>
+<h2>Jaynes and ESP</h2>
+<h2>Linear Fit</h2>
+<h2>Neural Networks</h2>
+<h2>Rational Ignorance</h2>
+ 
+    </div>
+  </article>
+
+  <script src="https://giscus.app/client.js" data-repo="alexalemi/blog.alexalemi.com" data-repo-id="MDEwOlJlcG9zaXRvcnkyNjk2OTU4MzU=" data-category="Announcements" data-category-id="DIC_kwDOEBM7W84B_4Ke" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+  </script>
+
+  <footer>
+    <!-- <p>
+    &copy; 2020 Alexander A. Alemi
+    </p>
+    -->
+  </footer>
+
+
+
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs id="MathJax_SVG_glyphs"><path stroke-width="1" id="MJMATHI-70" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path><path stroke-width="1" id="MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="1" id="MJMATHI-44" d="M287 628Q287 635 230 637Q207 637 200 638T193 647Q193 655 197 667T204 682Q206 683 403 683Q570 682 590 682T630 676Q702 659 752 597T803 431Q803 275 696 151T444 3L430 1L236 0H125H72Q48 0 41 2T33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM703 469Q703 507 692 537T666 584T629 613T590 629T555 636Q553 636 541 636T512 636T479 637H436Q392 637 386 627Q384 623 313 339T242 52Q242 48 253 48T330 47Q335 47 349 47T373 46Q499 46 581 128Q617 164 640 212T683 339T703 469Z"></path><path stroke-width="1" id="MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path stroke-width="1" id="MJMATHI-3B8" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path><path stroke-width="1" id="MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path stroke-width="1" id="MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path stroke-width="1" id="MJSZ3-28" d="M701 -940Q701 -943 695 -949H664Q662 -947 636 -922T591 -879T537 -818T475 -737T412 -636T350 -511T295 -362T250 -186T221 17T209 251Q209 962 573 1361Q596 1386 616 1405T649 1437T664 1450H695Q701 1444 701 1441Q701 1436 681 1415T629 1356T557 1261T476 1118T400 927T340 675T308 359Q306 321 306 250Q306 -139 400 -430T690 -924Q701 -936 701 -940Z"></path><path stroke-width="1" id="MJMATHI-4E" d="M234 637Q231 637 226 637Q201 637 196 638T191 649Q191 676 202 682Q204 683 299 683Q376 683 387 683T401 677Q612 181 616 168L670 381Q723 592 723 606Q723 633 659 637Q635 637 635 648Q635 650 637 660Q641 676 643 679T653 683Q656 683 684 682T767 680Q817 680 843 681T873 682Q888 682 888 672Q888 650 880 642Q878 637 858 637Q787 633 769 597L620 7Q618 0 599 0Q585 0 582 2Q579 5 453 305L326 604L261 344Q196 88 196 79Q201 46 268 46H278Q284 41 284 38T282 19Q278 6 272 0H259Q228 2 151 2Q123 2 100 2T63 2T46 1Q31 1 31 10Q31 14 34 26T39 40Q41 46 62 46Q130 49 150 85Q154 91 221 362L289 634Q287 635 234 637Z"></path><path stroke-width="1" id="MJSZ3-29" d="M34 1438Q34 1446 37 1448T50 1450H56H71Q73 1448 99 1423T144 1380T198 1319T260 1238T323 1137T385 1013T440 864T485 688T514 485T526 251Q526 134 519 53Q472 -519 162 -860Q139 -885 119 -904T86 -936T71 -949H56Q43 -949 39 -947T34 -937Q88 -883 140 -813Q428 -430 428 251Q428 453 402 628T338 922T245 1146T145 1309T46 1425Q44 1427 42 1429T39 1433T36 1436L34 1438Z"></path><path stroke-width="1" id="MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path stroke-width="1" id="MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></defs></svg></body></html>
