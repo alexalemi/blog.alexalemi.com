@@ -177,4 +177,4 @@ $$ \textsf{ELBO} \equiv D + R \geq H. $$
 
 We've managed to derive several non-equilibrium statistical mechanical equalities and inequalities seemingly from nothing.  All of these results were powered by the facts we opened with, that probability distributions integrate to one and that KL divergences are positive.  The only challenge here was one of semantics.  To get power out of such trivial mathematical manipulations required us to make judicious choices in how we interpreted them.
 
-<small>Special thanks to Sam Schoenholz, Srinivas Vasudevan and Yasaman Bahri for helpful feedback on this post.</small>
+<small>Special thanks to Sam Schoenholz, Srinivas Vasudevan, Yasaman Bahri and Jim Sethna for helpful feedback on this post.</small>

@@ -1,5 +1,15 @@
 [
     {
+      "title": "The Method of Imaginary Results",
+      "src": "imaginary-results.md",
+      "date": "2022-10-25",
+      "tags": ["bayesian inference"],
+      "id": "imaginary-results",
+      "description": "Don't think about your prior, think about a hypothetical posterior.",
+      "featured": true,
+			"draft": true
+    },
+    {
       "title": "Non-equilibrium Thermodynamics Results Seemingly from Nothing",
       "src": "non-equilibrium.md",
       "date": "2022-09-16",
