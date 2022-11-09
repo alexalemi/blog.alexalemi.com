@@ -77,9 +77,8 @@ world. Still, we have opinions about them, we feel as though we can reason about
 whether a given likelihood is good or bad for some situation.</p>
 <p>I believe I can model a series of $D$ heads in $N$ coin flips with a <a href="https://en.wikipedia.org/wiki/Binomial_distribution">Binomial
 likelihood</a> for instance,
-and I don't really have any qualms about that:</p>
-<p>$$ p(D|\theta) = {N \choose D} \theta^D (1-\theta)^{N-D}$$</p>
-<p>I might decide to model the heights of my pea plants with a <a href="https://en.wikipedia.org/wiki/Normal_distribution">Normal
+and I don't really have any qualms about that.
+I might decide to model the heights of my pea plants with a <a href="https://en.wikipedia.org/wiki/Normal_distribution">Normal
 Distribution</a> or perform a
 <a href="https://en.wikipedia.org/wiki/Linear_regression">linear fit</a> to some data, or
 do image classification with some <a href="https://en.wikipedia.org/wiki/Convolutional_neural_network">convolutional neural
@@ -105,10 +104,13 @@ There are even whole <a href="https://github.com/stan-dev/stan/wiki/Prior-Choice
 <p>What if we didn't have to choose a prior directly?</p>
 <h2>The Method of Imaginary Results</h2>
 <aside><sup id="gelman-speed">5</sup>
-See the first page of the nice little paper <a href="http://www.stat.columbia.edu/~gelman/research/published/GelmanSpeed.pdf"><i>Characterizing a Joint Probability Distribution By Conditionals</i></a> by Gelman and Speed.
+See the first page of the nice little paper <a href="http://www.stat.columbia.edu/~gelman/research/published/GelmanSpeed.pdf"><i>Characterizing a Joint Probability Distribution By Conditionals</i></a> by Gelman and Speed, 1991.
 </aside>
 <p>Enter <em>the method of imaginary results</em>.  It turns out<sup><a href="#gelman-speed">5</a></sup> that we can uniquely characterize a joint distribution in a different way.  Specifying a likelihood $L(D|\theta)$ and a prior $\pi(\theta)$ uniquely characterizes the joint $p(D,\theta) = L(D|\theta)\pi(\theta)$.  You know what else uniquely characterizes the joint? Specifying a likelihood $L(D|\theta)$ and some <em>hypothetical</em> posterior $q(\theta|D_0)$. The corresponding unique joint $p(\theta,D)$ is given by:</p>
-<p>$$ \pi(\theta, D) = \frac{ L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)} }{\int d\theta\, L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)}}  $$</p>
+<p>$$ p(\theta, D) = \frac{ L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)} }{\int d\theta\, L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)}}.  $$</p>
+<p>Which naturally satisfies the two inputs we provided:
+$$ p(D|\theta) = L(D|\theta) \qquad p(\theta|D_0) = q(\theta|D_0). $$</p>
+<p>This flips the problem on its head.  We no longer have to specify a <em>prior</em>.  Instead we can specify a <em>hypothetical posterior</em>.  We can say what we would believe, if, hypothetically we had observed some dataset $D_0$.</p>
 <h2>Coin Example</h2>
 <h2>Mixture</h2>
 <h2>Jaynes and ESP</h2>

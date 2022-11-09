@@ -15,10 +15,7 @@ whether a given likelihood is good or bad for some situation.
 
 I believe I can model a series of $D$ heads in $N$ coin flips with a [Binomial
 likelihood](https://en.wikipedia.org/wiki/Binomial_distribution) for instance,
-and I don't really have any qualms about that: 
-
-$$ p(D|\theta) = {N \choose D} \theta^D (1-\theta)^{N-D}$$
-
+and I don't really have any qualms about that.
 I might decide to model the heights of my pea plants with a [Normal
 Distribution](https://en.wikipedia.org/wiki/Normal_distribution) or perform a
 [linear fit](https://en.wikipedia.org/wiki/Linear_regression) to some data, or
@@ -59,8 +56,12 @@ See the first page of the nice little paper <a href="http://www.stat.columbia.ed
 
 Enter *the method of imaginary results*.  It turns out<sup><a href="#gelman-speed">5</a></sup> that we can uniquely characterize a joint distribution in a different way.  Specifying a likelihood $L(D|\theta)$ and a prior $\pi(\theta)$ uniquely characterizes the joint $p(D,\theta) = L(D|\theta)\pi(\theta)$.  You know what else uniquely characterizes the joint? Specifying a likelihood $L(D|\theta)$ and some *hypothetical* posterior $q(\theta|D_0)$. The corresponding unique joint $p(\theta,D)$ is given by:
 
-$$ p(\theta, D) = \frac{ L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)} }{\int d\theta\, L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)}}  $$
+$$ p(\theta, D) = \frac{ L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)} }{\int d\theta\, L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)}}.  $$
 
+Which naturally satisfies the two inputs we provided:
+$$ p(D|\theta) = L(D|\theta) \qquad p(\theta|D_0) = q(\theta|D_0). $$
+
+This flips the problem on its head.  We no longer have to specify a *prior*.  Instead we can specify a *hypothetical posterior*.  We can say what we would believe, if, hypothetically we had observed some dataset $D_0$.
 
 ## Coin Example
 
