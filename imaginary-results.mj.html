@@ -107,11 +107,14 @@ There are even whole <a href="https://github.com/stan-dev/stan/wiki/Prior-Choice
 See the first page of the nice little paper <a href="http://www.stat.columbia.edu/~gelman/research/published/GelmanSpeed.pdf"><i>Characterizing a Joint Probability Distribution By Conditionals</i></a> by Gelman and Speed, 1991.
 </aside>
 <p>Enter <em>the method of imaginary results</em>.  It turns out<sup><a href="#gelman-speed">5</a></sup> that we can uniquely characterize a joint distribution in a different way.  Specifying a likelihood $L(D|\theta)$ and a prior $\pi(\theta)$ uniquely characterizes the joint $p(D,\theta) = L(D|\theta)\pi(\theta)$.  You know what else uniquely characterizes the joint? Specifying a likelihood $L(D|\theta)$ and some <em>hypothetical</em> posterior $q(\theta|D_0)$. The corresponding unique joint $p(\theta,D)$ is given by:</p>
-<p>$$ p(\theta, D) = \frac{ L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)} }{\int d\theta\, L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)}}.  $$</p>
+<p>$$ p(\theta, D) \propto L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)} = \frac{ L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)} }{\int d\theta\, L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)}}.  $$</p>
 <p>Which naturally satisfies the two inputs we provided:
 $$ p(D|\theta) = L(D|\theta) \qquad p(\theta|D_0) = q(\theta|D_0). $$</p>
 <p>This flips the problem on its head.  We no longer have to specify a <em>prior</em>.  Instead we can specify a <em>hypothetical posterior</em>.  We can say what we would believe, if, hypothetically we had observed some dataset $D_0$.</p>
+<p>I think that this is an easier task to do.  It is easier for me to reason about what beliefs I should hypothetically hold in like of some data than it is for me to reason about what I believe independent of any data.</p>
 <h2>Coin Example</h2>
+<p>Let's work a simple example of a coin flip.  I believe I can model a coin as being a simple Bernoulli process. There is some probability $\theta$ that the coin will land heads and each flip is independent and identically distributed.  Therefore I can model observing $H$ heads out of sequence of $N$ flips with a <a href="https://en.wikipedia.org/wiki/Binomial_distribution">Binomial Likelihood</a>:</p>
+<p>$$ L(D|\theta) = { N \choose H} \theta^H (1- \theta)^{N-H} $$</p>
 <h2>Mixture</h2>
 <h2>Jaynes and ESP</h2>
 <h2>Linear Fit</h2>
