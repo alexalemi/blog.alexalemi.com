@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Fri, 07 Oct 2022 20:38:34 +0000</lastBuildDate><item><title>Why KL?</title><link>https://blog.alexalemi.com/kl.html</link><description>Why is the KL divergence so special?</description><content:encoded>&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Liebler
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Wed, 26 Oct 2022 01:27:50 +0000</lastBuildDate><item><title>Why KL?</title><link>https://blog.alexalemi.com/kl.html</link><description>Why is the KL divergence so special?</description><content:encoded>&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Liebler
 divergence&lt;/a&gt;,
 or KL divergence, or relative entropy, or relative information, or information
 gain, or expected weight of evidence, or information divergence
@@ -631,7 +631,7 @@ This is the formula you'll see &lt;a href="https://en.wikipedia.org/wiki/Benford
 Specifically that the significand should be between 1.0 and 1.1.
 &lt;/aside&gt;
 &lt;p&gt;We've already said that with a random multiplication being like a random spin of the circular slide rule pointer, the universal distribution of significands should just be uniform on the slide rule.  Performing a change of basis, if we know the distribution $p(\theta)$ of angles along the circle is uniform, we can work out the distribution $p(x)$ of significands by requiring we conserve all of the probability mass:
-$$ p(\theta) \, d\theta &amp;amp;= p(x) \, dx $$
+$$ p(\theta) \, d\theta = p(x) \, dx $$
 combined with what we already know as the relationship between our significands and their angles: $\theta = 2\pi \log_{10} x$. This allows us to transform the uniform distribution of angles $p(\theta) = \frac{1}{2\pi}$ into:
 $$ p(x) = \frac{1}{x \log 10 }. $$
 We've recovered a nice &lt;a href="https://en.wikipedia.org/wiki/Power_law"&gt;power law&lt;/a&gt; or &amp;quot;scale-free&amp;quot; distribution for the significands, something we could have guessed or worked out from our requirement that the distribution be invariant to scale.&lt;/p&gt;
@@ -1157,5 +1157,5 @@ rendered in the form presented in &lt;i&gt;Fixing a Broken ELBO&lt;/i&gt;&lt;sup
 $$ \textsf{ELBO} \equiv D + R \geq H. $$
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;We've managed to derive several non-equilibrium statistical mechanical equalities and inequalities seemingly from nothing.  All of these results were powered by the facts we opened with, that probability distributions integrate to one and that KL divergences are positive.  The only challenge here was one of semantics.  To get power out of such trivial mathematical manipulations required us to make judicious choices in how we interpreted them.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Special thanks to Sam Schoenholz and Srinivas Vasudevan for helpful feedback on this post.&lt;/small&gt;&lt;/p&gt;
+&lt;p&gt;&lt;small&gt;Special thanks to Sam Schoenholz, Srinivas Vasudevan and Yasaman Bahri for helpful feedback on this post.&lt;/small&gt;&lt;/p&gt;
 </content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/non-equilibrium.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Fri, 16 Sep 2022 00:00:00 -0400</pubDate></item></channel></rss>
