@@ -15,6 +15,14 @@
     gtag('config', 'G-F5SW43T5NT');
     </script>
 
+		<!-- favicon stuff -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml" />
 
@@ -84,7 +92,7 @@
     <!-- Bio and stuff -->
     <main>
       <p>Some of <a href="https://alexalemi.com">my</a> thoughts...</p>
-      <p>If you have feedback, please reach out on <a href="https://twitter.com/alemi">twitter</a> or have a discussion on <a href="https://github.com/alexalemi/blog.alexalemi.com/discussions">github</a>.
+      <p>If you have feedback, please reach out on <a href="https://twitter.com/alemi">twitter</a> or <a rel="me" href="https://sigmoid.social/@alemi">mastodon</a> or have a discussion on <a href="https://github.com/alexalemi/blog.alexalemi.com/discussions">github</a>.
     </main>
 
     <!--- Writings section --->
