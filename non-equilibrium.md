@@ -141,6 +141,74 @@ which naturally generates the inequality (a version of the second law):
 $$ \Delta F \geq \left\langle W - Q \right\rangle. $$
 As a reminder, in this case, we were generalized to a situation where our initial distributions were canonical, but our dynamics were generalized to any sequence of Markovian transition kernels, provided only that those kernels have a stationary distribution.
 
+## Generalized Landauer Bound
+
+[Wolpert says](https://youtu.be/r33Wj8FF_EQ?t=356) that, from stochastic thermodynamics we know:
+
+\begin{equation}
+	-\Delta Q = \Delta \Sigma + S(p_0) - S(p_1)
+\end{equation}
+
+Which, with $\Delta \Sigma \geq 0$ gives us the *generalized Landauer bound*
+
+\begin{equation}
+	-\Delta Q \geq S(p_0) - S(p_1)
+\end{equation}
+
+For the classic case of bit erasure the change in entropy is $\log 2$ and we get Landauer's bound:
+
+\begin{equation}
+	-\Delta Q \geq kT \log 2
+\end{equation}
+
+So, where does this come from?  It doesn't seem like there is much to it, honestly, imagine two joint distributions $p(x_0, x_1)$ and $q(x_0, x_1)$ describing a *forward* and *reverse* process that moves between two states.  The KL divergence between these two is non-negative and *monotonic*
+
+\begin{equation}
+	\left\langle \log \frac{p(x_0,x_1)}{q(x_0,x_1)} \right\rangle_p \geq \left\langle \log \frac{p(x_1)}{q(x_1)} \right\rangle \geq 0
+\end{equation}
+
+We can simply rearrange terms to see that:
+Subtracting $\langle \log p(x_1)/q(x_1) \rangle$ from both sides we first find the entropy production:
+\begin{equation}
+	\Delta\Sigma \equiv \left\langle \log \frac{p(x_1|x_0)p(x_0)}{q(x_0|x_1)p(x_1)} \right\rangle \geq 0
+\end{equation}
+
+and we can establish the identity:
+\begin{equation}
+	\left\langle \log \frac{p(x_1|x_0)p(x_0)}{q(x_0|x_1)p(x_1)} \right\rangle_p = \left\langle \log \frac{p(x_1|x_0)}{q(x_0|x_1)} \right\rangle_p + \left\langle \log \frac{p(x_0)}{p(x_1)} \right\rangle_p
+\end{equation}
+
+If we simply identify terms, we recover the Wolpert form:
+
+\begin{equation}
+	\Delta \Sigma = -\Delta Q + S(p_1)-S(p_0)
+\end{equation}
+
+To make these identifications, we can see that:
+\begin{equation}
+	S(p_0) = -\left\langle \log p(x_0) \right\rangle \qquad S(p_1) = -\left\langle \log p(x_1) \right\rangle
+\end{equation}
+
+And for the *entropy rate*:
+\begin{equation}
+	-\Delta Q \equiv \left\langle \log \frac{p(x_1|x_0)}{q(x_0|x_1)} \right\rangle
+\end{equation}
+which appears to be the likelihood ratio of our forward and reverse conditional processes, i.e. some characterization of the irreversibility of our system.
+
+If we happen to be in a system that satisfies local detailed balance, we know that there should be some kind of steady state distribution for which:
+\begin{equation}
+	p(x_1|x_0) \pi(x_0) = q(x_0|x_1) \pi(x_1)
+\end{equation}
+so that:
+\begin{equation}
+	\log \frac{p(x_1|x_0)}{q(x_0|x_1)} = \log \frac{\pi(x_1)}{\pi(x_0)}
+\end{equation}
+and if we further imagine that the steady state distribution is boltzmann like and the system is in contact with some kind of heat bath, we see that:
+\begin{equation}
+	\log \frac{\pi(x_1)}{\pi(x_0)} = \log \frac{\frac{1}{Z_1}e^{\beta H_1}}{\frac{1}{Z_0} e^{\beta H_0}} = \log \frac{Z_0}{Z_1}+ \beta (H_1 - H_0)  = \beta \Delta F - \beta \Delta U = \Delta Q
+\end{equation}
+we can identify the forward to the reverse transition probabilties as the heat flow from the bath.
+
 ## Variational Autoencoder
 
 To show some of the generality of what we're doing here, let's do it again but for a completely different kind of system, this time a [Variational Autoencoder](https://en.wikipedia.org/wiki/Variational_autoencoder).  In a variational autoencoder there are two joint distributions at play, one a *representational model* $p(x,z) = p(x) p(z|x)$ which starts with a draw from some *true* data distribution $p(x)$ and then uses an *encoder* to map that datum to some kind of representative code, or summary, or representation $z$: $p(z|x)$.  The other joint distribution consists of a *generative model* $q(x,z) = q(z)q(x|z)$ that imagines a joint distribution over the same space but works in _reverse_.  First, we generate a *latent variable* $z$ from some *prior distribution* $q(z)$ and then we use a *decoder* to stochastically turn that latent variable into a generated datum $x$: $q(x|z)$.

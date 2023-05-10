@@ -114,7 +114,8 @@ $$ p(D|\theta) = L(D|\theta) \qquad p(\theta|D_0) = q(\theta|D_0). $$</p>
 <p>I think that this is an easier task to do.  It is easier for me to reason about what beliefs I should hypothetically hold in like of some data than it is for me to reason about what I believe independent of any data.</p>
 <h2>Coin Example</h2>
 <p>Let's work a simple example of a coin flip.  I believe I can model a coin as being a simple Bernoulli process. There is some probability $\theta$ that the coin will land heads and each flip is independent and identically distributed.  Therefore I can model observing $H$ heads out of sequence of $N$ flips with a <a href="https://en.wikipedia.org/wiki/Binomial_distribution">Binomial Likelihood</a>:</p>
-<p>$$ L(D|\theta) = { N \choose H} \theta^H (1- \theta)^{N-H} $$</p>
+<p>$$ L({H,N}|\theta) = { N \choose H} \theta^H (1- \theta)^{N-H} $$</p>
+<p>Now, we imagine I actually observe some sequence of coin flips, let's say 6 out of 10 flips were heads. Now what should I believe about the bias of my coin?  To answer this I need to specify a prior belief I have about the bias of the coin.  In most textbook examples, that prior is taken to be uniform $p(\theta) = 1$, saying that our prior belief is that it is equally likely that the coin should have a bias in an interval $\theta + \delta \theta$ for any $\theta$, i.e. this prior says its just as likely the bias of the coin is between 0.1 and 0.2 as it is that it is between 0.5 and 0.6.</p>
 <h2>Mixture</h2>
 <h2>Jaynes and ESP</h2>
 <h2>Linear Fit</h2>
