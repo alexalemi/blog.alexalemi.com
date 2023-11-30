@@ -1,5 +1,24 @@
 [
     {
+      "title": "Ventilation",
+      "src": "ventilation.md",
+      "date": "2023-11-29",
+      "tags": ["fun"],
+      "id": "ventilation",
+      "description": "A simple model of CO2 concentration in our home.",
+      "featured": false
+    },
+    {
+      "title": "Down with Decimal, long live Decibels",
+      "src": "decibels.md",
+      "date": "2023-07-07",
+      "tags": ["fun"],
+      "id": "decibels",
+      "description": "In an alternate universe, we'd use decibels for everything.",
+      "featured": true,
+			"draft": true
+    },
+    {
       "title": "The Method of Imaginary Results",
       "src": "imaginary-results.md",
       "date": "2022-10-25",

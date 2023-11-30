@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Wed, 26 Oct 2022 01:27:50 +0000</lastBuildDate><item><title>Why KL?</title><link>https://blog.alexalemi.com/kl.html</link><description>Why is the KL divergence so special?</description><content:encoded>&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Liebler
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Thu, 30 Nov 2023 17:14:22 +0000</lastBuildDate><item><title>Why KL?</title><link>https://blog.alexalemi.com/kl.html</link><description>Why is the KL divergence so special?</description><content:encoded>&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Liebler
 divergence&lt;/a&gt;,
 or KL divergence, or relative entropy, or relative information, or information
 gain, or expected weight of evidence, or information divergence
@@ -580,7 +580,7 @@ function updatePercent() {
 &lt;p&gt;I want to start blogging again. I've set up this small site to do that. It's remarkable how easy it is these days.  This site is being hosted on &lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt; which gives free space for anyone to start hosting their own static content. Using systems like &lt;a href="https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll"&gt;Jekyll&lt;/a&gt; the actual practice of making the website can be quite simple these days.  In my case I wrote some &lt;a href="https://github.com/alexalemi/alexalemi.github.io/tree/master/src"&gt;custom python scripts&lt;/a&gt; to convert my &lt;a href="https://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; posts to html. This blog itself lives in its own &lt;a href="https://github.com/alexalemi/blog.alexalemi.com/"&gt;github repo&lt;/a&gt;.  &lt;a href="https://www.mathjax.org/"&gt;MathJax&lt;/a&gt; allows for beautiful $\LaTeX$ math rendering.
 For discussions or comments, I'll try out &lt;a href="https://giscus.app/"&gt;giscus&lt;/a&gt; which is a nifty system enabling comments through &lt;a href="https://github.com/alexalemi/blog.alexalemi.com/discussions"&gt;github discussions&lt;/a&gt;. People can also reach out on &lt;a href="https://twitter.com/alemi"&gt;twitter&lt;/a&gt;. I also think it's important to support &lt;a href="https://atthis.link/blog/2021/rss.html"&gt;rss&lt;/a&gt; which I've done here.&lt;/p&gt;
 </content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/blogging.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Mon, 15 Nov 2021 00:00:00 -0500</pubDate></item><item><title>A Simple Demonstration of Benford's Law</title><link>https://blog.alexalemi.com/benford.html</link><description>Benford's law is a natural consequence of scale invariance, this is relatively easy to see in the face of a circular sliderule.</description><content:encoded>&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Benford%27s_law"&gt;Benford's Law&lt;/a&gt; is the
-observation that in a list of &amp;quot;naturally occuring numbers&amp;quot;,
+observation that in a list of "naturally occuring numbers",
 the plurality of numbers will begin with a 1.
 This often catches people by surprise, but if you go and pull random numbers from a book or newspaper you can expect the leading digits to follow the following distribution:&lt;/p&gt;
 &lt;figure id="#benford" class="right"&gt;
@@ -634,7 +634,7 @@ Specifically that the significand should be between 1.0 and 1.1.
 $$ p(\theta) \, d\theta = p(x) \, dx $$
 combined with what we already know as the relationship between our significands and their angles: $\theta = 2\pi \log_{10} x$. This allows us to transform the uniform distribution of angles $p(\theta) = \frac{1}{2\pi}$ into:
 $$ p(x) = \frac{1}{x \log 10 }. $$
-We've recovered a nice &lt;a href="https://en.wikipedia.org/wiki/Power_law"&gt;power law&lt;/a&gt; or &amp;quot;scale-free&amp;quot; distribution for the significands, something we could have guessed or worked out from our requirement that the distribution be invariant to scale.&lt;/p&gt;
+We've recovered a nice &lt;a href="https://en.wikipedia.org/wiki/Power_law"&gt;power law&lt;/a&gt; or "scale-free" distribution for the significands, something we could have guessed or worked out from our requirement that the distribution be invariant to scale.&lt;/p&gt;
 &lt;p&gt;We may have just gone around in a circle,&lt;sup&gt;&lt;a href="#pun"&gt;6&lt;/a&gt;&lt;/sup&gt; but I hope you agree that there is something very visceral about seeing Benford's law play out on the face of the circular sliderule.&lt;/p&gt;
 &lt;aside&gt; &lt;sup id="#pun"&gt;6&lt;/sup&gt;
 Pun very much intended.
@@ -653,9 +653,9 @@ with a rope has proven a very useful skill.  So, which knots do I recommend?&lt;
 best boating knots, scouting knots, climbing knots, etc.  I don't do any of
 those things.  Instead, I want to know how to not embarrass myself if I find
 myself needing to accomplish some kind of task with a rope.  So, for each of
-the common use cases for a rope, I've tried to identify the &amp;quot;best&amp;quot; knot to use.
+the common use cases for a rope, I've tried to identify the "best" knot to use.
 Best, in this case, means some combination of ease of tying, ease of remembering,
-and strength and ability of the knot. A lot of knots will have &amp;quot;false friends&amp;quot;
+and strength and ability of the knot. A lot of knots will have "false friends"
 of a sort, very closely related knots that are often much worse in their
 characteristics.  I tried to pay special attention here, as I don't very often
 use knots so I need to ensure the ones I focus on learning are robust in the
@@ -739,14 +739,14 @@ end of a rope.  For this I think the
   &lt;/figcaption&gt;
   &lt;/center&gt;
 &lt;/figure&gt;
-&lt;p&gt;The Bowline is often described as the &amp;quot;king of knots&amp;quot;.  It's a nice knot to
+&lt;p&gt;The Bowline is often described as the "king of knots".  It's a nice knot to
 know.  The loop formed doesn't collapse, so can be used to make a handle, to
 tie a rope around a hole, pole, or other objects.  If you make a Bowline in the
 end and then pass the rest of the rope through you can make a type of lasso or
 slipknot. Even after being used the knot is usually easy to untie.&lt;/p&gt;
 &lt;p&gt;Tying the knot is simple and easy to remember, especially with the common
-mnemonic: &lt;em&gt;&amp;quot;The rabbit comes up the hole, runs around the tree then back down
-the hole.&amp;quot;&lt;/em&gt;  One thing to pay special attention to is to ensure that the free
+mnemonic: &lt;em&gt;"The rabbit comes up the hole, runs around the tree then back down
+the hole."&lt;/em&gt;  One thing to pay special attention to is to ensure that the free
 end of the rope is left on the inside of the loop.&lt;/p&gt;
 &lt;h2&gt;Loop in the middle of the rope&lt;/h2&gt;
 &lt;p&gt;Next, if you need a loop in a the middle of a rope and don't have access to the ends, use the
@@ -878,6 +878,8 @@ of a diffusion model trained on EMNIST, which you can find as part of the &lt;a 
 &lt;aside&gt;&lt;sup id="#brakets"&gt;3&lt;/sup&gt;
 	I use &lt;a href="https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation"&gt;brakets&lt;/a&gt; to show expectations and unless noted, always with respect to the full $p$ distribution.
 	$$ \left\langle \cdot \right\rangle_p = \mathbb{E}_p \left[ \cdot \right] = \int dx\, p(x) [\cdot] $$
+&lt;pre&gt;&lt;code&gt;	
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;If I don't denote the distribution the expectation is with respect to on the brakets, it's always the full joint $p(x,\cdots)$. Notice that this works even if there
 are fewer variables or conditioning variables left inside the terms in the brakets, as any excess variables will just marginalize out without issue in the expectation and any variables being conditioned on will be evaluated in expectation as desired.&lt;/p&gt;
 &lt;/aside&gt;
@@ -889,7 +891,7 @@ $$ \begin{align}
 &amp;amp;= \left\langle \log \frac{p(x)}{q(x)} \right\rangle + \left\langle \log \frac{p(z|x)}{q(z|x)} \right\rangle \\
 &amp;amp;\geq \left\langle \log \frac{p(x)}{q(x)}\right\rangle \geq 0
 \end{align} $$
-Intuitively, if we think about KL divergence as a &amp;quot;distance&amp;quot; between probability distributions, two joint distributions always have to be at least as far apart as their marginals.  As we just saw, the KL of the joint is the sum of the KL between the two marginals, as well as the expected KL of the conditional distributions (which has to be positive, as all KLs are).&lt;/p&gt;
+Intuitively, if we think about KL divergence as a "distance" between probability distributions, two joint distributions always have to be at least as far apart as their marginals.  As we just saw, the KL of the joint is the sum of the KL between the two marginals, as well as the expected KL of the conditional distributions (which has to be positive, as all KLs are).&lt;/p&gt;
 &lt;h2&gt;VAEs&lt;/h2&gt;
 &lt;p&gt;Imagine designing these joint distributions to have different flavors.  Think of $p(x,z)$ as a &lt;em&gt;forward&lt;/em&gt; process $p(x) p(z|x)$ that takes an image from some natural image distribution $p(x)$ and then encodes it into some representation $z$ with an encoder $p(z|x)$.  This is a joint distribution over the two variables. Running the forward process would give us $(x,z)$ pairs, pairs of natural images and their encodings.
 Next, imagine a different joint distribution, a &lt;em&gt;reverse process&lt;/em&gt; $q(x,z)$ that takes some sample from a &lt;em&gt;prior&lt;/em&gt; $q(z)$ and then runs it through a &lt;em&gt;decoder&lt;/em&gt; $q(x|z)$ to generate a synthetic image.  This is a generative model of the kind we might be used to building.  This is also a fully-fledged joint distribution that we could sample from, in order to generate $(x,z)$ pairs. At initialization, these two distributions are very different. The goal of generative modeling is to bring these two joint distributions into alignment.&lt;/p&gt;
@@ -1128,6 +1130,58 @@ $$ D(p_F; q_R) = \left\langle \log \frac{p_F}{q_F} \right\rangle_F = -\beta \lef
 which naturally generates the inequality (a version of the second law):
 $$ \Delta F \geq \left\langle W - Q \right\rangle. $$
 As a reminder, in this case, we were generalized to a situation where our initial distributions were canonical, but our dynamics were generalized to any sequence of Markovian transition kernels, provided only that those kernels have a stationary distribution.&lt;/p&gt;
+&lt;h2&gt;Generalized Landauer Bound&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://youtu.be/r33Wj8FF_EQ?t=356"&gt;Wolpert says&lt;/a&gt; that, from stochastic thermodynamics we know:&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+-\Delta Q = \Delta \Sigma + S(p_0) - S(p_1)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;Which, with $\Delta \Sigma \geq 0$ gives us the &lt;em&gt;generalized Landauer bound&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+-\Delta Q \geq S(p_0) - S(p_1)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;For the classic case of bit erasure the change in entropy is $\log 2$ and we get Landauer's bound:&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+-\Delta Q \geq kT \log 2
+\end{equation}&lt;/p&gt;
+&lt;p&gt;So, where does this come from?  It doesn't seem like there is much to it, honestly, imagine two joint distributions $p(x_0, x_1)$ and $q(x_0, x_1)$ describing a &lt;em&gt;forward&lt;/em&gt; and &lt;em&gt;reverse&lt;/em&gt; process that moves between two states.  The KL divergence between these two is non-negative and &lt;em&gt;monotonic&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+\left\langle \log \frac{p(x_0,x_1)}{q(x_0,x_1)} \right\rangle_p \geq \left\langle \log \frac{p(x_1)}{q(x_1)} \right\rangle \geq 0
+\end{equation}&lt;/p&gt;
+&lt;p&gt;We can simply rearrange terms to see that:
+Subtracting $\langle \log p(x_1)/q(x_1) \rangle$ from both sides we first find the entropy production:
+\begin{equation}
+\Delta\Sigma \equiv \left\langle \log \frac{p(x_1|x_0)p(x_0)}{q(x_0|x_1)p(x_1)} \right\rangle \geq 0
+\end{equation}&lt;/p&gt;
+&lt;p&gt;and we can establish the identity:
+\begin{equation}
+\left\langle \log \frac{p(x_1|x_0)p(x_0)}{q(x_0|x_1)p(x_1)} \right\rangle_p = \left\langle \log \frac{p(x_1|x_0)}{q(x_0|x_1)} \right\rangle_p + \left\langle \log \frac{p(x_0)}{p(x_1)} \right\rangle_p
+\end{equation}&lt;/p&gt;
+&lt;p&gt;If we simply identify terms, we recover the Wolpert form:&lt;/p&gt;
+&lt;p&gt;\begin{equation}
+\Delta \Sigma = -\Delta Q + S(p_1)-S(p_0)
+\end{equation}&lt;/p&gt;
+&lt;p&gt;To make these identifications, we can see that:
+\begin{equation}
+S(p_0) = -\left\langle \log p(x_0) \right\rangle \qquad S(p_1) = -\left\langle \log p(x_1) \right\rangle
+\end{equation}&lt;/p&gt;
+&lt;p&gt;And for the &lt;em&gt;entropy rate&lt;/em&gt;:
+\begin{equation}
+-\Delta Q \equiv \left\langle \log \frac{p(x_1|x_0)}{q(x_0|x_1)} \right\rangle
+\end{equation}
+which appears to be the likelihood ratio of our forward and reverse conditional processes, i.e. some characterization of the irreversibility of our system.&lt;/p&gt;
+&lt;p&gt;If we happen to be in a system that satisfies local detailed balance, we know that there should be some kind of steady state distribution for which:
+\begin{equation}
+p(x_1|x_0) \pi(x_0) = q(x_0|x_1) \pi(x_1)
+\end{equation}
+so that:
+\begin{equation}
+\log \frac{p(x_1|x_0)}{q(x_0|x_1)} = \log \frac{\pi(x_1)}{\pi(x_0)}
+\end{equation}
+and if we further imagine that the steady state distribution is boltzmann like and the system is in contact with some kind of heat bath, we see that:
+\begin{equation}
+\log \frac{\pi(x_1)}{\pi(x_0)} = \log \frac{\frac{1}{Z_1}e^{\beta H_1}}{\frac{1}{Z_0} e^{\beta H_0}} = \log \frac{Z_0}{Z_1}+ \beta (H_1 - H_0)  = \beta \Delta F - \beta \Delta U = \Delta Q
+\end{equation}
+we can identify the forward to the reverse transition probabilties as the heat flow from the bath.&lt;/p&gt;
 &lt;h2&gt;Variational Autoencoder&lt;/h2&gt;
 &lt;p&gt;To show some of the generality of what we're doing here, let's do it again but for a completely different kind of system, this time a &lt;a href="https://en.wikipedia.org/wiki/Variational_autoencoder"&gt;Variational Autoencoder&lt;/a&gt;.  In a variational autoencoder there are two joint distributions at play, one a &lt;em&gt;representational model&lt;/em&gt; $p(x,z) = p(x) p(z|x)$ which starts with a draw from some &lt;em&gt;true&lt;/em&gt; data distribution $p(x)$ and then uses an &lt;em&gt;encoder&lt;/em&gt; to map that datum to some kind of representative code, or summary, or representation $z$: $p(z|x)$.  The other joint distribution consists of a &lt;em&gt;generative model&lt;/em&gt; $q(x,z) = q(z)q(x|z)$ that imagines a joint distribution over the same space but works in &lt;em&gt;reverse&lt;/em&gt;.  First, we generate a &lt;em&gt;latent variable&lt;/em&gt; $z$ from some &lt;em&gt;prior distribution&lt;/em&gt; $q(z)$ and then we use a &lt;em&gt;decoder&lt;/em&gt; to stochastically turn that latent variable into a generated datum $x$: $q(x|z)$.&lt;/p&gt;
 &lt;p&gt;We can easily imagine the ratio of these two densities:
@@ -1157,5 +1211,152 @@ rendered in the form presented in &lt;i&gt;Fixing a Broken ELBO&lt;/i&gt;&lt;sup
 $$ \textsf{ELBO} \equiv D + R \geq H. $$
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;We've managed to derive several non-equilibrium statistical mechanical equalities and inequalities seemingly from nothing.  All of these results were powered by the facts we opened with, that probability distributions integrate to one and that KL divergences are positive.  The only challenge here was one of semantics.  To get power out of such trivial mathematical manipulations required us to make judicious choices in how we interpreted them.&lt;/p&gt;
-&lt;p&gt;&lt;small&gt;Special thanks to Sam Schoenholz, Srinivas Vasudevan and Yasaman Bahri for helpful feedback on this post.&lt;/small&gt;&lt;/p&gt;
-</content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/non-equilibrium.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Fri, 16 Sep 2022 00:00:00 -0400</pubDate></item></channel></rss>
+&lt;p&gt;&lt;small&gt;Special thanks to Sam Schoenholz, Srinivas Vasudevan, Yasaman Bahri and Jim Sethna for helpful feedback on this post.&lt;/small&gt;&lt;/p&gt;
+</content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/non-equilibrium.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Fri, 16 Sep 2022 00:00:00 -0400</pubDate></item><item><title>Ventilation</title><link>https://blog.alexalemi.com/ventilation.html</link><description>A simple model of CO2 concentration in our home.</description><content:encoded>&lt;p&gt;$ \newcommand{\coo}{\mathrm{CO_2}} $&lt;/p&gt;
+&lt;p&gt;We recently bought an &lt;a href="https://www.airthings.com/en/view-plus"&gt;Airthings&lt;/a&gt; so I have been geeking out looking at plots of our air quality.&lt;/p&gt;
+&lt;p&gt;In general, we don't seem to have any issues with our indoor air, except when we use
+the stovetop without the exhaust on it will spike our PM2.5 and in general we have
+higher $\coo$ concentrations indoors.&lt;/p&gt;
+&lt;p&gt;There are four of us in the house, and since we homeschool and I work from
+home, there is a lot of $\coo$ generation happening and I've tried to seal up our
+house as well as I can to make it energy efficient.&lt;/p&gt;
+&lt;p&gt;This got me thinking about how to model the $\coo$ concentration in our house.&lt;/p&gt;
+&lt;h2&gt;The Model&lt;/h2&gt;
+&lt;p&gt;Let's start with a basic model, we know that we have sources in the form of the
+four humans in the house, and that we exchange air with the outside air which
+is at something like $420 \textrm{ ppm}$.&lt;/p&gt;
+&lt;p&gt;This suggests a simple model of the form:&lt;/p&gt;
+&lt;p&gt;$$ \dot x = b - \kappa ( x - x_0 ) $$&lt;/p&gt;
+&lt;p&gt;Where we use $x$ to denote the concentration of $\coo$, $x_0$ for the outdoor
+concentration of $420\textrm{ ppm}$, $b$ represents the constant source from
+the humans in the house and $\kappa$ represents an exchange with the outside.&lt;/p&gt;
+&lt;p&gt;Here we assume that the rate of change is proportional to the difference,
+similar in spirit to &lt;a href="https://en.wikipedia.org/wiki/Thermal_conduction#Fourier%27s_law"&gt;Fourier's
+law&lt;/a&gt;.  In terms
+of our model, this is equivalent to assuming that within some time window, we
+replace some fraction of the air in the house with fresh air from outside. To
+break it down a bit more, imagine some amount of time $\Delta t$, the change in
+the concentation of $\coo$ inside can be modelled as taking some fraction
+$\kappa \Delta t$ of the total air inside and replacing it with fresh air, this
+means we decrease the concentration by $\kappa x \Delta t$ and then increase it
+by $\kappa x_0 \Delta t$, giving us the form we see above.&lt;/p&gt;
+&lt;p&gt;I find its easier to formulate a differential equation or physical model in
+terms of unitful quantities, but then easier to solve them if we take the time
+to non-dimensionalize (which we'll do below).
+Here our $x$ is in units of $\textrm{ppm}$ by volume, a
+dimensionless measure of concentration.  We'll imagine our time variable taking
+on the units of $\textrm{days}$ for convenience.  Then our source term $b$ has
+units of $\text{ppm/day}$ and measures the increase in $\coo$ concentration the
+four of us cause each day within the volume of our house. We could look up this
+number and find $900 \textrm{ gCO$_2$/day}$ produced per person.&lt;sup&gt;&lt;a
+href="#co2perperson"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;	
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Estimating Sources&lt;/h2&gt;
+&lt;aside&gt; &lt;sup id="co2perperson"&gt;1&lt;/sup&gt; 
+	I originally found this number &lt;a href="https://www.globe.gov/explore-science/scientists-blog/archived-posts/sciblog/2008/08/11/release-of-carbon-dioxide-by-individual-humans/comment-page-1/index.html#:~:text=For%20a%20year%2C%20our%20human,the%20carbon%20dioxide%20we%20exhale"&gt;here&lt;/a&gt; on some goverment blog site which says that wikipedia had the figure and sourced it from a USDA study.  It no longer appears on wikipedia but appears on some &lt;a href="https://www.carbon-dioxide-properties.com/aboutco2.aspx#:~:text=Typically%20the%20gas%20we%20exhale,of%20carbon%20dioxide%20per%20day"&gt;clones&lt;/a&gt; which use &lt;a href="https://faithscience.org/wp-content/uploads/2019/03/HANNA002.pdf"&gt;this article&lt;/a&gt; as a reference which cites a USDA study without reference. Other sites include a 2.3 lb/day figure, i.e. &lt;a href="https://www.nrdc.org/stories/do-we-exhale-carbon#:~:text=The%20average%20human%20exhales%20about,CO2%20as%20his%20sedentary%20brethren.)"&gt;here&lt;/a&gt;.
+&lt;/aside&gt;
+&lt;p&gt;Instead of looking up the number, let's see if we can estimate it.  We release carbon dioxide because we respire, our body burns hydrocarbons that we eat to generate energy for our body.  Carbohydrates and sugars have an energy density of $4 \textrm{ kcal/g}$ which you can verify on the back of your favorite candy bar.  The basic chemistry of respiration (and photosynthesis) is the burning of these hydrocarbons:&lt;/p&gt;
+&lt;p&gt;$$ \mathrm{C}_n\mathrm{H}_{2n}\mathrm{O}_n + n \mathrm{O}_2 \to n\mathrm{CO}_2 + n \mathrm{H}_2\mathrm{O} + \textrm{energy}  $$&lt;/p&gt;
+&lt;p&gt;If we total up the atomic masses in this formula, we find that for every $30 \textrm{ grams}$ of carbohydrates we burn, we release $44 \textrm{ grams}$ of carbon dioxide. If we typically eat $2000 \textrm{ kcal/day}$, this works out to $730 \textrm{ g/day}$ of $\coo$ per person, a pretty good match to the numbers you'll find online.&lt;/p&gt;
+&lt;p&gt;What does this mean for the atmosphere in my house?  Well, we have a $2100 \textrm{ft}^2$ home with $8 \textrm{ ft}$ ceilings. This gives us:&lt;/p&gt;
+&lt;p&gt;$$ \frac{730 \textrm{ g/day}}{2100 \textrm{ ft}^2 \cdot 8 \textrm{ ft} \cdot 1.225 \textrm{ kg/m}^3} = 1300 \textrm{ ppm/day}$$&lt;/p&gt;
+&lt;p&gt;In terms of the mass fraction.  However, $\coo$ concentrations we read about in papers or measure on sensors are volumetric fractions.  Carbon dioxide has a molar mass of $44 \textrm{ g/mol}$ while natural air is $29 \textrm{ g/mol}$&lt;sup&gt;&lt;a href="#airmole"&gt;2&lt;/a&gt;&lt;/sup&gt;, so to convert the mass fraction to a volume fraction we need to multiply by $44/29$.&lt;/p&gt;
+&lt;aside&gt; &lt;sup id="airmole"&gt;2&lt;/sup&gt; 
+	To zeroth order, Air is nitrogen at 28 g/mol, to next order its 3/4 nitrogen and 1/4 oxygen (at 32 g/mol) for a total of 29 g/mol.
+&lt;/aside&gt;
+&lt;p&gt;In the end, we estimate that each person in my house contributes $1900 \textrm{ ppm/day}$ of volumetric $\coo$ concentration.  Outdoor concentrations are $420 \textrm{ ppm}$ and my sensor turns yellow when the indoor concentration exceeds $800 \textrm{ ppm}$ and red above $1000 \textrm{ ppm}$.&lt;/p&gt;
+&lt;h2&gt;Estimating $\coo$ conductivity&lt;/h2&gt;
+&lt;p&gt;We've estimated $b$, but what about $\kappa$, well, this is a measure of how quickly we exchange air in the house.  If we close the windows and have the AC occasionally run the fan, it seems like the indoor $\coo$ concentration will level out at about $1800 \textrm{ ppm}$.  Meanwhile, in our model, if we solve for the steady state:&lt;/p&gt;
+&lt;p&gt;$$ \dot x = 0 = b - \kappa ( x - x_0 ) \implies x = x_0 + \frac{b}{\kappa} $$&lt;/p&gt;
+&lt;p&gt;and put in our estimates of a steady state value of $1800 \textrm{ ppm}$ and
+our estimate that for four humans we have $b = 4 \cdot 1800 \textrm{ ppm/day}$
+we get an estimate of $\kappa = 5.5 \textrm{ /day}$.  Honestly, this feels low,
+I know that most houses are supposed to have about 1 air change per hour,
+though here we are discussing specifically $\coo$ but I would expect the rates
+to be the same.  I might have to have a blower door test done to see how sealed
+up our home is.  We live in an older home which I generally expect to be fairly
+leaky, but we did some renovations recently and took care to try to seal up
+potential leaks.  We may have sealed up the house too much and might have to
+look into installing something like an &lt;a href="https://en.wikipedia.org/wiki/Heat_recovery_ventilation"&gt;Energy Recovery
+Ventilation&lt;/a&gt; system to
+ensure we have fresh enough air.&lt;/p&gt;
+&lt;p&gt;Then again, we seem to be able to shed our PM2.5, VOCs and other polutants
+rather quickly, so perhaps there is just an issue with our $\coo$ sensor
+itself.  Regardless, now that we have a model we can go on to solve it.&lt;/p&gt;
+&lt;h2&gt;Non-dimensionalizing&lt;/h2&gt;
+&lt;p&gt;I always find it useful to nondimensionalize differential equations when I'm
+solving them.  This means reparameterizing the equation to be in terms of only nondimensional quantities.
+In this case we'll form a dimensionless measure of the excess concentration, and use our $\kappa$ constant to
+reparameterize in terms of some relevative time:&lt;/p&gt;
+&lt;p&gt;$$ \chi \equiv \frac{\kappa}{b} (x - x_0)  \implies \dot \chi \equiv \frac{\kappa}{b} \dot x $$
+$$ \tau = \kappa t \implies dt = \kappa dt $$&lt;/p&gt;
+&lt;p&gt;After transforming we obtain:&lt;/p&gt;
+&lt;p&gt;$$ \frac{d\chi}{d\tau} = 1 - \chi $$&lt;/p&gt;
+&lt;p&gt;Which we can solve in typical physicist fashion:&lt;/p&gt;
+&lt;p&gt;$$ \begin{align}
+\frac{d\chi}{d\tau} &amp;amp;= 1 - \chi \\
+\frac{d\chi}{1 - \chi} &amp;amp;= d\tau \\
+\int_{\chi_0}^{\chi} \frac{d\chi}{1 - \chi} &amp;amp;= \int_0^\tau d\tau \\
+\log \frac{1 - \chi_0}{1 - \chi} &amp;amp;= \tau\\
+\frac{1 - \chi}{1 - \chi_0} &amp;amp;= e^{-\tau}\\
+\chi &amp;amp;= 1 + (\chi_0 - 1) e^{-\tau}
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;To see that the behavior should be a simple exponential relaxation to the steady state.&lt;/p&gt;
+&lt;figure id="#relaxation" class="right"&gt;
+  &lt;center&gt;
+  &lt;img width="95%" src="figures/ventilation.png"
+    alt="Simple exponential relexation."&gt;
+  &lt;figcaption&gt;
+  Figure 1. Two example evolutions of the $\coo$ given by the model.
+  &lt;/figcaption&gt;
+  &lt;/center&gt;
+&lt;/figure&gt;
+&lt;p&gt;In this nondimensional form, it becomes clear that everything is dominated by
+$\kappa$, if we wanted to either change the equilibrium value or get there
+sooner, we need to adjust $\kappa$, or the air flow rate.  If we open a couple
+windows and turn on the fans in the house, even with all four of us in here,
+the $\coo$ concentration then settles down at something like $600 \textrm{
+ppm}$ suggesting that the $\kappa$ is now something like $42 \text{ /day}$, and
+that the $\coo$ takes about $2/(42 \textrm{ /day}) \approx 1 \textrm{ hour}$ to
+fall.&lt;/p&gt;
+&lt;h2&gt;Would Plants help?&lt;/h2&gt;
+&lt;p&gt;Could we better control our indoor $\coo$ concentration by having some
+houseplants? While plants also respire like we do, they also photosynthesis,
+using the sun's energy to run the chemical equation above backward, fixing
+$\coo$ in the air into carbohydrates and sugars.&lt;/p&gt;
+&lt;p&gt;Unfortunately, as we saw above, what's really important for the chemistry is
+essentially the weight of the products.  For every $30 \textrm{ grams}$ of
+carbohydrates we burn we release $44 \textrm{ grams}$ of $\coo$ into the air,
+plants go in reverse: for every $30 \textrm{ grams}$ of carbohydrates they
+synthesize they consume $44 \textrm{ grams}$ of $\coo$ from the air.  This
+means that if every person in our house is releasing $730 \textrm{ g/day}$ of
+$\coo$, we would need $500 \textrm{ g/day}$ of sugars being synthesized to
+offset each of us.  Unfortunately plants do not grow nearly that fast.  It
+seems most plants grow a couple kilograms a year, let alone a day.  We are
+unlightly to make a dent in our resting $\coo$ concentration indoors unless we
+turned our house into a relative jungle.&lt;/p&gt;
+&lt;h2&gt;Impact on Earth&lt;/h2&gt;
+&lt;p&gt;To put something like climate change into perspective, we just worked out that
+a typical human releases something like $730 \textrm{ g/day}$ of $\coo$ just by
+breathing.  Granted, this $\coo$ doesn't tend to increase $\coo$ atmospheric
+concentrations because it came from carbon that very recently was in the
+atmosphere itself (before being fixed by our food).  Our breathing is
+essentially carbon neutral, but let's work out how much humanities collective breathing
+compared with atmospheric $\coo$ concentrations.&lt;/p&gt;
+&lt;p&gt;As before, we just need to scale up this production by the 8 billion humans on
+the planet and then divide by the total weight of the atmosphere, then correct
+for the volumetic concetration rather than mass based one.&lt;/p&gt;
+&lt;p&gt;To estimate the weight of the atmosphere, we know that the $1 \textrm{ atm}$ of air pressure at the
+surface is caused by the weight of air above us, so the total mass of the atmosphere is roughly:&lt;/p&gt;
+&lt;p&gt;$$ \frac{1 \textrm{ atm} \cdot 4 \pi R_{\ocirc}^2}{g} \approx 5.2\times 10^{21} \textrm{ g} $$&lt;/p&gt;
+&lt;p&gt;So we can work out that the relative $\coo$ concentration from human breathing is:&lt;/p&gt;
+&lt;p&gt;$$ \frac{730 \textrm{ g/day}}{5.2 \times 10^{21} \textrm{ g}} \cdot 7\times 10^9 \cdot \frac{44/29} \approx \frac{2/3} \textrm{ ppm/year}, $$&lt;/p&gt;
+&lt;aside&gt; &lt;sup id="coorate"&gt;3&lt;/sup&gt; 
+	From the &lt;a href="https://mlg.eng.cam.ac.uk/carl/words/carbon.html#:~:text=In%201960%2D1970%20the%20growth,about%202.47%20ppm%20per%20year."&gt;Carl Edward Rasmussen&lt;/a&gt;.
+&lt;/aside&gt;
+about $0.6 \textrm{ ppm/year}$.  Again, human breathing is actually net neutral, but given the magnitude here, it becomes a bit easier to
+imagine that human activities and burning of fossil fuels might be contributing $2.47 \pm 0.25 \textrm{ ppm/year}$ to the atmosphere.&lt;sup&gt;&lt;a href="#coorate"&gt;3&lt;/a&gt;&lt;/sup&gt;.  If we could csomehow sequester all of the $\coo$ that all of the humans on the planet breathe out, that would only reduce the atmospheric growth rate of $\coo$ by 25%.
+Humanity operates on a truly global scale and we now have very direct influences on the chemistry of the planet.
+</content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/ventilation.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Wed, 29 Nov 2023 00:00:00 -0500</pubDate></item></channel></rss>
