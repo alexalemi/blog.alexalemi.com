@@ -125,11 +125,53 @@ $$ p(D|\theta) = L(D|\theta) \qquad p(\theta|D_0) = q(\theta|D_0). $$</p>
 <p>Let's work a simple example of a coin flip.  I believe I can model a coin as being a simple Bernoulli process. There is some probability $\theta$ that the coin will land heads and each flip is independent and identically distributed.  Therefore I can model observing $H$ heads out of sequence of $N$ flips with a <a href="https://en.wikipedia.org/wiki/Binomial_distribution">Binomial Likelihood</a>:</p>
 <p>$$ L({H,N}|\theta) = { N \choose H} \theta^H (1- \theta)^{N-H} $$</p>
 <p>Now, we imagine I actually observe some sequence of coin flips, let's say 6 out of 10 flips were heads. Now what should I believe about the bias of my coin?  To answer this I need to specify a prior belief I have about the bias of the coin.  In most textbook examples, that prior is taken to be uniform $p(\theta) = 1$, saying that our prior belief is that it is equally likely that the coin should have a bias in an interval $\theta + \delta \theta$ for any $\theta$, i.e. this prior says its just as likely the bias of the coin is between 0.1 and 0.2 as it is that it is between 0.5 and 0.6.</p>
-<h2>Mixture</h2>
-<h2>Jaynes and ESP</h2>
-<h2>Linear Fit</h2>
-<h2>Neural Networks</h2>
-<h2>Rational Ignorance</h2>
+<p>Alternatively, I could take Jeffrey's advice and adopt a non-informative prior that is reparameterization independent, or I could try to adopt Gelman's advice and start with an informative prior concentrated near fairness. Below is a representation of these three standard choices where the prior is shown in blue and the posterior from 6 heads out of 10 flips is shown in orange.</p>
+<figure id="#standard-priors" class="right">
+  <center>
+  <img width="95%" src="figures/standard-coin-priors.svg"
+    alt="A visualization of some standard prior and posterior pairs, a uniform prior, jeffrey's prior and a weakly informative prior.">
+  <figcaption>
+  Figure 1. Some standard textbook priors and the resulting posterior for 6 heads out of 10 coin flips.
+  </figcaption>
+  </center>
+</figure>
+<p>These are convenient mathematically and make for an easy problems to solve for a homework exercises, but they aren't realistic.  If we are being honest, we tend to expect that coins we encounter in the real world and very nearly fair.<sup><a href="#fiarness">6</a></sup>.  We could therefore start with a prior that is concentrated near fair, but how do we assign a meaningful width to that distribution?  And if we're being honest, I've encountered trick coins in my days, double headed and doubled tailed coins and if some wierdo walks up to me and asks me to start predicting a whole sequence of coin flips I shouldn't discount the possiblity they are trying to play me for a fool.</p>
+<aside><sup id="fairness">6</sup>
+Despite there being <a href="https://statweb.stanford.edu/~cgates/PERSI/papers/dyn_coin_07.pdf">arguments</a> and <a href="https://arxiv.org/abs/2310.04153">strong evidence</a> that there is a <i>dynamical</i> bias, meaning that coins tend to land on the same side they start as showing up in human flips.
+</aside>
+<p>As this stage, trying to adjust the parameters of our <em>prior</em> without any evidence or data is difficult.  I have a hard time talking to my gut to decide what I should set my prior beliefs to apropro of <em>nothing</em>.  Instead, let's try to invoke the method of imaginary results and imagine some hypothetical dataset and probe our beliefs.  Imagine we've just observed 10 coin flips, and all 10 of them were heads!  What do you believe now?  Now that I've hypothesized a dataset I have an easrier time talking to my gut.</p>
+<p>In this scenario, I feel as though I would place a reasonable probability on the coin being unfair, let's say 50%.  At the same time, I think I would still place a reasonable probability on the coin being <em>exactly</em> fair, let's say 25%.  The remaining 25% probability I would want to spread around but biased towards heads, for that let's use a $\operatorname{Beta}(11,1)$ distribution or $11\, \theta^{10}$.  I've attempted to visualize this distribution below.<a href="#deltas"><sup>7</sup></a></p>
+<figure id="#imaginary-result-coin" class="right">
+  <center>
+  <img width="95%" src="figures/imaginary-result.svg"
+    alt="A mixture of 25\% mass on 0.5, 50\% mass on 1.0 and 25\% mass on a Beta(11, 1).">
+  <figcaption>
+  Figure 2. My attempt at illiciting an imaginary result of a posterior I'm comfortable with if I were to observe 10 heads in a row from a coin.
+  </figcaption>
+  </center>
+</figure>
+<aside><sup id="deltas">7</sup>
+I don't know a good way to visualize probability distributions with delta components. I like the idea of putting vertical lines with balls at the top, but I don't know how to demonstrate how much mass the deltas have in reference to the rest of the density, it doesn't feel like there would be a good choice for the right scale to use.  Here I've done something I'm not proud of but I feel like is honest at least, I've just discretized the distribution into 100 bins, so you can see both the width and the corresponding height, I choose a fairly course discretization so that you can still see the bit of the Beta underneath the spikes.
+</aside>
+<p>Or in equation form:</p>
+<p>$$ q(\theta|D_0) = \frac 12 \delta(\theta -1 ) + \frac 14 \delta\left(\theta - \frac 12 \right) + \frac {11} 4 \theta^{10} $$</p>
+<p>Once we've specified this imaginary result, we have everything we need to form a posterior for our original problem with 6 heads out of 10 flips.</p>
+<p>$$\begin{align}
+p(\theta|D) &amp;\propto L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)} \\
+&amp;\propto 210 \theta^6 (1-\theta)^4 \frac{\frac 14 \delta\left(\theta - \frac 12 \right) + \frac 12 \delta(\theta - 1) + \frac{11}{4} \theta^{10}}{\theta^{10}} \\
+&amp;= \frac{210}{211} \delta\left(\theta -\frac 12 \right) + \frac{1}{211} \left( 2310 \theta^{6} (1-\theta)^4 \right)
+\end{align} $$</p>
+<figure id="#imaginary-result-posterior-coin" class="right">
+  <center>
+  <img width="95%" src="figures/imaginary-result-posterior.svg"
+    alt="A mixture of 99.5\% mass on 0.5, 0.50\% mass on a Beta(7, 5).">
+  <figcaption>
+  Figure 3. The posterior I get from my illicited imaginary posterior if I actually observe 6 heads and 4 tails. The blue curve is the true posterior, the dashed orange is a blown up version of the small residual component.
+  </figcaption>
+  </center>
+</figure>
+<p>The posterior we find is 99.5% probability on the coin being exactly fair, and 0.5% probability assigned to a $\operatorname{Beta}(7,5)$ type posterior, which is buried in the true form above, but I've blown up in the dashed line so you can see its shape.  This posterior has a very heavy weight on the coin being exactly fair, which I think is reflective of my actual beliefs but I would have had difficulty specifying in terms of a prior.  Instead, if I imagine the coin coming up heads 10 times in a row, the fact that I wanted to still give the coin a 25% chance of being fair is obviously mathematically equivalent to me having a 98.7% prior belief the coin is fair, but I feel as though I have a much higher sensitivity to the right number when I express this as a hypothetical posterior.</p>
+<p>The method of imaginary results let's us ask ourselves what we would believe in light of some data, rather than ask us to express what we believe apropos of <em>nothing</em>.  I think this helps resolve some of the philosophical issues have with prior selection in Bayesian inference.</p>
  
     </div>
   </article>

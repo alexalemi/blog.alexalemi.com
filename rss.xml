@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Thu, 30 Nov 2023 17:14:22 +0000</lastBuildDate><item><title>Why KL?</title><link>https://blog.alexalemi.com/kl.html</link><description>Why is the KL divergence so special?</description><content:encoded>&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Liebler
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Thu, 04 Jan 2024 00:32:53 +0000</lastBuildDate><item><title>Why KL?</title><link>https://blog.alexalemi.com/kl.html</link><description>Why is the KL divergence so special?</description><content:encoded>&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Liebler
 divergence&lt;/a&gt;,
 or KL divergence, or relative entropy, or relative information, or information
 gain, or expected weight of evidence, or information divergence
@@ -1359,4 +1359,104 @@ surface is caused by the weight of air above us, so the total mass of the atmosp
 about $0.6 \textrm{ ppm/year}$.  Again, human breathing is actually net neutral, but given the magnitude here, it becomes a bit easier to
 imagine that human activities and burning of fossil fuels might be contributing $2.47 \pm 0.25 \textrm{ ppm/year}$ to the atmosphere.&lt;sup&gt;&lt;a href="#coorate"&gt;3&lt;/a&gt;&lt;/sup&gt;.  If we could csomehow sequester all of the $\coo$ that all of the humans on the planet breathe out, that would only reduce the atmospheric growth rate of $\coo$ by 25%.
 Humanity operates on a truly global scale and we now have very direct influences on the chemistry of the planet.
-</content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/ventilation.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Wed, 29 Nov 2023 00:00:00 -0500</pubDate></item></channel></rss>
+</content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/ventilation.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Wed, 29 Nov 2023 00:00:00 -0500</pubDate></item><item><title>The Method of Imaginary Results</title><link>https://blog.alexalemi.com/imaginary-results.html</link><description>Don't think about your prior, think about a hypothetical posterior.</description><content:encoded>&lt;p&gt;Performing Bayesian inference requires a full joint distribution over both our
+data and parameters $p(D,\theta)$.  In the usual way of doing things, we
+specify that joint distribution by providing two pieces: a likelihood
+$p(D|\theta)$ that specifies how we believe the data would be
+generated if we happened to know the exact parameter values and some prior
+$p(\theta)$ over parameters that represents our state of belief about what the
+parameters are before we look at any data.&lt;/p&gt;
+&lt;p&gt;Most people don't have any deep philosophical issues with specifying a
+likelihood $p(D|\theta)$. We're aware that our likelihoods might not be
+perfect, that they are some approximation of what is happening in the real
+world. Still, we have opinions about them, we feel as though we can reason about
+whether a given likelihood is good or bad for some situation.&lt;/p&gt;
+&lt;p&gt;I believe I can model a series of $D$ heads in $N$ coin flips with a &lt;a href="https://en.wikipedia.org/wiki/Binomial_distribution"&gt;Binomial
+likelihood&lt;/a&gt; for instance,
+and I don't really have any qualms about that.
+I might decide to model the heights of my pea plants with a &lt;a href="https://en.wikipedia.org/wiki/Normal_distribution"&gt;Normal
+Distribution&lt;/a&gt; or perform a
+&lt;a href="https://en.wikipedia.org/wiki/Linear_regression"&gt;linear fit&lt;/a&gt; to some data, or
+do image classification with some &lt;a href="https://en.wikipedia.org/wiki/Convolutional_neural_network"&gt;convolutional neural
+network&lt;/a&gt; or
+&lt;a href="https://en.wikipedia.org/wiki/Transformer_(machine_learning_model)"&gt;transformer&lt;/a&gt;. In any case, I often have a good idea of what I should use as a likelihood $p(D|\theta)$.&lt;/p&gt;
+&lt;aside&gt;&lt;sup id="yesterday"&gt;1&lt;/sup&gt;
+This quote is often attributed to Lindley (1970), but I see no such occurance in that work. Looking around the original quote appears to be "Today's posterior is tomorrow's prior." From &lt;a href="https://people.umass.edu/stanek/pubhlth892d/Lindley-The-Statist-2000.pdf"&gt;&lt;i&gt;The Philosophy of Statistics&lt;/i&gt;&lt;/a&gt; by Dennis V Lindley, The Statistician 2000.  There do not appear to be any earlier occurrences of "today's prior" used in the sense of Bayesian inference that appear on Google Scholar.
+&lt;/aside&gt;
+&lt;p&gt;Choosing the prior $p(\theta)$ is what all the fuss is about.  This is the part that raises various philosophical issues.  This is the part that, if we are being honest, is much harder.  What do I believe the bias of a coin is before I ever flip the coin?  I'm not really sure to be honest.  In many contexts I might have previously done some experiments, in which case I could use yesterday's posterior as today's prior.&lt;sup&gt;&lt;a href="#yesterday"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;aside&gt;&lt;sup id="indifference"&gt;2&lt;/sup&gt;
+Originally coined the &lt;i&gt;principle of insufficient reason&lt;/i&gt; by Johannes on Kries, John Maynard Keyes renamed it the &lt;i&gt;principle of indifference&lt;/i&gt;. &lt;a href="https://en.wikipedia.org/wiki/Principle_of_indifference#History"&gt;[wiki]&lt;/a&gt;
+&lt;/aside&gt;
+&lt;aside&gt;&lt;sup id="jaynes-priors"&gt;3&lt;/sup&gt;
+    &lt;a href="https://bayes.wustl.edu/etj/articles/prior.pdf"&gt;&lt;i&gt;Prior Probabilities&lt;/i&gt;&lt;/a&gt; by Edwin T. Jaynes. 1968
+&lt;/aside&gt;
+&lt;aside&gt;&lt;sup id="reference"&gt;4&lt;/sup&gt;
+See for instance &lt;a href="https://arxiv.org/pdf/0904.0156.pdf"&gt;&lt;i&gt;A Formal Definition of Reference Priors&lt;/i&gt;&lt;/a&gt; by Berger, Bernardo and Sun.  For a more modern take I really like see &lt;a href="https://arxiv.org/abs/1705.01166"&gt;&lt;i&gt;Maximizing the information learned from finite data selects a simple model&lt;/i&gt;&lt;/a&gt; by Mattingly et al. and &lt;a href="https://arxiv.org/abs/2205.03343"&gt;&lt;i&gt;Far from Asymptopia&lt;/i&gt;&lt;/a&gt; by Abbott and Machta.
+&lt;/aside&gt;
+&lt;p&gt;However lacking previous experiments, I often feel at a loss. There are many frameworks for designing priors that people have proposed.  Laplace originally motivated a flat prior for the Bernoulli likelihood by appealing to the &lt;em&gt;principle of indifference&lt;/em&gt;.&lt;sup&gt;&lt;a href="#indifference"&gt;2&lt;/a&gt;&lt;/sup&gt;
+&lt;a href="https://en.wikipedia.org/wiki/Jeffreys_prior"&gt;Jeffreys&lt;/a&gt; taught us how to build priors that were reparameterization-independent.
+Jaynes would argue for choosing priors by appealing to symmetries.&lt;sup&gt;&lt;a href="#jaynes-priors"&gt;3&lt;/a&gt;&lt;/sup&gt; Bernardo suggested choosing priors to maximize the information you extract from data, so called &lt;i&gt;reference priors&lt;/i&gt;.&lt;sup&gt;&lt;a href="#reference"&gt;4&lt;/a&gt;&lt;/sup&gt; Gelman and friends tout &lt;i&gt;weakly informative priors&lt;/i&gt;.
+There are even whole &lt;a href="https://github.com/stan-dev/stan/wiki/Prior-Choice-Recommendations"&gt;lists of common recommendations&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;What if we didn't have to choose a prior directly?&lt;/p&gt;
+&lt;h2&gt;The Method of Imaginary Results&lt;/h2&gt;
+&lt;aside&gt;&lt;sup id="gelman-speed"&gt;5&lt;/sup&gt;
+See the first page of the nice little paper &lt;a href="http://www.stat.columbia.edu/~gelman/research/published/GelmanSpeed.pdf"&gt;&lt;i&gt;Characterizing a Joint Probability Distribution By Conditionals&lt;/i&gt;&lt;/a&gt; by Gelman and Speed, 1991.
+&lt;/aside&gt;
+&lt;p&gt;Enter &lt;em&gt;the method of imaginary results&lt;/em&gt;.  It turns out&lt;sup&gt;&lt;a href="#gelman-speed"&gt;5&lt;/a&gt;&lt;/sup&gt; that we can uniquely characterize a joint distribution in a different way.  Specifying a likelihood $L(D|\theta)$ and a prior $\pi(\theta)$ uniquely characterizes the joint $p(D,\theta) = L(D|\theta)\pi(\theta)$.  You know what else uniquely characterizes the joint? Specifying a likelihood $L(D|\theta)$ and some &lt;em&gt;hypothetical&lt;/em&gt; posterior $q(\theta|D_0)$. The corresponding unique joint $p(\theta,D)$ is given by:&lt;/p&gt;
+&lt;p&gt;$$ p(\theta, D) \propto L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)} = \frac{ L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)} }{\int d\theta\, L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)}}.  $$&lt;/p&gt;
+&lt;p&gt;Which naturally satisfies the two inputs we provided:
+$$ p(D|\theta) = L(D|\theta) \qquad p(\theta|D_0) = q(\theta|D_0). $$&lt;/p&gt;
+&lt;p&gt;This flips the problem on its head.  We no longer have to specify a &lt;em&gt;prior&lt;/em&gt;.  Instead we can specify a &lt;em&gt;hypothetical posterior&lt;/em&gt;.  We can say what we would believe, if, hypothetically we had observed some dataset $D_0$.&lt;/p&gt;
+&lt;p&gt;I think that this is an easier task to do.  It is easier for me to reason about what beliefs I should hypothetically hold in like of some data than it is for me to reason about what I believe independent of any data.&lt;/p&gt;
+&lt;h2&gt;Coin Example&lt;/h2&gt;
+&lt;p&gt;Let's work a simple example of a coin flip.  I believe I can model a coin as being a simple Bernoulli process. There is some probability $\theta$ that the coin will land heads and each flip is independent and identically distributed.  Therefore I can model observing $H$ heads out of sequence of $N$ flips with a &lt;a href="https://en.wikipedia.org/wiki/Binomial_distribution"&gt;Binomial Likelihood&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;$$ L({H,N}|\theta) = { N \choose H} \theta^H (1- \theta)^{N-H} $$&lt;/p&gt;
+&lt;p&gt;Now, we imagine I actually observe some sequence of coin flips, let's say 6 out of 10 flips were heads. Now what should I believe about the bias of my coin?  To answer this I need to specify a prior belief I have about the bias of the coin.  In most textbook examples, that prior is taken to be uniform $p(\theta) = 1$, saying that our prior belief is that it is equally likely that the coin should have a bias in an interval $\theta + \delta \theta$ for any $\theta$, i.e. this prior says its just as likely the bias of the coin is between 0.1 and 0.2 as it is that it is between 0.5 and 0.6.&lt;/p&gt;
+&lt;p&gt;Alternatively, I could take Jeffrey's advice and adopt a non-informative prior that is reparameterization independent, or I could try to adopt Gelman's advice and start with an informative prior concentrated near fairness. Below is a representation of these three standard choices where the prior is shown in blue and the posterior from 6 heads out of 10 flips is shown in orange.&lt;/p&gt;
+&lt;figure id="#standard-priors" class="right"&gt;
+  &lt;center&gt;
+  &lt;img width="95%" src="figures/standard-coin-priors.svg"
+    alt="A visualization of some standard prior and posterior pairs, a uniform prior, jeffrey's prior and a weakly informative prior."&gt;
+  &lt;figcaption&gt;
+  Figure 1. Some standard textbook priors and the resulting posterior for 6 heads out of 10 coin flips.
+  &lt;/figcaption&gt;
+  &lt;/center&gt;
+&lt;/figure&gt;
+&lt;p&gt;These are convenient mathematically and make for an easy problems to solve for a homework exercises, but they aren't realistic.  If we are being honest, we tend to expect that coins we encounter in the real world and very nearly fair.&lt;sup&gt;&lt;a href="#fiarness"&gt;6&lt;/a&gt;&lt;/sup&gt;.  We could therefore start with a prior that is concentrated near fair, but how do we assign a meaningful width to that distribution?  And if we're being honest, I've encountered trick coins in my days, double headed and doubled tailed coins and if some wierdo walks up to me and asks me to start predicting a whole sequence of coin flips I shouldn't discount the possiblity they are trying to play me for a fool.&lt;/p&gt;
+&lt;aside&gt;&lt;sup id="fairness"&gt;6&lt;/sup&gt;
+Despite there being &lt;a href="https://statweb.stanford.edu/~cgates/PERSI/papers/dyn_coin_07.pdf"&gt;arguments&lt;/a&gt; and &lt;a href="https://arxiv.org/abs/2310.04153"&gt;strong evidence&lt;/a&gt; that there is a &lt;i&gt;dynamical&lt;/i&gt; bias, meaning that coins tend to land on the same side they start as showing up in human flips.
+&lt;/aside&gt;
+&lt;p&gt;As this stage, trying to adjust the parameters of our &lt;em&gt;prior&lt;/em&gt; without any evidence or data is difficult.  I have a hard time talking to my gut to decide what I should set my prior beliefs to apropro of &lt;em&gt;nothing&lt;/em&gt;.  Instead, let's try to invoke the method of imaginary results and imagine some hypothetical dataset and probe our beliefs.  Imagine we've just observed 10 coin flips, and all 10 of them were heads!  What do you believe now?  Now that I've hypothesized a dataset I have an easrier time talking to my gut.&lt;/p&gt;
+&lt;p&gt;In this scenario, I feel as though I would place a reasonable probability on the coin being unfair, let's say 50%.  At the same time, I think I would still place a reasonable probability on the coin being &lt;em&gt;exactly&lt;/em&gt; fair, let's say 25%.  The remaining 25% probability I would want to spread around but biased towards heads, for that let's use a $\operatorname{Beta}(11,1)$ distribution or $11\, \theta^{10}$.  I've attempted to visualize this distribution below.&lt;a href="#deltas"&gt;&lt;sup&gt;7&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;figure id="#imaginary-result-coin" class="right"&gt;
+  &lt;center&gt;
+  &lt;img width="95%" src="figures/imaginary-result.svg"
+    alt="A mixture of 25\% mass on 0.5, 50\% mass on 1.0 and 25\% mass on a Beta(11, 1)."&gt;
+  &lt;figcaption&gt;
+  Figure 2. My attempt at illiciting an imaginary result of a posterior I'm comfortable with if I were to observe 10 heads in a row from a coin.
+  &lt;/figcaption&gt;
+  &lt;/center&gt;
+&lt;/figure&gt;
+&lt;aside&gt;&lt;sup id="deltas"&gt;7&lt;/sup&gt;
+I don't know a good way to visualize probability distributions with delta components. I like the idea of putting vertical lines with balls at the top, but I don't know how to demonstrate how much mass the deltas have in reference to the rest of the density, it doesn't feel like there would be a good choice for the right scale to use.  Here I've done something I'm not proud of but I feel like is honest at least, I've just discretized the distribution into 100 bins, so you can see both the width and the corresponding height, I choose a fairly course discretization so that you can still see the bit of the Beta underneath the spikes.
+&lt;/aside&gt;
+&lt;p&gt;Or in equation form:&lt;/p&gt;
+&lt;p&gt;$$ q(\theta|D_0) = \frac 12 \delta(\theta -1 ) + \frac 14 \delta\left(\theta - \frac 12 \right) + \frac {11} 4 \theta^{10} $$&lt;/p&gt;
+&lt;p&gt;Once we've specified this imaginary result, we have everything we need to form a posterior for our original problem with 6 heads out of 10 flips.&lt;/p&gt;
+&lt;p&gt;$$\begin{align}
+p(\theta|D) &amp;amp;\propto L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)} \\
+&amp;amp;\propto 210 \theta^6 (1-\theta)^4 \frac{\frac 14 \delta\left(\theta - \frac 12 \right) + \frac 12 \delta(\theta - 1) + \frac{11}{4} \theta^{10}}{\theta^{10}} \\
+&amp;amp;= \frac{210}{211} \delta\left(\theta -\frac 12 \right) + \frac{1}{211} \left( 2310 \theta^{6} (1-\theta)^4 \right)
+\end{align} $$&lt;/p&gt;
+&lt;figure id="#imaginary-result-posterior-coin" class="right"&gt;
+  &lt;center&gt;
+  &lt;img width="95%" src="figures/imaginary-result-posterior.svg"
+    alt="A mixture of 99.5\% mass on 0.5, 0.50\% mass on a Beta(7, 5)."&gt;
+  &lt;figcaption&gt;
+  Figure 3. The posterior I get from my illicited imaginary posterior if I actually observe 6 heads and 4 tails. The blue curve is the true posterior, the dashed orange is a blown up version of the small residual component.
+  &lt;/figcaption&gt;
+  &lt;/center&gt;
+&lt;/figure&gt;
+&lt;p&gt;The posterior we find is 99.5% probability on the coin being exactly fair, and 0.5% probability assigned to a $\operatorname{Beta}(7,5)$ type posterior, which is buried in the true form above, but I've blown up in the dashed line so you can see its shape.  This posterior has a very heavy weight on the coin being exactly fair, which I think is reflective of my actual beliefs but I would have had difficulty specifying in terms of a prior.  Instead, if I imagine the coin coming up heads 10 times in a row, the fact that I wanted to still give the coin a 25% chance of being fair is obviously mathematically equivalent to me having a 98.7% prior belief the coin is fair, but I feel as though I have a much higher sensitivity to the right number when I express this as a hypothetical posterior.&lt;/p&gt;
+&lt;p&gt;The method of imaginary results let's us ask ourselves what we would believe in light of some data, rather than ask us to express what we believe apropos of &lt;em&gt;nothing&lt;/em&gt;.  I think this helps resolve some of the philosophical issues have with prior selection in Bayesian inference.&lt;/p&gt;
+</content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/imaginary-results.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Tue, 25 Oct 2022 00:00:00 -0400</pubDate></item></channel></rss>
