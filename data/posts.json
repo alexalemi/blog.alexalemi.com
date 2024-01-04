@@ -6,8 +6,7 @@
       "tags": ["bayesian inference"],
       "id": "imaginary-results",
       "description": "Don't think about your prior, think about a hypothetical posterior.",
-      "featured": true,
-			"draft": false
+      "featured": true
     },
     {
       "title": "Ventilation",
