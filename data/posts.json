@@ -1,8 +1,18 @@
 [
     {
+      "title": "KL is All You Need",
+      "src": "kl-is-all-you-need.md",
+      "date": "2024-01-08",
+      "tags": ["kl divergence", "machine learning", "information theory"],
+      "id": "kl-is-all-you-need",
+      "description": "It's all KL under the hood.",
+      "featured": true,
+			"draft": true
+    },
+    {
       "title": "The Method of Imaginary Results",
       "src": "imaginary-results.md",
-      "date": "2022-10-25",
+      "date": "2023-11-30",
       "tags": ["bayesian inference"],
       "id": "imaginary-results",
       "description": "Don't think about your prior, think about a hypothetical posterior.",
