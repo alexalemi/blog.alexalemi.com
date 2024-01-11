@@ -9,7 +9,7 @@ Some post ideas.
  * Color the bits.
  * Intro to Thermodynamics
  * Overview of Statistics
-
+ * Introduction to Dimensional Analysis (the Stefan Boltzmann Equation)
 
  * AI for Hive
  * AI for Lost Cities
