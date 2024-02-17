@@ -531,9 +531,11 @@ $$ L_1 - L_2 = \mathbb{E}\left[ \log q_1(x) \right] - \mathbb{E}\left[ \log q_2(
 Given the size of test sets we have for modern image datasets, this means that very small changes in likelihood can be 
 interpreted as large confidences in the superiorities of models.  Take for instance something as simple as binary static MNIST.<sup><a href="#mnist">11</a></sup>  Here, with 10,000 test set images, a difference in likelihoods of 0.0013 dB or 0.0004 nats corresponds to 13 dB of evidence for the one model over the second.
 
-## Appendix A: Whither Continuous Entropy
 
-The relative entropy really is the proper way to define entropy.  For all
+
+## Appendix A: Whither Continuous Entropy</h2>
+
+<span id="appendix-a">The</span> relative entropy really is the proper way to define entropy.  For all
 of the things that Shannon got right, he flubbed a bit when he defined the
 entropy of a distribution as:
 $$ H(P) = -\sum_i p_i \log p_i $$

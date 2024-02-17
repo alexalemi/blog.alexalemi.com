@@ -142,19 +142,19 @@
 		<h1>KL is All You Need</h1>
 		<p>Alexander A. Alemi. <time datetime="2024-01-08">2024-01-08</time></p>
     <div class="content">
-    <p>The more I work on machine learning, the more I'm embarrased to admit that most of what I'm worked on is
-all so blindingly simple.  At the core of essentially all of modern machine learning is a single
-objective: KL minimization, and I think there is a very simple recipe to follow to rederive
-most of the named objectives out there.  In the past I've discussed some of the
+    <p>The more I work on machine learning, the more I'm embarrassed to admit that most of what I'm worked on is all so blindingly simple.  At the core of essentially all of modern machine learning is a single
+objective: KL minimization, and there is a very simple recipe to follow to re-derive
+most of the named objectives out there.
+In the past I've discussed some of the
 <a href="kl.html">special properties of KL divergence</a>, or how you can derive
 <a href="diffusion.html">VAEs or Diffusion Models</a> by means of a simple KL objective, but in
 light of a recent <a href="https://www.alexalemi.com/talks/information-theory-for-representation-learning.html">talk</a> I gave at the InfoCog Workshop at NeurIPS 2024, I'd like to prepare essentially a written copy of that talk.<a href="#multivariate-ib"><sup>1</sup></a></p>
 <aside> <sup id="figattribution">1</sup>
-This is also essentially my own retelling of <a href="https://www.cs.huji.ac.il/labs/learning/Theses/Slonim_PhD.pdf">Noam Slonim's thesis on the Multivariate Information Bottlneck</a>.
+This is also essentially my own retelling of <a href="https://www.cs.huji.ac.il/labs/learning/Theses/Slonim_PhD.pdf">Noam Slonim's thesis on the Multivariate Information Bottleneck</a>.
 </aside>
 <figure id="#conditional" class="right">
   <center>
-  <img width="95%" src="figures/kl-elephant.png" alt="A cartoon depicting several blindfolded scientists analyzing different parts of an elephant, the different scientists think they are looking at VIB, or Diffusion or BNNs or VAEs or Semi-supervised Learning or Bayesian inference, but really its all just KL Divergence.">
+  <img width="95%" src="figures/kl-is-all-you-need/kl-elephant.png" alt="A cartoon depicting several blindfolded scientists analyzing different parts of an elephant, the different scientists think they are looking at VIB, or Diffusion or BNNs or VAEs or Semi-supervised Learning or Bayesian inference, but really its all just KL Divergence.">
   <figcaption>
   Figure 1. The elephant in the room is KL divergence or the relevant entropy.<a href="#figattribution"><sup>2</sup></a>
   </figcaption>
@@ -353,6 +353,14 @@ Cartoon modified from Kevan C. Herold, Jeffrey A. Bluestone ,Type 1 Diabetes Imm
 </g>
 </svg></span></p>
 <p>Now, the <i>posterior log odds</i> is expressed as the sum of the <i>weight of evidence</i> plus the <i>prior log odds</i> of the two hypotheses.</p>
+<figure id="#belief-of-meter class=" right"="">
+  <center>
+  <img width="95%" src="figures/kl-is-all-you-need/belief-o-meter.png" alt="A cartoon representation of a Belief-O-Meter as an old school linear analog meter.">
+  <figcaption>
+  Figure 2. Belief-O-Meter.
+  </figcaption>
+  </center>
+</figure> 
 <p>This <em>weight of evidence</em> tells us how much to update our beliefs in light of evidence.  If you picture a sort of Belief-O-Meter™ for your own beliefs, each bit of independent evidence gives you an additive update for the meter, pushing your beliefs either left or right, towards either $P$ or $Q$.  For simple hypothesis taking the form of probability distributions, this weight of evidence is just the log density ratios of the data under the models:</p>
 <p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="26.267ex" height="6.509ex" style="vertical-align: -2.671ex;" viewBox="0 -1652.5 11309.4 2802.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-4-Title">
 <title id="MathJax-SVG-4-Title"> \log \frac{\Pr(D|P)}{\Pr(D|Q)} \to \log \frac{p(D)}{q(D)}. </title>
@@ -409,9 +417,9 @@ Cartoon modified from Kevan C. Herold, Jeffrey A. Bluestone ,Type 1 Diabetes Imm
  <use xlink:href="#MJMAIN-2E" x="11030" y="0"></use>
 </g>
 </svg></span></p>
-<p>What then is <a href="https://en.wikipedia.org/wiki/Kullback\%E2\%80\%93Leibler_divergence">the Kullback-Leibler (KL) divergence</a>? Imagine if one of our two hypothesis is actually true.  If $P$ was the probability distribution governing the actual world, the <i>expected weight of evidence</i> we would accumulate from observing some data would be:</p>
-<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="28.196ex" height="6.509ex" style="vertical-align: -2.671ex;" viewBox="0 -1652.5 12139.9 2802.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-5-Title">
-<title id="MathJax-SVG-5-Title"> I[p;q] \equiv \int dx\, p(x) \log \frac{p(x)}{q(x)}. </title>
+<p>What then is <a href="https://en.wikipedia.org/wiki/Kullback\%E2\%80\%93Leibler_divergence">the Kullback-Leibler (KL) divergence</a>? Imagine if one of our two hypotheses is actually true.  If $P$ was the probability distribution governing the actual world, the <i>expected weight of evidence</i> we would accumulate from observing some data would be:<a href="#brakets"><sup>3&gt;</sup></a></p>
+<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="46.563ex" height="7.009ex" style="vertical-align: -3.171ex;" viewBox="0 -1652.5 20047.8 3017.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-5-Title">
+<title id="MathJax-SVG-5-Title"> I[p;q] \equiv \int dx\, p(x) \log \frac{p(x)}{q(x)} \equiv \left\langle \log \frac{p(x)}{q(x)} \right\rangle_{p(x)} . </title>
 <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
  <use xlink:href="#MJMATHI-49" x="0" y="0"></use>
  <use xlink:href="#MJMAIN-5B" x="504" y="0"></use>
@@ -449,12 +457,48 @@ Cartoon modified from Kevan C. Herold, Jeffrey A. Bluestone ,Type 1 Diabetes Imm
 </g>
 </g>
 </g>
- <use xlink:href="#MJMAIN-2E" x="11861" y="0"></use>
+ <use xlink:href="#MJMAIN-2261" x="12139" y="0"></use>
+<g transform="translate(13195,0)">
+ <use xlink:href="#MJSZ3-27E8"></use>
+<g transform="translate(750,0)">
+ <use xlink:href="#MJMAIN-6C"></use>
+ <use xlink:href="#MJMAIN-6F" x="278" y="0"></use>
+ <use xlink:href="#MJMAIN-67" x="779" y="0"></use>
+</g>
+<g transform="translate(2030,0)">
+<g transform="translate(286,0)">
+<rect stroke="none" width="1975" height="60" x="0" y="220"></rect>
+<g transform="translate(60,770)">
+ <use xlink:href="#MJMATHI-70" x="0" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="503" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="893" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="1465" y="0"></use>
+</g>
+<g transform="translate(81,-771)">
+ <use xlink:href="#MJMATHI-71" x="0" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="460" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="850" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="1422" y="0"></use>
+</g>
+</g>
+</g>
+ <use xlink:href="#MJSZ3-27E9" x="4411" y="-1"></use>
+<g transform="translate(5162,-1057)">
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-70" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMAIN-28" x="503" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-78" x="892" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMAIN-29" x="1465" y="0"></use>
+</g>
+</g>
+ <use xlink:href="#MJMAIN-2E" x="19769" y="0"></use>
 </g>
 </svg></span></p>
+<aside> <sup id="brakets">3</sup>
+To clean up the notation, I like using brakets: $ \langle \cdot \rangle_p \equiv \mathbb{E}_{p}[\cdot] \equiv \int dx\, p(x) [\cdot]$, and to clean things up further (or because I'm lazy) I'll often leave off the subscript saying which distribution the brakets are to be taken with respect to, in any of those cases you can assume its a full joint $p$ distribution (over any variables that are otherwise unbound).
+</aside>
 <p>We can interpret the KL divergence as a measure of how quickly we would be able to discern between hypotheses $P$ and $Q$ if $P$ were true.  Similarly, the <i>reverse KL</i> is:</p>
-<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="28.096ex" height="6.509ex" style="vertical-align: -2.671ex;" viewBox="0 -1652.5 12096.9 2802.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-6-Title">
-<title id="MathJax-SVG-6-Title"> I[q;p] \equiv \int dx\, q(x) \log \frac{p(x)}{q(x)}, </title>
+<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="46.392ex" height="7.009ex" style="vertical-align: -3.171ex;" viewBox="0 -1652.5 19974.4 3017.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-6-Title">
+<title id="MathJax-SVG-6-Title"> I[q;p] \equiv \int dx\, q(x) \log \frac{p(x)}{q(x)} \equiv \left\langle \log \frac{p(x)}{q(x)} \right\rangle_{q(x)}, </title>
 <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
  <use xlink:href="#MJMATHI-49" x="0" y="0"></use>
  <use xlink:href="#MJMAIN-5B" x="504" y="0"></use>
@@ -492,11 +536,44 @@ Cartoon modified from Kevan C. Herold, Jeffrey A. Bluestone ,Type 1 Diabetes Imm
 </g>
 </g>
 </g>
- <use xlink:href="#MJMAIN-2C" x="11818" y="0"></use>
+ <use xlink:href="#MJMAIN-2261" x="12096" y="0"></use>
+<g transform="translate(13152,0)">
+ <use xlink:href="#MJSZ3-27E8"></use>
+<g transform="translate(750,0)">
+ <use xlink:href="#MJMAIN-6C"></use>
+ <use xlink:href="#MJMAIN-6F" x="278" y="0"></use>
+ <use xlink:href="#MJMAIN-67" x="779" y="0"></use>
+</g>
+<g transform="translate(2030,0)">
+<g transform="translate(286,0)">
+<rect stroke="none" width="1975" height="60" x="0" y="220"></rect>
+<g transform="translate(60,770)">
+ <use xlink:href="#MJMATHI-70" x="0" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="503" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="893" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="1465" y="0"></use>
+</g>
+<g transform="translate(81,-771)">
+ <use xlink:href="#MJMATHI-71" x="0" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="460" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="850" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="1422" y="0"></use>
+</g>
+</g>
+</g>
+ <use xlink:href="#MJSZ3-27E9" x="4411" y="-1"></use>
+<g transform="translate(5162,-1057)">
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-71" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMAIN-28" x="460" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-78" x="850" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMAIN-29" x="1422" y="0"></use>
+</g>
+</g>
+ <use xlink:href="#MJMAIN-2C" x="19695" y="0"></use>
 </g>
 </svg></span></p>
-<p>a measure of how quickly we'd be able to discern between $P$ And $Q$ if $Q$ were true.  Suddently the assymmetry of the KL divergence, an issue that often causes costernation is no longer a mystery.  We should expect the expected weight of evidence to be asymmetric.   As an extreme example, imagine we were trying to decide between two hypothesis regarding some coin flips we are about to observe.  $P$ is the hypothesis that the coin is fair while $Q$ is the hypothesis the coin is a cheat, double-headed coin.  In this case, if we actually had a fair coin, we expect to be able to perfectly discern the two hypotheses (infinite KL) because we will eventually observe a tails, an impossible situation under the alternative ($Q$) hypothesis.  Meanwhile, if the coin is actually a cheat, we'll be able to collect, on average, 1 bit of evidence per flip in favor of the hypothesis that the coin is a cheat, but we will only ever observe heads and so never be able to perfectly rule out the possibility that the coin is fair and we've simply observed some miracle.<a href="#million"><sup>3</sup></a></p>
-<aside> <sup id="million">3</sup>
+<p>a measure of how quickly we'd be able to discern between $P$ And $Q$ if $Q$ were true.  Suddenly, the asymmetry of the KL divergence, an issue that often causes consternation is no longer a mystery.  We should expect the expected weight of evidence to be asymmetric.   As an extreme example, imagine we were trying to decide between two hypothesis regarding some coin flips we are about to observe.  $P$ is the hypothesis that the coin is fair while $Q$ is the hypothesis the coin is a cheating, double-headed coin.  In this case, if we actually had a fair coin, we expect to be able to perfectly discern the two hypotheses (infinite KL) because we will eventually observe a tails, an impossible situation under the alternative ($Q$) hypothesis.  Meanwhile, if the coin is actually a cheat, we'll be able to collect, on average, 1 bit of evidence per flip in favor of the hypothesis that the coin is a cheat, but we will only ever observe heads and so never be able to perfectly rule out the possibility that the coin is fair and we've simply observed some miracle.<a href="#million"><sup>4</sup></a></p>
+<aside> <sup id="million">4</sup>
 As a true aside, people often say "one in a million" but lack a good mental model of just how rare that is.  20 heads in a row for a fair coin is a one in a million event. This fun fact and others can be found <a href="https://www.stat.berkeley.edu/~aldous/Real-World/million.html">here, at David Aldous's Home Page</a>.
 </aside>
 <h2>Mathematical Properties</h2>
@@ -544,19 +621,798 @@ As a true aside, people often say "one in a million" but lack a good mental mode
  <use xlink:href="#MJMAIN-30" x="13195" y="0"></use>
  <use xlink:href="#MJMAIN-2C" x="13695" y="0"></use>
 </g>
+</svg></span></p>
+<p>which I'll leave as an exercise to the reader, or you can see a proof in the <a href="kl.html#non-negative-proof">previous post</a>. In the context of our interpretation of KL divergence as an expected weight of evidence, the non-negativity of KL divergence means, essentially, that the world can't lie to us.  If we are trying to decide between two hypotheses, and one of them happens to be correct, we have to, we must, we have to, we must, on average, be pushed in the direction of the correct hypothesis.</p>
+<p>The other property we'll use is the <em>monotonicity</em> of the KL divergence.  This is a generalized version of the <a href="https://en.wikipedia.org/wiki/Data_processing_inequality">data processing inequality</a>.  If we perform some kind of processing on our random variables, it should only make it harder to discern between two hypotheses, not easier.  In particular, the version we'll need today concerns <em>marginalization</em>, if I have two joint distributions defined on two random variables, it always has to be the case that the KL divergence between their two marginals must be less than or equal to the joint KL:
+<span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="48.307ex" height="6.509ex" style="vertical-align: -2.671ex;" viewBox="0 -1652.5 20798.9 2802.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-8-Title">
+<title id="MathJax-SVG-8-Title"> \int dx\, dy\, p(x,y) \log \frac{p(x,y)}{q(x,y)} \geq \int dx\, p(x) \log \frac{p(x)}{q(x)}, </title>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#MJSZ2-222B" x="0" y="0"></use>
+ <use xlink:href="#MJMATHI-64" x="1111" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="1634" y="0"></use>
+ <use xlink:href="#MJMATHI-64" x="2373" y="0"></use>
+ <use xlink:href="#MJMATHI-79" x="2897" y="0"></use>
+ <use xlink:href="#MJMATHI-70" x="3561" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="4065" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="4454" y="0"></use>
+ <use xlink:href="#MJMAIN-2C" x="5027" y="0"></use>
+ <use xlink:href="#MJMATHI-79" x="5472" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="5969" y="0"></use>
+<g transform="translate(6525,0)">
+ <use xlink:href="#MJMAIN-6C"></use>
+ <use xlink:href="#MJMAIN-6F" x="278" y="0"></use>
+ <use xlink:href="#MJMAIN-67" x="779" y="0"></use>
+</g>
+<g transform="translate(7805,0)">
+<g transform="translate(286,0)">
+<rect stroke="none" width="2917" height="60" x="0" y="220"></rect>
+<g transform="translate(60,770)">
+ <use xlink:href="#MJMATHI-70" x="0" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="503" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="893" y="0"></use>
+ <use xlink:href="#MJMAIN-2C" x="1465" y="0"></use>
+ <use xlink:href="#MJMATHI-79" x="1910" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="2408" y="0"></use>
+</g>
+<g transform="translate(81,-771)">
+ <use xlink:href="#MJMATHI-71" x="0" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="460" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="850" y="0"></use>
+ <use xlink:href="#MJMAIN-2C" x="1422" y="0"></use>
+ <use xlink:href="#MJMATHI-79" x="1867" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="2365" y="0"></use>
+</g>
+</g>
+</g>
+ <use xlink:href="#MJMAIN-2265" x="11407" y="0"></use>
+ <use xlink:href="#MJSZ2-222B" x="12463" y="0"></use>
+ <use xlink:href="#MJMATHI-64" x="13574" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="14098" y="0"></use>
+ <use xlink:href="#MJMATHI-70" x="14837" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="15341" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="15730" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="16303" y="0"></use>
+<g transform="translate(16859,0)">
+ <use xlink:href="#MJMAIN-6C"></use>
+ <use xlink:href="#MJMAIN-6F" x="278" y="0"></use>
+ <use xlink:href="#MJMAIN-67" x="779" y="0"></use>
+</g>
+<g transform="translate(18138,0)">
+<g transform="translate(286,0)">
+<rect stroke="none" width="1975" height="60" x="0" y="220"></rect>
+<g transform="translate(60,770)">
+ <use xlink:href="#MJMATHI-70" x="0" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="503" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="893" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="1465" y="0"></use>
+</g>
+<g transform="translate(81,-771)">
+ <use xlink:href="#MJMATHI-71" x="0" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="460" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="850" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="1422" y="0"></use>
+</g>
+</g>
+</g>
+ <use xlink:href="#MJMAIN-2C" x="20520" y="0"></use>
+</g>
 </svg></span>
-which I'll leave as an exercise to the reader, or you can see a proof in the <a href="kl.html#non-negative-proof">previous post</a>.</p>
+which is easy to show if you decompose $p(x,y) = p(x) p(y|x)$ and use the fact that all KL divergences (including the conditional $I[p(y|x);q(y|x)] \geq 0$ are non-negative.</p>
+<p>Again, in terms of our current interpretation, this makes sense, if I have some beliefs defined over several variables, if I only get to observe some subset of them, it should be harder for me to discern the beliefs.  The less I look at, the less I see.</p>
 <h2>Universal Recipe</h2>
+<p>With the prerequisites out of they way we're reading to see the "universal recipe" for generating objectives. Regardless of what we are trying to accomplish, the goal is to make the real world look more like our dreams.  Given that KL divergence is the <em>proper</em> way to measure how similar two distributions are, we need only minimize the KL divergence between the real world -- the world we can sample from -- and the world as we wish it were.  The smaller that KL can become, the harder it becomes for us or anyone else to distinguish between our dreams and reality.  In steps:</p>
+<ol>
+<li>Draw a causal graphical model corresponding to the world as it is, the true world $P$.</li>
+<li>Augment the real world with any components you wish to add.</li>
+<li>Draw the world of your desires, what success would look like, what you are targeting, the dream world $Q$.</li>
+<li>Minimize $I[P;Q]$.</li>
+<li>...</li>
+<li>Profit!</li>
+</ol>
+<p>As simple as it sounds, in retrospect I think a lot of my previous papers were just following this recipe.  Let's repeat this ad nauseam.</p>
 <h2>Density Estimation</h2>
+<p>We'll start with the problem of density estimation.  Let's say we have some black box that generates samples.  This is the real world $P$, outside of our control.  Despite not knowing how $p(x)$ is structured, we can push the button on the black box to generate samples.  What do we wish for? We wish we instead have a nice description of those same images.  We wish that those images instead came from a box of our own design, some parametric model or probability distribution with knobs that we can adjust to bring it into alignment with the real world, our dream world $q_\theta(x)$ with parameters $\theta$.</p>
+<figure id="#density-estimation" class="right">
+  <center>
+  <img width="95%" src="figures/kl-is-all-you-need/density-estimation.png" alt="A graphical version of density estimation, the left shows the distribution $p(x)$ where $X$ is a random variable denoting images. The right shows the same, but labeled as $q_\theta(x)$.">
+  <figcaption>
+  Figure 3. Density Estimation.
+  </figcaption>
+  </center>
+</figure> 
+<p>Following the recipe, our recipe then is to minimize the KL divergence between the real world and our ideal one:</p>
+<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="22.757ex" height="6.843ex" style="vertical-align: -3.005ex;" viewBox="0 -1652.5 9797.9 2946.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-9-Title">
+<title id="MathJax-SVG-9-Title"> I[p; q] = \left\langle \log \frac{p(x)}{q_\theta(x)} \right\rangle_p </title>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#MJMATHI-49" x="0" y="0"></use>
+ <use xlink:href="#MJMAIN-5B" x="504" y="0"></use>
+ <use xlink:href="#MJMATHI-70" x="783" y="0"></use>
+ <use xlink:href="#MJMAIN-3B" x="1286" y="0"></use>
+ <use xlink:href="#MJMATHI-71" x="1731" y="0"></use>
+ <use xlink:href="#MJMAIN-5D" x="2192" y="0"></use>
+ <use xlink:href="#MJMAIN-3D" x="2748" y="0"></use>
+<g transform="translate(3804,0)">
+ <use xlink:href="#MJSZ3-27E8"></use>
+<g transform="translate(750,0)">
+ <use xlink:href="#MJMAIN-6C"></use>
+ <use xlink:href="#MJMAIN-6F" x="278" y="0"></use>
+ <use xlink:href="#MJMAIN-67" x="779" y="0"></use>
+</g>
+<g transform="translate(2030,0)">
+<g transform="translate(286,0)">
+<rect stroke="none" width="2349" height="60" x="0" y="220"></rect>
+<g transform="translate(247,770)">
+ <use xlink:href="#MJMATHI-70" x="0" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="503" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="893" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="1465" y="0"></use>
+</g>
+<g transform="translate(60,-771)">
+ <use xlink:href="#MJMATHI-71" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-3B8" x="631" y="-219"></use>
+ <use xlink:href="#MJMAIN-28" x="878" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="1267" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="1840" y="0"></use>
+</g>
+</g>
+</g>
+ <use xlink:href="#MJSZ3-27E9" x="4786" y="-1"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-70" x="7830" y="-1495"></use>
+</g>
+</g>
+</svg></span></p>
+<p>To belabor the point, in terms of our interpretation of KL divergence, this makes sense. $I[p;q]$ measures how easy it is for us to distinguish between $p$ and $q$ using samples from $p$. We have samples from $p$, while $q_\theta(x)$ is a whole set of worlds we can index with our parameters $\theta$.  We seek a setting of those parameters which make it as difficult as possible for us or anyone else to tell the difference between the real world $P$ and our imaginary one $Q$.  Minimizing the KL divergence does exactly that.</p>
+<p>Unfortunately, naively, this objective requires that we be able to evaluate $\log p(x)$, the density the real world assigns to the samples it generates.  This is out of reach, we don't know what the real world is doing, but here is where the KL divergence helps us out yet again.  It decomposes into two terms:</p>
+<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="40.044ex" height="10.343ex" style="vertical-align: -6.505ex;" viewBox="0 -1652.5 17241.3 4453.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-10-Title">
+<title id="MathJax-SVG-10-Title"> \underbrace{\left\langle \log \frac{p(x)}{q_θ(x)} \right\rangle}_{I[p;q]} = \underbrace{\left\langle \log p(x) \right\rangle \vphantom{\left\langle \frac p q \right\rangle} }_{-H[p]} - \underbrace{\left\langle \log q_θ(x) \right\rangle \vphantom{\left\langle \frac p q \right\rangle}}_{H[p;q]},  </title>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#MJSZ3-27E8"></use>
+<g transform="translate(750,0)">
+ <use xlink:href="#MJMAIN-6C"></use>
+ <use xlink:href="#MJMAIN-6F" x="278" y="0"></use>
+ <use xlink:href="#MJMAIN-67" x="779" y="0"></use>
+</g>
+<g transform="translate(2030,0)">
+<g transform="translate(286,0)">
+<rect stroke="none" width="2349" height="60" x="0" y="220"></rect>
+<g transform="translate(247,770)">
+ <use xlink:href="#MJMATHI-70" x="0" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="503" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="893" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="1465" y="0"></use>
+</g>
+<g transform="translate(60,-771)">
+ <use xlink:href="#MJMATHI-71" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-3B8" x="631" y="-219"></use>
+ <use xlink:href="#MJMAIN-28" x="878" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="1267" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="1840" y="0"></use>
+</g>
+</g>
+</g>
+ <use xlink:href="#MJSZ3-27E9" x="4786" y="-1"></use>
+<g transform="translate(12,-1536)">
+ <use xlink:href="#MJSZ4-E152" x="23" y="0"></use>
+<g transform="translate(525.4850670882388,0) scale(4.3668491671830365,1)">
+ <use xlink:href="#MJSZ4-E154"></use>
+</g>
+<g transform="translate(2318,0)">
+ <use xlink:href="#MJSZ4-E151"></use>
+ <use xlink:href="#MJSZ4-E150" x="450" y="0"></use>
+</g>
+<g transform="translate(3260.561717305114,0) scale(4.3668491671830365,1)">
+ <use xlink:href="#MJSZ4-E154"></use>
+</g>
+ <use xlink:href="#MJSZ4-E153" x="5062" y="0"></use>
+</g>
+<g transform="translate(1953,-2448)">
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-49" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMAIN-5B" x="504" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-70" x="783" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMAIN-3B" x="1286" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-71" x="1565" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMAIN-5D" x="2025" y="0"></use>
+</g>
+ <use xlink:href="#MJMAIN-3D" x="5814" y="0"></use>
+<g transform="translate(6871,0)">
+ <use xlink:href="#MJMAIN-27E8" x="0" y="0"></use>
+<g transform="translate(389,0)">
+ <use xlink:href="#MJMAIN-6C"></use>
+ <use xlink:href="#MJMAIN-6F" x="278" y="0"></use>
+ <use xlink:href="#MJMAIN-67" x="779" y="0"></use>
+</g>
+ <use xlink:href="#MJMATHI-70" x="1835" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="2339" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="2728" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="3301" y="0"></use>
+ <use xlink:href="#MJMAIN-27E9" x="3690" y="0"></use>
+<g transform="translate(12,-1465)">
+ <use xlink:href="#MJSZ4-E152" x="23" y="0"></use>
+<g transform="translate(510.8921626984127,0) scale(2.830753968253969,1)">
+ <use xlink:href="#MJSZ4-E154"></use>
+</g>
+<g transform="translate(1672,0)">
+ <use xlink:href="#MJSZ4-E151"></use>
+ <use xlink:href="#MJSZ4-E150" x="450" y="0"></use>
+</g>
+<g transform="translate(2600.80882936508,0) scale(2.830753968253969,1)">
+ <use xlink:href="#MJSZ4-E154"></use>
+</g>
+ <use xlink:href="#MJSZ4-E153" x="3772" y="0"></use>
+</g>
+<g transform="translate(1159,-2377)">
+ <use transform="scale(0.707)" xlink:href="#MJMAIN-2212" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-48" x="778" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMAIN-5B" x="1667" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-70" x="1945" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMAIN-5D" x="2449" y="0"></use>
+</g>
+</g>
+ <use xlink:href="#MJMAIN-2212" x="11340" y="0"></use>
+<g transform="translate(12340,0)">
+ <use xlink:href="#MJMAIN-27E8" x="0" y="0"></use>
+<g transform="translate(389,0)">
+ <use xlink:href="#MJMAIN-6C"></use>
+ <use xlink:href="#MJMAIN-6F" x="278" y="0"></use>
+ <use xlink:href="#MJMAIN-67" x="779" y="0"></use>
+</g>
+<g transform="translate(1835,0)">
+ <use xlink:href="#MJMATHI-71" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-3B8" x="631" y="-219"></use>
+</g>
+ <use xlink:href="#MJMAIN-28" x="2714" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="3103" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="3676" y="0"></use>
+ <use xlink:href="#MJMAIN-27E9" x="4065" y="0"></use>
+<g transform="translate(12,-1465)">
+ <use xlink:href="#MJSZ4-E152" x="23" y="0"></use>
+<g transform="translate(515.1330829612547,0) scale(3.277166627500497,1)">
+ <use xlink:href="#MJSZ4-E154"></use>
+</g>
+<g transform="translate(1860,0)">
+ <use xlink:href="#MJSZ4-E151"></use>
+ <use xlink:href="#MJSZ4-E150" x="450" y="0"></use>
+</g>
+<g transform="translate(2792.5430665114636,0) scale(3.277166627500497,1)">
+ <use xlink:href="#MJSZ4-E154"></use>
+</g>
+ <use xlink:href="#MJSZ4-E153" x="4147" y="0"></use>
+</g>
+<g transform="translate(1360,-2377)">
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-48" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMAIN-5B" x="888" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-70" x="1167" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMAIN-3B" x="1670" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-71" x="1949" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMAIN-5D" x="2409" y="0"></use>
+</g>
+</g>
+ <use xlink:href="#MJMAIN-2C" x="16962" y="0"></use>
+</g>
+</svg></span></p>
+<p>the (negative) <em>entropy</em> of the true data generating process ($H[p]$), and the <em>cross-entropy</em> between $p$ and $q$: ($H[p;q]$), aka the <em>likelihood</em> of the data samples from $p$ under $q$.  The entropy of the true data generating process isn't something that we control, as far as we're concerned its a constant and we don't need to worry about it. Just like that, we see that minimizing the KL divergence between the real world and the world of our desires, in this simple single random variable setup recovers ordinary minimum <a href="https://en.wikipedia.org/wiki/Cross-entropy">cross-entropy</a> learning, aka maximum likelihood learning, but with a different and hopefully well-motivated origin.  We adjust the parameters of our model $q_\theta(x)$ so as to maximize the likelihood of the data $\log q_\theta(x)$, why? So that we and anyone else would struggle as much as possible to distinguish between the real world and our model.  With this same motivation, lots of other machine learning objectives will fall into place.</p>
+<p>There is one caveat, I'm <a href="kl.html#appendix-a">a particular stickler</a> for decomposing KL divergences in this way. I don't think it makes any dimensional sense.  I can't take the logarithm of a dimensional quantity, let alone a density, so I'm going to ruin the flow of this post to address this aside.  To fix the glitch, let's instead try to explicitly choose some tractable base measure $m(x)$ and insert it into our original objective:</p>
+<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="69.483ex" height="6.843ex" style="vertical-align: -3.005ex;" viewBox="0 -1652.5 29916.3 2946.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-11-Title">
+<title id="MathJax-SVG-11-Title"> \left\langle \log \frac{p(x)}{q_\theta(x)} \right\rangle_p = \left\langle \log \frac{p(x) m(x)}{q_\theta(x)m(x)} \right\rangle = \left\langle \log \frac{p(x)}{m(x)} \right\rangle_p - \left\langle \log \frac{m(x)}{q_\theta(x)} \right\rangle_p . </title>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#MJSZ3-27E8"></use>
+<g transform="translate(750,0)">
+ <use xlink:href="#MJMAIN-6C"></use>
+ <use xlink:href="#MJMAIN-6F" x="278" y="0"></use>
+ <use xlink:href="#MJMAIN-67" x="779" y="0"></use>
+</g>
+<g transform="translate(2030,0)">
+<g transform="translate(286,0)">
+<rect stroke="none" width="2349" height="60" x="0" y="220"></rect>
+<g transform="translate(247,770)">
+ <use xlink:href="#MJMATHI-70" x="0" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="503" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="893" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="1465" y="0"></use>
+</g>
+<g transform="translate(60,-771)">
+ <use xlink:href="#MJMATHI-71" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-3B8" x="631" y="-219"></use>
+ <use xlink:href="#MJMAIN-28" x="878" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="1267" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="1840" y="0"></use>
+</g>
+</g>
+</g>
+ <use xlink:href="#MJSZ3-27E9" x="4786" y="-1"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-70" x="7830" y="-1495"></use>
+ <use xlink:href="#MJMAIN-3D" x="6270" y="0"></use>
+<g transform="translate(7327,0)">
+ <use xlink:href="#MJSZ3-27E8"></use>
+<g transform="translate(750,0)">
+ <use xlink:href="#MJMAIN-6C"></use>
+ <use xlink:href="#MJMAIN-6F" x="278" y="0"></use>
+ <use xlink:href="#MJMAIN-67" x="779" y="0"></use>
+</g>
+<g transform="translate(2030,0)">
+<g transform="translate(286,0)">
+<rect stroke="none" width="4579" height="60" x="0" y="220"></rect>
+<g transform="translate(247,770)">
+ <use xlink:href="#MJMATHI-70" x="0" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="503" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="893" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="1465" y="0"></use>
+ <use xlink:href="#MJMATHI-6D" x="1855" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="2733" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="3123" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="3695" y="0"></use>
+</g>
+<g transform="translate(60,-771)">
+ <use xlink:href="#MJMATHI-71" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-3B8" x="631" y="-219"></use>
+ <use xlink:href="#MJMAIN-28" x="878" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="1267" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="1840" y="0"></use>
+ <use xlink:href="#MJMATHI-6D" x="2229" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="3108" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="3497" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="4070" y="0"></use>
+</g>
+</g>
+</g>
+ <use xlink:href="#MJSZ3-27E9" x="7016" y="-1"></use>
+</g>
+ <use xlink:href="#MJMAIN-3D" x="15372" y="0"></use>
+<g transform="translate(16428,0)">
+ <use xlink:href="#MJSZ3-27E8"></use>
+<g transform="translate(750,0)">
+ <use xlink:href="#MJMAIN-6C"></use>
+ <use xlink:href="#MJMAIN-6F" x="278" y="0"></use>
+ <use xlink:href="#MJMAIN-67" x="779" y="0"></use>
+</g>
+<g transform="translate(2030,0)">
+<g transform="translate(286,0)">
+<rect stroke="none" width="2350" height="60" x="0" y="220"></rect>
+<g transform="translate(247,770)">
+ <use xlink:href="#MJMATHI-70" x="0" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="503" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="893" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="1465" y="0"></use>
+</g>
+<g transform="translate(60,-771)">
+ <use xlink:href="#MJMATHI-6D" x="0" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="878" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="1268" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="1840" y="0"></use>
+</g>
+</g>
+</g>
+ <use xlink:href="#MJSZ3-27E9" x="4786" y="-1"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-70" x="7830" y="-1495"></use>
+</g>
+ <use xlink:href="#MJMAIN-2212" x="22643" y="0"></use>
+<g transform="translate(23644,0)">
+ <use xlink:href="#MJSZ3-27E8"></use>
+<g transform="translate(750,0)">
+ <use xlink:href="#MJMAIN-6C"></use>
+ <use xlink:href="#MJMAIN-6F" x="278" y="0"></use>
+ <use xlink:href="#MJMAIN-67" x="779" y="0"></use>
+</g>
+<g transform="translate(2030,0)">
+<g transform="translate(286,0)">
+<rect stroke="none" width="2350" height="60" x="0" y="220"></rect>
+<g transform="translate(60,770)">
+ <use xlink:href="#MJMATHI-6D" x="0" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="878" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="1268" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="1840" y="0"></use>
+</g>
+<g transform="translate(60,-771)">
+ <use xlink:href="#MJMATHI-71" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-3B8" x="631" y="-219"></use>
+ <use xlink:href="#MJMAIN-28" x="878" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="1267" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="1840" y="0"></use>
+</g>
+</g>
+</g>
+ <use xlink:href="#MJSZ3-27E9" x="4786" y="-1"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-70" x="7830" y="-1495"></use>
+</g>
+ <use xlink:href="#MJMAIN-2E" x="29637" y="0"></use>
+</g>
+</svg></span></p>
+<p>Now, we've decomposed the KL divergence between $P$ and $Q$ into two terms, the first is the KL divergence between $P$ and $M$, our base density. Just as before, this is some constant outside our control. As long as we fix $m(x)$, given that $p(x)$ is fixed, their KL divergence is fixed and no changes we make to $\theta$ have any effect, so we can drop this (now appropriately reparameterization-independent) term from our objective.  We're left with the weight of evidence samples from $p$ provide in favor of $m$ against $q$. If we try to adjust the parameters of $q_\theta(x)$ to make it as easy as possible to distinguish it from some base measure $m(x)$, under samples from $p$, we ensure that we drive $q$ <em>towards</em> $p$.  If we use ordinary path gradients the choice of $m(x)$ here won't actually effect the optimization trajectory. It will, however, help us sleep at night, ensuring that our objective is a truly reparameterization-invariant quantity. <a href="#controlvariates"><sup>4</sup></a></p>
+<aside><sup id="controlvariates">4</sup>
+If I'm being honest, this is something that bothers me that I don't fully understand.  Using a baseline model here functionally takes the same form as control variates like the baselines used in REINFORCE, but here they don't help at all (we aren't taking an expectation with respect to $q$ here). Regardless, it really feels like an appropriate base measure <i>ought</i> to help.  I can't help but think that it signals a problem with the gradients we take in machine learning today. Things like <a href="https://arxiv.org/abs/2206.07137">RHO-Loss</a> reinforce this idea.
+</aside>
+<p>TODO Empirical distribution and finite samples.
+Since we are already on an aside, I'll go on another aside.  We've just motivated that a useful objective for learning a parametric distribution is to minimize the KL divergence between the true distribution and our parametric distribution, i.e. we should adjust the parameters of our distribution to maximize the likelihood of samples from the true distribution.  In practice however, we typically only have access to a <em>finite</em> number of samples from the true distribution and this introduces a difficulty.  If we wanted to, we could generate an unbiased estimate of the expected likelihood of our model using a finite number of samples from the true distribution:
+<span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="36.668ex" height="7.343ex" style="vertical-align: -3.005ex;" viewBox="0 -1867.7 15787.6 3161.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-12-Title">
+<title id="MathJax-SVG-12-Title"> -\left\langle \log q(x|\theta) \right\rangle_p \approx -\frac 1 N \sum_{i=1}^N \log q(x_i|\theta). </title>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#MJMAIN-2212" x="0" y="0"></use>
+<g transform="translate(778,0)">
+ <use xlink:href="#MJMAIN-27E8" x="0" y="0"></use>
+<g transform="translate(389,0)">
+ <use xlink:href="#MJMAIN-6C"></use>
+ <use xlink:href="#MJMAIN-6F" x="278" y="0"></use>
+ <use xlink:href="#MJMAIN-67" x="779" y="0"></use>
+</g>
+ <use xlink:href="#MJMATHI-71" x="1835" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="2296" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="2685" y="0"></use>
+ <use xlink:href="#MJMAIN-7C" x="3258" y="0"></use>
+ <use xlink:href="#MJMATHI-3B8" x="3536" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="4006" y="0"></use>
+ <use xlink:href="#MJMAIN-27E9" x="4395" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-70" x="6767" y="-405"></use>
+</g>
+ <use xlink:href="#MJMAIN-2248" x="6297" y="0"></use>
+ <use xlink:href="#MJMAIN-2212" x="7353" y="0"></use>
+<g transform="translate(8132,0)">
+<g transform="translate(120,0)">
+<rect stroke="none" width="1008" height="60" x="0" y="220"></rect>
+ <use xlink:href="#MJMAIN-31" x="254" y="676"></use>
+ <use xlink:href="#MJMATHI-4E" x="60" y="-704"></use>
+</g>
+</g>
+<g transform="translate(9547,0)">
+ <use xlink:href="#MJSZ2-2211" x="0" y="0"></use>
+<g transform="translate(147,-1090)">
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-69" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMAIN-3D" x="345" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMAIN-31" x="1124" y="0"></use>
+</g>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-4E" x="577" y="1627"></use>
+</g>
+<g transform="translate(11158,0)">
+ <use xlink:href="#MJMAIN-6C"></use>
+ <use xlink:href="#MJMAIN-6F" x="278" y="0"></use>
+ <use xlink:href="#MJMAIN-67" x="779" y="0"></use>
+</g>
+ <use xlink:href="#MJMATHI-71" x="12604" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="13065" y="0"></use>
+<g transform="translate(13454,0)">
+ <use xlink:href="#MJMATHI-78" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-69" x="809" y="-213"></use>
+</g>
+ <use xlink:href="#MJMAIN-7C" x="14371" y="0"></use>
+ <use xlink:href="#MJMATHI-3B8" x="14650" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="15119" y="0"></use>
+ <use xlink:href="#MJMAIN-2E" x="15509" y="0"></use>
+</g>
+</svg></span>
+Nothing wrong here.  There is similarly nothing wrong with taking the gradient of this monte carlo estimate to generate an unbiased estimate of the gradient of the true likelihood:
+<span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="42.934ex" height="7.343ex" style="vertical-align: -3.005ex;" viewBox="0 -1867.7 18485.2 3161.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-13-Title">
+<title id="MathJax-SVG-13-Title"> -\nabla_\theta \left\langle \log q(x|\theta) \right\rangle_p \approx -\frac 1 N \sum_{i=1}^N \nabla_\theta \log q(x_i|\theta). </title>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#MJMAIN-2212" x="0" y="0"></use>
+<g transform="translate(778,0)">
+ <use xlink:href="#MJMAIN-2207" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-3B8" x="1178" y="-219"></use>
+</g>
+<g transform="translate(2043,0)">
+ <use xlink:href="#MJMAIN-27E8" x="0" y="0"></use>
+<g transform="translate(389,0)">
+ <use xlink:href="#MJMAIN-6C"></use>
+ <use xlink:href="#MJMAIN-6F" x="278" y="0"></use>
+ <use xlink:href="#MJMAIN-67" x="779" y="0"></use>
+</g>
+ <use xlink:href="#MJMATHI-71" x="1835" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="2296" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="2685" y="0"></use>
+ <use xlink:href="#MJMAIN-7C" x="3258" y="0"></use>
+ <use xlink:href="#MJMATHI-3B8" x="3536" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="4006" y="0"></use>
+ <use xlink:href="#MJMAIN-27E9" x="4395" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-70" x="6767" y="-405"></use>
+</g>
+ <use xlink:href="#MJMAIN-2248" x="7562" y="0"></use>
+ <use xlink:href="#MJMAIN-2212" x="8619" y="0"></use>
+<g transform="translate(9397,0)">
+<g transform="translate(120,0)">
+<rect stroke="none" width="1008" height="60" x="0" y="220"></rect>
+ <use xlink:href="#MJMAIN-31" x="254" y="676"></use>
+ <use xlink:href="#MJMATHI-4E" x="60" y="-704"></use>
+</g>
+</g>
+<g transform="translate(10812,0)">
+ <use xlink:href="#MJSZ2-2211" x="0" y="0"></use>
+<g transform="translate(147,-1090)">
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-69" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMAIN-3D" x="345" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMAIN-31" x="1124" y="0"></use>
+</g>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-4E" x="577" y="1627"></use>
+</g>
+<g transform="translate(12424,0)">
+ <use xlink:href="#MJMAIN-2207" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-3B8" x="1178" y="-219"></use>
+</g>
+<g transform="translate(13856,0)">
+ <use xlink:href="#MJMAIN-6C"></use>
+ <use xlink:href="#MJMAIN-6F" x="278" y="0"></use>
+ <use xlink:href="#MJMAIN-67" x="779" y="0"></use>
+</g>
+ <use xlink:href="#MJMATHI-71" x="15302" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="15762" y="0"></use>
+<g transform="translate(16152,0)">
+ <use xlink:href="#MJMATHI-78" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-69" x="809" y="-213"></use>
+</g>
+ <use xlink:href="#MJMAIN-7C" x="17069" y="0"></use>
+ <use xlink:href="#MJMATHI-3B8" x="17347" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="17817" y="0"></use>
+ <use xlink:href="#MJMAIN-2E" x="18206" y="0"></use>
+</g>
+</svg></span>
+The problem only occurs if we start to <em>reuse</em> the same samples.  These monte carlo estimates are only <em>unbiased</em> estimates of the true expectation if the samples are independent.  If we start to take multiple gradient steps with overlapping samples we start to introduce some bias.  Taken to the extreme, if we simply maximize the <em>empirical</em> likelihood on a fixed set of finite samples:
+<span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="14.493ex" height="7.343ex" style="vertical-align: -3.005ex;" viewBox="0 -1867.7 6240.1 3161.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-14-Title">
+<title id="MathJax-SVG-14-Title"> \sum_{i=1}^N \log q(x_i|\theta), </title>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#MJSZ2-2211" x="0" y="0"></use>
+<g transform="translate(147,-1090)">
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-69" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMAIN-3D" x="345" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMAIN-31" x="1124" y="0"></use>
+</g>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-4E" x="577" y="1627"></use>
+<g transform="translate(1611,0)">
+ <use xlink:href="#MJMAIN-6C"></use>
+ <use xlink:href="#MJMAIN-6F" x="278" y="0"></use>
+ <use xlink:href="#MJMAIN-67" x="779" y="0"></use>
+</g>
+ <use xlink:href="#MJMATHI-71" x="3057" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="3517" y="0"></use>
+<g transform="translate(3907,0)">
+ <use xlink:href="#MJMATHI-78" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-69" x="809" y="-213"></use>
+</g>
+ <use xlink:href="#MJMAIN-7C" x="4824" y="0"></use>
+ <use xlink:href="#MJMATHI-3B8" x="5102" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="5572" y="0"></use>
+ <use xlink:href="#MJMAIN-2C" x="5961" y="0"></use>
+</g>
+</svg></span>
+We are no longer minimizing the KL divergence between the <em>true</em> distribution $p(x)$ and our parametric distribution $q(x|\theta)$, instead we are minimizing the KL divergence between the <em>empirical</em> distribution $\hat p$ and our parametric distribuiton $q(x|\theta)$:
+<span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="21.38ex" height="7.343ex" style="vertical-align: -3.005ex; margin-left: -0.089ex;" viewBox="-38.5 -1867.7 9205.4 3161.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-15-Title">
+<title id="MathJax-SVG-15-Title"> \hat p \equiv \frac 1 N \sum_{i=1}^N \delta(x - x_i). </title>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#MJMATHI-70" x="0" y="0"></use>
+ <use xlink:href="#MJMAIN-5E" x="84" y="21"></use>
+ <use xlink:href="#MJMAIN-2261" x="863" y="0"></use>
+<g transform="translate(1641,0)">
+<g transform="translate(397,0)">
+<rect stroke="none" width="1008" height="60" x="0" y="220"></rect>
+ <use xlink:href="#MJMAIN-31" x="254" y="676"></use>
+ <use xlink:href="#MJMATHI-4E" x="60" y="-704"></use>
+</g>
+</g>
+<g transform="translate(3334,0)">
+ <use xlink:href="#MJSZ2-2211" x="0" y="0"></use>
+<g transform="translate(147,-1090)">
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-69" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMAIN-3D" x="345" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMAIN-31" x="1124" y="0"></use>
+</g>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-4E" x="577" y="1627"></use>
+</g>
+ <use xlink:href="#MJMATHI-3B4" x="4945" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="5397" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="5786" y="0"></use>
+ <use xlink:href="#MJMAIN-2212" x="6581" y="0"></use>
+<g transform="translate(7582,0)">
+ <use xlink:href="#MJMATHI-78" x="0" y="0"></use>
+ <use transform="scale(0.707)" xlink:href="#MJMATHI-69" x="809" y="-213"></use>
+</g>
+ <use xlink:href="#MJMAIN-29" x="8498" y="0"></use>
+ <use xlink:href="#MJMAIN-2E" x="8888" y="0"></use>
+</g>
+</svg></span>
+If we had a very large number of samples, this empirical estimate would be pretty close to our true $\hat p \sim p$, but with finite samples it is always a distinct distribution from the true.  If we minimize the empirical risk, or maximize the empirical likelihood what we are really doing is getting our parametric distribution to be as indistinguishable as possible from the empirical distribution. This is equivalent to saying we should match sampling with replacement from our training set.  This is really where all of the issues of overfitting come from.  The degree to which matching the empirical distribution rather than the true distribution is a problem depends on how little data we have (relative to its sort of extent or coverage) and how flexible our parametric model is (the degree to which it can memorize the data we show it and nothing else).  In the context of classical machine learning this is where <em>regularization</em> comes to bear, we typically add some additional terms to our objective beyond just the empirical likelihood to attempt to get our learned model to better approximate the true distribution rather than the empirical.</p>
+<p>I want to acknowledge that this is a problem, but in the context of the current discussion I want to point out that this <em>isn't</em> a problem with our <em>objective</em>.  It is a good idea to try to minimize the KL divergence between the true distribution and our parametric model.  After we decide on this objective, unfortunately, there are practical issues we have to consider about how to target this objective tractably and accurately.</p>
 <h2>Supervised Learning</h2>
+<p>Let's complicate things slightly.  Instead of imagining that we have a single random variable in the real world, imagine instead we have a pair of variables, $X$ and $Y$.  For concreteness, imagine the $X$ are images and the $Y$ are their associated labels in some dataset.</p>
+<p>What are we after? What does success look like? Let's imagine that what we desire is the ability to assign labels to data.  What we wish were the case was that we used the same process to draw the images $q(x) = p(x)$, but instead of using the real world process to assign labels, ideally the labels would instead come from a device under our control: $q_\theta(y|x)$. <a href="#theta"><sup>5</sup></a>.  Just as before, we simply minimize the KL divergence between these two joints and we obtain an objective:</p>
+<figure id="#supervised-learning" class="right">
+  <center>
+  <img width="95%" src="figures/kl-is-all-you-need/supervised-learning.png" alt="A graphical version of supervised learning, the left shows the distribution $p(y,x)$ where $X$ is a random variable denoting images and $Y$ are some labels. The right shows the world of our dreams, where we draw the images $X$ from the same process as in the real world $p(x)$ but we have a machine that applies the labels: $q(y|x)$.">
+  <figcaption>
+  Figure 4. Supervised Learning.
+  </figcaption>
+  </center>
+</figure> 
+<aside> <sup id="theta">5</sup>
+I'm going to start dropping the subscript $\theta$ for the parameters.
+</aside>
+<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="19.034ex" height="6.509ex" style="vertical-align: -2.671ex;" viewBox="0 -1652.5 8195.3 2802.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-16-Title">
+<title id="MathJax-SVG-16-Title"> \left\langle \log \frac{p(x,y)}{p(x)q(y|x)} \right\rangle, </title>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#MJSZ3-27E8"></use>
+<g transform="translate(750,0)">
+ <use xlink:href="#MJMAIN-6C"></use>
+ <use xlink:href="#MJMAIN-6F" x="278" y="0"></use>
+ <use xlink:href="#MJMAIN-67" x="779" y="0"></use>
+</g>
+<g transform="translate(2030,0)">
+<g transform="translate(286,0)">
+<rect stroke="none" width="4563" height="60" x="0" y="220"></rect>
+<g transform="translate(882,770)">
+ <use xlink:href="#MJMATHI-70" x="0" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="503" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="893" y="0"></use>
+ <use xlink:href="#MJMAIN-2C" x="1465" y="0"></use>
+ <use xlink:href="#MJMATHI-79" x="1910" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="2408" y="0"></use>
+</g>
+<g transform="translate(60,-771)">
+ <use xlink:href="#MJMATHI-70" x="0" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="503" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="893" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="1465" y="0"></use>
+ <use xlink:href="#MJMATHI-71" x="1855" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="2315" y="0"></use>
+ <use xlink:href="#MJMATHI-79" x="2705" y="0"></use>
+ <use xlink:href="#MJMAIN-7C" x="3202" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="3481" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="4053" y="0"></use>
+</g>
+</g>
+</g>
+ <use xlink:href="#MJSZ3-27E9" x="6999" y="-1"></use>
+ <use xlink:href="#MJMAIN-2C" x="7916" y="0"></use>
+</g>
+</svg></span></p>
+<p>Just as above, when we drop constants outside of our control, we end up with the usual maximum likelihood objective we are used to:</p>
+<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="36.025ex" height="6.509ex" style="vertical-align: -2.671ex;" viewBox="0 -1652.5 15510.6 2802.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-17-Title">
+<title id="MathJax-SVG-17-Title"> \left\langle \log \frac{p(x)p(y|x)}{p(x)q(y|x)} \right\rangle = \left\langle \log \frac{p(y|x)}{q(y|x)} \right\rangle. </title>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#MJSZ3-27E8"></use>
+<g transform="translate(750,0)">
+ <use xlink:href="#MJMAIN-6C"></use>
+ <use xlink:href="#MJMAIN-6F" x="278" y="0"></use>
+ <use xlink:href="#MJMAIN-67" x="779" y="0"></use>
+</g>
+<g transform="translate(2030,0)">
+<g transform="translate(286,0)">
+<rect stroke="none" width="4606" height="60" x="0" y="220"></rect>
+<g transform="translate(60,770)">
+ <use xlink:href="#MJMATHI-70" x="0" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="503" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="893" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="1465" y="0"></use>
+ <use xlink:href="#MJMATHI-70" x="1855" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="2358" y="0"></use>
+ <use xlink:href="#MJMATHI-79" x="2748" y="0"></use>
+ <use xlink:href="#MJMAIN-7C" x="3245" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="3524" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="4096" y="0"></use>
+</g>
+<g transform="translate(81,-771)">
+ <use xlink:href="#MJMATHI-70" x="0" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="503" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="893" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="1465" y="0"></use>
+ <use xlink:href="#MJMATHI-71" x="1855" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="2315" y="0"></use>
+ <use xlink:href="#MJMATHI-79" x="2705" y="0"></use>
+ <use xlink:href="#MJMAIN-7C" x="3202" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="3481" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="4053" y="0"></use>
+</g>
+</g>
+</g>
+ <use xlink:href="#MJSZ3-27E9" x="7042" y="-1"></use>
+ <use xlink:href="#MJMAIN-3D" x="8070" y="0"></use>
+<g transform="translate(9127,0)">
+ <use xlink:href="#MJSZ3-27E8"></use>
+<g transform="translate(750,0)">
+ <use xlink:href="#MJMAIN-6C"></use>
+ <use xlink:href="#MJMAIN-6F" x="278" y="0"></use>
+ <use xlink:href="#MJMAIN-67" x="779" y="0"></use>
+</g>
+<g transform="translate(2030,0)">
+<g transform="translate(286,0)">
+<rect stroke="none" width="2751" height="60" x="0" y="220"></rect>
+<g transform="translate(60,770)">
+ <use xlink:href="#MJMATHI-70" x="0" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="503" y="0"></use>
+ <use xlink:href="#MJMATHI-79" x="893" y="0"></use>
+ <use xlink:href="#MJMAIN-7C" x="1390" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="1669" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="2241" y="0"></use>
+</g>
+<g transform="translate(81,-771)">
+ <use xlink:href="#MJMATHI-71" x="0" y="0"></use>
+ <use xlink:href="#MJMAIN-28" x="460" y="0"></use>
+ <use xlink:href="#MJMATHI-79" x="850" y="0"></use>
+ <use xlink:href="#MJMAIN-7C" x="1347" y="0"></use>
+ <use xlink:href="#MJMATHI-78" x="1626" y="0"></use>
+ <use xlink:href="#MJMAIN-29" x="2198" y="0"></use>
+</g>
+</g>
+</g>
+ <use xlink:href="#MJSZ3-27E9" x="5187" y="-1"></use>
+</g>
+ <use xlink:href="#MJMAIN-2E" x="15232" y="0"></use>
+</g>
+</svg></span>
+With the same caveats about proper handling of dimensions and issues stemming from using a fixed set of finite samples.</p>
 <h2>Variational Autoencoders</h2>
+<figure id="vae" class="right">
+  <center>
+  <img width="95%" src="figures/kl-is-all-you-need/vae.png" alt="A graphical version of a VAE.">
+  <figcaption>
+  Figure 5. Variational Autoencoders.
+  </figcaption>
+  </center>
+</figure> 
 <h2>Variational Information Bottleneck</h2>
+<figure id="vib" class="right">
+  <center>
+  <img width="95%" src="figures/kl-is-all-you-need/vib.png" alt="A graphical version of VIB.">
+  <figcaption>
+  Figure 6. Variational Information Bottleneck.
+  </figcaption>
+  </center>
+</figure> 
 <h2>Diffusion</h2>
+<figure id="diffusion" class="right">
+  <center>
+  <img width="95%" src="figures/kl-is-all-you-need/diffusion.png" alt="A graphical version of Diffusion.">
+  <figcaption>
+  Figure 7. Variational Diffusion.
+  </figcaption>
+  </center>
+</figure> 
 <h2>Semi-Supervised Learning</h2>
+<figure id="semi-supervised" class="right">
+  <center>
+  <img width="95%" src="figures/kl-is-all-you-need/semi-supervised.png" alt="A graphical version of a Semi-supervised VAE.">
+  <figcaption>
+  Figure 8. Semi-Supervised Variational Autoencoder.
+  </figcaption>
+  </center>
+</figure> 
 <h2>Bayesian Inference</h2>
+<figure id="bayes" class="right">
+  <center>
+  <img width="95%" src="figures/kl-is-all-you-need/bayes.png" alt="A graphical version of Bayesian Inference.">
+  <figcaption>
+  Figure 9. (Variational) Bayesian Inference.
+  </figcaption>
+  </center>
+</figure> 
 <h2>Bayesian Neural Network</h2>
+<figure id="bnn" class="right">
+  <center>
+  <img width="95%" src="figures/kl-is-all-you-need/bnn.png" alt="A graphical version of Bayesian Neural Networks.">
+  <figcaption>
+  Figure 10. Bayesian Neural Networks.
+  </figcaption>
+  </center>
+</figure> 
+<h2>TherML</h2>
+<figure id="therml" class="right">
+  <center>
+  <img width="95%" src="figures/kl-is-all-you-need/therml.png" alt="A graphical version of TherML.">
+  <figcaption>
+  Figure 10. TherML.
+  </figcaption>
+  </center>
+</figure> 
 <h2>Variational Prediction</h2>
+<figure id="vp" class="right">
+  <center>
+  <img width="95%" src="figures/kl-is-all-you-need/vp.png" alt="A graphical version of Variational Prediction.">
+  <figcaption>
+  Figure 11. Variational Prediction.
+  </figcaption>
+  </center>
+</figure> 
 <h2>Appendix - Pointwise Bounds</h2>
+<p>TODO:</p>
+<ul>
+<li>Reinforcement Learning</li>
+<li>Learning from human preferences ala. DPO and a density estimation perspective on learning from human feedback.</li>
+<li>Other Semi-supervised or Contrastive learning.</li>
+</ul>
  
     </div>
   </article>
@@ -574,4 +1430,4 @@ which I'll leave as an exercise to the reader, or you can see a proof in the <a 
 
 
 
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs id="MathJax_SVG_glyphs"><path stroke-width="1" id="MJMAIN-50" d="M130 622Q123 629 119 631T103 634T60 637H27V683H214Q237 683 276 683T331 684Q419 684 471 671T567 616Q624 563 624 489Q624 421 573 372T451 307Q429 302 328 301H234V181Q234 62 237 58Q245 47 304 46H337V0H326Q305 3 182 3Q47 3 38 0H27V46H60Q102 47 111 49T130 61V622ZM507 488Q507 514 506 528T500 564T483 597T450 620T397 635Q385 637 307 637H286Q237 637 234 628Q231 624 231 483V342H302H339Q390 342 423 349T481 382Q507 411 507 488Z"></path><path stroke-width="1" id="MJMAIN-72" d="M36 46H50Q89 46 97 60V68Q97 77 97 91T98 122T98 161T98 203Q98 234 98 269T98 328L97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 60 434T96 436Q112 437 131 438T160 441T171 442H174V373Q213 441 271 441H277Q322 441 343 419T364 373Q364 352 351 337T313 322Q288 322 276 338T263 372Q263 381 265 388T270 400T273 405Q271 407 250 401Q234 393 226 386Q179 341 179 207V154Q179 141 179 127T179 101T180 81T180 66V61Q181 59 183 57T188 54T193 51T200 49T207 48T216 47T225 47T235 46T245 46H276V0H267Q249 3 140 3Q37 3 28 0H20V46H36Z"></path><path stroke-width="1" id="MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="1" id="MJMATHI-50" d="M287 628Q287 635 230 637Q206 637 199 638T192 648Q192 649 194 659Q200 679 203 681T397 683Q587 682 600 680Q664 669 707 631T751 530Q751 453 685 389Q616 321 507 303Q500 302 402 301H307L277 182Q247 66 247 59Q247 55 248 54T255 50T272 48T305 46H336Q342 37 342 35Q342 19 335 5Q330 0 319 0Q316 0 282 1T182 2Q120 2 87 2T51 1Q33 1 33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM645 554Q645 567 643 575T634 597T609 619T560 635Q553 636 480 637Q463 637 445 637T416 636T404 636Q391 635 386 627Q384 621 367 550T332 412T314 344Q314 342 395 342H407H430Q542 342 590 392Q617 419 631 471T645 554Z"></path><path stroke-width="1" id="MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path stroke-width="1" id="MJMATHI-44" d="M287 628Q287 635 230 637Q207 637 200 638T193 647Q193 655 197 667T204 682Q206 683 403 683Q570 682 590 682T630 676Q702 659 752 597T803 431Q803 275 696 151T444 3L430 1L236 0H125H72Q48 0 41 2T33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM703 469Q703 507 692 537T666 584T629 613T590 629T555 636Q553 636 541 636T512 636T479 637H436Q392 637 386 627Q384 623 313 339T242 52Q242 48 253 48T330 47Q335 47 349 47T373 46Q499 46 581 128Q617 164 640 212T683 339T703 469Z"></path><path stroke-width="1" id="MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path stroke-width="1" id="MJMATHI-51" d="M399 -80Q399 -47 400 -30T402 -11V-7L387 -11Q341 -22 303 -22Q208 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435Q740 255 592 107Q529 47 461 16L444 8V3Q444 2 449 -24T470 -66T516 -82Q551 -82 583 -60T625 -3Q631 11 638 11Q647 11 649 2Q649 -6 639 -34T611 -100T557 -165T481 -194Q399 -194 399 -87V-80ZM636 468Q636 523 621 564T580 625T530 655T477 665Q429 665 379 640Q277 591 215 464T153 216Q153 110 207 59Q231 38 236 38V46Q236 86 269 120T347 155Q372 155 390 144T417 114T429 82T435 55L448 64Q512 108 557 185T619 334T636 468ZM314 18Q362 18 404 39L403 49Q399 104 366 115Q354 117 347 117Q344 117 341 117T337 118Q317 118 296 98T274 52Q274 18 314 18Z"></path><path stroke-width="1" id="MJMAIN-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path><path stroke-width="1" id="MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path stroke-width="1" id="MJMAIN-6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path stroke-width="1" id="MJMAIN-6F" d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z"></path><path stroke-width="1" id="MJMAIN-67" d="M329 409Q373 453 429 453Q459 453 472 434T485 396Q485 382 476 371T449 360Q416 360 412 390Q410 404 415 411Q415 412 416 414V415Q388 412 363 393Q355 388 355 386Q355 385 359 381T368 369T379 351T388 325T392 292Q392 230 343 187T222 143Q172 143 123 171Q112 153 112 133Q112 98 138 81Q147 75 155 75T227 73Q311 72 335 67Q396 58 431 26Q470 -13 470 -72Q470 -139 392 -175Q332 -206 250 -206Q167 -206 107 -175Q29 -140 29 -75Q29 -39 50 -15T92 18L103 24Q67 55 67 108Q67 155 96 193Q52 237 52 292Q52 355 102 398T223 442Q274 442 318 416L329 409ZM299 343Q294 371 273 387T221 404Q192 404 171 388T145 343Q142 326 142 292Q142 248 149 227T179 192Q196 182 222 182Q244 182 260 189T283 207T294 227T299 242Q302 258 302 292T299 343ZM403 -75Q403 -50 389 -34T348 -11T299 -2T245 0H218Q151 0 138 -6Q118 -15 107 -34T95 -74Q95 -84 101 -97T122 -127T170 -155T250 -167Q319 -167 361 -139T403 -75Z"></path><path stroke-width="1" id="MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path stroke-width="1" id="MJMAIN-2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path><path stroke-width="1" id="MJMAIN-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path><path stroke-width="1" id="MJMATHI-70" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path><path stroke-width="1" id="MJMATHI-71" d="M33 157Q33 258 109 349T280 441Q340 441 372 389Q373 390 377 395T388 406T404 418Q438 442 450 442Q454 442 457 439T460 434Q460 425 391 149Q320 -135 320 -139Q320 -147 365 -148H390Q396 -156 396 -157T393 -175Q389 -188 383 -194H370Q339 -192 262 -192Q234 -192 211 -192T174 -192T157 -193Q143 -193 143 -185Q143 -182 145 -170Q149 -154 152 -151T172 -148Q220 -148 230 -141Q238 -136 258 -53T279 32Q279 33 272 29Q224 -10 172 -10Q117 -10 75 30T33 157ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path><path stroke-width="1" id="MJMATHI-49" d="M43 1Q26 1 26 10Q26 12 29 24Q34 43 39 45Q42 46 54 46H60Q120 46 136 53Q137 53 138 54Q143 56 149 77T198 273Q210 318 216 344Q286 624 286 626Q284 630 284 631Q274 637 213 637H193Q184 643 189 662Q193 677 195 680T209 683H213Q285 681 359 681Q481 681 487 683H497Q504 676 504 672T501 655T494 639Q491 637 471 637Q440 637 407 634Q393 631 388 623Q381 609 337 432Q326 385 315 341Q245 65 245 59Q245 52 255 50T307 46H339Q345 38 345 37T342 19Q338 6 332 0H316Q279 2 179 2Q143 2 113 2T65 2T43 1Z"></path><path stroke-width="1" id="MJMAIN-5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"></path><path stroke-width="1" id="MJMAIN-3B" d="M78 370Q78 394 95 412T138 430Q162 430 180 414T199 371Q199 346 182 328T139 310T96 327T78 370ZM78 60Q78 85 94 103T137 121Q202 121 202 8Q202 -44 183 -94T144 -169T118 -194Q115 -194 106 -186T95 -174Q94 -171 107 -155T137 -107T160 -38Q161 -32 162 -22T165 -4T165 4Q165 5 161 4T142 0Q110 0 94 18T78 60Z"></path><path stroke-width="1" id="MJMAIN-5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"></path><path stroke-width="1" id="MJMAIN-2261" d="M56 444Q56 457 70 464H707Q722 456 722 444Q722 430 706 424H72Q56 429 56 444ZM56 237T56 250T70 270H707Q722 262 722 250T707 230H70Q56 237 56 250ZM56 56Q56 71 72 76H706Q722 70 722 56Q722 44 707 36H70Q56 43 56 56Z"></path><path stroke-width="1" id="MJSZ2-222B" d="M114 -798Q132 -824 165 -824H167Q195 -824 223 -764T275 -600T320 -391T362 -164Q365 -143 367 -133Q439 292 523 655T645 1127Q651 1145 655 1157T672 1201T699 1257T733 1306T777 1346T828 1360Q884 1360 912 1325T944 1245Q944 1220 932 1205T909 1186T887 1183Q866 1183 849 1198T832 1239Q832 1287 885 1296L882 1300Q879 1303 874 1307T866 1313Q851 1323 833 1323Q819 1323 807 1311T775 1255T736 1139T689 936T633 628Q574 293 510 -5T410 -437T355 -629Q278 -862 165 -862Q125 -862 92 -831T55 -746Q55 -711 74 -698T112 -685Q133 -685 150 -700T167 -741Q167 -789 114 -798Z"></path><path stroke-width="1" id="MJMATHI-64" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path><path stroke-width="1" id="MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path><path stroke-width="1" id="MJMAIN-2265" d="M83 616Q83 624 89 630T99 636Q107 636 253 568T543 431T687 361Q694 356 694 346T687 331Q685 329 395 192L107 56H101Q83 58 83 76Q83 77 83 79Q82 86 98 95Q117 105 248 167Q326 204 378 228L626 346L360 472Q291 505 200 548Q112 589 98 597T83 616ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path><path stroke-width="1" id="MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></defs></svg></body></html>
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs id="MathJax_SVG_glyphs"><path stroke-width="1" id="MJMAIN-50" d="M130 622Q123 629 119 631T103 634T60 637H27V683H214Q237 683 276 683T331 684Q419 684 471 671T567 616Q624 563 624 489Q624 421 573 372T451 307Q429 302 328 301H234V181Q234 62 237 58Q245 47 304 46H337V0H326Q305 3 182 3Q47 3 38 0H27V46H60Q102 47 111 49T130 61V622ZM507 488Q507 514 506 528T500 564T483 597T450 620T397 635Q385 637 307 637H286Q237 637 234 628Q231 624 231 483V342H302H339Q390 342 423 349T481 382Q507 411 507 488Z"></path><path stroke-width="1" id="MJMAIN-72" d="M36 46H50Q89 46 97 60V68Q97 77 97 91T98 122T98 161T98 203Q98 234 98 269T98 328L97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 60 434T96 436Q112 437 131 438T160 441T171 442H174V373Q213 441 271 441H277Q322 441 343 419T364 373Q364 352 351 337T313 322Q288 322 276 338T263 372Q263 381 265 388T270 400T273 405Q271 407 250 401Q234 393 226 386Q179 341 179 207V154Q179 141 179 127T179 101T180 81T180 66V61Q181 59 183 57T188 54T193 51T200 49T207 48T216 47T225 47T235 46T245 46H276V0H267Q249 3 140 3Q37 3 28 0H20V46H36Z"></path><path stroke-width="1" id="MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="1" id="MJMATHI-50" d="M287 628Q287 635 230 637Q206 637 199 638T192 648Q192 649 194 659Q200 679 203 681T397 683Q587 682 600 680Q664 669 707 631T751 530Q751 453 685 389Q616 321 507 303Q500 302 402 301H307L277 182Q247 66 247 59Q247 55 248 54T255 50T272 48T305 46H336Q342 37 342 35Q342 19 335 5Q330 0 319 0Q316 0 282 1T182 2Q120 2 87 2T51 1Q33 1 33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM645 554Q645 567 643 575T634 597T609 619T560 635Q553 636 480 637Q463 637 445 637T416 636T404 636Q391 635 386 627Q384 621 367 550T332 412T314 344Q314 342 395 342H407H430Q542 342 590 392Q617 419 631 471T645 554Z"></path><path stroke-width="1" id="MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path stroke-width="1" id="MJMATHI-44" d="M287 628Q287 635 230 637Q207 637 200 638T193 647Q193 655 197 667T204 682Q206 683 403 683Q570 682 590 682T630 676Q702 659 752 597T803 431Q803 275 696 151T444 3L430 1L236 0H125H72Q48 0 41 2T33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM703 469Q703 507 692 537T666 584T629 613T590 629T555 636Q553 636 541 636T512 636T479 637H436Q392 637 386 627Q384 623 313 339T242 52Q242 48 253 48T330 47Q335 47 349 47T373 46Q499 46 581 128Q617 164 640 212T683 339T703 469Z"></path><path stroke-width="1" id="MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path stroke-width="1" id="MJMATHI-51" d="M399 -80Q399 -47 400 -30T402 -11V-7L387 -11Q341 -22 303 -22Q208 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435Q740 255 592 107Q529 47 461 16L444 8V3Q444 2 449 -24T470 -66T516 -82Q551 -82 583 -60T625 -3Q631 11 638 11Q647 11 649 2Q649 -6 639 -34T611 -100T557 -165T481 -194Q399 -194 399 -87V-80ZM636 468Q636 523 621 564T580 625T530 655T477 665Q429 665 379 640Q277 591 215 464T153 216Q153 110 207 59Q231 38 236 38V46Q236 86 269 120T347 155Q372 155 390 144T417 114T429 82T435 55L448 64Q512 108 557 185T619 334T636 468ZM314 18Q362 18 404 39L403 49Q399 104 366 115Q354 117 347 117Q344 117 341 117T337 118Q317 118 296 98T274 52Q274 18 314 18Z"></path><path stroke-width="1" id="MJMAIN-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path><path stroke-width="1" id="MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path stroke-width="1" id="MJMAIN-6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path stroke-width="1" id="MJMAIN-6F" d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z"></path><path stroke-width="1" id="MJMAIN-67" d="M329 409Q373 453 429 453Q459 453 472 434T485 396Q485 382 476 371T449 360Q416 360 412 390Q410 404 415 411Q415 412 416 414V415Q388 412 363 393Q355 388 355 386Q355 385 359 381T368 369T379 351T388 325T392 292Q392 230 343 187T222 143Q172 143 123 171Q112 153 112 133Q112 98 138 81Q147 75 155 75T227 73Q311 72 335 67Q396 58 431 26Q470 -13 470 -72Q470 -139 392 -175Q332 -206 250 -206Q167 -206 107 -175Q29 -140 29 -75Q29 -39 50 -15T92 18L103 24Q67 55 67 108Q67 155 96 193Q52 237 52 292Q52 355 102 398T223 442Q274 442 318 416L329 409ZM299 343Q294 371 273 387T221 404Q192 404 171 388T145 343Q142 326 142 292Q142 248 149 227T179 192Q196 182 222 182Q244 182 260 189T283 207T294 227T299 242Q302 258 302 292T299 343ZM403 -75Q403 -50 389 -34T348 -11T299 -2T245 0H218Q151 0 138 -6Q118 -15 107 -34T95 -74Q95 -84 101 -97T122 -127T170 -155T250 -167Q319 -167 361 -139T403 -75Z"></path><path stroke-width="1" id="MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path stroke-width="1" id="MJMAIN-2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path><path stroke-width="1" id="MJMAIN-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path><path stroke-width="1" id="MJMATHI-70" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path><path stroke-width="1" id="MJMATHI-71" d="M33 157Q33 258 109 349T280 441Q340 441 372 389Q373 390 377 395T388 406T404 418Q438 442 450 442Q454 442 457 439T460 434Q460 425 391 149Q320 -135 320 -139Q320 -147 365 -148H390Q396 -156 396 -157T393 -175Q389 -188 383 -194H370Q339 -192 262 -192Q234 -192 211 -192T174 -192T157 -193Q143 -193 143 -185Q143 -182 145 -170Q149 -154 152 -151T172 -148Q220 -148 230 -141Q238 -136 258 -53T279 32Q279 33 272 29Q224 -10 172 -10Q117 -10 75 30T33 157ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path><path stroke-width="1" id="MJMATHI-49" d="M43 1Q26 1 26 10Q26 12 29 24Q34 43 39 45Q42 46 54 46H60Q120 46 136 53Q137 53 138 54Q143 56 149 77T198 273Q210 318 216 344Q286 624 286 626Q284 630 284 631Q274 637 213 637H193Q184 643 189 662Q193 677 195 680T209 683H213Q285 681 359 681Q481 681 487 683H497Q504 676 504 672T501 655T494 639Q491 637 471 637Q440 637 407 634Q393 631 388 623Q381 609 337 432Q326 385 315 341Q245 65 245 59Q245 52 255 50T307 46H339Q345 38 345 37T342 19Q338 6 332 0H316Q279 2 179 2Q143 2 113 2T65 2T43 1Z"></path><path stroke-width="1" id="MJMAIN-5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"></path><path stroke-width="1" id="MJMAIN-3B" d="M78 370Q78 394 95 412T138 430Q162 430 180 414T199 371Q199 346 182 328T139 310T96 327T78 370ZM78 60Q78 85 94 103T137 121Q202 121 202 8Q202 -44 183 -94T144 -169T118 -194Q115 -194 106 -186T95 -174Q94 -171 107 -155T137 -107T160 -38Q161 -32 162 -22T165 -4T165 4Q165 5 161 4T142 0Q110 0 94 18T78 60Z"></path><path stroke-width="1" id="MJMAIN-5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"></path><path stroke-width="1" id="MJMAIN-2261" d="M56 444Q56 457 70 464H707Q722 456 722 444Q722 430 706 424H72Q56 429 56 444ZM56 237T56 250T70 270H707Q722 262 722 250T707 230H70Q56 237 56 250ZM56 56Q56 71 72 76H706Q722 70 722 56Q722 44 707 36H70Q56 43 56 56Z"></path><path stroke-width="1" id="MJSZ2-222B" d="M114 -798Q132 -824 165 -824H167Q195 -824 223 -764T275 -600T320 -391T362 -164Q365 -143 367 -133Q439 292 523 655T645 1127Q651 1145 655 1157T672 1201T699 1257T733 1306T777 1346T828 1360Q884 1360 912 1325T944 1245Q944 1220 932 1205T909 1186T887 1183Q866 1183 849 1198T832 1239Q832 1287 885 1296L882 1300Q879 1303 874 1307T866 1313Q851 1323 833 1323Q819 1323 807 1311T775 1255T736 1139T689 936T633 628Q574 293 510 -5T410 -437T355 -629Q278 -862 165 -862Q125 -862 92 -831T55 -746Q55 -711 74 -698T112 -685Q133 -685 150 -700T167 -741Q167 -789 114 -798Z"></path><path stroke-width="1" id="MJMATHI-64" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path><path stroke-width="1" id="MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path><path stroke-width="1" id="MJMAIN-27E8" d="M333 -232Q332 -239 327 -244T313 -250Q303 -250 296 -240Q293 -233 202 6T110 250T201 494T296 740Q299 745 306 749L309 750Q312 750 313 750Q331 750 333 732Q333 727 243 489Q152 252 152 250T243 11Q333 -227 333 -232Z"></path><path stroke-width="1" id="MJMAIN-27E9" d="M55 732Q56 739 61 744T75 750Q85 750 92 740Q95 733 186 494T278 250T187 6T92 -240Q85 -250 75 -250Q67 -250 62 -245T55 -232Q55 -227 145 11Q236 248 236 250T145 489Q55 727 55 732Z"></path><path stroke-width="1" id="MJSZ3-27E8" d="M126 242V259L361 845Q595 1431 597 1435Q610 1450 624 1450Q634 1450 644 1443T654 1419V1411L422 831Q190 253 190 250T422 -331L654 -910V-919Q654 -936 644 -943T624 -950Q612 -950 597 -935Q595 -931 361 -345L126 242Z"></path><path stroke-width="1" id="MJSZ3-27E9" d="M94 1424Q94 1426 97 1432T107 1444T124 1450Q141 1450 152 1435Q154 1431 388 845L623 259V242L388 -345Q153 -933 152 -934Q142 -949 127 -949H125Q95 -949 95 -919V-910L327 -331Q559 247 559 250T327 831Q94 1411 94 1424Z"></path><path stroke-width="1" id="MJMAIN-2265" d="M83 616Q83 624 89 630T99 636Q107 636 253 568T543 431T687 361Q694 356 694 346T687 331Q685 329 395 192L107 56H101Q83 58 83 76Q83 77 83 79Q82 86 98 95Q117 105 248 167Q326 204 378 228L626 346L360 472Q291 505 200 548Q112 589 98 597T83 616ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path><path stroke-width="1" id="MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path stroke-width="1" id="MJMATHI-79" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path stroke-width="1" id="MJMATHI-3B8" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path><path stroke-width="1" id="MJSZ4-E152" d="M-24 327L-18 333H-1Q11 333 15 333T22 329T27 322T35 308T54 284Q115 203 225 162T441 120Q454 120 457 117T460 95V60V28Q460 8 457 4T442 0Q355 0 260 36Q75 118 -16 278L-24 292V327Z"></path><path stroke-width="1" id="MJSZ4-E153" d="M-10 60V95Q-10 113 -7 116T9 120Q151 120 250 171T396 284Q404 293 412 305T424 324T431 331Q433 333 451 333H468L474 327V292L466 278Q375 118 190 36Q95 0 8 0Q-5 0 -7 3T-10 24V60Z"></path><path stroke-width="1" id="MJSZ4-E151" d="M-10 60Q-10 104 -10 111T-5 118Q-1 120 10 120Q96 120 190 84Q375 2 466 -158L474 -172V-207L468 -213H451H447Q437 -213 434 -213T428 -209T423 -202T414 -187T396 -163Q331 -82 224 -41T9 0Q-4 0 -7 3T-10 25V60Z"></path><path stroke-width="1" id="MJSZ4-E150" d="M-18 -213L-24 -207V-172L-16 -158Q75 2 260 84Q334 113 415 119Q418 119 427 119T440 120Q454 120 457 117T460 98V60V25Q460 7 457 4T441 0Q308 0 193 -55T25 -205Q21 -211 18 -212T-1 -213H-18Z"></path><path stroke-width="1" id="MJSZ4-E154" d="M-10 0V120H410V0H-10Z"></path><path stroke-width="1" id="MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path><path stroke-width="1" id="MJMATHI-48" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 219 683Q260 681 355 681Q389 681 418 681T463 682T483 682Q499 682 499 672Q499 670 497 658Q492 641 487 638H485Q483 638 480 638T473 638T464 637T455 637Q416 636 405 634T387 623Q384 619 355 500Q348 474 340 442T328 395L324 380Q324 378 469 378H614L615 381Q615 384 646 504Q674 619 674 627T617 637Q594 637 587 639T580 648Q580 650 582 660Q586 677 588 679T604 682Q609 682 646 681T740 680Q802 680 835 681T871 682Q888 682 888 672Q888 645 876 638H874Q872 638 869 638T862 638T853 637T844 637Q805 636 794 634T776 623Q773 618 704 340T634 58Q634 51 638 51Q646 48 692 46H723Q729 38 729 37T726 19Q722 6 716 0H701Q664 2 567 2Q533 2 504 2T458 2T437 1Q420 1 420 10Q420 15 423 24Q428 43 433 45Q437 46 448 46H454Q481 46 514 49Q520 50 522 50T528 55T534 64T540 82T547 110T558 153Q565 181 569 198Q602 330 602 331T457 332H312L279 197Q245 63 245 58Q245 51 253 49T303 46H334Q340 38 340 37T337 19Q333 6 327 0H312Q275 2 178 2Q144 2 115 2T69 2T48 1Q31 1 31 10Q31 12 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path><path stroke-width="1" id="MJMATHI-6D" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path stroke-width="1" id="MJMAIN-2248" d="M55 319Q55 360 72 393T114 444T163 472T205 482Q207 482 213 482T223 483Q262 483 296 468T393 413L443 381Q502 346 553 346Q609 346 649 375T694 454Q694 465 698 474T708 483Q722 483 722 452Q722 386 675 338T555 289Q514 289 468 310T388 357T308 404T224 426Q164 426 125 393T83 318Q81 289 69 289Q55 289 55 319ZM55 85Q55 126 72 159T114 210T163 238T205 248Q207 248 213 248T223 249Q262 249 296 234T393 179L443 147Q502 112 553 112Q609 112 649 141T694 220Q694 249 708 249T722 217Q722 153 675 104T555 55Q514 55 468 76T388 123T308 170T224 192Q164 192 125 159T83 84Q80 55 69 55Q55 55 55 85Z"></path><path stroke-width="1" id="MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path stroke-width="1" id="MJMATHI-4E" d="M234 637Q231 637 226 637Q201 637 196 638T191 649Q191 676 202 682Q204 683 299 683Q376 683 387 683T401 677Q612 181 616 168L670 381Q723 592 723 606Q723 633 659 637Q635 637 635 648Q635 650 637 660Q641 676 643 679T653 683Q656 683 684 682T767 680Q817 680 843 681T873 682Q888 682 888 672Q888 650 880 642Q878 637 858 637Q787 633 769 597L620 7Q618 0 599 0Q585 0 582 2Q579 5 453 305L326 604L261 344Q196 88 196 79Q201 46 268 46H278Q284 41 284 38T282 19Q278 6 272 0H259Q228 2 151 2Q123 2 100 2T63 2T46 1Q31 1 31 10Q31 14 34 26T39 40Q41 46 62 46Q130 49 150 85Q154 91 221 362L289 634Q287 635 234 637Z"></path><path stroke-width="1" id="MJSZ2-2211" d="M60 948Q63 950 665 950H1267L1325 815Q1384 677 1388 669H1348L1341 683Q1320 724 1285 761Q1235 809 1174 838T1033 881T882 898T699 902H574H543H251L259 891Q722 258 724 252Q725 250 724 246Q721 243 460 -56L196 -356Q196 -357 407 -357Q459 -357 548 -357T676 -358Q812 -358 896 -353T1063 -332T1204 -283T1307 -196Q1328 -170 1348 -124H1388Q1388 -125 1381 -145T1356 -210T1325 -294L1267 -449L666 -450Q64 -450 61 -448Q55 -446 55 -439Q55 -437 57 -433L590 177Q590 178 557 222T452 366T322 544L56 909L55 924Q55 945 60 948Z"></path><path stroke-width="1" id="MJMATHI-69" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path><path stroke-width="1" id="MJMAIN-2207" d="M46 676Q46 679 51 683H781Q786 679 786 676Q786 674 617 326T444 -26Q439 -33 416 -33T388 -26Q385 -22 216 326T46 676ZM697 596Q697 597 445 597T193 596Q195 591 319 336T445 80L697 596Z"></path><path stroke-width="1" id="MJMAIN-5E" d="M112 560L249 694L257 686Q387 562 387 560L361 531Q359 532 303 581L250 627L195 580Q182 569 169 557T148 538L140 532Q138 530 125 546L112 560Z"></path><path stroke-width="1" id="MJMATHI-3B4" d="M195 609Q195 656 227 686T302 717Q319 716 351 709T407 697T433 690Q451 682 451 662Q451 644 438 628T403 612Q382 612 348 641T288 671T249 657T235 628Q235 584 334 463Q401 379 401 292Q401 169 340 80T205 -10H198Q127 -10 83 36T36 153Q36 286 151 382Q191 413 252 434Q252 435 245 449T230 481T214 521T201 566T195 609ZM112 130Q112 83 136 55T204 27Q233 27 256 51T291 111T309 178T316 232Q316 267 309 298T295 344T269 400L259 396Q215 381 183 342T137 256T118 179T112 130Z"></path></defs></svg></body></html>
