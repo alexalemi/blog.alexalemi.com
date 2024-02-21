@@ -145,13 +145,13 @@ If I'm being honest, this is something that bothers me that I don't fully unders
 TODO Empirical distribution and finite samples.
 Since we are already on an aside, I'll go on another aside.  We've just motivated that a useful objective for learning a parametric distribution is to minimize the KL divergence between the true distribution and our parametric distribution, i.e. we should adjust the parameters of our distribution to maximize the likelihood of samples from the true distribution.  In practice however, we typically only have access to a *finite* number of samples from the true distribution and this introduces a difficulty.  If we wanted to, we could generate an unbiased estimate of the expected likelihood of our model using a finite number of samples from the true distribution:
 $$ -\left\langle \log q(x|\theta) \right\rangle_p \approx -\frac 1 N \sum_{i=1}^N \log q(x_i|\theta). $$
-Nothing wrong here.  There is similarly nothing wrong with taking the gradient of this monte carlo estimate to generate an unbiased estimate of the gradient of the true likelihood:
+Nothing wrong here.  There is similarly nothing wrong with taking the gradient of this Monte Carlo estimate to generate an unbiased estimate of the gradient of the true likelihood:
 $$ -\nabla_\theta \left\langle \log q(x|\theta) \right\rangle_p \approx -\frac 1 N \sum_{i=1}^N \nabla_\theta \log q(x_i|\theta). $$
-The problem only occurs if we start to *reuse* the same samples.  These monte carlo estimates are only *unbiased* estimates of the true expectation if the samples are independent.  If we start to take multiple gradient steps with overlapping samples we start to introduce some bias.  Taken to the extreme, if we simply maximize the *empirical* likelihood on a fixed set of finite samples:
+The problem only occurs if we start to *reuse* the same samples.  These Monte Carlo estimates are only *unbiased* estimates of the true expectation if the samples are independent.  If we start to take multiple gradient steps with overlapping samples we start to introduce some bias.  Taken to the extreme, if we simply maximize the *empirical* likelihood on a fixed set of finite samples:
 $$ \sum_{i=1}^N \log q(x_i|\theta), $$
-We are no longer minimizing the KL divergence between the *true* distribution $p(x)$ and our parametric distribution $q(x|\theta)$, instead we are minimizing the KL divergence between the *empirical* distribution $\hat p$ and our parametric distribuiton $q(x|\theta)$:
+We are no longer minimizing the KL divergence between the *true* distribution $p(x)$ and our parametric distribution $q(x|\theta)$, instead we are minimizing the KL divergence between the *empirical* distribution $\hat p$ and our parametric distribution $q(x|\theta)$:
 $$ \hat p \equiv \frac 1 N \sum_{i=1}^N \delta(x - x_i). $$
-If we had a very large number of samples, this empirical estimate would be pretty close to our true $\hat p \sim p$, but with finite samples it is always a distinct distribution from the true.  If we minimize the empirical risk, or maximize the empirical likelihood what we are really doing is getting our parametric distribution to be as indistinguishable as possible from the empirical distribution. This is equivalent to saying we should match sampling with replacement from our training set.  This is really where all of the issues of overfitting come from.  The degree to which matching the empirical distribution rather than the true distribution is a problem depends on how little data we have (relative to its sort of extent or coverage) and how flexible our parametric model is (the degree to which it can memorize the data we show it and nothing else).  In the context of classical machine learning this is where *regularization* comes to bear, we typically add some additional terms to our objective beyond just the empirical likelihood to attempt to get our learned model to better approximate the true distribution rather than the empirical.
+If we had a very large number of samples, this empirical estimate would be pretty close to our true $\hat p \sim p$, but with finite samples it is always a distinct distribution from the true.  If we minimize the empirical risk, or maximize the empirical likelihood what we are really doing is getting our parametric distribution to be as indistinguishable as possible from the empirical distribution. This is equivalent to saying we should match sampling with replacement from our training set.  This is really where all of the issues of over-fitting come from.  The degree to which matching the empirical distribution rather than the true distribution is a problem depends on how little data we have (relative to its sort of extent or coverage) and how flexible our parametric model is (the degree to which it can memorize the data we show it and nothing else).  In the context of classical machine learning this is where *regularization* comes to bear, we typically add some additional terms to our objective beyond just the empirical likelihood to attempt to get our learned model to better approximate the true distribution rather than the empirical.
 
 I want to acknowledge that this is a problem, but in the context of the current discussion I want to point out that this *isn't* a problem with our *objective*.  It is a good idea to try to minimize the KL divergence between the true distribution and our parametric model.  After we decide on this objective, unfortunately, there are practical issues we have to consider about how to target this objective tractably and accurately. 
 
@@ -184,14 +184,19 @@ Just as above, when we drop constants outside of our control, we end up with the
 $$ \left\langle \log \frac{p(x)p(y|x)}{p(x)q(y|x)} \right\rangle = \left\langle \log \frac{p(y|x)}{q(y|x)} \right\rangle. $$
 With the same caveats about proper handling of dimensions and issues stemming from using a fixed set of finite samples.
 
-This conditional likelihood optimization objective is truly the workhorse of modern machine learning.  However, I feel as thought its a bit dishonest.  In practice we rarely care too much about the actual predictive task we are mimicing with our parametric conditional density.  Very few people actually care about assigning [ImageNet](https://en.wikipedia.org/wiki/ImageNet) labels to images.  Instead, the explosion in deep learning is mostly due to a happy little accident.  When we train very large, very expressive conditional distributions to minimize the conditional KL for something like ImageNet labelling with large datasets, we've discovered that the *representations* formed by some intermediate (usually penultimate) layer in that neural network are useful for a wide array of different image tasks. 
+This conditional likelihood optimization objective is truly the workhorse of modern machine learning.  However, I feel as thought its a bit dishonest.  In practice we rarely care too much about the actual predictive task we are mimicking with our parametric conditional density.  Very few people actually care about assigning [ImageNet](https://en.wikipedia.org/wiki/ImageNet) labels to images.  Instead, the explosion in deep learning is mostly due to a happy little accident.  When we train very large, very expressive conditional distributions to minimize the conditional KL for something like ImageNet labeling with large datasets, we've discovered that the *representations* formed by some intermediate (usually penultimate) layer in that neural network are useful for a wide array of different image tasks. This didn't have to be the case, but we got a bit lucky.  
 
-TODO: representation learning.
-
+What if we wanted to learn a useful representation? What would true representation learning look like?
 
 ## Variational Autoencoders
 
-So far we've only ever represented the world as it *is* and haven't yet taken the step of *augmenting* the *real world* with something new.  
+So far we've only ever represented the world as it *is* and haven't yet taken the step of *augmenting* the *real world* with something new.  If we want to learn a representation, that's something that lives in the real world. That's a new
+random variable.
+
+Let's start with an unsupervised case.  We have images and we want to form a representation of those images.  In our real world, we have the images $X$ drawn from some distribution outside our control ($p(x)$).  Now we'll *augment* the 
+real world with a new random variable $Z$; our *representation*.  We'll parameterize this with a neural network $p(z|x)$ that defines a tractable distribution for our stochastic representation $Z$. This is our *encoder*, which maps an image $X$ to a distribution for its representation. 
+We want to consider a whole slew of possible *real worlds*, each world consisting of a different setting of the parameters of our encoder, and thus each world consisting of a different joint distribution $p(x,z)$.  Now our parameters $\theta$ essentially index one of
+a wide array of possible joint distributions $p(x,z)$.  How do we decide amongst these?  What does success look like?  We are seeking a world in which we can *encode* images into a useful representation $p(z|x)$, one way to define success would be if those learned representations were really like *latents* for the images themselves.  Wouldn't it be swell if instead the world worked by looking at our own learned representation and used that to formulate the images themselves?  Wouldn't it be grand if that joint distribution factorized in the opposite direction: $q(x,z) = q(z)q(x|z)$.  This is the usual generative model story, where we first draw a latent variable $z$ from some prior distribution and then *decode* it through a stochastic map $q(x|z)$ for formulate our image.  Such a latent would be demonstrably useful for generating images.  
 
 <figure id="vae" class="right">
   <center>
@@ -203,8 +208,37 @@ So far we've only ever represented the world as it *is* and haven't yet taken th
   </center>
 </figure> 
 
+Having defined both the real worlds under consideration $p(x,z)$ and the definition of success $q(x,z)$, our objective is the universal one of minimizing the KL divergence betwixt the two, from $p$ to $q$.  We try to make it as hard as possible for us or anyone else to distinguish between the real world in which we send images forward through an encoder to form a representation and some hypothetical world in which those representations were drawn from some prior and acted as a latent for a decoder that generated images.  We've just recreated the ELBO or Evidence Lower Bound Objective:
+
+$$ \left\langle \log \frac{p(x,z)}{q(x,z)} \right\rangle_p = \left\langle \log \frac{p(x)p(z|x)}{q(x|z)q(z)} \right\rangle_p \geq 0. $$
+
+Since this is a joint KL and all KLs are nonnegative, this objective is non-negative.  Furthermore, because of the monotonicity of KL, we know this is a bound on something we might care about, the marginal KL of our generative or reverse path:
+$$ \left\langle \log \frac{p(x)p(z|x)}{q(z|x)q(z)} \right\rangle_p \geq \left\langle \log \frac{p(x)}{q(x)} \right\rangle_p  \geq 0. $$
+So, as a bonus, if we push down on this joint KL objective, since this bounds the marginal KL on $X$, we can be assured that this machine composed of three parts, the encoder $p(z|x)$, decoder $q(x|z)$ and marginal (or prior) $q(z)$ will, as we adjust their tunable parameters, additionally make progress on the generative path: $z \sim q(z), x \sim q(x|z)$ itself being as indistinguishable as possible from the original image generating process $p(x)$.  Building and training the representative learning objective, as a side effect, ensures we also manage to build a good generative model.
+
+We can split this objective up and name the various terms:
+$$ \underbrace{\left\langle -\log q(x|z) \vphantom{\left\langle \frac p q \right\rangle} \right\rangle_p}_{D} + \underbrace{\left\langle \log \frac{p(z|x)}{q(z)}\right\rangle_p}_{R} \geq \underbrace{\left\langle -\log q(x) \vphantom{\left\langle \frac p q \right\rangle} \right\rangle_p}_{L} \geq \underbrace{\left\langle -\log p(x) \vphantom{\left\langle \frac p q \right\rangle} \right\rangle_p}_{H}, $$
+or in short:
+$$ D + R \geq L \geq H, $$
+
+<aside> <sup id="brokenelbo">xxa-broken</sup>
+<i>Fixing a Broken ELBO</i>. AA Alemi, B Poole, I Fischer, JV Dillon, RA Saurous, K Murphy. ICML 2018. arXiv: <a href="https://arxiv.org/abs/1711.00464">1711.00464</a>.
+</aside>
+a geometric story we tell in more detail in prior work.<a href="#brokenelbo"><sup>xxa-broken</sup></a>  The first term, the *distortion*, measures how well we are able to recover the original image after encoding it with the encoder $z \sim p(z|x)$ and then trying to decode back to the original image $q(x|z)$.  The second term in the objective is the *rate*, which measures the information theoretic cost of the encoding itself.  If Alice and Bob were attempting to communicate the encoding $z$, the KL between the encoding distribution and the prior measures the excess cost of communicating the encoding.
+
+If we are careful to split up the objective into its various reparameterization independent components, we can also explore some trade-offs between the different terms in the objective, adding some Lagrange multipliers, obtaining the $\beta$-VAE.<a href="#betavae"><sup>xxa-betavae</sup></a>:
+$$ \left\langle -\log q(x|z) \right\rangle_p} + \beta \left\langle \log \frac{p(z|x)}{q(z)}\right\rangle_p. $$
+
+<aside> <sup id="betavae">xxa-betavae</sup>
+<i>beta-VAE: Learning Basic Visual Concepts with a Constrained Variational Framework</i>.
+I Higgens et al. ICLR 2016. <a href="https://openreview.net/forum?id=Sy2fzU9gl">[OpenReview]</a>.
+</aside>
+
+All told, the universal recipe has given us a proper *representation learning* objective, albeit unsupervised.  We have defined what it could mean for a representation to be a good one and we are able to search now in the space of all possible representations.  Unfortunately, a bit is a bit and unless we bring some kind of auxiliary information to the table, the success and utility of this objective is often left to inductive biases in our particular choices of variational families.
 
 ## Variational Information Bottleneck
+
+If we want to be a bit more explicit in our representation learning objectives, we could *color the bits* by bringing and auxiliary variable to the table.  Imagine our real world distribution consists of pairs, $(x,y)$ drawn from some joint distribution $p(x,y)$ outside of our control.  Imagine images $X$ and labels $Y$.  As before, we can augment this world with a new random variable $Z$, a *representation*, which, in this example, we are interested in depending only on the image part, $p(z|x)$.  We do this because we'd like to be able to compute the representation of some downstream image without having access to its label.  As before, we've now defined a whole slew of possible worlds, consisting of all possible encoding distributions paired with our joint input distribution $p(x,y,z) =p(x,y)p(z|x)$.  How do we decide amongst these? What does success look like?  Let's define success as being able to use our learned representation $Z$, not to recreate the image, but only predict the auxiliary information $Y$.  This gives us a set of diagrams as in Figure xxf5 below.
 
 <figure id="vib" class="right">
   <center>
@@ -216,19 +250,19 @@ So far we've only ever represented the world as it *is* and haven't yet taken th
   </center>
 </figure> 
 
-## Diffusion
+<aside> <sup id="brokenelbo">xxa-broken</sup>
+<i>Deep Variational Information Bottleneck</i>. AA Alemi, I Fischer, JV Dillon, K Murphy. ICLR 2017. arXiv: <a href="https://arxiv.org/abs/1612.00410">1612.00410</a>.
+</aside>
+Following the universal recipe and taking the KL divergence between these two joints lets us reinvent the Variational Information Bottleneck:<a href="#vib"><sup>xxa-vib</sup></a>
 
-<figure id="diffusion" class="right">
-  <center>
-  <img width="95%" src="figures/kl-is-all-you-need/diffusion.png"
-    alt="A graphical version of Diffusion.">
-  <figcaption>
-  Figure xxf6. Variational Diffusion.
-  </figcaption>
-  </center>
-</figure> 
+$$ \left\langle \log \frac{p(y|x) p(z|x)}{q(y|z) q(z)} \right\rangle_p \geq \left\langle \log \frac{p(y|x)}{q(y|x)}\right\rangle_p \geq 0. $$
+Because KL is monotonic, this joint objective bounds the marginal conditional likelihood and we can rest assured that our predictive engine is still trying to mimic the labeling distribution.  This objective learns a representation that specifically aims to retain only the information that is relevant to predicting the auxiliary information contained in $Y$.  Because the objective is representation centric, we also learn a stochastic representation that can truly compress the inputs.
+
+TODO: more info and some background of how VIB behaves.
 
 ## Semi-Supervised Learning
+
+We say that VAEs came from trying to design a representation that could use the learned representation could recreate the images, and that VIB was motivated by saying we could use the learned representation to predict an auxiliary variable.  What if we instead wanted to do both?
 
 <figure id="semi-supervised" class="right">
   <center>
@@ -240,7 +274,33 @@ So far we've only ever represented the world as it *is* and haven't yet taken th
   </center>
 </figure> 
 
+We then obtain a type of semi-supervised VAE:
+
+$$ \left\langle -\beta \log q(x|z) - \gamma \log q(y|z) + \log \frac{p(z|x)}{q(z)} \right\rangle_p. $$
+Here $\beta$ and $\gamma$ have been inserted to let us play with the trade-offs between how much emphasize we place on the reconstruction and auxiliary variable respectively.
+
+## Diffusion
+
+As I outline in more detail in an <a href="diffusion.html">earlier post</a>, modern diffusion models can also be cast in this universal objective form.  We imagine a simple fixed forward process that iteratively adds Gaussian noise to an image, and try to learn a reverse process parameterized in a clever way.
+
+<figure id="diffusion" class="right">
+  <center>
+  <img width="95%" src="figures/kl-is-all-you-need/diffusion.png"
+    alt="A graphical version of Diffusion.">
+  <figcaption>
+  Figure xxf6. Variational Diffusion.
+  </figcaption>
+  </center>
+</figure> 
+
+The Variational interpretation of diffusion models makes clear that they are little more than deep hierarchical VAEs, though with some tricks that make training them much more tractable than a general hierarchical VAE.
+
+
 ## Bayesian Inference
+
+So far we've focused on *local representation learning*, wherein we want to form a representation of each example or image.  Let's now think a bit about *global representation learning*.  We are going to observe an entire dataset and want to somehow summarize what we've learned.  Now we imagine a forward process in which we sample a whole set of data, $D$, and need to form some kind of summary statistic or description of the data: $p(\theta|D)$. What would success look like here?  We'll if we aren't willing to assume much, we still might be willing to assume our data is *exchangeable*, that is that the order the data was generating in doesn't matter.  [De Finetti](https://en.wikipedia.org/wiki/Bruno_de_Finetti) tells us this is equivalent to being able to describe the data as being *conditionally i.i.d.* (independent and identically distributed).  That is, we will describe success as taking the form of a sort of generative story:
+$$ q(\theta) q(D|\theta), $$
+where we draw the summary $\theta$ from some *prior* and use it to generate the data with some *likelihood* which we can take to decompose: $q(D|\theta) = \prod_i q(x_i|\theta)$.
 
 <figure id="bayes" class="right">
   <center>
@@ -252,7 +312,16 @@ So far we've only ever represented the world as it *is* and haven't yet taken th
   </center>
 </figure> 
 
+It's the same story we've told several times now, our universal recipe gives us an objective, the KL divergence between these two joints which aims to make them as indistinguishable as possible:
+$$ \left\langle \log \frac{p(D)p(\theta|D)}{q(\theta)q(D|\theta)} \right\rangle_p . $$
+If we drop the constant terms outside of our control and separate terms into pieces and insert a trade-off parameter, we've reinvented a generalize form of variational Bayesian inference:
+$$ \left\langle -\beta \log q(D|\theta) + \log \frac{p(\theta|D)}{q(\theta)} \right\rangle_p. $$
+If we set $\beta=1$ and make our $p(\theta|D)$ expressive enough to cover the space of all possible distributions, minimizing this objective recovers the Bayesian posterior.  If we simply restrict our attention to some kind of parametric family of distributions $p(\theta|D)$ this is the ELBO used in variational Bayes.  Lots of names for the same idea: try to form a global representation of data that is as indistinguishable as possible from the data being exchangeable.
+
+
 ## Bayesian Neural Network
+
+We don't have to stop now, let's imagine we want to generate a global summary of data in the form of the best settings of the parameters of a neural network to make some supervised predictions.  We can do that to, we simply follow the universal recipe.  We draw the real world and the world of our desires.
 
 <figure id="bnn" class="right">
   <center>
@@ -264,7 +333,23 @@ So far we've only ever represented the world as it *is* and haven't yet taken th
   </center>
 </figure> 
 
+And take the KL betwixt them:
+$$ \left\langle -\beta \log q(y|x,\theta) + \log \frac{p(\theta|D)}{q(\theta)} \right\rangle_p, $$
+and we've reinvented Bayes By Backprop.<a href="#bbb"><sup>xxa-bbb</sup></a>
+
+<aside> <sup id="bbb">xxa-bbb</sup>
+<i>Weight Uncertainty in Neural Networks</i> Blundell et al. ICML 2015. arXiv: <a href="https://arxiv.org/abs/1505.05424">1505.05424</a>
+</aside>
+
+
 ## TherML
+
+From here you might be wondering what it would look like if we tried to be as honest as possible about the sort of standard practice in machine learning today.  In our [earlier work](https://arxiv.org/abs/1807.04162)<a href="#therml"><sup>xxa-therml</sup></a> we did exactly that and came up with the following diagram:
+
+<aside> <sup id="therml">xxa-therml</sup>
+<i>TherML: Thermodynamics of Machine Learning</i>
+AA Alemi, I Fisher. ICML2018 TFADGM Workshop. arXiv:<a href="https://arxiv.org/abs/1807.04162">1807.04162</a>
+</aside>
 
 <figure id="therml" class="right">
   <center>
@@ -276,7 +361,11 @@ So far we've only ever represented the world as it *is* and haven't yet taken th
   </center>
 </figure> 
 
+This gave us an objective that seemed to include all of the previous things discussed as special cases and left open the door for interesting behavior on the spots in between.
+
 ## Variational Prediction
+
+While most of the previous diagrams were all retellings of essentially the same story, more recently we've begun to wonder what it might look like if we try some more extreme rewirings of these kinds of diagrams.  What if we wanted to try to be so brazen as to invent something that might be an alternative to Bayesian inference, as a different sort of diagram that could provide a global representation learning objective.  One candidate would be the following:
 
 <figure id="vp" class="right">
   <center>
@@ -287,6 +376,19 @@ So far we've only ever represented the world as it *is* and haven't yet taken th
   </figcaption>
   </center>
 </figure> 
+
+Which we explore in some detail in [our recent work](https://arxiv.org/abs/2307.07568)<a href="#vp"><sup>xxa-vp</sup></a>
+
+<aside> <sup id="vp">xxa-vp</sup>
+<i>Variational Prediction</i>.
+AA Alemi, B Poole AABI2023. arXiv:<a href="https://arxiv.org/abs/2307.07568">23607.07568</a>
+</aside>
+
+I'm not sure this is better, but its certainly different.
+
+## Closing
+
+This post got fairly repetitive, but honestly that was the point.  A whole slew of existing and not yet invented machine learning objectives all seem to follow a very simple *universal recipe*.  Simply draw an accurate causal model of the world, then augment it with anything you wish and finally draw a second diagram in the same random variables that corresponds to your marker of success.  Take the KL between the two and you've got yourself a reasonable objective.  I hope this helps you understand some of these and potentially invent new ones of your own.
 
 ## Appendix - Pointwise Bounds
 
