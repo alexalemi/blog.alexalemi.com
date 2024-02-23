@@ -411,7 +411,7 @@ This post got fairly repetitive, but honestly that was the point.  A whole slew 
 
 </span>
 
-There is one caveat, I'm [a particular stickler](kl.html#appendix-a) for decomposing KL divergences in this way. I don't think it makes any dimensional sense.  I can't take the logarithm of a dimensional quantity, let alone a density, so I'm going to ruin the flow of this post to address this aside.  To fix the glitch, let's instead try to explicitly choose some tractable base measure $m(x)$ and insert it into our original objective:
+There is one caveat, I'm [a particular stickler](kl.html#appendix-a) for decomposing KL divergences in this way. I don't think it makes any dimensional sense.  I can't take the logarithm of a dimensional quantity, let alone a density.  To fix the glitch, let's instead try to explicitly choose some tractable base measure $m(x)$ and insert it into our original objective:
 
 $$ \left\langle \log \frac{p(x)}{q_\theta(x)} \right\rangle_p = \left\langle \log \frac{p(x) m(x)}{q_\theta(x)m(x)} \right\rangle = \left\langle \log \frac{p(x)}{m(x)} \right\rangle_p + \left\langle \log \frac{m(x)}{q_\theta(x)} \right\rangle_p . $$ 
 
@@ -427,7 +427,7 @@ If I'm being honest, this is something that bothers me that I don't fully unders
 
 </span>
 
-Since we are already on an aside, I'll go on another aside.  We've just motivated that a useful objective for learning a parametric distribution is to minimize the KL divergence between the true distribution and our parametric distribution, i.e. we should adjust the parameters of our distribution to maximize the likelihood of samples from the true distribution.  In practice however, we typically only have access to a *finite* number of samples from the true distribution and this introduces a difficulty.  If we wanted to, we could generate an unbiased estimate of the expected likelihood of our model using a finite number of samples from the true distribution:
+ We motivated that a useful objective for learning a parametric distribution is to minimize the KL divergence between the true distribution and our parametric distribution, i.e. we should adjust the parameters of our distribution to maximize the likelihood of samples from the true distribution.  In practice however, we typically only have access to a *finite* number of samples from the true distribution and this introduces a difficulty.  If we wanted to, we could generate an unbiased estimate of the expected likelihood of our model using a finite number of samples from the true distribution:
 $$ -\left\langle \log q(x|\theta) \right\rangle_p \approx -\frac 1 N \sum_{i=1}^N \log q(x_i|\theta). $$
 Nothing wrong here.  There is similarly nothing wrong with taking the gradient of this Monte Carlo estimate to generate an unbiased estimate of the gradient of the true likelihood:
 $$ -\nabla_\theta \left\langle \log q(x|\theta) \right\rangle_p \approx -\frac 1 N \sum_{i=1}^N \nabla_\theta \log q(x_i|\theta). $$
