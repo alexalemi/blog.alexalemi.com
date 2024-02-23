@@ -2,7 +2,9 @@
 Modern machine learning is a sea of initialisms: VAE, VIB, VDM, BBB, VB, etc.
 But, the more time I spend working in this field the more I come to appreciate
 that the core of essentially all modern machine learning methods is a single
-universal objective: KL Divergence minimization.  Even better, there is a very
+universal objective: 
+<a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">Kullback-Leibler (KL) divergence</a>
+minimization.  Even better, there is a very
 simple *universal recipe* you can follow to rederive most of the named
 objectives out there.  Understand KL, understand the recipe, and you'll
 understand all of these methods and be well on your way to deriving your own.
@@ -46,17 +48,22 @@ Cartoon modified from Kevan C. Herold, Jeffrey A. Bluestone, Type 1 Diabetes Imm
 
 ## KL Divergence as Expected Weight of Evidence
 
-Before we get into it, we need to make sure we're all starting on the same page.  I've written <a href="kl.html">before</a> about part of what makes KL divergence or the relative entropy so special, but for the purposes of the journey we are about to undertake, let's use the interpretation of KL divergence as <a href="kl.html#expected-weight-of-evidence">an expected weight of evidence</a>, which I'll briefly repeat here.<a href="#woe"><sup>xxa-woe</sup></a>
+Before we get into it, we need to make sure we're all starting on the same
+page.  Because KL divergence is so fundamental and special (as I've written
+about <a href="kl.html">before</a>) it has many different interpretations. For
+our purposes, the most useful interpretation is as <a
+href="kl.html#expected-weight-of-evidence">an expected weight of evidence</a>.<a href="#woe"><sup>xxa-woe</sup></a>
+I'll briefly build that up here.
 
 <aside> <sup id="woe">xxa-woe</sup>
 I think weight of evidence is one of the most underappreciated concepts.  For a nice overview see: <i>Weight of Evidence: A Brief Survey</i> by I.J. Good. <a href="https://link.springer.com/article/10.1007/BF01106578">[pdf]</a>.
 </aside>
 
-Imagine we have two hypotheses $P$ and $Q$ and we're trying to decide which of these two models is a better model of the world.  We go out an collect some data $D$ and would like to use that data to help us decide between the two models.  Being good probabilistic thinkers with a penchant for gambling, what we're interested in is:
+Imagine we have two hypotheses $P$ and $Q$ and we're trying to decide which of these two is a better model of the world.  We go out an collect some data $D$ and would like to use that data to help us discriminate between the two models.  Being good probabilistic thinkers with a penchant for gambling, what we're interested in is:
 
 $$ \frac{\Pr(P|D)}{\Pr(Q|D)}, $$
 
-the <a href="https://en.wikipedia.org/wiki/Odds"><i>odds</i></a> of $P$ versus $Q$. Using <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">Bayes rule</a> we can express this as:
+the <a href="https://en.wikipedia.org/wiki/Odds"><i>odds</i></a> of $P$ versus $Q$, given the data $D$. Using <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">Bayes rule</a> we can express this as:
 
 $$ \frac{\Pr(P|D)}{\Pr(Q|D)} = \frac{\Pr(D|P)}{\Pr(D|Q)} \frac{\Pr(P)}{\Pr(Q)}, $$
 
@@ -76,24 +83,27 @@ Now, the <i>posterior log odds</i> is expressed as the sum of the <i>weight of e
   </center>
 </figure> 
 
-This *weight of evidence* tells us how much to update our beliefs in light of evidence.  If you picture a sort of Belief-O-Meter™ for your own beliefs, each bit of independent evidence gives you an additive update for the meter, pushing your beliefs either left or right, towards either $P$ or $Q$.  For simple hypothesis taking the form of probability distributions, this weight of evidence is just the log density ratios of the data under the models:
+This *weight of evidence* tells us how much to update our beliefs in light of evidence.  If you picture a sort of Belief-O-Meter™ for your own beliefs, each bit of independent evidence gives you an additive update for the meter, pushing your beliefs either toward $P$ or toward $Q$.  For simple hypothesis taking the form of probability distributions, this weight of evidence is just the log density ratios of the data under the models:
 
 $$ \log \frac{\Pr(D|P)}{\Pr(D|Q)} \text{ becomes } \log \frac{p(D)}{q(D)}. $$
 
-What then is <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">the Kullback-Leibler (KL) divergence</a>?
-Imagine if one of our two hypotheses is actually true.  If $P$ was the probability distribution governing the actual world, the <i>expected weight of evidence</i> we would accumulate from observing some data would be:<a href="#brakets"><sup>xxa3</sup></a>
+<!-- TODO Explain the change in notation here. -->
+
+<!-- What then is <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">the Kullback-Leibler (KL) divergence</a> ? -->
+OK, so what does this have to do with the <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">KL divergence</a>?
+Imagine if one of our two hypotheses is actually true.  If $P$ was the probability distribution governing the actual world, the <i>expected weight of evidence</i> we would accumulate from observing some data would be, the KL divergence:<a href="#brakets"><sup>xxa3</sup></a>
 
 $$ I[p;q] \equiv \int dx\, p(x) \log \frac{p(x)}{q(x)} \equiv \left\langle \log \frac{p(x)}{q(x)} \right\rangle_{p(x)} . $$
 <aside> <sup id="brakets">xxa3</sup>
 To clean up the notation, I like using brakets: $ \langle \cdot \rangle_p \equiv \mathbb{E}_{p}[\cdot] \equiv \int dx\, p(x) [\cdot]$, and to clean things up further (or because I'm lazy) I'll often leave off the subscript saying which distribution the brakets are to be taken with respect to, in any of those cases you can assume its a full joint $p$ distribution (over any variables that are otherwise unbound).
 </aside>
 
-We can interpret the KL divergence as a measure of how quickly we would be able to discern between hypotheses $P$ and $Q$ if $P$ were true.  Similarly, the <i>reverse KL</i> is:
+Therefore, we can interpret the KL divergence as a measure of how quickly we would be able to discern between hypotheses $P$ and $Q$ if $P$ were true.  Similarly, the <i>reverse KL</i> is:
 
 $$ I[q;p] \equiv \int dx\, q(x) \log \frac{q(x)}{p(x)} \equiv \left\langle \log \frac{q(x)}{p(x)} \right\rangle_{q(x)}, $$
 
 
-a measure of how quickly we'd be able to discern between $P$ And $Q$ if $Q$ were true.  Suddenly, the asymmetry of the KL divergence, an issue that often causes consternation is no longer a mystery.  We should expect the expected weight of evidence to be asymmetric.   As an extreme example, imagine we were trying to decide between two hypothesis regarding some coin flips we are about to observe.  $P$ is the hypothesis that the coin is fair while $Q$ is the hypothesis the coin is a cheating, double-headed coin.  In this case, if we actually had a fair coin, we expect to be able to perfectly discern the two hypotheses (infinite KL) because we will eventually observe a tails, an impossible situation under the alternative ($Q$) hypothesis.  Meanwhile, if the coin is actually a cheat, we'll be able to collect, on average, 1 bit of evidence per flip in favor of the hypothesis that the coin is a cheat, but we will only ever observe heads and so never be able to perfectly rule out the possibility that the coin is fair and we've simply observed some miracle.<a href="#million"><sup>xxa4</sup></a>
+a measure of how quickly we'd be able to discern between $P$ and $Q$ if $Q$ were true.  Suddenly, the asymmetry of the KL divergence, an issue that often causes consternation is no longer a mystery.  We should expect the expected weight of evidence to be asymmetric.   As an extreme example, imagine we were trying to decide between two hypothesis regarding some coin flips we are about to observe.  $P$ is the hypothesis that the coin is fair while $Q$ is the hypothesis the coin is a cheating, double-headed coin.  In this case, if we actually had a fair coin, we expect to be able to perfectly discern the two hypotheses (infinite KL) because we will eventually observe a tails, an impossible situation under the alternative ($Q$) hypothesis.  Meanwhile, if the coin is actually a cheat, we'll be able to collect, on average, 1 bit of evidence per flip in favor of the hypothesis that the coin is a cheat, but we will only ever observe heads and so never be able to perfectly rule out the possibility that the coin is fair and we've simply observed some miracle.<a href="#million"><sup>xxa4</sup></a>
 
 <aside> <sup id="million">xxa4</sup>
 As a true aside, people often say "one in a million" but lack a good mental model of just how rare that is.  20 heads in a row for a fair coin is a one in a million event. This fun fact and others can be found <a href="https://www.stat.berkeley.edu/~aldous/Real-World/million.html">here, at David Aldous's Home Page</a>.
@@ -250,7 +260,7 @@ $$ D + R \geq L \geq H, $$
 a geometric story we tell in more detail in prior work.<a href="#brokenelbo"><sup>xxa-broken</sup></a>  The first term, the *distortion*, measures how well we are able to recover the original image after encoding it with the encoder $z \sim p(z|x)$ and then trying to decode back to the original image $q(x|z)$.  The second term in the objective is the *rate*, which measures the information theoretic cost of the encoding itself.  If Alice and Bob were attempting to communicate the encoding $z$, the KL between the encoding distribution and the prior measures the excess cost of communicating the encoding.
 
 If we are careful to split up the objective into its various reparameterization independent components, we can also explore some trade-offs between the different terms in the objective, adding some Lagrange multipliers, obtaining the $\beta$-VAE.<a href="#betavae"><sup>xxa-betavae</sup></a>:
-$$ \left\langle -\log q(x|z) \right\rangle_p} + \beta \left\langle \log \frac{p(z|x)}{q(z)}\right\rangle_p. $$
+$$ \left\langle -\log q(x|z) \right\rangle_p + \beta \left\langle \log \frac{p(z|x)}{q(z)}\right\rangle_p. $$
 
 <aside> <sup id="betavae">xxa-betavae</sup>
 <i>beta-VAE: Learning Basic Visual Concepts with a Constrained Variational Framework</i>.
