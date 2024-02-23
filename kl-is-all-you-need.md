@@ -5,7 +5,10 @@ most of the named objectives out there.
 In the past I've discussed some of the 
 <a href="kl.html">special properties of KL divergence</a>, or how you can derive
 <a href="diffusion.html">VAEs or Diffusion Models</a> by means of a simple KL objective, but in 
-light of a recent <a href="https://www.alexalemi.com/talks/information-theory-for-representation-learning.html">talk</a> I gave at the InfoCog Workshop at NeurIPS 2024, I'd like to prepare essentially a written copy of that talk.<a href="#multivariate-ib"><sup>xxa-attribution</sup></a>
+light of a recent 
+<a href="http://localhost:8000/talks/information-theory-for-representation-learning.html">talk</a>
+<a href="https://docs.google.com/presentation/d/1YwgRzjWATHVX60Me6qOEOxQIiFjxdqO0_9jdAWXFx74/present?usp=sharing&resourcekey=0-T4ume8tMl__GoYZnKgHMEg">[slides]</a> 
+I gave at the InfoCog Workshop at NeurIPS 2024, I'd like to prepare essentially a written copy of that talk.<a href="#multivariate-ib"><sup>xxa-attribution</sup></a>
 
 <aside> <sup id="figattribution">xxa-attribution</sup>
 This is also essentially my own retelling of <a href="https://www.cs.huji.ac.il/labs/learning/Theses/Slonim_PhD.pdf">Noam Slonim's thesis on the Multivariate Information Bottleneck</a>.
