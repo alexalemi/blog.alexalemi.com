@@ -1,14 +1,26 @@
 
+Modern machine learning is a sea of initialisms: VAE, VIB, VDM, BBB, VB, etc.
+But, the more time I spend working in this field the more I come to appreciate
+that the core of essentially all modern machine learning methods is a single
+universal objective: KL Divergence minimization.  Even better, there is a very
+simple *universal recipe* you can follow to rederive most of the named
+objectives out there.  Understand KL, understand the recipe, and you'll
+understand all of these methods and be well on your way to deriving your own.
+
+<!--
 The more I work on machine learning, the more I'm embarrassed to admit that most of what I'm worked on is all so blindingly simple.  At the core of essentially all of modern machine learning is a single
 objective: KL minimization, and there is a very simple recipe to follow to re-derive
-most of the named objectives out there. 
+most of the named objectives out there.  -->
+
+
 In the past I've discussed some of the 
-<a href="kl.html">special properties of KL divergence</a>, or how you can derive
-<a href="diffusion.html">VAEs or Diffusion Models</a> by means of a simple KL objective, but in 
-light of a recent 
+<a href="kl.html">special properties of KL divergence</a>, and how you can derive
+<a href="diffusion.html">VAEs or Diffusion Models</a> by means of a simple KL objective. 
+What follows is an extension of those ideas, essentially a written version of a recent 
 <a href="http://localhost:8000/talks/information-theory-for-representation-learning.html">talk</a>
 <a href="https://docs.google.com/presentation/d/1YwgRzjWATHVX60Me6qOEOxQIiFjxdqO0_9jdAWXFx74/present?usp=sharing&resourcekey=0-T4ume8tMl__GoYZnKgHMEg">[slides]</a> 
-I gave at the InfoCog Workshop at NeurIPS 2024, I'd like to prepare essentially a written copy of that talk.<a href="#multivariate-ib"><sup>xxa-attribution</sup></a>
+I gave at the InfoCog Workshop at NeurIPS 2024.
+<a href="#multivariate-ib"><sup>xxa-attribution</sup></a>
 
 <aside> <sup id="figattribution">xxa-attribution</sup>
 This is also essentially my own retelling of <a href="https://www.cs.huji.ac.il/labs/learning/Theses/Slonim_PhD.pdf">Noam Slonim's thesis on the Multivariate Information Bottleneck</a>.
@@ -27,7 +39,7 @@ This is also essentially my own retelling of <a href="https://www.cs.huji.ac.il/
 </figure> 
 
 <aside> <sup id="figattribution">xxa2</sup>
-Cartoon modified from Kevan C. Herold, Jeffrey A. Bluestone ,Type 1 Diabetes Immunotherapy: Is the Glass Half Empty or Half Full?. Sci. Transl. Med.3,95fs1-95fs1(2011).
+Cartoon modified from Kevan C. Herold, Jeffrey A. Bluestone, Type 1 Diabetes Immunotherapy: Is the Glass Half Empty or Half Full?. Sci. Transl. Med.3,95fs1-95fs1(2011).
 <a href="https://doi.org/10.1126/scitranslmed.3002981">DOI:10.1126/scitranslmed.3002981</a>.
 </aside>
 
