@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Tue, 20 Feb 2024 20:45:33 +0000</lastBuildDate><item><title>Why KL?</title><link>https://blog.alexalemi.com/kl.html</link><description>Why is the KL divergence so special?</description><content:encoded>&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Liebler
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Fri, 23 Feb 2024 16:13:49 +0000</lastBuildDate><item><title>Why KL?</title><link>https://blog.alexalemi.com/kl.html</link><description>Why is the KL divergence so special?</description><content:encoded>&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Liebler
 divergence&lt;/a&gt;,
 or KL divergence, or relative entropy, or relative information, or information
 gain, or expected weight of evidence, or information divergence
@@ -167,7 +167,7 @@ $$ f(x) = c \log x. $$
 We can roll the choice of multiplicative constant into our choice of basis for the logarithm and arrive at our final form
 for our information gain:
 $$ I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x)}. $$&lt;/p&gt;
-&lt;p id="#non-negative-proof"&gt;As for the non-negativity, our final form satisfies that property.  Because we have that $\log x \leq x -1$:
+&lt;div id="#nonnegative"&gt;As for the non-negativity, our final form satisfies that property.  Because we have that $\log x \leq x -1$:
 $$ I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x)} = -\int \mathrm dx \, p(x) \log \frac{q(x)}{p(x)} \geq
 -\int \mathrm dx\, p(x) \left( \frac{q(x)}{p(x)} - 1 \right) = 0. $$
 &lt;aside&gt;
@@ -176,7 +176,7 @@ $$ I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x)} = -\int \mathrm dx \, 
 &lt;/aside&gt;
 &lt;/p&gt;
 &lt;h2&gt;Bayes Rule&lt;/h2&gt;
-&lt;aside&gt; &lt;sup id="caticha2"&gt;7&lt;/sup&gt;
+&lt;aside&gt; &lt;sup id="caticha2"&gt;52&lt;/sup&gt;
   I first saw this form of motivation for Bayes Rule in
   &lt;i&gt;Lectures on Probability, Entropy and Statistical Physics&lt;/i&gt; by
   Ariel Caticha. &lt;a href="https://arxiv.org/abs/0808.0012"&gt;arXiv:0808.0012&lt;/a&gt;
@@ -184,7 +184,7 @@ $$ I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x)} = -\int \mathrm dx \, 
 Having identified the right way to measure how much information is gained when we update a distribution
 from $q$ to $p$, why don't we put this to practical use and try to figure out how we 
 &lt;i&gt;ought&lt;/i&gt; to update
-our beliefs in light of evidence or observations.&lt;sup&gt;&lt;a href="#caticha2"&gt;7&lt;/a&gt;&lt;/sup&gt;
+our beliefs in light of evidence or observations.&lt;sup&gt;&lt;a href="#caticha2"&gt;52&lt;/a&gt;&lt;/sup&gt;
 &lt;p&gt;Returning to our disease testing example, let's say you get the test done and receive a
 positive result $(\mathcal T = T)$.
 What should your new distribution of beliefs be? Well, first off if we've observed the results of the test
@@ -260,7 +260,10 @@ Bayes' rule run on the prior beliefs.&lt;/p&gt;
 &lt;p&gt;&lt;span id="expected-weight-of-evidence"&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2&gt;Expected Weight of Evidence&lt;/h2&gt;
 &lt;p&gt;Traditionally, KL is interpreted from a coding perspective, a view I've included in an appendix below,
-but here I offer a different perspective from the viewpoint of model selection.&lt;/p&gt;
+but here I offer a different perspective from the viewpoint of model selection.&lt;a href="#woe"&gt;&lt;sup&gt;8&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;aside&gt; &lt;sup id="woe"&gt;8&lt;/sup&gt;
+I think weight of evidence is one of the most underappreciated concepts.  For a nice overview see: &lt;i&gt;Weight of Evidence: A Brief Survey&lt;/i&gt; by I.J. Good. &lt;a href="https://link.springer.com/article/10.1007/BF01106578"&gt;[pdf]&lt;/a&gt;.
+&lt;/aside&gt;
 &lt;p&gt;Above we saw that we can motivate Bayesian inference as choosing a posterior belief distribution
 that has the minimal information gain over our prior distribution of beliefs while being consistent
 with our observations.  This guides us towards forming better belief distributions, but what if we
@@ -298,12 +301,12 @@ statement more precise, we need a better language to talk about the magnitudes o
 &lt;h2&gt;How loud is the Evidence?&lt;/h2&gt;
 &lt;p&gt;Our measurement of the amount of information was only unique up to a choice of multiplicative constant.  This is equivalent to
 our choice of base for the logarithm.  We can think of this as the &lt;em&gt;units&lt;/em&gt; we use to measure our information.  The traditional choices
-would be to use the base-2 logarithm and measure the information in &lt;em&gt;bits&lt;/em&gt;,&lt;sup&gt;&lt;a href="#bit"&gt;8&lt;/a&gt;&lt;/sup&gt;
+would be to use the base-2 logarithm and measure the information in &lt;em&gt;bits&lt;/em&gt;,&lt;sup&gt;&lt;a href="#bit"&gt;9&lt;/a&gt;&lt;/sup&gt;
 or to use the more mathematically convenient natural
 logarithm and measure the information in &lt;em&gt;nats&lt;/em&gt;.  Another option is to measure the information in
 &lt;a href="https://en.wikipedia.org/wiki/Hartley_(unit)"&gt;&lt;em&gt;decibans&lt;/em&gt;&lt;/a&gt; or &lt;em&gt;decibels&lt;/em&gt; or &lt;em&gt;Hartley's&lt;/em&gt;, wherein
 we use ten times the base-10 logarithm.&lt;/p&gt;
-&lt;aside&gt; &lt;sup id="bit"&gt;8&lt;/sup&gt;
+&lt;aside&gt; &lt;sup id="bit"&gt;9&lt;/sup&gt;
  &lt;i&gt;bit&lt;/i&gt; being short for &lt;i&gt;binary digit&lt;/i&gt;.  
  &lt;i&gt;nat&lt;/i&gt; is then short for &lt;i&gt;natural digit&lt;/i&gt;.
  People sometimes suggest &lt;i&gt;dit&lt;/i&gt; for the base-10 &lt;/i&gt;decimal digit&lt;/i&gt;.
@@ -384,12 +387,12 @@ in Figure 3 is a large visual representation you can play with.&lt;/p&gt;
 decibels is that it seems like 1 dB roughly corresponds the smallest detectable value that people
 notice in terms of a change in underlying distribution, being the difference between &lt;i&gt;even chance&lt;/i&gt;
 and 5 to 4 odds, &lt;i&gt;moderate probability&lt;/i&gt; or &lt;i&gt;better than even chance&lt;/i&gt;.&lt;/p&gt;
-&lt;aside id="quantifying"&gt;&lt;sup&gt;9&lt;/sup&gt; 
+&lt;aside id="quantifying"&gt;&lt;sup&gt;10&lt;/sup&gt; 
   &lt;a href="https://projecteuclid.org/euclid.ss/1177012242"&gt;&lt;i&gt;Quantifying Probabilistic Expressions&lt;/i&gt; by
   Frederick Mosteller and Cleo Youtz&lt;/a&gt;.
 &lt;/aside&gt;
 Additionally, $10 \textrm{ dB}$ corresponds to 10 to 1 odds, or 91% probability, which people associate
-with events being &lt;i&gt;almost certain&lt;/i&gt; or happening &lt;i&gt;almost always&lt;/i&gt;. &lt;sup&gt;&lt;a href="#quantifying"&gt;9&lt;/a&gt;&lt;/sup&gt;.
+with events being &lt;i&gt;almost certain&lt;/i&gt; or happening &lt;i&gt;almost always&lt;/i&gt;. &lt;sup&gt;&lt;a href="#quantifying"&gt;10&lt;/a&gt;&lt;/sup&gt;.
 &lt;p&gt;The traditional statistical threshold for reported results is a &lt;a href="https://en.wikipedia.org/wiki/P-value"&gt;p-value&lt;/a&gt;
 of 0.05, which is often &lt;a href="https://en.wikipedia.org/wiki/Misuse_of_p-values"&gt;misinterpreted&lt;/a&gt;
 to mean that the probability the null hypothesis is less than
@@ -443,12 +446,12 @@ $$\min I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x;\theta)}. $$
 The biggest complication is that we don't actually know what the true distribution of the data is. We can, however, sample data.  Luckily for us, as far as this as an objective for $\theta$ goes, we can treat the entropy of $p(x)$ as
 a constant.  This motivates the traditional maximum likelihood objective:
 $$ \max \int \mathrm dx \, \log q(x;\theta). $$&lt;/p&gt;
-&lt;aside id="gpt3"&gt;&lt;sup&gt;10&lt;/sup&gt;
+&lt;aside id="gpt3"&gt;&lt;sup&gt;11&lt;/sup&gt;
   For instance, the latest &lt;a href="https://arxiv.org/abs/2005.14165"&gt;GPT-3&lt;/a&gt; model trained by OpenAI,
   was trained on less than half of the training set. (See Table 2.2 in the paper.) 
 &lt;/aside&gt;
 If we had an infinite dataset, maximum likelihood is the same as minimizing the relative entropy between the real world and 
-our model.  Unfortunately, we don't often have infinite datasets.&lt;sup&gt;&lt;a href="#gpt3"&gt;10&lt;/a&gt;&lt;/sup&gt;
+our model.  Unfortunately, we don't often have infinite datasets.&lt;sup&gt;&lt;a href="#gpt3"&gt;11&lt;/a&gt;&lt;/sup&gt;
 On finite datasets, maximum likelihood can still be interpreted as minimizing a KL divergence, but now
 the KL divergence between the *empirical distribution* $\hat p(x) = \sum_i \delta(x - x_i) $
 and our model $q(x;\theta)$.
@@ -460,11 +463,11 @@ the other.  Because of the lack of reparameterization independence, care must
 be taken to ensure that the likelihoods of the two models are evaluated using
 the same measure, but provided they are:&lt;/p&gt;
 &lt;p&gt;$$ L_1 - L_2 = \mathbb{E}\left[ \log q_1(x) \right] - \mathbb{E}\left[ \log q_2(x) \right] = \mathbb{E}\left[ \log \frac{q_1(x)}{q_2(x)} \right] $$&lt;/p&gt;
-&lt;aside id="mnist"&gt;&lt;sup&gt;11&lt;/sup&gt;
+&lt;aside id="mnist"&gt;&lt;sup&gt;12&lt;/sup&gt;
   The entirety of which can fit in a &lt;a href="https://twitter.com/alemi/status/1042658244609499137"&gt;tweet&lt;/a&gt;.
 &lt;/aside&gt;
 Given the size of test sets we have for modern image datasets, this means that very small changes in likelihood can be 
-interpreted as large confidences in the superiorities of models.  Take for instance something as simple as binary static MNIST.&lt;sup&gt;&lt;a href="#mnist"&gt;11&lt;/a&gt;&lt;/sup&gt;  Here, with 10,000 test set images, a difference in likelihoods of 0.0013 dB or 0.0004 nats corresponds to 13 dB of evidence for the one model over the second.
+interpreted as large confidences in the superiorities of models.  Take for instance something as simple as binary static MNIST.&lt;sup&gt;&lt;a href="#mnist"&gt;12&lt;/a&gt;&lt;/sup&gt;  Here, with 10,000 test set images, a difference in likelihoods of 0.0013 dB or 0.0004 nats corresponds to 13 dB of evidence for the one model over the second.
 &lt;h2&gt;Appendix A: Whither Continuous Entropy&lt;/h2&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;span id="appendix-a"&gt;The&lt;/span&gt; relative entropy really is the proper way to define entropy.  For all
 of the things that Shannon got right, he flubbed a bit when he defined the
@@ -474,29 +477,29 @@ $$ H(P) = -\sum_i p_i \log p_i $$&lt;/p&gt;
 to continuous distributions.  The continuous analog:
 $$ H(P) = -\int \mathrm dx\, p(x) \log p(x) $$
 isn't &lt;em&gt;reparameterization independent&lt;/em&gt;.  Consider for instance the distribution
-of adult human heights: &lt;sup&gt;&lt;a href="#bimodal"&gt;12&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+of adult human heights: &lt;sup&gt;&lt;a href="#bimodal"&gt;13&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;figure&gt;
   &lt;center&gt;
   &lt;img src="figures/adult_heights.svg"
     alt="Distribution of adult heights."&gt;
-  &lt;figcaption&gt;Figure 1. Distribution of adult heights. &lt;sup&gt;&lt;a href="#ourworld"&gt;13&lt;/a&gt;&lt;/sup&gt;&lt;/figcaption&gt;
+  &lt;figcaption&gt;Figure 1. Distribution of adult heights. &lt;sup&gt;&lt;a href="#ourworld"&gt;14&lt;/a&gt;&lt;/sup&gt;&lt;/figcaption&gt;
   &lt;/center&gt;
 &lt;/figure&gt;
-&lt;aside&gt; &lt;sup id="bimodal"&gt;12&lt;/sup&gt;
+&lt;aside&gt; &lt;sup id="bimodal"&gt;13&lt;/sup&gt;
   Note that you may have heard that 
   &lt;a href="https://www.johndcook.com/blog/2008/07/20/why-heights-are-normally-distributed/"&gt;heights are normally distributed&lt;/a&gt;.
   Adult male (or female) heights are normally distributed, but differ in their means and variances, making the 
   &lt;a href="https://www.johndcook.com/blog/2008/11/25/distribution-of-adult-heights/"&gt;distribution of adult heights a mixture distribution&lt;/a&gt;.
 &lt;/aside&gt;
-&lt;aside&gt; &lt;sup id="ourworld"&gt;13&lt;/sup&gt;
+&lt;aside&gt; &lt;sup id="ourworld"&gt;14&lt;/sup&gt;
   Data taken from 
   &lt;a href="https://ourworldindata.org/human-height"&gt;ourworldindata.org&lt;/a&gt;.
 &lt;/aside&gt;
 &lt;p&gt;If you measure the continuous entropy of this distribution measured
 in centimeters you get 5.4 bits.  If you instead measure the entropy
 of the same distribution in feet you get 0.43 bits.  If you instead
-were to measure heights in meters it would be -1.3 bits! &lt;sup&gt;&lt;a href="#negative"&gt;14&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;aside&gt; &lt;sup id="negative"&gt;14&lt;/sup&gt;
+were to measure heights in meters it would be -1.3 bits! &lt;sup&gt;&lt;a href="#negative"&gt;15&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;aside&gt; &lt;sup id="negative"&gt;15&lt;/sup&gt;
   It seems strange to have a negative entropy, but in this case, it is basically
   reflecting the fact that in terms of meters, the human height distribution doesn't
   span a whole meter in breadth, so it actually takes fewer &lt;i&gt;relative&lt;/i&gt; bits
