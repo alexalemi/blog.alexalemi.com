@@ -31,13 +31,17 @@ Cartoon modified from Kevan C. Herold, Jeffrey A. Bluestone ,Type 1 Diabetes Imm
 
 ## KL Divergence as Expected Weight of Evidence
 
-Before we get into it, we need to make sure we're all starting on the same page.  I've written <a href="kl.html">before</a> about part of what makes KL divergence or the relative entropy so special, but for the purposes of the journey we are about to undertake, let's use the interpretation of KL divergence as <a href="kl.html#expected-weight-of-evidence">an expected weight of evidence</a>, which I'll briefly repeat here.
+Before we get into it, we need to make sure we're all starting on the same page.  I've written <a href="kl.html">before</a> about part of what makes KL divergence or the relative entropy so special, but for the purposes of the journey we are about to undertake, let's use the interpretation of KL divergence as <a href="kl.html#expected-weight-of-evidence">an expected weight of evidence</a>, which I'll briefly repeat here.<a href="#woe"><sup>xxa-woe</sup></a>
+
+<aside> <sup id="woe">xxa-woe</sup>
+I think weight of evidence is one of the most underappreciated concepts.  For a nice overview see: <i>Weight of Evidence: A Brief Survey</i> by I.J. Good. <a href="https://link.springer.com/article/10.1007/BF01106578">[pdf]</a>.
+</aside>
 
 Imagine we have two hypotheses $P$ and $Q$ and we're trying to decide which of these two models is a better model of the world.  We go out an collect some data $D$ and would like to use that data to help us decide between the two models.  Being good probabilistic thinkers with a penchant for gambling, what we're interested in is:
 
 $$ \frac{\Pr(P|D)}{\Pr(Q|D)}, $$
 
-the <a href="https://en.wikipedia.org/wiki/Odds"><i>odds</i></a> of $P$ versus $Q$. Using <a href="https://en.wikipedia.org/wiki/Bayes\%27_theorem">Bayes rule</a> we can express this as:
+the <a href="https://en.wikipedia.org/wiki/Odds"><i>odds</i></a> of $P$ versus $Q$. Using <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">Bayes rule</a> we can express this as:
 
 $$ \frac{\Pr(P|D)}{\Pr(Q|D)} = \frac{\Pr(D|P)}{\Pr(D|Q)} \frac{\Pr(P)}{\Pr(Q)}, $$
 
@@ -59,9 +63,10 @@ Now, the <i>posterior log odds</i> is expressed as the sum of the <i>weight of e
 
 This *weight of evidence* tells us how much to update our beliefs in light of evidence.  If you picture a sort of Belief-O-Meter™ for your own beliefs, each bit of independent evidence gives you an additive update for the meter, pushing your beliefs either left or right, towards either $P$ or $Q$.  For simple hypothesis taking the form of probability distributions, this weight of evidence is just the log density ratios of the data under the models:
 
-$$ \log \frac{\Pr(D|P)}{\Pr(D|Q)} \to \log \frac{p(D)}{q(D)}. $$
+$$ \log \frac{\Pr(D|P)}{\Pr(D|Q)} \text{ becomes } \log \frac{p(D)}{q(D)}. $$
 
-What then is <a href="https://en.wikipedia.org/wiki/Kullback\%E2\%80\%93Leibler_divergence">the Kullback-Leibler (KL) divergence</a>? Imagine if one of our two hypotheses is actually true.  If $P$ was the probability distribution governing the actual world, the <i>expected weight of evidence</i> we would accumulate from observing some data would be:<a href="#brakets"><sup>xxa3></sup></a>
+What then is <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">the Kullback-Leibler (KL) divergence</a>?
+Imagine if one of our two hypotheses is actually true.  If $P$ was the probability distribution governing the actual world, the <i>expected weight of evidence</i> we would accumulate from observing some data would be:<a href="#brakets"><sup>xxa3</sup></a>
 
 $$ I[p;q] \equiv \int dx\, p(x) \log \frac{p(x)}{q(x)} \equiv \left\langle \log \frac{p(x)}{q(x)} \right\rangle_{p(x)} . $$
 <aside> <sup id="brakets">xxa3</sup>
@@ -70,7 +75,7 @@ To clean up the notation, I like using brakets: $ \langle \cdot \rangle_p \equiv
 
 We can interpret the KL divergence as a measure of how quickly we would be able to discern between hypotheses $P$ and $Q$ if $P$ were true.  Similarly, the <i>reverse KL</i> is:
 
-$$ I[q;p] \equiv \int dx\, q(x) \log \frac{p(x)}{q(x)} \equiv \left\langle \log \frac{p(x)}{q(x)} \right\rangle_{q(x)}, $$
+$$ I[q;p] \equiv \int dx\, q(x) \log \frac{q(x)}{p(x)} \equiv \left\langle \log \frac{q(x)}{p(x)} \right\rangle_{q(x)}, $$
 
 
 a measure of how quickly we'd be able to discern between $P$ And $Q$ if $Q$ were true.  Suddenly, the asymmetry of the KL divergence, an issue that often causes consternation is no longer a mystery.  We should expect the expected weight of evidence to be asymmetric.   As an extreme example, imagine we were trying to decide between two hypothesis regarding some coin flips we are about to observe.  $P$ is the hypothesis that the coin is fair while $Q$ is the hypothesis the coin is a cheating, double-headed coin.  In this case, if we actually had a fair coin, we expect to be able to perfectly discern the two hypotheses (infinite KL) because we will eventually observe a tails, an impossible situation under the alternative ($Q$) hypothesis.  Meanwhile, if the coin is actually a cheat, we'll be able to collect, on average, 1 bit of evidence per flip in favor of the hypothesis that the coin is a cheat, but we will only ever observe heads and so never be able to perfectly rule out the possibility that the coin is fair and we've simply observed some miracle.<a href="#million"><sup>xxa4</sup></a>
@@ -85,13 +90,13 @@ In what follows, we'll need to use two mathematical properties of the KL diverge
 
 $$ I[p;q] \equiv \int dx\, p(x) \log \frac{p(x)}{q(x)} \geq 0, $$ 
 
-which I'll leave as an exercise to the reader, or you can see a proof in the <a href="kl.html#non-negative-proof">previous post</a>. In the context of our interpretation of KL divergence as an expected weight of evidence, the non-negativity of KL divergence means, essentially, that the world can't lie to us.  If we are trying to decide between two hypotheses, and one of them happens to be correct, we have to, we must, we have to, we must, on average, be pushed in the direction of the correct hypothesis.
+which I'll leave as an exercise to the reader, or you can see a proof in the <a href="kl.html#nonnegative">previous post</a>. In the context of our interpretation of KL divergence as an expected weight of evidence, the non-negativity of KL divergence means, essentially, that the world can't lie to us.  If we are trying to decide between two hypotheses, and one of them happens to be correct, we have to, we must, we have to, we must, on average, be pushed in the direction of the correct hypothesis.  Even the Devil can't construct a $q \neq p$ that we would be led to believe after seeing enough samples from $p$.
 
 The other property we'll use is the *monotonicity* of the KL divergence.  This is a generalized version of the [data processing inequality](https://en.wikipedia.org/wiki/Data_processing_inequality).  If we perform some kind of processing on our random variables, it should only make it harder to discern between two hypotheses, not easier.  In particular, the version we'll need today concerns *marginalization*, if I have two joint distributions defined on two random variables, it always has to be the case that the KL divergence between their two marginals must be less than or equal to the joint KL:
 $$ \int dx\, dy\, p(x,y) \log \frac{p(x,y)}{q(x,y)} \geq \int dx\, p(x) \log \frac{p(x)}{q(x)}, $$
 which is easy to show if you decompose $p(x,y) = p(x) p(y|x)$ and use the fact that all KL divergences (including the conditional $I[p(y|x);q(y|x)] \geq 0$ are non-negative.
 
-Again, in terms of our current interpretation, this makes sense, if I have some beliefs defined over several variables, if I only get to observe some subset of them, it should be harder for me to discern the beliefs.  The less I look at, the less I see.
+Again, in terms of our current interpretation, this makes sense. If I have some beliefs defined over several variables, if I only get to observe some subset of them, it should be harder for me to discern the beliefs.  The less I look at, the less I see.
 
 ## Universal Recipe
 
@@ -115,10 +120,14 @@ We'll start with the problem of density estimation.  Let's say we have some blac
   <img width="95%" src="figures/kl-is-all-you-need/density-estimation.png"
     alt="A graphical version of density estimation, the left shows the distribution $p(x)$ where $X$ is a random variable denoting images. The right shows the same, but labeled as $q_\theta(x)$.">
   <figcaption>
-  Figure xxf2. Density Estimation.
+  Figure xxf2. Density Estimation. <a href="#imgkey"><sup>xxa-figkey</sup></a>
   </figcaption>
   </center>
 </figure> 
+
+<aside><sup id="imgkey">xxa-figkey</sup>
+These figures are meant to be graphical models, where the plates represent repeated samples (here $N$), and each circle represents a random variable.  The arrows denote causal relationships between the variables.  I try to keep the colors somewhat consistent, but also label the random variables in each.  The turtle emoji (🐢) is meant to denote images, "turtle" markes a label, the little plot will represent a <i>representation</i>, $D$ is data, $\theta$ are parameters and $\phi$ is the state of the universe.
+</aside>
 
 Following the recipe, our recipe then is to minimize the KL divergence between the real world and our ideal one:
 
@@ -142,7 +151,6 @@ Now, we've decomposed the KL divergence between $P$ and $Q$ into two terms, the 
 If I'm being honest, this is something that bothers me that I don't fully understand.  Using a baseline model here functionally takes the same form as control variates like the baselines used in REINFORCE, but here they don't help at all (we aren't taking an expectation with respect to $q$ here). Regardless, it really feels like an appropriate base measure <i>ought</i> to help.  I can't help but think that it signals a problem with the gradients we take in machine learning today. Things like <a href="https://arxiv.org/abs/2206.07137">RHO-Loss</a> reinforce this idea.
 </aside>
 
-TODO Empirical distribution and finite samples.
 Since we are already on an aside, I'll go on another aside.  We've just motivated that a useful objective for learning a parametric distribution is to minimize the KL divergence between the true distribution and our parametric distribution, i.e. we should adjust the parameters of our distribution to maximize the likelihood of samples from the true distribution.  In practice however, we typically only have access to a *finite* number of samples from the true distribution and this introduces a difficulty.  If we wanted to, we could generate an unbiased estimate of the expected likelihood of our model using a finite number of samples from the true distribution:
 $$ -\left\langle \log q(x|\theta) \right\rangle_p \approx -\frac 1 N \sum_{i=1}^N \log q(x_i|\theta). $$
 Nothing wrong here.  There is similarly nothing wrong with taking the gradient of this Monte Carlo estimate to generate an unbiased estimate of the gradient of the true likelihood:
@@ -258,7 +266,7 @@ Following the universal recipe and taking the KL divergence between these two jo
 $$ \left\langle \log \frac{p(y|x) p(z|x)}{q(y|z) q(z)} \right\rangle_p \geq \left\langle \log \frac{p(y|x)}{q(y|x)}\right\rangle_p \geq 0. $$
 Because KL is monotonic, this joint objective bounds the marginal conditional likelihood and we can rest assured that our predictive engine is still trying to mimic the labeling distribution.  This objective learns a representation that specifically aims to retain only the information that is relevant to predicting the auxiliary information contained in $Y$.  Because the objective is representation centric, we also learn a stochastic representation that can truly compress the inputs.
 
-TODO: more info and some background of how VIB behaves.
+<!-- TODO: more info and some background of how VIB behaves. -->
 
 ## Semi-Supervised Learning
 
@@ -390,12 +398,16 @@ I'm not sure this is better, but its certainly different.
 
 This post got fairly repetitive, but honestly that was the point.  A whole slew of existing and not yet invented machine learning objectives all seem to follow a very simple *universal recipe*.  Simply draw an accurate causal model of the world, then augment it with anything you wish and finally draw a second diagram in the same random variables that corresponds to your marker of success.  Take the KL between the two and you've got yourself a reasonable objective.  I hope this helps you understand some of these and potentially invent new ones of your own.
 
-## Appendix - Pointwise Bounds
+<small>Special thanks to Mark Kurzeja, John Stout and Mallory Alemi for helpful feedback on this post.</small>
 
+
+<!--
+## Appendix - Pointwise Bounds
 TODO:
 
  * Reinforcement Learning
  * Learning from human preferences ala. DPO and a density estimation perspective on learning from human feedback.
  * Other Semi-supervised or Contrastive learning.
+-->
  
  
