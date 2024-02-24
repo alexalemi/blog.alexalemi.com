@@ -125,7 +125,13 @@ Again, in terms of our current interpretation, this makes sense. If I have some 
 
 ## Universal Recipe
 
-With the prerequisites out of they way we're reading to see the "universal recipe" for generating objectives. Regardless of what we are trying to accomplish, the goal is to make the real world look more like our dreams.  Given that KL divergence is the *proper* way to measure how similar two distributions are, we need only minimize the KL divergence between the real world -- the world we can sample from -- and the world as we wish it were.  The smaller that KL can become, the harder it becomes for us or anyone else to distinguish between our dreams and reality.  In steps:
+With the prerequisites out of they way we're ready to see the "universal recipe" for generating objectives. 
+
+In machine learning, broadly, we build neural networks and need some guidance on how to set their parameters.  An *objective* acts like a score that ranks each possible setting and guides our search in the space of parameters for a *good* one.  How *ought* we value, or judge each possible solution?  
+
+Fundamentally, there are two things in conflict.  There is a the *real world* with all of its causal depedencies and structure, a great deal of which we can no influence on.  Data comes from some data generating process wholly outside of our control.  On top of this data we are often interested in building machines to process the data, which may exist in the real world but have a billion or more knobs we need guidance on how to set.  In contrast to the real world, there is the *dream world*, the world of our desires, the world as it wish it were to be.  There's a simple story we *wish* were true that we could tell about the data and its causal structure. When doing Bayesian inference this is the *generative* model you use to describe the data.  If we're being honest with ourselves, it isn't that the data we observe actually comes from our generative model, we only wish that were the case.  So, we have two different stories we could try to tell about the world, the accurate real world description and the wishful dream world one.
+
+The goal is to make the real world look more like our dreams.  Given that KL divergence is the *proper* way to measure how similar two distributions are, we need only minimize the KL divergence between the real world -- the world we can sample from -- and the world as we wish it were.  The smaller that KL can become, the harder it becomes for us or anyone else to distinguish between our dreams and reality.  In steps:
 
  1. Draw a causal graphical model corresponding to the world as it is, the true world $P$.
  2. Augment the real world with any components you wish to add.
@@ -134,7 +140,7 @@ With the prerequisites out of they way we're reading to see the "universal recip
  5. ...
  6. Profit!
 
-As simple as it sounds, in retrospect I think a lot of my previous papers were just following this recipe.  Let's repeat this ad nauseam.
+As simple as it sounds, in retrospect a lot of machine learning is simply following this recipe.  Let's repeat this ad nauseam.
 
 ## Density Estimation
 
@@ -443,6 +449,8 @@ If we had a very large number of samples, this empirical estimate would be prett
 
 I want to acknowledge that this is a problem, but in the context of the current discussion I want to point out that this *isn't* a problem with our *objective*.  It is a good idea to try to minimize the KL divergence between the true distribution and our parametric model.  After we decide on this objective, unfortunately, there are practical issues we have to consider about how to target this objective tractably and accurately. 
 
+
+<!-- TODO: bigger thread is that once we see that everything is just drawing diagrams, we can ask the meta question of how we *ought* to draw diagrams -->
 
 <!--
 ## Appendix - Pointwise Bounds
