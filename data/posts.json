@@ -6,8 +6,7 @@
       "tags": ["kl divergence", "machine learning", "information theory"],
       "id": "kl-is-all-you-need",
       "description": "It's all KL under the hood.",
-      "featured": true,
-			"draft": true
+      "featured": true
     },
     {
       "title": "The Method of Imaginary Results",

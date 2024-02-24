@@ -343,6 +343,9 @@ AA Alemi, I Fisher. ICML2018 TFADGM Workshop. arXiv:<a href="https://arxiv.org/a
   </center>
 </figure> 
 <p>This gave us an objective that seemed to include all of the previous things discussed as special cases and left open the door for interesting behavior on the spots in between.</p>
+<p>Rearranging the objective into terms:
+$$ \left\langle \gamma \underbrace{\left(-\log q(y|z)\right) \vphantom{\log \frac{p(x)}{q(x)}}}_{C} + \delta \underbrace{\left(-\log q(x|z)\right) \vphantom{\log \frac{p(x)}{q(x)}}}_{D} + \sigma \underbrace{\log \frac{p(\theta|D)}{q(\theta)}}_{S} + \underbrace{\log \frac{p(z|x,\theta)}{q(\theta)}}_{R} \right\rangle_p \geq 0, $$
+as we discuss in the paper we get an objective that let's us trade off between the ability of our representation to do reconstruction ($D$ term), predict auxillary variables ($C$ term), all the while being honest about the information our learning algorithm extracts from the dataset ($S$ term) and how expensive our learned representation is ($R$ term).  Inserting tradeoff parameters ($\gamma,\delta,\sigma$) would let you explore an entire three dimensional frontier of optimal solutions that explore all tradeoffs between these different criteria.</p>
 <h2>Variational Prediction</h2>
 <p>While most of the previous diagrams were all retellings of essentially the same story, more recently we've begun to wonder what it might look like if we try some more extreme rewirings of these kinds of diagrams.  What if we wanted to try to be so brazen as to invent something that might be an alternative to Bayesian inference, as a different sort of diagram that could provide a global representation learning objective.  One candidate would be the following:</p>
 <figure id="vp" class="right">
