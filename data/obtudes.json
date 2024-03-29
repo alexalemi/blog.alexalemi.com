@@ -1,0 +1,12 @@
+[
+    {
+      "title": "Leap Day",
+      "src": "leap-day",
+      "date": "2024-03-29",
+      "tags": ["statistics", "fun"],
+      "id": "leap-day",
+      "description": "Going overboard to prove the local newspaper wrong.",
+			"obtude": true,
+      "featured": true
+    }
+]

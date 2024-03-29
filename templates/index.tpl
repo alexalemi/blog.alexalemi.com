@@ -97,10 +97,10 @@
 
     <!--- Writings section --->
     <div class="listing">
-      {% for a in posts %}
+      {% for a in index %}
         {% if not a.hidden and not a.draft %}
           <article>
-           <cite><a href="{{ a.src.replace('.md', '.html') }}">{{ a.title }}</a></cite>
+           <cite><a href="{% if a.obtude %}https://obtudes.alexalemi.com/{a.src}{% else %}{{ a.src.replace('.md', '.html') }}{% endif %}">{{ a.title }}</a></cite>
            <p>
              <date>{{ a.date }}</date>
              <summary>{{ a.description }}</summary>

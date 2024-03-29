@@ -93,8 +93,8 @@ the <em>magnitude</em> of that update?  What are some properties we might want t
 hypothetical function to have?  Let $I[p; q]$ denote the function that measures
 how much we moved beliefs when we switch from beliefs $q$ to beliefs $p$.  We'll
 call this amount of update the <em>information gain</em> when we move from $q$ to $p$.
-<sup><a href="#hobson">1</a></sup></p>
-<aside> <sup id="hobson">1</sup> 
+<sup><a href="#hobson">xxa-hobson</a></sup></p>
+<aside> <sup id="hobson">xxa-hobson</sup> 
   What follows is my own reconstruction of the fabulous paper: 
   <a href="https://link.springer.com/article/10.1007/BF01106578">
   <b>A New Theorem of Information Theory</b> by Arthur Hobson
@@ -106,9 +106,9 @@ call this amount of update the <em>information gain</em> when we move from $q$ t
 <li>It's permutation or <strong>reparameterization independent</strong>.  It doesn't matter if we change the units we've specified our distributions in or if we relabel the sides of our dice, the answer shouldn't change.</li>
 <li>We want it to be <strong>non-negative</strong> and have the value $I = 0$ if and only if $p = q$.  If $p=q$ we haven't updated our beliefs and so have no information gain.</li>
 <li>We want it to be <strong>monotonic</strong> in a natural sense.  If we, for instance, start with some uniform distribution over the 24 people in a game of <a href="https://en.wikipedia.org/wiki/Guess_Who%3F">Guess Who?</a> and then update to only 5 remaining suspects, $I$ should be larger than if there were still 12 remaining suspects.</li>
-<li>Finally, we want our information function to <strong>decompose</strong> in a natural and <strong>linear</strong> way.<sup><a href="#renyi">2</a></sup> In particular, we want to be able to relate the information between two joint distributions in terms of the information between their marginal and conditional distributions.</li>
+<li>Finally, we want our information function to <strong>decompose</strong> in a natural and <strong>linear</strong> way.<sup><a href="#renyi">xxa-renyi</a></sup> In particular, we want to be able to relate the information between two joint distributions in terms of the information between their marginal and conditional distributions.</li>
 </ol>
-<aside> <sup id="renyi">2</sup>
+<aside> <sup id="renyi">xxa-renyi</sup>
   If one relaxes the requirement for linear decomposition and instead just requires that our information
   function decompose in a convex way, you get the generalized set of 
   <a href="https://en.wikipedia.org/wiki/R%C3%A9nyi_entropy#R%C3%A9nyi_divergence">Rényi divergences</a>.
@@ -126,23 +126,23 @@ $D$ represents the state of our having-had-the-disease random variable $\mathcal
 did have the disease.  $\overline D$ denotes we actually didn't.
 With two binary random variables, there are 4 possible outcomes $(\{ DT, D\overline T, \overline D T, \overline D \overline T\})$
 and fully specifying our set of beliefs requires 3 independent probabilities.</p>
-<aside> <sup id="kent">3</sup>
+<aside> <sup id="kent">xxa-kent</sup>
   An &ldquo;<i>Almost Certainly Not</i>&rdquo; is 7% on
   the <a href="https://en.wikipedia.org/wiki/Words_of_estimative_probability">Kent's words of Estimative Probability</a> list.
 </aside>
-<aside> <sup id="covid">4</sup>
+<aside> <sup id="covid">xxa-covid</sup>
   See for instance the RDT Cellex Inc. <a href="https://www.centerforhealthsecurity.org/resources/COVID-19/serology/Serology-based-tests-for-COVID-19.html">SARS-COV-2 Test</a>.
 </aside>
 <p>What are our prior beliefs?
 Let's imagine while we are concerned we might have had the disease, but if we are being honest,
-we almost certainly didn't,<sup><a href="#kent">3</a></sup>
+we almost certainly didn't,<sup><a href="#kent">xxa-kent</a></sup>
 so we'll put our prior belief in having had the disease at 7%. $(q(D) = 0.07)$.
 How do we expect the antibody test to go if we have it done?
 You do a bit of research and discover
 that if you had had the disease, the sensitivity or <em>true positive rate</em> of the
 test you're about to take is 93.8% $(q(T|D) = 0.938)$.
 The specificity or <em>true negative rate</em> of that
-same test is 95.6% $(q(\overline T | \overline D) = 0.956)$. <sup><a href="#covid">4</a></sup></p>
+same test is 95.6% $(q(\overline T | \overline D) = 0.956)$. <sup><a href="#covid">xxa-covid</a></sup></p>
 <figure id="#conditional" class="right">
   <center>
   <img width="45%" src="figures/KLdiagram2.svg"
@@ -196,8 +196,8 @@ $$</p>
 <b>A New Theorem of Information Theory</b> by Arthur Hobson
 </a> for a complete proof,
 but here I'll offer a more colloquial argument like the one
-given by Ariel Caticha.<sup><a href="#caticha">5</a></sup></p>
-<aside> <sup id="caticha">5</sup>
+given by Ariel Caticha.<sup><a href="#caticha">xxa-caticha</a></sup></p>
+<aside> <sup id="caticha">xxa-caticha</sup>
   <i>Lectures on Probability, Entropy and Statistcal Physics</i> by
   Ariel Caticha. <a href="https://arxiv.org/abs/0808.0012">arXiv:0808.0012</a>
 </aside>
@@ -213,9 +213,9 @@ be invariant to any remapping of our coordinates, or in other words,
 it has to be dimensionless.  Imagine $x$ has units of a length, here our integral
 measure $\mathrm dx$ has units of a length, and the densities $p(x), q(x)$ would
 have units of an inverse length.  In order to be dimensionally consistent
-our functional must take the form:<sup><a href="#caveat">6</a></sup>
+our functional must take the form:<sup><a href="#caveat">xxa-caveat</a></sup>
 $$ I[p;q] = \int \mathrm dx\, p(x) f\left( \frac{p(x)}{q(x)} \right). $$</p>
-<aside> <sup id="caveat">6</sup>
+<aside> <sup id="caveat">xxa-caveat</sup>
   We could have just as well written it as $I[p;q] = \int \mathrm dx\, q(x) g\left( \frac{p(x)}{q(x)} \right)$ (that is, the form
   of an <a href="https://en.wikipedia.org/wiki/F-divergence">f-divergence</a>), but 
   this is equivalent to the way we wrote it with $f(\mathcal{X}) = \mathcal{X} g(\mathcal X)$.
@@ -249,7 +249,7 @@ $$ I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x)} = -\int \mathrm dx \, 
 </aside>
 </p>
 <h2>Bayes Rule</h2>
-<aside> <sup id="caticha2">52</sup>
+<aside> <sup id="caticha2">xxa-caticha2</sup>
   I first saw this form of motivation for Bayes Rule in
   <i>Lectures on Probability, Entropy and Statistical Physics</i> by
   Ariel Caticha. <a href="https://arxiv.org/abs/0808.0012">arXiv:0808.0012</a>
@@ -257,7 +257,7 @@ $$ I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x)} = -\int \mathrm dx \, 
 Having identified the right way to measure how much information is gained when we update a distribution
 from $q$ to $p$, why don't we put this to practical use and try to figure out how we 
 <i>ought</i> to update
-our beliefs in light of evidence or observations.<sup><a href="#caticha2">52</a></sup>
+our beliefs in light of evidence or observations.<sup><a href="#caticha2">xxa-caticha2</a></sup>
 <p>Returning to our disease testing example, let's say you get the test done and receive a
 positive result $(\mathcal T = T)$.
 What should your new distribution of beliefs be? Well, first off if we've observed the results of the test
@@ -333,8 +333,8 @@ Bayes' rule run on the prior beliefs.</p>
 <p><span id="expected-weight-of-evidence"></span></p>
 <h2>Expected Weight of Evidence</h2>
 <p>Traditionally, KL is interpreted from a coding perspective, a view I've included in an appendix below,
-but here I offer a different perspective from the viewpoint of model selection.<a href="#woe"><sup>8</sup></a></p>
-<aside> <sup id="woe">8</sup>
+but here I offer a different perspective from the viewpoint of model selection.<a href="#woe"><sup>xxa-woe</sup></a></p>
+<aside> <sup id="woe">xxa-woe</sup>
 I think weight of evidence is one of the most underappreciated concepts.  For a nice overview see: <i>Weight of Evidence: A Brief Survey</i> by I.J. Good. <a href="https://link.springer.com/article/10.1007/BF01106578">[pdf]</a>.
 </aside>
 <p>Above we saw that we can motivate Bayesian inference as choosing a posterior belief distribution
@@ -374,12 +374,12 @@ statement more precise, we need a better language to talk about the magnitudes o
 <h2>How loud is the Evidence?</h2>
 <p>Our measurement of the amount of information was only unique up to a choice of multiplicative constant.  This is equivalent to
 our choice of base for the logarithm.  We can think of this as the <em>units</em> we use to measure our information.  The traditional choices
-would be to use the base-2 logarithm and measure the information in <em>bits</em>,<sup><a href="#bit">9</a></sup>
+would be to use the base-2 logarithm and measure the information in <em>bits</em>,<sup><a href="#bit">xxa-bit</a></sup>
 or to use the more mathematically convenient natural
 logarithm and measure the information in <em>nats</em>.  Another option is to measure the information in
 <a href="https://en.wikipedia.org/wiki/Hartley_(unit)"><em>decibans</em></a> or <em>decibels</em> or <em>Hartley's</em>, wherein
 we use ten times the base-10 logarithm.</p>
-<aside> <sup id="bit">9</sup>
+<aside> <sup id="bit">xxa-bit</sup>
  <i>bit</i> being short for <i>binary digit</i>.  
  <i>nat</i> is then short for <i>natural digit</i>.
  People sometimes suggest <i>dit</i> for the base-10 </i>decimal digit</i>.
@@ -460,12 +460,12 @@ in Figure 3 is a large visual representation you can play with.</p>
 decibels is that it seems like 1 dB roughly corresponds the smallest detectable value that people
 notice in terms of a change in underlying distribution, being the difference between <i>even chance</i>
 and 5 to 4 odds, <i>moderate probability</i> or <i>better than even chance</i>.</p>
-<aside id="quantifying"><sup>10</sup> 
+<aside id="quantifying"><sup>xxa-quant</sup> 
   <a href="https://projecteuclid.org/euclid.ss/1177012242"><i>Quantifying Probabilistic Expressions</i> by
   Frederick Mosteller and Cleo Youtz</a>.
 </aside>
 Additionally, $10 \textrm{ dB}$ corresponds to 10 to 1 odds, or 91% probability, which people associate
-with events being <i>almost certain</i> or happening <i>almost always</i>. <sup><a href="#quantifying">10</a></sup>.
+with events being <i>almost certain</i> or happening <i>almost always</i>. <sup><a href="#quantifying">xxa-quant</a></sup>.
 <p>The traditional statistical threshold for reported results is a <a href="https://en.wikipedia.org/wiki/P-value">p-value</a>
 of 0.05, which is often <a href="https://en.wikipedia.org/wiki/Misuse_of_p-values">misinterpreted</a>
 to mean that the probability the null hypothesis is less than
@@ -519,12 +519,12 @@ $$\min I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x;\theta)}. $$
 The biggest complication is that we don't actually know what the true distribution of the data is. We can, however, sample data.  Luckily for us, as far as this as an objective for $\theta$ goes, we can treat the entropy of $p(x)$ as
 a constant.  This motivates the traditional maximum likelihood objective:
 $$ \max \int \mathrm dx \, \log q(x;\theta). $$</p>
-<aside id="gpt3"><sup>11</sup>
+<aside id="gpt3"><sup>xxa-gpt3</sup>
   For instance, the latest <a href="https://arxiv.org/abs/2005.14165">GPT-3</a> model trained by OpenAI,
   was trained on less than half of the training set. (See Table 2.2 in the paper.) 
 </aside>
 If we had an infinite dataset, maximum likelihood is the same as minimizing the relative entropy between the real world and 
-our model.  Unfortunately, we don't often have infinite datasets.<sup><a href="#gpt3">11</a></sup>
+our model.  Unfortunately, we don't often have infinite datasets.<sup><a href="#gpt3">xxa-gpt3</a></sup>
 On finite datasets, maximum likelihood can still be interpreted as minimizing a KL divergence, but now
 the KL divergence between the *empirical distribution* $\hat p(x) = \sum_i \delta(x - x_i) $
 and our model $q(x;\theta)$.
@@ -536,11 +536,11 @@ the other.  Because of the lack of reparameterization independence, care must
 be taken to ensure that the likelihoods of the two models are evaluated using
 the same measure, but provided they are:</p>
 <p>$$ L_1 - L_2 = \mathbb{E}\left[ \log q_1(x) \right] - \mathbb{E}\left[ \log q_2(x) \right] = \mathbb{E}\left[ \log \frac{q_1(x)}{q_2(x)} \right] $$</p>
-<aside id="mnist"><sup>12</sup>
+<aside id="mnist"><sup>xxa-mnist</sup>
   The entirety of which can fit in a <a href="https://twitter.com/alemi/status/1042658244609499137">tweet</a>.
 </aside>
 Given the size of test sets we have for modern image datasets, this means that very small changes in likelihood can be 
-interpreted as large confidences in the superiorities of models.  Take for instance something as simple as binary static MNIST.<sup><a href="#mnist">12</a></sup>  Here, with 10,000 test set images, a difference in likelihoods of 0.0013 dB or 0.0004 nats corresponds to 13 dB of evidence for the one model over the second.
+interpreted as large confidences in the superiorities of models.  Take for instance something as simple as binary static MNIST.<sup><a href="#mnist">xxa-mnist</a></sup>  Here, with 10,000 test set images, a difference in likelihoods of 0.0013 dB or 0.0004 nats corresponds to 13 dB of evidence for the one model over the second.
 <h2>Appendix A: Whither Continuous Entropy</h2></h2>
 <p><span id="appendix-a">The</span> relative entropy really is the proper way to define entropy.  For all
 of the things that Shannon got right, he flubbed a bit when he defined the
@@ -550,29 +550,29 @@ $$ H(P) = -\sum_i p_i \log p_i $$</p>
 to continuous distributions.  The continuous analog:
 $$ H(P) = -\int \mathrm dx\, p(x) \log p(x) $$
 isn't <em>reparameterization independent</em>.  Consider for instance the distribution
-of adult human heights: <sup><a href="#bimodal">13</a></sup></p>
+of adult human heights: <sup><a href="#bimodal">xxa-bimodal</a></sup></p>
 <figure>
   <center>
   <img src="figures/adult_heights.svg"
     alt="Distribution of adult heights.">
-  <figcaption>Figure 1. Distribution of adult heights. <sup><a href="#ourworld">14</a></sup></figcaption>
+  <figcaption>Figure 1. Distribution of adult heights. <sup><a href="#ourworld">xxa-ourworld</a></sup></figcaption>
   </center>
 </figure>
-<aside> <sup id="bimodal">13</sup>
+<aside> <sup id="bimodal">xxa-bimodal</sup>
   Note that you may have heard that 
   <a href="https://www.johndcook.com/blog/2008/07/20/why-heights-are-normally-distributed/">heights are normally distributed</a>.
   Adult male (or female) heights are normally distributed, but differ in their means and variances, making the 
   <a href="https://www.johndcook.com/blog/2008/11/25/distribution-of-adult-heights/">distribution of adult heights a mixture distribution</a>.
 </aside>
-<aside> <sup id="ourworld">14</sup>
+<aside> <sup id="ourworld">xxa-ourworld</sup>
   Data taken from 
   <a href="https://ourworldindata.org/human-height">ourworldindata.org</a>.
 </aside>
 <p>If you measure the continuous entropy of this distribution measured
 in centimeters you get 5.4 bits.  If you instead measure the entropy
 of the same distribution in feet you get 0.43 bits.  If you instead
-were to measure heights in meters it would be -1.3 bits! <sup><a href="#negative">15</a></sup></p>
-<aside> <sup id="negative">15</sup>
+were to measure heights in meters it would be -1.3 bits! <sup><a href="#negative">xxa-negative</a></sup></p>
+<aside> <sup id="negative">xxa-negative</sup>
   It seems strange to have a negative entropy, but in this case, it is basically
   reflecting the fact that in terms of meters, the human height distribution doesn't
   span a whole meter in breadth, so it actually takes fewer <i>relative</i> bits

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Sat, 24 Feb 2024 13:24:02 +0000</lastBuildDate><item><title>Why KL?</title><link>https://blog.alexalemi.com/kl.html</link><description>Why is the KL divergence so special?</description><content:encoded>&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Liebler
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Fri, 29 Mar 2024 22:28:14 +0000</lastBuildDate><item><title>Why KL?</title><link>https://blog.alexalemi.com/kl.html</link><description>Why is the KL divergence so special?</description><content:encoded>&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Liebler
 divergence&lt;/a&gt;,
 or KL divergence, or relative entropy, or relative information, or information
 gain, or expected weight of evidence, or information divergence
@@ -20,8 +20,8 @@ the &lt;em&gt;magnitude&lt;/em&gt; of that update?  What are some properties we 
 hypothetical function to have?  Let $I[p; q]$ denote the function that measures
 how much we moved beliefs when we switch from beliefs $q$ to beliefs $p$.  We'll
 call this amount of update the &lt;em&gt;information gain&lt;/em&gt; when we move from $q$ to $p$.
-&lt;sup&gt;&lt;a href="#hobson"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;aside&gt; &lt;sup id="hobson"&gt;1&lt;/sup&gt; 
+&lt;sup&gt;&lt;a href="#hobson"&gt;xxa-hobson&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;aside&gt; &lt;sup id="hobson"&gt;xxa-hobson&lt;/sup&gt; 
   What follows is my own reconstruction of the fabulous paper: 
   &lt;a href="https://link.springer.com/article/10.1007/BF01106578"&gt;
   &lt;b&gt;A New Theorem of Information Theory&lt;/b&gt; by Arthur Hobson
@@ -33,9 +33,9 @@ call this amount of update the &lt;em&gt;information gain&lt;/em&gt; when we mov
 &lt;li&gt;It's permutation or &lt;strong&gt;reparameterization independent&lt;/strong&gt;.  It doesn't matter if we change the units we've specified our distributions in or if we relabel the sides of our dice, the answer shouldn't change.&lt;/li&gt;
 &lt;li&gt;We want it to be &lt;strong&gt;non-negative&lt;/strong&gt; and have the value $I = 0$ if and only if $p = q$.  If $p=q$ we haven't updated our beliefs and so have no information gain.&lt;/li&gt;
 &lt;li&gt;We want it to be &lt;strong&gt;monotonic&lt;/strong&gt; in a natural sense.  If we, for instance, start with some uniform distribution over the 24 people in a game of &lt;a href="https://en.wikipedia.org/wiki/Guess_Who%3F"&gt;Guess Who?&lt;/a&gt; and then update to only 5 remaining suspects, $I$ should be larger than if there were still 12 remaining suspects.&lt;/li&gt;
-&lt;li&gt;Finally, we want our information function to &lt;strong&gt;decompose&lt;/strong&gt; in a natural and &lt;strong&gt;linear&lt;/strong&gt; way.&lt;sup&gt;&lt;a href="#renyi"&gt;2&lt;/a&gt;&lt;/sup&gt; In particular, we want to be able to relate the information between two joint distributions in terms of the information between their marginal and conditional distributions.&lt;/li&gt;
+&lt;li&gt;Finally, we want our information function to &lt;strong&gt;decompose&lt;/strong&gt; in a natural and &lt;strong&gt;linear&lt;/strong&gt; way.&lt;sup&gt;&lt;a href="#renyi"&gt;xxa-renyi&lt;/a&gt;&lt;/sup&gt; In particular, we want to be able to relate the information between two joint distributions in terms of the information between their marginal and conditional distributions.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;aside&gt; &lt;sup id="renyi"&gt;2&lt;/sup&gt;
+&lt;aside&gt; &lt;sup id="renyi"&gt;xxa-renyi&lt;/sup&gt;
   If one relaxes the requirement for linear decomposition and instead just requires that our information
   function decompose in a convex way, you get the generalized set of 
   &lt;a href="https://en.wikipedia.org/wiki/R%C3%A9nyi_entropy#R%C3%A9nyi_divergence"&gt;Rényi divergences&lt;/a&gt;.
@@ -53,23 +53,23 @@ $D$ represents the state of our having-had-the-disease random variable $\mathcal
 did have the disease.  $\overline D$ denotes we actually didn't.
 With two binary random variables, there are 4 possible outcomes $(\{ DT, D\overline T, \overline D T, \overline D \overline T\})$
 and fully specifying our set of beliefs requires 3 independent probabilities.&lt;/p&gt;
-&lt;aside&gt; &lt;sup id="kent"&gt;3&lt;/sup&gt;
+&lt;aside&gt; &lt;sup id="kent"&gt;xxa-kent&lt;/sup&gt;
   An &amp;ldquo;&lt;i&gt;Almost Certainly Not&lt;/i&gt;&amp;rdquo; is 7% on
   the &lt;a href="https://en.wikipedia.org/wiki/Words_of_estimative_probability"&gt;Kent's words of Estimative Probability&lt;/a&gt; list.
 &lt;/aside&gt;
-&lt;aside&gt; &lt;sup id="covid"&gt;4&lt;/sup&gt;
+&lt;aside&gt; &lt;sup id="covid"&gt;xxa-covid&lt;/sup&gt;
   See for instance the RDT Cellex Inc. &lt;a href="https://www.centerforhealthsecurity.org/resources/COVID-19/serology/Serology-based-tests-for-COVID-19.html"&gt;SARS-COV-2 Test&lt;/a&gt;.
 &lt;/aside&gt;
 &lt;p&gt;What are our prior beliefs?
 Let's imagine while we are concerned we might have had the disease, but if we are being honest,
-we almost certainly didn't,&lt;sup&gt;&lt;a href="#kent"&gt;3&lt;/a&gt;&lt;/sup&gt;
+we almost certainly didn't,&lt;sup&gt;&lt;a href="#kent"&gt;xxa-kent&lt;/a&gt;&lt;/sup&gt;
 so we'll put our prior belief in having had the disease at 7%. $(q(D) = 0.07)$.
 How do we expect the antibody test to go if we have it done?
 You do a bit of research and discover
 that if you had had the disease, the sensitivity or &lt;em&gt;true positive rate&lt;/em&gt; of the
 test you're about to take is 93.8% $(q(T|D) = 0.938)$.
 The specificity or &lt;em&gt;true negative rate&lt;/em&gt; of that
-same test is 95.6% $(q(\overline T | \overline D) = 0.956)$. &lt;sup&gt;&lt;a href="#covid"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+same test is 95.6% $(q(\overline T | \overline D) = 0.956)$. &lt;sup&gt;&lt;a href="#covid"&gt;xxa-covid&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;figure id="#conditional" class="right"&gt;
   &lt;center&gt;
   &lt;img width="45%" src="figures/KLdiagram2.svg"
@@ -123,8 +123,8 @@ $$&lt;/p&gt;
 &lt;b&gt;A New Theorem of Information Theory&lt;/b&gt; by Arthur Hobson
 &lt;/a&gt; for a complete proof,
 but here I'll offer a more colloquial argument like the one
-given by Ariel Caticha.&lt;sup&gt;&lt;a href="#caticha"&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;aside&gt; &lt;sup id="caticha"&gt;5&lt;/sup&gt;
+given by Ariel Caticha.&lt;sup&gt;&lt;a href="#caticha"&gt;xxa-caticha&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;aside&gt; &lt;sup id="caticha"&gt;xxa-caticha&lt;/sup&gt;
   &lt;i&gt;Lectures on Probability, Entropy and Statistcal Physics&lt;/i&gt; by
   Ariel Caticha. &lt;a href="https://arxiv.org/abs/0808.0012"&gt;arXiv:0808.0012&lt;/a&gt;
 &lt;/aside&gt;
@@ -140,9 +140,9 @@ be invariant to any remapping of our coordinates, or in other words,
 it has to be dimensionless.  Imagine $x$ has units of a length, here our integral
 measure $\mathrm dx$ has units of a length, and the densities $p(x), q(x)$ would
 have units of an inverse length.  In order to be dimensionally consistent
-our functional must take the form:&lt;sup&gt;&lt;a href="#caveat"&gt;6&lt;/a&gt;&lt;/sup&gt;
+our functional must take the form:&lt;sup&gt;&lt;a href="#caveat"&gt;xxa-caveat&lt;/a&gt;&lt;/sup&gt;
 $$ I[p;q] = \int \mathrm dx\, p(x) f\left( \frac{p(x)}{q(x)} \right). $$&lt;/p&gt;
-&lt;aside&gt; &lt;sup id="caveat"&gt;6&lt;/sup&gt;
+&lt;aside&gt; &lt;sup id="caveat"&gt;xxa-caveat&lt;/sup&gt;
   We could have just as well written it as $I[p;q] = \int \mathrm dx\, q(x) g\left( \frac{p(x)}{q(x)} \right)$ (that is, the form
   of an &lt;a href="https://en.wikipedia.org/wiki/F-divergence"&gt;f-divergence&lt;/a&gt;), but 
   this is equivalent to the way we wrote it with $f(\mathcal{X}) = \mathcal{X} g(\mathcal X)$.
@@ -176,7 +176,7 @@ $$ I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x)} = -\int \mathrm dx \, 
 &lt;/aside&gt;
 &lt;/p&gt;
 &lt;h2&gt;Bayes Rule&lt;/h2&gt;
-&lt;aside&gt; &lt;sup id="caticha2"&gt;52&lt;/sup&gt;
+&lt;aside&gt; &lt;sup id="caticha2"&gt;xxa-caticha2&lt;/sup&gt;
   I first saw this form of motivation for Bayes Rule in
   &lt;i&gt;Lectures on Probability, Entropy and Statistical Physics&lt;/i&gt; by
   Ariel Caticha. &lt;a href="https://arxiv.org/abs/0808.0012"&gt;arXiv:0808.0012&lt;/a&gt;
@@ -184,7 +184,7 @@ $$ I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x)} = -\int \mathrm dx \, 
 Having identified the right way to measure how much information is gained when we update a distribution
 from $q$ to $p$, why don't we put this to practical use and try to figure out how we 
 &lt;i&gt;ought&lt;/i&gt; to update
-our beliefs in light of evidence or observations.&lt;sup&gt;&lt;a href="#caticha2"&gt;52&lt;/a&gt;&lt;/sup&gt;
+our beliefs in light of evidence or observations.&lt;sup&gt;&lt;a href="#caticha2"&gt;xxa-caticha2&lt;/a&gt;&lt;/sup&gt;
 &lt;p&gt;Returning to our disease testing example, let's say you get the test done and receive a
 positive result $(\mathcal T = T)$.
 What should your new distribution of beliefs be? Well, first off if we've observed the results of the test
@@ -260,8 +260,8 @@ Bayes' rule run on the prior beliefs.&lt;/p&gt;
 &lt;p&gt;&lt;span id="expected-weight-of-evidence"&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;h2&gt;Expected Weight of Evidence&lt;/h2&gt;
 &lt;p&gt;Traditionally, KL is interpreted from a coding perspective, a view I've included in an appendix below,
-but here I offer a different perspective from the viewpoint of model selection.&lt;a href="#woe"&gt;&lt;sup&gt;8&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;aside&gt; &lt;sup id="woe"&gt;8&lt;/sup&gt;
+but here I offer a different perspective from the viewpoint of model selection.&lt;a href="#woe"&gt;&lt;sup&gt;xxa-woe&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;aside&gt; &lt;sup id="woe"&gt;xxa-woe&lt;/sup&gt;
 I think weight of evidence is one of the most underappreciated concepts.  For a nice overview see: &lt;i&gt;Weight of Evidence: A Brief Survey&lt;/i&gt; by I.J. Good. &lt;a href="https://link.springer.com/article/10.1007/BF01106578"&gt;[pdf]&lt;/a&gt;.
 &lt;/aside&gt;
 &lt;p&gt;Above we saw that we can motivate Bayesian inference as choosing a posterior belief distribution
@@ -301,12 +301,12 @@ statement more precise, we need a better language to talk about the magnitudes o
 &lt;h2&gt;How loud is the Evidence?&lt;/h2&gt;
 &lt;p&gt;Our measurement of the amount of information was only unique up to a choice of multiplicative constant.  This is equivalent to
 our choice of base for the logarithm.  We can think of this as the &lt;em&gt;units&lt;/em&gt; we use to measure our information.  The traditional choices
-would be to use the base-2 logarithm and measure the information in &lt;em&gt;bits&lt;/em&gt;,&lt;sup&gt;&lt;a href="#bit"&gt;9&lt;/a&gt;&lt;/sup&gt;
+would be to use the base-2 logarithm and measure the information in &lt;em&gt;bits&lt;/em&gt;,&lt;sup&gt;&lt;a href="#bit"&gt;xxa-bit&lt;/a&gt;&lt;/sup&gt;
 or to use the more mathematically convenient natural
 logarithm and measure the information in &lt;em&gt;nats&lt;/em&gt;.  Another option is to measure the information in
 &lt;a href="https://en.wikipedia.org/wiki/Hartley_(unit)"&gt;&lt;em&gt;decibans&lt;/em&gt;&lt;/a&gt; or &lt;em&gt;decibels&lt;/em&gt; or &lt;em&gt;Hartley's&lt;/em&gt;, wherein
 we use ten times the base-10 logarithm.&lt;/p&gt;
-&lt;aside&gt; &lt;sup id="bit"&gt;9&lt;/sup&gt;
+&lt;aside&gt; &lt;sup id="bit"&gt;xxa-bit&lt;/sup&gt;
  &lt;i&gt;bit&lt;/i&gt; being short for &lt;i&gt;binary digit&lt;/i&gt;.  
  &lt;i&gt;nat&lt;/i&gt; is then short for &lt;i&gt;natural digit&lt;/i&gt;.
  People sometimes suggest &lt;i&gt;dit&lt;/i&gt; for the base-10 &lt;/i&gt;decimal digit&lt;/i&gt;.
@@ -387,12 +387,12 @@ in Figure 3 is a large visual representation you can play with.&lt;/p&gt;
 decibels is that it seems like 1 dB roughly corresponds the smallest detectable value that people
 notice in terms of a change in underlying distribution, being the difference between &lt;i&gt;even chance&lt;/i&gt;
 and 5 to 4 odds, &lt;i&gt;moderate probability&lt;/i&gt; or &lt;i&gt;better than even chance&lt;/i&gt;.&lt;/p&gt;
-&lt;aside id="quantifying"&gt;&lt;sup&gt;10&lt;/sup&gt; 
+&lt;aside id="quantifying"&gt;&lt;sup&gt;xxa-quant&lt;/sup&gt; 
   &lt;a href="https://projecteuclid.org/euclid.ss/1177012242"&gt;&lt;i&gt;Quantifying Probabilistic Expressions&lt;/i&gt; by
   Frederick Mosteller and Cleo Youtz&lt;/a&gt;.
 &lt;/aside&gt;
 Additionally, $10 \textrm{ dB}$ corresponds to 10 to 1 odds, or 91% probability, which people associate
-with events being &lt;i&gt;almost certain&lt;/i&gt; or happening &lt;i&gt;almost always&lt;/i&gt;. &lt;sup&gt;&lt;a href="#quantifying"&gt;10&lt;/a&gt;&lt;/sup&gt;.
+with events being &lt;i&gt;almost certain&lt;/i&gt; or happening &lt;i&gt;almost always&lt;/i&gt;. &lt;sup&gt;&lt;a href="#quantifying"&gt;xxa-quant&lt;/a&gt;&lt;/sup&gt;.
 &lt;p&gt;The traditional statistical threshold for reported results is a &lt;a href="https://en.wikipedia.org/wiki/P-value"&gt;p-value&lt;/a&gt;
 of 0.05, which is often &lt;a href="https://en.wikipedia.org/wiki/Misuse_of_p-values"&gt;misinterpreted&lt;/a&gt;
 to mean that the probability the null hypothesis is less than
@@ -446,12 +446,12 @@ $$\min I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x;\theta)}. $$
 The biggest complication is that we don't actually know what the true distribution of the data is. We can, however, sample data.  Luckily for us, as far as this as an objective for $\theta$ goes, we can treat the entropy of $p(x)$ as
 a constant.  This motivates the traditional maximum likelihood objective:
 $$ \max \int \mathrm dx \, \log q(x;\theta). $$&lt;/p&gt;
-&lt;aside id="gpt3"&gt;&lt;sup&gt;11&lt;/sup&gt;
+&lt;aside id="gpt3"&gt;&lt;sup&gt;xxa-gpt3&lt;/sup&gt;
   For instance, the latest &lt;a href="https://arxiv.org/abs/2005.14165"&gt;GPT-3&lt;/a&gt; model trained by OpenAI,
   was trained on less than half of the training set. (See Table 2.2 in the paper.) 
 &lt;/aside&gt;
 If we had an infinite dataset, maximum likelihood is the same as minimizing the relative entropy between the real world and 
-our model.  Unfortunately, we don't often have infinite datasets.&lt;sup&gt;&lt;a href="#gpt3"&gt;11&lt;/a&gt;&lt;/sup&gt;
+our model.  Unfortunately, we don't often have infinite datasets.&lt;sup&gt;&lt;a href="#gpt3"&gt;xxa-gpt3&lt;/a&gt;&lt;/sup&gt;
 On finite datasets, maximum likelihood can still be interpreted as minimizing a KL divergence, but now
 the KL divergence between the *empirical distribution* $\hat p(x) = \sum_i \delta(x - x_i) $
 and our model $q(x;\theta)$.
@@ -463,11 +463,11 @@ the other.  Because of the lack of reparameterization independence, care must
 be taken to ensure that the likelihoods of the two models are evaluated using
 the same measure, but provided they are:&lt;/p&gt;
 &lt;p&gt;$$ L_1 - L_2 = \mathbb{E}\left[ \log q_1(x) \right] - \mathbb{E}\left[ \log q_2(x) \right] = \mathbb{E}\left[ \log \frac{q_1(x)}{q_2(x)} \right] $$&lt;/p&gt;
-&lt;aside id="mnist"&gt;&lt;sup&gt;12&lt;/sup&gt;
+&lt;aside id="mnist"&gt;&lt;sup&gt;xxa-mnist&lt;/sup&gt;
   The entirety of which can fit in a &lt;a href="https://twitter.com/alemi/status/1042658244609499137"&gt;tweet&lt;/a&gt;.
 &lt;/aside&gt;
 Given the size of test sets we have for modern image datasets, this means that very small changes in likelihood can be 
-interpreted as large confidences in the superiorities of models.  Take for instance something as simple as binary static MNIST.&lt;sup&gt;&lt;a href="#mnist"&gt;12&lt;/a&gt;&lt;/sup&gt;  Here, with 10,000 test set images, a difference in likelihoods of 0.0013 dB or 0.0004 nats corresponds to 13 dB of evidence for the one model over the second.
+interpreted as large confidences in the superiorities of models.  Take for instance something as simple as binary static MNIST.&lt;sup&gt;&lt;a href="#mnist"&gt;xxa-mnist&lt;/a&gt;&lt;/sup&gt;  Here, with 10,000 test set images, a difference in likelihoods of 0.0013 dB or 0.0004 nats corresponds to 13 dB of evidence for the one model over the second.
 &lt;h2&gt;Appendix A: Whither Continuous Entropy&lt;/h2&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;span id="appendix-a"&gt;The&lt;/span&gt; relative entropy really is the proper way to define entropy.  For all
 of the things that Shannon got right, he flubbed a bit when he defined the
@@ -477,29 +477,29 @@ $$ H(P) = -\sum_i p_i \log p_i $$&lt;/p&gt;
 to continuous distributions.  The continuous analog:
 $$ H(P) = -\int \mathrm dx\, p(x) \log p(x) $$
 isn't &lt;em&gt;reparameterization independent&lt;/em&gt;.  Consider for instance the distribution
-of adult human heights: &lt;sup&gt;&lt;a href="#bimodal"&gt;13&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+of adult human heights: &lt;sup&gt;&lt;a href="#bimodal"&gt;xxa-bimodal&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;figure&gt;
   &lt;center&gt;
   &lt;img src="figures/adult_heights.svg"
     alt="Distribution of adult heights."&gt;
-  &lt;figcaption&gt;Figure 1. Distribution of adult heights. &lt;sup&gt;&lt;a href="#ourworld"&gt;14&lt;/a&gt;&lt;/sup&gt;&lt;/figcaption&gt;
+  &lt;figcaption&gt;Figure 1. Distribution of adult heights. &lt;sup&gt;&lt;a href="#ourworld"&gt;xxa-ourworld&lt;/a&gt;&lt;/sup&gt;&lt;/figcaption&gt;
   &lt;/center&gt;
 &lt;/figure&gt;
-&lt;aside&gt; &lt;sup id="bimodal"&gt;13&lt;/sup&gt;
+&lt;aside&gt; &lt;sup id="bimodal"&gt;xxa-bimodal&lt;/sup&gt;
   Note that you may have heard that 
   &lt;a href="https://www.johndcook.com/blog/2008/07/20/why-heights-are-normally-distributed/"&gt;heights are normally distributed&lt;/a&gt;.
   Adult male (or female) heights are normally distributed, but differ in their means and variances, making the 
   &lt;a href="https://www.johndcook.com/blog/2008/11/25/distribution-of-adult-heights/"&gt;distribution of adult heights a mixture distribution&lt;/a&gt;.
 &lt;/aside&gt;
-&lt;aside&gt; &lt;sup id="ourworld"&gt;14&lt;/sup&gt;
+&lt;aside&gt; &lt;sup id="ourworld"&gt;xxa-ourworld&lt;/sup&gt;
   Data taken from 
   &lt;a href="https://ourworldindata.org/human-height"&gt;ourworldindata.org&lt;/a&gt;.
 &lt;/aside&gt;
 &lt;p&gt;If you measure the continuous entropy of this distribution measured
 in centimeters you get 5.4 bits.  If you instead measure the entropy
 of the same distribution in feet you get 0.43 bits.  If you instead
-were to measure heights in meters it would be -1.3 bits! &lt;sup&gt;&lt;a href="#negative"&gt;15&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;aside&gt; &lt;sup id="negative"&gt;15&lt;/sup&gt;
+were to measure heights in meters it would be -1.3 bits! &lt;sup&gt;&lt;a href="#negative"&gt;xxa-negative&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;aside&gt; &lt;sup id="negative"&gt;xxa-negative&lt;/sup&gt;
   It seems strange to have a negative entropy, but in this case, it is basically
   reflecting the fact that in terms of meters, the human height distribution doesn't
   span a whole meter in breadth, so it actually takes fewer &lt;i&gt;relative&lt;/i&gt; bits
@@ -1054,7 +1054,7 @@ I'm going to anticipate some of the things we're going to talk about below and d
 $$ Q = \log \frac{p(x_1|x_0)}{q(x_0|x_1)}. $$
 With this final identification we end up with the general statement:
 $$ \frac{q_R}{p_F} = e^{\beta (W - Q - \Delta F)}. $$
-The density ratio of the reverse process (shortened here as $q_R$) to the forward process $p_F$ is given by the exponential of $\beta$&lt;/p&gt;
+The density ratio of the reverse process (shortened here as $q_R$) to the forward process $p_F$ is given by the exponential of $\beta$ times the quantity of the work, minus the heat minus the change in free energy.&lt;/p&gt;
 &lt;h2&gt;Hamiltonian Dynamics&lt;/h2&gt;
 &lt;p&gt;First, if we assume that our dynamics is Hamiltonian, and thus deterministic and reversible, we know that the probability that we start at $x_0$ and end up at $x_1$ if we evolve forward in time is the same as the probability that we start at $x_1$ and end up at $x_0$ if we reverse our time evolution, ($q(x_0|x_1) = p(x_1|x_0)$)&lt;sup&gt;&lt;a href="#heat-caveat"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;aside&gt;&lt;sup id="#heat-caveat"&gt;3&lt;/sup&gt;
@@ -1483,8 +1483,8 @@ What follows is an extension of those ideas, essentially a written version of a 
 &lt;a href="http://localhost:8000/talks/information-theory-for-representation-learning.html"&gt;talk&lt;/a&gt;
 &lt;a href="https://docs.google.com/presentation/d/1YwgRzjWATHVX60Me6qOEOxQIiFjxdqO0_9jdAWXFx74/present?usp=sharing&amp;resourcekey=0-T4ume8tMl__GoYZnKgHMEg"&gt;[slides]&lt;/a&gt;
 I gave at the InfoCog Workshop at NeurIPS 2024.
-&lt;a href="#multivariate-ib"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;aside&gt; &lt;sup id="figattribution"&gt;1&lt;/sup&gt;
+&lt;a href="#multivariate-ib"&gt;&lt;sup&gt;xxa-attribution&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;aside&gt; &lt;sup id="figattribution"&gt;xxa-attribution&lt;/sup&gt;
 This is also essentially my own retelling of &lt;a href="https://www.cs.huji.ac.il/labs/learning/Theses/Slonim_PhD.pdf"&gt;Noam Slonim's thesis on the Multivariate Information Bottleneck&lt;/a&gt;.
 &lt;/aside&gt;
 &lt;figure id="#conditional" class="right"&gt;
@@ -1492,11 +1492,11 @@ This is also essentially my own retelling of &lt;a href="https://www.cs.huji.ac.
   &lt;img width="95%" src="figures/kl-is-all-you-need/kl-elephant.png"
     alt="A cartoon depicting several blindfolded scientists analyzing different parts of an elephant, the different scientists think they are looking at VIB, or Diffusion or BNNs or VAEs or Semi-supervised Learning or Bayesian inference, but really its all just KL Divergence."&gt;
   &lt;figcaption&gt;
-  Figure 1. The elephant in the room is KL divergence or the relevant entropy.&lt;a href="#figattribution"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;
+  Figure xxf1. The elephant in the room is KL divergence or the relevant entropy.&lt;a href="#figattribution"&gt;&lt;sup&gt;xxa2&lt;/sup&gt;&lt;/a&gt;
   &lt;/figcaption&gt;
   &lt;/center&gt;
 &lt;/figure&gt; 
-&lt;aside&gt; &lt;sup id="figattribution"&gt;2&lt;/sup&gt;
+&lt;aside&gt; &lt;sup id="figattribution"&gt;xxa2&lt;/sup&gt;
 Cartoon modified from Kevan C. Herold, Jeffrey A. Bluestone, Type 1 Diabetes Immunotherapy: Is the Glass Half Empty or Half Full?. Sci. Transl. Med.3,95fs1-95fs1(2011).
 &lt;a href="https://doi.org/10.1126/scitranslmed.3002981"&gt;DOI:10.1126/scitranslmed.3002981&lt;/a&gt;.
 &lt;/aside&gt;
@@ -1505,9 +1505,9 @@ Cartoon modified from Kevan C. Herold, Jeffrey A. Bluestone, Type 1 Diabetes Imm
 page.  Because KL divergence is so fundamental and special (as I've written
 about &lt;a href="kl.html"&gt;before&lt;/a&gt;) it has many different interpretations. For
 our purposes, the most useful interpretation is as &lt;a
-href="kl.html#expected-weight-of-evidence"&gt;an expected weight of evidence&lt;/a&gt;.&lt;a href="#woe"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;
+href="kl.html#expected-weight-of-evidence"&gt;an expected weight of evidence&lt;/a&gt;.&lt;a href="#woe"&gt;&lt;sup&gt;xxa-woe&lt;/sup&gt;&lt;/a&gt;
 I'll briefly build that up here.&lt;/p&gt;
-&lt;aside&gt; &lt;sup id="woe"&gt;3&lt;/sup&gt;
+&lt;aside&gt; &lt;sup id="woe"&gt;xxa-woe&lt;/sup&gt;
 I think weight of evidence is one of the most underappreciated concepts.  For a nice overview see: &lt;i&gt;Weight of Evidence: A Brief Survey&lt;/i&gt; by I.J. Good. &lt;a href="https://link.springer.com/article/10.1007/BF01106578"&gt;[pdf]&lt;/a&gt;.
 &lt;/aside&gt;
 &lt;p&gt;Imagine we have two hypotheses $P$ and $Q$ and we're trying to decide which of these two is a better model of the world.  We go out an collect some data $D$ and would like to use that data to help us discriminate between the two models.  Being good probabilistic thinkers with a penchant for gambling, what we're interested in is:&lt;/p&gt;
@@ -1522,7 +1522,7 @@ I think weight of evidence is one of the most underappreciated concepts.  For a 
   &lt;img width="95%" src="figures/kl-is-all-you-need/belief-o-meter.png"
     alt="A cartoon representation of a Belief-O-Meter as an old school linear analog meter."&gt;
   &lt;figcaption&gt;
-  Figure 2. Belief-O-Meter.
+  Figure xxf0. Belief-O-Meter.
   &lt;/figcaption&gt;
   &lt;/center&gt;
 &lt;/figure&gt; 
@@ -1531,15 +1531,15 @@ I think weight of evidence is one of the most underappreciated concepts.  For a 
 &lt;!-- TODO Explain the change in notation here. --&gt;
 &lt;!-- What then is &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;the Kullback-Leibler (KL) divergence&lt;/a&gt; ? --&gt;
 &lt;p&gt;OK, so what does this have to do with the &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;KL divergence&lt;/a&gt;?
-Imagine if one of our two hypotheses is actually true.  If $P$ was the probability distribution governing the actual world, the &lt;i&gt;expected weight of evidence&lt;/i&gt; we would accumulate from observing some data would be, the KL divergence:&lt;a href="#brakets"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+Imagine if one of our two hypotheses is actually true.  If $P$ was the probability distribution governing the actual world, the &lt;i&gt;expected weight of evidence&lt;/i&gt; we would accumulate from observing some data would be, the KL divergence:&lt;a href="#brakets"&gt;&lt;sup&gt;xxa3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;$$ I[p;q] \equiv \int dx\, p(x) \log \frac{p(x)}{q(x)} \equiv \left\langle \log \frac{p(x)}{q(x)} \right\rangle_{p(x)} . $$&lt;/p&gt;
-&lt;aside&gt; &lt;sup id="brakets"&gt;4&lt;/sup&gt;
+&lt;aside&gt; &lt;sup id="brakets"&gt;xxa3&lt;/sup&gt;
 To clean up the notation, I like using brakets: $ \langle \cdot \rangle_p \equiv \mathbb{E}_{p}[\cdot] \equiv \int dx\, p(x) [\cdot]$, and to clean things up further (or because I'm lazy) I'll often leave off the subscript saying which distribution the brakets are to be taken with respect to, in any of those cases you can assume its a full joint $p$ distribution (over any variables that are otherwise unbound).
 &lt;/aside&gt;
 &lt;p&gt;Therefore, we can interpret the KL divergence as a measure of how quickly we would be able to discern between hypotheses $P$ and $Q$ if $P$ were true.  Similarly, the &lt;i&gt;reverse KL&lt;/i&gt; is:&lt;/p&gt;
 &lt;p&gt;$$ I[q;p] \equiv \int dx\, q(x) \log \frac{q(x)}{p(x)} \equiv \left\langle \log \frac{q(x)}{p(x)} \right\rangle_{q(x)}, $$&lt;/p&gt;
-&lt;p&gt;a measure of how quickly we'd be able to discern between $P$ and $Q$ if $Q$ were true.  Suddenly, the asymmetry of the KL divergence, an issue that often causes consternation is no longer a mystery.  We should expect the expected weight of evidence to be asymmetric.   As an extreme example, imagine we were trying to decide between two hypothesis regarding some coin flips we are about to observe.  $P$ is the hypothesis that the coin is fair while $Q$ is the hypothesis the coin is a cheating, double-headed coin.  In this case, if we actually had a fair coin, we expect to be able to perfectly discern the two hypotheses (infinite KL) because we will eventually observe a tails, an impossible situation under the alternative ($Q$) hypothesis.  Meanwhile, if the coin is actually a cheat, we'll be able to collect, on average, 1 bit of evidence per flip in favor of the hypothesis that the coin is a cheat, but we will only ever observe heads and so never be able to perfectly rule out the possibility that the coin is fair and we've simply observed some miracle.&lt;a href="#million"&gt;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;aside&gt; &lt;sup id="million"&gt;5&lt;/sup&gt;
+&lt;p&gt;a measure of how quickly we'd be able to discern between $P$ and $Q$ if $Q$ were true.  Suddenly, the asymmetry of the KL divergence, an issue that often causes consternation is no longer a mystery.  We should expect the expected weight of evidence to be asymmetric.   As an extreme example, imagine we were trying to decide between two hypothesis regarding some coin flips we are about to observe.  $P$ is the hypothesis that the coin is fair while $Q$ is the hypothesis the coin is a cheating, double-headed coin.  In this case, if we actually had a fair coin, we expect to be able to perfectly discern the two hypotheses (infinite KL) because we will eventually observe a tails, an impossible situation under the alternative ($Q$) hypothesis.  Meanwhile, if the coin is actually a cheat, we'll be able to collect, on average, 1 bit of evidence per flip in favor of the hypothesis that the coin is a cheat, but we will only ever observe heads and so never be able to perfectly rule out the possibility that the coin is fair and we've simply observed some miracle.&lt;a href="#million"&gt;&lt;sup&gt;xxa4&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;aside&gt; &lt;sup id="million"&gt;xxa4&lt;/sup&gt;
 As a true aside, people often say "one in a million" but lack a good mental model of just how rare that is.  20 heads in a row for a fair coin is a one in a million event. This fun fact and others can be found &lt;a href="https://www.stat.berkeley.edu/~aldous/Real-World/million.html"&gt;here, at David Aldous's Home Page&lt;/a&gt;.
 &lt;/aside&gt;
 &lt;h2&gt;Mathematical Properties&lt;/h2&gt;
@@ -1551,7 +1551,10 @@ $$ \int dx\, dy\, p(x,y) \log \frac{p(x,y)}{q(x,y)} \geq \int dx\, p(x) \log \fr
 which is easy to show if you decompose $p(x,y) = p(x) p(y|x)$ and use the fact that all KL divergences (including the conditional $I[p(y|x);q(y|x)] \geq 0$ are non-negative.&lt;/p&gt;
 &lt;p&gt;Again, in terms of our current interpretation, this makes sense. If I have some beliefs defined over several variables, if I only get to observe some subset of them, it should be harder for me to discern the beliefs.  The less I look at, the less I see.&lt;/p&gt;
 &lt;h2&gt;Universal Recipe&lt;/h2&gt;
-&lt;p&gt;With the prerequisites out of they way we're reading to see the "universal recipe" for generating objectives. Regardless of what we are trying to accomplish, the goal is to make the real world look more like our dreams.  Given that KL divergence is the &lt;em&gt;proper&lt;/em&gt; way to measure how similar two distributions are, we need only minimize the KL divergence between the real world -- the world we can sample from -- and the world as we wish it were.  The smaller that KL can become, the harder it becomes for us or anyone else to distinguish between our dreams and reality.  In steps:&lt;/p&gt;
+&lt;p&gt;With the prerequisites out of they way we're ready to see the "universal recipe" for generating objectives.&lt;/p&gt;
+&lt;p&gt;In machine learning, broadly, we build neural networks and need some guidance on how to set their parameters.  An &lt;em&gt;objective&lt;/em&gt; acts like a score that ranks each possible setting and guides our search in the space of parameters for a &lt;em&gt;good&lt;/em&gt; one.  How &lt;em&gt;ought&lt;/em&gt; we value, or judge each possible solution?&lt;/p&gt;
+&lt;p&gt;Fundamentally, there are two things in conflict.  There is a the &lt;em&gt;real world&lt;/em&gt; with all of its causal depedencies and structure, a great deal of which we can no influence on.  Data comes from some data generating process wholly outside of our control.  On top of this data we are often interested in building machines to process the data, which may exist in the real world but have a billion or more knobs we need guidance on how to set.  In contrast to the real world, there is the &lt;em&gt;dream world&lt;/em&gt;, the world of our desires, the world as it wish it were to be.  There's a simple story we &lt;em&gt;wish&lt;/em&gt; were true that we could tell about the data and its causal structure. When doing Bayesian inference this is the &lt;em&gt;generative&lt;/em&gt; model you use to describe the data.  If we're being honest with ourselves, it isn't that the data we observe actually comes from our generative model, we only wish that were the case.  So, we have two different stories we could try to tell about the world, the accurate real world description and the wishful dream world one.&lt;/p&gt;
+&lt;p&gt;The goal is to make the real world look more like our dreams.  Given that KL divergence is the &lt;em&gt;proper&lt;/em&gt; way to measure how similar two distributions are, we need only minimize the KL divergence between the real world -- the world we can sample from -- and the world as we wish it were.  The smaller that KL can become, the harder it becomes for us or anyone else to distinguish between our dreams and reality.  In steps:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Draw a causal graphical model corresponding to the world as it is, the true world $P$.&lt;/li&gt;
 &lt;li&gt;Augment the real world with any components you wish to add.&lt;/li&gt;
@@ -1560,7 +1563,7 @@ which is easy to show if you decompose $p(x,y) = p(x) p(y|x)$ and use the fact t
 &lt;li&gt;...&lt;/li&gt;
 &lt;li&gt;Profit!&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;As simple as it sounds, in retrospect I think a lot of my previous papers were just following this recipe.  Let's repeat this ad nauseam.&lt;/p&gt;
+&lt;p&gt;As simple as it sounds, in retrospect a lot of machine learning is simply following this recipe.  Let's repeat this ad nauseam.&lt;/p&gt;
 &lt;h2&gt;Density Estimation&lt;/h2&gt;
 &lt;p&gt;We'll start with the problem of density estimation.  Let's say we have some black box that generates samples.  This is the real world $P$, outside of our control.  Despite not knowing how $p(x)$ is structured, we can push the button on the black box to generate samples.  What do we wish for? We wish we instead have a nice description of those same images.  We wish that those images instead came from a box of our own design, some parametric model or probability distribution with knobs that we can adjust to bring it into alignment with the real world, our dream world $q_\theta(x)$ with parameters $\theta$.&lt;/p&gt;
 &lt;figure id="#density-estimation" class="right"&gt;
@@ -1568,11 +1571,11 @@ which is easy to show if you decompose $p(x,y) = p(x) p(y|x)$ and use the fact t
   &lt;img width="95%" src="figures/kl-is-all-you-need/density-estimation.png"
     alt="A graphical version of density estimation, the left shows the distribution $p(x)$ where $X$ is a random variable denoting images. The right shows the same, but labeled as $q_\theta(x)$."&gt;
   &lt;figcaption&gt;
-  Figure 3. Density Estimation. &lt;a href="#imgkey"&gt;&lt;sup&gt;6&lt;/sup&gt;&lt;/a&gt;
+  Figure xxf2. Density Estimation. &lt;a href="#imgkey"&gt;&lt;sup&gt;xxa-figkey&lt;/sup&gt;&lt;/a&gt;
   &lt;/figcaption&gt;
   &lt;/center&gt;
 &lt;/figure&gt; 
-&lt;aside&gt;&lt;sup id="imgkey"&gt;6&lt;/sup&gt;
+&lt;aside&gt;&lt;sup id="imgkey"&gt;xxa-figkey&lt;/sup&gt;
 These figures are meant to be graphical models, where the plates represent repeated samples (here $N$), and each circle represents a random variable.  The arrows denote causal relationships between the variables.  I try to keep the colors somewhat consistent, but also label the random variables in each.  The turtle emoji (🐢) is meant to denote images, "turtle" markes a label, the little plot will represent a &lt;i&gt;representation&lt;/i&gt;, $D$ is data, $\theta$ are parameters and $\phi$ is the state of the universe.
 &lt;/aside&gt;
 &lt;p&gt;Following the recipe, our recipe then is to minimize the KL divergence between the real world and our ideal one:&lt;/p&gt;
@@ -1584,17 +1587,17 @@ These figures are meant to be graphical models, where the plates represent repea
 &lt;p&gt;There are two caveats worth discussing but I've pushed them to appendices.  &lt;a href="#appdim"&gt;The first&lt;/a&gt; is that it bugs me that splitting the log density ratio is awkward in terms of dimensional analysis, and &lt;a href="#appemp"&gt;the second&lt;/a&gt; is that while this gives us a meaningful objective, it requires that we be able to take expectations with respect to the true distribution.  If we have only finite samples in the form of a training set, that introduces complications.  I want to acknowlege that reusing a fixed dataset is a problem that has to be dealt with, I want to highlight that it isn't a problem with the &lt;em&gt;objective&lt;/em&gt;.  Our KL divergence objective is telling us the right thing to do, we need to work out real world issues about how to best implement that objective.  This requires some real world complications that are outside the scope of this discussion.&lt;/p&gt;
 &lt;h2&gt;Supervised Learning&lt;/h2&gt;
 &lt;p&gt;Let's complicate things slightly.  Instead of imagining that we have a single random variable in the real world, imagine instead we have a pair of variables, $X$ and $Y$.  For concreteness, imagine the $X$ are images and the $Y$ are their associated labels in some dataset.&lt;/p&gt;
-&lt;p&gt;What are we after? What does success look like? Let's imagine that what we desire is the ability to assign labels to data.  What we wish were the case was that we used the same process to draw the images $q(x) = p(x)$, but instead of using the real world process to assign labels, ideally the labels would instead come from a device under our control: $q_\theta(y|x)$. &lt;a href="#theta"&gt;&lt;sup&gt;7&lt;/sup&gt;&lt;/a&gt;.  Just as before, we simply minimize the KL divergence between these two joints and we obtain an objective:&lt;/p&gt;
+&lt;p&gt;What are we after? What does success look like? Let's imagine that what we desire is the ability to assign labels to data.  What we wish were the case was that we used the same process to draw the images $q(x) = p(x)$, but instead of using the real world process to assign labels, ideally the labels would instead come from a device under our control: $q_\theta(y|x)$. &lt;a href="#theta"&gt;&lt;sup&gt;xxa5&lt;/sup&gt;&lt;/a&gt;.  Just as before, we simply minimize the KL divergence between these two joints and we obtain an objective:&lt;/p&gt;
 &lt;figure id="#supervised-learning" class="right"&gt;
   &lt;center&gt;
   &lt;img width="95%" src="figures/kl-is-all-you-need/supervised-learning.png"
     alt="A graphical version of supervised learning, the left shows the distribution $p(y,x)$ where $X$ is a random variable denoting images and $Y$ are some labels. The right shows the world of our dreams, where we draw the images $X$ from the same process as in the real world $p(x)$ but we have a machine that applies the labels: $q(y|x)$."&gt;
   &lt;figcaption&gt;
-  Figure 4. Supervised Learning.
+  Figure xxf3. Supervised Learning.
   &lt;/figcaption&gt;
   &lt;/center&gt;
 &lt;/figure&gt; 
-&lt;aside&gt; &lt;sup id="theta"&gt;7&lt;/sup&gt;
+&lt;aside&gt; &lt;sup id="theta"&gt;xxa5&lt;/sup&gt;
 I'm going to start dropping the subscript $\theta$ for the parameters.
 &lt;/aside&gt;
 &lt;p&gt;$$ \left\langle \log \frac{p(x,y)}{p(x)q(y|x)} \right\rangle, $$&lt;/p&gt;
@@ -1609,13 +1612,13 @@ random variable.&lt;/p&gt;
 &lt;p&gt;Let's start with an unsupervised case.  We have images and we want to form a representation of those images.  In our real world, we have the images $X$ drawn from some distribution outside our control ($p(x)$).  Now we'll &lt;em&gt;augment&lt;/em&gt; the
 real world with a new random variable $Z$; our &lt;em&gt;representation&lt;/em&gt;.  We'll parameterize this with a neural network $p(z|x)$ that defines a tractable distribution for our stochastic representation $Z$. This is our &lt;em&gt;encoder&lt;/em&gt;, which maps an image $X$ to a distribution for its representation.
 We want to consider a whole slew of possible &lt;em&gt;real worlds&lt;/em&gt;, each world consisting of a different setting of the parameters of our encoder, and thus each world consisting of a different joint distribution $p(x,z)$.  Now our parameters $\theta$ essentially index one of
-a wide array of possible joint distributions $p(x,z)$.  How do we decide amongst these?  What does success look like?  We are seeking a world in which we can &lt;em&gt;encode&lt;/em&gt; images into a useful representation $p(z|x)$, one way to define success would be if those learned representations were really like &lt;em&gt;latents&lt;/em&gt; for the images themselves.  Wouldn't it be swell if instead the world worked by looking at our own learned representation and used that to formulate the images themselves?  Wouldn't it be grand if that joint distribution factorized in the opposite direction: $q(x,z) = q(z)q(x|z)$.  This is the usual generative model story, where we first draw a latent variable $z$ from some prior distribution and then &lt;em&gt;decode&lt;/em&gt; it through a stochastic map $q(x|z)$ for formulate our image.  Such a latent would be demonstrably useful for generating images.&lt;/p&gt;
+a wide array of possible joint distributions $p(x,z)$.  How do we decide amongst these?  What does success look like?  We are seeking a world in which we can &lt;em&gt;encode&lt;/em&gt; images into a useful representation $p(z|x)$, one way to define success would be if those learned representations were really like &lt;em&gt;latents&lt;/em&gt; for the images themselves.  Wouldn't it be swell if instead the world worked by looking at our own learned representation and used that to formulate the images themselves?  Wouldn't it be grand if that joint distribution factorized in the opposite direction: $q(x,z) = q(z)q(x|z)$.  This is the usual generative model story, where we first draw a latent variable $z$ from some prior distribution and then &lt;em&gt;decode&lt;/em&gt; it through a stochastic map $q(x|z)$ to formulate our image.  Such a latent would be demonstrably useful for generating images.&lt;/p&gt;
 &lt;figure id="vae" class="right"&gt;
   &lt;center&gt;
   &lt;img width="95%" src="figures/kl-is-all-you-need/vae.png"
     alt="A graphical version of a VAE."&gt;
   &lt;figcaption&gt;
-  Figure 5. Variational Autoencoders.
+  Figure xxf4. Variational Autoencoders.
   &lt;/figcaption&gt;
   &lt;/center&gt;
 &lt;/figure&gt; 
@@ -1628,32 +1631,32 @@ So, as a bonus, if we push down on this joint KL objective, since this bounds th
 $$ \underbrace{\left\langle -\log q(x|z) \vphantom{\left\langle \frac p q \right\rangle} \right\rangle_p}_{D} + \underbrace{\left\langle \log \frac{p(z|x)}{q(z)}\right\rangle_p}_{R} \geq \underbrace{\left\langle -\log q(x) \vphantom{\left\langle \frac p q \right\rangle} \right\rangle_p}_{L} \geq \underbrace{\left\langle -\log p(x) \vphantom{\left\langle \frac p q \right\rangle} \right\rangle_p}_{H}, $$
 or in short:
 $$ D + R \geq L \geq H, $$&lt;/p&gt;
-&lt;aside&gt; &lt;sup id="brokenelbo"&gt;8&lt;/sup&gt;
+&lt;aside&gt; &lt;sup id="brokenelbo"&gt;xxa-broken&lt;/sup&gt;
 &lt;i&gt;Fixing a Broken ELBO&lt;/i&gt;. AA Alemi, B Poole, I Fischer, JV Dillon, RA Saurous, K Murphy. ICML 2018. arXiv: &lt;a href="https://arxiv.org/abs/1711.00464"&gt;1711.00464&lt;/a&gt;.
 &lt;/aside&gt;
-a geometric story we tell in more detail in prior work.&lt;a href="#brokenelbo"&gt;&lt;sup&gt;8&lt;/sup&gt;&lt;/a&gt;  The first term, the *distortion*, measures how well we are able to recover the original image after encoding it with the encoder $z \sim p(z|x)$ and then trying to decode back to the original image $q(x|z)$.  The second term in the objective is the *rate*, which measures the information theoretic cost of the encoding itself.  If Alice and Bob were attempting to communicate the encoding $z$, the KL between the encoding distribution and the prior measures the excess cost of communicating the encoding.
-&lt;p&gt;If we are careful to split up the objective into its various reparameterization independent components, we can also explore some trade-offs between the different terms in the objective, adding some Lagrange multipliers, obtaining the $\beta$-VAE.&lt;a href="#betavae"&gt;&lt;sup&gt;9&lt;/sup&gt;&lt;/a&gt;:
+a geometric story we tell in more detail in prior work.&lt;a href="#brokenelbo"&gt;&lt;sup&gt;xxa-broken&lt;/sup&gt;&lt;/a&gt;  The first term, the *distortion*, measures how well we are able to recover the original image after encoding it with the encoder $z \sim p(z|x)$ and then trying to decode back to the original image $q(x|z)$.  The second term in the objective is the *rate*, which measures the information theoretic cost of the encoding itself.  If Alice and Bob were attempting to communicate the encoding $z$, the KL between the encoding distribution and the prior measures the excess cost of communicating the encoding.
+&lt;p&gt;If we are careful to split up the objective into its various reparameterization independent components, we can also explore some trade-offs between the different terms in the objective, adding some Lagrange multipliers, obtaining the $\beta$-VAE.&lt;a href="#betavae"&gt;&lt;sup&gt;xxa-betavae&lt;/sup&gt;&lt;/a&gt;:
 $$ \left\langle -\log q(x|z) \right\rangle_p + \beta \left\langle \log \frac{p(z|x)}{q(z)}\right\rangle_p. $$&lt;/p&gt;
-&lt;aside&gt; &lt;sup id="betavae"&gt;9&lt;/sup&gt;
+&lt;aside&gt; &lt;sup id="betavae"&gt;xxa-betavae&lt;/sup&gt;
 &lt;i&gt;beta-VAE: Learning Basic Visual Concepts with a Constrained Variational Framework&lt;/i&gt;.
 I Higgens et al. ICLR 2016. &lt;a href="https://openreview.net/forum?id=Sy2fzU9gl"&gt;[OpenReview]&lt;/a&gt;.
 &lt;/aside&gt;
 &lt;p&gt;All told, the universal recipe has given us a proper &lt;em&gt;representation learning&lt;/em&gt; objective, albeit unsupervised.  We have defined what it could mean for a representation to be a good one and we are able to search now in the space of all possible representations.  Unfortunately, a bit is a bit and unless we bring some kind of auxiliary information to the table, the success and utility of this objective is often left to inductive biases in our particular choices of variational families.&lt;/p&gt;
 &lt;h2&gt;Variational Information Bottleneck&lt;/h2&gt;
-&lt;p&gt;If we want to be a bit more explicit in our representation learning objectives, we could &lt;em&gt;color the bits&lt;/em&gt; by bringing and auxiliary variable to the table.  Imagine our real world distribution consists of pairs, $(x,y)$ drawn from some joint distribution $p(x,y)$ outside of our control.  Imagine images $X$ and labels $Y$.  As before, we can augment this world with a new random variable $Z$, a &lt;em&gt;representation&lt;/em&gt;, which, in this example, we are interested in depending only on the image part, $p(z|x)$.  We do this because we'd like to be able to compute the representation of some downstream image without having access to its label.  As before, we've now defined a whole slew of possible worlds, consisting of all possible encoding distributions paired with our joint input distribution $p(x,y,z) =p(x,y)p(z|x)$.  How do we decide amongst these? What does success look like?  Let's define success as being able to use our learned representation $Z$, not to recreate the image, but only predict the auxiliary information $Y$.  This gives us a set of diagrams as in Figure 6 below.&lt;/p&gt;
+&lt;p&gt;If we want to be a bit more explicit in our representation learning objectives, we could &lt;em&gt;color the bits&lt;/em&gt; by bringing and auxiliary variable to the table.  Imagine our real world distribution consists of pairs, $(x,y)$ drawn from some joint distribution $p(x,y)$ outside of our control.  Imagine images $X$ and labels $Y$.  As before, we can augment this world with a new random variable $Z$, a &lt;em&gt;representation&lt;/em&gt;, which, in this example, we are interested in depending only on the image part, $p(z|x)$.  We do this because we'd like to be able to compute the representation of some downstream image without having access to its label.  As before, we've now defined a whole slew of possible worlds, consisting of all possible encoding distributions paired with our joint input distribution $p(x,y,z) =p(x,y)p(z|x)$.  How do we decide amongst these? What does success look like?  Let's define success as being able to use our learned representation $Z$, not to recreate the image, but only predict the auxiliary information $Y$.  This gives us a set of diagrams as in Figure xxf5 below.&lt;/p&gt;
 &lt;figure id="vib" class="right"&gt;
   &lt;center&gt;
   &lt;img width="95%" src="figures/kl-is-all-you-need/vib.png"
     alt="A graphical version of VIB."&gt;
   &lt;figcaption&gt;
-  Figure 6. Variational Information Bottleneck.
+  Figure xxf5. Variational Information Bottleneck.
   &lt;/figcaption&gt;
   &lt;/center&gt;
 &lt;/figure&gt; 
-&lt;aside&gt; &lt;sup id="brokenelbo"&gt;8&lt;/sup&gt;
+&lt;aside&gt; &lt;sup id="brokenelbo"&gt;xxa-broken&lt;/sup&gt;
 &lt;i&gt;Deep Variational Information Bottleneck&lt;/i&gt;. AA Alemi, I Fischer, JV Dillon, K Murphy. ICLR 2017. arXiv: &lt;a href="https://arxiv.org/abs/1612.00410"&gt;1612.00410&lt;/a&gt;.
 &lt;/aside&gt;
-Following the universal recipe and taking the KL divergence between these two joints lets us reinvent the Variational Information Bottleneck:&lt;a href="#vib"&gt;&lt;sup&gt;10&lt;/sup&gt;&lt;/a&gt;
+Following the universal recipe and taking the KL divergence between these two joints lets us reinvent the Variational Information Bottleneck:&lt;a href="#vib"&gt;&lt;sup&gt;xxa-vib&lt;/sup&gt;&lt;/a&gt;
 &lt;p&gt;$$ \left\langle \log \frac{p(y|x) p(z|x)}{q(y|z) q(z)} \right\rangle_p \geq \left\langle \log \frac{p(y|x)}{q(y|x)}\right\rangle_p \geq 0. $$
 Because KL is monotonic, this joint objective bounds the marginal conditional likelihood and we can rest assured that our predictive engine is still trying to mimic the labeling distribution.  This objective learns a representation that specifically aims to retain only the information that is relevant to predicting the auxiliary information contained in $Y$.  Because the objective is representation centric, we also learn a stochastic representation that can truly compress the inputs.&lt;/p&gt;
 &lt;!-- TODO: more info and some background of how VIB behaves. --&gt;
@@ -1664,7 +1667,7 @@ Because KL is monotonic, this joint objective bounds the marginal conditional li
   &lt;img width="95%" src="figures/kl-is-all-you-need/semi-supervised.png"
     alt="A graphical version of a Semi-supervised VAE."&gt;
   &lt;figcaption&gt;
-  Figure 7. Semi-Supervised Variational Autoencoder.
+  Figure xxf7. Semi-Supervised Variational Autoencoder.
   &lt;/figcaption&gt;
   &lt;/center&gt;
 &lt;/figure&gt; 
@@ -1678,7 +1681,7 @@ Here $\beta$ and $\gamma$ have been inserted to let us play with the trade-offs 
   &lt;img width="95%" src="figures/kl-is-all-you-need/diffusion.png"
     alt="A graphical version of Diffusion."&gt;
   &lt;figcaption&gt;
-  Figure 8. Variational Diffusion.
+  Figure xxf6. Variational Diffusion.
   &lt;/figcaption&gt;
   &lt;/center&gt;
 &lt;/figure&gt; 
@@ -1692,7 +1695,7 @@ where we draw the summary $\theta$ from some &lt;em&gt;prior&lt;/em&gt; and use 
   &lt;img width="95%" src="figures/kl-is-all-you-need/bayes.png"
     alt="A graphical version of Bayesian Inference."&gt;
   &lt;figcaption&gt;
-  Figure 9. (Variational) Bayesian Inference.
+  Figure xxf8. (Variational) Bayesian Inference.
   &lt;/figcaption&gt;
   &lt;/center&gt;
 &lt;/figure&gt; 
@@ -1708,19 +1711,19 @@ If we set $\beta=1$ and make our $p(\theta|D)$ expressive enough to cover the sp
   &lt;img width="95%" src="figures/kl-is-all-you-need/bnn.png"
     alt="A graphical version of Bayesian Neural Networks."&gt;
   &lt;figcaption&gt;
-  Figure 10. Bayesian Neural Networks.
+  Figure xxf9. Bayesian Neural Networks.
   &lt;/figcaption&gt;
   &lt;/center&gt;
 &lt;/figure&gt; 
 &lt;p&gt;And take the KL betwixt them:
 $$ \left\langle -\beta \log q(y|x,\theta) + \log \frac{p(\theta|D)}{q(\theta)} \right\rangle_p, $$
-and we've reinvented Bayes By Backprop.&lt;a href="#bbb"&gt;&lt;sup&gt;11&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;aside&gt; &lt;sup id="bbb"&gt;11&lt;/sup&gt;
+and we've reinvented Bayes By Backprop.&lt;a href="#bbb"&gt;&lt;sup&gt;xxa-bbb&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;aside&gt; &lt;sup id="bbb"&gt;xxa-bbb&lt;/sup&gt;
 &lt;i&gt;Weight Uncertainty in Neural Networks&lt;/i&gt; Blundell et al. ICML 2015. arXiv: &lt;a href="https://arxiv.org/abs/1505.05424"&gt;1505.05424&lt;/a&gt;
 &lt;/aside&gt;
 &lt;h2&gt;TherML&lt;/h2&gt;
-&lt;p&gt;From here you might be wondering what it would look like if we tried to be as honest as possible about the sort of standard practice in machine learning today.  In our &lt;a href="https://arxiv.org/abs/1807.04162"&gt;earlier work&lt;/a&gt;&lt;a href="#therml"&gt;&lt;sup&gt;12&lt;/sup&gt;&lt;/a&gt; we did exactly that and came up with the following diagram:&lt;/p&gt;
-&lt;aside&gt; &lt;sup id="therml"&gt;12&lt;/sup&gt;
+&lt;p&gt;From here you might be wondering what it would look like if we tried to be as honest as possible about the sort of standard practice in machine learning today.  In our &lt;a href="https://arxiv.org/abs/1807.04162"&gt;earlier work&lt;/a&gt;&lt;a href="#therml"&gt;&lt;sup&gt;xxa-therml&lt;/sup&gt;&lt;/a&gt; we did exactly that and came up with the following diagram:&lt;/p&gt;
+&lt;aside&gt; &lt;sup id="therml"&gt;xxa-therml&lt;/sup&gt;
 &lt;i&gt;TherML: Thermodynamics of Machine Learning&lt;/i&gt;
 AA Alemi, I Fisher. ICML2018 TFADGM Workshop. arXiv:&lt;a href="https://arxiv.org/abs/1807.04162"&gt;1807.04162&lt;/a&gt;
 &lt;/aside&gt;
@@ -1729,7 +1732,7 @@ AA Alemi, I Fisher. ICML2018 TFADGM Workshop. arXiv:&lt;a href="https://arxiv.or
   &lt;img width="95%" src="figures/kl-is-all-you-need/therml.png"
     alt="A graphical version of TherML."&gt;
   &lt;figcaption&gt;
-  Figure 10. TherML.
+  Figure xxf10. TherML.
   &lt;/figcaption&gt;
   &lt;/center&gt;
 &lt;/figure&gt; 
@@ -1744,12 +1747,12 @@ as we discuss in the paper we get an objective that let's us trade off between t
   &lt;img width="95%" src="figures/kl-is-all-you-need/vp.png"
     alt="A graphical version of Variational Prediction."&gt;
   &lt;figcaption&gt;
-  Figure 11. Variational Prediction.
+  Figure xxf11. Variational Prediction.
   &lt;/figcaption&gt;
   &lt;/center&gt;
 &lt;/figure&gt; 
-&lt;p&gt;Which we explore in some detail in &lt;a href="https://arxiv.org/abs/2307.07568"&gt;our recent work&lt;/a&gt;&lt;a href="#vp"&gt;&lt;sup&gt;13&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;aside&gt; &lt;sup id="vp"&gt;13&lt;/sup&gt;
+&lt;p&gt;Which we explore in some detail in &lt;a href="https://arxiv.org/abs/2307.07568"&gt;our recent work&lt;/a&gt;&lt;a href="#vp"&gt;&lt;sup&gt;xxa-vp&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;aside&gt; &lt;sup id="vp"&gt;xxa-vp&lt;/sup&gt;
 &lt;i&gt;Variational Prediction&lt;/i&gt;.
 AA Alemi, B Poole AABI2023. arXiv:&lt;a href="https://arxiv.org/abs/2307.07568"&gt;23607.07568&lt;/a&gt;
 &lt;/aside&gt;
@@ -1762,8 +1765,8 @@ AA Alemi, B Poole AABI2023. arXiv:&lt;a href="https://arxiv.org/abs/2307.07568"&
 &lt;/span&gt;
 &lt;p&gt;There is one caveat, I'm &lt;a href="kl.html#appendix-a"&gt;a particular stickler&lt;/a&gt; for decomposing KL divergences in this way. I don't think it makes any dimensional sense.  I can't take the logarithm of a dimensional quantity, let alone a density.  To fix the glitch, let's instead try to explicitly choose some tractable base measure $m(x)$ and insert it into our original objective:&lt;/p&gt;
 &lt;p&gt;$$ \left\langle \log \frac{p(x)}{q_\theta(x)} \right\rangle_p = \left\langle \log \frac{p(x) m(x)}{q_\theta(x)m(x)} \right\rangle = \left\langle \log \frac{p(x)}{m(x)} \right\rangle_p + \left\langle \log \frac{m(x)}{q_\theta(x)} \right\rangle_p . $$&lt;/p&gt;
-&lt;p&gt;Now, we've decomposed the KL divergence between $P$ and $Q$ into two terms, the first is the KL divergence between $P$ and $M$, our base density. Just as before, this is some constant outside our control. As long as we fix $m(x)$, given that $p(x)$ is fixed, their KL divergence is fixed and no changes we make to $\theta$ have any effect, so we can drop this (now appropriately reparameterization-independent) term from our objective.  We're left with the weight of evidence samples from $p$ provide in favor of $m$ against $q$. If we try to adjust the parameters of $q_\theta(x)$ to make it as easy as possible to distinguish it from some base measure $m(x)$, under samples from $p$, we ensure that we drive $q$ &lt;em&gt;towards&lt;/em&gt; $p$.  If we use ordinary path gradients the choice of $m(x)$ here won't actually affect the optimization trajectory. It will, however, help us sleep at night, ensuring that our objective is a truly reparameterization-invariant quantity. &lt;a href="#controlvariates"&gt;&lt;sup&gt;5&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;aside&gt;&lt;sup id="controlvariates"&gt;5&lt;/sup&gt;
+&lt;p&gt;Now, we've decomposed the KL divergence between $P$ and $Q$ into two terms, the first is the KL divergence between $P$ and $M$, our base density. Just as before, this is some constant outside our control. As long as we fix $m(x)$, given that $p(x)$ is fixed, their KL divergence is fixed and no changes we make to $\theta$ have any effect, so we can drop this (now appropriately reparameterization-independent) term from our objective.  We're left with the weight of evidence samples from $p$ provide in favor of $m$ against $q$. If we try to adjust the parameters of $q_\theta(x)$ to make it as easy as possible to distinguish it from some base measure $m(x)$, under samples from $p$, we ensure that we drive $q$ &lt;em&gt;towards&lt;/em&gt; $p$.  If we use ordinary path gradients the choice of $m(x)$ here won't actually affect the optimization trajectory. It will, however, help us sleep at night, ensuring that our objective is a truly reparameterization-invariant quantity. &lt;a href="#controlvariates"&gt;&lt;sup&gt;xxa4&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;aside&gt;&lt;sup id="controlvariates"&gt;xxa4&lt;/sup&gt;
 If I'm being honest, this is something that bothers me that I don't fully understand.  Using a baseline model here functionally takes the same form as control variates like the baselines used in REINFORCE, but here they don't help at all (we aren't taking an expectation with respect to $q$ here). Regardless, it really feels like an appropriate base measure &lt;i&gt;ought&lt;/i&gt; to help.  I can't help but think that it signals a problem with the gradients we take in machine learning today. Things like &lt;a href="https://arxiv.org/abs/2206.07137"&gt;RHO-Loss&lt;/a&gt; reinforce this idea.
 &lt;/aside&gt;
 &lt;span id="appemp"&gt;
@@ -1779,6 +1782,7 @@ We are no longer minimizing the KL divergence between the &lt;em&gt;true&lt;/em&
 $$ \hat p \equiv \frac 1 N \sum_{i=1}^N \delta(x - x_i). $$
 If we had a very large number of samples, this empirical estimate would be pretty close to our true $\hat p \sim p$, but with finite samples it is always a distinct distribution from the true.  If we minimize the empirical risk, or maximize the empirical likelihood what we are really doing is getting our parametric distribution to be as indistinguishable as possible from the empirical distribution. This is equivalent to saying we should match sampling with replacement from our training set.  This is really where all of the issues of over-fitting come from.  The degree to which matching the empirical distribution rather than the true distribution is a problem depends on how little data we have (relative to its sort of extent or coverage) and how flexible our parametric model is (the degree to which it can memorize the data we show it and nothing else).  In the context of classical machine learning this is where &lt;em&gt;regularization&lt;/em&gt; comes to bear, we typically add some additional terms to our objective beyond just the empirical likelihood to attempt to get our learned model to better approximate the true distribution rather than the empirical.&lt;/p&gt;
 &lt;p&gt;I want to acknowledge that this is a problem, but in the context of the current discussion I want to point out that this &lt;em&gt;isn't&lt;/em&gt; a problem with our &lt;em&gt;objective&lt;/em&gt;.  It is a good idea to try to minimize the KL divergence between the true distribution and our parametric model.  After we decide on this objective, unfortunately, there are practical issues we have to consider about how to target this objective tractably and accurately.&lt;/p&gt;
+&lt;!-- TODO: bigger thread is that once we see that everything is just drawing diagrams, we can ask the meta question of how we *ought* to draw diagrams --&gt;
 &lt;!--
 ## Appendix - Pointwise Bounds
 TODO:
