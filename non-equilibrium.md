@@ -49,7 +49,7 @@ I'm going to anticipate some of the things we're going to talk about below and d
 $$ Q = \log \frac{p(x_1|x_0)}{q(x_0|x_1)}. $$
 With this final identification we end up with the general statement:
 $$ \frac{q_R}{p_F} = e^{\beta (W - Q - \Delta F)}. $$
-The density ratio of the reverse process (shortened here as $q_R$) to the forward process $p_F$ is given by the exponential of $\beta$
+The density ratio of the reverse process (shortened here as $q_R$) to the forward process $p_F$ is given by the exponential of $\beta$ times the quantity of the work, minus the heat minus the change in free energy.
 
 ## Hamiltonian Dynamics
 
