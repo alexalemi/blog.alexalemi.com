@@ -180,11 +180,11 @@ for the volumetic concetration rather than mass based one.
 To estimate the weight of the atmosphere, we know that the $1 \textrm{ atm}$ of air pressure at the 
 surface is caused by the weight of air above us, so the total mass of the atmosphere is roughly:
 
-$$ \frac{1 \textrm{ atm} \cdot 4 \pi R_{\ocirc}^2}{g} \approx 5.2\times 10^{21} \textrm{ g} $$
+$$ \frac{1 \textrm{ atm} \cdot 4 \pi R^2}{g} \approx 5.2\times 10^{21} \textrm{ g} $$
 
 So we can work out that the relative $\coo$ concentration from human breathing is:
 
-$$ \frac{730 \textrm{ g/day}}{5.2 \times 10^{21} \textrm{ g}} \cdot 7\times 10^9 \cdot \frac{44/29} \approx \frac{2/3} \textrm{ ppm/year}, $$
+$$ \frac{730 \textrm{ g/day}}{5.2 \times 10^{21} \textrm{ g}} \cdot 7\times 10^9 \cdot \frac{44}{29} \approx \frac{2}{3} \textrm{ ppm/year}, $$
 
 <aside> <sup id="coorate">3</sup> 
 	From the <a href="https://mlg.eng.cam.ac.uk/carl/words/carbon.html#:~:text=In%201960%2D1970%20the%20growth,about%202.47%20ppm%20per%20year.">Carl Edward Rasmussen</a>.
