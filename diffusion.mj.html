@@ -86,6 +86,8 @@ of a diffusion model trained on EMNIST, which you can find as part of the <a hre
 <aside><sup id="#brakets">3</sup>
 	I use <a href="https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation">brakets</a> to show expectations and unless noted, always with respect to the full $p$ distribution.
 	$$ \left\langle \cdot \right\rangle_p = \mathbb{E}_p \left[ \cdot \right] = \int dx\, p(x) [\cdot] $$
+<pre><code>	
+</code></pre>
 <p>If I don't denote the distribution the expectation is with respect to on the brakets, it's always the full joint $p(x,\cdots)$. Notice that this works even if there
 are fewer variables or conditioning variables left inside the terms in the brakets, as any excess variables will just marginalize out without issue in the expectation and any variables being conditioned on will be evaluated in expectation as desired.</p>
 </aside>
@@ -97,7 +99,7 @@ $$ \begin{align}
 &amp;= \left\langle \log \frac{p(x)}{q(x)} \right\rangle + \left\langle \log \frac{p(z|x)}{q(z|x)} \right\rangle \\
 &amp;\geq \left\langle \log \frac{p(x)}{q(x)}\right\rangle \geq 0
 \end{align} $$
-Intuitively, if we think about KL divergence as a &quot;distance&quot; between probability distributions, two joint distributions always have to be at least as far apart as their marginals.  As we just saw, the KL of the joint is the sum of the KL between the two marginals, as well as the expected KL of the conditional distributions (which has to be positive, as all KLs are).</p>
+Intuitively, if we think about KL divergence as a "distance" between probability distributions, two joint distributions always have to be at least as far apart as their marginals.  As we just saw, the KL of the joint is the sum of the KL between the two marginals, as well as the expected KL of the conditional distributions (which has to be positive, as all KLs are).</p>
 <h2>VAEs</h2>
 <p>Imagine designing these joint distributions to have different flavors.  Think of $p(x,z)$ as a <em>forward</em> process $p(x) p(z|x)$ that takes an image from some natural image distribution $p(x)$ and then encodes it into some representation $z$ with an encoder $p(z|x)$.  This is a joint distribution over the two variables. Running the forward process would give us $(x,z)$ pairs, pairs of natural images and their encodings.
 Next, imagine a different joint distribution, a <em>reverse process</em> $q(x,z)$ that takes some sample from a <em>prior</em> $q(z)$ and then runs it through a <em>decoder</em> $q(x|z)$ to generate a synthetic image.  This is a generative model of the kind we might be used to building.  This is also a fully-fledged joint distribution that we could sample from, in order to generate $(x,z)$ pairs. At initialization, these two distributions are very different. The goal of generative modeling is to bring these two joint distributions into alignment.</p>
