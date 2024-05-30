@@ -162,19 +162,19 @@ What follows is an extension of those ideas, essentially a written version of a 
 <a href="http://localhost:8000/talks/information-theory-for-representation-learning.html">talk</a>
 <a href="https://docs.google.com/presentation/d/1YwgRzjWATHVX60Me6qOEOxQIiFjxdqO0_9jdAWXFx74/present?usp=sharing&amp;resourcekey=0-T4ume8tMl__GoYZnKgHMEg">[slides]</a>
 I gave at the InfoCog Workshop at NeurIPS 2024.
-<a href="#multivariate-ib"><sup>xxa-attribution</sup></a></p>
-<aside> <sup id="figattribution">xxa-attribution</sup>
+<a href="#multivariate-ib"><sup>1</sup></a></p>
+<aside> <sup id="figattribution">1</sup>
 This is also essentially my own retelling of <a href="https://www.cs.huji.ac.il/labs/learning/Theses/Slonim_PhD.pdf">Noam Slonim's thesis on the Multivariate Information Bottleneck</a>.
 </aside>
 <figure id="#conditional" class="right">
   <center>
   <img width="95%" src="figures/kl-is-all-you-need/kl-elephant.png" alt="A cartoon depicting several blindfolded scientists analyzing different parts of an elephant, the different scientists think they are looking at VIB, or Diffusion or BNNs or VAEs or Semi-supervised Learning or Bayesian inference, but really its all just KL Divergence.">
   <figcaption>
-  Figure xxf1. The elephant in the room is KL divergence or the relevant entropy.<a href="#figattribution"><sup>xxa2</sup></a>
+  Figure 1. The elephant in the room is KL divergence or the relevant entropy.<a href="#figattribution"><sup>2</sup></a>
   </figcaption>
   </center>
 </figure> 
-<aside> <sup id="figattribution">xxa2</sup>
+<aside> <sup id="figattribution">2</sup>
 Cartoon modified from Kevan C. Herold, Jeffrey A. Bluestone, Type 1 Diabetes Immunotherapy: Is the Glass Half Empty or Half Full?. Sci. Transl. Med.3,95fs1-95fs1(2011).
 <a href="https://doi.org/10.1126/scitranslmed.3002981">DOI:10.1126/scitranslmed.3002981</a>.
 </aside>
@@ -182,9 +182,9 @@ Cartoon modified from Kevan C. Herold, Jeffrey A. Bluestone, Type 1 Diabetes Imm
 <p>Before we get into it, we need to make sure we're all starting on the same
 page.  Because KL divergence is so fundamental and special (as I've written
 about <a href="kl.html">before</a>) it has many different interpretations. For
-our purposes, the most useful interpretation is as <a href="kl.html#expected-weight-of-evidence">an expected weight of evidence</a>.<a href="#woe"><sup>xxa-woe</sup></a>
+our purposes, the most useful interpretation is as <a href="kl.html#expected-weight-of-evidence">an expected weight of evidence</a>.<a href="#woe"><sup>3</sup></a>
 I'll briefly build that up here.</p>
-<aside> <sup id="woe">xxa-woe</sup>
+<aside> <sup id="woe">3</sup>
 I think weight of evidence is one of the most underappreciated concepts.  For a nice overview see: <i>Weight of Evidence: A Brief Survey</i> by I.J. Good. <a href="https://link.springer.com/article/10.1007/BF01106578">[pdf]</a>.
 </aside>
 <p>Imagine we have two hypotheses $P$ and $Q$ and we're trying to decide which of these two is a better model of the world.  We go out an collect some data $D$ and would like to use that data to help us discriminate between the two models.  Being good probabilistic thinkers with a penchant for gambling, what we're interested in is:</p>
@@ -378,7 +378,7 @@ I think weight of evidence is one of the most underappreciated concepts.  For a 
   <center>
   <img width="95%" src="figures/kl-is-all-you-need/belief-o-meter.png" alt="A cartoon representation of a Belief-O-Meter as an old school linear analog meter.">
   <figcaption>
-  Figure xxf0. Belief-O-Meter.
+  Figure 2. Belief-O-Meter.
   </figcaption>
   </center>
 </figure> 
@@ -449,7 +449,7 @@ I think weight of evidence is one of the most underappreciated concepts.  For a 
 <!-- TODO Explain the change in notation here. -->
 <!-- What then is <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">the Kullback-Leibler (KL) divergence</a> ? -->
 <p>OK, so what does this have to do with the <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">KL divergence</a>?
-Imagine if one of our two hypotheses is actually true.  If $P$ was the probability distribution governing the actual world, the <i>expected weight of evidence</i> we would accumulate from observing some data would be, the KL divergence:<a href="#brakets"><sup>xxa3</sup></a></p>
+Imagine if one of our two hypotheses is actually true.  If $P$ was the probability distribution governing the actual world, the <i>expected weight of evidence</i> we would accumulate from observing some data would be, the KL divergence:<a href="#brakets"><sup>4</sup></a></p>
 <p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="46.563ex" height="7.009ex" style="vertical-align: -3.171ex;" viewBox="0 -1652.5 20047.8 3017.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-5-Title">
 <title id="MathJax-SVG-5-Title"> I[p;q] \equiv \int dx\, p(x) \log \frac{p(x)}{q(x)} \equiv \left\langle \log \frac{p(x)}{q(x)} \right\rangle_{p(x)} . </title>
 <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
@@ -525,7 +525,7 @@ Imagine if one of our two hypotheses is actually true.  If $P$ was the probabili
  <use xlink:href="#MJMAIN-2E" x="19769" y="0"></use>
 </g>
 </svg></span></p>
-<aside> <sup id="brakets">xxa3</sup>
+<aside> <sup id="brakets">4</sup>
 To clean up the notation, I like using brakets: $ \langle \cdot \rangle_p \equiv \mathbb{E}_{p}[\cdot] \equiv \int dx\, p(x) [\cdot]$, and to clean things up further (or because I'm lazy) I'll often leave off the subscript saying which distribution the brakets are to be taken with respect to, in any of those cases you can assume its a full joint $p$ distribution (over any variables that are otherwise unbound).
 </aside>
 <p>Therefore, we can interpret the KL divergence as a measure of how quickly we would be able to discern between hypotheses $P$ and $Q$ if $P$ were true.  Similarly, the <i>reverse KL</i> is:</p>
@@ -604,8 +604,8 @@ To clean up the notation, I like using brakets: $ \langle \cdot \rangle_p \equiv
  <use xlink:href="#MJMAIN-2C" x="19695" y="0"></use>
 </g>
 </svg></span></p>
-<p>a measure of how quickly we'd be able to discern between $P$ and $Q$ if $Q$ were true.  Suddenly, the asymmetry of the KL divergence, an issue that often causes consternation is no longer a mystery.  We should expect the expected weight of evidence to be asymmetric.   As an extreme example, imagine we were trying to decide between two hypothesis regarding some coin flips we are about to observe.  $P$ is the hypothesis that the coin is fair while $Q$ is the hypothesis the coin is a cheating, double-headed coin.  In this case, if we actually had a fair coin, we expect to be able to perfectly discern the two hypotheses (infinite KL) because we will eventually observe a tails, an impossible situation under the alternative ($Q$) hypothesis.  Meanwhile, if the coin is actually a cheat, we'll be able to collect, on average, 1 bit of evidence per flip in favor of the hypothesis that the coin is a cheat, but we will only ever observe heads and so never be able to perfectly rule out the possibility that the coin is fair and we've simply observed some miracle.<a href="#million"><sup>xxa4</sup></a></p>
-<aside> <sup id="million">xxa4</sup>
+<p>a measure of how quickly we'd be able to discern between $P$ and $Q$ if $Q$ were true.  Suddenly, the asymmetry of the KL divergence, an issue that often causes consternation is no longer a mystery.  We should expect the expected weight of evidence to be asymmetric.   As an extreme example, imagine we were trying to decide between two hypothesis regarding some coin flips we are about to observe.  $P$ is the hypothesis that the coin is fair while $Q$ is the hypothesis the coin is a cheating, double-headed coin.  In this case, if we actually had a fair coin, we expect to be able to perfectly discern the two hypotheses (infinite KL) because we will eventually observe a tails, an impossible situation under the alternative ($Q$) hypothesis.  Meanwhile, if the coin is actually a cheat, we'll be able to collect, on average, 1 bit of evidence per flip in favor of the hypothesis that the coin is a cheat, but we will only ever observe heads and so never be able to perfectly rule out the possibility that the coin is fair and we've simply observed some miracle.<a href="#million"><sup>5</sup></a></p>
+<aside> <sup id="million">5</sup>
 As a true aside, people often say "one in a million" but lack a good mental model of just how rare that is.  20 heads in a row for a fair coin is a one in a million event. This fun fact and others can be found <a href="https://www.stat.berkeley.edu/~aldous/Real-World/million.html">here, at David Aldous's Home Page</a>.
 </aside>
 <h2>Mathematical Properties</h2>
@@ -751,11 +751,11 @@ which is easy to show if you decompose $p(x,y) = p(x) p(y|x)$ and use the fact t
   <center>
   <img width="95%" src="figures/kl-is-all-you-need/density-estimation.png" alt="A graphical version of density estimation, the left shows the distribution $p(x)$ where $X$ is a random variable denoting images. The right shows the same, but labeled as $q_\theta(x)$.">
   <figcaption>
-  Figure xxf2. Density Estimation. <a href="#imgkey"><sup>xxa-figkey</sup></a>
+  Figure 3. Density Estimation. <a href="#imgkey"><sup>6</sup></a>
   </figcaption>
   </center>
 </figure> 
-<aside><sup id="imgkey">xxa-figkey</sup>
+<aside><sup id="imgkey">6</sup>
 These figures are meant to be graphical models, where the plates represent repeated samples (here $N$), and each circle represents a random variable.  The arrows denote causal relationships between the variables.  I try to keep the colors somewhat consistent, but also label the random variables in each.  The turtle emoji (🐢) is meant to denote images, "turtle" markes a label, the little plot will represent a <i>representation</i>, $D$ is data, $\theta$ are parameters and $\phi$ is the state of the universe.
 </aside>
 <p>Following the recipe, our recipe then is to minimize the KL divergence between the real world and our ideal one:</p>
@@ -933,16 +933,16 @@ These figures are meant to be graphical models, where the plates represent repea
 <p>There are two caveats worth discussing but I've pushed them to appendices.  <a href="#appdim">The first</a> is that it bugs me that splitting the log density ratio is awkward in terms of dimensional analysis, and <a href="#appemp">the second</a> is that while this gives us a meaningful objective, it requires that we be able to take expectations with respect to the true distribution.  If we have only finite samples in the form of a training set, that introduces complications.  I want to acknowlege that reusing a fixed dataset is a problem that has to be dealt with, I want to highlight that it isn't a problem with the <em>objective</em>.  Our KL divergence objective is telling us the right thing to do, we need to work out real world issues about how to best implement that objective.  This requires some real world complications that are outside the scope of this discussion.</p>
 <h2>Supervised Learning</h2>
 <p>Let's complicate things slightly.  Instead of imagining that we have a single random variable in the real world, imagine instead we have a pair of variables, $X$ and $Y$.  For concreteness, imagine the $X$ are images and the $Y$ are their associated labels in some dataset.</p>
-<p>What are we after? What does success look like? Let's imagine that what we desire is the ability to assign labels to data.  What we wish were the case was that we used the same process to draw the images $q(x) = p(x)$, but instead of using the real world process to assign labels, ideally the labels would instead come from a device under our control: $q_\theta(y|x)$. <a href="#theta"><sup>xxa5</sup></a>.  Just as before, we simply minimize the KL divergence between these two joints and we obtain an objective:</p>
+<p>What are we after? What does success look like? Let's imagine that what we desire is the ability to assign labels to data.  What we wish were the case was that we used the same process to draw the images $q(x) = p(x)$, but instead of using the real world process to assign labels, ideally the labels would instead come from a device under our control: $q_\theta(y|x)$. <a href="#theta"><sup>7</sup></a>.  Just as before, we simply minimize the KL divergence between these two joints and we obtain an objective:</p>
 <figure id="#supervised-learning" class="right">
   <center>
   <img width="95%" src="figures/kl-is-all-you-need/supervised-learning.png" alt="A graphical version of supervised learning, the left shows the distribution $p(y,x)$ where $X$ is a random variable denoting images and $Y$ are some labels. The right shows the world of our dreams, where we draw the images $X$ from the same process as in the real world $p(x)$ but we have a machine that applies the labels: $q(y|x)$.">
   <figcaption>
-  Figure xxf3. Supervised Learning.
+  Figure 4. Supervised Learning.
   </figcaption>
   </center>
 </figure> 
-<aside> <sup id="theta">xxa5</sup>
+<aside> <sup id="theta">7</sup>
 I'm going to start dropping the subscript $\theta$ for the parameters.
 </aside>
 <p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="19.034ex" height="6.509ex" style="vertical-align: -2.671ex;" viewBox="0 -1652.5 8195.3 2802.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-11-Title">
@@ -1071,7 +1071,7 @@ a wide array of possible joint distributions $p(x,z)$.  How do we decide amongst
   <center>
   <img width="95%" src="figures/kl-is-all-you-need/vae.png" alt="A graphical version of a VAE.">
   <figcaption>
-  Figure xxf4. Variational Autoencoders.
+  Figure 5. Variational Autoencoders.
   </figcaption>
   </center>
 </figure> 
@@ -1390,11 +1390,11 @@ or in short:
  <use xlink:href="#MJMAIN-2C" x="7049" y="0"></use>
 </g>
 </svg></span></p>
-<aside> <sup id="brokenelbo">xxa-broken</sup>
+<aside> <sup id="brokenelbo">8</sup>
 <i>Fixing a Broken ELBO</i>. AA Alemi, B Poole, I Fischer, JV Dillon, RA Saurous, K Murphy. ICML 2018. arXiv: <a href="https://arxiv.org/abs/1711.00464">1711.00464</a>.
 </aside>
-a geometric story we tell in more detail in prior work.<a href="#brokenelbo"><sup>xxa-broken</sup></a>  The first term, the *distortion*, measures how well we are able to recover the original image after encoding it with the encoder $z \sim p(z|x)$ and then trying to decode back to the original image $q(x|z)$.  The second term in the objective is the *rate*, which measures the information theoretic cost of the encoding itself.  If Alice and Bob were attempting to communicate the encoding $z$, the KL between the encoding distribution and the prior measures the excess cost of communicating the encoding.
-<p>If we are careful to split up the objective into its various reparameterization independent components, we can also explore some trade-offs between the different terms in the objective, adding some Lagrange multipliers, obtaining the $\beta$-VAE.<a href="#betavae"><sup>xxa-betavae</sup></a>:
+a geometric story we tell in more detail in prior work.<a href="#brokenelbo"><sup>8</sup></a>  The first term, the *distortion*, measures how well we are able to recover the original image after encoding it with the encoder $z \sim p(z|x)$ and then trying to decode back to the original image $q(x|z)$.  The second term in the objective is the *rate*, which measures the information theoretic cost of the encoding itself.  If Alice and Bob were attempting to communicate the encoding $z$, the KL between the encoding distribution and the prior measures the excess cost of communicating the encoding.
+<p>If we are careful to split up the objective into its various reparameterization independent components, we can also explore some trade-offs between the different terms in the objective, adding some Lagrange multipliers, obtaining the $\beta$-VAE.<a href="#betavae"><sup>9</sup></a>:
 <span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="33.969ex" height="6.843ex" style="vertical-align: -3.005ex;" viewBox="0 -1652.5 14625.5 2946.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-17-Title">
 <title id="MathJax-SVG-17-Title"> \left\langle -\log q(x|z) \right\rangle_p + \beta \left\langle \log \frac{p(z|x)}{q(z)}\right\rangle_p. </title>
 <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
@@ -1447,25 +1447,25 @@ a geometric story we tell in more detail in prior work.<a href="#brokenelbo"><su
  <use xlink:href="#MJMAIN-2E" x="14347" y="0"></use>
 </g>
 </svg></span></p>
-<aside> <sup id="betavae">xxa-betavae</sup>
+<aside> <sup id="betavae">9</sup>
 <i>beta-VAE: Learning Basic Visual Concepts with a Constrained Variational Framework</i>.
 I Higgens et al. ICLR 2016. <a href="https://openreview.net/forum?id=Sy2fzU9gl">[OpenReview]</a>.
 </aside>
 <p>All told, the universal recipe has given us a proper <em>representation learning</em> objective, albeit unsupervised.  We have defined what it could mean for a representation to be a good one and we are able to search now in the space of all possible representations.  Unfortunately, a bit is a bit and unless we bring some kind of auxiliary information to the table, the success and utility of this objective is often left to inductive biases in our particular choices of variational families.</p>
 <h2>Variational Information Bottleneck</h2>
-<p>If we want to be a bit more explicit in our representation learning objectives, we could <em>color the bits</em> by bringing and auxiliary variable to the table.  Imagine our real world distribution consists of pairs, $(x,y)$ drawn from some joint distribution $p(x,y)$ outside of our control.  Imagine images $X$ and labels $Y$.  As before, we can augment this world with a new random variable $Z$, a <em>representation</em>, which, in this example, we are interested in depending only on the image part, $p(z|x)$.  We do this because we'd like to be able to compute the representation of some downstream image without having access to its label.  As before, we've now defined a whole slew of possible worlds, consisting of all possible encoding distributions paired with our joint input distribution $p(x,y,z) =p(x,y)p(z|x)$.  How do we decide amongst these? What does success look like?  Let's define success as being able to use our learned representation $Z$, not to recreate the image, but only predict the auxiliary information $Y$.  This gives us a set of diagrams as in Figure xxf5 below.</p>
+<p>If we want to be a bit more explicit in our representation learning objectives, we could <em>color the bits</em> by bringing and auxiliary variable to the table.  Imagine our real world distribution consists of pairs, $(x,y)$ drawn from some joint distribution $p(x,y)$ outside of our control.  Imagine images $X$ and labels $Y$.  As before, we can augment this world with a new random variable $Z$, a <em>representation</em>, which, in this example, we are interested in depending only on the image part, $p(z|x)$.  We do this because we'd like to be able to compute the representation of some downstream image without having access to its label.  As before, we've now defined a whole slew of possible worlds, consisting of all possible encoding distributions paired with our joint input distribution $p(x,y,z) =p(x,y)p(z|x)$.  How do we decide amongst these? What does success look like?  Let's define success as being able to use our learned representation $Z$, not to recreate the image, but only predict the auxiliary information $Y$.  This gives us a set of diagrams as in Figure 6 below.</p>
 <figure id="vib" class="right">
   <center>
   <img width="95%" src="figures/kl-is-all-you-need/vib.png" alt="A graphical version of VIB.">
   <figcaption>
-  Figure xxf5. Variational Information Bottleneck.
+  Figure 6. Variational Information Bottleneck.
   </figcaption>
   </center>
 </figure> 
-<aside> <sup id="brokenelbo">xxa-broken</sup>
+<aside> <sup id="brokenelbo">8</sup>
 <i>Deep Variational Information Bottleneck</i>. AA Alemi, I Fischer, JV Dillon, K Murphy. ICLR 2017. arXiv: <a href="https://arxiv.org/abs/1612.00410">1612.00410</a>.
 </aside>
-Following the universal recipe and taking the KL divergence between these two joints lets us reinvent the Variational Information Bottleneck:<a href="#vib"><sup>xxa-vib</sup></a>
+Following the universal recipe and taking the KL divergence between these two joints lets us reinvent the Variational Information Bottleneck:<a href="#vib"><sup>10</sup></a>
 <p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="43.752ex" height="6.843ex" style="vertical-align: -3.005ex;" viewBox="0 -1652.5 18837.5 2946.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-18-Title">
 <title id="MathJax-SVG-18-Title"> \left\langle \log \frac{p(y|x) p(z|x)}{q(y|z) q(z)} \right\rangle_p \geq \left\langle \log \frac{p(y|x)}{q(y|x)}\right\rangle_p \geq 0. </title>
 <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
@@ -1555,7 +1555,7 @@ Because KL is monotonic, this joint objective bounds the marginal conditional li
   <center>
   <img width="95%" src="figures/kl-is-all-you-need/semi-supervised.png" alt="A graphical version of a Semi-supervised VAE.">
   <figcaption>
-  Figure xxf7. Semi-Supervised Variational Autoencoder.
+  Figure 7. Semi-Supervised Variational Autoencoder.
   </figcaption>
   </center>
 </figure> 
@@ -1627,7 +1627,7 @@ Here $\beta$ and $\gamma$ have been inserted to let us play with the trade-offs 
   <center>
   <img width="95%" src="figures/kl-is-all-you-need/diffusion.png" alt="A graphical version of Diffusion.">
   <figcaption>
-  Figure xxf6. Variational Diffusion.
+  Figure 8. Variational Diffusion.
   </figcaption>
   </center>
 </figure> 
@@ -1655,7 +1655,7 @@ where we draw the summary $\theta$ from some <em>prior</em> and use it to genera
   <center>
   <img width="95%" src="figures/kl-is-all-you-need/bayes.png" alt="A graphical version of Bayesian Inference.">
   <figcaption>
-  Figure xxf8. (Variational) Bayesian Inference.
+  Figure 9. (Variational) Bayesian Inference.
   </figcaption>
   </center>
 </figure> 
@@ -1758,7 +1758,7 @@ If we set $\beta=1$ and make our $p(\theta|D)$ expressive enough to cover the sp
   <center>
   <img width="95%" src="figures/kl-is-all-you-need/bnn.png" alt="A graphical version of Bayesian Neural Networks.">
   <figcaption>
-  Figure xxf9. Bayesian Neural Networks.
+  Figure 10. Bayesian Neural Networks.
   </figcaption>
   </center>
 </figure> 
@@ -1812,13 +1812,13 @@ If we set $\beta=1$ and make our $p(\theta|D)$ expressive enough to cover the sp
  <use xlink:href="#MJMAIN-2C" x="14312" y="0"></use>
 </g>
 </svg></span>
-and we've reinvented Bayes By Backprop.<a href="#bbb"><sup>xxa-bbb</sup></a></p>
-<aside> <sup id="bbb">xxa-bbb</sup>
+and we've reinvented Bayes By Backprop.<a href="#bbb"><sup>11</sup></a></p>
+<aside> <sup id="bbb">11</sup>
 <i>Weight Uncertainty in Neural Networks</i> Blundell et al. ICML 2015. arXiv: <a href="https://arxiv.org/abs/1505.05424">1505.05424</a>
 </aside>
 <h2>TherML</h2>
-<p>From here you might be wondering what it would look like if we tried to be as honest as possible about the sort of standard practice in machine learning today.  In our <a href="https://arxiv.org/abs/1807.04162">earlier work</a><a href="#therml"><sup>xxa-therml</sup></a> we did exactly that and came up with the following diagram:</p>
-<aside> <sup id="therml">xxa-therml</sup>
+<p>From here you might be wondering what it would look like if we tried to be as honest as possible about the sort of standard practice in machine learning today.  In our <a href="https://arxiv.org/abs/1807.04162">earlier work</a><a href="#therml"><sup>12</sup></a> we did exactly that and came up with the following diagram:</p>
+<aside> <sup id="therml">12</sup>
 <i>TherML: Thermodynamics of Machine Learning</i>
 AA Alemi, I Fisher. ICML2018 TFADGM Workshop. arXiv:<a href="https://arxiv.org/abs/1807.04162">1807.04162</a>
 </aside>
@@ -1826,7 +1826,7 @@ AA Alemi, I Fisher. ICML2018 TFADGM Workshop. arXiv:<a href="https://arxiv.org/a
   <center>
   <img width="95%" src="figures/kl-is-all-you-need/therml.png" alt="A graphical version of TherML.">
   <figcaption>
-  Figure xxf10. TherML.
+  Figure 10. TherML.
   </figcaption>
   </center>
 </figure> 
@@ -1998,12 +1998,12 @@ as we discuss in the paper we get an objective that let's us trade off between t
   <center>
   <img width="95%" src="figures/kl-is-all-you-need/vp.png" alt="A graphical version of Variational Prediction.">
   <figcaption>
-  Figure xxf11. Variational Prediction.
+  Figure 11. Variational Prediction.
   </figcaption>
   </center>
 </figure> 
-<p>Which we explore in some detail in <a href="https://arxiv.org/abs/2307.07568">our recent work</a><a href="#vp"><sup>xxa-vp</sup></a></p>
-<aside> <sup id="vp">xxa-vp</sup>
+<p>Which we explore in some detail in <a href="https://arxiv.org/abs/2307.07568">our recent work</a><a href="#vp"><sup>13</sup></a></p>
+<aside> <sup id="vp">13</sup>
 <i>Variational Prediction</i>.
 AA Alemi, B Poole AABI2023. arXiv:<a href="https://arxiv.org/abs/2307.07568">23607.07568</a>
 </aside>
@@ -2140,8 +2140,8 @@ AA Alemi, B Poole AABI2023. arXiv:<a href="https://arxiv.org/abs/2307.07568">236
  <use xlink:href="#MJMAIN-2E" x="29637" y="0"></use>
 </g>
 </svg></span></p>
-<p>Now, we've decomposed the KL divergence between $P$ and $Q$ into two terms, the first is the KL divergence between $P$ and $M$, our base density. Just as before, this is some constant outside our control. As long as we fix $m(x)$, given that $p(x)$ is fixed, their KL divergence is fixed and no changes we make to $\theta$ have any effect, so we can drop this (now appropriately reparameterization-independent) term from our objective.  We're left with the weight of evidence samples from $p$ provide in favor of $m$ against $q$. If we try to adjust the parameters of $q_\theta(x)$ to make it as easy as possible to distinguish it from some base measure $m(x)$, under samples from $p$, we ensure that we drive $q$ <em>towards</em> $p$.  If we use ordinary path gradients the choice of $m(x)$ here won't actually affect the optimization trajectory. It will, however, help us sleep at night, ensuring that our objective is a truly reparameterization-invariant quantity. <a href="#controlvariates"><sup>xxa4</sup></a></p>
-<aside><sup id="controlvariates">xxa4</sup>
+<p>Now, we've decomposed the KL divergence between $P$ and $Q$ into two terms, the first is the KL divergence between $P$ and $M$, our base density. Just as before, this is some constant outside our control. As long as we fix $m(x)$, given that $p(x)$ is fixed, their KL divergence is fixed and no changes we make to $\theta$ have any effect, so we can drop this (now appropriately reparameterization-independent) term from our objective.  We're left with the weight of evidence samples from $p$ provide in favor of $m$ against $q$. If we try to adjust the parameters of $q_\theta(x)$ to make it as easy as possible to distinguish it from some base measure $m(x)$, under samples from $p$, we ensure that we drive $q$ <em>towards</em> $p$.  If we use ordinary path gradients the choice of $m(x)$ here won't actually affect the optimization trajectory. It will, however, help us sleep at night, ensuring that our objective is a truly reparameterization-invariant quantity. <a href="#controlvariates"><sup>5</sup></a></p>
+<aside><sup id="controlvariates">5</sup>
 If I'm being honest, this is something that bothers me that I don't fully understand.  Using a baseline model here functionally takes the same form as control variates like the baselines used in REINFORCE, but here they don't help at all (we aren't taking an expectation with respect to $q$ here). Regardless, it really feels like an appropriate base measure <i>ought</i> to help.  I can't help but think that it signals a problem with the gradients we take in machine learning today. Things like <a href="https://arxiv.org/abs/2206.07137">RHO-Loss</a> reinforce this idea.
 </aside>
 <span id="appemp">
