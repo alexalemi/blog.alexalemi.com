@@ -232,7 +232,7 @@ Having defined both the real worlds under consideration $p(x,z)$ and the definit
 $$ \left\langle \log \frac{p(x,z)}{q(x,z)} \right\rangle_p = \left\langle \log \frac{p(x)p(z|x)}{q(x|z)q(z)} \right\rangle_p \geq 0. $$
 
 Since this is a joint KL and all KLs are nonnegative, this objective is non-negative.  Furthermore, because of the monotonicity of KL, we know this is a bound on something we might care about, the marginal KL of our generative or reverse path:
-$$ \left\langle \log \frac{p(x)p(z|x)}{q(z|x)q(z)} \right\rangle_p \geq \left\langle \log \frac{p(x)}{q(x)} \right\rangle_p  \geq 0. $$
+$$ \left\langle \log \frac{p(x)p(z|x)}{q(x|z)q(z)} \right\rangle_p \geq \left\langle \log \frac{p(x)}{q(x)} \right\rangle_p  \geq 0. $$
 So, as a bonus, if we push down on this joint KL objective, since this bounds the marginal KL on $X$, we can be assured that this machine composed of three parts, the encoder $p(z|x)$, decoder $q(x|z)$ and marginal (or prior) $q(z)$ will, as we adjust their tunable parameters, additionally make progress on the generative path: $z \sim q(z), x \sim q(x|z)$ itself being as indistinguishable as possible from the original image generating process $p(x)$.  Building and training the representative learning objective, as a side effect, ensures we also manage to build a good generative model.
 
 We can split this objective up and name the various terms:
