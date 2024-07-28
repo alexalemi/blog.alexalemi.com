@@ -1,5 +1,15 @@
 [
     {
+      "title": "The Size of the Earth",
+      "src": "size-of-earth.md",
+      "date": "2024-07-28",
+      "tags": ["amateur science"],
+      "id": "size-of-earth",
+      "description": "An independent measurement of the size of the earth.",
+      "featured": true,
+			"draft": true
+    },
+    {
       "title": "KL is All You Need",
       "src": "kl-is-all-you-need.md",
       "date": "2024-01-08",

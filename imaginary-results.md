@@ -41,7 +41,7 @@ Originally coined the <i>principle of insufficient reason</i> by Johannes on Kri
 See for instance <a href="https://arxiv.org/pdf/0904.0156.pdf"><i>A Formal Definition of Reference Priors</i></a> by Berger, Bernardo and Sun.  For a more modern take I really like see <a href="https://arxiv.org/abs/1705.01166"><i>Maximizing the information learned from finite data selects a simple model</i></a> by Mattingly et al. and <a href="https://arxiv.org/abs/2205.03343"><i>Far from Asymptopia</i></a> by Abbott and Machta.
 </aside>
 
-However lacking previous experiments, I often feel at a loss. There are many frameworks for designing priors that people have proposed.  Laplace originally motivated a flat prior for the Bernoulli likelihood by appealing to the *principle of indifference*.<sup><a href="#indifference">2</a></sup> 
+However, lacking previous experiments, I often feel at a loss. There are many frameworks for designing priors that people have proposed.  Laplace originally motivated a flat prior for the Bernoulli likelihood by appealing to the *principle of indifference*.<sup><a href="#indifference">2</a></sup> 
 <a href="https://en.wikipedia.org/wiki/Jeffreys_prior">Jeffreys</a> taught us how to build priors that were reparameterization-independent.
 Jaynes would argue for choosing priors by appealing to symmetries.<sup><a href="#jaynes-priors">3</a></sup> Bernardo suggested choosing priors to maximize the information you extract from data, so called <i>reference priors</i>.<sup><a href="#reference">4</a></sup> Gelman and friends tout <i>weakly informative priors</i>. 
 There are even whole [lists of common recommendations](https://github.com/stan-dev/stan/wiki/Prior-Choice-Recommendations).
@@ -63,11 +63,11 @@ $$ p(D|\theta) = L(D|\theta) \qquad p(\theta|D_0) = q(\theta|D_0). $$
 
 This flips the problem on its head.  We no longer have to specify a *prior*.  Instead we can specify a *hypothetical posterior*.  We can say what we would believe, if, hypothetically we had observed some dataset $D_0$.
 
-I think that this is an easier task to do.  It is easier for me to reason about what beliefs I should hypothetically hold in like of some data than it is for me to reason about what I believe independent of any data.
+I think that this is an easier task to do.  It is easier for me to reason about what beliefs I should hypothetically hold in light of some data than it is for me to reason about what I believe independent of any data.
 
 ## Coin Example
 
-Let's work a simple example of a coin flip.  I believe I can model a coin as being a simple Bernoulli process. There is some probability $\theta$ that the coin will land heads and each flip is independent and identically distributed.  Therefore I can model observing $H$ heads out of sequence of $N$ flips with a [Binomial Likelihood](https://en.wikipedia.org/wiki/Binomial_distribution):
+Let's work the simple example of some coin flips.  I believe I can model a coin as being a simple Bernoulli process. There is some probability $\theta$ that the coin will land heads and each flip is independent and identically distributed.  Therefore, I can model observing $H$ heads out of sequence of $N$ flips with a [Binomial Likelihood](https://en.wikipedia.org/wiki/Binomial_distribution):
 
 $$ L({H,N}|\theta) = { N \choose H} \theta^H (1- \theta)^{N-H} $$
 
@@ -85,13 +85,13 @@ Alternatively, I could take Jeffrey's advice and adopt a non-informative prior t
   </center>
 </figure>
 
-These are convenient mathematically and make for an easy problems to solve for a homework exercises, but they aren't realistic.  If we are being honest, we tend to expect that coins we encounter in the real world and very nearly fair.<sup><a href="#fiarness">6</a></sup>.  We could therefore start with a prior that is concentrated near fair, but how do we assign a meaningful width to that distribution?  And if we're being honest, I've encountered trick coins in my days, double headed and doubled tailed coins and if some wierdo walks up to me and asks me to start predicting a whole sequence of coin flips I shouldn't discount the possiblity they are trying to play me for a fool.
+These are convenient mathematically and make for easy problems to solve for a homework exercise, but they aren't realistic.  If we are being honest, we tend to expect that coins we encounter in the real world and very nearly fair.<sup><a href="#fiarness">6</a></sup>.  We could therefore start with a prior that is concentrated near fair, but how do we assign a meaningful width to that distribution?  And if we're being honest, I've encountered trick coins in my days, double headed and doubled tailed coins and if some wierdo walks up to me and asks me to start predicting a whole sequence of coin flips I shouldn't discount the possiblity they are trying to play me for a fool.
 
 <aside><sup id="fairness">6</sup>
 Despite there being <a href="https://statweb.stanford.edu/~cgates/PERSI/papers/dyn_coin_07.pdf">arguments</a> and <a href="https://arxiv.org/abs/2310.04153">strong evidence</a> that there is a <i>dynamical</i> bias, meaning that coins tend to land on the same side they start as showing up in human flips.
 </aside>
 
-As this stage, trying to adjust the parameters of our *prior* without any evidence or data is difficult.  I have a hard time talking to my gut to decide what I should set my prior beliefs to apropro of *nothing*.  Instead, let's try to invoke the method of imaginary results and imagine some hypothetical dataset and probe our beliefs.  Imagine we've just observed 10 coin flips, and all 10 of them were heads!  What do you believe now?  Now that I've hypothesized a dataset I have an easrier time talking to my gut.
+As this stage, trying to adjust the parameters of our *prior* without any evidence or data is difficult.  I have a hard time talking to my gut to decide what I should set my prior beliefs to apropro of *nothing*.  Instead, let's try to invoke the method of imaginary results and imagine some hypothetical dataset and probe our beliefs.  Imagine we've just observed 10 coin flips, and all 10 of them were heads!  What do you believe now?  Now that I've hypothesized a dataset I have an easier time talking to my gut.
 
 In this scenario, I feel as though I would place a reasonable probability on the coin being unfair, let's say 50\%.  At the same time, I think I would still place a reasonable probability on the coin being *exactly* fair, let's say 25\%.  The remaining 25\% probability I would want to spread around but biased towards heads, for that let's use a $\operatorname{Beta}(11,1)$ distribution or $11\, \theta^{10}$.  I've attempted to visualize this distribution below.<a href="#deltas"><sup>7</sup></a>
 
