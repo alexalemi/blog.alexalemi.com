@@ -1,5 +1,15 @@
 [
     {
+      "title": "A Degree of Certainty",
+      "src": "a-degree-of-certainty.md",
+      "date": "2024-08-14",
+      "tags": ["statistics", "probability"],
+      "id": "a-degree-of-certainty",
+      "description": "Let's measure probability in degrees.",
+      "featured": true,
+			"draft": true
+    },
+    {
       "title": "The Size of the Earth",
       "src": "size-of-earth.md",
       "date": "2024-07-28",

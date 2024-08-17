@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+
+<div class="needle">
+	<div class="controls">
+			<input type="range" id="probabilitySlider" min="0" max="1" step="0.0001" value="0.5">
+			<input type="number" id="probabilityInput" min="0" max="1" step="0.0001" value="0.5">
+	</div>
+	<canvas id="needle" width="800" height="700" style="border: 1px solid black;"></canvas>
+</div>
+
+
+<script>
+	const canvas = document.getElementById('needle');
+	const ctx = canvas.getContext('2d');
+	const slider = document.getElementById('probabilitySlider');
+	const input = document.getElementById('probabilityInput');
+
+	function updateProbability(value) {
+			value = parseFloat(value);
+			slider.value = value;
+			input.value = value;
+			drawNeedle(value);
+	}
+
+
+	function drawNeedle(probability) {
+
+		
+		const centerX = canvas.width / 2;
+		const unit = 19/20 * canvas.width / 6;
+		const centerY = 5 * unit;
+		const radius = 4 * unit;
+
+		/* const dark = "#1D1A31";
+		const green = "#214E34";
+		const light = "#fdfff7";
+		const gray = "#61707d";
+		const red = "#c1666b";
+		const brightred = "#f2542d";
+		*/
+
+		// const red = "#ef8354";
+		const red = "#a4161a";
+		const dark = "#2d2142";
+		const light = "#ffffff";
+		const gray = "#bfc0c0";
+		const highlight = "#4f5d75";
+
+
+		// ctx.fillStyle = light;
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		// ctx.fillRect(0, 0, canvas.width/2, canvas.height);
+
+		// Draw quarter circle
+		ctx.beginPath();
+		ctx.arc(centerX, centerY, radius, -3 * Math.PI/4, -Math.PI/4);
+		ctx.lineTo(centerX, centerY);
+		ctx.closePath();
+		ctx.strokeStyle = dark;
+		ctx.lineWidth = 1;
+ 	  ctx.stroke();
+
+		// Draw some ticks
+		ctx.lineWidth = 1;
+		ctx.strokeStyle = dark;
+		let covered = new Set([]);
+
+		function tick(p, width) {
+			if (!(covered.has(p))) {
+				const t = Math.PI/4 + Math.asin(Math.sqrt(p/100));
+				const startX = centerX + (radius - width/2 * unit) * Math.cos(t);
+				const startY = centerY - (radius - width/2 * unit)  * Math.sin(t);
+				const endX = centerX + (radius + width/2 * unit) * Math.cos(t);
+				const endY = centerY - (radius + width/2 * unit) * Math.sin(t);
+				
+				ctx.beginPath();
+				ctx.moveTo(startX, startY);
+				ctx.lineTo(endX, endY);
+				ctx.strokeStyle = 'black';
+				ctx.stroke();
+				covered.add(p);
+			}
+		}
+
+		// Draw some ticks
+		// tick(50, 1.0);
+		// tick(0, 1/2);
+		// tick(100, 1/2);
+
+		// Draw needle
+		const theta = Math.PI/4 + Math.acos(Math.sqrt(probability));
+
+		// Draw fill
+		function drawAnnulus(start, stop, width, fill=dark, stroke=dark) {
+			ctx.beginPath();
+			const begin = -3 * Math.PI/4 + start;
+			const end = -3 * Math.PI/4 + stop;
+			const outer = radius + width/2 * unit;
+			const inner = radius - width/2 * unit;
+			ctx.arc(centerX, centerY, outer, end, begin, true);
+			ctx.lineTo(centerX + inner * Math.cos(begin), centerY + inner * Math.sin(begin));
+			ctx.arc(centerX, centerY, inner, begin, end);
+			ctx.closePath();
+			ctx.strokeStyle = stroke;
+			ctx.fillStyle = fill;
+			ctx.lineWidth = 2;
+			ctx.stroke();
+			ctx.fill();
+		}
+
+		drawAnnulus(0, Math.PI/2, 0.25, fill="#eee");
+		for (let t = 0; t < 6; t++) {
+			drawAnnulus(t * Math.PI/2/6, (t+1) * Math.PI/2/6,  0.25, fill=(t % 2 == 0) ? light : gray);
+		}
+
+
+		const endX = centerX + 4.25 * unit * Math.cos(theta);
+		const endY = centerY - 4.25 * unit * Math.sin(theta);
+		ctx.beginPath();
+		ctx.moveTo(centerX, centerY);
+		ctx.lineTo(endX, endY);
+		ctx.lineWidth = 3;
+		ctx.strokeStyle = red;
+		ctx.stroke();
+
+	}
+
+	slider.addEventListener('input', (e) => updateProbability(e.target.value));
+	input.addEventListener('input', (e) => updateProbability(e.target.value));
+
+	// Initial draw
+	updateProbability(1.4e-5);
+</script>
+
+	</body>
+</html>
