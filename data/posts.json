@@ -3,9 +3,29 @@
       "title": "A Degree of Certainty",
       "src": "a-degree-of-certainty.md",
       "date": "2024-08-14",
-      "tags": ["statistics", "probability"],
+      "tags": ["statistics", "probability", "fun"],
       "id": "a-degree-of-certainty",
       "description": "Let's measure probability in degrees.",
+      "featured": true,
+			"draft": true
+    },
+    {
+      "title": "A Quarter For your Thoughts",
+      "src": "quarters.md",
+      "date": "2024-10-20",
+      "tags": ["fun", "arithmetic"],
+      "id": "quarters",
+      "description": "Get the precision of one sig fig essentially for free.",
+      "featured": true,
+			"draft": true
+    },
+    {
+      "title": "",
+      "src": "decibels.md",
+      "date": "2023-07-07",
+      "tags": ["fun", "arithmetic"],
+      "id": "decibels",
+      "description": "In an alternate universe, we'd use decibels for everything.",
       "featured": true,
 			"draft": true
     },
@@ -45,16 +65,6 @@
       "id": "ventilation",
       "description": "A simple model of CO2 concentration in our home.",
       "featured": false
-    },
-    {
-      "title": "Down with Decimal, long live Decibels",
-      "src": "decibels.md",
-      "date": "2023-07-07",
-      "tags": ["fun"],
-      "id": "decibels",
-      "description": "In an alternate universe, we'd use decibels for everything.",
-      "featured": true,
-			"draft": true
     },
     {
       "title": "Non-equilibrium Thermodynamics Results Seemingly from Nothing",

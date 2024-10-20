@@ -41,3 +41,8 @@ particular number is very three-like.
 ## Addition
 
 ## Belief
+
+
+## Other models of arithmetic
+
+Order of magnitude.  Zestimates,  1-$\pi$-10,  sexibels...
