@@ -316,7 +316,8 @@ $$ \theta(p) \approx \sqrt{1-p} + \frac{(1-p)^{\frac 3 2}}{6} + \cdots. $$
 
 # Appendix B - Categorical Generalization
 
-This idea easily extends to Categorical distributions, where the flat statistical manifold corresponds to the positive octant of the n-sphere as discussed in Bengtsson et al.<a href=#quantum2"><sup>xxa-quantum2</sup></a>
+This idea easily extends to Categorical distributions, where the flat statistical manifold corresponds to the positive octant of the n-sphere as discussed in Bengtsson et al. 
+<a href="#quantum2"><sup>xxa-quantum2</sup></a>
 
 <aside><sup id="quantum2">xxa-quantum2</sup> 
  Bengtsson, Ingemar, and Karol Życzkowski. <a href="https://www.google.com/books/edition/_/sYswDwAAQBAJ?hl=en&gbpv=0">Geometry of quantum states: an introduction to quantum entanglement</a>. Cambridge university press, 2017.
