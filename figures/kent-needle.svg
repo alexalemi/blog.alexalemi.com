@@ -1,0 +1,1014 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="800"
+   height="250"
+   viewBox="0 0 800 250"
+   style="border-bottom: 3px solid black;"
+   version="1.1"
+   id="svg487"
+   sodipodi:docname="needle.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs491">
+    <rect
+       x="32.214765"
+       y="182.55034"
+       width="113.34825"
+       height="81.730052"
+       id="rect2789" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview489"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="1.67625"
+     inkscape:cx="393.43773"
+     inkscape:cy="124.98136"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg487" />
+  <path
+     d="M 41.732564198815965 211.7325641988159 A 506.6666666666667 506.6666666666667 0 0 1 758.2674358011841 211.73256419881596 L 400 570 Z"
+     stroke="#2d2142"
+     fill-opacity="0.0"
+     stroke-width="2"
+     id="path251" />
+  <path
+     d="M 36.13463551442243 206.13463551442237 A 514.5833333333334 514.5833333333334 0 0 1 142.70833333333343 124.35776096925753 L 150.6250000000001 138.0698298625112 A 498.75 498.75 0 0 0 47.330492883209445 217.3304928832094 Z"
+     fill="#ffffff"
+     stroke="#2d2142"
+     stroke-width="2"
+     id="path253" />
+  <path
+     d="M 142.70833333333343 124.35776096925753 A 514.5833333333334 514.5833333333334 0 0 1 266.8160330409945 72.95066855541688 L 270.91400125511774 88.24449413832718 A 498.75 498.75 0 0 0 150.6250000000001 138.0698298625112 Z"
+     fill="#eee"
+     stroke="#2d2142"
+     stroke-width="2"
+     id="path255" />
+  <path
+     d="M 266.8160330409945 72.95066855541688 A 514.5833333333334 514.5833333333334 0 0 1 400.00000000000006 55.41666666666663 L 400.00000000000006 71.25 A 498.75 498.75 0 0 0 270.91400125511774 88.24449413832718 Z"
+     fill="#ffffff"
+     stroke="#2d2142"
+     stroke-width="2"
+     id="path257" />
+  <path
+     d="M 400.00000000000006 55.41666666666663 A 514.5833333333334 514.5833333333334 0 0 1 533.1839669590055 72.95066855541688 L 529.0859987448822 88.24449413832718 A 498.75 498.75 0 0 0 400.00000000000006 71.25 Z"
+     fill="#eee"
+     stroke="#2d2142"
+     stroke-width="2"
+     id="path259" />
+  <path
+     d="M 533.1839669590055 72.95066855541688 A 514.5833333333334 514.5833333333334 0 0 1 657.2916666666667 124.35776096925758 L 649.375 138.06982986251126 A 498.75 498.75 0 0 0 529.0859987448822 88.24449413832718 Z"
+     fill="#ffffff"
+     stroke="#2d2142"
+     stroke-width="2"
+     id="path261" />
+  <path
+     d="M 657.2916666666667 124.35776096925758 A 514.5833333333334 514.5833333333334 0 0 1 763.8653644855776 206.13463551442243 L 752.6695071167906 217.33049288320944 A 498.75 498.75 0 0 0 649.375 138.06982986251126 Z"
+     fill="#eee"
+     stroke="#2d2142"
+     stroke-width="2"
+     id="path263" />
+  <line
+     x1="75.32013630517696"
+     x2="64.12427893638994"
+     y1="245.3201363051769"
+     y2="234.12427893638989"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line265" />
+  <line
+     x1="104.85335588559735"
+     x2="94.6758853988938"
+     y1="218.2579265345359"
+     y2="206.12888951848544"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line267" />
+  <line
+     x1="136.63281964214463"
+     x2="127.55119273325306"
+     y1="193.87268633063798"
+     y2="180.90277896272897"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line269" />
+  <line
+     x1="170.41666666666677"
+     x2="162.5000000000001"
+     y1="172.3500020956452"
+     y2="158.6379332023916"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line271" />
+  <line
+     x1="205.9477814840622"
+     x2="199.25632567316782"
+     y1="153.85367445233817"
+     y2="139.50380115759123"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line273" />
+  <line
+     x1="242.9557508562971"
+     x2="237.54043192030736"
+     y1="138.52447162247034"
+     y2="123.64600512669352"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line275" />
+  <line
+     x1="281.15892179042584"
+     x2="277.0609535763026"
+     y1="126.4790580956028"
+     y2="111.18523251269255"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line277" />
+  <line
+     x1="320.2665450879345"
+     x2="317.5171156082081"
+     y1="117.80910674189448"
+     y2="102.21631731920121"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line279" />
+  <line
+     x1="359.98098812170036"
+     x2="358.6010221948624"
+     y1="112.58060112620683"
+     y2="96.80751840642085"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line281" />
+  <line
+     x1="400"
+     x2="400.00000000000006"
+     y1="110.83333333333331"
+     y2="95"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line283" />
+  <line
+     x1="440.0190118782997"
+     x2="441.39897780513763"
+     y1="112.58060112620683"
+     y2="96.80751840642085"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line285" />
+  <line
+     x1="479.73345491206555"
+     x2="482.4828843917919"
+     y1="117.80910674189448"
+     y2="102.21631731920121"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line287" />
+  <line
+     x1="518.8410782095741"
+     x2="522.9390464236974"
+     y1="126.4790580956028"
+     y2="111.18523251269255"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line289" />
+  <line
+     x1="557.0442491437029"
+     x2="562.4595680796926"
+     y1="138.5244716224704"
+     y2="123.64600512669352"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line291" />
+  <line
+     x1="594.0522185159379"
+     x2="600.7436743268322"
+     y1="153.85367445233823"
+     y2="139.50380115759128"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line293" />
+  <line
+     x1="629.5833333333334"
+     x2="637.5"
+     y1="172.35000209564527"
+     y2="158.63793320239165"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line295" />
+  <line
+     x1="663.3671803578554"
+     x2="672.4488072667469"
+     y1="193.87268633063792"
+     y2="180.90277896272892"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line297" />
+  <line
+     x1="695.1466441144025"
+     x2="705.3241146011062"
+     y1="218.25792653453584"
+     y2="206.12888951848538"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line299" />
+  <line
+     x1="724.6798636948231"
+     x2="735.8757210636102"
+     y1="245.32013630517696"
+     y2="234.12427893638994"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line301" />
+  <line
+     x1="69.72220762078348"
+     x2="64.12427893638994"
+     y1="239.72220762078342"
+     y2="234.12427893638989"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line303" />
+  <line
+     x1="75.53665279810997"
+     x2="70.03727403197627"
+     y1="234.00836825848842"
+     y2="228.31359483914076"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line305" />
+  <line
+     x1="81.44993265414138"
+     x2="76.05077897031327"
+     y1="228.39687520204575"
+     y2="222.60699173089398"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line307" />
+  <line
+     x1="87.46024594655"
+     x2="82.16296197954233"
+     y1="222.88943776660045"
+     y2="217.00620789823773"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line309" />
+  <line
+     x1="93.56576187568396"
+     x2="88.37196122950911"
+     y1="217.4877335709469"
+     y2="211.51294939418324"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line311" />
+  <line
+     x1="99.76462064224557"
+     x2="94.6758853988938"
+     y1="212.19340802651072"
+     y2="206.12888951848544"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line313" />
+  <line
+     x1="106.05493401380517"
+     x2="101.07281425132732"
+     y1="207.00807383613983"
+     y2="200.85566830793874"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line315" />
+  <line
+     x1="112.4347858999738"
+     x2="107.56079922031233"
+     y1="201.93331050286025"
+     y2="195.69489203680706"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line317" />
+  <line
+     x1="118.90223293606425"
+     x2="114.13786400277718"
+     y1="196.97066384874353"
+     y2="190.64813272753582"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line319" />
+  <line
+     x1="125.45530507505742"
+     x2="120.80200516107533"
+     y1="192.121645544035"
+     y2="185.71692767189995"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line321" />
+  <line
+     x1="132.09200618769887"
+     x2="127.55119273325306"
+     y1="187.3877326466835"
+     y2="180.90277896272897"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line323" />
+  <line
+     x1="138.81031467053873"
+     x2="134.38337085139534"
+     y1="182.77036715241593"
+     y2="176.20715303635518"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line325" />
+  <line
+     x1="145.60818406173112"
+     x2="141.29645836786216"
+     y1="178.27095555549158"
+     y2="171.6314802259236"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line327" />
+  <line
+     x1="152.48354366440728"
+     x2="148.28834948922773"
+     y1="173.89086842026933"
+     y2="167.17715432569764"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line329" />
+  <line
+     x1="159.43429917742884"
+     x2="155.35691441772423"
+     y1="169.63143996372173"
+     y2="162.84553216649664"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line331" />
+  <line
+     x1="166.45833333333346"
+     x2="162.5000000000001"
+     y1="165.49396764901843"
+     y2="158.6379332023916"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line333" />
+  <line
+     x1="173.55350654327344"
+     x2="169.71543038298992"
+     y1="161.4797117903072"
+     y2="154.55563910878698"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line335" />
+  <line
+     x1="180.71765754875696"
+     x2="177.001007676702"
+     y1="157.5898951688095"
+     y2="150.59989339200962"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line337" />
+  <line
+     x1="187.94860407998675"
+     x2="184.35451262371532"
+     y1="153.82570266034986"
+     y2="146.77190101052526"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line339" />
+  <line
+     x1="195.2441435206017"
+     x2="191.77370527518818"
+     y1="150.1882808744308"
+     y2="143.07282800789574"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line341" />
+  <line
+     x1="202.60205357861503"
+     x2="199.25632567316782"
+     y1="146.67873780496473"
+     y2="139.50380115759123"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line343" />
+  <line
+     x1="210.02009296334506"
+     x2="206.80009453899498"
+     y1="143.29814249276848"
+     y2="136.06590761976452"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line345" />
+  <line
+     x1="217.49600206813514"
+     x2="214.40271396759505"
+     y1="140.04752469992263"
+     y2="132.76019461009082"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line347" />
+  <line
+     x1="225.02750365865109"
+     x2="222.06186812744176"
+     y1="136.9278745960964"
+     y2="129.58766908077598"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line349" />
+  <line
+     x1="232.61230356654934"
+     x2="229.77522396598238"
+     y1="133.94014245693205"
+     y2="126.54929741382915"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line351" />
+  <line
+     x1="240.24809138830224"
+     x2="237.54043192030736"
+     y1="131.08523837458193"
+     y2="123.64600512669352"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line353" />
+  <line
+     x1="247.93254118896976"
+     x2="245.35512663285058"
+     y1="128.36403198048578"
+     y2="120.87867659032452"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line355" />
+  <line
+     x1="255.6633122107017"
+     x2="253.2169276719"
+     y1="125.77735218047201"
+     y2="118.24815475980199"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line357" />
+  <line
+     x1="263.4380495857551"
+     x2="261.12344025670006"
+     y1="123.32598690226553"
+     y2="115.75524091755813"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line359" />
+  <line
+     x1="271.25438505381004"
+     x2="269.0722559869255"
+     y1="121.01068285547689"
+     y2="113.40069442929854"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line361" />
+  <line
+     x1="279.10993768336425"
+     x2="277.0609535763026"
+     y1="118.83214530414767"
+     y2="111.18523251269255"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line363" />
+  <line
+     x1="287.00231459698864"
+     x2="285.0870995901579"
+     y1="116.79103785192001"
+     y2="109.1095300189017"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line365" />
+  <line
+     x1="294.9291117002197"
+     x2="293.1482491866641"
+     y1="114.88798223989642"
+     y2="107.17421922701328"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line367" />
+  <line
+     x1="302.8879144138716"
+     x2="301.2419468615643"
+     y1="113.12355815725164"
+     y2="105.37988965144228"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line369" />
+  <line
+     x1="310.8762984095389"
+     x2="309.3657271961412"
+     y1="111.49830306465361"
+     y2="103.72708786235961"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line371" />
+  <line
+     x1="318.8918303480713"
+     x2="317.5171156082081"
+     y1="110.01271203054785"
+     y2="102.21631731920121"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line373" />
+  <line
+     x1="326.93206862079217"
+     x2="325.69362910589035"
+     y1="108.66723758035442"
+     y2="100.84803821730958"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line375" />
+  <line
+     x1="334.99456409323614"
+     x2="333.892777043969"
+     y1="107.46228955862489"
+     y2="99.62266734775409"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line377" />
+  <line
+     x1="343.0768608511791"
+     x2="342.112061882555"
+     y1="106.39823500419914"
+     y2="98.540577970372"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line379" />
+  <line
+     x1="351.1764969487336"
+     x2="350.3489799478647"
+     y1="105.47539803840232"
+     y2="97.60209970007014"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line381" />
+  <line
+     x1="359.2910051582814"
+     x2="358.6010221948624"
+     y1="104.6940597663139"
+     y2="96.80751840642085"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line383" />
+  <line
+     x1="367.4179137220148"
+     x2="366.86567497154044"
+     y1="104.05445819114044"
+     y2="96.15707612658349"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line385" />
+  <line
+     x1="375.5547471048584"
+     x2="375.14042078460176"
+     y1="103.55678814171785"
+     y2="95.65097099157742"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line387" />
+  <line
+     x1="383.6990267485402"
+     x2="383.42273906631203"
+     y1="103.20120121316404"
+     y2="95.28935716592952"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line389" />
+  <line
+     x1="391.8482718265855"
+     x2="391.71010694229034"
+     y1="102.98780572070228"
+     y2="95.07234480071412"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line391" />
+  <line
+     x1="400.00000000000006"
+     x2="400.00000000000006"
+     y1="102.91666666666669"
+     y2="95"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line393" />
+  <line
+     x1="408.1517281734144"
+     x2="408.2898930577096"
+     y1="102.98780572070228"
+     y2="95.07234480071412"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line395" />
+  <line
+     x1="416.3009732514599"
+     x2="416.577260933688"
+     y1="103.20120121316404"
+     y2="95.28935716592952"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line397" />
+  <line
+     x1="424.44525289514166"
+     x2="424.8595792153983"
+     y1="103.55678814171785"
+     y2="95.65097099157742"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line399" />
+  <line
+     x1="432.5820862779852"
+     x2="433.1343250284595"
+     y1="104.05445819114044"
+     y2="96.15707612658349"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line401" />
+  <line
+     x1="440.70899484171866"
+     x2="441.39897780513763"
+     y1="104.6940597663139"
+     y2="96.80751840642085"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line403" />
+  <line
+     x1="448.82350305126647"
+     x2="449.6510200521354"
+     y1="105.47539803840237"
+     y2="97.6020997000702"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line405" />
+  <line
+     x1="456.92313914882095"
+     x2="457.88793811744506"
+     y1="106.3982350041992"
+     y2="98.54057797037206"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line407" />
+  <line
+     x1="465.0054359067639"
+     x2="466.1072229560311"
+     y1="107.46228955862489"
+     y2="99.62266734775409"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line409" />
+  <line
+     x1="473.06793137920783"
+     x2="474.3063708941097"
+     y1="108.66723758035442"
+     y2="100.84803821730958"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line411" />
+  <line
+     x1="481.10816965192873"
+     x2="482.4828843917919"
+     y1="110.01271203054785"
+     y2="102.21631731920121"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line413" />
+  <line
+     x1="489.12370159046117"
+     x2="490.63427280385883"
+     y1="111.49830306465361"
+     y2="103.72708786235961"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line415" />
+  <line
+     x1="497.1120855861284"
+     x2="498.7580531384356"
+     y1="113.12355815725164"
+     y2="105.37988965144228"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line417" />
+  <line
+     x1="505.07088829978034"
+     x2="506.8517508133359"
+     y1="114.88798223989642"
+     y2="107.17421922701328"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line419" />
+  <line
+     x1="512.9976854030115"
+     x2="514.9129004098421"
+     y1="116.79103785192001"
+     y2="109.1095300189017"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line421" />
+  <line
+     x1="520.8900623166357"
+     x2="522.9390464236974"
+     y1="118.83214530414767"
+     y2="111.18523251269255"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line423" />
+  <line
+     x1="528.74561494619"
+     x2="530.9277440130746"
+     y1="121.01068285547689"
+     y2="113.40069442929854"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line425" />
+  <line
+     x1="536.561950414245"
+     x2="538.8765597432999"
+     y1="123.32598690226553"
+     y2="115.75524091755818"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line427" />
+  <line
+     x1="544.3366877892984"
+     x2="546.7830723281"
+     y1="125.77735218047206"
+     y2="118.24815475980205"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line429" />
+  <line
+     x1="552.0674588110303"
+     x2="554.6448733671494"
+     y1="128.36403198048583"
+     y2="120.87867659032457"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line431" />
+  <line
+     x1="559.7519086116978"
+     x2="562.4595680796926"
+     y1="131.085238374582"
+     y2="123.64600512669352"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line433" />
+  <line
+     x1="567.3876964334506"
+     x2="570.2247760340176"
+     y1="133.94014245693205"
+     y2="126.54929741382915"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line435" />
+  <line
+     x1="574.9724963413489"
+     x2="577.9381318725583"
+     y1="136.92787459609644"
+     y2="129.58766908077604"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line437" />
+  <line
+     x1="582.5039979318649"
+     x2="585.597286032405"
+     y1="140.04752469992263"
+     y2="132.76019461009082"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line439" />
+  <line
+     x1="589.979907036655"
+     x2="593.1999054610052"
+     y1="143.29814249276853"
+     y2="136.06590761976457"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line441" />
+  <line
+     x1="597.3979464213851"
+     x2="600.7436743268322"
+     y1="146.67873780496478"
+     y2="139.50380115759128"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line443" />
+  <line
+     x1="604.7558564793983"
+     x2="608.2262947248119"
+     y1="150.18828087443075"
+     y2="143.07282800789568"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line445" />
+  <line
+     x1="612.0513959200133"
+     x2="615.6454873762848"
+     y1="153.82570266034992"
+     y2="146.7719010105253"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line447" />
+  <line
+     x1="619.2823424512432"
+     x2="622.9989923232981"
+     y1="157.58989516880956"
+     y2="150.59989339200973"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line449" />
+  <line
+     x1="626.4464934567266"
+     x2="630.2845696170101"
+     y1="161.47971179030725"
+     y2="154.55563910878703"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line451" />
+  <line
+     x1="633.5416666666667"
+     x2="637.5"
+     y1="165.4939676490185"
+     y2="158.63793320239165"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line453" />
+  <line
+     x1="640.5657008225712"
+     x2="644.6430855822758"
+     y1="169.6314399637218"
+     y2="162.8455321664967"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line455" />
+  <line
+     x1="647.5164563355928"
+     x2="651.7116505107723"
+     y1="173.89086842026938"
+     y2="167.17715432569764"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line457" />
+  <line
+     x1="654.3918159382689"
+     x2="658.7035416321379"
+     y1="178.27095555549158"
+     y2="171.6314802259236"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line459" />
+  <line
+     x1="661.1896853294613"
+     x2="665.6166291486047"
+     y1="182.77036715241593"
+     y2="176.20715303635518"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line461" />
+  <line
+     x1="667.9079938123011"
+     x2="672.4488072667469"
+     y1="187.38773264668345"
+     y2="180.90277896272892"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line463" />
+  <line
+     x1="674.5446949249426"
+     x2="679.1979948389247"
+     y1="192.121645544035"
+     y2="185.71692767189995"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line465" />
+  <line
+     x1="681.0977670639359"
+     x2="685.862135997223"
+     y1="196.97066384874364"
+     y2="190.64813272753588"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line467" />
+  <line
+     x1="687.5652141000262"
+     x2="692.4392007796877"
+     y1="201.9333105028603"
+     y2="195.69489203680712"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line469" />
+  <line
+     x1="693.945065986195"
+     x2="698.9271857486729"
+     y1="207.00807383613989"
+     y2="200.85566830793886"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line471" />
+  <line
+     x1="700.2353793577544"
+     x2="705.3241146011062"
+     y1="212.19340802651067"
+     y2="206.12888951848538"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line473" />
+  <line
+     x1="706.4342381243162"
+     x2="711.628038770491"
+     y1="217.48773357094694"
+     y2="211.51294939418335"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line475" />
+  <line
+     x1="712.53975405345"
+     x2="717.8370380204576"
+     y1="222.88943776660045"
+     y2="217.00620789823773"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line477" />
+  <line
+     x1="718.5500673458587"
+     x2="723.9492210296868"
+     y1="228.3968752020458"
+     y2="222.60699173089404"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line479" />
+  <line
+     x1="724.46334720189"
+     x2="729.9627259680237"
+     y1="234.00836825848842"
+     y2="228.31359483914076"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line481" />
+  <line
+     x1="730.2777923792166"
+     x2="735.8757210636102"
+     y1="239.72220762078348"
+     y2="234.12427893638994"
+     stroke="#2d2142"
+     stroke-width="1"
+     id="line483" />
+  <text
+     xml:space="preserve"
+     id="text2787"
+     style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:Merriweather;font-style:normal;font-weight:normal;font-size:13.33333333px;white-space:pre;shape-inside:url(#rect2789);-inkscape-font-specification:Merriweather;font-stretch:normal;font-variant:normal" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;line-height:1.25;font-family:Merriweather;-inkscape-font-specification:Merriweather;fill:#000000;fill-opacity:1;stroke:none"
+     id="text9219"
+     transform="rotate(8.0601411,408.83948,500.45907)"><textPath
+       xlink:href="#path253"
+       id="textPath13885"><tspan
+         id="tspan9217"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:Merriweather;-inkscape-font-specification:Merriweather">Almost certainly not</tspan></textPath></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;line-height:1.25;font-family:Merriweather;-inkscape-font-specification:Merriweather;fill:#000000;fill-opacity:1;stroke:none"
+     id="text15496"
+     transform="rotate(8.6974966,473.84648,661.03112)"><textPath
+       xlink:href="#path255"
+       id="textPath17536"><tspan
+         id="tspan15494"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:Merriweather;-inkscape-font-specification:Merriweather">Probably not</tspan></textPath></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;line-height:1.25;font-family:Merriweather;-inkscape-font-specification:Merriweather;fill:#000000;fill-opacity:1;stroke:none"
+     id="text20833"
+     transform="rotate(-7.1240049,359.53566,546.31296)"><textPath
+       xlink:href="#path259"
+       id="textPath23015"><tspan
+         id="tspan20831"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:Merriweather;-inkscape-font-specification:Merriweather">Chances about even</tspan></textPath></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;line-height:1.25;font-family:Merriweather;-inkscape-font-specification:Merriweather;fill:#000000;fill-opacity:1;stroke:none"
+     id="text24230"
+     transform="rotate(-3.543283,346.67769,466.24321)"><textPath
+       xlink:href="#path261"
+       id="textPath37428"><tspan
+         id="tspan24228"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:Merriweather;-inkscape-font-specification:Merriweather">Probable</tspan></textPath></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;line-height:1.25;font-family:Merriweather;-inkscape-font-specification:Merriweather;fill:#000000;fill-opacity:1;stroke:none"
+     id="text38181"
+     transform="rotate(-3.9280828,237.34604,666.90186)"><textPath
+       xlink:href="#path263"
+       id="textPath39601"><tspan
+         id="tspan38179"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.3333px;font-family:Merriweather;-inkscape-font-specification:Merriweather">Almost certain</tspan></textPath></text>
+</svg>

@@ -72,28 +72,281 @@
 		<h1>A Degree of Certainty</h1>
 		<p>Alexander A. Alemi. <time datetime='2024-08-14'>2024-08-14</time></p>
     <div class="content">
-    <p>Let's measure probability in degrees!</p>
-<script src="assets/needle.js"></script>
-<div class="needle">
-	<canvas id="needle" width="800" height="800"></canvas>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;1,300&amp;display=swap" rel="stylesheet">
+<style>
+    svg { font-family: Merriweather; }
+</style>
+<script type="module" src="./assets/Meter.js"></script>
+<p>With the election coming up, I found myself thinking about the old <a href="https://www.nytimes.com/2024/03/05/us/elections/super-tuesday-needle.html">NYTimes Needle</a> and more generally about how to represent and communicate probabilities.<sup><a href="#kaytalk">1</a></sup></p>
+<aside><sup id="kaytalk">1</sup> 
+ For a fantastic overview, see Matthew Kay's talk: <a href="https://youtu.be/E1kSnWvqCw0?si=8oi5U6eAmjROWXdx">A biased tour of the uncertainty visualization zoo</a>.
+</aside>
+<p>We already have many different ways to discuss degrees of belief: <a href="https://en.wikipedia.org/wiki/Probability">probabilties</a>, <a href="https://en.wikipedia.org/wiki/Percentage">percents</a>,<sup><a href="#percent">2</a></sup> <a href="https://en.wikipedia.org/wiki/Odds">odds</a>, <a href="https://en.wikipedia.org/wiki/Logit">log-odds</a>, <a href="https://en.wikipedia.org/wiki/Nat_(unit)">nats</a>, <a href="https://en.wikipedia.org/wiki/Bit">bits</a>, or <a href="https://en.wikipedia.org/wiki/Hartley_(unit)">decibans</a>...  Why don't we add another to the mix.  What if we measure degrees of belief in... degrees.</p>
+<aside><sup id="percent">2</sup> 
+ Not to mention <a href="https://en.wikipedia.org/wiki/Per_mille">per mille (‰)</a>, <a href="https://en.wikipedia.org/wiki/Basis_point#Permyriad">permyriad (‱)</a>, <a href="https://en.wikipedia.org/wiki/Per_cent_mille">per cent mille (pcm)</a>, <a href="https://en.wikipedia.org/wiki/Parts-per_notation">parts per million (ppm)</a>, parts per billion (ppb), etc...
+</aside>
+<p>Specifically, let's use the following transformation:
+$$ \theta = \arccos \sqrt p,  \qquad p = \cos^2 \theta .$$</p>
+<figure id="scale" class="right">
+  <center>
+  <img width="100%" src="figures/degree-scale-font.svg"
+    alt="A visual representation of the degree scale.">
+  <figcaption>
+  Figure 1. A visual representation of the mapping.
+  </figcaption>
+  </center>
+</figure>
+<p>This maps the probabilities between 0 and 1 to angles between 0 and 90 degrees, in a nonlinear way.  0 degrees, or full alignment corresponds to a 100% probability, while a 90 degree angle, or <em>orthogonal</em> one corresponds to impossibility.</p>
+<p>While this might seem unnatural, it is likely the best way to present and talk about probabilities.</p>
+<h2>Uniformity</h2>
+<p>What gives? Why the nonlinear mapping?  This particular mapping happens to be statistically <em>uniform</em> in an interesting way.</p>
+<p>We are all well aware that not all 1% changes in probability mean the same thing. We intuitively believe there is a much smaller difference between 50% and 51% as there is between 98% and 99%.  Why is that?</p>
+<p>As we've discussed <a href="kl.html">before</a>, the only proper way to compare two probability distributions is the KL divergence, let's look at the KL divergence between two Bernoulli distributions with probabilities $p$ and $p + \delta$:</p>
+<p>$$ D[p; p+\delta] \equiv p \log \frac{p}{p+\delta} + (1-p) \log \frac{1-p}{1-p-\delta} \approx -\frac{\delta^2}{2 p (1-p)} + \cdots. $$</p>
+<p>To leading order, this is quadratic in the change $\delta$ and depends inversely on the probability $p$ and its complement $1-p$.  If we interpret this as a kind of squared distance, the square root of this gives us the usual <a href="https://en.wikipedia.org/wiki/Jeffreys_prior">Jeffrey's prior</a> for the Bernoulli problem:</p>
+<p>$$ p(p) = \frac{1}{\pi \sqrt{p (1-p)} }. $$</p>
+<figure id="jeffreys">
+  <center>
+  <img src="figures/KLsmallchange_standard.png"
+    alt="Jeffrey's prior for the Bernoulli problem.">
+  <figcaption>
+  Figure 2. Unit infinitestimal changes in the probability have different statistical effects.  They are emphasized near the extremes, fairly extremely.
+  </figcaption>
+  </center>
+</figure>
+<p>Here we can clearly see that as we reach the extreme values of the probability $p$, the statistical distance blows up.  Going from $0.99$ to $0.991$ is 26 times larger a change in terms of KL than going from $0.50$ to $0.501$.  Clearly, probabilities are not very uniform.</p>
+<p>If we took as our prior the distribution $1/\pi\sqrt{p(1-p)}$ we would be weighing the probabilties proportional to this statistical distance. I.e. we would be putting equal weight on equally <em>distinguishable</em> probabilities.</p>
+<p>What if we tried to work in terms of log-odds?  Here if we transform into log-odds:</p>
+<p>$$ \chi = \log \frac{p}{1-p}, $$</p>
+<p>We get KL divergences that take the form:</p>
+<p>$$ D[\chi; \chi+\delta] \approx \frac{\delta^2}{4 + 4 \cosh \chi} + \cdots, $$</p>
+<p>which has the opposite problem as seen below.</p>
+<figure id="logits">
+  <center>
+  <img src="figures/KLsmallchange_logits.png"
+    alt="Jeffrey's prior for the Bernoulli problem, in logit space.">
+  <figcaption>
+  Figure 3. Unit infinitestimal changes in logits have different statistical effects.  They are emphasized near the middle.
+  </figcaption>
+  </center>
+</figure>
+<aside><sup id="jeffrey-logit">3</sup> 
+ Coincidentally, though its not often discussed, this is the form that Jeffrey's prior takes when expressed in terms of log-odds. $1/\sqrt{4 + 4 \cosh \chi}$.
+</aside>
+<p>Now, moving from $0.00$ to $0.01$ in log-odds, is 42 times as large an effect as going from $5.00$ to $5.01$ in log-odds.<sup><a href="#jeffrey-logit">3</a></sup></p>
+<aside><sup id="alternate-jeffreys">4</sup> 
+ Equivalently, the question becomes, is there a paramaterization for which Jeffrey's prior is uniform.  Honestly, in writing this post it occurred to me that this might actually be a better way to motivate Jeffrey's prior in the first place, though I don't think this is how its normally done.
+</aside>
+<p>The question then becomes: <em>Is there a parameterization of degrees of belief for which the statistical metric is flat?</em><sup><a href="#alternate-jeffreys">4</a></sup></p>
+<p>To transform a density but have it have a consistent meaning, we require that:</p>
+<p>$$ p(p)\, \mathrm{d}p = p(\theta)\, \mathrm{d}\theta, $$</p>
+<p>substituting the two densities we know, we want to solve:</p>
+<p>$$ \frac{\mathrm{d}p}{\pi \sqrt{p(1-p)}} = \mathrm{d}\theta . $$</p>
+<p>The solution takes the form (up to proportionality):</p>
+<p>$$ \theta = \arccos \sqrt p, \qquad p = \cos^2 \theta . $$</p>
+<p>This is the mapping we opened the post with.  In this parameterization, we have that the KL divergence is <em>flat</em>:</p>
+<p>$$ D[\theta; \theta + \delta] \approx 2\delta^2  + \cdots . $$</p>
+<p>It is in this parameterization that a small change in the parameter means the same thing at every value of the parameter.  This parameterization is <em>uniform</em> in a deep sense.  Jeffrey's prior, expressed in this $\theta$ parameter is uniform.</p>
+<figure id="thetas">
+  <center>
+  <img src="figures/KLsmallchange_theta.png"
+    alt="Jeffrey's prior for the Bernoulli problem, in theta space.">
+  <figcaption>
+  Figure 4. Unit infinitestimal changes in angles have uniform statistical effects.  
+  </figcaption>
+  </center>
+</figure>
+<aside><sup id="quantum">5</sup> 
+ Bengtsson, Ingemar, and Karol Życzkowski. <a href="https://www.google.com/books/edition/_/sYswDwAAQBAJ?hl=en&gbpv=0">Geometry of quantum states: an introduction to quantum entanglement</a>. Cambridge university press, 2017.
+</aside>
+<aside><sup id="quinn">6</sup>
+Quinn, Katherine N, et al. “Visualizing Probabilistic Models and Data with Intensive Principal Component Analysis.” Proceedings of the National Academy of Sciences, vol. 116, no. 28, 24 June 2019, pp. 13762–13767, <a href="https://arxiv.org/abs/1810.02877">arxiv.org/abs/1810.02877</a>, <a href="https://doi.org/10.1073/pnas.1817218116">10.1073/pnas.1817218116</a>. Accessed 23 Oct. 2024.
+</aside>
+<p>It turns out that this angular distance is related to the <a href="https://en.wikipedia.org/wiki/Bhattacharyya_distance">Bhattacharyya distance</a>.
+If we take the straight line chordal distance between the two distributions on this arc, it turns out to be equivalent to the <a href="https://en.wikipedia.org/wiki/Hellinger_distance">Hellinger distance</a>.<sup><a href="#quantum">5</a>,<a href="#quinn">6</a></sup></p>
+<aside><sup id="leading">7</sup> 
+ Technically, the KL divergence is only uniform to <i>leading order</i>.  There are higher order corrections that show up and which are most extreme at the edges of the space. 
+</aside>
+<p>This is, in some sense, the most natural parameterizations of probabilities.  In terms of ordinary probabilities, the space is curved, the metric isn't flat, the world is distorted as we move around the space.  In terms of these <em>degrees</em> ($\theta$), the metric is flat.  A 1 degree change means the same thing, statistically, regardless of where we start.<a href="#leading"><sup>7</sup></a>  The full range of possibilities range from 0° to 90°, which we can visualize as a quarter circle, turned on its side to resemble a meter.</p>
+<p><probability-meter id="interactive" probability="0.53"></probability-meter></p>
+<div class="controls">
+        <input type="range" id="probabilitySlider" min="0" max="1" step="0.0001" value="0.53">
+        <input type="number" id="probabilityInput" min="0" max="1" step="0.0001" value="0.53">
 </div>
-<script>
-	const canvas = document.getElementById('needle');
-	const ctx = canvas.getContext('2d');
+<p>A probability of <span id="probVal">53</span>% corresponds to an angle of <span id="angVal">43.28</span>°.</p>
+<p>This meter is interactive, you can adjust the probability with the slider or input box.</p>
+<h2>Relativity</h2>
+<p>Having identified this mathematically elegant parameterization of degrees of belief, the question remains: is it practical for everyday use?</p>
+<p>Well, the more I think about it, the more I think this might actually be a decent idea.  People already are familiar with
+angles and degrees.  We have a sense of how large 1° is, or 5° or 30°.  We can visualize where these would fall on the meter.</p>
+<p>Another benefit of angles is that we already have a strong sense that they are relative.  We could easily switch whether we consider 0° to correspond
+to complete certainty:</p>
+<p><probability-meter id="off-one" probability="1.0" 
+labels='{"angles": [15, 30, 45, 60, 75], "labels": ["15°", "30°", "45°", "60°", "75°"]}'>
+</probability-meter></p>
+<p>or whether we wanted to measure angles relative to the middle, relative to a toss up:
+<probability-meter id="off-middle" probability="0.5"
+labels='{"angles": [15, 30, 45, 60, 75], "labels": ["+30°", "+15°", "0°", "-15°", "-30°"]}'>
+</probability-meter></p>
+<aside><sup id="leading">8</sup> 
+ I just refreshed <a href="https://www.economist.com/interactive/us-2024-election/prediction-model/president">the economist</a> model and it has 56-44 in favor of Trump.
+</aside>
+<p>For instance, we might want to describe the upcoming election.  We could associate one end of the meter
+with Donald Trump winning the election and one end with Kamala Harris, and summarize <a href="https://www.economist.com/interactive/us-2024-election/prediction-model/president">the economist</a> model of the election as being tilted 3.45° towards Trump, today.<a href="#economist"><sup>8</sup></a></p>
+<p><probability-meter probability="0.56" 
+labels='{"angles": [10, 80], "labels": ["Trump", "Harris"]}'>
+</probability-meter></p>
+<p>We could just as easily measure angles with respect to impossibility in the case of rare events:
+<probability-meter id="off-zero" probability="0.0"
+labels='{"angles": [15, 30, 45, 60, 75], "labels": ["75°", "60°", "45°", "30°", "15°"]}'>
+</probability-meter></p>
+<p>For instance, we might say there is a 19° chance of rain today:
+<probability-meter probability="0.10"
+labels='{"angles": [10, 80], "labels": ["Rain", "No Rain"]}'>
+</probability-meter></p>
+<h2>Kent's Words of Estimative Probability</h2>
+<p>In the meters on this page, as a visual aid, I've colored bands of 15° increments.  It turns out that these perfectly line up with <a href="https://en.wikipedia.org/wiki/Words_of_estimative_probability">Kent's words of Estimative Probability</a>, suggesting that human perceptions of probabilities might actually be better aligned with this scale.  More thoughts on human perception below in <a href="#app-perception">Appendix A</a></p>
+<figure id="kent">
+  <center>
+  <img src="figures/kent-needle.svg"
+    alt="Kent's words of estimative probability line up perfectly on the degree scale.">
+  <figcaption>
+  Figure 5. Kent's words of estimative probability line up perfectly on the degree scale.
+  </figcaption>
+  </center>
+</figure>
+<h2>Approximate Calculation</h2>
+<p>While this mapping seems interesting, no one can compute $\arccos \sqrt p$ in their head.  Fortunately, as we show below in <a href="#app-taylor">Appendix A</a>, near the middle the map is linear and near the edges it looks like a square root, so if we want an accurate and easy to calculate on pencil and paper version of the mapping, we can split our probabilities into three regions,
+dividing the probability space into three regions: below 0.25, between 0.25 and 0.75, and above 0.75.</p>
+<p>Since we have that $180/\pi \approx 60$ if we want to estimate the degrees for a given probability in our head we can use:
+$$ \Delta\theta(p) \sim 60 \Delta p, $$
+for $p$ values near $\frac 12$ and for values near the extremes we can use:
+$$ \Delta\theta(p) \sim 60 \sqrt{\Delta p}. $$</p>
+<p>If you need a good way to mentally calculate a square root, take a guess $g$ and then average $p$ and $p/g$.  You can repeat this many times to get as much accuracy as you desire.<sup><a href="#cook">9</a></sup></p>
+<aside><sup id="cook">9</sup> 
+    This is the <a href="https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Heron's_method">Babylonian method</a>, aka an application of <a href="https://en.wikipedia.org/wiki/Newton%27s_method#Examples">Newton's root finding method</a>.
+    For this and a whole slew of useful mental arithmetic tips, see <a href="https://www.johndcook.com/blog/mental-functions/">John D. Cook's Blog, The Endeavor</a>. 
+</aside>
+<p>This simple to compute approximate mapping turns out to be very accurate.  It is good to less than half a degree over the whole range as shown below in Figure 6.</p>
+<figure id="approx-error">
+  <center>
+  <img src="figures/degree_approx.png"
+    alt="Errors in the simple approximate method.">
+  <figcaption>
+  Figure 6. Errors in the Approximate mapping.
+  </figcaption>
+  </center>
+</figure>
+<p>As long as we are alright with reporting relative angles, this creates a very simple mapping.  For example, before we said the economist model had Trump's probability of winning at 56%, to estimate this in degrees we take $60 \times 0.06$ to get 3.6°, compared with the more exact 3.45°. If we think there is a 5% chance of rain, we say that that is $60 \times \sqrt{0.10} = 60 \times \sqrt 10 / 10 \approx 19^\circ$, compared with the more exat 18.43°.  This method is very practical and very accurate.</p>
+<h2>Conclusion</h2>
+<p>Maybe we should discuss degrees of belief in degrees.  This creates a very intuitive visual representation for probabilities, and one that is statistically uniform in an interesting an useful way.  It isn't all that hard to compute, especially if we are alright with a half degree accuracy as in the previous section.  With a little bit of time, I think we could come to intuit what a 1° or 5° or 10° or 30° shift in probabilities <em>felt</em> like, and unlike with either probabilities or odds, that useful internal sense would work well for us regardless of the baseline rate.  A 5° away from center would <em>mean</em> the same sort of thing as a 5° away from certainty.</p>
+<p>Give a shot.  In <a href="#app-widget">Appendix C</a> I've made available the code for the widgets that appear on this page, which should make it easy for anyone to try.</p>
+<h1>Appendix A - Taylor Expansions</h1>
+<p id="app-taylor">
+If we Taylor expand this map near $p=1/2$, the map is approximately linear:
+$$ \theta(p) \approx \frac{\pi}{4} - \left( p - \frac 12 \right) - \frac 23 \left( p - \frac 12 \right)^3 + \cdots . $$
+</p>
+<p>Near $p=0$ its square root like:
+$$ \theta(p) \approx \frac{\pi}{2} - \sqrt p - \frac{p^{\frac 3 2}}{6} - \cdots . $$
+And similarly near $p=1$:
+$$ \theta(p) \approx \sqrt{1-p} + \frac{(1-p)^{\frac 3 2}}{6} + \cdots. $$</p>
+<h1>Appendix B - Categorical Generalization</h1>
+<p>This idea easily extends to Categorical distributions, where the flat statistical manifold corresponds to the positive octant of the n-sphere as discussed in Bengtsson et al.&lt;a href=#quantum2"&gt;<sup>52</sup></a></p>
+<aside><sup id="quantum2">52</sup> 
+ Bengtsson, Ingemar, and Karol Życzkowski. <a href="https://www.google.com/books/edition/_/sYswDwAAQBAJ?hl=en&gbpv=0">Geometry of quantum states: an introduction to quantum entanglement</a>. Cambridge university press, 2017.
+</aside>
+<p><span id="app-widget"></span></p>
+<h2>Appendix C - Widget</h2>
+<p>I created a WebComponents element, so that you can simply add the <a href="%22https://blog.alexalemi.com/assets/Meter.js%22">script</a> as a module to your page:</p>
+<pre><code class="language-html">&lt;script type="module" src="https://blog.alexalemi.com/assets/Meter.js"&gt;&lt;/script&gt;
+</code></pre>
+<p>in your <code>&lt;head&gt;</code> section and later insert:</p>
+<pre><code class="language-html">&lt;probability-meter probability="0.53"&gt;&lt;/probability-meter&gt;
+</code></pre>
+<p>elements to your page and it will render as:</p>
+<p><probability-meter id="appendix" probability="0.53"></probability-meter></p>
+<p><span id="app-perception"></span></p>
+<h1>Appendix D - Human Perception</h1>
+<aside><sup id="good">11</sup> 
+Good, I. J. "Weight of evidence: A brief survey." Bayesian statistics 2 (1985): 249-270. <a href="https://www.cs.tufts.edu/comp/150FP/archive/jack-good/weight-of-evidence.pdf">[pdf]</a>
+</aside>
+<aside><sup id="jaynes">12</sup> 
+Jaynes, Edwin T. Probability theory: The logic of science. Cambridge university press, 2003. <a href="http://www-biba.inrialpes.fr/Jaynes/prob.html">[link]</a>
+</aside>
+<p>It is generally claimed that human perception aligns well with log-odds.  Good<a href="#good"><sup>11</sup></a> and Jaynes<a href="#jaynes"><sup>12</sup></a> both advocated the use of <em><a href="https://en.wikipedia.org/wiki/Hartley_(unit)">decibans</a></em>. These work great for accumulating evidence and doing bayesian updates.</p>
+<aside><sup id="ubiquitous">13</sup> 
+Zhang, Hang, and Laurence T. Maloney. "Ubiquitous log odds: a common representation of probability and frequency distortion in perception, action, and cognition." Frontiers in neuroscience 6 (2012): 1. <a href="https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2012.00001/full">[link]</a>
+</aside>
+<p>In the field of human perception, I've often seen references to Zhang et al.<a href="#ubiquitous"><sup>13</sup></a> to justify the claim that human perception is well aligned with log-odds.  In the paper they collected a bunch of human perceptual studies and show that you can use a mapping that is linear in log odds to explain the data.  For example, here is Figure 1 from the paper:</p>
+<figure>
+  <center>
+  <img width="100%" src="figures/ubiquitouslogodds.jpg"
+    alt="Figure 1 from the Ubiquitous log odds paper.">
+  <figcaption>
+  Figure 7. Figure 1 from Zhang et al. showing the linear in log-odds fit to the perceptual data.
+  </figcaption>
+  </center>
+</figure>
+<p>Here, the blue lines show fits of a two parameter function:</p>
+<p>$$ \textsf{Lo}(\pi) = \gamma \textsf{Lo}(p) + (1-\gamma) \textsf{Lo}(p_0), $$</p>
+<p>which describes a linear map acting on the log odds of the true probability and some baseline probability to describe the log-odds of the perceptual probability.  The paper considers it a success that they can use the simple two parameter function to get a mapping that shows good agreement with the experimental data.</p>
+<p>You know what these curves look like? They look like our arcsine transformation.  Without any parameters, here is a plot of:</p>
+<p>$$ \arcsin \sqrt p. $$</p>
+<p>This is the same as our proposed mapping (just with the opposite sign).</p>
+<figure>
+  <center>
+  <img width="100%" src="figures/arcsinetransform.png"
+    alt="Arcsine transformation over the same ranges.">
+  <figcaption>
+  Figure 8. Arcsine transformation over the same sort of ranges as in the Figure above.
+  </figcaption>
+  </center>
+</figure>
+<p>Look's pretty good to me.</p>
+<h1>Appendix E - ArcSin Transformation</h1>
+<p>It seems as though there is a history of using the "arcsin" transformation to transform probabilites for statistical models.  It seems like this was more popular before the logistic model took off.</p>
+<p>I found several references in this direction:</p>
+<ul>
+<li>Double arcsin transform not appropriate for meta-analysis. Röver and Friede. <a href="https://arxiv.org/abs/2203.04773">arXiv:2203.04773</a></li>
+<li>The arcsine is asinine: the analysis of proportions in ecology. Warton and Hui. <em>Ecology</em> 92(1), 2011, pp. 3-10. <a href="https://esajournals.onlinelibrary.wiley.com/doi/pdf/10.1890/10-0340.1">[link]</a></li>
+<li>The Square Root Transformation in Analysis of Variance. Bartlett. <em>Supplement to the Journal of the Royal Statistical Society</em>. Vol 3. No 1. 1936. <a href="https://www.jstor.org/stable/2983678">[link]</a></li>
+<li>Transformations Related to the Angular and the Square Root. Freeman and Tukey. <em>Ann. Math Statist.</em> 21(4): 607-611 (1950). <a href="https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-21/issue-4/Transformations-Related-to-the-Angular-and-the-Square-Root/10.1214/aoms/1177729756.full">[link]</a></li>
+</ul>
+<p>Many of the references are critical of the "arcsine" transformation, and I would tend to agree.  For something like a logistic regression model, if you map the probabilities to a fixed interval, you're going to have difficulty interpreting the coefficients of your effects.  My understanding is that people were using this arcsine transformation and then fitting models of the form:</p>
+<p>$$ \theta \sim X \beta,  $$</p>
+<p>for some observations $X$, learning some coefficients $\beta$, but since $\theta$ is bounded, these models naturally make unphysical predictions if you extrapolate them.  The logistic model doesn't have the same problem, since log-odds are unbounded.</p>
+<p>While I agree that measuring degrees of belief in degrees doesn't work great for linear models, I still think it would work well for talking about and communicating probabilites.</p>
+<h1>Appendix F - Connection to Quantum Mechanics</h1>
+<p>The final connection I want to point out is easier to see if we recast the Bernoulli likelihood in terms of our new angles:</p>
+<p>$$ \Pr(X) = \begin{cases} \cos^2 \theta &amp; X = 1 \\ \sin^2 \theta &amp; X = 0 \end{cases} . $$</p>
+<p>The probability that we observe our random variable in state 1 is the square of some angle $\theta$.  This reminds me of <a href="https://en.wikipedia.org/wiki/Qubit">qubits</a>, and
+the geometrical story of quantum mechanics and its relation to probability as told in Scott Aaronson's <a href="https://www.scottaaronson.com/democritus/lec9.html">blog post</a>.</p>
+<p>One could write this in <a href="https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation">Dirac notation</a>:</p>
+<p>$$ \ket{\psi} = \cos \theta \ket 1 + \sin \theta \ket 0 $$
+and use <a href="https://en.wikipedia.org/wiki/Born_rule">Born's rule</a> to derive the probabilites, i.e. you must take the square modulus of the amplitude to get the probability.</p>
+<p>I wonder whether there is more to this analogy...</p>
+<script defer>
+    const slider = document.getElementById('probabilitySlider');
+    const input = document.getElementById('probabilityInput');
+    const meter = document.getElementById('interactive');
+    const angVal = document.getElementById('angVal');
+    const probVal = document.getElementById('probVal');
 
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
-	
-	const centerX = canvas.width / 2;
-	const centerY = canvas.height / 2 + 100;
-	const radius = Math.min(canvas.width/2, canvas.height/2)  - 20;
+    function probToAngle(x) {
+        return Math.acos(Math.sqrt(parseFloat(x)))
+    }
 
-	// Draw quarter circle
-	ctx.beginPath();
-	ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
-	ctx.lineTo(centerX, centerY);
-	ctx.closePath();
-	ctx.strokeStyle = 'black';
-	ctx.stroke();
+    function updateProbability(value) {
+            value = parseFloat(value);
+            slider.value = value;
+            input.value = value;
+            meter.setAttribute('probability', value);
+            probVal.innerHTML = (value * 100).toFixed(2);
+            angVal.innerHTML = (probToAngle(value) * 180 / Math.PI).toFixed(2);
+    }
+    slider.addEventListener('input', (e) => updateProbability(e.target.value));
+    input.addEventListener('input', (e) => updateProbability(e.target.value));
+
 </script>
  
     </div>
