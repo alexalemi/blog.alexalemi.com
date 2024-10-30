@@ -65,7 +65,7 @@ $$ p(p) = \frac{1}{\pi \sqrt{p (1-p)} }. $$
 
 Here we can clearly see that as move towards 0 or 1, the statistical distance blows up.  Going from $0.99$ to $0.991$ is 26 times larger a change in terms of KL than going from $0.50$ to $0.501$.  Clearly, probabilities measured in percentages are very non-uniform.
 
-If we took as our prior the distribution $1/(\pi\sqrt{p(1-p)})$ we would be weighing the probabilities proportional to this statistical distance. That is, we would be putting equal weight on equally *distinguishable* probabilities.  This is what motivated [Jeffreys](https://en.wikipedia.org/wiki/Jeffreys_prior) to make his prior. He wanted a truly *non-informative* prior.  Naively, Laplace suggested a *uniform* prior as being non-informative.  But what does *uniform* mean?  If you start with a uniform prior on percentages, its very non-uniform when transformed into log-odds.  Uniform in log-odds is very non-uniform in terms of percentages.  If you start with a uniform prior in percents, you'll get a different posterior than if you start with a uniform prior in log-odds.  Clearly, your choice of parameterization is influencing your outcome.  
+If we took as our prior the distribution $1/(\pi\sqrt{p(1-p)})$ we would be weighing the probabilities proportional to this statistical distance. That is, we would be putting equal weight on equally *distinguishable* probabilities.  This is what motivated [Jeffreys](https://en.wikipedia.org/wiki/Jeffreys_prior) to make his prior. He wanted a truly *non-informative* prior.  Naively, Laplace suggested a *uniform* prior as being non-informative.  But what does *uniform* mean?  If you start with a uniform prior on percentages, it's very non-uniform when transformed into log-odds.  Uniform in log-odds is very non-uniform in terms of percentages.  If you start with a uniform prior in percents, you'll get a different posterior than if you start with a uniform prior in log-odds.  Clearly, your choice of parameterization is influencing your outcome.  
 
 If what we care about is the amount of information you need to modify your beliefs, we should weigh our beliefs in proportion to the amount of evidence they would need to move. This is what led Jeffreys to his prior, in the form we see above.  He showed that this is proportional to the square root of the determinant of the [Fisher metric](https://en.wikipedia.org/wiki/Fisher_information_metric).  Regardless of your choice of parameterization, if you compute the determinant of the Fisher metric in that parameterization and take its square root, you'll recover Jeffreys prior.  It is parameterization independent in this sense.
 
@@ -101,7 +101,7 @@ Now, moving from $0.00$ to $0.01$ in log-odds is 42 times farther a statistical 
 Very small changes in percentage near 1.0 require massive amounts of evidence to justify.  Massive changes in log-odds away from 0 require very little evidence to justify. Neither of these is ideal.
 
 <aside><sup id="alternative">xxa-alternative</sup> 
-  In writing this post it occurred to me that this might actually be a better way to derive Jeffrey's prior in the first place.  One could say that Jeffrey's prior is a <i>uniform</i> prior (in the Laplace sense) in the parameterization for which the KL divergence is also <i>uniform</i>.  Transforming this uniform prior in the uniform parameterization to any other is what gives you the square of the determinant of the metric form we are used to seeing.
+  In writing this post it occurred to me that this might actually be a better way to derive Jeffrey's prior in the first place.  One could say that Jeffrey's prior is a <i>uniform</i> prior (in the Laplace sense) in the parameterization for which the KL divergence is also <i>uniform</i>.  Transforming this uniform prior in the uniform parameterization to any other is what gives you the square root of the determinant of the metric form we are used to seeing.
 </aside>
 
 The question then becomes: *What is the best parameterization?*  How close to
@@ -236,12 +236,7 @@ For instance, we might say there is a 18° chance of Trump winning Virginia:
 </probability-meter>
 
 
-This versatility comes at no additional mental cost. We already naturally
-re-orient our discussion of angles in this way.  Probabilites and their
-statistical metric are symmetric about even.  Probabilities very near 1 and
-similar to those very close to 0, but when we talk about percentages, this
-symmetry is obscured. Log-odds are better in this regard, but much less
-commonly used.
+This versatility comes at no additional mental cost. We already naturally re-orient our discussion of angles in this way.  Probabilites and their statistical metric are symmetric about even.  Probabilities very near 1 are similar to those very close to 0, but when we talk about percentages, this symmetry is obscured. Log-odds are better in this regard, but much less commonly used.
 
 
 
@@ -259,7 +254,8 @@ In the meters on this page, as a visual aid, I've colored six bands of 15° incr
   </center>
 </figure>
 
-Over time, many people have tried to come up with intuitive names or mappings for different percentages, in an effort to better communicate uncertainty to a lay audience.  
+In an effort to better communicate uncertainty to a lay audience, 
+ many people have tried to come up with intuitive names or mappings for different percentages.
 These always end up corresponding to awkward, unevenly spaced probabilities.  For example, Kent, said that 93% corresponds to what people consider "almost certain".  93% seems like a
 strange value.  I always wondered where 93% came form, or why people's intuitions about probabilities were so unevenly spaced.  However, if you take Kent's thresholds and map them to *degrees*, they are perfectly evenly spaced at 15° increments.  This suggests that people correct for the statistical unevenness of percentages through experience.  The words we use to describe certainty are uniform, even if our most popular *unit* for measuring certainty is not. This suggests that human perceptions of probabilities might already be better aligned with degrees.
 
@@ -267,7 +263,7 @@ More thoughts on human perception below in <a href="#app-perception">Appendix D<
 
 ## Approximate Calculation
 
-While this mapping seems interesting, no one can compute $\arccos \sqrt p$ in their head.  Fortunately, as we show below in <a href="#app-taylor">Appendix A</a>, near the middle the map is linear and near the edges it looks like a square root, so if we want an accurate and easy to calculate on pencil and paper version of the mapping, we can split our probabilities into three regions, below 0.25, between 0.25 and 0.75, and above 0.75.
+While this mapping seems interesting, no one can compute $\arccos \sqrt p$ in their head.  Fortunately, as we show below in <a href="#app-taylor">Appendix A</a>, near the middle the map is linear and near the edges it looks like a square root, so if we want an accurate, easy to calculate, pencil and paper version of the mapping, we can split our probabilities into three regions, below 0.25, between 0.25 and 0.75, and above 0.75.
 
 Since we have that $180/\pi \approx 60$ if we want to estimate the degrees off of even, for a given probability near 50%, in our head we can use:
 $$ \Delta\theta(p) \sim 60 \Delta p, $$
@@ -300,8 +296,7 @@ For example, before we said the economist model had Trump's probability of winni
 I don't know about you, but I'm convinced.  We should measure degrees of belief in degrees.
 
 This creates a very intuitive visual representation for probabilities, and one that is statistically uniform in an interesting and useful way.  It isn't all that hard to compute, especially if we are alright with a half degree accuracy as in the previous section.  With a little bit of time, I think we could come to intuit what a 1° or 5° or 10° or 30° shift in probabilities *felt* like. Some might even say, we already do. 
-And, unlike with either probabilities or odds, that useful internal sense would work well for us regardless of the baseline rate.  
-A 5° shift away from center means the same sort of thing as a 5° shift away from certainty.
+And, unlike with either probabilities or odds, that useful internal sense would work well for us regardless of the baseline rate. A 5° shift away from center means the same sort of thing as a 5° shift away from certainty.
 
 Give a shot.  In <a href="#app-widget">Appendix C</a> I've made available the code for the widgets that appear on this page, which should make it easy for anyone to try.
 
