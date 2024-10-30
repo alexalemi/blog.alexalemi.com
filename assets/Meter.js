@@ -40,7 +40,8 @@ class Meter extends HTMLElement {
 
 		// Base SVG
 		const svg = svgElem("svg", {
-			width, height, viewBox: `0 0 ${width} ${height}`,
+			// width, height, viewBox: '0 0 800 250',
+			viewBox: '0 0 800 250',
 			style: "border-bottom: 3px solid black;"
 		});
 		this.svg = svg;
