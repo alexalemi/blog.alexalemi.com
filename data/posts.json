@@ -1,5 +1,15 @@
 [
     {
+      "title": "A Quarter for your Thoughts",
+      "src": "quarters.md",
+      "date": "2024-11-01",
+      "tags": ["fun", "arithmetic"],
+      "id": "quarters",
+      "description": "Get the precision of one sig fig essentially for free.",
+      "featured": true,
+			"draft": true
+    },
+    {
       "title": "A Degree of Certainty",
       "src": "a-degree-of-certainty.md",
       "date": "2024-08-14",
@@ -9,17 +19,7 @@
       "featured": true
     },
     {
-      "title": "A Quarter For your Thoughts",
-      "src": "quarters.md",
-      "date": "2024-10-20",
-      "tags": ["fun", "arithmetic"],
-      "id": "quarters",
-      "description": "Get the precision of one sig fig essentially for free.",
-      "featured": true,
-			"draft": true
-    },
-    {
-      "title": "",
+      "title": "Decibels",
       "src": "decibels.md",
       "date": "2023-07-07",
       "tags": ["fun", "arithmetic"],

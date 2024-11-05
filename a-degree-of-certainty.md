@@ -6,7 +6,10 @@
 </style>
 <script type="module" src="./assets/Meter.js"></script>
 
+
 With the upcoming election, I found myself thinking about the old [NYTimes Needle](https://www.nytimes.com/2024/03/05/us/elections/super-tuesday-needle.html) and, more generally, about how to best represent and communicate probabilities.<sup><a href="#kaytalk">xxa-kaytalk</a></sup>
+
+<i>Note: if you want to see how this looks in the context of the 2024 Presidential election, see <a href="https://www.alexalemi.com/random/election/">here</a>.</i>
 
 <aside><sup id="kaytalk">xxa-kaytalk</sup> 
  For a fantastic overview, see Matthew Kay's talk: <a href="https://youtu.be/E1kSnWvqCw0?si=8oi5U6eAmjROWXdx">A biased tour of the uncertainty visualization zoo</a>.
