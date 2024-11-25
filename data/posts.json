@@ -2,7 +2,7 @@
     {
       "title": "A Quarter for your Thoughts",
       "src": "quarters.md",
-      "date": "2024-11-01",
+      "date": "2024-11-25",
       "tags": ["fun", "arithmetic"],
       "id": "quarters",
       "description": "Get the precision of one sig fig essentially for free.",
@@ -17,16 +17,6 @@
       "id": "a-degree-of-certainty",
       "description": "Let's measure probability in degrees.",
       "featured": true
-    },
-    {
-      "title": "Decibels",
-      "src": "decibels.md",
-      "date": "2023-07-07",
-      "tags": ["fun", "arithmetic"],
-      "id": "decibels",
-      "description": "In an alternate universe, we'd use decibels for everything.",
-      "featured": true,
-			"draft": true
     },
     {
       "title": "The Size of the Earth",
