@@ -1,4 +1,26 @@
 
+<!-- 
+Notes from Mallory, need a better opener.
+
+Restructure, reorganize to be:
+
+  - order of magnitude
+  - one digit sigfig
+  - two digit sigfig
+  - actual sigfigs
+  
+Then transistion to the fractional log things, can talk about familiar, look in log space, make things evenly spaced in log.
+
+  - one few ten
+  - quarters
+  - decibels
+  - semidecibels
+  - centibels
+
+
+Need a figure for one sig fig and for semidecibels, and maybe two sigfigs.
+-->
+
 Let's tour some fun ways to do mental math to various precisions.
 
 
