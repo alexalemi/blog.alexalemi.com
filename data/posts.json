@@ -6,8 +6,7 @@
       "tags": ["fun", "arithmetic"],
       "id": "quarters",
       "description": "Get the precision of one sig fig essentially for free.",
-      "featured": true,
-			"draft": true
+      "featured": true
     },
     {
       "title": "A Degree of Certainty",

@@ -101,62 +101,18 @@ Need a figure for one sig fig and for semidecibels, and maybe two sigfigs.
 <aside><sup id="numberphile">2</sup>
 It also featured in an old <a href="https://youtu.be/aOJOfh2_4PE?si=npC8b4px-B2XwHM1">Numberphile</a> video.
 </aside>
-<p>The branding is cute. I think trying to round things to a single significant digit is something people tend to do pretty naturally when they are estimating.  However, thinking about it again, I think there is a neat way to get the same or better precision with even less of the fuss.  We should use quarter orders of magnitude.  Let's build up to that.</p>
+<p>The branding is cute. I think trying to round things to a single significant digit is something people tend to do pretty naturally when they are estimating.  However, thinking about it again, I think there is a neat way to get the same or better precision with even less of the fuss.  We should use quarter orders of magnitude, or work directly in decibels.  Let's build up to that.</p>
 <h2>Order of Magnitude</h2>
 <p>When you get into <a href="https://en.wikipedia.org/wiki/Fermi_problem">Fermi problems</a> you often start by simply tracking the orders of magnitude, i.e. you round every number to its nearest power of 10 and only keep track of those.  This makes for very speedy estimates, but the resolution is obviously only good to about an order of magnitude.  This works great for trying to answer questions like my son asked the other day: "If we suddenly got an extra electron on each of our atoms, what would happen?"<a href="#electrons"><sup>3</sup></a></p>
 <aside><sup id="electrons">3</sup> 
 We can estimate the sudden energy increase: $\frac{ke\frac{200\text{ lbs}}{16\text{ g/mol}}\times N_A}{3\text{ ft}} \sim 10^{27}\text{ J}$. Or 10 times the energy the sun releases in a second, similar to the energy that would be released if the moon hit the earth. For lots of other fun problems like this, see <a href="https://what-if.xkcd.com/">what-if?</a>.
 </aside>
-<p>We don't really care about accuracy that is better than a factor of 10, we are more interested if it would be like a punch to the gut, a bomb going off or armageddon.  Order of magnitude math is good for this kind of thing, and easy to do mentally or on paper.  You only need to track the powers of 10.  Multiplication and division become as easy as addition and subtraction:</p>
+<p>We don't really care about accuracy that is better than a factor of 10, we are more interested if it would be like a punch to the gut, a bomb going off, or Armageddon.  Order of magnitude math is good for this kind of thing, and easy to do mentally or on paper.  You only need to track the powers of 10.  Multiplication and division become as easy as addition and subtraction:</p>
 <p>$$ 10^a 10^b / 10^c = 10^{a + b - c}. $$</p>
-<h2>One - Few - Ten</h2>
-<p>Quickly though, you find yourself wanting to go beyond just order of magnitude math.  A natural next step would be to use half-orders-of-magnitude.  Now, instead of rounding each number to the nearest power of 10, you round each number to the nearest half-power of 10.  This sounds like it might be complicated but ends up being very simple in practice.</p>
-<figure id="half">
-  <center>
-  <img width="100%" src="figures/halfdial.svg" alt="The layout of the half-orders of magnitude.">
-  <figcaption>
-  Figure 1. Half orders of magnitude.
-  </figcaption>
-  </center>
-</figure>
-<p>When you play with slide rules, you quickly really internalize how close $\pi$ is to the square root of 10.</p>
-<p>$$ \sqrt{10} = 10^{\frac 12} \approx 3.18 \approx 3.14 \approx \pi $$</p>
-<p>So, in practice you simply round each number to either the nearest power of 10 or $\pi$ times the nearest power of 10.</p>
-<p>For example:
-$$
-\begin{align*}
-1.0 &amp;\rightarrow 1 \\
-1.2 &amp;\rightarrow 1 \\
-151.23 &amp;\rightarrow 100 \\
-42,000 &amp;\rightarrow \pi \times 10^4 \\
-0.0723 &amp;\rightarrow 0.1 \\
-40 &amp;\rightarrow \pi \times 10.
-\end{align*}
-$$</p>
-<p>Looking at the Logarithmic circular dial above, the precise rounding points are $10^{1/4} \approx 1.78$ and $10^{3/4} \approx 5.6$, which at the level of precision we are dealing with you could call 2 and 6.  To use the One-Few-Ten system then, if the first digit of a number is between 2 and 6, you call it $\pi$ times the relevant power of 10, and otherwise you just round it to the nearest power of 10.  Two pis make another ten: $\pi^2 \approx 10$.   The 'arithmetic' is quite simple:</p>
-<figure id="pi-table">
-<center>
-    <table>
-        <thead><tr><td></td>
-            <td>$1$</td><td>$\pi$</td>
-        </tr></thead>
-        <tbody>
-        <tr><td>$1$</td>
-            <td>$1$</td><td>$\pi$</td>
-        </tr>
-        <tr><td>$\pi$</td>
-            <td>$\pi$</td><td>$10$</td>
-        </tr>
-        </tbody>
-    </table>
-  <figcaption>
-  Figure 1table. Half-orders-of-magnitude multiplication table.
-  </figcaption>
-</center>
-</figure>
-<p>So, this doesn't really add any sort of mental burden, but increases our accuracy from being good to only an order of magnitude or factor of 10, to being good to a factor of $\pi$.</p>
 <h2>One Significant Digit</h2>
-<p>This brings us back to Eastman's <em>zequals</em>, or one-signficant-digit arithmetic.  The full multiplication table is a lot more complicated:</p>
+<p>The natural next step up in precision brings us back to Eastman's <em>zequals</em>, or one-significant-digit arithmetic.  Here we'll reduce every number to just its leading significant digit.</p>
+<p>For example, the speed of light: $299\,792\,458 \text{ m/s}$ becomes simply $3 \times 10^{8} \text{ m/s}$.</p>
+<p>The full multiplication table for this system is the one we all learned in grade school:</p>
 <center>
     <table>
         <thead><tr><td></td>
@@ -193,11 +149,90 @@ $$</p>
         </tbody>
     </table>
   <figcaption>
-  Figure 3. Ordinary multiplication table.
+  Figure 1. Ordinary multiplication table.
   </figcaption>
 </center>
-<p>Although, you likely have had this table memorized since you were about five years old.  However, while we tend to have the multiplication table memorized, how many people know what 1/8 is?  Division in this system is much harder, even if we only want to maintain a single sig-fig.  Granted, with the extra costs we've got an increased precision.  Unfortunately, because most of the type of math we do when we do order of magnitude problems is multiplication and division, the relative error in our system is set by the smallest <em>multiplicative</em> factor between symbols.  In this case, the gap between 1 and 2 is quite large on the circular slide rule, and this system struggles to maintain accuracy to within a factor of 2 in general.  Our previous One-Few-Ten system was good to a factor of $\pi$, and only had two symbols, here we are using 10 symbols per decade but only get accuracy to a factor of two.</p>
+<p>While you have likely had this table memorized since you were about five years
+old, we can admit that it is somewhat complicated.  It requires memorizing 100
+entries.  And while we can quickly do single digit multiplications, division is
+much harder.  How many people know what 1/8 is, even to one significant digit?
+Granted, with the extra costs we've got an increased precision.</p>
+<p>Unfortunately, because most of the type of math we do when we do order of
+magnitude problems is multiplication and division, the relative error in our
+system is set by the smallest <em>multiplicative</em> factor between symbols.  In this
+case, the gap between 1 and 2 is quite large, and this system struggles to
+maintain accuracy to within a factor of 2 in general.  Here we are using 10
+symbols per decade but only get accuracy to a factor of two.</p>
+<h2>Two Significant Digits</h2>
+<p>If we wanted to have even greater precision, we could do our calculations to
+two significant digits.  This starts to be beyond most people's capability for
+what they can do in their head.  If not for multiplication, certainly for
+division.  It requires use of 100 symbols, though again, we have a lot of
+practice with these symbols and how they multiply.  Doing two significant digit
+arithmetic is a lot easier to do on paper and it what I would typically use back in
+my undergrad physics classes.  Keeping around two significant digits ensures
+that our answers are good to a factor of 1.1 or so, i.e. 10%.</p>
 <p>Can we do better?</p>
+<h1>More Exotic Logarithmic Systems</h1>
+<p>We can get higher accuracy with fewer symbols if we distribute our symbols evenly on a logarithmic scale.<sup><a href="#benford">1</a></sup>
+<a href="#natural-log"><sup>2</sup></a></p>
+<aside> <sup id="benford">1</sup> 
+  This is a better match for how numbers are naturally distributed, as we explored in a <a href="benford.html">previous post</a>.
+</aside>
+<aside> <sup id="natural-log">2</sup>
+There is also evidence to suggest we naturally think about numbers logarithmically.
+<a href="https://www.scientificamerican.com/article/a-natural-log/">
+<i>A Natural Log: Our Innate Sense of Numbers is Logarithmic, Not Linear</i>. Kurt Kleiner. Scientific American. Aug 2008.
+</a>
+</aside>
+<h2>One - Few - Ten</h2>
+<p>One of the biggest bang-for-your-buck type systems is one I like to call one-few-ten.  If we simply track half-order-of-magnitude we can, with only two symbols, achieve ~30% relative errors.</p>
+<p>Now, instead of rounding each number to the nearest power of 10, you round each number to the nearest half-power of 10.  This sounds like it might be complicated but ends up being very simple in practice.</p>
+<figure id="half">
+  <center>
+  <img width="100%" src="figures/halfdial.svg" alt="The layout of the half-orders of magnitude.">
+  <figcaption>
+  Figure 2. Half orders of magnitude.
+  </figcaption>
+  </center>
+</figure>
+<p>When you play with slide rules, you quickly really internalize how close $\pi$ is to the square root of 10.</p>
+<p>$$ \sqrt{10} = 10^{\frac 12} \approx 3.18 \approx 3.14 \approx \pi $$</p>
+<p>So, in practice you simply round each number to either the nearest power of 10 or $\pi$ times the nearest power of 10.</p>
+<p>For example:
+$$
+\begin{align*}
+1.0 &amp;\rightarrow 1 \\
+1.2 &amp;\rightarrow 1 \\
+151.23 &amp;\rightarrow 100 \\
+42,000 &amp;\rightarrow \pi \times 10^4 \\
+0.0723 &amp;\rightarrow 0.1 \\
+40 &amp;\rightarrow \pi \times 10.
+\end{align*}
+$$</p>
+<p>Looking at the Logarithmic circular dial above, the precise rounding points are $10^{1/4} \approx 1.78$ and $10^{3/4} \approx 5.6$, which at the level of precision we are dealing with you could call 2 and 6.  To use the One-Few-Ten system then, if the first digit of a number is between 2 and 6, you call it $\pi$ times the relevant power of 10, and otherwise you just round it to the nearest power of 10.  Two $\pi$s make another ten: $\pi^2 \approx 10$.   The 'arithmetic' is quite simple:</p>
+<figure id="pi-table">
+<center>
+    <table>
+        <thead><tr><td></td>
+            <td>$1$</td><td>$\pi$</td>
+        </tr></thead>
+        <tbody>
+        <tr><td>$1$</td>
+            <td>$1$</td><td>$\pi$</td>
+        </tr>
+        <tr><td>$\pi$</td>
+            <td>$\pi$</td><td>$10$</td>
+        </tr>
+        </tbody>
+    </table>
+  <figcaption>
+  Figure 3. Half-orders-of-magnitude multiplication table.
+  </figcaption>
+</center>
+</figure>
+<p>So, this doesn't really add any sort of mental burden, but increases our accuracy from being good to only an order of magnitude or factor of 10, to being good to a factor of $\pi$.</p>
+<p>I think everyone should be done one-few-ten type arithmetic as a default, and wish it was more popular.  Can we do better than this without increasing the mental burden too much?</p>
 <h2>Quarter-Orders-of-Magnitude</h2>
 <p>Why yes, I believe we can.  Let's use quarter orders-of-magnitude!  If we split the decade into four pieces, we can achieve a relative accuracy of $10^{1/4} \sim 1.8$, better than the factor of 2 we got from the zequals system, and only using 4 symbols instead of 10.</p>
 <figure id="scale">
@@ -244,18 +279,16 @@ $$</p>
 </figure>
 <p>As can be seen from the dial, the appropriate thresholds to round at are $10^{1/8} \approx 1.33, 10^{3/8} \approx 2.37, 10^{5/8} \approx 4.22,$ and $10^{7/8} \approx 7.50$.  As a bit of a mnemonic to remember these thresholds, remember that we are doing things in quarters, the first threshold is 1.3, and 1+3 = 4, then 2.4 and 4.2 which are opposites of one another and finally 7.5 which looks a lot like 3/4.  Now you can have even better precision than you get from single-significant-digit arithmetic, but without all of the mental cost.  Division is also very doable, again, you need only count the legs.  $10 / \tau = \tau\!\!\!\:\pi,  \tau\!\!\!\:\pi / \pi = \tau$, etc.</p>
 <p>I haven't seen this "quarters" system described elsewhere. I've started using it myself and I think it has a lot of promise.  It seems to be a very good compromise between speed, ease of use, and accuracy.</p>
-<h2>Two Significant Digits</h2>
-<p>If we wanted to have even greater precision, we could do our calculations to two significant digits.  This starts to be beyond most people's capabaility for what they can do in their head.  If not for multiplication, certainly for division.  It requires use of 100 symbols, though again, we have a lot of practice with these symbols and how they multiply.  Doing two significant digit arithmetic is a lot easier to do on paper and it what I would typically use in my undergrad physics classes.  Keeping around two sigifnicant digits ensures that our answers are good to a factor of 1.1 or so, i.e. 10%.</p>
 <h2>Decibels</h2>
-<p>As a final outlandish proposal, I'll suggest that if we wanted a system that was accurate to 25%, we could simply use <a href="https://en.wikipedia.org/wiki/Decibel">decibels</a>.  This amounts to expressing each number as 10 times a power of 10:</p>
+<p>As a final, only slightly outlandish proposal, I'll suggest that if we wanted a system that was accurate to 25%, we could simply use <a href="https://en.wikipedia.org/wiki/Decibel">decibels</a>.  This amounts to expressing each number as 10 times a power of 10:</p>
 <p>$$ 299 792 458  \color{darkseagreen}{\text{ m/s}} = {\color{steelblue}{2.99792458}} \times 10^{\color{salmon}{8}} {\color{darkseagreen}{\text{ m/s}}} = 10^{{\color{salmon}8}{\color{steelblue}{.476820703}}} {\color{darkseagreen}{\text{m/s}}} = {\color{salmon}8}{\color{steelblue}{4.76820703}} \text{ dB}\{\color{darkseagreen}{\text{m/s}}\} $$</p>
 <p>If we round this to the nearest integer, we end up with an approximation that is good to $10^{1/10} \approx 25\%$.</p>
 <p>$$ {\color{steelblue}{3.0}} \times 10^{\color{salmon}{8}} {\color{darkseagreen}{\text{ m/s}}} 
 \approx {\color{salmon}8}{\color{steelblue}{5}} \text{ dB}\{\color{darkseagreen}{\text{m/s}}\} $$</p>
-<aside> <sup id="notation">1</sup> 
+<aside> <sup id="notation">3</sup> 
   This would be even more compact if we came up with a cute notational convertion for expressing units of decibel quantities.  I'm going to suggest we use $\{ \cdot \}$ brackets for this.  If you see units in curly brakets, it means the number should be interpreted as being a decibel quantity, and we wouldn't have to write $\text{dB}$ everywhere.  At this point, I think its actually less ink than the usual scientific notation, as we've eliminated the $\times 10$ from all of our numbers.
 </aside>
-<p>We are used to doing calculations with numbers in scientific notation.  This already separates a number into two pieces, its power of 10 and its significand, or part that is left over.  Doing arithmetic to two significant digits means writing every number in scientific notation with two significant digits.  If we convert this into decibels, that power of 10 now becomes the 10s place for the number, while the units place represents what fraction of a decade the significant represents.  This ends up being roughly as much ink on the page as we would have used otherwise.<a href="#notation"><sup>1</sup></a></p>
+<p>We are used to doing calculations with numbers in scientific notation.  This already separates a number into two pieces, its power of 10 and its significand, or part that is left over.  Doing arithmetic to two significant digits means writing every number in scientific notation with two significant digits.  If we convert this into decibels, that power of 10 now becomes the 10s place for the number, while the units place represents what fraction of a decade the significant represents.  This ends up being roughly as much ink on the page as we would have used otherwise.<a href="#notation"><sup>3</sup></a></p>
 <figure id="decibel-scale">
   <center>
   <img width="100%" src="figures/decibeldial.svg" alt="The layout of the decibels.">
@@ -271,16 +304,13 @@ $$ 128, 16, 2, 256, 32, 4, 512, 64, 8 $$
 then insert decimals after the first digits:
 $$ 1.28, 1.6, 2, 2.56, 3.2, 4, 5.12, 6.4, 8 . $$
 As you can see, this very well approximates the locations of the integer decibels on the scale above.</p>
-<p>Fortunately, this turns multiplication and division into simple addition and subtraction of integers, something we are much better primed to do.  If we wanted to match the precision of two-significant-digit arithmetic we would need to track the nearest half decibel as well, but even this is pretty easy to do in our head. Quick, what is 4.5 + 8?  Now try to do 2.8 * 6.3 to two sigfigs?  How about 4.5 - 8 and 2.8 / 6.3?  Which of those was easier?  I think doing arithmetic with half integers is a lot easier, especially subtraction compared to division.</p>
-<p>There are corners of the internet where people argue whether <a href="https://www.seximal.net/">Seximal</a>, <a href="https://en.wikipedia.org/wiki/Duodecimal">Dozenal</a> or <a href="https://en.wikipedia.org/wiki/Decimal">decimal</a> are the best way to represent numbers<a href="#others"><sup>2</sup></a>.   But there is evidence that we naturally think about numbers logarithmetically.<a href="#natural-log"><sup>3</sup></a></p>
-<aside> <sup id="others">2</sup> 
+<p>Fortunately, this turns multiplication and division into simple addition and subtraction of integers, something we are much better primed to do.  If we wanted to match the precision of two-significant-digit arithmetic we would need to track the nearest half decibel as well, but even this is pretty easy to do in our head. Quick, what is 4.5 + 8?  Now try to do 2.8 * 6.3 to two sigfigs.  How about 4.5 - 8 and 2.8 / 6.3?  Which of those was easier?  I think doing arithmetic with half integers is a lot easier, especially subtraction compared to division.</p>
+<!--
+There are corners of the internet where people argue whether [Seximal](https://www.seximal.net/), [Dozenal](https://en.wikipedia.org/wiki/Duodecimal) or [decimal](https://en.wikipedia.org/wiki/Decimal) are the best way to represent numbers<a href="#others"><sup>4</sup></a>.   
+<aside> <sup id="others">4</sup> 
   Amongst <a href="https://en.wikipedia.org/wiki/Numeral_system">others</a>.
 </aside>
-<aside> <sup id="natural-log">3</sup>
-<a href="https://www.scientificamerican.com/article/a-natural-log/">
-<i>A Natural Log: Our Innate Sense of Numbers is Logarithmic, Not Linear</i>. Kurt Kleiner. Scientific American. Aug 2008.
-</a>
-</aside>
+-->
 <h2>Conclusion</h2>
 <p>Try out the quarters thing.  Its fun and gives as good precision as single-significant-digit arithmetic.  If you are feeling more adventurous and want higher precision, try decibels.</p>
  

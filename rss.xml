@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?xml-stylesheet type="text/xsl" href="assets/rss.xsl"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Wed, 01 Jan 2025 16:35:47 +0000</lastBuildDate><item><title>Leap Day</title><link>https://obtudes.alexalemi.com/leap-day</link><description>Going overboard to prove the local newspaper wrong.</description><guid isPermaLink="true">https://obtudes.alexalemi.com/leap-day</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Fri, 29 Mar 2024 00:00:00 -0400</pubDate></item><item><title>Why KL?</title><link>https://blog.alexalemi.com/kl.html</link><description>Why is the KL divergence so special?</description><content:encoded>&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Liebler
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Tue, 04 Mar 2025 02:35:11 +0000</lastBuildDate><item><title>Leap Day</title><link>https://obtudes.alexalemi.com/leap-day</link><description>Going overboard to prove the local newspaper wrong.</description><guid isPermaLink="true">https://obtudes.alexalemi.com/leap-day</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Fri, 29 Mar 2024 00:00:00 -0400</pubDate></item><item><title>Why KL?</title><link>https://blog.alexalemi.com/kl.html</link><description>Why is the KL divergence so special?</description><content:encoded>&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Liebler
 divergence&lt;/a&gt;,
 or KL divergence, or relative entropy, or relative information, or information
 gain, or expected weight of evidence, or information divergence
@@ -2102,4 +2102,245 @@ the geometrical story of quantum mechanics and its relation to probability as to
     input.addEventListener('input', (e) =&gt; updateProbability(e.target.value));
 
 &lt;/script&gt;
-</content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/a-degree-of-certainty.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Wed, 14 Aug 2024 00:00:00 -0400</pubDate></item></channel></rss>
+</content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/a-degree-of-certainty.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Wed, 14 Aug 2024 00:00:00 -0400</pubDate></item><item><title>A Quarter for your Thoughts</title><link>https://blog.alexalemi.com/quarters.html</link><description>Get the precision of one sig fig essentially for free.</description><content:encoded>&lt;!-- 
+Notes from Mallory, need a better opener.
+
+Restructure, reorganize to be:
+
+  - order of magnitude
+  - one digit sigfig
+  - two digit sigfig
+  - actual sigfigs
+  
+Then transistion to the fractional log things, can talk about familiar, look in log space, make things evenly spaced in log.
+
+  - one few ten
+  - quarters
+  - decibels
+  - semidecibels
+  - centibels
+
+
+Need a figure for one sig fig and for semidecibels, and maybe two sigfigs.
+--&gt;
+&lt;p&gt;Let's tour some fun ways to do mental math to various precisions.&lt;/p&gt;
+&lt;p&gt;I like doing order of magnitude problems, so own a wide array of books on the subject, including books full of fun estimation problems.  One of the books I own is &lt;a href="https://www.amazon.com/Maths-Back-Envelope-calculate-anything/dp/0008324581"&gt;Maths On The Back Of An Envelope&lt;/a&gt; by Rob Eastaway.  In it, he suggests a form of estimation he brands &lt;a href="https://www.theguardian.com/science/alexs-adventures-in-numberland/2013/apr/04/zequals-symbol-sums-mathematics"&gt;zequals&lt;/a&gt;, i.e. you round numbers to only a single significant digit and do your calculation that way.&lt;a href="#frontend"&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;a href="#numberphile"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;  This form of "ruthless" approximation is meant to make it easy to do mental arithmetic.&lt;/p&gt;&lt;/p&gt;
+&lt;aside&gt;&lt;sup id="frontend"&gt;1&lt;/sup&gt; 
+ Trying to find other sources, I'm finding educational resources that refer to this as "front-end estimation", e.g. &lt;a href="https://study.com/academy/lesson/how-to-use-front-end-estimation.html#:~:text=all%20other%20digits.-,Estimation%20is%20finding%20an%20approximate%20value%20for%20a%20calculation%2C%20called,Calculate%20using%20the%20rounded%20values."&gt;here&lt;/a&gt;.
+&lt;/aside&gt;
+&lt;aside&gt;&lt;sup id="numberphile"&gt;2&lt;/sup&gt;
+It also featured in an old &lt;a href="https://youtu.be/aOJOfh2_4PE?si=npC8b4px-B2XwHM1"&gt;Numberphile&lt;/a&gt; video.
+&lt;/aside&gt;
+&lt;p&gt;The branding is cute. I think trying to round things to a single significant digit is something people tend to do pretty naturally when they are estimating.  However, thinking about it again, I think there is a neat way to get the same or better precision with even less of the fuss.  We should use quarter orders of magnitude, or work directly in decibels.  Let's build up to that.&lt;/p&gt;
+&lt;h2&gt;Order of Magnitude&lt;/h2&gt;
+&lt;p&gt;When you get into &lt;a href="https://en.wikipedia.org/wiki/Fermi_problem"&gt;Fermi problems&lt;/a&gt; you often start by simply tracking the orders of magnitude, i.e. you round every number to its nearest power of 10 and only keep track of those.  This makes for very speedy estimates, but the resolution is obviously only good to about an order of magnitude.  This works great for trying to answer questions like my son asked the other day: "If we suddenly got an extra electron on each of our atoms, what would happen?"&lt;a href="#electrons"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;aside&gt;&lt;sup id="electrons"&gt;3&lt;/sup&gt; 
+We can estimate the sudden energy increase: $\frac{ke\frac{200\text{ lbs}}{16\text{ g/mol}}\times N_A}{3\text{ ft}} \sim 10^{27}\text{ J}$. Or 10 times the energy the sun releases in a second, similar to the energy that would be released if the moon hit the earth. For lots of other fun problems like this, see &lt;a href="https://what-if.xkcd.com/"&gt;what-if?&lt;/a&gt;.
+&lt;/aside&gt;
+&lt;p&gt;We don't really care about accuracy that is better than a factor of 10, we are more interested if it would be like a punch to the gut, a bomb going off, or Armageddon.  Order of magnitude math is good for this kind of thing, and easy to do mentally or on paper.  You only need to track the powers of 10.  Multiplication and division become as easy as addition and subtraction:&lt;/p&gt;
+&lt;p&gt;$$ 10^a 10^b / 10^c = 10^{a + b - c}. $$&lt;/p&gt;
+&lt;h2&gt;One Significant Digit&lt;/h2&gt;
+&lt;p&gt;The natural next step up in precision brings us back to Eastman's &lt;em&gt;zequals&lt;/em&gt;, or one-significant-digit arithmetic.  Here we'll reduce every number to just its leading significant digit.&lt;/p&gt;
+&lt;p&gt;For example, the speed of light: $299\,792\,458 \text{ m/s}$ becomes simply $3 \times 10^{8} \text{ m/s}$.&lt;/p&gt;
+&lt;p&gt;The full multiplication table for this system is the one we all learned in grade school:&lt;/p&gt;
+&lt;center&gt;
+    &lt;table&gt;
+        &lt;thead&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;$1$&lt;/td&gt;&lt;td&gt;$2$&lt;/td&gt;&lt;td&gt;$3$&lt;/td&gt;&lt;td&gt;$4$&lt;/td&gt;&lt;td&gt;$5$&lt;/td&gt;&lt;td&gt;$6$&lt;/td&gt;&lt;td&gt;$7$&lt;/td&gt;&lt;td&gt;$8$&lt;/td&gt;&lt;td&gt;$9$&lt;/td&gt;
+        &lt;/tr&gt;&lt;/thead&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;$1$&lt;/td&gt;
+            &lt;td&gt;$1$&lt;/td&gt;&lt;td&gt;$2$&lt;/td&gt;&lt;td&gt;$3$&lt;/td&gt;&lt;td&gt;$4$&lt;/td&gt;&lt;td&gt;$5$&lt;/td&gt;&lt;td&gt;$6$&lt;/td&gt;&lt;td&gt;$7$&lt;/td&gt;&lt;td&gt;$8$&lt;/td&gt;&lt;td&gt;$9$&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;$2$&lt;/td&gt;
+            &lt;td&gt;$2$&lt;/td&gt;&lt;td&gt;$4$&lt;/td&gt;&lt;td&gt;$6$&lt;/td&gt;&lt;td&gt;$8$&lt;/td&gt;&lt;td&gt;$10$&lt;/td&gt;&lt;td&gt;$12$&lt;/td&gt;&lt;td&gt;$14$&lt;/td&gt;&lt;td&gt;$16$&lt;/td&gt;&lt;td&gt;$18$&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;$3$&lt;/td&gt;
+            &lt;td&gt;$3$&lt;/td&gt;&lt;td&gt;$6$&lt;/td&gt;&lt;td&gt;$9$&lt;/td&gt;&lt;td&gt;$12$&lt;/td&gt;&lt;td&gt;$15$&lt;/td&gt;&lt;td&gt;$18$&lt;/td&gt;&lt;td&gt;$21$&lt;/td&gt;&lt;td&gt;$24$&lt;/td&gt;&lt;td&gt;$27$&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;$4$&lt;/td&gt;
+            &lt;td&gt;$4$&lt;/td&gt;&lt;td&gt;$8$&lt;/td&gt;&lt;td&gt;$12$&lt;/td&gt;&lt;td&gt;$16$&lt;/td&gt;&lt;td&gt;$20$&lt;/td&gt;&lt;td&gt;$24$&lt;/td&gt;&lt;td&gt;$28$&lt;/td&gt;&lt;td&gt;$32$&lt;/td&gt;&lt;td&gt;$36$&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;$5$&lt;/td&gt;
+            &lt;td&gt;$5$&lt;/td&gt;&lt;td&gt;$10$&lt;/td&gt;&lt;td&gt;$15$&lt;/td&gt;&lt;td&gt;$20$&lt;/td&gt;&lt;td&gt;$25$&lt;/td&gt;&lt;td&gt;$30$&lt;/td&gt;&lt;td&gt;$35$&lt;/td&gt;&lt;td&gt;$40$&lt;/td&gt;&lt;td&gt;$45$&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;$6$&lt;/td&gt;
+            &lt;td&gt;$6$&lt;/td&gt;&lt;td&gt;$12$&lt;/td&gt;&lt;td&gt;$18$&lt;/td&gt;&lt;td&gt;$24$&lt;/td&gt;&lt;td&gt;$30$&lt;/td&gt;&lt;td&gt;$36$&lt;/td&gt;&lt;td&gt;$42$&lt;/td&gt;&lt;td&gt;$48$&lt;/td&gt;&lt;td&gt;$54$&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;$7$&lt;/td&gt;
+            &lt;td&gt;$7$&lt;/td&gt;&lt;td&gt;$14$&lt;/td&gt;&lt;td&gt;$21$&lt;/td&gt;&lt;td&gt;$28$&lt;/td&gt;&lt;td&gt;$35$&lt;/td&gt;&lt;td&gt;$42$&lt;/td&gt;&lt;td&gt;$49$&lt;/td&gt;&lt;td&gt;$56$&lt;/td&gt;&lt;td&gt;$63$&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;$8$&lt;/td&gt;
+            &lt;td&gt;$8$&lt;/td&gt;&lt;td&gt;$16$&lt;/td&gt;&lt;td&gt;$24$&lt;/td&gt;&lt;td&gt;$32$&lt;/td&gt;&lt;td&gt;$40$&lt;/td&gt;&lt;td&gt;$48$&lt;/td&gt;&lt;td&gt;$56$&lt;/td&gt;&lt;td&gt;$64$&lt;/td&gt;&lt;td&gt;$72$&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;$9$&lt;/td&gt;
+            &lt;td&gt;$9$&lt;/td&gt;&lt;td&gt;$18$&lt;/td&gt;&lt;td&gt;$27$&lt;/td&gt;&lt;td&gt;$36$&lt;/td&gt;&lt;td&gt;$45$&lt;/td&gt;&lt;td&gt;$54$&lt;/td&gt;&lt;td&gt;$63$&lt;/td&gt;&lt;td&gt;$72$&lt;/td&gt;&lt;td&gt;$81$&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;figcaption&gt;
+  Figure 1. Ordinary multiplication table.
+  &lt;/figcaption&gt;
+&lt;/center&gt;
+&lt;p&gt;While you have likely had this table memorized since you were about five years
+old, we can admit that it is somewhat complicated.  It requires memorizing 100
+entries.  And while we can quickly do single digit multiplications, division is
+much harder.  How many people know what 1/8 is, even to one significant digit?
+Granted, with the extra costs we've got an increased precision.&lt;/p&gt;
+&lt;p&gt;Unfortunately, because most of the type of math we do when we do order of
+magnitude problems is multiplication and division, the relative error in our
+system is set by the smallest &lt;em&gt;multiplicative&lt;/em&gt; factor between symbols.  In this
+case, the gap between 1 and 2 is quite large, and this system struggles to
+maintain accuracy to within a factor of 2 in general.  Here we are using 10
+symbols per decade but only get accuracy to a factor of two.&lt;/p&gt;
+&lt;h2&gt;Two Significant Digits&lt;/h2&gt;
+&lt;p&gt;If we wanted to have even greater precision, we could do our calculations to
+two significant digits.  This starts to be beyond most people's capability for
+what they can do in their head.  If not for multiplication, certainly for
+division.  It requires use of 100 symbols, though again, we have a lot of
+practice with these symbols and how they multiply.  Doing two significant digit
+arithmetic is a lot easier to do on paper and it what I would typically use back in
+my undergrad physics classes.  Keeping around two significant digits ensures
+that our answers are good to a factor of 1.1 or so, i.e. 10%.&lt;/p&gt;
+&lt;p&gt;Can we do better?&lt;/p&gt;
+&lt;h1&gt;More Exotic Logarithmic Systems&lt;/h1&gt;
+&lt;p&gt;We can get higher accuracy with fewer symbols if we distribute our symbols evenly on a logarithmic scale.&lt;sup&gt;&lt;a href="#benford"&gt;1&lt;/a&gt;&lt;/sup&gt;
+&lt;a href="#natural-log"&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;aside&gt; &lt;sup id="benford"&gt;1&lt;/sup&gt; 
+  This is a better match for how numbers are naturally distributed, as we explored in a &lt;a href="benford.html"&gt;previous post&lt;/a&gt;.
+&lt;/aside&gt;
+&lt;aside&gt; &lt;sup id="natural-log"&gt;2&lt;/sup&gt;
+There is also evidence to suggest we naturally think about numbers logarithmically.
+&lt;a href="https://www.scientificamerican.com/article/a-natural-log/"&gt;
+&lt;i&gt;A Natural Log: Our Innate Sense of Numbers is Logarithmic, Not Linear&lt;/i&gt;. Kurt Kleiner. Scientific American. Aug 2008.
+&lt;/a&gt;
+&lt;/aside&gt;
+&lt;h2&gt;One - Few - Ten&lt;/h2&gt;
+&lt;p&gt;One of the biggest bang-for-your-buck type systems is one I like to call one-few-ten.  If we simply track half-order-of-magnitude we can, with only two symbols, achieve ~30% relative errors.&lt;/p&gt;
+&lt;p&gt;Now, instead of rounding each number to the nearest power of 10, you round each number to the nearest half-power of 10.  This sounds like it might be complicated but ends up being very simple in practice.&lt;/p&gt;
+&lt;figure id="half"&gt;
+  &lt;center&gt;
+  &lt;img width="100%" src="figures/halfdial.svg" alt="The layout of the half-orders of magnitude."&gt;
+  &lt;figcaption&gt;
+  Figure 2. Half orders of magnitude.
+  &lt;/figcaption&gt;
+  &lt;/center&gt;
+&lt;/figure&gt;
+&lt;p&gt;When you play with slide rules, you quickly really internalize how close $\pi$ is to the square root of 10.&lt;/p&gt;
+&lt;p&gt;$$ \sqrt{10} = 10^{\frac 12} \approx 3.18 \approx 3.14 \approx \pi $$&lt;/p&gt;
+&lt;p&gt;So, in practice you simply round each number to either the nearest power of 10 or $\pi$ times the nearest power of 10.&lt;/p&gt;
+&lt;p&gt;For example:
+$$
+\begin{align*}
+1.0 &amp;amp;\rightarrow 1 \\
+1.2 &amp;amp;\rightarrow 1 \\
+151.23 &amp;amp;\rightarrow 100 \\
+42,000 &amp;amp;\rightarrow \pi \times 10^4 \\
+0.0723 &amp;amp;\rightarrow 0.1 \\
+40 &amp;amp;\rightarrow \pi \times 10.
+\end{align*}
+$$&lt;/p&gt;
+&lt;p&gt;Looking at the Logarithmic circular dial above, the precise rounding points are $10^{1/4} \approx 1.78$ and $10^{3/4} \approx 5.6$, which at the level of precision we are dealing with you could call 2 and 6.  To use the One-Few-Ten system then, if the first digit of a number is between 2 and 6, you call it $\pi$ times the relevant power of 10, and otherwise you just round it to the nearest power of 10.  Two $\pi$s make another ten: $\pi^2 \approx 10$.   The 'arithmetic' is quite simple:&lt;/p&gt;
+&lt;figure id="pi-table"&gt;
+&lt;center&gt;
+    &lt;table&gt;
+        &lt;thead&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;$1$&lt;/td&gt;&lt;td&gt;$\pi$&lt;/td&gt;
+        &lt;/tr&gt;&lt;/thead&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;$1$&lt;/td&gt;
+            &lt;td&gt;$1$&lt;/td&gt;&lt;td&gt;$\pi$&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;$\pi$&lt;/td&gt;
+            &lt;td&gt;$\pi$&lt;/td&gt;&lt;td&gt;$10$&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;figcaption&gt;
+  Figure 3. Half-orders-of-magnitude multiplication table.
+  &lt;/figcaption&gt;
+&lt;/center&gt;
+&lt;/figure&gt;
+&lt;p&gt;So, this doesn't really add any sort of mental burden, but increases our accuracy from being good to only an order of magnitude or factor of 10, to being good to a factor of $\pi$.&lt;/p&gt;
+&lt;p&gt;I think everyone should be done one-few-ten type arithmetic as a default, and wish it was more popular.  Can we do better than this without increasing the mental burden too much?&lt;/p&gt;
+&lt;h2&gt;Quarter-Orders-of-Magnitude&lt;/h2&gt;
+&lt;p&gt;Why yes, I believe we can.  Let's use quarter orders-of-magnitude!  If we split the decade into four pieces, we can achieve a relative accuracy of $10^{1/4} \sim 1.8$, better than the factor of 2 we got from the zequals system, and only using 4 symbols instead of 10.&lt;/p&gt;
+&lt;figure id="scale"&gt;
+  &lt;center&gt;
+  &lt;img width="100%" src="figures/quarters-dial.svg" alt="The layout of the quarter orders of magnitude."&gt;
+  &lt;figcaption&gt;
+  Figure 4. Quarter orders of magnitude.
+  &lt;/figcaption&gt;
+  &lt;/center&gt;
+&lt;/figure&gt;
+&lt;p&gt;$$ \def\tripi{\tau\!\!\!\:\pi} $$&lt;/p&gt;
+&lt;p&gt;To make this even easier to intuit, I suggest using the symbols, $1, \tau, \pi,$ and $\tau\!\!\!\:\pi$ (pronounced "tripi")  Here $\pi$ is nearly equal to the $\pi$ we know and love, and $\tau = 10^{1/4} \approx 1.78$ while $\tau\!\!\!\:\pi = 10^{3/4} \approx 5.62$.   In terms of these symbols, the arithmetic table makes a lot of intuitive sense, you simply add the legs, with 4 legs equaling a factor of 10.&lt;/p&gt;
+&lt;style&gt;
+    td { text-align: center; }
+    td:nth-child(1) { border-left: none; background-color: whitesmoke; }
+    thead td { border-top: none; background-color: whitesmoke; }
+    table { border: 1px solid black; }
+&lt;/style&gt;
+&lt;figure id="mult-table"&gt;
+&lt;center&gt;
+    &lt;table&gt;
+        &lt;thead&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;$1$&lt;/td&gt;&lt;td&gt;$\tau$&lt;/td&gt;&lt;td&gt;$\pi$&lt;/td&gt;&lt;td&gt;$\tau\!\!\!\:\pi$&lt;/td&gt;
+        &lt;/tr&gt;&lt;/thead&gt;
+        &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;$1$&lt;/td&gt;
+            &lt;td&gt;$1$&lt;/td&gt;&lt;td&gt;$\tau$&lt;/td&gt;&lt;td&gt;$\pi$&lt;/td&gt;&lt;td&gt;$\tau\!\!\!\:\pi$&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;$\tau$&lt;/td&gt;
+            &lt;td&gt;$\tau$&lt;/td&gt;&lt;td&gt;$\pi$&lt;/td&gt;&lt;td&gt;$\tau\!\!\!\:\pi$&lt;/td&gt;&lt;td&gt;$10$&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;$\pi$&lt;/td&gt;
+            &lt;td&gt;$\pi$&lt;/td&gt;&lt;td&gt;$\tau\!\!\!\:\pi$&lt;/td&gt;&lt;td&gt;$10$&lt;/td&gt;&lt;td&gt;$\tau10$&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;$\tau\!\!\!\:\pi$&lt;/td&gt;
+            &lt;td&gt;$\tau\!\!\!\:\pi$&lt;/td&gt;&lt;td&gt;$10$&lt;/td&gt;&lt;td&gt;$\tau10$&lt;/td&gt;&lt;td&gt;$\pi10$&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;figcaption&gt;
+  Figure 5. Quarter-orders-of-magnitude multiplication table.
+  &lt;/figcaption&gt;
+&lt;/center&gt;
+&lt;/figure&gt;
+&lt;p&gt;As can be seen from the dial, the appropriate thresholds to round at are $10^{1/8} \approx 1.33, 10^{3/8} \approx 2.37, 10^{5/8} \approx 4.22,$ and $10^{7/8} \approx 7.50$.  As a bit of a mnemonic to remember these thresholds, remember that we are doing things in quarters, the first threshold is 1.3, and 1+3 = 4, then 2.4 and 4.2 which are opposites of one another and finally 7.5 which looks a lot like 3/4.  Now you can have even better precision than you get from single-significant-digit arithmetic, but without all of the mental cost.  Division is also very doable, again, you need only count the legs.  $10 / \tau = \tau\!\!\!\:\pi,  \tau\!\!\!\:\pi / \pi = \tau$, etc.&lt;/p&gt;
+&lt;p&gt;I haven't seen this "quarters" system described elsewhere. I've started using it myself and I think it has a lot of promise.  It seems to be a very good compromise between speed, ease of use, and accuracy.&lt;/p&gt;
+&lt;h2&gt;Decibels&lt;/h2&gt;
+&lt;p&gt;As a final, only slightly outlandish proposal, I'll suggest that if we wanted a system that was accurate to 25%, we could simply use &lt;a href="https://en.wikipedia.org/wiki/Decibel"&gt;decibels&lt;/a&gt;.  This amounts to expressing each number as 10 times a power of 10:&lt;/p&gt;
+&lt;p&gt;$$ 299 792 458  \color{darkseagreen}{\text{ m/s}} = {\color{steelblue}{2.99792458}} \times 10^{\color{salmon}{8}} {\color{darkseagreen}{\text{ m/s}}} = 10^{{\color{salmon}8}{\color{steelblue}{.476820703}}} {\color{darkseagreen}{\text{m/s}}} = {\color{salmon}8}{\color{steelblue}{4.76820703}} \text{ dB}\{\color{darkseagreen}{\text{m/s}}\} $$&lt;/p&gt;
+&lt;p&gt;If we round this to the nearest integer, we end up with an approximation that is good to $10^{1/10} \approx 25\%$.&lt;/p&gt;
+&lt;p&gt;$$ {\color{steelblue}{3.0}} \times 10^{\color{salmon}{8}} {\color{darkseagreen}{\text{ m/s}}} 
+\approx {\color{salmon}8}{\color{steelblue}{5}} \text{ dB}\{\color{darkseagreen}{\text{m/s}}\} $$&lt;/p&gt;
+&lt;aside&gt; &lt;sup id="notation"&gt;3&lt;/sup&gt; 
+  This would be even more compact if we came up with a cute notational convertion for expressing units of decibel quantities.  I'm going to suggest we use $\{ \cdot \}$ brackets for this.  If you see units in curly brakets, it means the number should be interpreted as being a decibel quantity, and we wouldn't have to write $\text{dB}$ everywhere.  At this point, I think its actually less ink than the usual scientific notation, as we've eliminated the $\times 10$ from all of our numbers.
+&lt;/aside&gt;
+&lt;p&gt;We are used to doing calculations with numbers in scientific notation.  This already separates a number into two pieces, its power of 10 and its significand, or part that is left over.  Doing arithmetic to two significant digits means writing every number in scientific notation with two significant digits.  If we convert this into decibels, that power of 10 now becomes the 10s place for the number, while the units place represents what fraction of a decade the significant represents.  This ends up being roughly as much ink on the page as we would have used otherwise.&lt;a href="#notation"&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;figure id="decibel-scale"&gt;
+  &lt;center&gt;
+  &lt;img width="100%" src="figures/decibeldial.svg" alt="The layout of the decibels."&gt;
+  &lt;figcaption&gt;
+  Figure 6. Decibels.
+  &lt;/figcaption&gt;
+  &lt;/center&gt;
+&lt;/figure&gt;
+&lt;p&gt;Granted, this does require memorizing how to convert numbers to decibels, but this isn't all that difficult, this is a one time cost.  As pointed out by &lt;a href="https://www.johndcook.com/blog/2022/02/28/power-two-lex/"&gt;John Cook&lt;/a&gt; there is a clever way to approximately find the integer decibel values if you forget them.  First make a list of the first powers of two:&lt;/p&gt;
+&lt;p&gt;$$ 2, 4, 8, 16, 32, 64, 128, 512 $$
+then lexigraphically order them:
+$$ 128, 16, 2, 256, 32, 4, 512, 64, 8 $$
+then insert decimals after the first digits:
+$$ 1.28, 1.6, 2, 2.56, 3.2, 4, 5.12, 6.4, 8 . $$
+As you can see, this very well approximates the locations of the integer decibels on the scale above.&lt;/p&gt;
+&lt;p&gt;Fortunately, this turns multiplication and division into simple addition and subtraction of integers, something we are much better primed to do.  If we wanted to match the precision of two-significant-digit arithmetic we would need to track the nearest half decibel as well, but even this is pretty easy to do in our head. Quick, what is 4.5 + 8?  Now try to do 2.8 * 6.3 to two sigfigs.  How about 4.5 - 8 and 2.8 / 6.3?  Which of those was easier?  I think doing arithmetic with half integers is a lot easier, especially subtraction compared to division.&lt;/p&gt;
+&lt;!--
+There are corners of the internet where people argue whether [Seximal](https://www.seximal.net/), [Dozenal](https://en.wikipedia.org/wiki/Duodecimal) or [decimal](https://en.wikipedia.org/wiki/Decimal) are the best way to represent numbers&lt;a href="#others"&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;.   
+&lt;aside&gt; &lt;sup id="others"&gt;4&lt;/sup&gt; 
+  Amongst &lt;a href="https://en.wikipedia.org/wiki/Numeral_system"&gt;others&lt;/a&gt;.
+&lt;/aside&gt;
+--&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;Try out the quarters thing.  Its fun and gives as good precision as single-significant-digit arithmetic.  If you are feeling more adventurous and want higher precision, try decibels.&lt;/p&gt;
+</content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/quarters.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Mon, 25 Nov 2024 00:00:00 -0500</pubDate></item></channel></rss>
