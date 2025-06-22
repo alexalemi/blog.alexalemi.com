@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Rule Zine</title>
+    <style>
+        .zine-viewer {
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        /* Hide radio buttons */
+        input[type="radio"] {
+            display: none;
+        }
+
+        /* Hide all pages by default */
+        .page {
+            display: none;
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        /* Show page when radio button is checked */
+        #page1:checked ~ .page1,
+        #page2:checked ~ .page2,
+        #page3:checked ~ .page3,
+        #page4:checked ~ .page4,
+        #page5:checked ~ .page5,
+        #page6:checked ~ .page6,
+        #page7:checked ~ .page7,
+        #page8:checked ~ .page8 {
+            display: block;
+        }
+
+        /* Navigation buttons */
+        .nav-buttons {
+            margin: 20px 0;
+        }
+
+        .nav-buttons label {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background: #333;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            text-decoration: none;
+        }
+
+        .nav-buttons label:hover {
+            background: #555;
+        }
+
+        /* Page counter */
+        .page-counter {
+            font-family: Arial, sans-serif;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .current-page {
+            display: none;
+        }
+
+        #page1:checked ~ .page-counter .count1,
+        #page2:checked ~ .page-counter .count2,
+        #page3:checked ~ .page-counter .count3,
+        #page4:checked ~ .page-counter .count4,
+        #page5:checked ~ .page-counter .count5,
+        #page6:checked ~ .page-counter .count6,
+        #page7:checked ~ .page-counter .count7,
+        #page8:checked ~ .page-counter .count8 {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <div class="zine-viewer">
+        <!-- Radio buttons for state -->
+        <input type="radio" id="page1" name="page" checked>
+        <input type="radio" id="page2" name="page">
+        <input type="radio" id="page3" name="page">
+        <input type="radio" id="page4" name="page">
+        <input type="radio" id="page5" name="page">
+        <input type="radio" id="page6" name="page">
+        <input type="radio" id="page7" name="page">
+        <input type="radio" id="page8" name="page">
+
+        <!-- Images -->
+        <img class="page page1" src="sliderule-zine-1.png" alt="Page 1">
+        <img class="page page2" src="sliderule-zine-2.png" alt="Page 2">
+        <img class="page page3" src="sliderule-zine-3.png" alt="Page 3">
+        <img class="page page4" src="sliderule-zine-4.png" alt="Page 4">
+        <img class="page page5" src="sliderule-zine-5.png" alt="Page 5">
+        <img class="page page6" src="sliderule-zine-6.png" alt="Page 6">
+        <img class="page page7" src="sliderule-zine-7.png" alt="Page 7">
+        <img class="page page8" src="sliderule-zine-8.png" alt="Page 8">
+
+        <!-- Navigation -->
+        <div class="nav-buttons">
+            <label for="page1">1</label>
+            <label for="page2">2</label>
+            <label for="page3">3</label>
+            <label for="page4">4</label>
+            <label for="page5">5</label>
+            <label for="page6">6</label>
+            <label for="page7">7</label>
+            <label for="page8">8</label>
+        </div>
+
+        <!-- Page counter -->
+        <div class="page-counter">
+            Page 
+            <span class="current-page count1">1</span>
+            <span class="current-page count2">2</span>
+            <span class="current-page count3">3</span>
+            <span class="current-page count4">4</span>
+            <span class="current-page count5">5</span>
+            <span class="current-page count6">6</span>
+            <span class="current-page count7">7</span>
+            <span class="current-page count8">8</span>
+            of 8
+        </div>
+    </div>
+</body>
+</html>

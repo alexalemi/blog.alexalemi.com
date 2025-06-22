@@ -1,5 +1,15 @@
 [
     {
+      "title": "Sliderules",
+      "src": "sliderules.md",
+      "date": "2025-06-20",
+      "tags": ["fun", "sliderules"],
+      "id": "sliderules",
+      "description": "Sliderules are cool.",
+      "featured": true,
+			"draft": true
+    },
+    {
       "title": "A Quarter for your Thoughts",
       "src": "quarters.md",
       "date": "2024-11-25",

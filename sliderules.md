@@ -1,0 +1,120 @@
+
+Sliderules are cool.
+
+## Digital Sliderule
+
+<iframe src="https://alexalemi.com/random/sliderule" width="100%" height="600 px" title="Digital Sliderule"></iframe>
+
+
+## Zine
+
+<!--
+<img src="assets/sliderule-zine-1.png" /><br>
+<img src="assets/sliderule-zine-2.png" /><br>
+<img src="assets/sliderule-zine-3.png" /><br>
+<img src="assets/sliderule-zine-4.png" /><br>
+<img src="assets/sliderule-zine-5.png" /><br>
+<img src="assets/sliderule-zine-6.png" /><br>
+<img src="assets/sliderule-zine-7.png" /><br>
+<img src="assets/sliderule-zine-8.png" /><br>
+-->
+
+<style>
+    .zine-viewer {
+        max-width: 600px;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .zine-container {
+        position: relative;
+        display: inline-block;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .zine-image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .click-area {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        cursor: pointer;
+    }
+
+    .click-left {
+        left: 0;
+    }
+
+    .click-right {
+        right: 0;
+    }
+
+    .click-area:hover {
+        background: rgba(0,0,0,0.05);
+    }
+
+    .page-counter {
+        margin-top: 10px;
+        font-family: Arial, sans-serif;
+        color: #666;
+        font-size: 14px;
+    }
+</style>
+<div class="zine-viewer">
+    <div class="zine-container">
+        <img id="zineImage" class="zine-image" src="assets/sliderule-zine-1.png" alt="Zine page">
+        <div class="click-area click-left" onclick="prevPage()"></div>
+        <div class="click-area click-right" onclick="nextPage()"></div>
+    </div>
+    <div class="page-counter">
+        Page <span id="currentPage">1</span> of 8
+    </div>
+</div>
+
+<script>
+    let currentPage = 1;
+    const totalPages = 8;
+
+    function updatePage() {
+        document.getElementById('zineImage').src = `assets/sliderule-zine-${currentPage}.png`;
+        document.getElementById('currentPage').textContent = currentPage;
+    }
+
+    function nextPage() {
+        if (currentPage < totalPages) {
+            currentPage++;
+            updatePage();
+        }
+    }
+
+    function prevPage() {
+        if (currentPage > 1) {
+            currentPage--;
+            updatePage();
+        }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevPage();
+        if (e.key === 'ArrowRight') nextPage();
+    });
+</script>
+
+Or you can download a <a href="assets/sliderule-zine.pdf">PDF</a> copy that you can print and fold yourself.
+
+
+## 3D Print
+
+<img src="assets/printed-sliderule.jpg" width="100%" />
+
+## Print your own

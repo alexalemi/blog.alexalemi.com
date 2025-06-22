@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' /> 
+    <title>blog.alexalemi.com Sliderules</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5SW43T5NT"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-F5SW43T5NT');
+    </script>
+
+		<!-- favicon stuff -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+
+
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml" />
+
+    <!-- Fonts -->
+    <script type="text/javascript">
+        WebFontConfig = {
+            google: { families: [ 'Muli', 'Lato' ] }
+        };
+        (function() {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+
+    <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        processEscapes: true
+      }};
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Inline CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/style.css"/>
+</head>
+
+<body>
+
+
+  <header>
+    <h3>Alex Alemi's Blog</h3>
+    <nav>
+      <a href='https://blog.alexalemi.com' />Index</a> |
+      <a href='https://alexalemi.com' />About Me</a> | 
+      <a rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml" />RSS</a>
+    </nav>
+  </header>
+
+  <article>
+		<h1>Sliderules</h1>
+		<p>Alexander A. Alemi. <time datetime='2025-06-20'>2025-06-20</time></p>
+    <div class="content">
+    <p>Sliderules are cool.</p>
+<h2>Digital Sliderule</h2>
+<iframe src="https://alexalemi.com/random/sliderule" width="100%" height="600 px" title="Digital Sliderule"></iframe>
+<h2>Zine</h2>
+<!--
+<img src="assets/sliderule-zine-1.png" /><br>
+<img src="assets/sliderule-zine-2.png" /><br>
+<img src="assets/sliderule-zine-3.png" /><br>
+<img src="assets/sliderule-zine-4.png" /><br>
+<img src="assets/sliderule-zine-5.png" /><br>
+<img src="assets/sliderule-zine-6.png" /><br>
+<img src="assets/sliderule-zine-7.png" /><br>
+<img src="assets/sliderule-zine-8.png" /><br>
+-->
+<style>
+    .zine-viewer {
+        max-width: 600px;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .zine-container {
+        position: relative;
+        display: inline-block;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .zine-image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .click-area {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        cursor: pointer;
+    }
+
+    .click-left {
+        left: 0;
+    }
+
+    .click-right {
+        right: 0;
+    }
+
+    .click-area:hover {
+        background: rgba(0,0,0,0.05);
+    }
+
+    .page-counter {
+        margin-top: 10px;
+        font-family: Arial, sans-serif;
+        color: #666;
+        font-size: 14px;
+    }
+</style>
+<div class="zine-viewer">
+    <div class="zine-container">
+        <img id="zineImage" class="zine-image" src="assets/sliderule-zine-1.png" alt="Zine page">
+        <div class="click-area click-left" onclick="prevPage()"></div>
+        <div class="click-area click-right" onclick="nextPage()"></div>
+    </div>
+    <div class="page-counter">
+        Page <span id="currentPage">1</span> of 8
+    </div>
+</div>
+<script>
+    let currentPage = 1;
+    const totalPages = 8;
+
+    function updatePage() {
+        document.getElementById('zineImage').src = `assets/sliderule-zine-${currentPage}.png`;
+        document.getElementById('currentPage').textContent = currentPage;
+    }
+
+    function nextPage() {
+        if (currentPage < totalPages) {
+            currentPage++;
+            updatePage();
+        }
+    }
+
+    function prevPage() {
+        if (currentPage > 1) {
+            currentPage--;
+            updatePage();
+        }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevPage();
+        if (e.key === 'ArrowRight') nextPage();
+    });
+</script>
+<p>Or you can download a <a href="assets/sliderule-zine.pdf">PDF</a> copy that you can print and fold yourself.</p>
+<h2>3D Print</h2>
+<img src="assets/printed-sliderule.jpg" width="100%" />
+<h2>Print your own</h2>
+ 
+    </div>
+  </article>
+
+  <script src="https://giscus.app/client.js"
+        data-repo="alexalemi/blog.alexalemi.com"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkyNjk2OTU4MzU="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOEBM7W84B_4Ke"
+        data-mapping="pathname"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+  </script>
+
+  <footer>
+    <!-- <p>
+    &copy; 2020 Alexander A. Alemi
+    </p>
+    -->
+  </footer>
+
+
+
+</body>
+</html>
