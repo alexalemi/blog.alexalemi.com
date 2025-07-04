@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?xml-stylesheet type="text/xsl" href="assets/rss.xsl"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Sat, 28 Jun 2025 18:35:37 +0000</lastBuildDate><item><title>Leap Day</title><link>https://obtudes.alexalemi.com/leap-day</link><description>Going overboard to prove the local newspaper wrong.</description><guid isPermaLink="true">https://obtudes.alexalemi.com/leap-day</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Fri, 29 Mar 2024 00:00:00 -0400</pubDate></item><item><title>Why KL?</title><link>https://blog.alexalemi.com/kl.html</link><description>Why is the KL divergence so special?</description><content:encoded>&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Liebler
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Fri, 04 Jul 2025 01:21:53 +0000</lastBuildDate><item><title>Leap Day</title><link>https://obtudes.alexalemi.com/leap-day</link><description>Going overboard to prove the local newspaper wrong.</description><guid isPermaLink="true">https://obtudes.alexalemi.com/leap-day</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Fri, 29 Mar 2024 00:00:00 -0400</pubDate></item><item><title>Why KL?</title><link>https://blog.alexalemi.com/kl.html</link><description>Why is the KL divergence so special?</description><content:encoded>&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Liebler
 divergence&lt;/a&gt;,
 or KL divergence, or relative entropy, or relative information, or information
 gain, or expected weight of evidence, or information divergence
@@ -611,7 +611,8 @@ Perhaps the simplest way to see this is to realize that if there is going to be 
   &lt;/center&gt;
 &lt;/figure&gt;
 &lt;aside&gt; &lt;sup id="kl-1"&gt;1&lt;/sup&gt;
-This is a picture of one of my &lt;a href="https://collection.maas.museum/object/383283"&gt;Soviet KL-1 circular slide rules&lt;/a&gt;, which I'll release in the public domain under &lt;a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en"&gt;CC0&lt;/a&gt;. You can see a demo of how to use these slide rules &lt;a href="https://www.youtube.com/watch?v=Kuzdjy3HpWg"&gt;here&lt;/a&gt;.
+This is a picture of one of my &lt;a href="https://collection.maas.museum/object/383283"&gt;Soviet KL-1 circular slide rules&lt;/a&gt;, 
+which I'll release in the public domain under &lt;a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en"&gt;CC0&lt;/a&gt;. You can see a demo of how to use these slide rules &lt;a href="https://www.youtube.com/watch?v=Kuzdjy3HpWg"&gt;here&lt;/a&gt;.
 &lt;/aside&gt;
 &lt;p&gt;If you look at the inner dial, you'll notice that the digits are spaced just like our Benford's law distribution was in Figure 1.  This is not an accident.  Slide rules work by physically manifesting multiplication as a sort of addition.  On this circular slide rule, if you add the angle a number appears at on the inner dial to the angle some other number appears at, the resulting angle will point to their product.  Since slide rules only track the significand,&lt;sup&gt;&lt;a href="#significand"&gt;2&lt;/a&gt;&lt;/sup&gt; circular slide rules cleverly wrap around.&lt;sup&gt;&lt;a href="#sliderule"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;aside&gt; &lt;sup id="significand"&gt;2&lt;/sup&gt;
@@ -2343,4 +2344,152 @@ There are corners of the internet where people argue whether [Seximal](https://w
 --&gt;
 &lt;h2&gt;Conclusion&lt;/h2&gt;
 &lt;p&gt;Try out the quarters thing.  Its fun and gives as good precision as single-significant-digit arithmetic.  If you are feeling more adventurous and want higher precision, try decibels.&lt;/p&gt;
-</content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/quarters.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Mon, 25 Nov 2024 00:00:00 -0500</pubDate></item></channel></rss>
+</content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/quarters.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Mon, 25 Nov 2024 00:00:00 -0500</pubDate></item><item><title>Sliderules</title><link>https://blog.alexalemi.com/sliderules.html</link><description>Sliderules are cool.</description><content:encoded>&lt;p&gt;Sliderules are cool.  I'm rather enamored with them.&lt;/p&gt;
+&lt;p&gt;I've collected several over the years.  One of my favorite
+is my old &lt;a href="https://collection.maas.museum/object/383283"&gt;Soviet KL-1&lt;/a&gt;.&lt;/p&gt;
+&lt;figure id="#benford"&gt;
+  &lt;center&gt;
+  &lt;img width="95%" src="figures/circular-slide-rule.jpg"
+    alt="Benford's distribution."&gt;
+  &lt;figcaption&gt;
+  Figure 1. This is a picture of one of my &lt;a href="https://collection.maas.museum/object/383283"&gt;Soviet KL-1 circular slide rules&lt;/a&gt;, which previously featured in &lt;a href="benfords.html"&gt;my post about Benford's law&lt;/a&gt;.
+  &lt;/figcaption&gt;
+  &lt;/center&gt;
+&lt;/figure&gt;
+&lt;p&gt;Unlike a pocket
+calculator, it feels like using a sliderule helps you develop a better number
+sense, rather than rob you of one.
+An elegant weapon for a more civilized age.&lt;/p&gt;
+&lt;h2&gt;Digital Sliderule&lt;/h2&gt;
+&lt;p&gt;In order to ensure that I always have a sliderule at my disposal, I recently build a &lt;em&gt;digital&lt;/em&gt; one, available at
+&lt;a href="https://sliderule.alexalemi.com"&gt;sliderule.alexalemi.com&lt;/a&gt;.&lt;/p&gt;
+&lt;figure id="#sliderule"&gt;
+    &lt;center&gt;
+    &lt;a href="https://alexalemi.com/random/sliderule/"&gt;
+    &lt;img src="figures/mysliderule.png" 
+        style="opacity: 1; border: 1px solid black; transition: opacity 0.1s ease;"
+        onmouseover="this.style.opacity='0.6'"
+        onmouseout="this.style.opacity='1'" /&gt;
+    &lt;/a&gt;
+    &lt;/center&gt;
+  &lt;figcaption&gt;
+  Figure 2. The digital sliderule I made at &lt;a href="https://sliderule.alexalemi.com"&gt;sliderule.alexalemi.com&lt;/a&gt;.
+  &lt;/figcaption&gt;
+  &lt;/center&gt;
+&lt;/figure&gt;
+&lt;h2&gt;Zine&lt;/h2&gt;
+&lt;p&gt;If you're new to slide rules, in keeping with the tangible, physical theme, I made a &lt;a href="https://en.wikipedia.org/wiki/Zine"&gt;Zine&lt;/a&gt; that attempts to introduce how they work.  You can read it here:&lt;/p&gt;
+&lt;!--
+&lt;img src="figures/sliderule-zine-1.png" /&gt;&lt;br&gt;
+&lt;img src="figures/sliderule-zine-2.png" /&gt;&lt;br&gt;
+&lt;img src="figures/sliderule-zine-3.png" /&gt;&lt;br&gt;
+&lt;img src="figures/sliderule-zine-4.png" /&gt;&lt;br&gt;
+&lt;img src="figures/sliderule-zine-5.png" /&gt;&lt;br&gt;
+&lt;img src="figures/sliderule-zine-6.png" /&gt;&lt;br&gt;
+&lt;img src="figures/sliderule-zine-7.png" /&gt;&lt;br&gt;
+&lt;img src="figures/sliderule-zine-8.png" /&gt;&lt;br&gt;
+--&gt;
+&lt;style&gt;
+    .zine-viewer {
+        max-width: 600px;
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .zine-container {
+        position: relative;
+        display: inline-block;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .zine-image {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .click-area {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        cursor: pointer;
+    }
+
+    .click-left {
+        left: 0;
+    }
+
+    .click-right {
+        right: 0;
+    }
+
+    .click-area:hover {
+        background: rgba(0,0,0,0.05);
+    }
+
+    .page-counter {
+        margin-top: 10px;
+        font-family: Arial, sans-serif;
+        color: #666;
+        font-size: 14px;
+    }
+&lt;/style&gt;
+&lt;div class="zine-viewer"&gt;
+    &lt;div class="zine-container"&gt;
+        &lt;img id="zineImage" class="zine-image" src="figures/sliderule-zine-1.png" alt="Zine page"&gt;
+        &lt;div class="click-area click-left" onclick="prevPage()"&gt;&lt;/div&gt;
+        &lt;div class="click-area click-right" onclick="nextPage()"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="page-counter"&gt;
+        Page &lt;span id="currentPage"&gt;1&lt;/span&gt; of 8
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    let currentPage = 1;
+    const totalPages = 8;
+
+    function updatePage() {
+        document.getElementById('zineImage').src = `figures/sliderule-zine-${currentPage}.png`;
+        document.getElementById('currentPage').textContent = currentPage;
+    }
+
+    function nextPage() {
+        if (currentPage &lt; totalPages) {
+            currentPage++;
+            updatePage();
+        }
+    }
+
+    function prevPage() {
+        if (currentPage &gt; 1) {
+            currentPage--;
+            updatePage();
+        }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) =&gt; {
+        if (e.key === 'ArrowLeft') prevPage();
+        if (e.key === 'ArrowRight') nextPage();
+    });
+&lt;/script&gt;
+&lt;p&gt;Or you can download a &lt;a href="assets/sliderule-zine.pdf"&gt;PDF&lt;/a&gt; copy that you can print and &lt;a href="https://www.42ndstreet.org.uk/media/etdlxppk/zine-guide-colour.jpg"&gt;fold&lt;/a&gt; yourself.&lt;/p&gt;
+&lt;p&gt;If you want to learn more, there is an old &lt;a href="https://sliderulemuseum.com/Manuals/M220_AnEasyIntroductionToTheSlideRule_IsaacAsimov_1965.pdf"&gt;book by Isaac Asimov&lt;/a&gt;,  or a great &lt;a href="https://www.youtube.com/watch?v=oYQdKbQ-sgM"&gt;1957 Educational film&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Make your own&lt;/h2&gt;
+&lt;p&gt;You can &lt;a href="https://www.sliderulemuseum.com/REF/scales/MakeYourOwnSlideRule_ScientificAmerican_May2006.pdf"&gt;print your own&lt;/a&gt; using instructions in an old &lt;a href="https://www.physics.wisc.edu/ingersollmuseum/wp-content/uploads/sites/10/2020/04/scientificamerican0506-80-WhenSlideRulesRuled.pdf"&gt;Scientific American article&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Or an innovated &lt;a href="https://sliderulemuseum.com/SR_Scales.shtml#YingHum"&gt;circular slide rule&lt;/a&gt; created by Ying Hum that can be printed and fit in an old CD jewel case.&lt;/p&gt;
+&lt;p&gt;Another option would be to 3D print your own. &lt;a href="https://www.youtube.com/watch?v=qTd03m8rsfg"&gt;Alex Desilets created plans&lt;/a&gt; for a series of 3D printed sliderules.&lt;/p&gt;
+&lt;figure id="#printed-sliderule"&gt;
+  &lt;center&gt;
+  &lt;img src="figures/printed-sliderule.jpg" width="100%" alt='3d printed sliderule'/&gt;
+  &lt;figcaption&gt;
+  Figure 3. A circular sliderule I 3d printed.
+  &lt;/figcaption&gt;
+  &lt;/center&gt;
+&lt;/figure&gt;
+</content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/sliderules.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Fri, 20 Jun 2025 00:00:00 -0400</pubDate></item></channel></rss>
