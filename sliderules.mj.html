@@ -72,19 +72,50 @@
 		<h1>Sliderules</h1>
 		<p>Alexander A. Alemi. <time datetime='2025-06-20'>2025-06-20</time></p>
     <div class="content">
-    <p>Sliderules are cool.</p>
+    <p>Sliderules are cool.  I'm rather enamored with them.</p>
+<p>I've collected several over the years.  One of my favorite
+is my old <a href="https://collection.maas.museum/object/383283">Soviet KL-1</a>.</p>
+<figure id="#benford">
+  <center>
+  <img width="95%" src="figures/circular-slide-rule.jpg"
+    alt="Benford's distribution.">
+  <figcaption>
+  Figure 1. This is a picture of one of my <a href="https://collection.maas.museum/object/383283">Soviet KL-1 circular slide rules</a>, which previously featured in <a href="benfords.html">my post about Benford's law</a>.
+  </figcaption>
+  </center>
+</figure>
+<p>Unlike a pocket
+calculator, it feels like using a sliderule helps you develop a better number
+sense, rather than rob you of one.
+An elegant weapon for a more civilized age.</p>
 <h2>Digital Sliderule</h2>
-<iframe src="https://alexalemi.com/random/sliderule" width="100%" height="600 px" title="Digital Sliderule"></iframe>
+<p>In order to ensure that I always have a sliderule at my disposal, I recently build a <em>digital</em> one, available at
+<a href="https://sliderule.alexalemi.com">sliderule.alexalemi.com</a>.</p>
+<figure id="#sliderule">
+    <center>
+    <a href="https://alexalemi.com/random/sliderule/">
+    <img src="figures/mysliderule.png" 
+        style="opacity: 1; border: 1px solid black; transition: opacity 0.1s ease;"
+        onmouseover="this.style.opacity='0.6'"
+        onmouseout="this.style.opacity='1'" />
+    </a>
+    </center>
+  <figcaption>
+  Figure 2. The digital sliderule I made at <a href="https://sliderule.alexalemi.com">sliderule.alexalemi.com</a>.
+  </figcaption>
+  </center>
+</figure>
 <h2>Zine</h2>
+<p>If you're new to slide rules, in keeping with the tangible, physical theme, I made a <a href="https://en.wikipedia.org/wiki/Zine">Zine</a> that attempts to introduce how they work.  You can read it here:</p>
 <!--
-<img src="assets/sliderule-zine-1.png" /><br>
-<img src="assets/sliderule-zine-2.png" /><br>
-<img src="assets/sliderule-zine-3.png" /><br>
-<img src="assets/sliderule-zine-4.png" /><br>
-<img src="assets/sliderule-zine-5.png" /><br>
-<img src="assets/sliderule-zine-6.png" /><br>
-<img src="assets/sliderule-zine-7.png" /><br>
-<img src="assets/sliderule-zine-8.png" /><br>
+<img src="figures/sliderule-zine-1.png" /><br>
+<img src="figures/sliderule-zine-2.png" /><br>
+<img src="figures/sliderule-zine-3.png" /><br>
+<img src="figures/sliderule-zine-4.png" /><br>
+<img src="figures/sliderule-zine-5.png" /><br>
+<img src="figures/sliderule-zine-6.png" /><br>
+<img src="figures/sliderule-zine-7.png" /><br>
+<img src="figures/sliderule-zine-8.png" /><br>
 -->
 <style>
     .zine-viewer {
@@ -138,7 +169,7 @@
 </style>
 <div class="zine-viewer">
     <div class="zine-container">
-        <img id="zineImage" class="zine-image" src="assets/sliderule-zine-1.png" alt="Zine page">
+        <img id="zineImage" class="zine-image" src="figures/sliderule-zine-1.png" alt="Zine page">
         <div class="click-area click-left" onclick="prevPage()"></div>
         <div class="click-area click-right" onclick="nextPage()"></div>
     </div>
@@ -151,7 +182,7 @@
     const totalPages = 8;
 
     function updatePage() {
-        document.getElementById('zineImage').src = `assets/sliderule-zine-${currentPage}.png`;
+        document.getElementById('zineImage').src = `figures/sliderule-zine-${currentPage}.png`;
         document.getElementById('currentPage').textContent = currentPage;
     }
 
@@ -175,10 +206,20 @@
         if (e.key === 'ArrowRight') nextPage();
     });
 </script>
-<p>Or you can download a <a href="assets/sliderule-zine.pdf">PDF</a> copy that you can print and fold yourself.</p>
-<h2>3D Print</h2>
-<img src="assets/printed-sliderule.jpg" width="100%" />
-<h2>Print your own</h2>
+<p>Or you can download a <a href="assets/sliderule-zine.pdf">PDF</a> copy that you can print and <a href="https://www.42ndstreet.org.uk/media/etdlxppk/zine-guide-colour.jpg">fold</a> yourself.</p>
+<p>If you want to learn more, there is an old <a href="https://sliderulemuseum.com/Manuals/M220_AnEasyIntroductionToTheSlideRule_IsaacAsimov_1965.pdf">book by Isaac Asimov</a>,  or a great <a href="https://www.youtube.com/watch?v=oYQdKbQ-sgM">1957 Educational film</a>.</p>
+<h2>Make your own</h2>
+<p>You can <a href="https://www.sliderulemuseum.com/REF/scales/MakeYourOwnSlideRule_ScientificAmerican_May2006.pdf">print your own</a> using instructions in an old <a href="https://www.physics.wisc.edu/ingersollmuseum/wp-content/uploads/sites/10/2020/04/scientificamerican0506-80-WhenSlideRulesRuled.pdf">Scientific American article</a>.</p>
+<p>Or an innovated <a href="https://sliderulemuseum.com/SR_Scales.shtml#YingHum">circular slide rule</a> created by Ying Hum that can be printed and fit in an old CD jewel case.</p>
+<p>Another option would be to 3D print your own. <a href="https://www.youtube.com/watch?v=qTd03m8rsfg">Alex Desilets created plans</a> for a series of 3D printed sliderules.</p>
+<figure id="#printed-sliderule">
+  <center>
+  <img src="figures/printed-sliderule.jpg" width="100%" alt='3d printed sliderule'/>
+  <figcaption>
+  Figure 3. A circular sliderule I 3d printed.
+  </figcaption>
+  </center>
+</figure>
  
     </div>
   </article>

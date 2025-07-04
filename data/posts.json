@@ -1,5 +1,15 @@
 [
     {
+      "title": "Down to Earth",
+      "src": "down-to-earth.md",
+      "date": "2025-06-28",
+      "tags": ["fun", "education"],
+      "id": "down-to-earth",
+      "description": "How long would it take a feather to fall from the moon to the earth?",
+      "featured": true,
+			"draft": true
+    },
+    {
       "title": "Sliderules",
       "src": "sliderules.md",
       "date": "2025-06-20",
@@ -7,7 +17,6 @@
       "id": "sliderules",
       "description": "Sliderules are cool.",
       "featured": true,
-			"draft": true
     },
     {
       "title": "A Quarter for your Thoughts",

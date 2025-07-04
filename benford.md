@@ -32,7 +32,8 @@ Perhaps the easiest way to *see* Benford's law is to look at a Circular [slide r
 </figure>
 
 <aside> <sup id="kl-1">1</sup>
-This is a picture of one of my <a href="https://collection.maas.museum/object/383283">Soviet KL-1 circular slide rules</a>, which I'll release in the public domain under <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>. You can see a demo of how to use these slide rules <a href="https://www.youtube.com/watch?v=Kuzdjy3HpWg">here</a>.
+This is a picture of one of my <a href="https://collection.maas.museum/object/383283">Soviet KL-1 circular slide rules</a>, 
+which I'll release in the public domain under <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>. You can see a demo of how to use these slide rules <a href="https://www.youtube.com/watch?v=Kuzdjy3HpWg">here</a>.
 </aside>
 
 If you look at the inner dial, you'll notice that the digits are spaced just like our Benford's law distribution was in Figure 1.  This is not an accident.  Slide rules work by physically manifesting multiplication as a sort of addition.  On this circular slide rule, if you add the angle a number appears at on the inner dial to the angle some other number appears at, the resulting angle will point to their product.  Since slide rules only track the significand,<sup><a href="#significand">2</a></sup> circular slide rules cleverly wrap around.<sup><a href="#sliderule">3</a></sup>

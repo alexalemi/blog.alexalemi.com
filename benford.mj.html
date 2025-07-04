@@ -73,7 +73,7 @@
 		<p>Alexander A. Alemi. <time datetime='2022-05-03'>2022-05-03</time></p>
     <div class="content">
     <p><a href="https://en.wikipedia.org/wiki/Benford%27s_law">Benford's Law</a> is the
-observation that in a list of &quot;naturally occuring numbers&quot;,
+observation that in a list of "naturally occuring numbers",
 the plurality of numbers will begin with a 1.
 This often catches people by surprise, but if you go and pull random numbers from a book or newspaper you can expect the leading digits to follow the following distribution:</p>
 <figure id="#benford" class="right">
@@ -99,7 +99,8 @@ Perhaps the simplest way to see this is to realize that if there is going to be 
   </center>
 </figure>
 <aside> <sup id="kl-1">1</sup>
-This is a picture of one of my <a href="https://collection.maas.museum/object/383283">Soviet KL-1 circular slide rules</a>, which I'll release in the public domain under <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>. You can see a demo of how to use these slide rules <a href="https://www.youtube.com/watch?v=Kuzdjy3HpWg">here</a>.
+This is a picture of one of my <a href="https://collection.maas.museum/object/383283">Soviet KL-1 circular slide rules</a>, 
+which I'll release in the public domain under <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a>. You can see a demo of how to use these slide rules <a href="https://www.youtube.com/watch?v=Kuzdjy3HpWg">here</a>.
 </aside>
 <p>If you look at the inner dial, you'll notice that the digits are spaced just like our Benford's law distribution was in Figure 1.  This is not an accident.  Slide rules work by physically manifesting multiplication as a sort of addition.  On this circular slide rule, if you add the angle a number appears at on the inner dial to the angle some other number appears at, the resulting angle will point to their product.  Since slide rules only track the significand,<sup><a href="#significand">2</a></sup> circular slide rules cleverly wrap around.<sup><a href="#sliderule">3</a></sup></p>
 <aside> <sup id="significand">2</sup>
@@ -127,7 +128,7 @@ Specifically that the significand should be between 1.0 and 1.1.
 $$ p(\theta) \, d\theta = p(x) \, dx $$
 combined with what we already know as the relationship between our significands and their angles: $\theta = 2\pi \log_{10} x$. This allows us to transform the uniform distribution of angles $p(\theta) = \frac{1}{2\pi}$ into:
 $$ p(x) = \frac{1}{x \log 10 }. $$
-We've recovered a nice <a href="https://en.wikipedia.org/wiki/Power_law">power law</a> or &quot;scale-free&quot; distribution for the significands, something we could have guessed or worked out from our requirement that the distribution be invariant to scale.</p>
+We've recovered a nice <a href="https://en.wikipedia.org/wiki/Power_law">power law</a> or "scale-free" distribution for the significands, something we could have guessed or worked out from our requirement that the distribution be invariant to scale.</p>
 <p>We may have just gone around in a circle,<sup><a href="#pun">6</a></sup> but I hope you agree that there is something very visceral about seeing Benford's law play out on the face of the circular sliderule.</p>
 <aside> <sup id="#pun">6</sup>
 Pun very much intended.
