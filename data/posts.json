@@ -10,12 +10,12 @@
 			"draft": true
     },
     {
-      "title": "Sliderules",
+      "title": "Sliderules Rule",
       "src": "sliderules.md",
       "date": "2025-06-20",
       "tags": ["fun", "sliderules"],
       "id": "sliderules",
-      "description": "Sliderules are cool.",
+      "description": "I made a zine about them and a digital sliderule you can use.",
       "featured": true
     },
     {
