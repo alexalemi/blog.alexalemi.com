@@ -1,5 +1,5 @@
 
-Sliderules are cool.  I'm rather enamored with them.  
+Sliderules rule.  I'm rather enamored with them.  
 
 
 I've collected several over the years.  One of my favorite 
