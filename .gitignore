@@ -1,2 +1,5 @@
 .vscode
 .venv/
+node_modules/
+package-lock.json
+.observable

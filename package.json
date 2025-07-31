@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@observablehq/notebook-kit": "^1.0.1"
+  },
+	"scripts": {
+		"docs:preview": "notebooks preview --root . --template templates/post.html",
+		"docs:build": "notebooks build --root . --template templates/post.html -- notebooks/*.html"
+  }
+}
