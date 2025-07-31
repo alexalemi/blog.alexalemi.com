@@ -1,0 +1,210 @@
+---
+title: The Seasons
+draft: false
+toc: false
+---
+<!doctype html>
+<notebook>
+<title>The Seasons</title>
+<script type="text/markdown">
+# The Seasons
+
+I'm embarrased to admit that I realized the other day I don't really, truly
+understand how the seasons work.  I broadly knew it had to do with the tilt of
+the Earth's axis, but have to admit I never really worked it out.  In the
+northern hemisphere, summers are warmer than winters. Why is that?  The other
+ady I was talking with my wife and we disagreed on the primary effect.  I felt
+as thought it had to do with the indicent angle of sunlight: the sun's light is
+more direct in summer, while she said it had to do with the increased day
+length.
+
+Let's see if we can settle this, and figure out which is the dominating effect.
+
+</script>
+<script type="module" pinned>
+// Our units will all be in hours
+const siderealDay = 23 + 56/60 + 4/60/60;
+const year = 365.2422 * 24;
+const eccentricity = 0.0167086;
+</script>
+
+<script type="module" pinned>
+// The earth's tilt
+const theta0 = 23.5 * Math.PI / 180;
+// Our latitude relative to the north pole.
+const theta = (latitude + 90) / 180 * Math.PI;
+// Our angle in orbit around the sun
+const psi = day * 24 / year * 2 * Math.PI;
+</script>
+
+<script type="text/markdown">
+Using these three coordinates, I wanted to try to work out the dot product with some normal
+on the surface of the earth with the direction of the sun.
+</script>
+
+<script type="module" pinned>
+function f(theta, phi, psi, theta0) {
+    return (Math.cos(psi) * Math.cos(phi) * Math.sin(theta) + 
+            Math.sin(psi) * Math.sin(phi) * Math.sin(theta) * Math.cos(theta0) - 
+            Math.sin(psi) * Math.cos(theta) * Math.sin(theta0));
+}
+
+function relu(x) {
+    return x > 0 ? x : 0;
+}
+</script>
+
+<script type="module" pinned>
+let ts = d3.range(0, 24, 0.1);
+let data = ts.map(x => ({x: x, y: relu(f(theta, (day * 24 + x)/siderealDay * 2 * Math.PI + Math.PI, psi, theta0))}));
+</script>
+
+<script type="module">
+const latitude = view(
+  Inputs.range([-90, 90],
+    {label: "latitude (deg)", value: 28}
+  )
+);
+
+
+const day = view(
+  Inputs.range([0, 365],
+    {step: 1, label: "day"}
+  )
+);
+</script>
+
+<script type="module">
+Plot.plot({
+    width: 1080,
+    y: {domain: [0, 1]},
+    marks: [
+    Plot.areaY(data, {x: "x", y: "y"})
+    ]
+})
+</script>
+
+
+<script type="module">
+let total = data.reduce(([prevx, acc], {x, y}, i) => [x, acc + (x - prevx) * y], [0, -(data[1].x - data[0].x) * (data[0].y + data[data.length - 1].y)])[1]
+</script>
+
+</script type="text/markdown">
+The total irradiance is ${total.toPrecision(3)}.
+
+Let's try to do the full year next.
+</script>
+
+<script type="module">
+let yearTs = d3.range(0, year, 1);
+let yearData = yearTs.map(x => ({x: x, y: relu(f(theta, x/siderealDay * 2 * Math.PI + Math.PI, x / year * 2 * Math.PI, theta0))}));
+let yearTotal = yearData.reduce(([prevx, acc], {x, y}, i) => [x, acc + (x - prevx) * y], [0, -(yearData[1].x - yearData[0].x) * (yearData[0].y + yearData[yearData.length - 1].y)])[1]
+</script>
+
+<script type="text/markdown">
+The total irradiance is ${yearTotal.toPrecision(5)}.
+</script>
+
+
+
+<script type="module">
+function yearlyFlux(latitude) {
+    let theta = (latitude + 90) / 180 * Math.PI;
+    let yearTs = d3.range(0, year, 1);
+    let yearData = yearTs.map(x => ({x: x, y: relu(f(theta, x/siderealDay * 2 * Math.PI + Math.PI, x / year * 2 * Math.PI, theta0))}));
+    let yearTotal = yearData.reduce(([prevx, acc], {x, y}, i) => [x, acc + (x - prevx) * y], [0, -(yearData[1].x - yearData[0].x) * (yearData[0].y + yearData[yearData.length - 1].y)])[1]
+    return yearTotal;
+}
+
+let latitudes = d3.range(-90, 90, 1);
+let fluxAtLatitude = latitudes.map(yearlyFlux)
+</script>
+<script type="module">
+fluxAtLatitude
+</script>
+
+<script type="module">
+Plot.plot({
+    width: 1080,
+    y: {domain: [0, 2700]},
+    marks: [
+    Plot.areaY(fluxAtLatitude)
+    ]
+})
+</script>
+<script type="text/markdown">
+
+# Globe
+
+Let's see if we can make a version of the earth from the direction of the sun.
+
+</script>
+
+<script type="module">
+const world = FileAttachment("data/land-110m.json").json();
+</script>
+
+<script type="module">
+const land = topojson.feature(world, world.objects.land);
+</script>
+
+<script type="module">
+const globe = Plot.marks([Plot.graticule(), Plot.geo(land, {fill: "#000000"}), Plot.sphere()]);
+</script>
+
+
+<script type="module">
+const day2 = view(
+  Inputs.range([0, 365],
+    {step: 1, label: "day"}
+  )
+);
+
+const hour = view(
+  Inputs.range([0, 24],
+   {step: 1/60, label: "hour"}
+  )
+);
+
+const size = view(
+  Inputs.range([245, 253],
+    {step: 1, label: "size"}
+    )
+  );
+</script>
+
+<script type="module">
+const rotate = [ang0, ang1, ang2];
+</script>
+
+<script type="module">
+const hours = day2 * siderealDay + hour;
+// const hours = now / 1000 * 24 / 1;
+const ang0 = 360 * hours / siderealDay;
+const ang1 = 23.5 * Math.cos(hours / year * 2 * Math.PI);
+const ang2 = 23.5 * Math.sin(hours / year * 2 * Math.PI);
+</script>
+
+
+<script type="module">
+globe.plot({width: size, height: size, projection: {type: "orthographic", rotate}})
+</script>
+
+
+<script type="text/markdown">
+# TODO
+
+ * Drag person on globe, show value on other plots.
+
+
+## Effect of eccentricity
+
+Let's try to work out the correction for the apparent size given the eccentricity of earth's orbit.  From wikipedia the equation for the polar coordinate of an ellipse in terms of one of its foci is:
+
+</script>
+<script type="application/x-tex">
+r(\theta) = \frac{a(1-e^2)}{1 + e\cos\theta} 
+</script>
+<script type="text/markdown">
+Let's work out what the effect would be for the effective size of the earth as this went around.The dimensions of the globe should scale linear with the distance from the sun, so, for something with the given polar coordinates we should work out the ratio of the largest to smallest distance.
+</script>

@@ -1,5 +1,16 @@
 [
     {
+      "title": "Seasons",
+      "src": "seasons.html",
+      "date": "2025-07-31",
+      "tags": ["physics", "fun"],
+      "id": "seasons",
+      "description": "Working through how the seasons work.",
+			"obtude": true,
+      "featured": true,
+			"draft": true
+    },
+    {
       "title": "Leap Day",
       "src": "leap-day.html",
       "date": "2024-03-29",
