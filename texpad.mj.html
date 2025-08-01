@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' /> 
+    <title>blog.alexalemi.com Texpad</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5SW43T5NT"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-F5SW43T5NT');
+    </script>
+
+		<!-- favicon stuff -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+
+
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml" />
+
+    <!-- Fonts -->
+    <script type="text/javascript">
+        WebFontConfig = {
+            google: { families: [ 'Muli', 'Lato' ] }
+        };
+        (function() {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+
+    <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        processEscapes: true
+      }};
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Inline CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/style.css"/>
+</head>
+
+<body>
+
+
+  <header>
+    <h3>Alex Alemi's Blog</h3>
+    <nav>
+      <a href='https://blog.alexalemi.com' />Index</a> |
+      <a href='https://alexalemi.com' />About Me</a> | 
+      <a rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml" />RSS</a>
+    </nav>
+  </header>
+
+  <article>
+		<h1>Texpad</h1>
+		<p>Alexander A. Alemi. <time datetime='2025-07-31'>2025-07-31</time></p>
+    <div class="content">
+    <p>When I was at Google, I had a problem.  We used GSuite tools for everything, <a href="http://slides.google.com">Slides</a> for presentations, <a href="http://docs.google.com">Docs</a> for docs, <a href="http://chat.google.com">Chat</a> for communication, and none of these tools had great <a href="https://www.latex-project.org/">LaTeX</a> support.</p>
+<p>So, I rolled together a simple utility: <a href="https://texpad.alexalemi.com/">texpad.alexalemi.com</a></p>
+<p>It's a single static page that uses <a href="https://www.mathjax.org/">MathJax</a> to let you live-edit
+a LaTeX formula and renders it as a PNG that you can copy and paste into
+basically any web app. This works with Chat, Slack, Slides, Docs, etc and has been indispensible to me over the years.</p>
+<figure id="#thumbnail" class="right">
+  <center>
+  <a href="https://texpad.alexalemi.com"><img width="95%" src="figures/texpad.png"
+    alt="A screenshot of texpad.alexalemi.com."></a>
+  <figcaption>
+  Figure 1. A screenshot of <a href="https://texpad.alexalemi.com">texpad.alexalemi.com</a>
+  </figcaption>
+  </center>
+</figure>
+<p>It uses your browser <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">local storage</a> to store the last 100 or so equations you've entered, and you can click on those to restore them.  It will also use local storage to store a persistant preamble.  You can adjust the foreground and background color as well as the scale.  I find scale = 3 useful for presentations. If your curious, the <a href="https://github.com/alexalemi/texpad">github repo</a> is also available.</p>
+<p>I thought I'd share.  Enjoy.</p>
+ 
+    </div>
+  </article>
+
+  <script src="https://giscus.app/client.js"
+        data-repo="alexalemi/blog.alexalemi.com"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkyNjk2OTU4MzU="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOEBM7W84B_4Ke"
+        data-mapping="pathname"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+  </script>
+
+  <footer>
+    <!-- <p>
+    &copy; 2020 Alexander A. Alemi
+    </p>
+    -->
+  </footer>
+
+
+
+</body>
+</html>

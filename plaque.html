@@ -1,0 +1,116 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>blog.alexalemi.com Plaque</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-F5SW43T5NT"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-F5SW43T5NT');
+    </script>
+
+		<!-- favicon stuff -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+
+
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml">
+
+    <!-- Fonts -->
+    <script type="text/javascript">
+        WebFontConfig = {
+            google: { families: [ 'Muli', 'Lato' ] }
+        };
+        (function() {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+
+    <script defer="" src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        processEscapes: true
+      }};
+    </script>
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Inline CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+</head>
+
+<body>
+
+
+  <header>
+    <h3>Alex Alemi's Blog</h3>
+    <nav>
+      <a href="https://blog.alexalemi.com">Index</a> |
+      <a href="https://alexalemi.com">About Me</a> | 
+      <a rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml">RSS</a>
+    </nav>
+  </header>
+
+  <article>
+		<h1>Plaque</h1>
+		<p>Alexander A. Alemi. <time datetime="2025-07-31">2025-07-31</time></p>
+    <div class="content">
+    <p>I'm a big fan of the new generation of <em>reactive</em> notebooks that don't have internal state,
+projects like <a href="https://clerk.vision/">clerk</a><sup><a href="#clerktudes">1</a></sup>
+for clojure, <a href="https://marimo.io/">marimo</a> for python, <a href="https://plutojl.org/">pluto.jl</a> for julia and <a href="https://observablehq.com/notebook-kit/kit">observable notebook kit</a><sup><a href="#notebook-kit">2</a></sup> for javascript.  Each of these deal with the biggest complaint about <a href="https://ipython.org/notebook.html">jupyter notebooks</a> and <a href="https://colab.research.google.com/">colab notebooks</a>; namely that they have hidden state<sup><a href="#suck">3</a></sup>.</p>
+<aside> <sup id="clerktudes">1</sup> 
+  E.g. see my <a href="https://github.clerk.garden/alexalemi/clerktudes">clerktudes</a>, mostly neat visual versions of some of <a href="https://github.com/alexalemi/advent">my adventofcode solutions</a>.
+</aside>
+<aside> <sup id="notebook-kit">2</sup> 
+  I just converted my old <a href="https://blog.alexalemi.com/ob/nbs/leap-day.html">Leap Day post</a> to the new <a href="https://observablehq.com/blog/observable-2-0">Observable 2.0 Notebook Kit</a>.
+</aside>
+<aside> <sup id="suck">3</sup> 
+  E.g. see <a href="https://youtu.be/7jiPeIFXb6U?si=JCZSTm_zVKDUJcIQ">the Joel Grus' infamous talk</a>.
+</aside>
+<p>They each use what I think is the best trick in the book for solving a problem, if you don't want to be sick to some issue, make yourself invariant to it.  These projects don't look at your code linearly, from top to bottom, they instead see your code as organized into <em>cells</em> and resolve a dependency graph for how they all relate, ensuring that they only ever run cells when they change or once of their parent cells change.</p>
+<p><a href="https://marimo.io/">Marimo</a> is a really nice entry into the space, I enjoy it a lot, but it asks that I abandon my ordinary development environment<sup><a href="neovim">4</a></sup> and use theirs instead.  <a href="https://clerk.vision/">Clerk</a> and the just-released
+<a href="https://observablehq.com/notebook-kit/kit">Observable Notebook Kit</a> instead let you use your ordinary editor and simply watch for whenever you make updates to the code.  This means you get to keep all of the niceties of the editor environment you've perfected over the years, and get to take advantage of nice tools like <a href="https://docs.astral.sh/ruff/">linters</a>, <a href="https://en.wikipedia.org/wiki/Language_Server_Protocol">language servers</a>, tab completion, autocomplete, and potentially things like llm agents and <a href="https://www.anthropic.com/claude-code">claude code</a>.</p>
+<aside> <sup id="neovim">4</sup> 
+  I like <a href="https://zed.dev/">Zed</a> and <a href="https://neovim.io/">neovim</a> these days.
+</aside>
+<p>My old coworker <a href="https://danijar.com/">Danijar</a> had a nice project he called <a href="https://github.com/danijar/handout">Handout</a>, which let you build nice rendered python handouts and always executed fresh from top to bottom.  You got to use your own editor and didn't have any hidden state, but this, much like marimo, required writing nonstandard python code.</p>
+<p>Feeling like python was still missing something quite like <a href="https://clerk.vision">clerk</a>,
+I decided to try to roll my own. I call it <a href="https://github.com/alexalemi/plaque">Plaque</a>, as in the ornamental tablet.  It uses ordinary python code and <code># %%</code> style cell boundaries like <a href="https://jupytext.readthedocs.io/en/latest/">Jupytext</a>.  The bit of inspiration I had is that we can get essentially all of the benefits of a full reactive environment with very little work if we simply look for cells that change and run only those and all of the cells further down the page. With a bit more code we can actually use the python <code>ast</code> module to try to skip cells that don't reference any of the things we changed.  With very little code we end up with a system that I've found useful enough to begin using it regularly at work.</p>
+<p>Here's a short video demo:</p>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/DlbA1aOMsFw?si=QJQgb0kG-TWA04PK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe></center>
+<p>If you use <a href="https://docs.astral.sh/uv/"><code>uv</code></a> you should be able to try it out right now:</p>
+<p><code>uvx plaque serve your-nb.py</code></p>
+<p>Check it out and let me know what you think.</p>
+ 
+    </div>
+  </article>
+
+  <script src="https://giscus.app/client.js" data-repo="alexalemi/blog.alexalemi.com" data-repo-id="MDEwOlJlcG9zaXRvcnkyNjk2OTU4MzU=" data-category="Announcements" data-category-id="DIC_kwDOEBM7W84B_4Ke" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+  </script>
+
+  <footer>
+    <!-- <p>
+    &copy; 2020 Alexander A. Alemi
+    </p>
+    -->
+  </footer>
+
+
+
+
+</body></html>

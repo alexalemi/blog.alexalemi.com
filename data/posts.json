@@ -1,5 +1,23 @@
 [
     {
+      "title": "Plaque",
+      "src": "plaque.md",
+      "date": "2025-07-31",
+      "tags": ["python"],
+      "id": "plaque",
+      "description": "A dirt-simple bring-your-own-editor 'reactive' python notebook package.",
+      "featured": true
+    },
+    {
+      "title": "Texpad",
+      "src": "texpad.md",
+      "date": "2025-07-31",
+      "tags": ["python", "latex"],
+      "id": "texpad",
+      "description": "A simple tool for live editing copyable LaTeX pngs.",
+      "featured": false
+    },
+    {
       "title": "Down to Earth",
       "src": "down-to-earth.md",
       "date": "2025-06-28",

@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?xml-stylesheet type="text/xsl" href="assets/rss.xsl"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Thu, 31 Jul 2025 13:41:21 +0000</lastBuildDate><item><title>Leap Day</title><link>https://blog.alexalemi.com/ob/nbs/leap-day</link><description>Going overboard to prove the local newspaper wrong.</description><guid isPermaLink="true">https://blog.alexalemi.com/ob/nbs/leap-day</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Fri, 29 Mar 2024 00:00:00 -0400</pubDate></item><item><title>Why KL?</title><link>https://blog.alexalemi.com/kl.html</link><description>Why is the KL divergence so special?</description><content:encoded>&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Liebler
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Fri, 01 Aug 2025 01:36:40 +0000</lastBuildDate><item><title>Leap Day</title><link>https://blog.alexalemi.com/ob/nbs/leap-day.html</link><description>Going overboard to prove the local newspaper wrong.</description><guid isPermaLink="true">https://blog.alexalemi.com/ob/nbs/leap-day.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Fri, 29 Mar 2024 00:00:00 -0400</pubDate></item><item><title>Why KL?</title><link>https://blog.alexalemi.com/kl.html</link><description>Why is the KL divergence so special?</description><content:encoded>&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Liebler
 divergence&lt;/a&gt;,
 or KL divergence, or relative entropy, or relative information, or information
 gain, or expected weight of evidence, or information divergence
@@ -2492,4 +2492,36 @@ An elegant weapon for a more civilized age.&lt;/p&gt;
   &lt;/figcaption&gt;
   &lt;/center&gt;
 &lt;/figure&gt;
-</content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/sliderules.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Fri, 20 Jun 2025 00:00:00 -0400</pubDate></item></channel></rss>
+</content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/sliderules.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Fri, 20 Jun 2025 00:00:00 -0400</pubDate></item><item><title>Texpad</title><link>https://blog.alexalemi.com/texpad.html</link><description>A simple tool for live editing copyable LaTeX pngs.</description><content:encoded>&lt;p&gt;When I was at Google, I had a problem.  We used GSuite tools for everything, &lt;a href="http://slides.google.com"&gt;Slides&lt;/a&gt; for presentations, &lt;a href="http://docs.google.com"&gt;Docs&lt;/a&gt; for docs, &lt;a href="http://chat.google.com"&gt;Chat&lt;/a&gt; for communication, and none of these tools had great &lt;a href="https://www.latex-project.org/"&gt;LaTeX&lt;/a&gt; support.&lt;/p&gt;
+&lt;p&gt;So, I rolled together a simple utility: &lt;a href="https://texpad.alexalemi.com/"&gt;texpad.alexalemi.com&lt;/a&gt;
+Its a single static page that uses &lt;a href="https://www.mathjax.org/"&gt;MathJax&lt;/a&gt; to let you live-edit
+a LaTeX formula and renders it as a PNG that you can copy and paste into
+basically any web app.&lt;/p&gt;
+&lt;figure id="#thumbnail" class="right"&gt;
+  &lt;center&gt;
+  &lt;img width="95%" src="figures/texpad.png"
+    alt="A screenshot of texpad.alexalemi.com."&gt;
+  &lt;figcaption&gt;
+  Figure 1. A screenshot of texpad.alexalemi.com
+  &lt;/figcaption&gt;
+  &lt;/center&gt;
+&lt;/figure&gt;
+&lt;p&gt;&lt;a href="https://github.com/alexalemi/texpad"&gt;github repo&lt;/a&gt;&lt;/p&gt;
+</content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/texpad.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Thu, 31 Jul 2025 00:00:00 -0400</pubDate></item><item><title>Plaque</title><link>https://blog.alexalemi.com/plaque.html</link><description>A dirt-simple bring-your-own-editor 'reactive' python notebook package.</description><content:encoded>&lt;p&gt;I'm a big fan of the new generation of &lt;em&gt;reactive&lt;/em&gt; notebooks that don't have internal state,
+projects like &lt;a href="https://clerk.vision/"&gt;clerk&lt;/a&gt; for clojure, &lt;a href="https://marimo.io/"&gt;marimo&lt;/a&gt; for python, &lt;a href="https://plutojl.org/"&gt;pluto.jl&lt;/a&gt; for julia and &lt;a href="https://observablehq.com/notebook-kit/kit"&gt;observable notebook kit&lt;/a&gt; for javascript.  Each of these deal with the biggest complaint about &lt;a href="https://ipython.org/notebook.html"&gt;jupyter notebooks&lt;/a&gt; and &lt;a href="https://colab.research.google.com/"&gt;colab notebooks&lt;/a&gt;, namely that they have hidden state&lt;sup&gt;&lt;a href="#suck"&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;aside&gt; &lt;sup id="suck"&gt;1&lt;/sup&gt; 
+  E.g. see &lt;a href="https://youtu.be/7jiPeIFXb6U?si=JCZSTm_zVKDUJcIQ"&gt;the Joel Grus' infamous talk&lt;/a&gt;.
+&lt;/aside&gt;
+&lt;p&gt;&lt;a href="https://marimo.io/"&gt;Marimo&lt;/a&gt; is a really nice entry into the space, I enjoy it a lot, but it asks that I abandon my ordinary development environment&lt;sup&gt;&lt;a href="neovim"&gt;2&lt;/a&gt;&lt;/sup&gt; and use theirs instead.  &lt;a href="https://clerk.vision/"&gt;Clerk&lt;/a&gt; and the just released
+&lt;a href="https://observablehq.com/notebook-kit/kit"&gt;Observable Notebook Kit&lt;/a&gt; instead let you use your ordinary editor and simply watch for whenever you make updates to the code.&lt;/p&gt;
+&lt;aside&gt; &lt;sup id="neovim"&gt;2&lt;/sup&gt; 
+  I like &lt;a href="https://zed.dev/"&gt;Zed&lt;/a&gt; and &lt;a href="https://neovim.io/"&gt;neovim&lt;/a&gt; these days.
+&lt;/aside&gt;
+&lt;p&gt;My old coworker Danijar has a nice project he called &lt;a href="https://github.com/danijar/handout"&gt;Handout&lt;/a&gt;, which let you build nice rendered python handouts and always executed fresh from top to bottom.  You got to use your own editor and didn't have any hidden state, but this, much like marimo, required writing nonstandard python code.&lt;/p&gt;
+&lt;p&gt;Missing that in python, I decided to try to make my own. I call it &lt;a href="https://github.com/alexalemi/plaque"&gt;Plaque&lt;/a&gt;, as in the ornamental tablet.  It uses ordinary python code and &lt;code&gt;# %%&lt;/code&gt; style cell boundaries like &lt;a href="https://jupytext.readthedocs.io/en/latest/"&gt;Jupytext&lt;/a&gt;.&lt;/p&gt;
+&lt;center&gt;&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/DlbA1aOMsFw?si=QJQgb0kG-TWA04PK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen&gt;&lt;/iframe&gt;&lt;/center&gt;
+&lt;p&gt;If you use &lt;a href="https://docs.astral.sh/uv/"&gt;&lt;code&gt;uv&lt;/code&gt;&lt;/a&gt; you should be able to try it out right now:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;uvx plaque serve nb.py&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;When you think it looks nice you can &lt;code&gt;render&lt;/code&gt; it to static html file that is easy to share.&lt;/p&gt;
+&lt;p&gt;Check it out and let me know what you think.&lt;/p&gt;
+</content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/plaque.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Thu, 31 Jul 2025 00:00:00 -0400</pubDate></item></channel></rss>
