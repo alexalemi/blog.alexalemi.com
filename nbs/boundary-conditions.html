@@ -1,0 +1,218 @@
+<!doctype html>
+<notebook>
+ <title>Boundary Conditions</title>
+ <script type="text/markdown">
+# Boundary Conditions
+
+![Boundary Conditions](https://pi.math.cornell.edu/~mec/Winter2009/Victor/part3(4).png)
+ </script>
+ <script type="module">
+	 const alive = [[0, 1], [1, 0], [1, 1], [2, 1], [2, 2]];
+	 const gridSize = 10;
+	 const gridScale = 10;
+
+	 const scale = d3.scaleBand()
+		.domain(d3.range(gridSize))
+		.range([0, gridSize * gridScale])
+		.padding(0.1);
+
+	 function chart(selection) {
+		selection.each(function (d, i) {
+		  const rects = d3.select(this)
+				.selectAll("rect")
+				.data(d)
+				.join(
+					enter => {
+					  enter.append("rect")
+							.attr("x", d => scale(d[0]))
+							.attr("y", d => scale(d[1]))
+							.attr("rx", 2)
+							.attr("ry", 2)
+							.attr("width", scale.bandwidth())
+							.attr("height", scale.bandwidth())
+							.attr("fill", "black")
+							.attr("opacity", 1)
+					},
+					update => {
+						update
+							.attr("x", d => scale(d[0]))
+							.attr("y", d => scale(d[1]))
+							.attr("width", scale.bandwidth())
+							.attr("height", scale.bandwidth())
+							.attr("fill", "black")
+							.attr("opacity", 1)
+					},
+					exit => exit.attr("fill", "white").attr("opacity", 0)
+				);
+			});
+		}
+ </script>
+ <script type="module">
+		function* squareNeighbors([i, j]) {
+		  if (i > 0) {
+			  yield [i - 1, j]
+			}
+			if (i < gridSize - 1) {
+				yield [i + 1, j]
+			}
+			if (j > 0) {
+			  yield [i, j - 1]
+			}
+			if (j < gridSize - 1) {
+			  yield [i, j + 1]
+			}
+		}
+
+		function trueMod(n) {
+			return ((n % gridSize) + gridSize) % gridSize;
+		}
+
+		function* torusNeighbors([i, j]) {
+		  yield [trueMod(i - 1), j]
+		  yield [trueMod(i + 1), j]
+		  yield [i, trueMod(j + 1)]
+		  yield [i, trueMod(j - 1)]
+		}
+
+		function tupToString([i, j]) {
+			return `${i}-${j}`
+		}
+
+		function stringToTup(x) {
+			const [i, j] = x.split('-')
+			return [parseInt(i), parseInt(j)]
+		}
+
+		function clean(rawNeighbors) {
+			function* cleaned([i, j]) {
+				let candidates = new Set(Array.from(rawNeighbors([i, j])).map(tupToString));
+				candidates.delete(tupToString([i, j]));
+				yield* Array.from(candidates).map(stringToTup)
+			}
+			return cleaned;
+		}
+
+		function* sphereNeighborsRaw([i, j]) {
+			yield* squareNeighbors([i, j])
+			if (i == 0) {
+				yield [j, 0]
+			}
+			if (j == 0) {
+				yield [0, i]
+			}
+			if (i == (gridSize - 1)) {
+				yield [j , gridSize - 1]
+			}
+			if (j == (gridSize - 1)) {
+			  yield [gridSize - 1, i]
+			}
+		}
+		const sphereNeighbors = clean(sphereNeighborsRaw)
+
+		function* kleinNeighbors([i, j]) {
+			yield* squareNeighbors([i, j])
+			if (i == 0) {
+				yield [gridSize - 1, j]
+			}
+			if (i == (gridSize - 1)) {
+				yield [0 , j]
+			}
+			if (j == 0) {
+				yield [gridSize - 1 - j, gridSize-1]
+			}
+			if (j == (gridSize - 1)) {
+			  yield [gridSize - 1 - j, 0]
+			}
+		}
+
+		function* pplaneNeighborsRaw([i, j]) {
+			yield* squareNeighbors([i, j])
+			if (i == 0) {
+				yield [gridSize - 1, gridSize - 1 - j]
+			}
+			if (i == (gridSize - 1)) {
+				yield [0, gridSize - 1 - j]
+			}
+			if (j == 0) {
+				yield [gridSize - 1 - i, gridSize - 1]
+			}
+			if (j == (gridSize - 1)) {
+			  yield [gridSize - 1 - i, 0]
+			}
+		}
+		const pplaneNeighbors = clean(pplaneNeighborsRaw)
+
+		display(Array.from(pplaneNeighbors([0, 0])));
+	</script>
+
+ <script type="text/markdown">
+ # Square
+
+ Zero boundary conditions.
+
+ </script>
+	<script type="module">
+	 let square = [[0, 1], [1, 0], [1, 1], [2, 1], [2, 2]];
+	 const svg = d3.create('svg')
+			.attr('width', gridSize * gridScale)
+			.attr('height', gridSize * gridScale)
+			.attr('style', "max-width: 100%; height: auto; border: 1px solid black");
+
+	 svg.datum(square).call(chart)
+	 display(svg.node());
+ </script>
+ <script type="text/markdown">
+ # Torus
+
+ The usual wrapping
+ </script>
+	<script type="module">
+	 let torus = [[0, 1], [1, 0], [1, 1], [2, 1], [2, 2]];
+	 const svg = d3.create('svg')
+			.attr('width', gridSize * gridScale)
+			.attr('height', gridSize * gridScale)
+			.attr('style', "max-width: 100%; height: auto; border: 1px solid black");
+
+	 svg.datum(torus).call(chart)
+	 display(svg.node());
+ </script>
+ <script type="text/markdown">
+ # Sphere
+ </script>
+	<script type="module">
+	 let sphere = [[0, 1], [1, 0], [1, 1], [2, 1], [2, 2]];
+	 const svg = d3.create('svg')
+			.attr('width', gridSize * gridScale)
+			.attr('height', gridSize * gridScale)
+			.attr('style', "max-width: 100%; height: auto; border: 1px solid black");
+
+	 svg.datum(sphere).call(chart)
+	 display(svg.node());
+ </script>
+ <script type="text/markdown">
+ # Klein Bottle
+ </script>
+	<script type="module">
+	 let klein = [[0, 1], [1, 0], [1, 1], [2, 1], [2, 2]];
+	 const svg = d3.create('svg')
+			.attr('width', gridSize * gridScale)
+			.attr('height', gridSize * gridScale)
+			.attr('style', "max-width: 100%; height: auto; border: 1px solid black");
+
+	 svg.datum(klein).call(chart)
+	 display(svg.node());
+ </script>
+ <script type="text/markdown">
+ # Projective Plane
+ </script>
+	<script type="module">
+	 let pplane = [[0, 1], [1, 0], [1, 1], [2, 1], [2, 2]];
+	 const svg = d3.create('svg')
+			.attr('width', gridSize * gridScale)
+			.attr('height', gridSize * gridScale)
+			.attr('style', "max-width: 100%; height: auto; border: 1px solid black");
+
+	 svg.datum(pplane).call(chart)
+	 display(svg.node());
+ </script>
+</notebook>
