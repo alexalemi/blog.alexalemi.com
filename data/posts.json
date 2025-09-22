@@ -1,5 +1,15 @@
 [
     {
+      "title": "Dyson Spheres",
+      "src": "dyson-spheres.md",
+      "date": "2025-09-21",
+      "tags": ["physics", "fun"],
+      "id": "dyson-spheres",
+      "description": "The absurdity of dyson spheres on any timescale we'll experience.",
+			"draft": true,
+      "featured": true
+    },
+    {
       "title": "Plaque",
       "src": "plaque.md",
       "date": "2025-07-31",

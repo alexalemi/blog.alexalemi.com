@@ -94,8 +94,8 @@ hypothetical function to have?  Let $I[p; q]$ denote the function that measures
 how much we moved beliefs when we switch from beliefs $q$ to beliefs $p$.  We'll
 call this amount of update the <em>information gain</em> when we move from $q$ to $p$.
 <sup><a href="#hobson">1</a></sup></p>
-<aside> <sup id="hobson">1</sup> 
-  What follows is my own reconstruction of the fabulous paper: 
+<aside> <sup id="hobson">1</sup>
+  What follows is my own reconstruction of the fabulous paper:
   <a href="https://link.springer.com/article/10.1007/BF01106578">
   <b>A New Theorem of Information Theory</b> by Arthur Hobson
   </a>.
@@ -110,7 +110,7 @@ call this amount of update the <em>information gain</em> when we move from $q$ t
 </ol>
 <aside> <sup id="renyi">2</sup>
   If one relaxes the requirement for linear decomposition and instead just requires that our information
-  function decompose in a convex way, you get the generalized set of 
+  function decompose in a convex way, you get the generalized set of
   <a href="https://en.wikipedia.org/wiki/R%C3%A9nyi_entropy#R%C3%A9nyi_divergence">Rényi divergences</a>.
   See: <a href="https://projecteuclid.org/euclid.bsmsp/1200512181">
   <i>On Measures of Entropy and Information</i> by Alfréd Rényi.</a>
@@ -156,7 +156,7 @@ same test is 95.6% $(q(\overline T | \overline D) = 0.956)$. <sup><a href="#covi
 </figure>
 We've just specified our prior beliefs with 3 numbers, imagining our process as having two steps,
 first, we either had the disease or not $(q(\mathcal{D}))$ and then, conditioned on that
-we get the result of our test $(q(\mathcal{T}|\mathcal{D}))$.  
+we get the result of our test $(q(\mathcal{T}|\mathcal{D}))$.
 Equivalently, we could have just given the joint probability distribution, as shown in Figure 1.
 <p>The point now is that if we were to update our beliefs, in the diagram on the right there is just a single
 distribution $q(\mathcal{D},\mathcal{T})$, in the one on the left there are essentially three different distributions
@@ -165,7 +165,7 @@ some sort of <em>structural</em> consistency between the two sides:
 $$
 I[p(\mathcal{D},\mathcal{T}); q(\mathcal{D},\mathcal{T})] \quad \textrm{versus} \quad
 I[p(\mathcal{D}); q(\mathcal{D})], I[p(\mathcal{T}|D); q(\mathcal{T}|D)],
-I[p(\mathcal{T}|\overline D), q(\mathcal{T}|\overline D)] . 
+I[p(\mathcal{T}|\overline D), q(\mathcal{T}|\overline D)] .
 $$</p>
 <p>The consistency we will require is that our information measure decomposes linearly between
 these two different descriptions. The information between the joints should be a weighted
@@ -217,7 +217,7 @@ our functional must take the form:<sup><a href="#caveat">6</a></sup>
 $$ I[p;q] = \int \mathrm dx\, p(x) f\left( \frac{p(x)}{q(x)} \right). $$</p>
 <aside> <sup id="caveat">6</sup>
   We could have just as well written it as $I[p;q] = \int \mathrm dx\, q(x) g\left( \frac{p(x)}{q(x)} \right)$ (that is, the form
-  of an <a href="https://en.wikipedia.org/wiki/F-divergence">f-divergence</a>), but 
+  of an <a href="https://en.wikipedia.org/wiki/F-divergence">f-divergence</a>), but
   this is equivalent to the way we wrote it with $f(\mathcal{X}) = \mathcal{X} g(\mathcal X)$.
   Putting the $p(x)$ as the integral measure better aligns with what we are about to do next.
 </aside>
@@ -255,7 +255,7 @@ $$ I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x)} = -\int \mathrm dx \, 
   Ariel Caticha. <a href="https://arxiv.org/abs/0808.0012">arXiv:0808.0012</a>
 </aside>
 Having identified the right way to measure how much information is gained when we update a distribution
-from $q$ to $p$, why don't we put this to practical use and try to figure out how we 
+from $q$ to $p$, why don't we put this to practical use and try to figure out how we
 <i>ought</i> to update
 our beliefs in light of evidence or observations.<sup><a href="#caticha2">52</a></sup>
 <p>Returning to our disease testing example, let's say you get the test done and receive a
@@ -266,7 +266,7 @@ observation, setting $p(T) = 1$, but this doesn't fully specify $p$; we need two
 we set those?</p>
 <p>Why don't we aim to be conservative and try to find a new set of beliefs
 that are as close as possible to our prior beliefs while still being consistent with the
-observation that we've made?<br />
+observation that we've made?
 Namely, let's look now for a joint distribution $p(\mathcal T, \mathcal D)$
 that is as close as possible to $q(\mathcal T, \mathcal D)$ but for which we have that $p(T)=1$.
 $$ \DeclareMathOperator{\argmin}{arg\,min} $$
@@ -335,7 +335,8 @@ Bayes' rule run on the prior beliefs.</p>
 <p>Traditionally, KL is interpreted from a coding perspective, a view I've included in an appendix below,
 but here I offer a different perspective from the viewpoint of model selection.<a href="#woe"><sup>8</sup></a></p>
 <aside> <sup id="woe">8</sup>
-I think weight of evidence is one of the most underappreciated concepts.  For a nice overview see: <i>Weight of Evidence: A Brief Survey</i> by I.J. Good. <a href="https://link.springer.com/article/10.1007/BF01106578">[pdf]</a>.
+I think weight of evidence is one of the most underappreciated concepts.  For a nice overview see: <i>Weight of Evidence: A Brief Survey</i> by I.J. Good.
+<a href="https://www.cs.tufts.edu/~nr/cs257/archive/jack-good/weight-of-evidence.pdf">[pdf]</a>.
 </aside>
 <p>Above we saw that we can motivate Bayesian inference as choosing a posterior belief distribution
 that has the minimal information gain over our prior distribution of beliefs while being consistent
@@ -380,10 +381,10 @@ logarithm and measure the information in <em>nats</em>.  Another option is to me
 <a href="https://en.wikipedia.org/wiki/Hartley_(unit)"><em>decibans</em></a> or <em>decibels</em> or <em>Hartley's</em>, wherein
 we use ten times the base-10 logarithm.</p>
 <aside> <sup id="bit">9</sup>
- <i>bit</i> being short for <i>binary digit</i>.  
+ <i>bit</i> being short for <i>binary digit</i>.
  <i>nat</i> is then short for <i>natural digit</i>.
  People sometimes suggest <i>dit</i> for the base-10 </i>decimal digit</i>.
- Turing suggested *ban* as short hand for the amount of evidence deduced about the setting 
+ Turing suggested *ban* as short hand for the amount of evidence deduced about the setting
  of the Enigma machine using the Banburismus method, itself named after the town of Banbury where
  the team got their large card sheets used in the method.
  For more discussion about the history and etymology of these and related units see section 4.8.1 of
@@ -409,7 +410,7 @@ in Figure 3 is a large visual representation you can play with.</p>
 <center>
 <table>
   <thead><th>db<th>odds<th>~odds<th>probability<th>spinner
-  <tr><td>0<td>1.00<td>1:1<td> 50% 
+  <tr><td>0<td>1.00<td>1:1<td> 50%
     <td><svg height="30" width="30" viewBox="0 0 20 20"> <circle r="10" cx="10" cy="10" fill="white" /> <circle r="5" cx="10" cy="10" fill="whitesmoke" id="progress-0" stroke="#1f77b4" stroke-width="10" stroke-dasharray="0.942 2.200" /></svg>
   <tr><td>1<td>1.26<td>5:4<td>56%
     <td><svg height="30" width="30" viewBox="0 0 20 20"> <circle r="10" cx="10" cy="10" fill="white" /> <circle r="5" cx="10" cy="10" fill="whitesmoke" id="progress-1" stroke="#1f77b4" stroke-width="10" stroke-dasharray="0.942 2.200" /></svg>
@@ -460,7 +461,7 @@ in Figure 3 is a large visual representation you can play with.</p>
 decibels is that it seems like 1 dB roughly corresponds the smallest detectable value that people
 notice in terms of a change in underlying distribution, being the difference between <i>even chance</i>
 and 5 to 4 odds, <i>moderate probability</i> or <i>better than even chance</i>.</p>
-<aside id="quantifying"><sup>10</sup> 
+<aside id="quantifying"><sup>10</sup>
   <a href="https://projecteuclid.org/euclid.ss/1177012242"><i>Quantifying Probabilistic Expressions</i> by
   Frederick Mosteller and Cleo Youtz</a>.
 </aside>
@@ -500,7 +501,7 @@ are born more frequently than females.</p>
 that males are born 51% of the time, and the second that they are born 50% of the time.  With Laplace's data, the
 total weight of evidence in this case is:</p>
 <p>$$ 2515270 \log_{10} \frac{0.51}{0.50} + 2419450 \log_{10} \frac{0.49}{0.50} = 404 \text{ dB} $$
-a whopping 400 decibels of evidence for males being born 51% of the time rather than 50%.<br />
+a whopping 400 decibels of evidence for males being born 51% of the time rather than 50%.
 At the same time, I'm not sure most people are aware that males are born with a higher proportion and it doesn't
 seem to affect most people's lives.  Why is that?  Well, let's evaluate the relative entropy between
 a 51% Bernoulli and a 50% Bernoulli:
@@ -521,9 +522,9 @@ a constant.  This motivates the traditional maximum likelihood objective:
 $$ \max \int \mathrm dx \, \log q(x;\theta). $$</p>
 <aside id="gpt3"><sup>11</sup>
   For instance, the latest <a href="https://arxiv.org/abs/2005.14165">GPT-3</a> model trained by OpenAI,
-  was trained on less than half of the training set. (See Table 2.2 in the paper.) 
+  was trained on less than half of the training set. (See Table 2.2 in the paper.)
 </aside>
-If we had an infinite dataset, maximum likelihood is the same as minimizing the relative entropy between the real world and 
+If we had an infinite dataset, maximum likelihood is the same as minimizing the relative entropy between the real world and
 our model.  Unfortunately, we don't often have infinite datasets.<sup><a href="#gpt3">11</a></sup>
 On finite datasets, maximum likelihood can still be interpreted as minimizing a KL divergence, but now
 the KL divergence between the *empirical distribution* $\hat p(x) = \sum_i \delta(x - x_i) $
@@ -539,7 +540,7 @@ the same measure, but provided they are:</p>
 <aside id="mnist"><sup>12</sup>
   The entirety of which can fit in a <a href="https://twitter.com/alemi/status/1042658244609499137">tweet</a>.
 </aside>
-Given the size of test sets we have for modern image datasets, this means that very small changes in likelihood can be 
+Given the size of test sets we have for modern image datasets, this means that very small changes in likelihood can be
 interpreted as large confidences in the superiorities of models.  Take for instance something as simple as binary static MNIST.<sup><a href="#mnist">12</a></sup>  Here, with 10,000 test set images, a difference in likelihoods of 0.0013 dB or 0.0004 nats corresponds to 13 dB of evidence for the one model over the second.
 <h2>Appendix A: Whither Continuous Entropy</h2></h2>
 <p><span id="appendix-a">The</span> relative entropy really is the proper way to define entropy.  For all
@@ -559,13 +560,13 @@ of adult human heights: <sup><a href="#bimodal">13</a></sup></p>
   </center>
 </figure>
 <aside> <sup id="bimodal">13</sup>
-  Note that you may have heard that 
+  Note that you may have heard that
   <a href="https://www.johndcook.com/blog/2008/07/20/why-heights-are-normally-distributed/">heights are normally distributed</a>.
-  Adult male (or female) heights are normally distributed, but differ in their means and variances, making the 
+  Adult male (or female) heights are normally distributed, but differ in their means and variances, making the
   <a href="https://www.johndcook.com/blog/2008/11/25/distribution-of-adult-heights/">distribution of adult heights a mixture distribution</a>.
 </aside>
 <aside> <sup id="ourworld">14</sup>
-  Data taken from 
+  Data taken from
   <a href="https://ourworldindata.org/human-height">ourworldindata.org</a>.
 </aside>
 <p>If you measure the continuous entropy of this distribution measured

@@ -1,5 +1,12 @@
 # TODO
 
+ * different boundary conditions
+ * promise of deep learning
+ * projective geometric algebra
+ * new kl estimators
+ * dyson spheres
+ * bins and beans
+
 Some post ideas.
 
  * KL is all of machine learning.

@@ -17,25 +17,25 @@ what KL is, why it's interesting, where it comes from and what it's good for.
 
 Let's see if we can motivate the form of the KL axiomatically.
 
-Imagine we have some prior set of beliefs summarized as a probability distribution $q$. 
+Imagine we have some prior set of beliefs summarized as a probability distribution $q$.
 In light of some kind of evidence, we update our beliefs to a new distribution $p$.
 How *much* did we update our beliefs?  How do we quantify
-the *magnitude* of that update?  What are some properties we might want this 
+the *magnitude* of that update?  What are some properties we might want this
 hypothetical function to have?  Let $I[p; q]$ denote the function that measures
 how much we moved beliefs when we switch from beliefs $q$ to beliefs $p$.  We'll
 call this amount of update the *information gain* when we move from $q$ to $p$.
 <sup><a href="#hobson">xxa-hobson</a></sup>
 
 
-<aside> <sup id="hobson">xxa-hobson</sup> 
-  What follows is my own reconstruction of the fabulous paper: 
+<aside> <sup id="hobson">xxa-hobson</sup>
+  What follows is my own reconstruction of the fabulous paper:
   <a href="https://link.springer.com/article/10.1007/BF01106578">
   <b>A New Theorem of Information Theory</b> by Arthur Hobson
   </a>.
 </aside>
 
 We want our information function to satisfy the following properties:
-  
+
   1. It's **continuous**.  A small change in the distributions makes a small change in the amount of information in the move.
   2. It's permutation or **reparameterization independent**.  It doesn't matter if we change the units we've specified our distributions in or if we relabel the sides of our dice, the answer shouldn't change.
   3. We want it to be **non-negative** and have the value $I = 0$ if and only if $p = q$.  If $p=q$ we haven't updated our beliefs and so have no information gain.
@@ -44,16 +44,16 @@ We want our information function to satisfy the following properties:
 
 <aside> <sup id="renyi">xxa-renyi</sup>
   If one relaxes the requirement for linear decomposition and instead just requires that our information
-  function decompose in a convex way, you get the generalized set of 
+  function decompose in a convex way, you get the generalized set of
   <a href="https://en.wikipedia.org/wiki/R%C3%A9nyi_entropy#R%C3%A9nyi_divergence">Rényi divergences</a>.
   See: <a href="https://projecteuclid.org/euclid.bsmsp/1200512181">
   <i>On Measures of Entropy and Information</i> by Alfréd Rényi.</a>
 </aside>
 
 These are all very natural properties for our information function to have.  That last point about composition needs to be elaborated.
-The point is that we have alternative ways we might express a probability distribution.  Apropos of nothing, imagine we 
+The point is that we have alternative ways we might express a probability distribution.  Apropos of nothing, imagine we
 are concerned that we might have been exposed to a disease and are thinking about getting a test done.  There are two random variables
-under consideration, we will label them $\mathcal{D}$ for whether we actually had the disease or not, 
+under consideration, we will label them $\mathcal{D}$ for whether we actually had the disease or not,
 and $\mathcal{T}$ for whether
 the test result is positive.  Each of these random variables can take on two possible states, we'll denote them as
 $\mathcal{D} \in \{ D, \overline D \}, \mathcal{T} \in \{ T, \overline T \}$.
@@ -71,7 +71,7 @@ and fully specifying our set of beliefs requires 3 independent probabilities.
 </aside>
 
 What are our prior beliefs?
-Let's imagine while we are concerned we might have had the disease, but if we are being honest, 
+Let's imagine while we are concerned we might have had the disease, but if we are being honest,
 we almost certainly didn't,<sup><a href="#kent">xxa-kent</a></sup>
 so we'll put our prior belief in having had the disease at 7%. $(q(D) = 0.07)$.
 How do we expect the antibody test to go if we have it done?
@@ -79,7 +79,7 @@ You do a bit of research and discover
 that if you had had the disease, the sensitivity or *true positive rate* of the
 test you're about to take is 93.8% $(q(T|D) = 0.938)$.
 The specificity or *true negative rate* of that
-same test is 95.6% $(q(\overline T | \overline D) = 0.956)$. <sup><a href="#covid">xxa-covid</a></sup> 
+same test is 95.6% $(q(\overline T | \overline D) = 0.956)$. <sup><a href="#covid">xxa-covid</a></sup>
 
 <figure id="#conditional" class="right">
   <center>
@@ -94,21 +94,21 @@ same test is 95.6% $(q(\overline T | \overline D) = 0.956)$. <sup><a href="#covi
 </figure>
 We've just specified our prior beliefs with 3 numbers, imagining our process as having two steps,
 first, we either had the disease or not $(q(\mathcal{D}))$ and then, conditioned on that
-we get the result of our test $(q(\mathcal{T}|\mathcal{D}))$.  
+we get the result of our test $(q(\mathcal{T}|\mathcal{D}))$.
 Equivalently, we could have just given the joint probability distribution, as shown in Figure 1.
 
-The point now is that if we were to update our beliefs, in the diagram on the right there is just a single 
-distribution $q(\mathcal{D},\mathcal{T})$, in the one on the left there are essentially three different distributions 
+The point now is that if we were to update our beliefs, in the diagram on the right there is just a single
+distribution $q(\mathcal{D},\mathcal{T})$, in the one on the left there are essentially three different distributions
 $(q(\mathcal{D}), q(\mathcal{T}|D), q(\mathcal{T}| \overline D))$ and we want
 some sort of *structural* consistency between the two sides:
 $$
 I[p(\mathcal{D},\mathcal{T}); q(\mathcal{D},\mathcal{T})] \quad \textrm{versus} \quad
 I[p(\mathcal{D}); q(\mathcal{D})], I[p(\mathcal{T}|D); q(\mathcal{T}|D)],
-I[p(\mathcal{T}|\overline D), q(\mathcal{T}|\overline D)] . 
+I[p(\mathcal{T}|\overline D), q(\mathcal{T}|\overline D)] .
 $$
 
 The consistency we will require is that our information measure decomposes linearly between
-these two different descriptions. The information between the joints should be a weighted 
+these two different descriptions. The information between the joints should be a weighted
 linear combination of the informations of three constituent distributions.
 In this particular case we will require:
 $$ I[p(\mathcal{D},\mathcal{T}); q(\mathcal{D},\mathcal{T})] =  I[p(\mathcal{D}); q(\mathcal{D})] + p(D) I[p(\mathcal{T}|D); q(\mathcal{T}|D)] + p(\overline D) I[p(\mathcal{T}|\overline D), q(\mathcal{T}|\overline D)] .
@@ -126,7 +126,7 @@ our information function manifestly asymmetric.  Here our $p$ distribution
 becomes distinguished over our $q$ as it is the one we use to weight the child
 contributions.  This makes sense if we imagine or if $p$ is the actual
 distribution that events are drawn from, for it means that this will correspond
-to the information we would observe in expectation.  
+to the information we would observe in expectation.
 
 The interesting thing is that if you want your information function to satisfy
 all of these seemingly reasonable properties, that is enough to determine it
@@ -140,16 +140,16 @@ See <a href="https://link.springer.com/article/10.1007/BF01106578">
 <b>A New Theorem of Information Theory</b> by Arthur Hobson
 </a> for a complete proof,
 but here I'll offer a more colloquial argument like the one
-given by Ariel Caticha.<sup><a href="#caticha">xxa-caticha</a></sup>  
+given by Ariel Caticha.<sup><a href="#caticha">xxa-caticha</a></sup>
 
 <aside> <sup id="caticha">xxa-caticha</sup>
   <i>Lectures on Probability, Entropy and Statistcal Physics</i> by
   Ariel Caticha. <a href="https://arxiv.org/abs/0808.0012">arXiv:0808.0012</a>
 </aside>
 
-We will start with and focus on the continuous setting, where we have two probability 
+We will start with and focus on the continuous setting, where we have two probability
 distributions $p$ and $q$.  We seek a functional that takes our two distributions
-and gives back our information gain and we seek one that is *local* in the physics sense, 
+and gives back our information gain and we seek one that is *local* in the physics sense,
 meaning that our *functional* can be written as the integral of a *function* depending
 only on the values the probability densities take at each point:
 $$ I[p;q] = \int \mathrm dx\, \mathcal{A}(x, p(x), q(x)). $$
@@ -158,14 +158,14 @@ Our requirement that our information gain be
 *reparameterization independent* means it has to
 be invariant to any remapping of our coordinates, or in other words,
 it has to be dimensionless.  Imagine $x$ has units of a length, here our integral
-measure $\mathrm dx$ has units of a length, and the densities $p(x), q(x)$ would 
+measure $\mathrm dx$ has units of a length, and the densities $p(x), q(x)$ would
 have units of an inverse length.  In order to be dimensionally consistent
 our functional must take the form:<sup><a href="#caveat">xxa-caveat</a></sup>
 $$ I[p;q] = \int \mathrm dx\, p(x) f\left( \frac{p(x)}{q(x)} \right). $$
 
 <aside> <sup id="caveat">xxa-caveat</sup>
   We could have just as well written it as $I[p;q] = \int \mathrm dx\, q(x) g\left( \frac{p(x)}{q(x)} \right)$ (that is, the form
-  of an <a href="https://en.wikipedia.org/wiki/F-divergence">f-divergence</a>), but 
+  of an <a href="https://en.wikipedia.org/wiki/F-divergence">f-divergence</a>), but
   this is equivalent to the way we wrote it with $f(\mathcal{X}) = \mathcal{X} g(\mathcal X)$.
   Putting the $p(x)$ as the integral measure better aligns with what we are about to do next.
 </aside>
@@ -173,7 +173,7 @@ $$ I[p;q] = \int \mathrm dx\, p(x) f\left( \frac{p(x)}{q(x)} \right). $$
 Finally, our decomposability requirement above when written out in terms of
 continuous densities takes the form:
 $$ I[ p(x,y); q(x,y) ] = I[ p(x); q(x) ] + \int \mathrm dx\, p(x) I[p(y|x) ; q(y|x)] $$
-  
+
 Combining this linear decomposition requirement with our requirement for the
 form required and pushing some equations around gives us:
 $$
@@ -209,7 +209,7 @@ $$ I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x)} = -\int \mathrm dx \, 
   Ariel Caticha. <a href="https://arxiv.org/abs/0808.0012">arXiv:0808.0012</a>
 </aside>
 Having identified the right way to measure how much information is gained when we update a distribution
-from $q$ to $p$, why don't we put this to practical use and try to figure out how we 
+from $q$ to $p$, why don't we put this to practical use and try to figure out how we
 <i>ought</i> to update
 our beliefs in light of evidence or observations.<sup><a href="#caticha2">xxa-caticha2</a></sup>
 
@@ -222,26 +222,26 @@ we set those?
 
 Why don't we aim to be conservative and try to find a new set of beliefs
 that are as close as possible to our prior beliefs while still being consistent with the
-observation that we've made?  
-Namely, let's look now for a joint distribution $p(\mathcal T, \mathcal D)$ 
+observation that we've made?
+Namely, let's look now for a joint distribution $p(\mathcal T, \mathcal D)$
 that is as close as possible to $q(\mathcal T, \mathcal D)$ but for which we have that $p(T)=1$.
 $$ \DeclareMathOperator{\argmin}{arg\,min} $$
 $$ \argmin_{p(\mathcal D, \mathcal T)} I[p(\mathcal D, \mathcal T); q(\mathcal D, \mathcal T)] \quad \text{ s.t. }\quad p(T) = 1 $$
 Now that we know
 how to measure how much information is gained in updating our beliefs, we will
 find the $p$ that minimizes this update while still being true to the observation we made.
-Writing $p(\mathcal D,\mathcal T) = p(\mathcal T)p(\mathcal D|\mathcal T)$ 
+Writing $p(\mathcal D,\mathcal T) = p(\mathcal T)p(\mathcal D|\mathcal T)$
 and using our linear decomposition rule from above (the other way around), we have:
 $$ I[p(\mathcal D,\mathcal T); q(\mathcal D,\mathcal T)] = I[p(\mathcal T);q(\mathcal T)] + I[p(\mathcal D|T);q(\mathcal D|T)]. $$
-Because we've decided to fix $p(T)=1$ in order to be consistent with our 
+Because we've decided to fix $p(T)=1$ in order to be consistent with our
 observation, the way to minimize the information between the joints is to set $p(\mathcal D|T)=q(\mathcal D|T)$ so
 that our second term vanishes. In this particular case this means:
-$$ p(T)=1 $$ 
+$$ p(T)=1 $$
 $$ p(D|T) = q(D|T) = \frac{q(T|D)q(D)}{q(T|D)q(D) + q(T|\overline D)q(\overline D)} = 0.616 $$
 
 Furthermore, the marginal distribution of our updated beliefs about our disease status is:
 $$ p(D) = p(D|T)p(T) = q(D|T) = 0.616$$
-In this particular case our updated belief is only 3 to 2 on 
+In this particular case our updated belief is only 3 to 2 on
 that we actually had the disease, despite our positive test result. In Figure 2
 we show both our prior in this factorization as well as our new beliefs.
 <figure id="#posterior" class="right">
@@ -263,7 +263,7 @@ by Bayes' Rule.  Imagine we had some observable $x$ and some parameters $\theta$
 prior set of beliefs are described by the joint distribution $q(\theta,x) = q(x|\theta)q(\theta)$:
 a *likelihood* $q(x|\theta)$ of how we expect the data to be distributed given
 the parameter values and some *prior* $q(\theta)$ set of beliefs about what values
-those parameters can take.  If we make an observation and see some value for our observable $x=X$, 
+those parameters can take.  If we make an observation and see some value for our observable $x=X$,
 what ought our new beliefs be?  If we search for the joint distribution $p(x,\theta)$ that is
 as close as possible to our previous beliefs $q(x,\theta)$ but that no longer has any
 uncertainty about the value the observable will take $(p(x) = \delta(x-X))$ we see
@@ -277,7 +277,7 @@ or precisely what you probably thought it should have been anyway if you've hear
 of Bayesian inference.
 
 Although, if you stop to think about it, even though many of us know of and have
-used <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">Bayes Theorem</a> 
+used <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">Bayes Theorem</a>
 for a long time, the way it's normally presented, it is just a trivial statement
 about how joint distributions factor.
 $$ q(\theta, D) = q(\theta) q(D|\theta) = q(D) q(\theta|D)  \implies
@@ -286,7 +286,7 @@ But, this is just a statement about distribution
 $q$, our prior beliefs.  It tells us nothing about how we should update those
 beliefs in light of observations.  However, the previous argument demonstrates
 that if you want to set your updated beliefs such that they are as close
-as possible to your prior beliefs while being consistent with your 
+as possible to your prior beliefs while being consistent with your
 observations, you should set your updated beliefs according to
 Bayes' rule run on the prior beliefs.
 
@@ -297,13 +297,14 @@ Traditionally, KL is interpreted from a coding perspective, a view I've included
 but here I offer a different perspective from the viewpoint of model selection.<a href="#woe"><sup>xxa-woe</sup></a>
 
 <aside> <sup id="woe">xxa-woe</sup>
-I think weight of evidence is one of the most underappreciated concepts.  For a nice overview see: <i>Weight of Evidence: A Brief Survey</i> by I.J. Good. <a href="https://link.springer.com/article/10.1007/BF01106578">[pdf]</a>.
+I think weight of evidence is one of the most underappreciated concepts.  For a nice overview see: <i>Weight of Evidence: A Brief Survey</i> by I.J. Good.
+<a href="https://www.cs.tufts.edu/~nr/cs257/archive/jack-good/weight-of-evidence.pdf">[pdf]</a>.
 </aside>
 
 Above we saw that we can motivate Bayesian inference as choosing a posterior belief distribution
 that has the minimal information gain over our prior distribution of beliefs while being consistent
-with our observations.  This guides us towards forming better belief distributions, but what if we 
-just have two different belief distributions and wish to decide between them? 
+with our observations.  This guides us towards forming better belief distributions, but what if we
+just have two different belief distributions and wish to decide between them?
 
 Really what we want to know is what is the probability that our beliefs are correct in light of evidence?
 Symbolically you might write this as $p(P|E)$ where $P$ is some belief distribution and $E$ is some
@@ -315,14 +316,14 @@ the *likelihood* that the evidence we observed would have been generated if our 
 Proportional because we would need to know how likely the evidence would be $p(E)$ amongst all possible
 beliefs. This last part, the <a href="https://en.wikipedia.org/wiki/Marginal_likelihood"><i>marginal likelihood</i></a>
 is notoriously difficult to compute. In principle, it is asking us to evaluate how likely
-the evidence would be from all possible models.  
+the evidence would be from all possible models.
 
-However, we can make further progress if we content ourselves to not necessarily knowing the 
+However, we can make further progress if we content ourselves to not necessarily knowing the
 absolute probability our model or beliefs are correct, but instead just its probability relative
 to some other model.  If we consider the ratio of two different models $P$ and $Q$ we have:
 $$ \frac{p(P|E)}{p(Q|E)} = \frac{p(E|P)}{p(E|Q)} \frac{p(P)}{p(Q)}. $$
 Notice that the marginal likelihoods cancel out.  This is saying that whatever prior relative odds for the two models
-being correct, if we compute the <a href="https://en.wikipedia.org/wiki/Bayes_factor"><i>Bayes factor</i></a> 
+being correct, if we compute the <a href="https://en.wikipedia.org/wiki/Bayes_factor"><i>Bayes factor</i></a>
 $\left( \frac{p(E|P)}{p(E|Q)} \right)$, it tells us how the relative probabilities of the two beliefs should update
 in light of the evidence. Taking a log on both sides:
 $$ \log \frac{p(P|E)}{p(Q|E)} = \log \frac{p(E|P)}{p(E|Q)} + \log \frac{p(P)}{p(Q)},$$
@@ -349,10 +350,10 @@ logarithm and measure the information in *nats*.  Another option is to measure t
 <a href="https://en.wikipedia.org/wiki/Hartley_(unit)">*decibans*</a> or *decibels* or *Hartley's*, wherein
 we use ten times the base-10 logarithm.
 <aside> <sup id="bit">xxa-bit</sup>
- <i>bit</i> being short for <i>binary digit</i>.  
+ <i>bit</i> being short for <i>binary digit</i>.
  <i>nat</i> is then short for <i>natural digit</i>.
  People sometimes suggest <i>dit</i> for the base-10 </i>decimal digit</i>.
- Turing suggested *ban* as short hand for the amount of evidence deduced about the setting 
+ Turing suggested *ban* as short hand for the amount of evidence deduced about the setting
  of the Enigma machine using the Banburismus method, itself named after the town of Banbury where
  the team got their large card sheets used in the method.
  For more discussion about the history and etymology of these and related units see section 4.8.1 of
@@ -360,18 +361,18 @@ we use ten times the base-10 logarithm.
 </aside>
 $$ I[p;q] = 10 \int \mathrm dx\, p(x) \log_{10} \frac{p(x)}{q(x)}\, \textrm{dB} $$
 
-The nice thing about measuring information in decibans or <a href="https://en.wikipedia.org/wiki/Decibel">decibels</a> 
-is the people already have some familiarity with the unit, such as for measuring the *loudness* of sounds. 
+The nice thing about measuring information in decibans or <a href="https://en.wikipedia.org/wiki/Decibel">decibels</a>
+is the people already have some familiarity with the unit, such as for measuring the *loudness* of sounds.
 It's always a comparative measurement, for sound taking $10 \log_{10} \frac{P}{P_0}$ of the power
 to some reference or baseline power.  In the same way we could besides just measuring the KL between two distributions,
 measure the comparative difference between any two probabilities on the log scale:
 $$ 10 \log_{10} \frac{p(x)}{q(x)} \textrm{ dB}. $$
 
-In particular, we could get some feeling for these quantities by comparing the probability something happens to the 
+In particular, we could get some feeling for these quantities by comparing the probability something happens to the
 probability it doesn't.  Consider a simple binary outcome and taking $q=1-p$, in this case, the weight of evidence
 that the thing happens versus it doesn't upon observing it happen once is:
 $$ 10 \log_{10} \frac{p}{1-p} \text{ dB}. $$
-This essentially gives us a new scale to measure probabilities on. 
+This essentially gives us a new scale to measure probabilities on.
 Instead of expressing probabilities as a number between 0 and 1,
 here we are computing the log *odds* of an event happening on the decibel scale.
 
@@ -382,7 +383,7 @@ in Figure 3 is a large visual representation you can play with.
 <center>
 <table>
   <thead><th>db<th>odds<th>~odds<th>probability<th>spinner
-  <tr><td>0<td>1.00<td>1:1<td> 50% 
+  <tr><td>0<td>1.00<td>1:1<td> 50%
     <td><svg height="30" width="30" viewBox="0 0 20 20"> <circle r="10" cx="10" cy="10" fill="white" /> <circle r="5" cx="10" cy="10" fill="whitesmoke" id="progress-0" stroke="#1f77b4" stroke-width="10" stroke-dasharray="0.942 2.200" /></svg>
   <tr><td>1<td>1.26<td>5:4<td>56%
     <td><svg height="30" width="30" viewBox="0 0 20 20"> <circle r="10" cx="10" cy="10" fill="white" /> <circle r="5" cx="10" cy="10" fill="whitesmoke" id="progress-1" stroke="#1f77b4" stroke-width="10" stroke-dasharray="0.942 2.200" /></svg>
@@ -437,7 +438,7 @@ decibels is that it seems like 1 dB roughly corresponds the smallest detectable 
 notice in terms of a change in underlying distribution, being the difference between <i>even chance</i>
 and 5 to 4 odds, <i>moderate probability</i> or <i>better than even chance</i>.
 
-<aside id="quantifying"><sup>xxa-quant</sup> 
+<aside id="quantifying"><sup>xxa-quant</sup>
   <a href="https://projecteuclid.org/euclid.ss/1177012242"><i>Quantifying Probabilistic Expressions</i> by
   Frederick Mosteller and Cleo Youtz</a>.
 </aside>
@@ -447,7 +448,7 @@ with events being <i>almost certain</i> or happening <i>almost always</i>. <sup>
 The traditional statistical threshold for reported results is a <a href="https://en.wikipedia.org/wiki/P-value">p-value</a>
 of 0.05, which is often <a href="https://en.wikipedia.org/wiki/Misuse_of_p-values">misinterpreted</a>
 to mean that the probability the null hypothesis is less than
-5%.  While this isn't what the p-value measures, if we obtain more than 13 dB of evidence against some 
+5%.  While this isn't what the p-value measures, if we obtain more than 13 dB of evidence against some
 null hypothesis, this does mean that the relative odds that it is correct have decreased by a factor of 20,
 taking us below 20 to 1 against if we started with even odds.
 
@@ -478,7 +479,7 @@ This gives a fraction of male births of $\sim 51\%$.
 Is this just a statistical fluke, or are boys more common than girls at birth?  What Laplace did was to analytically
 work out the Bayesian posterior distribution for the probability that a male baby was born using a uniform prior, obtaining
 a $\operatorname{Beta}(251528, 241946)$ distribution, for which the probability that the probability a male is born
-is less than or equal to $1/2$ is 
+is less than or equal to $1/2$ is
 $$ \int_0^{1/2} \mathrm dx \, \operatorname{Beta}(x; 251528, 241946) \sim 10^{-42}$$
 enough for Laplace to declare that he was *morally certain* that males
 are born more frequently than females.
@@ -488,7 +489,7 @@ that males are born 51% of the time, and the second that they are born 50% of th
 total weight of evidence in this case is:
 
 $$ 2515270 \log_{10} \frac{0.51}{0.50} + 2419450 \log_{10} \frac{0.49}{0.50} = 404 \text{ dB} $$
-a whopping 400 decibels of evidence for males being born 51% of the time rather than 50%.  
+a whopping 400 decibels of evidence for males being born 51% of the time rather than 50%.
 At the same time, I'm not sure most people are aware that males are born with a higher proportion and it doesn't
 seem to affect most people's lives.  Why is that?  Well, let's evaluate the relative entropy between
 a 51% Bernoulli and a 50% Bernoulli:
@@ -511,9 +512,9 @@ a constant.  This motivates the traditional maximum likelihood objective:
 $$ \max \int \mathrm dx \, \log q(x;\theta). $$
 <aside id="gpt3"><sup>xxa-gpt3</sup>
   For instance, the latest <a href="https://arxiv.org/abs/2005.14165">GPT-3</a> model trained by OpenAI,
-  was trained on less than half of the training set. (See Table 2.2 in the paper.) 
+  was trained on less than half of the training set. (See Table 2.2 in the paper.)
 </aside>
-If we had an infinite dataset, maximum likelihood is the same as minimizing the relative entropy between the real world and 
+If we had an infinite dataset, maximum likelihood is the same as minimizing the relative entropy between the real world and
 our model.  Unfortunately, we don't often have infinite datasets.<sup><a href="#gpt3">xxa-gpt3</a></sup>
 On finite datasets, maximum likelihood can still be interpreted as minimizing a KL divergence, but now
 the KL divergence between the *empirical distribution* $\hat p(x) = \sum_i \delta(x - x_i) $
@@ -532,7 +533,7 @@ $$ L_1 - L_2 = \mathbb{E}\left[ \log q_1(x) \right] - \mathbb{E}\left[ \log q_2(
 <aside id="mnist"><sup>xxa-mnist</sup>
   The entirety of which can fit in a <a href="https://twitter.com/alemi/status/1042658244609499137">tweet</a>.
 </aside>
-Given the size of test sets we have for modern image datasets, this means that very small changes in likelihood can be 
+Given the size of test sets we have for modern image datasets, this means that very small changes in likelihood can be
 interpreted as large confidences in the superiorities of models.  Take for instance something as simple as binary static MNIST.<sup><a href="#mnist">xxa-mnist</a></sup>  Here, with 10,000 test set images, a difference in likelihoods of 0.0013 dB or 0.0004 nats corresponds to 13 dB of evidence for the one model over the second.
 
 
@@ -548,7 +549,7 @@ Why do I say he flubbed?  Because this notion of entropy doesn't generalize
 to continuous distributions.  The continuous analog:
 $$ H(P) = -\int \mathrm dx\, p(x) \log p(x) $$
 isn't *reparameterization independent*.  Consider for instance the distribution
-of adult human heights: <sup><a href="#bimodal">xxa-bimodal</a></sup> 
+of adult human heights: <sup><a href="#bimodal">xxa-bimodal</a></sup>
 <figure>
   <center>
   <img src="figures/adult_heights.svg"
@@ -558,15 +559,15 @@ of adult human heights: <sup><a href="#bimodal">xxa-bimodal</a></sup>
 </figure>
 
 <aside> <sup id="bimodal">xxa-bimodal</sup>
-  Note that you may have heard that 
+  Note that you may have heard that
   <a href="https://www.johndcook.com/blog/2008/07/20/why-heights-are-normally-distributed/">heights are normally distributed</a>.
-  Adult male (or female) heights are normally distributed, but differ in their means and variances, making the 
+  Adult male (or female) heights are normally distributed, but differ in their means and variances, making the
   <a href="https://www.johndcook.com/blog/2008/11/25/distribution-of-adult-heights/">distribution of adult heights a mixture distribution</a>.
 </aside>
 
 
 <aside> <sup id="ourworld">xxa-ourworld</sup>
-  Data taken from 
+  Data taken from
   <a href="https://ourworldindata.org/human-height">ourworldindata.org</a>.
 </aside>
 
@@ -591,7 +592,7 @@ were to measure heights in meters it would be -1.3 bits! <sup><a href="#negative
 The traditional interpretation offered for the KL is from the coding
 perspective.
 Imagine we have a simple 4-letter
-alphabet that we want to communicate over the wire. 
+alphabet that we want to communicate over the wire.
 If the four letters occurred with different probabilities:
 $p(A)=1/2, p(B)=1/4, p(C)=p(D)=1/8$, with an optimally designed <a
 href="https://en.wikipedia.org/wiki/Huffman_coding">Huffman Code</a> we could
@@ -615,7 +616,7 @@ on average we'd only be spending $1/2 + 2/4 + 3/8 + 3/8 = 7/4$ bits per letter.
 
 Imagine however we didn't know what the true distribution of letters was and instead
 designed an optimal code using a different distribution $q$.  If we believed
-each of the 4 letters were equally likely $(q(A)=q(B)=q(C)=q(D)=1/4)$, the optimal way to 
+each of the 4 letters were equally likely $(q(A)=q(B)=q(C)=q(D)=1/4)$, the optimal way to
 encode messages would just assign a two bit code to each letter $(A : 00, B:01, C:10,
 D:11)$.  If we used this suboptimal code to send messages that were actually distributed
 as $p$ it would cost $2/2 + 2/4 + 2/8 + 2/8 = 2$ bits per letter.  Our incorrect
@@ -666,9 +667,3 @@ function updatePercent() {
   fraction(100, value);
 }
 </script>
-
-
-
-
-
-
