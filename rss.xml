@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?xml-stylesheet type="text/xsl" href="assets/rss.xsl"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Sun, 21 Sep 2025 18:29:33 +0000</lastBuildDate><item><title>Leap Day</title><link>https://blog.alexalemi.com/ob/nbs/leap-day.html</link><description>Going overboard to prove the local newspaper wrong.</description><guid isPermaLink="true">https://blog.alexalemi.com/ob/nbs/leap-day.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Fri, 29 Mar 2024 00:00:00 -0400</pubDate></item><item><title>Why KL?</title><link>https://blog.alexalemi.com/kl.html</link><description>Why is the KL divergence so special?</description><content:encoded>&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Liebler
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Mon, 22 Sep 2025 00:29:43 +0000</lastBuildDate><item><title>Leap Day</title><link>https://blog.alexalemi.com/ob/nbs/leap-day.html</link><description>Going overboard to prove the local newspaper wrong.</description><guid isPermaLink="true">https://blog.alexalemi.com/ob/nbs/leap-day.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Fri, 29 Mar 2024 00:00:00 -0400</pubDate></item><item><title>Why KL?</title><link>https://blog.alexalemi.com/kl.html</link><description>Why is the KL divergence so special?</description><content:encoded>&lt;p&gt;The &lt;a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence"&gt;Kullback-Liebler
 divergence&lt;/a&gt;,
 or KL divergence, or relative entropy, or relative information, or information
 gain, or expected weight of evidence, or information divergence
@@ -22,8 +22,8 @@ hypothetical function to have?  Let $I[p; q]$ denote the function that measures
 how much we moved beliefs when we switch from beliefs $q$ to beliefs $p$.  We'll
 call this amount of update the &lt;em&gt;information gain&lt;/em&gt; when we move from $q$ to $p$.
 &lt;sup&gt;&lt;a href="#hobson"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;aside&gt; &lt;sup id="hobson"&gt;1&lt;/sup&gt; 
-  What follows is my own reconstruction of the fabulous paper: 
+&lt;aside&gt; &lt;sup id="hobson"&gt;1&lt;/sup&gt;
+  What follows is my own reconstruction of the fabulous paper:
   &lt;a href="https://link.springer.com/article/10.1007/BF01106578"&gt;
   &lt;b&gt;A New Theorem of Information Theory&lt;/b&gt; by Arthur Hobson
   &lt;/a&gt;.
@@ -38,7 +38,7 @@ call this amount of update the &lt;em&gt;information gain&lt;/em&gt; when we mov
 &lt;/ol&gt;
 &lt;aside&gt; &lt;sup id="renyi"&gt;2&lt;/sup&gt;
   If one relaxes the requirement for linear decomposition and instead just requires that our information
-  function decompose in a convex way, you get the generalized set of 
+  function decompose in a convex way, you get the generalized set of
   &lt;a href="https://en.wikipedia.org/wiki/R%C3%A9nyi_entropy#R%C3%A9nyi_divergence"&gt;Rényi divergences&lt;/a&gt;.
   See: &lt;a href="https://projecteuclid.org/euclid.bsmsp/1200512181"&gt;
   &lt;i&gt;On Measures of Entropy and Information&lt;/i&gt; by Alfréd Rényi.&lt;/a&gt;
@@ -84,7 +84,7 @@ same test is 95.6% $(q(\overline T | \overline D) = 0.956)$. &lt;sup&gt;&lt;a hr
 &lt;/figure&gt;
 We've just specified our prior beliefs with 3 numbers, imagining our process as having two steps,
 first, we either had the disease or not $(q(\mathcal{D}))$ and then, conditioned on that
-we get the result of our test $(q(\mathcal{T}|\mathcal{D}))$.  
+we get the result of our test $(q(\mathcal{T}|\mathcal{D}))$.
 Equivalently, we could have just given the joint probability distribution, as shown in Figure 1.
 &lt;p&gt;The point now is that if we were to update our beliefs, in the diagram on the right there is just a single
 distribution $q(\mathcal{D},\mathcal{T})$, in the one on the left there are essentially three different distributions
@@ -93,7 +93,7 @@ some sort of &lt;em&gt;structural&lt;/em&gt; consistency between the two sides:
 $$
 I[p(\mathcal{D},\mathcal{T}); q(\mathcal{D},\mathcal{T})] \quad \textrm{versus} \quad
 I[p(\mathcal{D}); q(\mathcal{D})], I[p(\mathcal{T}|D); q(\mathcal{T}|D)],
-I[p(\mathcal{T}|\overline D), q(\mathcal{T}|\overline D)] . 
+I[p(\mathcal{T}|\overline D), q(\mathcal{T}|\overline D)] .
 $$&lt;/p&gt;
 &lt;p&gt;The consistency we will require is that our information measure decomposes linearly between
 these two different descriptions. The information between the joints should be a weighted
@@ -145,7 +145,7 @@ our functional must take the form:&lt;sup&gt;&lt;a href="#caveat"&gt;6&lt;/a&gt;
 $$ I[p;q] = \int \mathrm dx\, p(x) f\left( \frac{p(x)}{q(x)} \right). $$&lt;/p&gt;
 &lt;aside&gt; &lt;sup id="caveat"&gt;6&lt;/sup&gt;
   We could have just as well written it as $I[p;q] = \int \mathrm dx\, q(x) g\left( \frac{p(x)}{q(x)} \right)$ (that is, the form
-  of an &lt;a href="https://en.wikipedia.org/wiki/F-divergence"&gt;f-divergence&lt;/a&gt;), but 
+  of an &lt;a href="https://en.wikipedia.org/wiki/F-divergence"&gt;f-divergence&lt;/a&gt;), but
   this is equivalent to the way we wrote it with $f(\mathcal{X}) = \mathcal{X} g(\mathcal X)$.
   Putting the $p(x)$ as the integral measure better aligns with what we are about to do next.
 &lt;/aside&gt;
@@ -183,7 +183,7 @@ $$ I[p;q] = \int \mathrm dx\, p(x) \log \frac{p(x)}{q(x)} = -\int \mathrm dx \, 
   Ariel Caticha. &lt;a href="https://arxiv.org/abs/0808.0012"&gt;arXiv:0808.0012&lt;/a&gt;
 &lt;/aside&gt;
 Having identified the right way to measure how much information is gained when we update a distribution
-from $q$ to $p$, why don't we put this to practical use and try to figure out how we 
+from $q$ to $p$, why don't we put this to practical use and try to figure out how we
 &lt;i&gt;ought&lt;/i&gt; to update
 our beliefs in light of evidence or observations.&lt;sup&gt;&lt;a href="#caticha2"&gt;52&lt;/a&gt;&lt;/sup&gt;
 &lt;p&gt;Returning to our disease testing example, let's say you get the test done and receive a
@@ -194,7 +194,7 @@ observation, setting $p(T) = 1$, but this doesn't fully specify $p$; we need two
 we set those?&lt;/p&gt;
 &lt;p&gt;Why don't we aim to be conservative and try to find a new set of beliefs
 that are as close as possible to our prior beliefs while still being consistent with the
-observation that we've made?&lt;br /&gt;
+observation that we've made?
 Namely, let's look now for a joint distribution $p(\mathcal T, \mathcal D)$
 that is as close as possible to $q(\mathcal T, \mathcal D)$ but for which we have that $p(T)=1$.
 $$ \DeclareMathOperator{\argmin}{arg\,min} $$
@@ -263,7 +263,8 @@ Bayes' rule run on the prior beliefs.&lt;/p&gt;
 &lt;p&gt;Traditionally, KL is interpreted from a coding perspective, a view I've included in an appendix below,
 but here I offer a different perspective from the viewpoint of model selection.&lt;a href="#woe"&gt;&lt;sup&gt;8&lt;/sup&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;aside&gt; &lt;sup id="woe"&gt;8&lt;/sup&gt;
-I think weight of evidence is one of the most underappreciated concepts.  For a nice overview see: &lt;i&gt;Weight of Evidence: A Brief Survey&lt;/i&gt; by I.J. Good. &lt;a href="https://link.springer.com/article/10.1007/BF01106578"&gt;[pdf]&lt;/a&gt;.
+I think weight of evidence is one of the most underappreciated concepts.  For a nice overview see: &lt;i&gt;Weight of Evidence: A Brief Survey&lt;/i&gt; by I.J. Good.
+&lt;a href="https://www.cs.tufts.edu/~nr/cs257/archive/jack-good/weight-of-evidence.pdf"&gt;[pdf]&lt;/a&gt;.
 &lt;/aside&gt;
 &lt;p&gt;Above we saw that we can motivate Bayesian inference as choosing a posterior belief distribution
 that has the minimal information gain over our prior distribution of beliefs while being consistent
@@ -308,10 +309,10 @@ logarithm and measure the information in &lt;em&gt;nats&lt;/em&gt;.  Another opt
 &lt;a href="https://en.wikipedia.org/wiki/Hartley_(unit)"&gt;&lt;em&gt;decibans&lt;/em&gt;&lt;/a&gt; or &lt;em&gt;decibels&lt;/em&gt; or &lt;em&gt;Hartley's&lt;/em&gt;, wherein
 we use ten times the base-10 logarithm.&lt;/p&gt;
 &lt;aside&gt; &lt;sup id="bit"&gt;9&lt;/sup&gt;
- &lt;i&gt;bit&lt;/i&gt; being short for &lt;i&gt;binary digit&lt;/i&gt;.  
+ &lt;i&gt;bit&lt;/i&gt; being short for &lt;i&gt;binary digit&lt;/i&gt;.
  &lt;i&gt;nat&lt;/i&gt; is then short for &lt;i&gt;natural digit&lt;/i&gt;.
  People sometimes suggest &lt;i&gt;dit&lt;/i&gt; for the base-10 &lt;/i&gt;decimal digit&lt;/i&gt;.
- Turing suggested *ban* as short hand for the amount of evidence deduced about the setting 
+ Turing suggested *ban* as short hand for the amount of evidence deduced about the setting
  of the Enigma machine using the Banburismus method, itself named after the town of Banbury where
  the team got their large card sheets used in the method.
  For more discussion about the history and etymology of these and related units see section 4.8.1 of
@@ -337,7 +338,7 @@ in Figure 3 is a large visual representation you can play with.&lt;/p&gt;
 &lt;center&gt;
 &lt;table&gt;
   &lt;thead&gt;&lt;th&gt;db&lt;th&gt;odds&lt;th&gt;~odds&lt;th&gt;probability&lt;th&gt;spinner
-  &lt;tr&gt;&lt;td&gt;0&lt;td&gt;1.00&lt;td&gt;1:1&lt;td&gt; 50% 
+  &lt;tr&gt;&lt;td&gt;0&lt;td&gt;1.00&lt;td&gt;1:1&lt;td&gt; 50%
     &lt;td&gt;&lt;svg height="30" width="30" viewBox="0 0 20 20"&gt; &lt;circle r="10" cx="10" cy="10" fill="white" /&gt; &lt;circle r="5" cx="10" cy="10" fill="whitesmoke" id="progress-0" stroke="#1f77b4" stroke-width="10" stroke-dasharray="0.942 2.200" /&gt;&lt;/svg&gt;
   &lt;tr&gt;&lt;td&gt;1&lt;td&gt;1.26&lt;td&gt;5:4&lt;td&gt;56%
     &lt;td&gt;&lt;svg height="30" width="30" viewBox="0 0 20 20"&gt; &lt;circle r="10" cx="10" cy="10" fill="white" /&gt; &lt;circle r="5" cx="10" cy="10" fill="whitesmoke" id="progress-1" stroke="#1f77b4" stroke-width="10" stroke-dasharray="0.942 2.200" /&gt;&lt;/svg&gt;
@@ -388,7 +389,7 @@ in Figure 3 is a large visual representation you can play with.&lt;/p&gt;
 decibels is that it seems like 1 dB roughly corresponds the smallest detectable value that people
 notice in terms of a change in underlying distribution, being the difference between &lt;i&gt;even chance&lt;/i&gt;
 and 5 to 4 odds, &lt;i&gt;moderate probability&lt;/i&gt; or &lt;i&gt;better than even chance&lt;/i&gt;.&lt;/p&gt;
-&lt;aside id="quantifying"&gt;&lt;sup&gt;10&lt;/sup&gt; 
+&lt;aside id="quantifying"&gt;&lt;sup&gt;10&lt;/sup&gt;
   &lt;a href="https://projecteuclid.org/euclid.ss/1177012242"&gt;&lt;i&gt;Quantifying Probabilistic Expressions&lt;/i&gt; by
   Frederick Mosteller and Cleo Youtz&lt;/a&gt;.
 &lt;/aside&gt;
@@ -428,7 +429,7 @@ are born more frequently than females.&lt;/p&gt;
 that males are born 51% of the time, and the second that they are born 50% of the time.  With Laplace's data, the
 total weight of evidence in this case is:&lt;/p&gt;
 &lt;p&gt;$$ 2515270 \log_{10} \frac{0.51}{0.50} + 2419450 \log_{10} \frac{0.49}{0.50} = 404 \text{ dB} $$
-a whopping 400 decibels of evidence for males being born 51% of the time rather than 50%.&lt;br /&gt;
+a whopping 400 decibels of evidence for males being born 51% of the time rather than 50%.
 At the same time, I'm not sure most people are aware that males are born with a higher proportion and it doesn't
 seem to affect most people's lives.  Why is that?  Well, let's evaluate the relative entropy between
 a 51% Bernoulli and a 50% Bernoulli:
@@ -449,9 +450,9 @@ a constant.  This motivates the traditional maximum likelihood objective:
 $$ \max \int \mathrm dx \, \log q(x;\theta). $$&lt;/p&gt;
 &lt;aside id="gpt3"&gt;&lt;sup&gt;11&lt;/sup&gt;
   For instance, the latest &lt;a href="https://arxiv.org/abs/2005.14165"&gt;GPT-3&lt;/a&gt; model trained by OpenAI,
-  was trained on less than half of the training set. (See Table 2.2 in the paper.) 
+  was trained on less than half of the training set. (See Table 2.2 in the paper.)
 &lt;/aside&gt;
-If we had an infinite dataset, maximum likelihood is the same as minimizing the relative entropy between the real world and 
+If we had an infinite dataset, maximum likelihood is the same as minimizing the relative entropy between the real world and
 our model.  Unfortunately, we don't often have infinite datasets.&lt;sup&gt;&lt;a href="#gpt3"&gt;11&lt;/a&gt;&lt;/sup&gt;
 On finite datasets, maximum likelihood can still be interpreted as minimizing a KL divergence, but now
 the KL divergence between the *empirical distribution* $\hat p(x) = \sum_i \delta(x - x_i) $
@@ -467,7 +468,7 @@ the same measure, but provided they are:&lt;/p&gt;
 &lt;aside id="mnist"&gt;&lt;sup&gt;12&lt;/sup&gt;
   The entirety of which can fit in a &lt;a href="https://twitter.com/alemi/status/1042658244609499137"&gt;tweet&lt;/a&gt;.
 &lt;/aside&gt;
-Given the size of test sets we have for modern image datasets, this means that very small changes in likelihood can be 
+Given the size of test sets we have for modern image datasets, this means that very small changes in likelihood can be
 interpreted as large confidences in the superiorities of models.  Take for instance something as simple as binary static MNIST.&lt;sup&gt;&lt;a href="#mnist"&gt;12&lt;/a&gt;&lt;/sup&gt;  Here, with 10,000 test set images, a difference in likelihoods of 0.0013 dB or 0.0004 nats corresponds to 13 dB of evidence for the one model over the second.
 &lt;h2&gt;Appendix A: Whither Continuous Entropy&lt;/h2&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;span id="appendix-a"&gt;The&lt;/span&gt; relative entropy really is the proper way to define entropy.  For all
@@ -487,13 +488,13 @@ of adult human heights: &lt;sup&gt;&lt;a href="#bimodal"&gt;13&lt;/a&gt;&lt;/sup
   &lt;/center&gt;
 &lt;/figure&gt;
 &lt;aside&gt; &lt;sup id="bimodal"&gt;13&lt;/sup&gt;
-  Note that you may have heard that 
+  Note that you may have heard that
   &lt;a href="https://www.johndcook.com/blog/2008/07/20/why-heights-are-normally-distributed/"&gt;heights are normally distributed&lt;/a&gt;.
-  Adult male (or female) heights are normally distributed, but differ in their means and variances, making the 
+  Adult male (or female) heights are normally distributed, but differ in their means and variances, making the
   &lt;a href="https://www.johndcook.com/blog/2008/11/25/distribution-of-adult-heights/"&gt;distribution of adult heights a mixture distribution&lt;/a&gt;.
 &lt;/aside&gt;
 &lt;aside&gt; &lt;sup id="ourworld"&gt;14&lt;/sup&gt;
-  Data taken from 
+  Data taken from
   &lt;a href="https://ourworldindata.org/human-height"&gt;ourworldindata.org&lt;/a&gt;.
 &lt;/aside&gt;
 &lt;p&gt;If you measure the continuous entropy of this distribution measured
@@ -2534,4 +2535,136 @@ I decided to try to roll my own. I call it &lt;a href="https://github.com/alexal
 &lt;p&gt;If you use &lt;a href="https://docs.astral.sh/uv/"&gt;&lt;code&gt;uv&lt;/code&gt;&lt;/a&gt; you should be able to try it out right now:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;uvx plaque serve your-nb.py&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Check it out and let me know what you think.&lt;/p&gt;
-</content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/plaque.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Thu, 31 Jul 2025 00:00:00 -0400</pubDate></item></channel></rss>
+</content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/plaque.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Thu, 31 Jul 2025 00:00:00 -0400</pubDate></item><item><title>Dyson Spheres</title><link>https://blog.alexalemi.com/dyson-spheres.html</link><description>The absurdity of dyson spheres on any timescale we'll experience.</description><content:encoded>&lt;p&gt;In 1960, Freeman Dyson wrote &lt;a href="https://fermatslibrary.com/s/search-for-artificial-stellar-sources-of-infrared-radiation"&gt;a single page&lt;/a&gt;
+"little joke"&lt;sup&gt;&lt;a href="#littlejoke"&gt;1&lt;/a&gt;&lt;/sup&gt; about how an advanced civilization
+undergoing exponential energy growth would quickly exeeds the capacity of their planet
+and would have to start harvesting a reasonable fraction of the energy of their host star.&lt;/p&gt;
+&lt;aside&gt; &lt;sup id="littlejoke"&gt;1&lt;/sup&gt;
+  As he says in &lt;a href="https://youtu.be/huAIfzUoyhU?si=UaM-gGpLH84-iHrs&amp;t=124"&gt;this interview&lt;/a&gt;,
+	or Angela Collier discusses in &lt;a href="https://youtu.be/fLzEX1TPBFM?si=8Xv9fb-mzu0RKWlz"&gt;her video&lt;/a&gt;.
+&lt;/aside&gt;
+&lt;p&gt;The paper goes through the basic math and physics for the energy and timescales required to build what has now become known as a &lt;a href="https://en.wikipedia.org/wiki/Dyson_sphere"&gt;Dyson sphere&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Dyson spheres started off as a far fetched sci-fi concept, but increasingly seem to be taken seriously by various corners of the internet, to the point where people are willing to put real money down on the possibility of a Dyson sphere by 2030 on prediction markets like &lt;a href="https://manifold.markets/levifinkelstein/will-we-have-at-least-one-dyson-sph"&gt;manifold.markets&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I think these people are crazy and wrong and I wanted to try to explain (for myself as much as anyone else) why.&lt;/p&gt;
+&lt;h2&gt;Some Background Energy Numbers&lt;/h2&gt;
+&lt;p&gt;Fundamentally, I don't think we have the energy budget to build one, and I worry that most people vastly underestimate the amount of energy required.&lt;/p&gt;
+&lt;p&gt;Let's establish some baseline numbers.  As a human, you're burning energy at $ \sim 100 \, \textrm{W} $  continuously.&lt;sup&gt;&lt;a href="#lightbulb"&gt;2&lt;/a&gt;&lt;/sup&gt; &lt;sup&gt;&lt;a href="#percapita"&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;aside&gt;&lt;sup id="lightbulb"&gt;2&lt;/sup&gt;
+    You're like a light bulb ($ 2000 \,\textrm{kcal/day}$)
+&lt;/aside&gt;
+&lt;p&gt;All of human civilization currently consumes energy at a rate of ~ $21 \,\textrm{TW} = 2 \times 10^{13} \,\textrm{W}$.&lt;sup&gt;&lt;a href="#civenergy"&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;aside&gt; &lt;sup id="civenergy"&gt;4&lt;/sup&gt;
+    $186,000 \text{ TWh/year} = 21 \text{ TW}$. From
+    Hannah Ritchie, Pablo Rosado, and Max Roser (2020) - “Energy Production and Consumption” Published online at OurWorldinData.org. Retrieved from: '&lt;a href="https://ourworldindata.org/energy-production-consumption"&gt;https://ourworldindata.org/energy-production-consumption&lt;/a&gt;' [Online Resource]
+&lt;/aside&gt;
+&lt;aside&gt; &lt;sup id="percapita"&gt;3&lt;/sup&gt;
+    This is $\sim 2.6 \text{ kW}$ per person, or $\sim 26 \times$ how much energy you're radiating in heat.
+&lt;/aside&gt;
+&lt;p&gt;The sun has a total luminosity of ~ $400 \, \textrm{YW} = 4 \times 10^{26} \, \textrm{W}$.&lt;sup&gt;&lt;a href="#sunluminosity"&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;aside&gt;&lt;sup id="sunluminosity"&gt;5&lt;/sup&gt;
+    From &lt;a href="https://en.wikipedia.org/w/index.php?title=Solar_luminosity&amp;oldid=1281026335"&gt;wikipedia: Solar luminosity&lt;/a&gt;.
+&lt;/aside&gt;
+&lt;p&gt;At $ 1 \,\textrm{AU}$ this is a solar flux of $ 1369 \,\textrm{W/m}^2$ so that the total solar flux incident on the earth is:&lt;/p&gt;
+&lt;p&gt;$$
+1369 \, \textrm{W/m}^2 \cdot \pi R^2 = 170 \,\textrm{PW} = 170\,000 \,\textrm{TW} = 1.7\times 10^{17} \,\textrm{W}
+$$&lt;/p&gt;
+&lt;p&gt;This is why the science fiction idea of a Dyson sphere is so alluring, as far as the sun is concerned, the Earth takes up a very small fraction of the sky.&lt;sup&gt;&lt;a href="#earthppm"&gt;6&lt;/a&gt;&lt;/sup&gt;  On this planet we are limited to getting access to &lt;em&gt;only&lt;/em&gt; 8,000 times the power we currently consume.&lt;sup&gt;&lt;a href="#solarlimit"&gt;7&lt;/a&gt;&lt;/sup&gt;  Meanwhile, if we could capture some reasonable fraction of the total solar output, this is another factor of 2 billion in terms of our potential power draw.&lt;/p&gt;
+&lt;aside&gt;&lt;sup id="earthppm"&gt;6&lt;/sup&gt;
+    $$\frac{\pi R_{\oplus}^2}{4 \pi (1 \text{ au})^2} \sim 1/2 \,\textrm{ppb}$$
+&lt;/aside&gt;
+&lt;p&gt;While these numbers seem large and out of the way, as laid out in the fantastic article &lt;a href="https://tmurphy.physics.ucsd.edu/papers/limits-econ-final.pdf"&gt;Limits to Economic Growth by Tom Murphy&lt;/a&gt;,&lt;sup&gt;&lt;a href="#8"&gt;8&lt;/a&gt;&lt;/sup&gt; even these fantastical limits are very close in terms of exponential growth.&lt;/p&gt;
+&lt;aside&gt;&lt;sup id="murphyarticle"&gt;8&lt;/sup&gt;
+    Murphy Jr, Thomas W. "Limits to economic growth." Nature Physics 18.8 (2022): 844-847.
+&lt;/aside&gt;
+&lt;p&gt;If we look at &lt;a href="https://ourworldindata.org/energy-production-consumption"&gt;ourworldindata&lt;/a&gt;, we can see that over the last 60 years or so, our primary energy consumption has been growing between -1% and 4% or so.  Let's make it a round 2.3% growth so that in a century we get a factor of 10.&lt;sup&gt;&lt;a href="#century"&gt;9&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;aside&gt;&lt;sup id="murphyarticle"&gt;8&lt;/sup&gt;
+    i.e. $e^{0.023 * 100} \sim 10$
+&lt;/aside&gt;
+&lt;figure id="owid"&gt;
+  &lt;center&gt;
+  &lt;img width="95%" src="figures/owid-change-energy-consumption.png"
+    alt="Annual change in primary energy consumption."&gt;
+  &lt;figcaption&gt;
+  Figure 1. Annual change in primary energy consumption from &lt;a href="https://ourworldindata.org/grapher/change-energy-consumption"&gt;ourworldindata&lt;/a&gt;.
+  &lt;/figcaption&gt;
+  &lt;/center&gt;
+&lt;/figure&gt;
+&lt;p&gt;As &lt;a href="https://tmurphy.physics.ucsd.edu/papers/limits-econ-final.pdf"&gt;Tom shows in his Figure 1&lt;/a&gt;, this is a great match for the growth in power consumption over a longer range&lt;/p&gt;
+&lt;figure id="tomarticlefig"&gt;
+  &lt;center&gt;
+  &lt;img width="95%" src="figures/tom-energy-growth.png"
+    alt="Historical growth in primary energy production."&gt;
+  &lt;figcaption&gt;
+  Figure 2. Historical energy growth. From
+  Murphy Jr, Thomas W. "Limits to economic growth." Nature Physics 18.8 (2022): 844-847. &lt;a href="https://tmurphy.physics.ucsd.edu/papers/limits-econ-final.pdf"&gt;[pdf]&lt;/a&gt;
+  &lt;/figcaption&gt;
+  &lt;/center&gt;
+&lt;/figure&gt;
+&lt;p&gt;The problem with exponentials, as we are well aware, is that if you extrapolate them they get very intense very quickly.  If you run this 2.3% growth exponential forward, it quickly becomes uncomfortable, as Tom shows in his &lt;a href="https://dothemath.ucsd.edu/2011/07/galactic-scale-energy/"&gt;accompanying blog post&lt;/a&gt;:&lt;/p&gt;
+&lt;figure id="tomblogfig"&gt;
+  &lt;center&gt;
+  &lt;img width="95%" src="figures/galaxy-1024x768.png"
+    alt="Projecting exponential energy growth into the future."&gt;
+  &lt;figcaption&gt;
+  Figure 3. Projecting 2.3% energy growth into the future. From &lt;a href="https://dothemath.ucsd.edu/2011/07/galactic-scale-energy/"&gt;Tom Murphy's blog post&lt;/a&gt;.
+  &lt;/figcaption&gt;
+  &lt;/center&gt;
+&lt;/figure&gt;
+&lt;p&gt;In a mere 275 years, i.e. as far forward as the year 1750 was back, we would exceed the total solar flux on land that we can reasonably capture (at 20% efficiency).  But if you want to ignore those limits, its only 345 years to get to 100% of the total solar flux on land, and only 400 years to get to the total solar flux on the Earth… period.&lt;/p&gt;
+&lt;p&gt;Our civilization is already operating at a global scale, and we are already close to some fundamental physical limits to what we can do on this planet.  This naturally makes people wonder about alternatives, makes people look to the stars, as they represent the only possibilities for a future that would support the level of economic growth and development for the next several hundred years that could resemble the last several hundred years.&lt;/p&gt;
+&lt;p&gt;Unfortunately, physics tends to stretch those dreams thin.&lt;/p&gt;
+&lt;h2&gt;Dyson's original paper&lt;/h2&gt;
+&lt;p&gt;If you haven't already, it's worth taking a moment to read
+&lt;a href="https://fermatslibrary.com/s/search-for-artificial-stellar-sources-of-infrared-radiation"&gt;
+Dyson's original letter to Science&lt;/a&gt; that laid out the idea of a Dyson sphere,&lt;sup&gt;&lt;a href="#dyson-paper"&gt;10&lt;/a&gt; it's only a single page.  The point of the original paper was to make the case that in SETI style searches for intelligent life elsewhere in the galaxy, we should consider advanced civilizations that may have built a structure around their star, and in so doing, modify the spectral emissions of that star.&lt;/p&gt;
+&lt;aside&gt;&lt;sup id="dyson-paper"&gt;10&lt;/sup&gt;
+    Dyson, Freeman J. "Search for artificial stellar sources of infrared radiation." Science 131.3414 (1960): 1667-1668.
+    &lt;a href="https://fermatslibrary.com/s/search-for-artificial-stellar-sources-of-infrared-radiation"&gt;
+        [fermat's library]&lt;/a&gt;
+&lt;/aside&gt;
+&lt;p&gt;To do this, he tries to lay out the feasibility of such a civilizational program.  He points out that in our solar system, we &lt;em&gt;reasonably&lt;/em&gt; have access to the mass of Jupiter $ 2\times 10^{30}\,\textrm{g} $ and the total solar luminosity of $4\times 10^{33} \,\textrm{erg/s} = 4\times 10^{26} \,\textrm{W}$ as above.&lt;/p&gt;
+&lt;p&gt;The first thing Dyson points out is that while this kind of scale feels infeasible for us to achieve, with exponential growth being what it is, we might expect our civilization (if it had unencumbered growth) to reach that level in a mere 3000 years at 1% growth.  In the figure above, we see we reach total solar output in only 1350 years with the 2.3% rate of growth.&lt;/p&gt;
+&lt;p&gt;Dyson does some back of the envelope calculations to show that if we built a structure out of Jupiter (or a Jupiter equivalent of mass) at about 2 AU could be to 2 to 3 meters thick (and so one could conceivably live in it).  But of course to actually assemble such a structure would require dissembling Jupiter itself!&lt;/p&gt;
+&lt;p&gt;Dyson actually works this out for us, and says that to pull about Jupiter would require about $ 10^{44} \,\textrm{erg}$ and then makes this seems reasonable by pointing out that this would only take 800 years of total solar output.  Let's examine these numbers a little closer.&lt;/p&gt;
+&lt;p&gt;First as a rough back of the envelope estimate of the binding energy of a planet, we can just do some dimensional analysis and say that it should be on the order of:&lt;/p&gt;
+&lt;p&gt;$$
+\frac{G M^2}{R} = G \frac{(2\times 10^{30} \,\textrm{g})^2}{70\,000 \,\textrm{km}} \sim 4\times 10^{43}\,\textrm{erg} = 4\times 10^{36}\,\textrm{J}
+$$&lt;/p&gt;
+&lt;p&gt;Where $M$ is the mass of the planet, $R$ is its radius and $G$ is the gravitational constant.  So far so good.  To pull apart a planet the size of Jupiter takes a lot of energy.  If we had at our disposal our entire solar output, it would take nearly a millennium to do it!&lt;/p&gt;
+&lt;p&gt;If we had a Dyson sphere already, something that captured a reasonable fraction of our total solar output, if we then dedicated all of that power to the singular task of ripping Jupiter apart, it would still take ~300 years to do so.&lt;/p&gt;
+&lt;p&gt;What if we didn't have the Dyson sphere yet? What if we only had access to the total solar flux on our own planet.  So, let's merely assume we have covered our entire planet in 100% efficient solar panels and similarly put the entire production towards dissembling Jupiter, how long would that take?&lt;/p&gt;
+&lt;p&gt;$$
+\frac{4 \times 10^{36} \, \textrm{J}}{170\,\textrm{PW}} = 10^{12} \,\textrm{years}
+$$&lt;/p&gt;
+&lt;p&gt;Our roughly 50x the total age of the universe!&lt;/p&gt;
+&lt;p&gt;However, you might object that we could use the power from the budding Dyson sphere (or swarm) to power further construction of the swarm.
+Since $dm/dt \propto dm $ for whatever mass fraction you've already eaten, the final answer will be only a constant factor larger than the original estimate of ~300 years.  This is true, but this is one of those cases where its illustrative to work out what that "constant factor" is. For Dyson's parameters, that constant factor is&lt;/p&gt;
+&lt;p&gt;$$
+\log \frac{(4\times 10^{36} \, \textrm{J}) (1369 \,\textrm{W/m}^2) (70\,000\, \textrm{km}) }{(20 \,\textrm{TW}) (2 \,\textrm{m}) (3 \,\textrm{g/cm}^3) G (2\times10^{30} \,\textrm{g})}  \sim \log (3\times10^{13} ) \sim 30
+$$&lt;/p&gt;
+&lt;p&gt;So it would &lt;em&gt;only&lt;/em&gt; take ~$ 30 \times 300 \sim 10\,000$ years.&lt;/p&gt;
+&lt;p&gt;Given that we only unreasonably have at most another 275 years of sustained economic growth, I don't see how building a Dyson sphere is possible, or if it is it would take many many millennia.&lt;/p&gt;
+&lt;h2&gt;Mercury&lt;/h2&gt;
+&lt;p&gt;Some modern proposals for a Dyson swarm seem to recognize that dissassembling Jupiter is perhaps a bit much and so instead propose more &lt;em&gt;modest&lt;/em&gt; proposals, such as using 10% of the total mass of Mercury.  Let's imagine we try to do this in the next 25 years, as some people seem to believe is possible.&lt;/p&gt;
+&lt;p&gt;First, let's do a rough order of magnitude calculation.  The gravitational energy will be roughly:&lt;/p&gt;
+&lt;p&gt;$$
+\frac{GMm}{R} = \frac{G \cdot 0.1 \cdot (3 \times 10^{23}\,\textrm{kg})^2}{2400 \,\textrm{km}} = 3\times 10^{29} \, \textrm{J}
+$$&lt;/p&gt;
+&lt;p&gt;Which if we try to expend this much energy in the next 25 years, this equates to a power of:&lt;/p&gt;
+&lt;p&gt;$$
+\frac{3\times 10^{29}\,\textrm{J}}{25 \,\textrm{years}} = 3\times 10^{20}\,\textrm{W} = 300\,000\,000 \,\textrm{TW}
+$$&lt;/p&gt;
+&lt;p&gt;This exceeds the total solar flux on the earth by a factor of 2000x !&lt;/p&gt;
+&lt;p&gt;There is absolutely no way this can happen.  We would need a Dyson swarm to build one.&lt;/p&gt;
+&lt;p&gt;The Earth's finite limits are within reach.  As Tom points out in the article, currently the waste heat from our own energy production is only 10x smaller than the $ \sim 1 \, \text{W/m}^2$ forcing we worry about from Global warming.  Meaning, at 2.3% growth, within the next century, the &lt;em&gt;waste heat&lt;/em&gt; from our own power production will match and thereafter dominate over the current effects of global warming with regards to warming the planet.  We don't have much headroom left.&lt;/p&gt;
+&lt;h2&gt;Conclusions&lt;/h2&gt;
+&lt;p&gt;Overall, I haven't seen a lot of discussion in the wild about the energy requirements for things like Dyson spheres.  I was pleasantly surprised to see that Dyson himself at least thought about these implications.  For him, it was largely about the search for other intelligent life in the universe.&lt;/p&gt;
+&lt;p&gt;I worry that with a lot of exponential curves, its very easy to continue the dotted line, but all exponentials have to come to an end. They must.  There are always finite limits and even if those limits seem to be far away, with any exponential they come racing up exponentially fast.&lt;/p&gt;
+&lt;p&gt;One thing I'd like to try to do personally is be more aware of the limits.  Even in the context of things like AI scaling, I think its very easy for us to extrapolate a curve but not consider the costs associated with that extrapolation, and whether those costs are in keeping with physical constraints.&lt;/p&gt;
+&lt;p&gt;Humanity is already operating at a global scale, we honestly do not have a lot of additional headroom left to grow.  Machine learning has been growing exponentially, but may not have very much farther it can go, given data or compute constraints.  Seems like the time is now to think more judiciously about how to make the best of what growth we have left.&lt;/p&gt;
+&lt;p&gt;If you want to learn more about our Finite planet and some of the challenges we'll face with energy, I highly recommend &lt;a href="https://open.umn.edu/opentextbooks/textbooks/980"&gt;Tom Murphy's Book,&lt;/a&gt;&lt;sup&gt;&lt;a href="#murphybook"&gt;11&lt;/a&gt;&lt;/sup&gt; which is freely accessible online.&lt;/p&gt;
+&lt;aside&gt;&lt;sup id="murphybook"&gt;11&lt;/sup&gt;
+    Murphy Jr, Thomas W. Energy and human ambitions on a finite planet. 2021. &lt;a href="https://open.umn.edu/opentextbooks/textbooks/980"&gt;[website]&lt;/a&gt;
+&lt;/aside&gt;
+&lt;p&gt;The bottom line is that the next 300 years are going to have to look different than the previous 300 years.  Maybe they look different because we escape the bounds of this planet and start living some cyberpunk future, or maybe we'll face the consequences of hitting the finite bounds of this planet.  In either case, the present is quite special and very near a turning point.&lt;/p&gt;
+</content:encoded><guid isPermaLink="true">https://blog.alexalemi.com/dyson-spheres.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Sun, 21 Sep 2025 00:00:00 -0400</pubDate></item></channel></rss>

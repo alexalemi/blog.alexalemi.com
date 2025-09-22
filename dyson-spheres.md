@@ -16,18 +16,25 @@ I think these people are crazy and wrong and I wanted to try to explain (for mys
 
 ## Some Background Energy Numbers
 
-Fundamentally, I don't think we have the energy budget to build one, and I worry that most people vastly underestimate the amount of energy required to build one.
+Fundamentally, I don't think we have the energy budget to build one, and I worry that most people vastly underestimate the amount of energy required.
 
-Let's establish some baseline numbers.  As a human, you're burning energy at $ \sim 100 \, \textrm{W} $  continuously (you're like a light bulb ($ 2000 \,\textrm{kcal/day}$) )
+Let's establish some baseline numbers.  As a human, you're burning energy at $ \sim 100 \, \textrm{W} $  continuously.<sup><a href="#lightbulb">xxa-lightbulb</a></sup> <sup><a href="#percapita">xxa-percapita</a></sup>
 
-All of human civilization currently consumes energy at a rate of \~ $21 \,\textrm{TW} = 2 \times 10^{13} \,\textrm{W}$<sup><a href="#civenergy">xxa-civenergy</a></sup>
+<aside><sup id="lightbulb">xxa-lightbulb</sup>
+    You're like a light bulb ($ 2000 \,\textrm{kcal/day}$)
+</aside>
+
+All of human civilization currently consumes energy at a rate of \~ $21 \,\textrm{TW} = 2 \times 10^{13} \,\textrm{W}$.<sup><a href="#civenergy">xxa-civenergy</a></sup>
 
 <aside> <sup id="civenergy">xxa-civenergy</sup>
     $186,000 \text{ TWh/year} = 21 \text{ TW}$. From
     Hannah Ritchie, Pablo Rosado, and Max Roser (2020) - “Energy Production and Consumption” Published online at OurWorldinData.org. Retrieved from: '<a href="https://ourworldindata.org/energy-production-consumption">https://ourworldindata.org/energy-production-consumption</a>' [Online Resource]
 </aside>
+<aside> <sup id="percapita">xxa-percapita</sup>
+    This is $\sim 2.6 \text{ kW}$ per person, or $\sim 26 \times$ how much energy you're radiating in heat.
+</aside>
 
-The sun has a total luminosity of \~ $400 \, \textrm{YW} = 4 \times 10^{26} \, \textrm{W}$<sup><a href="#sunluminosity">xxa-sunluminosity</a></sup>
+The sun has a total luminosity of \~ $400 \, \textrm{YW} = 4 \times 10^{26} \, \textrm{W}$.<sup><a href="#sunluminosity">xxa-sunluminosity</a></sup>
 
 <aside><sup id="sunluminosity">xxa-sunluminosity</sup>
     From <a href="https://en.wikipedia.org/w/index.php?title=Solar_luminosity&oldid=1281026335">wikipedia: Solar luminosity</a>.
@@ -102,7 +109,15 @@ Unfortunately, physics tends to stretch those dreams thin.
 
 ## Dyson's original paper
 
-If you haven't already, it's worth taking a moment to read Dyson's original letter to Science that laid out the idea of a Dyson sphere: \[[Dyson's original paper](https://fermatslibrary.com/s/search-for-artificial-stellar-sources-of-infrared-radiation)\], it's only a single page.  The point of the original paper was to make the case that in SETI style searches for intelligent life elsewhere in the galaxy, we should consider advanced civilizations that may have built a structure around their star, and in so doing, modify the spectral emissions of that star.
+If you haven't already, it's worth taking a moment to read
+<a href="https://fermatslibrary.com/s/search-for-artificial-stellar-sources-of-infrared-radiation">
+Dyson's original letter to Science</a> that laid out the idea of a Dyson sphere,<sup><a href="#dyson-paper">xxa-dyson-paper</a> it's only a single page.  The point of the original paper was to make the case that in SETI style searches for intelligent life elsewhere in the galaxy, we should consider advanced civilizations that may have built a structure around their star, and in so doing, modify the spectral emissions of that star.
+
+<aside><sup id="dyson-paper">xxa-dyson-paper</sup>
+    Dyson, Freeman J. "Search for artificial stellar sources of infrared radiation." Science 131.3414 (1960): 1667-1668.
+    <a href="https://fermatslibrary.com/s/search-for-artificial-stellar-sources-of-infrared-radiation">
+        [fermat's library]</a>
+</aside>
 
 To do this, he tries to lay out the feasibility of such a civilizational program.  He points out that in our solar system, we *reasonably* have access to the mass of Jupiter $ 2\times 10^{30}\,\textrm{g} $ and the total solar luminosity of $4\times 10^{33} \,\textrm{erg/s} = 4\times 10^{26} \,\textrm{W}$ as above.
 
@@ -130,9 +145,8 @@ $$
 
 Our roughly 50x the total age of the universe!
 
-As @[Adam Jermyn](mention://4f075286-1675-4d94-ad0b-41dac37deece/user/365bf37c-32b5-4dfb-bfdc-cc8d2bfe3f74)
 However, you might object that we could use the power from the budding Dyson sphere (or swarm) to power further construction of the swarm.
-Since $ dm/dt \propto dm $ for whatever mass fraction you've already eaten, the final answer will be only a constant factor larger than the original estimate of \~300 years.  This is true, but this is one of those cases where its illustrative to work out what that "constant factor" is. For Dyson's parameters, that constant factor is
+Since $dm/dt \propto dm $ for whatever mass fraction you've already eaten, the final answer will be only a constant factor larger than the original estimate of \~300 years.  This is true, but this is one of those cases where its illustrative to work out what that "constant factor" is. For Dyson's parameters, that constant factor is
 
 $$
 \log \frac{(4\times 10^{36} \, \textrm{J}) (1369 \,\textrm{W/m}^2) (70\,000\, \textrm{km}) }{(20 \,\textrm{TW}) (2 \,\textrm{m}) (3 \,\textrm{g/cm}^3) G (2\times10^{30} \,\textrm{g})}  \sim \log (3\times10^{13} ) \sim 30

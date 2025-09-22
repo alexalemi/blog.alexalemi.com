@@ -4,8 +4,9 @@
  * promise of deep learning
  * projective geometric algebra
  * new kl estimators
- * dyson spheres
  * bins and beans
+ * dyson spheres
+ * turing machine
 
 Some post ideas.
 
@@ -58,19 +59,19 @@ nonextensivity perhaps.
   The world has changed.  We have gotten orders of magnitude better at searching over
   function space.  For anything phrased as a variational problem, we can suddenly do much
   better at it than before.  Some examples (NeRF, Lagrangian Mechanics, AlphaZero).
-  
+
   Want to think some more about mean field variational principle.
-  
+
   Also broadly thought before we can use this to probe theories better, fit the
   residual, does that actually work, can we figure that out?
-  
+
  * Why KL?  Bayes Rule isn't as trivial as it seems, KL is uniquely the only
    one that decomposes, and if we are going to have Bayes rule we need KL.
    Should work that out.
 
  * The Hunt for Functionals.  I really wanna find the true learning functional,
    could work by analogy with the one in physics.
-  
+
  * GPT-3 and thoughts on big models.  Presumably the big models aren't actually
    magical and are instead utilizin some kind of regularization property to
    make them awesome, could explore this in an infinite tractable dataset.
@@ -125,7 +126,7 @@ nonextensivity perhaps.
  * Summary of Rational Ignorance
  * Why blogging works
  * Dimensional Analysis done better.
- * Quantum decoherence and Cats. 
+ * Quantum decoherence and Cats.
     Look at the problem in the Quantum Problem Solver
  * Whats the deal with BIC / AIC / WAIC / QIC ?
  * How random are sports?
@@ -147,10 +148,10 @@ nonextensivity perhaps.
  * Say the loud part out loud, we should model the things we believe exist.
  * Thinking about climate change, temperature variations by latitude
  * Dimensional analysis through the lens of black body radiation and COBE CMB.
- * KL from M&Ms 
- * Basic Statistics from M&Ms 
- * Bayes from M&Ms 
- * Biflow VAEs, conditional bijector stuff 
+ * KL from M&Ms
+ * Basic Statistics from M&Ms
+ * Bayes from M&Ms
+ * Biflow VAEs, conditional bijector stuff
  * exponential families as solution to a problem.
  * really work out in detail the philosophy of VAE or VIB.
  * VIB++

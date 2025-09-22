@@ -1,164 +1,163 @@
 [
-    {
-      "title": "Dyson Spheres",
-      "src": "dyson-spheres.md",
-      "date": "2025-09-21",
-      "tags": ["physics", "fun"],
-      "id": "dyson-spheres",
-      "description": "The absurdity of dyson spheres on any timescale we'll experience.",
-			"draft": true,
-      "featured": true
-    },
-    {
-      "title": "Plaque",
-      "src": "plaque.md",
-      "date": "2025-07-31",
-      "tags": ["python"],
-      "id": "plaque",
-      "description": "A dirt-simple bring-your-own-editor 'reactive' python notebook package.",
-      "featured": true
-    },
-    {
-      "title": "Texpad",
-      "src": "texpad.md",
-      "date": "2025-07-31",
-      "tags": ["python", "latex"],
-      "id": "texpad",
-      "description": "A simple tool for live editing copyable LaTeX pngs.",
-      "featured": false
-    },
-    {
-      "title": "Down to Earth",
-      "src": "down-to-earth.md",
-      "date": "2025-06-28",
-      "tags": ["fun", "education"],
-      "id": "down-to-earth",
-      "description": "How long would it take a feather to fall from the moon to the earth?",
-      "featured": true,
-			"draft": true
-    },
-    {
-      "title": "Sliderules Rule",
-      "src": "sliderules.md",
-      "date": "2025-06-20",
-      "tags": ["fun", "sliderules"],
-      "id": "sliderules",
-      "description": "I made a zine about them and a digital sliderule you can use.",
-      "featured": true
-    },
-    {
-      "title": "A Quarter for your Thoughts",
-      "src": "quarters.md",
-      "date": "2024-11-25",
-      "tags": ["fun", "arithmetic"],
-      "id": "quarters",
-      "description": "Get the precision of one sig fig essentially for free.",
-      "featured": true
-    },
-    {
-      "title": "A Degree of Certainty",
-      "src": "a-degree-of-certainty.md",
-      "date": "2024-08-14",
-      "tags": ["statistics", "probability", "fun"],
-      "id": "a-degree-of-certainty",
-      "description": "Let's measure probability in degrees.",
-      "featured": true
-    },
-    {
-      "title": "The Size of the Earth",
-      "src": "size-of-earth.md",
-      "date": "2024-07-28",
-      "tags": ["amateur science"],
-      "id": "size-of-earth",
-      "description": "An independent measurement of the size of the earth.",
-      "featured": true,
-			"draft": true
-    },
-    {
-      "title": "KL is All You Need",
-      "src": "kl-is-all-you-need.md",
-      "date": "2024-01-08",
-      "tags": ["kl divergence", "machine learning", "information theory"],
-      "id": "kl-is-all-you-need",
-      "description": "It's all KL under the hood.",
-      "featured": true
-    },
-    {
-      "title": "The Method of Imaginary Results",
-      "src": "imaginary-results.md",
-      "date": "2023-11-30",
-      "tags": ["bayesian inference"],
-      "id": "imaginary-results",
-      "description": "Don't think about your prior, think about a hypothetical posterior.",
-      "featured": true
-    },
-    {
-      "title": "Ventilation",
-      "src": "ventilation.md",
-      "date": "2023-11-29",
-      "tags": ["fun"],
-      "id": "ventilation",
-      "description": "A simple model of CO2 concentration in our home.",
-      "featured": false
-    },
-    {
-      "title": "Non-equilibrium Thermodynamics Results Seemingly from Nothing",
-      "src": "non-equilibrium.md",
-      "date": "2022-09-16",
-      "tags": ["physics"],
-      "id": "non-equilibrium",
-      "description": "Deriving some classic results in non-equilibrium thermodynamics from seemingly nothing.",
-      "featured": true
-    },
-    {
-      "title": "A Path to the Variational Diffusion Loss",
-      "src": "diffusion.md",
-      "date": "2022-09-15",
-      "tags": ["machine learning"],
-      "id": "diffusion",
-      "description": "Deriving the (Variational) Diffusion and VAE losses from the non-negativity of KL.",
-      "featured": true
-    },
-    {
-      "title": "Efficient Beliefs",
-      "src": "efficient-beliefs.md",
-      "date": "2022-06-22",
-      "tags": ["machine learning", "bayesian inference"],
-      "id": "efficient-beliefs",
-      "description": "I like to think about Bayesian inference as holding efficient beliefs, phrasing the task of inference as minimizing an objective defined in the space of all possible beliefs.",
-      "draft": true
-    },
-    {
-      "title": "Knots",
-      "src": "knots.md",
-      "date": "2022-06-13",
-      "tags": ["fun"],
-      "id": "knots",
-      "description": "A short list of useful knots to know."
-    },
-    {
-      "title": "A Simple Demonstration of Benford's Law",
-      "src": "benford.md",
-      "date": "2022-05-03",
-      "tags": ["math"],
-      "id": "benford",
-      "description": "Benford's law is a natural consequence of scale invariance, this is relatively easy to see in the face of a circular sliderule."
-    },
-    {
-      "title": "Blogging",
-      "src": "blogging.md",
-      "date": "2021-11-15",
-      "tags": ["general"],
-      "id": "blogging",
-      "description": "I miss blogging and reading other researchers blogs."
-    },
-    {
-      "title": "Why KL?",
-      "src": "kl.md",
-      "date": "2020-08-07",
-      "tags": ["machine learning", "information theory"],
-      "id": "why-kl",
-      "description": "Why is the KL divergence so special?",
-      "featured": true
-    }
+  {
+    "title": "Dyson Spheres",
+    "src": "dyson-spheres.md",
+    "date": "2025-09-21",
+    "tags": ["physics", "fun"],
+    "id": "dyson-spheres",
+    "description": "The absurdity of dyson spheres on any timescale we'll experience.",
+    "featured": true
+  },
+  {
+    "title": "Plaque",
+    "src": "plaque.md",
+    "date": "2025-07-31",
+    "tags": ["python"],
+    "id": "plaque",
+    "description": "A dirt-simple bring-your-own-editor 'reactive' python notebook package.",
+    "featured": true
+  },
+  {
+    "title": "Texpad",
+    "src": "texpad.md",
+    "date": "2025-07-31",
+    "tags": ["python", "latex"],
+    "id": "texpad",
+    "description": "A simple tool for live editing copyable LaTeX pngs.",
+    "featured": false
+  },
+  {
+    "title": "Down to Earth",
+    "src": "down-to-earth.md",
+    "date": "2025-06-28",
+    "tags": ["fun", "education"],
+    "id": "down-to-earth",
+    "description": "How long would it take a feather to fall from the moon to the earth?",
+    "featured": true,
+    "draft": true
+  },
+  {
+    "title": "Sliderules Rule",
+    "src": "sliderules.md",
+    "date": "2025-06-20",
+    "tags": ["fun", "sliderules"],
+    "id": "sliderules",
+    "description": "I made a zine about them and a digital sliderule you can use.",
+    "featured": true
+  },
+  {
+    "title": "A Quarter for your Thoughts",
+    "src": "quarters.md",
+    "date": "2024-11-25",
+    "tags": ["fun", "arithmetic"],
+    "id": "quarters",
+    "description": "Get the precision of one sig fig essentially for free.",
+    "featured": true
+  },
+  {
+    "title": "A Degree of Certainty",
+    "src": "a-degree-of-certainty.md",
+    "date": "2024-08-14",
+    "tags": ["statistics", "probability", "fun"],
+    "id": "a-degree-of-certainty",
+    "description": "Let's measure probability in degrees.",
+    "featured": true
+  },
+  {
+    "title": "The Size of the Earth",
+    "src": "size-of-earth.md",
+    "date": "2024-07-28",
+    "tags": ["amateur science"],
+    "id": "size-of-earth",
+    "description": "An independent measurement of the size of the earth.",
+    "featured": true,
+    "draft": true
+  },
+  {
+    "title": "KL is All You Need",
+    "src": "kl-is-all-you-need.md",
+    "date": "2024-01-08",
+    "tags": ["kl divergence", "machine learning", "information theory"],
+    "id": "kl-is-all-you-need",
+    "description": "It's all KL under the hood.",
+    "featured": true
+  },
+  {
+    "title": "The Method of Imaginary Results",
+    "src": "imaginary-results.md",
+    "date": "2023-11-30",
+    "tags": ["bayesian inference"],
+    "id": "imaginary-results",
+    "description": "Don't think about your prior, think about a hypothetical posterior.",
+    "featured": true
+  },
+  {
+    "title": "Ventilation",
+    "src": "ventilation.md",
+    "date": "2023-11-29",
+    "tags": ["fun"],
+    "id": "ventilation",
+    "description": "A simple model of CO2 concentration in our home.",
+    "featured": false
+  },
+  {
+    "title": "Non-equilibrium Thermodynamics Results Seemingly from Nothing",
+    "src": "non-equilibrium.md",
+    "date": "2022-09-16",
+    "tags": ["physics"],
+    "id": "non-equilibrium",
+    "description": "Deriving some classic results in non-equilibrium thermodynamics from seemingly nothing.",
+    "featured": true
+  },
+  {
+    "title": "A Path to the Variational Diffusion Loss",
+    "src": "diffusion.md",
+    "date": "2022-09-15",
+    "tags": ["machine learning"],
+    "id": "diffusion",
+    "description": "Deriving the (Variational) Diffusion and VAE losses from the non-negativity of KL.",
+    "featured": true
+  },
+  {
+    "title": "Efficient Beliefs",
+    "src": "efficient-beliefs.md",
+    "date": "2022-06-22",
+    "tags": ["machine learning", "bayesian inference"],
+    "id": "efficient-beliefs",
+    "description": "I like to think about Bayesian inference as holding efficient beliefs, phrasing the task of inference as minimizing an objective defined in the space of all possible beliefs.",
+    "draft": true
+  },
+  {
+    "title": "Knots",
+    "src": "knots.md",
+    "date": "2022-06-13",
+    "tags": ["fun"],
+    "id": "knots",
+    "description": "A short list of useful knots to know."
+  },
+  {
+    "title": "A Simple Demonstration of Benford's Law",
+    "src": "benford.md",
+    "date": "2022-05-03",
+    "tags": ["math"],
+    "id": "benford",
+    "description": "Benford's law is a natural consequence of scale invariance, this is relatively easy to see in the face of a circular sliderule."
+  },
+  {
+    "title": "Blogging",
+    "src": "blogging.md",
+    "date": "2021-11-15",
+    "tags": ["general"],
+    "id": "blogging",
+    "description": "I miss blogging and reading other researchers blogs."
+  },
+  {
+    "title": "Why KL?",
+    "src": "kl.md",
+    "date": "2020-08-07",
+    "tags": ["machine learning", "information theory"],
+    "id": "why-kl",
+    "description": "Why is the KL divergence so special?",
+    "featured": true
+  }
 ]
