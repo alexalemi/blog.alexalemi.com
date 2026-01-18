@@ -1,10 +1,11 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html><html lang="en">
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>blog.alexalemi.com A Degree of Certainty</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-F5SW43T5NT"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5SW43T5NT"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -40,7 +41,7 @@
         })();
     </script>
 
-    <script defer="" src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script>
     MathJax = {
       tex: {
@@ -48,83 +49,1267 @@
         processEscapes: true
       }};
     </script>
-    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <!-- Inline CSS -->
     <link rel="stylesheet" type="text/css" href="assets/style.css">
-<style type="text/css">
-                            .mjpage .MJX-monospace {
-                            font-family: monospace
-                            }
+<style id="MJX-CHTML-styles">
+mjx-container[overflow="scroll"][display] {
+  overflow: auto clip;
+  min-width: initial !important;
+}
 
-                            .mjpage .MJX-sans-serif {
-                            font-family: sans-serif
-                            }
+mjx-container[overflow="truncate"][display] {
+  overflow: hidden clip;
+  min-width: initial !important;
+}
 
-                            .mjpage {
-                            display: inline;
-                            font-style: normal;
-                            font-weight: normal;
-                            line-height: normal;
-                            font-size: 100%;
-                            font-size-adjust: none;
-                            text-indent: 0;
-                            text-align: left;
-                            text-transform: none;
-                            letter-spacing: normal;
-                            word-spacing: normal;
-                            word-wrap: normal;
-                            white-space: nowrap;
-                            float: none;
-                            direction: ltr;
-                            max-width: none;
-                            max-height: none;
-                            min-width: 0;
-                            min-height: 0;
-                            border: 0;
-                            padding: 0;
-                            margin: 0
-                            }
+mjx-container[display] {
+  display: block;
+  text-align: center;
+  justify-content: center;
+  margin: .7em 0;
+  padding: .3em 2px;
+}
 
-                            .mjpage * {
-                            transition: none;
-                            -webkit-transition: none;
-                            -moz-transition: none;
-                            -ms-transition: none;
-                            -o-transition: none
-                            }
+mjx-container[display][width="full"] {
+  display: flex;
+}
 
-                            .mjx-svg-href {
-                            fill: blue;
-                            stroke: blue
-                            }
+mjx-container[justify="left"] {
+  text-align: left;
+  justify-content: left;
+}
 
-                            .MathJax_SVG_LineBox {
-                            display: table!important
-                            }
+mjx-container[justify="right"] {
+  text-align: right;
+  justify-content: right;
+}
 
-                            .MathJax_SVG_LineBox span {
-                            display: table-cell!important;
-                            width: 10000em!important;
-                            min-width: 0;
-                            max-width: none;
-                            padding: 0;
-                            border: 0;
-                            margin: 0
-                            }
+mjx-container[jax="CHTML"] {
+  white-space: nowrap;
+}
 
-                            .mjpage__block {
-                            text-align: center;
-                            margin: 1em 0em;
-                            position: relative;
-                            display: block!important;
-                            text-indent: 0;
-                            max-width: none;
-                            max-height: none;
-                            min-width: 0;
-                            min-height: 0;
-                            width: 100%
-                            }</style></head>
+mjx-mo > mjx-c, mjx-mi > mjx-c, mjx-mn > mjx-c, mjx-ms > mjx-c, mjx-mtext > mjx-c {
+  clip-path: padding-box polygon(-1em -2px, calc(100% + 1em) -2px, calc(100% + 1em) calc(100% + 2px), -1em calc(100% + 2px));
+}
+
+mjx-stretchy-h {
+  clip-path: padding-box polygon(0 -2px, 100% -2px, 100% calc(100% + 2px), 0 calc(100% + 2px));
+  display: inline-block;
+}
+
+mjx-stretchy-v {
+  clip-path: padding-box polygon(-2px 0, calc(100% + 2px) 0, calc(100% + 2px) 100%, -2px 100%);
+  display: inline-block;
+  text-align: center;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > mjx-cell, mjx-row > mjx-base, mjx-row > mjx-under, mjx-row > mjx-over, mjx-row > mjx-den {
+  display: table-cell;
+}
+
+mjx-container [inline-breaks] {
+  display: inline;
+}
+
+mjx-container .mjx-selected {
+  outline: 2px solid black;
+}
+
+@media (prefers-color-scheme: dark) {
+  mjx-container .mjx-selected {
+    outline: 2px solid #C8C8C8;
+  }
+}
+
+mjx-mtext {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+mjx-math {
+  display: inline-block;
+  text-align: left;
+  line-height: 0;
+  text-indent: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  font-size-adjust: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  word-spacing: normal;
+  direction: ltr;
+  padding: 1px 0;
+}
+
+mjx-container[jax="CHTML"][display="true"] mjx-math {
+  padding: 0;
+}
+
+mjx-math[breakable] {
+  display: inline;
+}
+
+mjx-container[jax="CHTML"] mjx-break {
+  white-space: normal;
+  line-height: 0;
+  clip-path: rect(0 0 0 0);
+  font-family: MJX-BRK !important;
+}
+
+mjx-break[size="0"] {
+  letter-spacing: -0.999em;
+}
+
+mjx-break[size="1"] {
+  letter-spacing: -0.889em;
+}
+
+mjx-break[size="2"] {
+  letter-spacing: -0.833em;
+}
+
+mjx-break[size="3"] {
+  letter-spacing: -0.778em;
+}
+
+mjx-break[size="4"] {
+  letter-spacing: -0.722em;
+}
+
+mjx-break[size="5"] {
+  letter-spacing: -0.667em;
+}
+
+mjx-mi {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-c {
+  display: inline-block;
+  width: 0;
+  text-align: right;
+}
+
+mjx-utext {
+  display: inline-block;
+  padding: .75em 0 .2em 0;
+}
+
+mjx-mo {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-stretchy-h > mjx-beg, mjx-stretchy-h > mjx-ext, mjx-stretchy-h > mjx-end, mjx-stretchy-h > mjx-mid {
+  display: inline-block;
+  width: 0;
+  text-align: right;
+}
+
+mjx-stretchy-h > mjx-ext {
+  clip-path: padding-box polygon(0 -1em, 100% -1em, 100% calc(100% + 1em), 0 calc(100% + 1em));
+  width: 100%;
+  border: 0px solid transparent;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+mjx-stretchy-v > mjx-beg, mjx-stretchy-v > mjx-ext, mjx-stretchy-v > mjx-end, mjx-stretchy-v > mjx-mid {
+  display: block;
+  height: 0;
+  margin: 0 auto;
+}
+
+mjx-stretchy-v > mjx-ext > mjx-spacer {
+  display: block;
+}
+
+mjx-stretchy-v > mjx-ext {
+  clip-path: padding-box polygon(-1em 0, calc(100% + 1em) 0, calc(100% + 1em) 100%, -1em 100%);
+  height: 100%;
+  border: 0.1px solid transparent;
+  box-sizing: border-box;
+  white-space: pre;
+}
+
+mjx-mark {
+  display: inline-block;
+  height: 0;
+}
+
+mjx-msqrt {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-root {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+mjx-surd {
+  display: inline-block;
+  vertical-align: top;
+}
+
+mjx-sqrt {
+  display: inline-block;
+  padding-top: .075em;
+}
+
+mjx-sqrt > mjx-box {
+  border-top: .075em solid;
+  padding-left: .03em;
+  margin-left: -.03em;
+}
+
+mjx-sqrt.mjx-tall > mjx-box {
+  padding-left: .3em;
+  margin-left: -.3em;
+}
+
+mjx-mspace {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-msup {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-msubsup {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-script {
+  display: inline-block;
+  padding-right: .05em;
+  padding-left: .033em;
+}
+
+mjx-script > mjx-spacer {
+  display: block;
+}
+
+mjx-mn {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mfrac {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-frac {
+  display: inline-block;
+  vertical-align: 0.17em;
+  padding: 0 .22em;
+}
+
+mjx-frac[type="d"] {
+  vertical-align: .04em;
+}
+
+mjx-frac[delims] {
+  padding: 0 .1em;
+}
+
+mjx-frac[atop] {
+  padding: 0 .12em;
+}
+
+mjx-frac[atop][delims] {
+  padding: 0;
+}
+
+mjx-dtable {
+  display: inline-table;
+  width: 100%;
+}
+
+mjx-dtable > mjx-line, mjx-dtable > mjx-row {
+  font-size: 2000%;
+}
+
+mjx-dbox {
+  display: block;
+  font-size: 5%;
+}
+
+mjx-num {
+  display: block;
+  text-align: center;
+}
+
+mjx-den {
+  display: block;
+  text-align: center;
+}
+
+mjx-mfrac[bevelled] > mjx-num {
+  display: inline-block;
+}
+
+mjx-mfrac[bevelled] > mjx-den {
+  display: inline-block;
+}
+
+mjx-den[align="right"], mjx-num[align="right"] {
+  text-align: right;
+}
+
+mjx-den[align="left"], mjx-num[align="left"] {
+  text-align: left;
+}
+
+mjx-nstrut {
+  display: inline-block;
+  height: .054em;
+  width: 0;
+  vertical-align: -.054em;
+}
+
+mjx-nstrut[type="d"] {
+  height: .217em;
+  vertical-align: -.217em;
+}
+
+mjx-dstrut {
+  display: inline-block;
+  height: .505em;
+  width: 0;
+}
+
+mjx-dstrut[type="d"] {
+  height: .726em;
+}
+
+mjx-line {
+  display: block;
+  box-sizing: border-box;
+  min-height: 1px;
+  height: .06em;
+  border-top: .075em solid;
+  margin: .06em -.1em;
+  overflow: hidden;
+}
+
+mjx-line[type="d"] {
+  margin: .18em -.1em;
+}
+
+mjx-mrow {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-linestack, mjx-mrow[break-top] {
+  display: inline-table;
+  width: 100%;
+}
+
+mjx-linestack[break-align="bottom"], mjx-mrow[break-top][break-align="bottom"] {
+  display: inline-block;
+}
+
+mjx-linestack[break-align="middle"], mjx-mrow[break-top][break-align="middle"] {
+  vertical-align: middle;
+}
+
+mjx-linestack[break-align="center"], mjx-mrow[break-top][break-align="center"] {
+  vertical-align: middle;
+}
+
+mjx-linestack[breakable] {
+  display: inline;
+}
+
+mjx-linestack[breakable] > mjx-linebox {
+  display: inline;
+}
+
+mjx-linestack[breakable] > mjx-linebox::before {
+  white-space: pre;
+  content: "\A";
+}
+
+mjx-linestack[breakable] > mjx-linebox::after {
+  white-space: normal;
+  content: " ";
+  letter-spacing: -.999em;
+  font-family: MJX-BRK;
+}
+
+mjx-linestack[breakable] > mjx-linebox:first-of-type::before {
+  display: none;
+}
+
+mjx-linestack[breakable] > mjx-linebox:last-of-type::after {
+  display: none;
+}
+
+mjx-linebox {
+  display: block;
+}
+
+mjx-linebox[align="left"] {
+  text-align: left;
+}
+
+mjx-linebox[align="center"] {
+  text-align: center;
+}
+
+mjx-linebox[align="right"] {
+  text-align: right;
+}
+
+mjx-linestrut {
+  display: inline-block;
+  height: 1em;
+  vertical-align: -.25em;
+}
+
+mjx-TeXAtom {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-msub {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mtable {
+  display: inline-block;
+  text-align: center;
+  vertical-align: .25em;
+  position: relative;
+  box-sizing: border-box;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+mjx-mstyle[size="s"] mjx-mtable {
+  vertical-align: .354em;
+}
+
+mjx-labels {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+mjx-table {
+  display: inline-block;
+  vertical-align: -.5ex;
+  box-sizing: border-box;
+}
+
+mjx-table > mjx-itable {
+  vertical-align: middle;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+mjx-labels > mjx-itable {
+  position: absolute;
+  top: 0;
+}
+
+mjx-mtable[justify="left"] {
+  text-align: left;
+}
+
+mjx-mtable[justify="right"] {
+  text-align: right;
+}
+
+mjx-mtable[justify="left"][side="left"] {
+  padding-right: 0 ! important;
+}
+
+mjx-mtable[justify="left"][side="right"] {
+  padding-left: 0 ! important;
+}
+
+mjx-mtable[justify="right"][side="left"] {
+  padding-right: 0 ! important;
+}
+
+mjx-mtable[justify="right"][side="right"] {
+  padding-left: 0 ! important;
+}
+
+mjx-mtable[align] {
+  vertical-align: baseline;
+}
+
+mjx-mtable[align="top"] > mjx-table {
+  vertical-align: top;
+}
+
+mjx-mtable[align="bottom"] > mjx-table {
+  vertical-align: bottom;
+}
+
+mjx-mtable[side="right"] mjx-labels {
+  min-width: 100%;
+}
+
+mjx-mtr {
+  display: table-row;
+  text-align: left;
+}
+
+mjx-mtr[rowalign="top"] > mjx-mtd {
+  vertical-align: top;
+}
+
+mjx-mtr[rowalign="center"] > mjx-mtd {
+  vertical-align: middle;
+}
+
+mjx-mtr[rowalign="bottom"] > mjx-mtd {
+  vertical-align: bottom;
+}
+
+mjx-mtr[rowalign="baseline"] > mjx-mtd {
+  vertical-align: baseline;
+}
+
+mjx-mtr[rowalign="axis"] > mjx-mtd {
+  vertical-align: .25em;
+}
+
+mjx-mtd {
+  display: table-cell;
+  text-align: center;
+  padding: .215em .4em;
+}
+
+mjx-mtd:first-child {
+  padding-left: 0;
+}
+
+mjx-mtd:last-child {
+  padding-right: 0;
+}
+
+mjx-mtable > * > mjx-itable > *:first-child > mjx-mtd {
+  padding-top: 0;
+}
+
+mjx-mtable > * > mjx-itable > *:last-child > mjx-mtd {
+  padding-bottom: 0;
+}
+
+mjx-tstrut {
+  display: inline-block;
+  height: 1em;
+  vertical-align: -.25em;
+}
+
+mjx-labels[align="left"] > mjx-mtr > mjx-mtd {
+  text-align: left;
+}
+
+mjx-labels[align="right"] > mjx-mtr > mjx-mtd {
+  text-align: right;
+}
+
+mjx-mtd[extra] {
+  padding: 0;
+}
+
+mjx-mtd[rowalign="top"] {
+  vertical-align: top;
+}
+
+mjx-mtd[rowalign="center"] {
+  vertical-align: middle;
+}
+
+mjx-mtd[rowalign="bottom"] {
+  vertical-align: bottom;
+}
+
+mjx-mtd[rowalign="baseline"] {
+  vertical-align: baseline;
+}
+
+mjx-mtd[rowalign="axis"] {
+  vertical-align: .25em;
+}
+
+mjx-container[jax="CHTML"] > mjx-math.NCM-N[breakable] > * {
+  font-family: MJX-NCM-ZERO, MJX-NCM-N;
+}
+
+.NCM-N {
+  font-family: MJX-NCM-ZERO, MJX-NCM-N;
+}
+
+.NCM-B {
+  font-family: MJX-NCM-ZERO, MJX-NCM-B;
+}
+
+.NCM-I {
+  font-family: MJX-NCM-ZERO, MJX-NCM-I;
+}
+
+.NCM-BI {
+  font-family: MJX-NCM-ZERO, MJX-NCM-BI;
+}
+
+.NCM-DS {
+  font-family: MJX-NCM-ZERO, MJX-NCM-DS;
+}
+
+.NCM-F {
+  font-family: MJX-NCM-ZERO, MJX-NCM-F;
+}
+
+.NCM-FB {
+  font-family: MJX-NCM-ZERO, MJX-NCM-FB;
+}
+
+.NCM-SS {
+  font-family: MJX-NCM-ZERO, MJX-NCM-SS;
+}
+
+.NCM-SSB {
+  font-family: MJX-NCM-ZERO, MJX-NCM-SSB;
+}
+
+.NCM-SSI {
+  font-family: MJX-NCM-ZERO, MJX-NCM-SSI;
+}
+
+.NCM-SSBI {
+  font-family: MJX-NCM-ZERO, MJX-NCM-SSBI;
+}
+
+.NCM-M {
+  font-family: MJX-NCM-ZERO, MJX-NCM-M;
+}
+
+.NCM-SO {
+  font-family: MJX-NCM-ZERO, MJX-NCM-SO;
+}
+
+.NCM-LO {
+  font-family: MJX-NCM-ZERO, MJX-NCM-LO;
+}
+
+.NCM-S3 {
+  font-family: MJX-NCM-ZERO, MJX-NCM-S3;
+}
+
+.NCM-S4 {
+  font-family: MJX-NCM-ZERO, MJX-NCM-S4;
+}
+
+.NCM-S5 {
+  font-family: MJX-NCM-ZERO, MJX-NCM-S5;
+}
+
+.NCM-S6 {
+  font-family: MJX-NCM-ZERO, MJX-NCM-S6;
+}
+
+.NCM-S7 {
+  font-family: MJX-NCM-ZERO, MJX-NCM-S7;
+}
+
+.NCM-MI {
+  font-family: MJX-NCM-ZERO, MJX-NCM-MI;
+}
+
+.NCM-C {
+  font-family: MJX-NCM-ZERO, MJX-NCM-C;
+}
+
+.NCM-CB {
+  font-family: MJX-NCM-ZERO, MJX-NCM-CB;
+}
+
+.NCM-OS {
+  font-family: MJX-NCM-ZERO, MJX-NCM-OS;
+}
+
+.NCM-OB {
+  font-family: MJX-NCM-ZERO, MJX-NCM-OB;
+}
+
+.NCM-V {
+  font-family: MJX-NCM-ZERO, MJX-NCM-V;
+}
+
+.NCM-LT {
+  font-family: MJX-NCM-ZERO, MJX-NCM-LT;
+}
+
+.NCM-RB {
+  font-family: MJX-NCM-ZERO, MJX-NCM-RB;
+}
+
+.NCM-EM {
+  font-family: MJX-NCM-ZERO, MJX-NCM-EM;
+}
+
+.NCM-B-a {
+  font-family: MJX-NCM-ZERO, MJX-NCM-B-a;
+}
+
+.NCM-U {
+  font-family: MJX-NCM-ZERO, MJX-NCM-U;
+}
+
+.NCM-U-a {
+  font-family: MJX-NCM-ZERO, MJX-NCM-U-a;
+}
+
+.NCM-S {
+  font-family: MJX-NCM-ZERO, MJX-NCM-S;
+}
+
+.NCM-SB {
+  font-family: MJX-NCM-ZERO, MJX-NCM-SB;
+}
+
+@font-face /* MJX-NCM-ZERO */ {
+  font-family: MJX-NCM-ZERO;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-zero.woff2") format("woff2");
+}
+
+@font-face /* MJX-BRK */ {
+  font-family: MJX-BRK;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-brk.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-N */ {
+  font-family: MJX-NCM-N;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-n.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-B */ {
+  font-family: MJX-NCM-B;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-b.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-I */ {
+  font-family: MJX-NCM-I;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-i.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-BI */ {
+  font-family: MJX-NCM-BI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-bi.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-DS */ {
+  font-family: MJX-NCM-DS;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-ds.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-F */ {
+  font-family: MJX-NCM-F;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-f.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-FB */ {
+  font-family: MJX-NCM-FB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-fb.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-SS */ {
+  font-family: MJX-NCM-SS;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-ss.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-SSB */ {
+  font-family: MJX-NCM-SSB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-ssb.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-SSI */ {
+  font-family: MJX-NCM-SSI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-ssi.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-SSBI */ {
+  font-family: MJX-NCM-SSBI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-ssbi.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-M */ {
+  font-family: MJX-NCM-M;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-m.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-SO */ {
+  font-family: MJX-NCM-SO;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-so.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-LO */ {
+  font-family: MJX-NCM-LO;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-lo.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-S3 */ {
+  font-family: MJX-NCM-S3;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-s3.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-S4 */ {
+  font-family: MJX-NCM-S4;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-s4.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-S5 */ {
+  font-family: MJX-NCM-S5;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-s5.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-S6 */ {
+  font-family: MJX-NCM-S6;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-s6.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-S7 */ {
+  font-family: MJX-NCM-S7;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-s7.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-MI */ {
+  font-family: MJX-NCM-MI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-mi.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-C */ {
+  font-family: MJX-NCM-C;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-c.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-CB */ {
+  font-family: MJX-NCM-CB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-cb.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-OS */ {
+  font-family: MJX-NCM-OS;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-os.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-OB */ {
+  font-family: MJX-NCM-OB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-ob.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-V */ {
+  font-family: MJX-NCM-V;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-v.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-LT */ {
+  font-family: MJX-NCM-LT;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-lt.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-RB */ {
+  font-family: MJX-NCM-RB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-rb.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-EM */ {
+  font-family: MJX-NCM-EM;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-em.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-B-a */ {
+  font-family: MJX-NCM-B-a;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-b-a.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-U */ {
+  font-family: MJX-NCM-U;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-u.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-U-a */ {
+  font-family: MJX-NCM-U-a;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-u-a.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-S */ {
+  font-family: MJX-NCM-S;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-s.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-SB */ {
+  font-family: MJX-NCM-SB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-sb.woff2") format("woff2");
+}
+
+mjx-c.mjx-c1D703 {
+  padding: 0.705em 0.469em 0.011em 0;
+}
+
+mjx-c.mjx-c3D {
+  padding: 0.367em 0.778em 0 0;
+}
+
+mjx-c.mjx-c61 {
+  padding: 0.448em 0.5em 0.011em 0;
+}
+
+mjx-c.mjx-c72 {
+  padding: 0.442em 0.392em 0 0;
+}
+
+mjx-c.mjx-c63 {
+  padding: 0.448em 0.444em 0.011em 0;
+}
+
+mjx-c.mjx-c6F {
+  padding: 0.448em 0.5em 0.011em 0;
+}
+
+mjx-c.mjx-c73 {
+  padding: 0.448em 0.394em 0.011em 0;
+}
+
+mjx-c.mjx-c2061 {
+  padding: 0 0 0 0;
+}
+
+mjx-c.mjx-c221A {
+  padding: 0.04em 0.853em 0.96em 0;
+}
+
+mjx-c.mjx-c1D45D {
+  padding: 0.442em 0.503em 0.194em 0;
+}
+
+mjx-c.mjx-c2C {
+  padding: 0.106em 0.278em 0.193em 0;
+}
+
+mjx-c.mjx-c32 {
+  padding: 0.666em 0.5em 0 0;
+}
+
+mjx-c.mjx-c2E {
+  padding: 0.106em 0.278em 0 0;
+}
+
+mjx-c.mjx-c2B {
+  padding: 0.583em 0.778em 0.083em 0;
+}
+
+mjx-c.mjx-c1D6FF {
+  padding: 0.712em 0.452em 0.011em 0;
+}
+
+mjx-c.mjx-c1D437 {
+  padding: 0.683em 0.828em 0 0;
+}
+
+mjx-c.mjx-c5B {
+  padding: 0.75em 0.278em 0.25em 0;
+}
+
+mjx-c.mjx-c3B {
+  padding: 0.431em 0.278em 0.193em 0;
+}
+
+mjx-c.mjx-c5D {
+  padding: 0.75em 0.278em 0.25em 0;
+}
+
+mjx-c.mjx-c2261 {
+  padding: 0.464em 0.778em 0 0;
+}
+
+mjx-c.mjx-c6C {
+  padding: 0.694em 0.278em 0 0;
+}
+
+mjx-c.mjx-c67 {
+  padding: 0.453em 0.5em 0.206em 0;
+}
+
+mjx-c.mjx-c28 {
+  padding: 0.748em 0.389em 0.248em 0;
+}
+
+mjx-c.mjx-c31 {
+  padding: 0.666em 0.5em 0 0;
+}
+
+mjx-c.mjx-c2212 {
+  padding: 0.583em 0.778em 0.083em 0;
+}
+
+mjx-c.mjx-c29 {
+  padding: 0.748em 0.389em 0.248em 0;
+}
+
+mjx-c.mjx-c2248 {
+  padding: 0.457em 0.773em 0 0;
+}
+
+mjx-c.mjx-c22EF {
+  padding: 0.303em 0.776em 0 0;
+}
+
+mjx-c.mjx-c1D70B {
+  padding: 0.431em 0.57em 0.011em 0;
+}
+
+mjx-c.mjx-c221A.NCM-SO {
+  padding: 0.85em 1.02em 0.35em 0;
+}
+
+mjx-c.mjx-c30 {
+  padding: 0.666em 0.5em 0.022em 0;
+}
+
+mjx-c.mjx-c39 {
+  padding: 0.666em 0.5em 0.022em 0;
+}
+
+mjx-c.mjx-c35 {
+  padding: 0.666em 0.5em 0.022em 0;
+}
+
+mjx-c.mjx-c2F {
+  padding: 0.75em 0.5em 0.25em 0;
+}
+
+mjx-c.mjx-c1D712 {
+  padding: 0.442em 0.626em 0.205em 0;
+}
+
+mjx-c.mjx-c34 {
+  padding: 0.677em 0.5em 0 0;
+}
+
+mjx-c.mjx-c68 {
+  padding: 0.694em 0.556em 0 0;
+}
+
+mjx-c.mjx-c64 {
+  padding: 0.694em 0.556em 0.011em 0;
+}
+
+mjx-c.mjx-c38 {
+  padding: 0.666em 0.5em 0.022em 0;
+}
+
+mjx-c.mjx-c36 {
+  padding: 0.666em 0.5em 0.022em 0;
+}
+
+mjx-c.mjx-c394 {
+  padding: 0.716em 0.833em 0 0;
+}
+
+mjx-c.mjx-c223C {
+  padding: 0.366em 0.773em 0 0;
+}
+
+mjx-c.mjx-c1D454 {
+  padding: 0.442em 0.477em 0.205em 0;
+}
+
+mjx-c.mjx-cD7 {
+  padding: 0.491em 0.778em 0 0;
+}
+
+mjx-c.mjx-c2218 {
+  padding: 0.4em 0.412em 0 0;
+}
+
+mjx-c.mjx-c28.NCM-S5 {
+  padding: 1.296em 0.663em 0.796em 0;
+}
+
+mjx-c.mjx-c29.NCM-S5 {
+  padding: 1.296em 0.663em 0.796em 0;
+}
+
+mjx-c.mjx-c33 {
+  padding: 0.666em 0.5em 0.022em 0;
+}
+
+mjx-c.mjx-c1D5AB.NCM-SS {
+  padding: 0.694em 0.542em 0 0;
+}
+
+mjx-c.mjx-c1D5C8.NCM-SS {
+  padding: 0.461em 0.5em 0.011em 0;
+}
+
+mjx-c.mjx-c1D6FE {
+  padding: 0.442em 0.543em 0.215em 0;
+}
+
+mjx-c.mjx-c69 {
+  padding: 0.657em 0.278em 0 0;
+}
+
+mjx-c.mjx-c6E {
+  padding: 0.442em 0.556em 0 0;
+}
+
+mjx-c.mjx-c1D44B {
+  padding: 0.683em 0.851em 0 0;
+}
+
+mjx-c.mjx-c1D6FD {
+  padding: 0.706em 0.574em 0.194em 0;
+}
+
+mjx-c.mjx-c50 {
+  padding: 0.683em 0.681em 0 0;
+}
+
+mjx-c.mjx-c7B.NCM-S6 {
+  padding: 1.45em 0.75em 0.95em 0;
+}
+
+mjx-c.mjx-c7C {
+  padding: 0.75em 0.278em 0.25em 0;
+}
+
+mjx-c.mjx-c1D713 {
+  padding: 0.694em 0.651em 0.205em 0;
+}
+
+mjx-c.mjx-c27E9 {
+  padding: 0.75em 0.389em 0.25em 0;
+}
+</style></head>
 
 <body>
 
@@ -133,7 +1318,7 @@
     <h3>Alex Alemi's Blog</h3>
     <nav>
       <a href="https://blog.alexalemi.com">Index</a> |
-      <a href="https://alexalemi.com">About Me</a> | 
+      <a href="https://alexalemi.com">About Me</a> |
       <a rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml">RSS</a>
     </nav>
   </header>
@@ -142,7 +1327,7 @@
 		<h1>A Degree of Certainty</h1>
 		<p>Alexander A. Alemi. <time datetime="2024-08-14">2024-08-14</time></p>
     <div class="content">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;1,300&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 <style>
     svg { font-family: Merriweather; }
     pre { white-space: pre-wrap; }
@@ -159,37 +1344,7 @@ Why don't we add another to the mix.  What if we measure degrees of belief in...
  Not to mention <a href="https://en.wikipedia.org/wiki/Per_mille">per mille (‰)</a>, <a href="https://en.wikipedia.org/wiki/Basis_point#Permyriad">permyriad (‱)</a>, <a href="https://en.wikipedia.org/wiki/Per_cent_mille">per cent mille (pcm)</a>, <a href="https://en.wikipedia.org/wiki/Parts-per_notation">parts per million (ppm)</a>, parts per billion (ppb), etc...
 </aside>
 <p>Specifically, let's use the following transformation:
-<span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="30.136ex" height="3.509ex" style="vertical-align: -1.171ex;" viewBox="0 -1006.6 12975 1510.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
-<title id="MathJax-SVG-1-Title"> \theta = \arccos \sqrt p,  \qquad p = \cos^2 \theta .</title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#MJMATHI-3B8" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-3D" x="747" y="0"></use>
-<g transform="translate(1803,0)">
- <use xlink:href="#MJMAIN-61"></use>
- <use xlink:href="#MJMAIN-72" x="500" y="0"></use>
- <use xlink:href="#MJMAIN-63" x="893" y="0"></use>
- <use xlink:href="#MJMAIN-63" x="1337" y="0"></use>
- <use xlink:href="#MJMAIN-6F" x="1782" y="0"></use>
- <use xlink:href="#MJMAIN-73" x="2282" y="0"></use>
-</g>
-<g transform="translate(4647,0)">
- <use xlink:href="#MJMAIN-221A" x="0" y="-200"></use>
-<rect stroke="none" width="503" height="60" x="833" y="541"></rect>
- <use xlink:href="#MJMATHI-70" x="833" y="0"></use>
-</g>
- <use xlink:href="#MJMAIN-2C" x="5984" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="8429" y="0"></use>
- <use xlink:href="#MJMAIN-3D" x="9210" y="0"></use>
-<g transform="translate(10266,0)">
- <use xlink:href="#MJMAIN-63"></use>
- <use xlink:href="#MJMAIN-6F" x="444" y="0"></use>
- <use xlink:href="#MJMAIN-73" x="945" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-32" x="1894" y="583"></use>
-</g>
- <use xlink:href="#MJMATHI-3B8" x="12227" y="0"></use>
- <use xlink:href="#MJMAIN-2E" x="12696" y="0"></use>
-</g>
-</svg></span></p>
+<mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \theta = \arccos \sqrt p,  \qquad p = \cos^2 \theta ."><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mi data-latex="\arccos" space="4"><mjx-c style="padding-top:0.448em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.448em" noic="true" class="mjx-c72">r</mjx-c><mjx-c style="padding-top:0.448em" noic="true" class="mjx-c63">c</mjx-c><mjx-c style="padding-top:0.448em" noic="true" class="mjx-c63">c</mjx-c><mjx-c style="padding-top:0.448em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.448em" class="mjx-c73">s</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-msqrt data-latex="\sqrt p" space="2"><mjx-sqrt><mjx-surd><mjx-mo><mjx-c class="mjx-c221A">√</mjx-c></mjx-mo></mjx-surd><mjx-box style="padding-top:0.237em"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi></mjx-box></mjx-sqrt></mjx-msqrt><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mspace style="width:2em" data-latex="\qquad"></mjx-mspace><mjx-mi data-latex="p" space="2"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-msup data-latex="\cos^2" space="4"><mjx-mi data-latex="\cos"><mjx-c style="padding-top:0.448em" noic="true" class="mjx-c63">c</mjx-c><mjx-c style="padding-top:0.448em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.448em" class="mjx-c73">s</mjx-c></mjx-mi><mjx-script style="vertical-align:0.413em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mi data-latex="\theta" space="2"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="."><mjx-c class="mjx-c2E">.</mjx-c></mjx-mo></mjx-math></mjx-container></p>
 <figure id="scale" class="right">
   <center>
   <img width="100%" src="figures/degree-scale-font.svg" alt="A visual representation of the degree scale.">
@@ -205,122 +1360,10 @@ What more could you want.</p>
 <p>What gives? Where does this mapping come from?  Why do we need another way to describe probabilities.</p>
 <p>None of the common ways to measure proabilities are statistically <em>uniform</em>.  What do I mean by this? Not all 1% changes in probability mean the same thing.  Going from 98% to 99% certainty is a much bigger deal than going from 50% to 51%.  It requires more evidence.  99% is more <em>distinguishable</em> from 98% than 51% is from 50%.  We intuitively know this, no one says they are 61% certain about something, but people will say they are 99% or 95% certain and expect these to mean different things.</p>
 <p>To measure this mathematically, we need to look at the most distinguished mathematical measure of distinguishability: the <a href="kl.html">KL divergence</a>.
-For two Bernoulli distributions with probabilities $p$ and $p + \delta$, the KL divergence is:</p>
-<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="69.507ex" height="6.509ex" style="vertical-align: -2.671ex;" viewBox="0 -1652.5 29926.7 2802.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-2-Title">
-<title id="MathJax-SVG-2-Title"> D[p; p+\delta] \equiv p \log \frac{p}{p+\delta} + (1-p) \log \frac{1-p}{1-p-\delta} \approx -\frac{\delta^2}{2 p (1-p)} + \cdots. </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#MJMATHI-44" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-5B" x="828" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="1107" y="0"></use>
- <use xlink:href="#MJMAIN-3B" x="1610" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="2055" y="0"></use>
- <use xlink:href="#MJMAIN-2B" x="2781" y="0"></use>
- <use xlink:href="#MJMATHI-3B4" x="3782" y="0"></use>
- <use xlink:href="#MJMAIN-5D" x="4233" y="0"></use>
- <use xlink:href="#MJMAIN-2261" x="4789" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="5846" y="0"></use>
-<g transform="translate(6516,0)">
- <use xlink:href="#MJMAIN-6C"></use>
- <use xlink:href="#MJMAIN-6F" x="278" y="0"></use>
- <use xlink:href="#MJMAIN-67" x="779" y="0"></use>
-</g>
-<g transform="translate(7795,0)">
-<g transform="translate(286,0)">
-<rect stroke="none" width="2297" height="60" x="0" y="220"></rect>
- <use xlink:href="#MJMATHI-70" x="897" y="714"></use>
-<g transform="translate(60,-738)">
- <use xlink:href="#MJMATHI-70" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-2B" x="725" y="0"></use>
- <use xlink:href="#MJMATHI-3B4" x="1726" y="0"></use>
-</g>
-</g>
-</g>
- <use xlink:href="#MJMAIN-2B" x="10722" y="0"></use>
- <use xlink:href="#MJMAIN-28" x="11723" y="0"></use>
- <use xlink:href="#MJMAIN-31" x="12112" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="12835" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="13836" y="0"></use>
- <use xlink:href="#MJMAIN-29" x="14339" y="0"></use>
-<g transform="translate(14896,0)">
- <use xlink:href="#MJMAIN-6C"></use>
- <use xlink:href="#MJMAIN-6F" x="278" y="0"></use>
- <use xlink:href="#MJMAIN-67" x="779" y="0"></use>
-</g>
-<g transform="translate(16175,0)">
-<g transform="translate(286,0)">
-<rect stroke="none" width="4021" height="60" x="0" y="220"></rect>
-<g transform="translate(897,714)">
- <use xlink:href="#MJMAIN-31" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="722" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="1723" y="0"></use>
-</g>
-<g transform="translate(60,-738)">
- <use xlink:href="#MJMAIN-31" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="722" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="1723" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="2449" y="0"></use>
- <use xlink:href="#MJMATHI-3B4" x="3449" y="0"></use>
-</g>
-</g>
-</g>
- <use xlink:href="#MJMAIN-2248" x="20881" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="21937" y="0"></use>
-<g transform="translate(22716,0)">
-<g transform="translate(120,0)">
-<rect stroke="none" width="4129" height="60" x="0" y="220"></rect>
-<g transform="translate(1611,676)">
- <use xlink:href="#MJMATHI-3B4" x="0" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-32" x="641" y="513"></use>
-</g>
-<g transform="translate(60,-771)">
- <use xlink:href="#MJMAIN-32" x="0" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="500" y="0"></use>
- <use xlink:href="#MJMAIN-28" x="1004" y="0"></use>
- <use xlink:href="#MJMAIN-31" x="1393" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="2116" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="3116" y="0"></use>
- <use xlink:href="#MJMAIN-29" x="3620" y="0"></use>
-</g>
-</g>
-</g>
- <use xlink:href="#MJMAIN-2B" x="27308" y="0"></use>
- <use xlink:href="#MJMAIN-22EF" x="28309" y="0"></use>
- <use xlink:href="#MJMAIN-2E" x="29648" y="0"></use>
-</g>
-</svg></span></p>
-<p>To leading order, this is quadratic in the change $\delta$ and depends inversely on the probability $p$ and its complement $1-p$.  If we interpret this as a kind of squared distance, the square root of this gives us the usual <a href="https://en.wikipedia.org/wiki/Jeffreys_prior">Jeffreys prior</a> for the Bernoulli problem:</p>
-<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="20.626ex" height="6.509ex" style="vertical-align: -3.171ex; margin-left: -0.089ex;" viewBox="-38.5 -1437.2 8880.5 2802.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-3-Title">
-<title id="MathJax-SVG-3-Title"> p(p) = \frac{1}{\pi \sqrt{p (1-p)} }. </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#MJMATHI-70" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-28" x="503" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="893" y="0"></use>
- <use xlink:href="#MJMAIN-29" x="1396" y="0"></use>
- <use xlink:href="#MJMAIN-3D" x="2063" y="0"></use>
-<g transform="translate(2842,0)">
-<g transform="translate(397,0)">
-<rect stroke="none" width="5203" height="60" x="0" y="220"></rect>
- <use xlink:href="#MJMAIN-31" x="2351" y="676"></use>
-<g transform="translate(60,-937)">
- <use xlink:href="#MJMATHI-3C0" x="0" y="0"></use>
-<g transform="translate(573,0)">
- <use xlink:href="#MJSZ1-221A" x="0" y="6"></use>
-<rect stroke="none" width="3509" height="60" x="1000" y="797"></rect>
-<g transform="translate(1000,0)">
- <use xlink:href="#MJMATHI-70" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-28" x="503" y="0"></use>
- <use xlink:href="#MJMAIN-31" x="893" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="1615" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="2616" y="0"></use>
- <use xlink:href="#MJMAIN-29" x="3119" y="0"></use>
-</g>
-</g>
-</g>
-</g>
-</g>
- <use xlink:href="#MJMAIN-2E" x="8563" y="0"></use>
-</g>
-</svg></span></p>
+For two Bernoulli distributions with probabilities <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi></mjx-math></mjx-container> and <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" breakable="true" data-latex="p + \delta"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-break size="3"> </mjx-break><mjx-mo data-latex="+"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mi data-latex="\delta" space="3"><mjx-c class="mjx-c1D6FF">𝛿</mjx-c></mjx-mi></mjx-math></mjx-container>, the KL divergence is:</p>
+<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" D[p; p+\delta] \equiv p \log \frac{p}{p+\delta} + (1-p) \log \frac{1-p}{1-p-\delta} \approx -\frac{\delta^2}{2 p (1-p)} + \cdots. "><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-mo data-latex="["><mjx-c class="mjx-c5B">[</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex=";"><mjx-c class="mjx-c3B">;</mjx-c></mjx-mo><mjx-mi data-latex="p" space="2"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mi data-latex="\delta" space="3"><mjx-c class="mjx-c1D6FF">𝛿</mjx-c></mjx-mi><mjx-mo data-latex="]"><mjx-c class="mjx-c5D">]</mjx-c></mjx-mo><mjx-mo data-latex="\equiv" space="4"><mjx-c class="mjx-c2261">≡</mjx-c></mjx-mo><mjx-mi data-latex="p" space="4"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mi data-latex="\log" space="2"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p}{p+\delta}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="p+\delta"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mi data-latex="\delta" space="3"><mjx-c class="mjx-c1D6FF">𝛿</mjx-c></mjx-mi></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mo data-latex="(" space="3"><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="p" space="3"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mi data-latex="\log" space="2"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{1-p}{1-p-\delta}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="1-p"><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="p" space="3"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="1-p-\delta"><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="p" space="3"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="\delta" space="3"><mjx-c class="mjx-c1D6FF">𝛿</mjx-c></mjx-mi></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\approx" space="4"><mjx-c class="mjx-c2248">≈</mjx-c></mjx-mo><mjx-mo data-latex="-" space="4"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{\delta^2}{2 p (1-p)}"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-msup data-latex="\delta^2"><mjx-mi data-latex="\delta"><mjx-c class="mjx-c1D6FF">𝛿</mjx-c></mjx-mi><mjx-script style="vertical-align:0.363em;margin-left:0.05em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="2 p (1-p)"><mjx-mn data-latex="2"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="p" space="3"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mo data-latex="\cdots" space="3"><mjx-c class="mjx-c22EF">⋯</mjx-c></mjx-mo><mjx-mo data-latex="." space="2"><mjx-c class="mjx-c2E">.</mjx-c></mjx-mo></mjx-math></mjx-container></p>
+<p>To leading order, this is quadratic in the change <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\delta"><mjx-mi data-latex="\delta"><mjx-c class="mjx-c1D6FF">𝛿</mjx-c></mjx-mi></mjx-math></mjx-container> and depends inversely on the probability <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi></mjx-math></mjx-container> and its complement <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" breakable="true" data-latex="1-p"><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-break size="3"> </mjx-break><mjx-mo data-latex="-"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="p" space="3"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi></mjx-math></mjx-container>.  If we interpret this as a kind of squared distance, the square root of this gives us the usual <a href="https://en.wikipedia.org/wiki/Jeffreys_prior">Jeffreys prior</a> for the Bernoulli problem:</p>
+<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" p(p) = \frac{1}{\pi \sqrt{p (1-p)} }. "><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{1}{\pi \sqrt{p (1-p)} }" space="4"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="\pi \sqrt{p (1-p)}"><mjx-mi data-latex="\pi"><mjx-c class="mjx-c1D70B">𝜋</mjx-c></mjx-mi><mjx-msqrt data-latex="\sqrt{p (1-p)}"><mjx-sqrt><mjx-surd><mjx-mo><mjx-c class="mjx-c221A NCM-SO">√</mjx-c></mjx-mo></mjx-surd><mjx-box style="padding-top:0.11em"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="p" space="3"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-box></mjx-sqrt></mjx-msqrt></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="."><mjx-c class="mjx-c2E">.</mjx-c></mjx-mo></mjx-math></mjx-container></p>
 <figure id="jeffreys">
   <center>
   <img src="figures/KLsmallchange_standard.png" alt="Jeffrey's prior for the Bernoulli problem.">
@@ -329,74 +1372,14 @@ For two Bernoulli distributions with probabilities $p$ and $p + \delta$, the KL 
   </figcaption>
   </center>
 </figure>
-<p>Here we can clearly see that as move towards 0 or 1, the statistical distance blows up.  Going from $0.99$ to $0.991$ is 26 times larger a change in terms of KL than going from $0.50$ to $0.501$.  Clearly, probabilities measured in percentages are very non-uniform.</p>
-<p>If we took as our prior the distribution $1/(\pi\sqrt{p(1-p)})$ we would be weighing the probabilities proportional to this statistical distance. That is, we would be putting equal weight on equally <em>distinguishable</em> probabilities.  This is what motivated <a href="https://en.wikipedia.org/wiki/Jeffreys_prior">Jeffreys</a> to make his prior. He wanted a truly <em>non-informative</em> prior.  Naively, Laplace suggested a <em>uniform</em> prior as being non-informative.  But what does <em>uniform</em> mean?  If you start with a uniform prior on percentages, it's very non-uniform when transformed into log-odds.  Uniform in log-odds is very non-uniform in terms of percentages.  If you start with a uniform prior in percents, you'll get a different posterior than if you start with a uniform prior in log-odds.  Clearly, your choice of parameterization is influencing your outcome.</p>
+<p>Here we can clearly see that as move towards 0 or 1, the statistical distance blows up.  Going from <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="0.99"><mjx-mn data-latex="0.99"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c2E">.</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c39">9</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c39">9</mjx-c></mjx-mn></mjx-math></mjx-container> to <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="0.991"><mjx-mn data-latex="0.991"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c2E">.</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c39">9</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c39">9</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c31">1</mjx-c></mjx-mn></mjx-math></mjx-container> is 26 times larger a change in terms of KL than going from <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="0.50"><mjx-mn data-latex="0.50"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c2E">.</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c35">5</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn></mjx-math></mjx-container> to <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="0.501"><mjx-mn data-latex="0.501"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c2E">.</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c35">5</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c31">1</mjx-c></mjx-mn></mjx-math></mjx-container>.  Clearly, probabilities measured in percentages are very non-uniform.</p>
+<p>If we took as our prior the distribution <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="1/(\pi\sqrt{p(1-p)})"><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="/"><mjx-c class="mjx-c2F">/</mjx-c></mjx-mo><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="\pi"><mjx-c class="mjx-c1D70B">𝜋</mjx-c></mjx-mi><mjx-msqrt data-latex="\sqrt{p(1-p)}"><mjx-sqrt><mjx-surd><mjx-mo><mjx-c class="mjx-c221A NCM-SO">√</mjx-c></mjx-mo></mjx-surd><mjx-box style="padding-top:0.11em"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="p" space="3"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-box></mjx-sqrt></mjx-msqrt><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> we would be weighing the probabilities proportional to this statistical distance. That is, we would be putting equal weight on equally <em>distinguishable</em> probabilities.  This is what motivated <a href="https://en.wikipedia.org/wiki/Jeffreys_prior">Jeffreys</a> to make his prior. He wanted a truly <em>non-informative</em> prior.  Naively, Laplace suggested a <em>uniform</em> prior as being non-informative.  But what does <em>uniform</em> mean?  If you start with a uniform prior on percentages, it's very non-uniform when transformed into log-odds.  Uniform in log-odds is very non-uniform in terms of percentages.  If you start with a uniform prior in percents, you'll get a different posterior than if you start with a uniform prior in log-odds.  Clearly, your choice of parameterization is influencing your outcome.</p>
 <p>If what we care about is the amount of information you need to modify your beliefs, we should weigh our beliefs in proportion to the amount of evidence they would need to move. This is what led Jeffreys to his prior, in the form we see above.  He showed that this is proportional to the square root of the determinant of the <a href="https://en.wikipedia.org/wiki/Fisher_information_metric">Fisher metric</a>.  Regardless of your choice of parameterization, if you compute the determinant of the Fisher metric in that parameterization and take its square root, you'll recover Jeffreys prior.  It is parameterization independent in this sense.</p>
 <p>While Jeffreys found a principled motivation for how to define <em>uniformity</em> in a reparameterization independent way, what we don't have yet is a sense of what a principled <em>parameterization</em> is.  Not all parameterizations are created equal.  Percentages diverge at the extremes. We should be able to do better.</p>
 <p>Let's try a second common parameterization. What if we tried to work in terms of log-odds?</p>
-<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="14.568ex" height="5.343ex" style="vertical-align: -2.338ex;" viewBox="0 -1293.7 6272.2 2300.3" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-4-Title">
-<title id="MathJax-SVG-4-Title"> \chi = \log \frac{p}{1-p}, </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#MJMATHI-3C7" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-3D" x="904" y="0"></use>
-<g transform="translate(1960,0)">
- <use xlink:href="#MJMAIN-6C"></use>
- <use xlink:href="#MJMAIN-6F" x="278" y="0"></use>
- <use xlink:href="#MJMAIN-67" x="779" y="0"></use>
-</g>
-<g transform="translate(3240,0)">
-<g transform="translate(286,0)">
-<rect stroke="none" width="2346" height="60" x="0" y="220"></rect>
- <use xlink:href="#MJMATHI-70" x="921" y="714"></use>
-<g transform="translate(60,-687)">
- <use xlink:href="#MJMAIN-31" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="722" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="1723" y="0"></use>
-</g>
-</g>
-</g>
- <use xlink:href="#MJMAIN-2C" x="5993" y="0"></use>
-</g>
-</svg></span></p>
+<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \chi = \log \frac{p}{1-p}, "><mjx-mi data-latex="\chi"><mjx-c class="mjx-c1D712">𝜒</mjx-c></mjx-mi><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mi data-latex="\log" space="4"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p}{1-p}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="1-p"><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="p" space="3"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo></mjx-math></mjx-container></p>
 <p>We get KL divergences that take the form:</p>
-<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="33.382ex" height="6.176ex" style="vertical-align: -2.338ex;" viewBox="0 -1652.5 14372.6 2659.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-5-Title">
-<title id="MathJax-SVG-5-Title"> D[\chi; \chi+\delta] \approx \frac{\delta^2}{4 + 4 \cosh \chi} + \cdots, </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#MJMATHI-44" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-5B" x="828" y="0"></use>
- <use xlink:href="#MJMATHI-3C7" x="1107" y="0"></use>
- <use xlink:href="#MJMAIN-3B" x="1733" y="0"></use>
- <use xlink:href="#MJMATHI-3C7" x="2178" y="0"></use>
- <use xlink:href="#MJMAIN-2B" x="3027" y="0"></use>
- <use xlink:href="#MJMATHI-3B4" x="4028" y="0"></use>
- <use xlink:href="#MJMAIN-5D" x="4479" y="0"></use>
- <use xlink:href="#MJMAIN-2248" x="5035" y="0"></use>
-<g transform="translate(5814,0)">
-<g transform="translate(397,0)">
-<rect stroke="none" width="5199" height="60" x="0" y="220"></rect>
-<g transform="translate(2146,676)">
- <use xlink:href="#MJMATHI-3B4" x="0" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-32" x="641" y="513"></use>
-</g>
-<g transform="translate(60,-716)">
- <use xlink:href="#MJMAIN-34" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-2B" x="722" y="0"></use>
- <use xlink:href="#MJMAIN-34" x="1723" y="0"></use>
-<g transform="translate(2390,0)">
- <use xlink:href="#MJMAIN-63"></use>
- <use xlink:href="#MJMAIN-6F" x="444" y="0"></use>
- <use xlink:href="#MJMAIN-73" x="945" y="0"></use>
- <use xlink:href="#MJMAIN-68" x="1339" y="0"></use>
-</g>
- <use xlink:href="#MJMATHI-3C7" x="4453" y="0"></use>
-</g>
-</g>
-</g>
- <use xlink:href="#MJMAIN-2B" x="11754" y="0"></use>
- <use xlink:href="#MJMAIN-22EF" x="12754" y="0"></use>
- <use xlink:href="#MJMAIN-2C" x="14094" y="0"></use>
-</g>
-</svg></span></p>
+<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" D[\chi; \chi+\delta] \approx \frac{\delta^2}{4 + 4 \cosh \chi} + \cdots, "><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-mo data-latex="["><mjx-c class="mjx-c5B">[</mjx-c></mjx-mo><mjx-mi data-latex="\chi"><mjx-c class="mjx-c1D712">𝜒</mjx-c></mjx-mi><mjx-mo data-latex=";"><mjx-c class="mjx-c3B">;</mjx-c></mjx-mo><mjx-mi data-latex="\chi" space="2"><mjx-c class="mjx-c1D712">𝜒</mjx-c></mjx-mi><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mi data-latex="\delta" space="3"><mjx-c class="mjx-c1D6FF">𝛿</mjx-c></mjx-mi><mjx-mo data-latex="]"><mjx-c class="mjx-c5D">]</mjx-c></mjx-mo><mjx-mo data-latex="\approx" space="4"><mjx-c class="mjx-c2248">≈</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{\delta^2}{4 + 4 \cosh \chi}" space="4"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-msup data-latex="\delta^2"><mjx-mi data-latex="\delta"><mjx-c class="mjx-c1D6FF">𝛿</mjx-c></mjx-mi><mjx-script style="vertical-align:0.363em;margin-left:0.05em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="4 + 4 \cosh \chi"><mjx-mn data-latex="4"><mjx-c class="mjx-c34">4</mjx-c></mjx-mn><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mn data-latex="4" space="3"><mjx-c class="mjx-c34">4</mjx-c></mjx-mn><mjx-mi data-latex="\cosh" space="2"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c63">c</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c73">s</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c68">h</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mi data-latex="\chi" space="2"><mjx-c class="mjx-c1D712">𝜒</mjx-c></mjx-mi></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mo data-latex="\cdots" space="3"><mjx-c class="mjx-c22EF">⋯</mjx-c></mjx-mo><mjx-mo data-latex="," space="2"><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo></mjx-math></mjx-container></p>
 <p>which has the opposite problem as seen below.  There is no divergence at the ends, there is a disappearance.</p>
 <figure id="logits">
   <center>
@@ -407,9 +1390,9 @@ For two Bernoulli distributions with probabilities $p$ and $p + \delta$, the KL 
   </center>
 </figure>
 <aside><sup id="jeffrey-logit">3</sup> 
- Coincidentally, though its not often discussed, this is the form that Jeffrey's prior takes when expressed in terms of log-odds. $1/\sqrt{4 + 4 \cosh \chi}$.
+ Coincidentally, though its not often discussed, this is the form that Jeffrey's prior takes when expressed in terms of log-odds. <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="1/\sqrt{4 + 4 \cosh \chi}"><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="/"><mjx-c class="mjx-c2F">/</mjx-c></mjx-mo><mjx-msqrt data-latex="\sqrt{4 + 4 \cosh \chi}"><mjx-sqrt><mjx-surd><mjx-mo><mjx-c class="mjx-c221A NCM-SO">√</mjx-c></mjx-mo></mjx-surd><mjx-box style="padding-top:0.158em"><mjx-mn data-latex="4"><mjx-c class="mjx-c34">4</mjx-c></mjx-mn><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mn data-latex="4" space="3"><mjx-c class="mjx-c34">4</mjx-c></mjx-mn><mjx-mi data-latex="\cosh" space="2"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c63">c</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c73">s</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c68">h</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mi data-latex="\chi" space="2"><mjx-c class="mjx-c1D712">𝜒</mjx-c></mjx-mi></mjx-box></mjx-sqrt></mjx-msqrt></mjx-math></mjx-container>.
 </aside>
-<p>Now, moving from $0.00$ to $0.01$ in log-odds is 42 times farther a statistical distance than going from $5.00$ to $5.01$ in log-odds.<sup><a href="#jeffrey-logit">3</a></sup> At the extremes, log-odds become <em>indistinguishable</em>.  A log-odds of 7 is closer to 5 than 0.01 is to 0.00.</p>
+<p>Now, moving from <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="0.00"><mjx-mn data-latex="0.00"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c2E">.</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn></mjx-math></mjx-container> to <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="0.01"><mjx-mn data-latex="0.01"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c2E">.</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c31">1</mjx-c></mjx-mn></mjx-math></mjx-container> in log-odds is 42 times farther a statistical distance than going from <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="5.00"><mjx-mn data-latex="5.00"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c35">5</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c2E">.</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn></mjx-math></mjx-container> to <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="5.01"><mjx-mn data-latex="5.01"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c35">5</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c2E">.</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c31">1</mjx-c></mjx-mn></mjx-math></mjx-container> in log-odds.<sup><a href="#jeffrey-logit">3</a></sup> At the extremes, log-odds become <em>indistinguishable</em>.  A log-odds of 7 is closer to 5 than 0.01 is to 0.00.</p>
 <p>Very small changes in percentage near 1.0 require massive amounts of evidence to justify.  Massive changes in log-odds away from 0 require very little evidence to justify. Neither of these is ideal.</p>
 <aside><sup id="alternative">4</sup> 
   In writing this post it occurred to me that this might actually be a better way to derive Jeffrey's prior in the first place.  One could say that Jeffrey's prior is a <i>uniform</i> prior (in the Laplace sense) in the parameterization for which the KL divergence is also <i>uniform</i>.  Transforming this uniform prior in the uniform parameterization to any other is what gives you the square root of the determinant of the metric form we are used to seeing.
@@ -418,115 +1401,16 @@ For two Bernoulli distributions with probabilities $p$ and $p + \delta$, the KL 
 uniform can we get? Is there a parameterization of degrees of belief for which
 the statistical metric is flat? Equivalently, the question becomes, is there a
 parameterization for which Jeffrey's prior is uniform.<a href="#alternative"><sup>4</sup></a></p>
-<p>Let's look for a transformation, $\theta(p)$, such that, Jeffrey's prior, $p(p) = 1/(\pi\sqrt{p(1-p)})$, transforms into the uniform prior: $p(\theta) = 1$.</p>
+<p>Let's look for a transformation, <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\theta(p)"><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container>, such that, Jeffrey's prior, <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" breakable="true" data-latex="p(p) = 1/(\pi\sqrt{p(1-p)})"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-break size="4"> </mjx-break><mjx-mo data-latex="="><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mn data-latex="1" space="4"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="/"><mjx-c class="mjx-c2F">/</mjx-c></mjx-mo><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="\pi"><mjx-c class="mjx-c1D70B">𝜋</mjx-c></mjx-mi><mjx-msqrt data-latex="\sqrt{p(1-p)}"><mjx-sqrt><mjx-surd><mjx-mo><mjx-c class="mjx-c221A NCM-SO">√</mjx-c></mjx-mo></mjx-surd><mjx-box style="padding-top:0.11em"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="p" space="3"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-box></mjx-sqrt></mjx-msqrt><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container>, transforms into the uniform prior: <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" breakable="true" data-latex="p(\theta) = 1"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-break size="4"> </mjx-break><mjx-mo data-latex="="><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mn data-latex="1" space="4"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-math></mjx-container>.</p>
 <p>Densities transform like:</p>
-<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="17.671ex" height="2.843ex" style="vertical-align: -0.838ex; margin-left: -0.089ex;" viewBox="-38.5 -863.1 7608.4 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-6-Title">
-<title id="MathJax-SVG-6-Title"> p(p)\, \mathrm{d}p = p(\theta)\, \mathrm{d}\theta. </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#MJMATHI-70" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-28" x="503" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="893" y="0"></use>
- <use xlink:href="#MJMAIN-29" x="1396" y="0"></use>
- <use xlink:href="#MJMAIN-64" x="1952" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="2509" y="0"></use>
- <use xlink:href="#MJMAIN-3D" x="3290" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="4346" y="0"></use>
- <use xlink:href="#MJMAIN-28" x="4850" y="0"></use>
- <use xlink:href="#MJMATHI-3B8" x="5239" y="0"></use>
- <use xlink:href="#MJMAIN-29" x="5709" y="0"></use>
- <use xlink:href="#MJMAIN-64" x="6265" y="0"></use>
- <use xlink:href="#MJMATHI-3B8" x="6821" y="0"></use>
- <use xlink:href="#MJMAIN-2E" x="7291" y="0"></use>
-</g>
-</svg></span></p>
+<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" p(p)\, \mathrm{d}p = p(\theta)\, \mathrm{d}\theta. "><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mspace style="width:0.167em" data-latex="\,"></mjx-mspace><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{d}"><mjx-mi data-latex="d"><mjx-c class="mjx-c64">d</mjx-c></mjx-mi></mjx-TeXAtom><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mi data-latex="p" space="4"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mspace style="width:0.167em" data-latex="\,"></mjx-mspace><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{d}"><mjx-mi data-latex="d"><mjx-c class="mjx-c64">d</mjx-c></mjx-mi></mjx-TeXAtom><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="."><mjx-c class="mjx-c2E">.</mjx-c></mjx-mo></mjx-math></mjx-container></p>
 <p>Substituting what we know, we want to solve:</p>
-<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="18.771ex" height="6.676ex" style="vertical-align: -3.171ex;" viewBox="0 -1508.9 8082 2874.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-7-Title">
-<title id="MathJax-SVG-7-Title"> \frac{\mathrm{d}p}{\pi \sqrt{p(1-p)}} = \mathrm{d}\theta . </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
-<g transform="translate(120,0)">
-<rect stroke="none" width="5203" height="60" x="0" y="220"></rect>
-<g transform="translate(2071,714)">
- <use xlink:href="#MJMAIN-64" x="0" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="556" y="0"></use>
-</g>
-<g transform="translate(60,-937)">
- <use xlink:href="#MJMATHI-3C0" x="0" y="0"></use>
-<g transform="translate(573,0)">
- <use xlink:href="#MJSZ1-221A" x="0" y="6"></use>
-<rect stroke="none" width="3509" height="60" x="1000" y="797"></rect>
-<g transform="translate(1000,0)">
- <use xlink:href="#MJMATHI-70" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-28" x="503" y="0"></use>
- <use xlink:href="#MJMAIN-31" x="893" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="1615" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="2616" y="0"></use>
- <use xlink:href="#MJMAIN-29" x="3119" y="0"></use>
-</g>
-</g>
-</g>
-</g>
- <use xlink:href="#MJMAIN-3D" x="5721" y="0"></use>
- <use xlink:href="#MJMAIN-64" x="6777" y="0"></use>
- <use xlink:href="#MJMATHI-3B8" x="7333" y="0"></use>
- <use xlink:href="#MJMAIN-2E" x="7803" y="0"></use>
-</g>
-</svg></span></p>
+<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \frac{\mathrm{d}p}{\pi \sqrt{p(1-p)}} = \mathrm{d}\theta . "><mjx-mfrac data-latex="\frac{\mathrm{d}p}{\pi \sqrt{p(1-p)}}"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="\mathrm{d}p"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{d}"><mjx-mi data-latex="d"><mjx-c class="mjx-c64">d</mjx-c></mjx-mi></mjx-TeXAtom><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="\pi \sqrt{p(1-p)}"><mjx-mi data-latex="\pi"><mjx-c class="mjx-c1D70B">𝜋</mjx-c></mjx-mi><mjx-msqrt data-latex="\sqrt{p(1-p)}"><mjx-sqrt><mjx-surd><mjx-mo><mjx-c class="mjx-c221A NCM-SO">√</mjx-c></mjx-mo></mjx-surd><mjx-box style="padding-top:0.11em"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="p" space="3"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-box></mjx-sqrt></mjx-msqrt></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{d}" space="4"><mjx-mi data-latex="d"><mjx-c class="mjx-c64">d</mjx-c></mjx-mi></mjx-TeXAtom><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="."><mjx-c class="mjx-c2E">.</mjx-c></mjx-mo></mjx-math></mjx-container></p>
 <p>The solution takes the form (up to proportionality):</p>
-<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="30.136ex" height="3.509ex" style="vertical-align: -1.171ex;" viewBox="0 -1006.6 12975 1510.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-8-Title">
-<title id="MathJax-SVG-8-Title"> \theta = \arccos \sqrt p, \qquad p = \cos^2 \theta . </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#MJMATHI-3B8" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-3D" x="747" y="0"></use>
-<g transform="translate(1803,0)">
- <use xlink:href="#MJMAIN-61"></use>
- <use xlink:href="#MJMAIN-72" x="500" y="0"></use>
- <use xlink:href="#MJMAIN-63" x="893" y="0"></use>
- <use xlink:href="#MJMAIN-63" x="1337" y="0"></use>
- <use xlink:href="#MJMAIN-6F" x="1782" y="0"></use>
- <use xlink:href="#MJMAIN-73" x="2282" y="0"></use>
-</g>
-<g transform="translate(4647,0)">
- <use xlink:href="#MJMAIN-221A" x="0" y="-200"></use>
-<rect stroke="none" width="503" height="60" x="833" y="541"></rect>
- <use xlink:href="#MJMATHI-70" x="833" y="0"></use>
-</g>
- <use xlink:href="#MJMAIN-2C" x="5984" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="8429" y="0"></use>
- <use xlink:href="#MJMAIN-3D" x="9210" y="0"></use>
-<g transform="translate(10266,0)">
- <use xlink:href="#MJMAIN-63"></use>
- <use xlink:href="#MJMAIN-6F" x="444" y="0"></use>
- <use xlink:href="#MJMAIN-73" x="945" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-32" x="1894" y="583"></use>
-</g>
- <use xlink:href="#MJMATHI-3B8" x="12227" y="0"></use>
- <use xlink:href="#MJMAIN-2E" x="12696" y="0"></use>
-</g>
-</svg></span></p>
+<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \theta = \arccos \sqrt p, \qquad p = \cos^2 \theta . "><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mi data-latex="\arccos" space="4"><mjx-c style="padding-top:0.448em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.448em" noic="true" class="mjx-c72">r</mjx-c><mjx-c style="padding-top:0.448em" noic="true" class="mjx-c63">c</mjx-c><mjx-c style="padding-top:0.448em" noic="true" class="mjx-c63">c</mjx-c><mjx-c style="padding-top:0.448em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.448em" class="mjx-c73">s</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-msqrt data-latex="\sqrt p" space="2"><mjx-sqrt><mjx-surd><mjx-mo><mjx-c class="mjx-c221A">√</mjx-c></mjx-mo></mjx-surd><mjx-box style="padding-top:0.237em"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi></mjx-box></mjx-sqrt></mjx-msqrt><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mspace style="width:2em" data-latex="\qquad"></mjx-mspace><mjx-mi data-latex="p" space="2"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-msup data-latex="\cos^2" space="4"><mjx-mi data-latex="\cos"><mjx-c style="padding-top:0.448em" noic="true" class="mjx-c63">c</mjx-c><mjx-c style="padding-top:0.448em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.448em" class="mjx-c73">s</mjx-c></mjx-mi><mjx-script style="vertical-align:0.413em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mi data-latex="\theta" space="2"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="."><mjx-c class="mjx-c2E">.</mjx-c></mjx-mo></mjx-math></mjx-container></p>
 <p>This is the mapping we opened the post with.  In this parameterization, we have that the KL divergence is <em>flat</em>:</p>
-<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="23.288ex" height="3.176ex" style="vertical-align: -0.838ex;" viewBox="0 -1006.6 10026.8 1367.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-9-Title">
-<title id="MathJax-SVG-9-Title"> D[\theta; \theta + \delta] \approx 2\delta^2  + \cdots . </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#MJMATHI-44" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-5B" x="828" y="0"></use>
- <use xlink:href="#MJMATHI-3B8" x="1107" y="0"></use>
- <use xlink:href="#MJMAIN-3B" x="1576" y="0"></use>
- <use xlink:href="#MJMATHI-3B8" x="2021" y="0"></use>
- <use xlink:href="#MJMAIN-2B" x="2713" y="0"></use>
- <use xlink:href="#MJMATHI-3B4" x="3714" y="0"></use>
- <use xlink:href="#MJMAIN-5D" x="4165" y="0"></use>
- <use xlink:href="#MJMAIN-2248" x="4721" y="0"></use>
- <use xlink:href="#MJMAIN-32" x="5778" y="0"></use>
-<g transform="translate(6278,0)">
- <use xlink:href="#MJMATHI-3B4" x="0" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-32" x="641" y="583"></use>
-</g>
- <use xlink:href="#MJMAIN-2B" x="7408" y="0"></use>
- <use xlink:href="#MJMAIN-22EF" x="8409" y="0"></use>
- <use xlink:href="#MJMAIN-2E" x="9748" y="0"></use>
-</g>
-</svg></span></p>
-<p>It is in this parameterization that a small change in the parameter means the same thing at every value of the parameter.  This parameterization is <em>uniform</em> in a deep sense.  Jeffrey's prior, expressed in this $\theta$ parameter is uniform.</p>
+<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" D[\theta; \theta + \delta] \approx 2\delta^2  + \cdots . "><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-mo data-latex="["><mjx-c class="mjx-c5B">[</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=";"><mjx-c class="mjx-c3B">;</mjx-c></mjx-mo><mjx-mi data-latex="\theta" space="2"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mi data-latex="\delta" space="3"><mjx-c class="mjx-c1D6FF">𝛿</mjx-c></mjx-mi><mjx-mo data-latex="]"><mjx-c class="mjx-c5D">]</mjx-c></mjx-mo><mjx-mo data-latex="\approx" space="4"><mjx-c class="mjx-c2248">≈</mjx-c></mjx-mo><mjx-mn data-latex="2" space="4"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn><mjx-msup data-latex="\delta^2"><mjx-mi data-latex="\delta"><mjx-c class="mjx-c1D6FF">𝛿</mjx-c></mjx-mi><mjx-script style="vertical-align:0.413em;margin-left:0.05em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mo data-latex="\cdots" space="3"><mjx-c class="mjx-c22EF">⋯</mjx-c></mjx-mo><mjx-mo data-latex="." space="2"><mjx-c class="mjx-c2E">.</mjx-c></mjx-mo></mjx-math></mjx-container></p>
+<p>It is in this parameterization that a small change in the parameter means the same thing at every value of the parameter.  This parameterization is <em>uniform</em> in a deep sense.  Jeffrey's prior, expressed in this <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\theta"><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi></mjx-math></mjx-container> parameter is uniform.</p>
 <figure id="thetas">
   <center>
   <img src="figures/KLsmallchange_theta.png" alt="Jeffrey's prior for the Bernoulli problem, in theta space.">
@@ -538,7 +1422,7 @@ parameterization for which Jeffrey's prior is uniform.<a href="#alternative"><su
 <aside><sup id="leading">5</sup> 
  Technically, the KL divergence is only uniform to <i>leading order</i>.  There are higher order corrections that show up and which are most extreme at the edges of the space. 
 </aside>
-<p>This is, in some sense, the most natural parameterization of probabilities.  In terms of ordinary probabilities, the space is curved, the metric isn't flat, the world is distorted as we move around the space.  In terms of these <em>degrees</em> ($\theta$), the metric is flat.  A 1° change means the same thing, statistically, regardless of where we start.<a href="#leading"><sup>5</sup></a></p>
+<p>This is, in some sense, the most natural parameterization of probabilities.  In terms of ordinary probabilities, the space is curved, the metric isn't flat, the world is distorted as we move around the space.  In terms of these <em>degrees</em> (<mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\theta"><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi></mjx-math></mjx-container>), the metric is flat.  A 1° change means the same thing, statistically, regardless of where we start.<a href="#leading"><sup>5</sup></a></p>
 <h2>Visualization</h2>
 <p>We will set the range of probabilities to be from 0° to 90°. This will allow us to visualize the whole space as a quarter circle, which conveniently resembles a meter when turned on its side.</p>
 <p><probability-meter id="interactive" probability="0.53"></probability-meter></p>
@@ -549,7 +1433,7 @@ parameterization for which Jeffrey's prior is uniform.<a href="#alternative"><su
 <p>A probability of <span id="probVal">53</span>% corresponds to an angle of <span id="angVal">43.28</span>°.</p>
 <p>This meter is interactive, you can adjust the probability with the slider or input box.</p>
 <aside><sup id="quantum">6</sup> 
- Bengtsson, Ingemar, and Karol Życzkowski. <a href="https://www.google.com/books/edition/_/sYswDwAAQBAJ?hl=en&amp;gbpv=0">Geometry of quantum states: an introduction to quantum entanglement</a>. Cambridge University Press, 2017.
+ Bengtsson, Ingemar, and Karol Życzkowski. <a href="https://www.google.com/books/edition/_/sYswDwAAQBAJ?hl=en&gbpv=0">Geometry of quantum states: an introduction to quantum entanglement</a>. Cambridge University Press, 2017.
 </aside>
 <aside><sup id="quinn">7</sup>
 Quinn, Katherine N, et al. “Visualizing Probabilistic Models and Data with Intensive Principal Component Analysis.” Proceedings of the National Academy of Sciences, vol. 116, no. 28, 24 June 2019, pp. 13762–13767, <a href="https://arxiv.org/abs/1810.02877">arxiv.org/abs/1810.02877</a>, <a href="https://doi.org/10.1073/pnas.1817218116">10.1073/pnas.1817218116</a>. Accessed 23 Oct. 2024.
@@ -608,52 +1492,12 @@ These always end up corresponding to awkward, unevenly spaced probabilities.  Fo
 strange value.  I always wondered where 93% came form, or why people's intuitions about probabilities were so unevenly spaced.  However, if you take Kent's thresholds and map them to <em>degrees</em>, they are perfectly evenly spaced at 15° increments.  This suggests that people correct for the statistical unevenness of percentages through experience.  The words we use to describe certainty are uniform, even if our most popular <em>unit</em> for measuring certainty is not. This suggests that human perceptions of probabilities might already be better aligned with degrees.</p>
 <p>More thoughts on human perception below in <a href="#app-perception">Appendix D</a></p>
 <h2>Approximate Calculation</h2>
-<p>While this mapping seems interesting, no one can compute $\arccos \sqrt p$ in their head.  Fortunately, as we show below in <a href="#app-taylor">Appendix A</a>, near the middle the map is linear and near the edges it looks like a square root, so if we want an accurate, easy to calculate, pencil and paper version of the mapping, we can split our probabilities into three regions, below 0.25, between 0.25 and 0.75, and above 0.75.</p>
-<p>Since we have that $180/\pi \approx 60$ if we want to estimate the degrees off of even, for a given probability near 50%, in our head we can use:
-<span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="15.181ex" height="2.843ex" style="vertical-align: -0.838ex;" viewBox="0 -863.1 6536.1 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-10-Title">
-<title id="MathJax-SVG-10-Title"> \Delta\theta(p) \sim 60 \Delta p, </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#MJMAIN-394" x="0" y="0"></use>
- <use xlink:href="#MJMATHI-3B8" x="833" y="0"></use>
- <use xlink:href="#MJMAIN-28" x="1303" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="1692" y="0"></use>
- <use xlink:href="#MJMAIN-29" x="2196" y="0"></use>
- <use xlink:href="#MJMAIN-223C" x="2863" y="0"></use>
-<g transform="translate(3919,0)">
- <use xlink:href="#MJMAIN-36"></use>
- <use xlink:href="#MJMAIN-30" x="500" y="0"></use>
-</g>
- <use xlink:href="#MJMAIN-394" x="4920" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="5754" y="0"></use>
- <use xlink:href="#MJMAIN-2C" x="6257" y="0"></use>
-</g>
-</svg></span>
-while for $p$ values near the extremes, we can calculate the relative angle you are from either completely certain or impossible as:
-<span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="17.504ex" height="3.509ex" style="vertical-align: -1.171ex;" viewBox="0 -1006.6 7536.6 1510.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-11-Title">
-<title id="MathJax-SVG-11-Title"> \Delta\theta(p) \sim 60 \sqrt{\Delta p}. </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#MJMAIN-394" x="0" y="0"></use>
- <use xlink:href="#MJMATHI-3B8" x="833" y="0"></use>
- <use xlink:href="#MJMAIN-28" x="1303" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="1692" y="0"></use>
- <use xlink:href="#MJMAIN-29" x="2196" y="0"></use>
- <use xlink:href="#MJMAIN-223C" x="2863" y="0"></use>
-<g transform="translate(3919,0)">
- <use xlink:href="#MJMAIN-36"></use>
- <use xlink:href="#MJMAIN-30" x="500" y="0"></use>
-</g>
-<g transform="translate(4920,0)">
- <use xlink:href="#MJSZ1-221A" x="0" y="-13"></use>
-<rect stroke="none" width="1337" height="60" x="1000" y="778"></rect>
-<g transform="translate(1000,0)">
- <use xlink:href="#MJMAIN-394" x="0" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="833" y="0"></use>
-</g>
-</g>
- <use xlink:href="#MJMAIN-2E" x="7258" y="0"></use>
-</g>
-</svg></span></p>
-<p>If you need a good way to mentally calculate a square root of $p$: take a guess $g$ for the square root, and then compute the average of $g$ and $p/g$.  You can iterate this many times to get as accurate as you desire.<sup><a href="#cook">11</a></sup></p>
+<p>While this mapping seems interesting, no one can compute <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\arccos \sqrt p"><mjx-mi data-latex="\arccos"><mjx-c style="padding-top:0.448em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.448em" noic="true" class="mjx-c72">r</mjx-c><mjx-c style="padding-top:0.448em" noic="true" class="mjx-c63">c</mjx-c><mjx-c style="padding-top:0.448em" noic="true" class="mjx-c63">c</mjx-c><mjx-c style="padding-top:0.448em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.448em" class="mjx-c73">s</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-msqrt data-latex="\sqrt p" space="2"><mjx-sqrt><mjx-surd><mjx-mo><mjx-c class="mjx-c221A">√</mjx-c></mjx-mo></mjx-surd><mjx-box style="padding-top:0.19em"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi></mjx-box></mjx-sqrt></mjx-msqrt></mjx-math></mjx-container> in their head.  Fortunately, as we show below in <a href="#app-taylor">Appendix A</a>, near the middle the map is linear and near the edges it looks like a square root, so if we want an accurate, easy to calculate, pencil and paper version of the mapping, we can split our probabilities into three regions, below 0.25, between 0.25 and 0.75, and above 0.75.</p>
+<p>Since we have that <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" breakable="true" data-latex="180/\pi \approx 60"><mjx-mn data-latex="180"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c38">8</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-mo data-latex="/"><mjx-c class="mjx-c2F">/</mjx-c></mjx-mo><mjx-mi data-latex="\pi"><mjx-c class="mjx-c1D70B">𝜋</mjx-c></mjx-mi><mjx-break size="4"> </mjx-break><mjx-mo data-latex="\approx"><mjx-c class="mjx-c2248">≈</mjx-c></mjx-mo><mjx-mn data-latex="60" space="4"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c36">6</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn></mjx-math></mjx-container> if we want to estimate the degrees off of even, for a given probability near 50%, in our head we can use:
+<mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \Delta\theta(p) \sim 60 \Delta p, "><mjx-mi data-latex="\Delta"><mjx-c class="mjx-c394">Δ</mjx-c></mjx-mi><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="\sim" space="4"><mjx-c class="mjx-c223C">∼</mjx-c></mjx-mo><mjx-mn data-latex="60" space="4"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c36">6</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-mi data-latex="\Delta"><mjx-c class="mjx-c394">Δ</mjx-c></mjx-mi><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo></mjx-math></mjx-container>
+while for <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi></mjx-math></mjx-container> values near the extremes, we can calculate the relative angle you are from either completely certain or impossible as:
+<mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \Delta\theta(p) \sim 60 \sqrt{\Delta p}. "><mjx-mi data-latex="\Delta"><mjx-c class="mjx-c394">Δ</mjx-c></mjx-mi><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="\sim" space="4"><mjx-c class="mjx-c223C">∼</mjx-c></mjx-mo><mjx-mn data-latex="60" space="4"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c36">6</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-msqrt data-latex="\sqrt{\Delta p}"><mjx-sqrt><mjx-surd><mjx-mo><mjx-c class="mjx-c221A NCM-SO">√</mjx-c></mjx-mo></mjx-surd><mjx-box style="padding-top:0.2em"><mjx-mi data-latex="\Delta"><mjx-c class="mjx-c394">Δ</mjx-c></mjx-mi><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi></mjx-box></mjx-sqrt></mjx-msqrt><mjx-mo data-latex="."><mjx-c class="mjx-c2E">.</mjx-c></mjx-mo></mjx-math></mjx-container></p>
+<p>If you need a good way to mentally calculate a square root of <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi></mjx-math></mjx-container>: take a guess <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="g"><mjx-mi data-latex="g"><mjx-c class="mjx-c1D454">𝑔</mjx-c></mjx-mi></mjx-math></mjx-container> for the square root, and then compute the average of <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="g"><mjx-mi data-latex="g"><mjx-c class="mjx-c1D454">𝑔</mjx-c></mjx-mi></mjx-math></mjx-container> and <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p/g"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="/"><mjx-c class="mjx-c2F">/</mjx-c></mjx-mo><mjx-mi data-latex="g"><mjx-c class="mjx-c1D454">𝑔</mjx-c></mjx-mi></mjx-math></mjx-container>.  You can iterate this many times to get as accurate as you desire.<sup><a href="#cook">11</a></sup></p>
 <aside><sup id="cook">11</sup> 
     This is the <a href="https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Heron's_method">Babylonian method</a>, aka an application of <a href="https://en.wikipedia.org/wiki/Newton%27s_method#Examples">Newton's root finding method</a>.
     For this and a whole slew of useful mental arithmetic tips, see <a href="https://www.johndcook.com/blog/mental-functions/">John D. Cook's Blog, The Endeavor</a>. 
@@ -667,7 +1511,7 @@ while for $p$ values near the extremes, we can calculate the relative angle you 
   </figcaption>
   </center>
 </figure>
-<p>For example, before we said the economist model had Trump's probability of winning at 56%, to estimate this in degrees we take $60 \times 0.06$ to get 3.6°, compared with the more exact 3.45°. If we think there is a 10% chance of rain, we say that that is $60 \times \sqrt{0.10} = 60 \times \sqrt{10} / 10 \approx 19^\circ$, compared with the more exact 18.43°.  This method is very practical and very accurate.</p>
+<p>For example, before we said the economist model had Trump's probability of winning at 56%, to estimate this in degrees we take <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" breakable="true" data-latex="60 \times 0.06"><mjx-mn data-latex="60"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c36">6</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-break size="3"> </mjx-break><mjx-mo data-latex="\times"><mjx-c class="mjx-cD7">×</mjx-c></mjx-mo><mjx-mn data-latex="0.06" space="3"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c2E">.</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c36">6</mjx-c></mjx-mn></mjx-math></mjx-container> to get 3.6°, compared with the more exact 3.45°. If we think there is a 10% chance of rain, we say that that is <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" breakable="true" data-latex="60 \times \sqrt{0.10} = 60 \times \sqrt{10} / 10 \approx 19^\circ"><mjx-mn data-latex="60"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c36">6</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-break size="3"> </mjx-break><mjx-mo data-latex="\times"><mjx-c class="mjx-cD7">×</mjx-c></mjx-mo><mjx-msqrt data-latex="\sqrt{0.10}" space="3"><mjx-sqrt><mjx-surd><mjx-mo><mjx-c class="mjx-c221A">√</mjx-c></mjx-mo></mjx-surd><mjx-box style="padding-top:0.163em"><mjx-mn data-latex="0.10"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c2E">.</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn></mjx-box></mjx-sqrt></mjx-msqrt><mjx-break size="4"> </mjx-break><mjx-mo data-latex="="><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mn data-latex="60" space="4"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c36">6</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-break size="3"> </mjx-break><mjx-mo data-latex="\times"><mjx-c class="mjx-cD7">×</mjx-c></mjx-mo><mjx-msqrt data-latex="\sqrt{10}" space="3"><mjx-sqrt><mjx-surd><mjx-mo><mjx-c class="mjx-c221A">√</mjx-c></mjx-mo></mjx-surd><mjx-box style="padding-top:0.163em"><mjx-mn data-latex="10"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn></mjx-box></mjx-sqrt></mjx-msqrt><mjx-mo data-latex="/"><mjx-c class="mjx-c2F">/</mjx-c></mjx-mo><mjx-mn data-latex="10"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-break size="4"> </mjx-break><mjx-mo data-latex="\approx"><mjx-c class="mjx-c2248">≈</mjx-c></mjx-mo><mjx-msup data-latex="19^\circ" space="4"><mjx-mn data-latex="19"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c39">9</mjx-c></mjx-mn><mjx-script style="vertical-align:0.393em"><mjx-mo data-latex="\circ" size="s"><mjx-c class="mjx-c2218">∘</mjx-c></mjx-mo></mjx-script></mjx-msup></mjx-math></mjx-container>, compared with the more exact 18.43°.  This method is very practical and very accurate.</p>
 <h2>Conclusion</h2>
 <p>I don't know about you, but I'm convinced.  We should measure degrees of belief in degrees.</p>
 <p>This creates a very intuitive visual representation for probabilities, and one that is statistically uniform in an interesting and useful way.  It isn't all that hard to compute, especially if we are alright with a half degree accuracy as in the previous section.  With a little bit of time, I think we could come to intuit what a 1° or 5° or 10° or 30° shift in probabilities <em>felt</em> like. Some might even say, we already do.
@@ -675,159 +1519,18 @@ And, unlike with either probabilities or odds, that useful internal sense would 
 <p>Give a shot.  In <a href="#app-widget">Appendix C</a> I've made available the code for the widgets that appear on this page, which should make it easy for anyone to try.</p>
 <h1>Appendix A - Taylor Expansions</h1>
 <p id="app-taylor">
-If we Taylor expand this map near $p=1/2$, the map is approximately linear:
-<span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="43.526ex" height="6.509ex" style="vertical-align: -2.505ex;" viewBox="0 -1724.2 18740.4 2802.6" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-12-Title">
-<title id="MathJax-SVG-12-Title"> \theta(p) \approx \frac{\pi}{4} - \left( p - \frac 12 \right) - \frac 23 \left( p - \frac 12 \right)^3 + \cdots . </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#MJMATHI-3B8" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-28" x="469" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="859" y="0"></use>
- <use xlink:href="#MJMAIN-29" x="1362" y="0"></use>
- <use xlink:href="#MJMAIN-2248" x="2029" y="0"></use>
-<g transform="translate(2808,0)">
-<g transform="translate(397,0)">
-<rect stroke="none" width="693" height="60" x="0" y="220"></rect>
- <use xlink:href="#MJMATHI-3C0" x="60" y="676"></use>
- <use xlink:href="#MJMAIN-34" x="96" y="-698"></use>
-</g>
-</g>
- <use xlink:href="#MJMAIN-2212" x="4241" y="0"></use>
-<g transform="translate(5242,0)">
- <use xlink:href="#MJSZ3-28"></use>
- <use xlink:href="#MJMATHI-70" x="736" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="1462" y="0"></use>
-<g transform="translate(2240,0)">
-<g transform="translate(342,0)">
-<rect stroke="none" width="620" height="60" x="0" y="220"></rect>
- <use xlink:href="#MJMAIN-31" x="60" y="676"></use>
- <use xlink:href="#MJMAIN-32" x="60" y="-687"></use>
-</g>
-</g>
- <use xlink:href="#MJSZ3-29" x="3323" y="-1"></use>
-</g>
- <use xlink:href="#MJMAIN-2212" x="9524" y="0"></use>
-<g transform="translate(10303,0)">
-<g transform="translate(342,0)">
-<rect stroke="none" width="620" height="60" x="0" y="220"></rect>
- <use xlink:href="#MJMAIN-32" x="60" y="676"></use>
- <use xlink:href="#MJMAIN-33" x="60" y="-686"></use>
-</g>
-</g>
-<g transform="translate(11385,0)">
- <use xlink:href="#MJSZ3-28"></use>
- <use xlink:href="#MJMATHI-70" x="736" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="1462" y="0"></use>
-<g transform="translate(2240,0)">
-<g transform="translate(342,0)">
-<rect stroke="none" width="620" height="60" x="0" y="220"></rect>
- <use xlink:href="#MJMAIN-31" x="60" y="676"></use>
- <use xlink:href="#MJMAIN-32" x="60" y="-687"></use>
-</g>
-</g>
- <use xlink:href="#MJSZ3-29" x="3323" y="-1"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-33" x="5741" y="1665"></use>
-</g>
- <use xlink:href="#MJMAIN-2B" x="16121" y="0"></use>
- <use xlink:href="#MJMAIN-22EF" x="17122" y="0"></use>
- <use xlink:href="#MJMAIN-2E" x="18461" y="0"></use>
-</g>
-</svg></span>
+If we Taylor expand this map near <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" breakable="true" data-latex="p=1/2"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-break size="4"> </mjx-break><mjx-mo data-latex="="><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mn data-latex="1" space="4"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="/"><mjx-c class="mjx-c2F">/</mjx-c></mjx-mo><mjx-mn data-latex="2"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-math></mjx-container>, the map is approximately linear:
+<mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \theta(p) \approx \frac{\pi}{4} - \left( p - \frac 12 \right) - \frac 23 \left( p - \frac 12 \right)^3 + \cdots . "><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="\approx" space="4"><mjx-c class="mjx-c2248">≈</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{\pi}{4}" space="4"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mi data-latex="\pi"><mjx-c class="mjx-c1D70B">𝜋</mjx-c></mjx-mi></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn data-latex="4"><mjx-c class="mjx-c34">4</mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mrow data-latex="\left( p - \frac 12 \right)" space="3"><mjx-mo data-latex="\left("><mjx-c class="mjx-c28 NCM-S5">(</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac 12" space="3"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn data-latex="2"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right)"><mjx-c class="mjx-c29 NCM-S5">)</mjx-c></mjx-mo></mjx-mrow><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac 23" space="3"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn data-latex="2"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn data-latex="3"><mjx-c class="mjx-c33">3</mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-msup data-latex="\left( p - \frac 12 \right)^3"><mjx-mrow data-latex="\left( p - \frac 12 \right)"><mjx-mo data-latex="\left("><mjx-c class="mjx-c28 NCM-S5">(</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac 12" space="3"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn data-latex="2"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right)"><mjx-c class="mjx-c29 NCM-S5">)</mjx-c></mjx-mo></mjx-mrow><mjx-script style="vertical-align:1.069em"><mjx-mn data-latex="3" size="s"><mjx-c class="mjx-c33">3</mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mo data-latex="\cdots" space="3"><mjx-c class="mjx-c22EF">⋯</mjx-c></mjx-mo><mjx-mo data-latex="." space="2"><mjx-c class="mjx-c2E">.</mjx-c></mjx-mo></mjx-math></mjx-container>
 </p>
-<p>Near $p=0$ its square root like:
-<span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="28.461ex" height="6.676ex" style="vertical-align: -1.838ex;" viewBox="0 -2083 12253.9 2874.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-13-Title">
-<title id="MathJax-SVG-13-Title"> \theta(p) \approx \frac{\pi}{2} - \sqrt p - \frac{p^{\frac 3 2}}{6} - \cdots . </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#MJMATHI-3B8" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-28" x="469" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="859" y="0"></use>
- <use xlink:href="#MJMAIN-29" x="1362" y="0"></use>
- <use xlink:href="#MJMAIN-2248" x="2029" y="0"></use>
-<g transform="translate(2808,0)">
-<g transform="translate(397,0)">
-<rect stroke="none" width="693" height="60" x="0" y="220"></rect>
- <use xlink:href="#MJMATHI-3C0" x="60" y="676"></use>
- <use xlink:href="#MJMAIN-32" x="96" y="-687"></use>
-</g>
-</g>
- <use xlink:href="#MJMAIN-2212" x="4241" y="0"></use>
-<g transform="translate(5242,0)">
- <use xlink:href="#MJMAIN-221A" x="0" y="-200"></use>
-<rect stroke="none" width="503" height="60" x="833" y="541"></rect>
- <use xlink:href="#MJMATHI-70" x="833" y="0"></use>
-</g>
- <use xlink:href="#MJMAIN-2212" x="6801" y="0"></use>
-<g transform="translate(7580,0)">
-<g transform="translate(342,0)">
-<rect stroke="none" width="1370" height="60" x="0" y="220"></rect>
-<g transform="translate(60,714)">
- <use xlink:href="#MJMATHI-70" x="0" y="0"></use>
-<g transform="translate(503,508)">
-<g transform="translate(120,0)">
-<rect stroke="none" width="407" height="60" x="0" y="146"></rect>
- <use transform="scale(0.574)" xlink:href="#MJMAIN-33" x="104" y="669"></use>
- <use transform="scale(0.574)" xlink:href="#MJMAIN-32" x="104" y="-698"></use>
-</g>
-</g>
-</g>
- <use xlink:href="#MJMAIN-36" x="435" y="-687"></use>
-</g>
-</g>
- <use xlink:href="#MJMAIN-2212" x="9635" y="0"></use>
- <use xlink:href="#MJMAIN-22EF" x="10636" y="0"></use>
- <use xlink:href="#MJMAIN-2E" x="11975" y="0"></use>
-</g>
-</svg></span>
-And similarly near $p=1$:
-<span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="33.655ex" height="6.843ex" style="vertical-align: -1.838ex;" viewBox="0 -2154.8 14490.3 2946.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-14-Title">
-<title id="MathJax-SVG-14-Title"> \theta(p) \approx \sqrt{1-p} + \frac{(1-p)^{\frac 3 2}}{6} + \cdots. </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#MJMATHI-3B8" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-28" x="469" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="859" y="0"></use>
- <use xlink:href="#MJMAIN-29" x="1362" y="0"></use>
- <use xlink:href="#MJMAIN-2248" x="2029" y="0"></use>
-<g transform="translate(3086,0)">
- <use xlink:href="#MJSZ1-221A" x="0" y="-38"></use>
-<rect stroke="none" width="2226" height="60" x="1000" y="753"></rect>
-<g transform="translate(1000,0)">
- <use xlink:href="#MJMAIN-31" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="722" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="1723" y="0"></use>
-</g>
-</g>
- <use xlink:href="#MJMAIN-2B" x="6535" y="0"></use>
-<g transform="translate(7314,0)">
-<g transform="translate(342,0)">
-<rect stroke="none" width="3873" height="60" x="0" y="220"></rect>
-<g transform="translate(60,770)">
- <use xlink:href="#MJMAIN-28" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-31" x="389" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="1112" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="2112" y="0"></use>
-<g transform="translate(2616,0)">
- <use xlink:href="#MJMAIN-29" x="0" y="0"></use>
-<g transform="translate(389,508)">
-<g transform="translate(120,0)">
-<rect stroke="none" width="407" height="60" x="0" y="146"></rect>
- <use transform="scale(0.574)" xlink:href="#MJMAIN-33" x="104" y="669"></use>
- <use transform="scale(0.574)" xlink:href="#MJMAIN-32" x="104" y="-698"></use>
-</g>
-</g>
-</g>
-</g>
- <use xlink:href="#MJMAIN-36" x="1686" y="-687"></use>
-</g>
-</g>
- <use xlink:href="#MJMAIN-2B" x="11871" y="0"></use>
- <use xlink:href="#MJMAIN-22EF" x="12872" y="0"></use>
- <use xlink:href="#MJMAIN-2E" x="14211" y="0"></use>
-</g>
-</svg></span></p>
+<p>Near <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" breakable="true" data-latex="p=0"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-break size="4"> </mjx-break><mjx-mo data-latex="="><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mn data-latex="0" space="4"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-math></mjx-container> its square root like:
+<mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \theta(p) \approx \frac{\pi}{2} - \sqrt p - \frac{p^{\frac 3 2}}{6} - \cdots . "><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="\approx" space="4"><mjx-c class="mjx-c2248">≈</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{\pi}{2}" space="4"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mi data-latex="\pi"><mjx-c class="mjx-c1D70B">𝜋</mjx-c></mjx-mi></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn data-latex="2"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-msqrt data-latex="\sqrt p" space="3"><mjx-sqrt><mjx-surd><mjx-mo><mjx-c class="mjx-c221A">√</mjx-c></mjx-mo></mjx-surd><mjx-box style="padding-top:0.237em"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi></mjx-box></mjx-sqrt></mjx-msqrt><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p^{\frac 3 2}}{6}" space="3"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-msup data-latex="p^{\frac 3 2}"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-script style="vertical-align:0.363em"><mjx-TeXAtom texclass="ORD" data-latex="{\frac 3 2}" size="s"><mjx-mfrac data-latex="\frac 3 2"><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mn data-latex="3" size="s"><mjx-c class="mjx-c33">3</mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-TeXAtom></mjx-script></mjx-msup></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn data-latex="6"><mjx-c class="mjx-c36">6</mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mo data-latex="\cdots" space="3"><mjx-c class="mjx-c22EF">⋯</mjx-c></mjx-mo><mjx-mo data-latex="." space="2"><mjx-c class="mjx-c2E">.</mjx-c></mjx-mo></mjx-math></mjx-container>
+And similarly near <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" breakable="true" data-latex="p=1"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-break size="4"> </mjx-break><mjx-mo data-latex="="><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mn data-latex="1" space="4"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-math></mjx-container>:
+<mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \theta(p) \approx \sqrt{1-p} + \frac{(1-p)^{\frac 3 2}}{6} + \cdots. "><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="\approx" space="4"><mjx-c class="mjx-c2248">≈</mjx-c></mjx-mo><mjx-msqrt data-latex="\sqrt{1-p}" space="4"><mjx-sqrt><mjx-surd><mjx-mo><mjx-c class="mjx-c221A NCM-SO">√</mjx-c></mjx-mo></mjx-surd><mjx-box style="padding-top:0.225em"><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="p" space="3"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi></mjx-box></mjx-sqrt></mjx-msqrt><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{(1-p)^{\frac 3 2}}{6}" space="3"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="(1-p)^{\frac 3 2}"><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="p" space="3"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-msup data-latex=")^{\frac 3 2}"><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-script style="vertical-align:0.363em"><mjx-TeXAtom texclass="ORD" data-latex="{\frac 3 2}" size="s"><mjx-mfrac data-latex="\frac 3 2"><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mn data-latex="3" size="s"><mjx-c class="mjx-c33">3</mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-TeXAtom></mjx-script></mjx-msup></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn data-latex="6"><mjx-c class="mjx-c36">6</mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mo data-latex="\cdots" space="3"><mjx-c class="mjx-c22EF">⋯</mjx-c></mjx-mo><mjx-mo data-latex="." space="2"><mjx-c class="mjx-c2E">.</mjx-c></mjx-mo></mjx-math></mjx-container></p>
 <h1>Appendix B - Categorical Generalization</h1>
 <p>This idea easily extends to Categorical distributions, where the flat statistical manifold corresponds to the positive octant of the n-sphere as discussed in Bengtsson et al.
 <a href="#quantum2"><sup>62</sup></a></p>
 <aside><sup id="quantum2">62</sup> 
- Bengtsson, Ingemar, and Karol Życzkowski. <a href="https://www.google.com/books/edition/_/sYswDwAAQBAJ?hl=en&amp;gbpv=0">Geometry of quantum states: an introduction to quantum entanglement</a>. Cambridge university press, 2017.
+ Bengtsson, Ingemar, and Karol Życzkowski. <a href="https://www.google.com/books/edition/_/sYswDwAAQBAJ?hl=en&gbpv=0">Geometry of quantum states: an introduction to quantum entanglement</a>. Cambridge university press, 2017.
 </aside>
 <p><span id="app-widget"></span></p>
 <h2>Appendix C - Widget</h2>
@@ -861,61 +1564,10 @@ Zhang, Hang, and Laurence T. Maloney. "Ubiquitous log odds: a common representat
   </center>
 </figure>
 <p>Here, the blue lines show fits of a two parameter function:</p>
-<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="32.343ex" height="2.843ex" style="vertical-align: -0.838ex;" viewBox="0 -863.1 13925.4 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-15-Title">
-<title id="MathJax-SVG-15-Title"> \textsf{Lo}(\pi) = \gamma \textsf{Lo}(p) + (1-\gamma) \textsf{Lo}(p_0), </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#MJSS-4C"></use>
- <use xlink:href="#MJSS-6F" x="542" y="0"></use>
- <use xlink:href="#MJMAIN-28" x="1043" y="0"></use>
- <use xlink:href="#MJMATHI-3C0" x="1432" y="0"></use>
- <use xlink:href="#MJMAIN-29" x="2006" y="0"></use>
- <use xlink:href="#MJMAIN-3D" x="2673" y="0"></use>
- <use xlink:href="#MJMATHI-3B3" x="3729" y="0"></use>
-<g transform="translate(4273,0)">
- <use xlink:href="#MJSS-4C"></use>
- <use xlink:href="#MJSS-6F" x="542" y="0"></use>
-</g>
- <use xlink:href="#MJMAIN-28" x="5316" y="0"></use>
- <use xlink:href="#MJMATHI-70" x="5705" y="0"></use>
- <use xlink:href="#MJMAIN-29" x="6209" y="0"></use>
- <use xlink:href="#MJMAIN-2B" x="6820" y="0"></use>
- <use xlink:href="#MJMAIN-28" x="7821" y="0"></use>
- <use xlink:href="#MJMAIN-31" x="8211" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="8933" y="0"></use>
- <use xlink:href="#MJMATHI-3B3" x="9934" y="0"></use>
- <use xlink:href="#MJMAIN-29" x="10477" y="0"></use>
-<g transform="translate(10867,0)">
- <use xlink:href="#MJSS-4C"></use>
- <use xlink:href="#MJSS-6F" x="542" y="0"></use>
-</g>
- <use xlink:href="#MJMAIN-28" x="11910" y="0"></use>
-<g transform="translate(12299,0)">
- <use xlink:href="#MJMATHI-70" x="0" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-30" x="712" y="-213"></use>
-</g>
- <use xlink:href="#MJMAIN-29" x="13257" y="0"></use>
- <use xlink:href="#MJMAIN-2C" x="13646" y="0"></use>
-</g>
-</svg></span></p>
+<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \textsf{Lo}(\pi) = \gamma \textsf{Lo}(p) + (1-\gamma) \textsf{Lo}(p_0), "><mjx-mtext data-latex="\textsf{Lo}"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c1D5AB NCM-SS">𝖫</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c1D5C8 NCM-SS">𝗈</mjx-c></mjx-mtext><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="\pi"><mjx-c class="mjx-c1D70B">𝜋</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mi data-latex="\gamma" space="4"><mjx-c class="mjx-c1D6FE">𝛾</mjx-c></mjx-mi><mjx-mtext data-latex="\textsf{Lo}"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c1D5AB NCM-SS">𝖫</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c1D5C8 NCM-SS">𝗈</mjx-c></mjx-mtext><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mo data-latex="(" space="3"><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="\gamma" space="3"><mjx-c class="mjx-c1D6FE">𝛾</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mtext data-latex="\textsf{Lo}"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c1D5AB NCM-SS">𝖫</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c1D5C8 NCM-SS">𝗈</mjx-c></mjx-mtext><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="p_0"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo></mjx-math></mjx-container></p>
 <p>which describes a linear map acting on the log odds of the true probability and some baseline probability to describe the log-odds of the perceptual probability.  The paper considers it a success that they can use the simple two parameter function to get a mapping that shows good agreement with the experimental data.</p>
 <p>You know what these curves look like? They look like our arcsine transformation.  Without any parameters, here is a plot of:</p>
-<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="10.101ex" height="3.009ex" style="vertical-align: -1.171ex;" viewBox="0 -791.3 4349.2 1295.7" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-16-Title">
-<title id="MathJax-SVG-16-Title"> \arcsin \sqrt p. </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#MJMAIN-61"></use>
- <use xlink:href="#MJMAIN-72" x="500" y="0"></use>
- <use xlink:href="#MJMAIN-63" x="893" y="0"></use>
- <use xlink:href="#MJMAIN-73" x="1337" y="0"></use>
- <use xlink:href="#MJMAIN-69" x="1732" y="0"></use>
- <use xlink:href="#MJMAIN-6E" x="2010" y="0"></use>
-<g transform="translate(2733,0)">
- <use xlink:href="#MJMAIN-221A" x="0" y="-200"></use>
-<rect stroke="none" width="503" height="60" x="833" y="541"></rect>
- <use xlink:href="#MJMATHI-70" x="833" y="0"></use>
-</g>
- <use xlink:href="#MJMAIN-2E" x="4070" y="0"></use>
-</g>
-</svg></span></p>
+<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \arcsin \sqrt p. "><mjx-mi data-latex="\arcsin"><mjx-c style="padding-top:0.657em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.657em" noic="true" class="mjx-c72">r</mjx-c><mjx-c style="padding-top:0.657em" noic="true" class="mjx-c63">c</mjx-c><mjx-c style="padding-top:0.657em" noic="true" class="mjx-c73">s</mjx-c><mjx-c style="padding-top:0.657em" noic="true" class="mjx-c69">i</mjx-c><mjx-c style="padding-top:0.657em" class="mjx-c6E">n</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-msqrt data-latex="\sqrt p" space="2"><mjx-sqrt><mjx-surd><mjx-mo><mjx-c class="mjx-c221A">√</mjx-c></mjx-mo></mjx-surd><mjx-box style="padding-top:0.237em"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi></mjx-box></mjx-sqrt></mjx-msqrt><mjx-mo data-latex="."><mjx-c class="mjx-c2E">.</mjx-c></mjx-mo></mjx-math></mjx-container></p>
 <p>This is the same as our proposed mapping (just with the opposite sign).</p>
 <figure>
   <center>
@@ -936,103 +1588,19 @@ Zhang, Hang, and Laurence T. Maloney. "Ubiquitous log odds: a common representat
 <li>Transformations Related to the Angular and the Square Root. Freeman and Tukey. <em>Ann. Math Statist.</em> 21(4): 607-611 (1950). <a href="https://projecteuclid.org/journals/annals-of-mathematical-statistics/volume-21/issue-4/Transformations-Related-to-the-Angular-and-the-Square-Root/10.1214/aoms/1177729756.full">[link]</a></li>
 </ul>
 <p>Many of the references are critical of the "arcsine" transformation, and I would tend to agree.  For something like a logistic regression model, if you map the probabilities to a fixed interval, you're going to have difficulty interpreting the coefficients of your effects.  My understanding is that people were using this arcsine transformation and then fitting models of the form:</p>
-<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="8.148ex" height="2.509ex" style="vertical-align: -0.671ex;" viewBox="0 -791.3 3508.1 1080.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-17-Title">
-<title id="MathJax-SVG-17-Title"> \theta \sim X \beta,  </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#MJMATHI-3B8" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-223C" x="747" y="0"></use>
- <use xlink:href="#MJMATHI-58" x="1803" y="0"></use>
- <use xlink:href="#MJMATHI-3B2" x="2656" y="0"></use>
- <use xlink:href="#MJMAIN-2C" x="3229" y="0"></use>
-</g>
-</svg></span></p>
-<p>for some observations $X$, learning some coefficients $\beta$, but since $\theta$ is bounded, these models naturally make unphysical predictions if you extrapolate them.  The logistic model doesn't have the same problem, since log-odds are unbounded.</p>
+<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \theta \sim X \beta,  "><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="\sim" space="4"><mjx-c class="mjx-c223C">∼</mjx-c></mjx-mo><mjx-mi data-latex="X" space="4"><mjx-c class="mjx-c1D44B">𝑋</mjx-c></mjx-mi><mjx-mi data-latex="\beta"><mjx-c class="mjx-c1D6FD">𝛽</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo></mjx-math></mjx-container></p>
+<p>for some observations <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="X"><mjx-mi data-latex="X"><mjx-c class="mjx-c1D44B">𝑋</mjx-c></mjx-mi></mjx-math></mjx-container>, learning some coefficients <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\beta"><mjx-mi data-latex="\beta"><mjx-c class="mjx-c1D6FD">𝛽</mjx-c></mjx-mi></mjx-math></mjx-container>, but since <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\theta"><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi></mjx-math></mjx-container> is bounded, these models naturally make unphysical predictions if you extrapolate them.  The logistic model doesn't have the same problem, since log-odds are unbounded.</p>
 <p>While I agree that measuring degrees of belief in degrees doesn't work great for linear models, I still think it would work well for talking about and communicating probabilites.</p>
 <h1>Appendix F - Connection to Quantum Mechanics</h1>
 <p>The final connection I want to point out is easier to see if we recast the Bernoulli likelihood in terms of our new angles:</p>
-<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="27.117ex" height="6.176ex" style="vertical-align: -2.505ex;" viewBox="0 -1580.7 11675.4 2659.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-18-Title">
-<title id="MathJax-SVG-18-Title"> \Pr(X) = \begin{cases} \cos^2 \theta &amp; X = 1 \\ \sin^2 \theta &amp; X = 0 \end{cases} . </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#MJMAIN-50"></use>
- <use xlink:href="#MJMAIN-72" x="681" y="0"></use>
- <use xlink:href="#MJMAIN-28" x="1074" y="0"></use>
- <use xlink:href="#MJMATHI-58" x="1463" y="0"></use>
- <use xlink:href="#MJMAIN-29" x="2316" y="0"></use>
- <use xlink:href="#MJMAIN-3D" x="2983" y="0"></use>
-<g transform="translate(4039,0)">
- <use xlink:href="#MJSZ3-7B"></use>
-<g transform="translate(917,0)">
-<g transform="translate(-11,0)">
-<g transform="translate(0,567)">
- <use xlink:href="#MJMAIN-63"></use>
- <use xlink:href="#MJMAIN-6F" x="444" y="0"></use>
- <use xlink:href="#MJMAIN-73" x="945" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-32" x="1894" y="513"></use>
- <use xlink:href="#MJMATHI-3B8" x="1960" y="0"></use>
-</g>
-<g transform="translate(0,-702)">
- <use xlink:href="#MJMAIN-73"></use>
- <use xlink:href="#MJMAIN-69" x="394" y="0"></use>
- <use xlink:href="#MJMAIN-6E" x="673" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-32" x="1738" y="561"></use>
- <use xlink:href="#MJMATHI-3B8" x="1850" y="0"></use>
-</g>
-</g>
-<g transform="translate(3419,0)">
-<g transform="translate(0,567)">
- <use xlink:href="#MJMATHI-58" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-3D" x="1130" y="0"></use>
- <use xlink:href="#MJMAIN-31" x="2186" y="0"></use>
-</g>
-<g transform="translate(0,-702)">
- <use xlink:href="#MJMATHI-58" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-3D" x="1130" y="0"></use>
- <use xlink:href="#MJMAIN-30" x="2186" y="0"></use>
-</g>
-</g>
-</g>
-</g>
- <use xlink:href="#MJMAIN-2E" x="11396" y="0"></use>
-</g>
-</svg></span></p>
-<p>The probability that we observe our random variable in state 1 is the square of some angle $\theta$.  This reminds me of <a href="https://en.wikipedia.org/wiki/Qubit">qubits</a>, and
+<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \Pr(X) = \begin{cases} \cos^2 \theta & X = 1 \\ \sin^2 \theta & X = 0 \end{cases} . "><mjx-mo data-latex="\Pr"><mjx-c style="padding-top:0.683em" noic="true" class="mjx-c50">P</mjx-c><mjx-c style="padding-top:0.683em" class="mjx-c72">r</mjx-c></mjx-mo><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="X"><mjx-c class="mjx-c1D44B">𝑋</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mrow data-latex="{cases}" space="4"><mjx-mo><mjx-c class="mjx-c7B NCM-S6">{</mjx-c></mjx-mo><mjx-mtable style="min-width:6.095em"><mjx-table><mjx-itable><mjx-mtr style="height:0.845em"><mjx-mtd style="text-align:left;padding-right:0.5em;padding-bottom:0.1em"><mjx-msup data-latex="\cos^2"><mjx-mi data-latex="\cos"><mjx-c style="padding-top:0.448em" noic="true" class="mjx-c63">c</mjx-c><mjx-c style="padding-top:0.448em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.448em" class="mjx-c73">s</mjx-c></mjx-mi><mjx-script style="vertical-align:0.363em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mi data-latex="\theta" space="2"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align:left;padding-left:0.5em;padding-bottom:0.1em"><mjx-mi data-latex="X"><mjx-c class="mjx-c1D44B">𝑋</mjx-c></mjx-mi><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mn data-latex="1" space="4"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr style="height:0.877em"><mjx-mtd style="text-align:left;padding-right:0.5em;padding-top:0.1em"><mjx-msup data-latex="\sin^2"><mjx-mi data-latex="\sin"><mjx-c style="padding-top:0.657em" noic="true" class="mjx-c73">s</mjx-c><mjx-c style="padding-top:0.657em" noic="true" class="mjx-c69">i</mjx-c><mjx-c style="padding-top:0.657em" class="mjx-c6E">n</mjx-c></mjx-mi><mjx-script style="vertical-align:0.384em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mi data-latex="\theta" space="2"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align:left;padding-left:0.5em;padding-top:0.1em"><mjx-mi data-latex="X"><mjx-c class="mjx-c1D44B">𝑋</mjx-c></mjx-mi><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mn data-latex="0" space="4"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable><mjx-mo style="margin-right:0.12em;vertical-align:0.25em"></mjx-mo></mjx-mrow><mjx-mo data-latex="." space="2"><mjx-c class="mjx-c2E">.</mjx-c></mjx-mo></mjx-math></mjx-container></p>
+<p>The probability that we observe our random variable in state 1 is the square of some angle <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\theta"><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi></mjx-math></mjx-container>.  This reminds me of <a href="https://en.wikipedia.org/wiki/Qubit">qubits</a>, and
 the geometrical story of quantum mechanics and its relation to probability as told in Scott Aaronson's <a href="https://www.scottaaronson.com/democritus/lec9.html">blog post</a>.</p>
 <p>One could write this in <a href="https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation">Dirac notation</a>:</p>
-<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="24.127ex" height="2.843ex" style="vertical-align: -0.838ex;" viewBox="0 -863.1 10388.2 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-19-Title">
-<title id="MathJax-SVG-19-Title"> \left| \psi \right\rangle = \cos \theta \left| 1 \right\rangle + \sin \theta \left| 0 \right\rangle </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#MJMAIN-7C"></use>
- <use xlink:href="#MJMATHI-3C8" x="278" y="0"></use>
- <use xlink:href="#MJMAIN-27E9" x="930" y="0"></use>
- <use xlink:href="#MJMAIN-3D" x="1597" y="0"></use>
-<g transform="translate(2653,0)">
- <use xlink:href="#MJMAIN-63"></use>
- <use xlink:href="#MJMAIN-6F" x="444" y="0"></use>
- <use xlink:href="#MJMAIN-73" x="945" y="0"></use>
-</g>
- <use xlink:href="#MJMATHI-3B8" x="4159" y="0"></use>
-<g transform="translate(4795,0)">
- <use xlink:href="#MJMAIN-7C"></use>
- <use xlink:href="#MJMAIN-31" x="278" y="0"></use>
- <use xlink:href="#MJMAIN-27E9" x="779" y="0"></use>
-</g>
- <use xlink:href="#MJMAIN-2B" x="6186" y="0"></use>
-<g transform="translate(7187,0)">
- <use xlink:href="#MJMAIN-73"></use>
- <use xlink:href="#MJMAIN-69" x="394" y="0"></use>
- <use xlink:href="#MJMAIN-6E" x="673" y="0"></use>
-</g>
- <use xlink:href="#MJMATHI-3B8" x="8583" y="0"></use>
-<g transform="translate(9219,0)">
- <use xlink:href="#MJMAIN-7C"></use>
- <use xlink:href="#MJMAIN-30" x="278" y="0"></use>
- <use xlink:href="#MJMAIN-27E9" x="779" y="0"></use>
-</g>
-</g>
-</svg></span></p>
+<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \left| \psi \right\rangle = \cos \theta \left| 1 \right\rangle + \sin \theta \left| 0 \right\rangle "><mjx-mrow data-latex="\left| \psi \right\rangle "><mjx-mo data-latex="\left|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="\psi"><mjx-c class="mjx-c1D713">𝜓</mjx-c></mjx-mi><mjx-mo data-latex="\right\rangle "><mjx-c class="mjx-c27E9">⟩</mjx-c></mjx-mo></mjx-mrow><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mi data-latex="\cos" space="4"><mjx-c style="padding-top:0.448em" noic="true" class="mjx-c63">c</mjx-c><mjx-c style="padding-top:0.448em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.448em" class="mjx-c73">s</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mi data-latex="\theta" space="2"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mrow data-latex="\left| 1 \right\rangle " space="2"><mjx-mo data-latex="\left|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="\right\rangle "><mjx-c class="mjx-c27E9">⟩</mjx-c></mjx-mo></mjx-mrow><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mi data-latex="\sin" space="3"><mjx-c style="padding-top:0.657em" noic="true" class="mjx-c73">s</mjx-c><mjx-c style="padding-top:0.657em" noic="true" class="mjx-c69">i</mjx-c><mjx-c style="padding-top:0.657em" class="mjx-c6E">n</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mi data-latex="\theta" space="2"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mrow data-latex="\left| 0 \right\rangle " space="2"><mjx-mo data-latex="\left|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mn data-latex="0"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn><mjx-mo data-latex="\right\rangle "><mjx-c class="mjx-c27E9">⟩</mjx-c></mjx-mo></mjx-mrow></mjx-math></mjx-container></p>
 <p>and use <a href="https://en.wikipedia.org/wiki/Born_rule">Born's rule</a> to derive the probabilites, i.e. you must take the square modulus of the amplitude to get the probability.</p>
 <p>I wonder whether there is more to this analogy...</p>
-<script defer="">
+<script defer>
     const slider = document.getElementById('probabilitySlider');
     const input = document.getElementById('probabilityInput');
     const meter = document.getElementById('interactive');
@@ -1059,7 +1627,7 @@ the geometrical story of quantum mechanics and its relation to probability as to
     </div>
   </article>
 
-  <script src="https://giscus.app/client.js" data-repo="alexalemi/blog.alexalemi.com" data-repo-id="MDEwOlJlcG9zaXRvcnkyNjk2OTU4MzU=" data-category="Announcements" data-category-id="DIC_kwDOEBM7W84B_4Ke" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+  <script src="https://giscus.app/client.js" data-repo="alexalemi/blog.alexalemi.com" data-repo-id="MDEwOlJlcG9zaXRvcnkyNjk2OTU4MzU=" data-category="Announcements" data-category-id="DIC_kwDOEBM7W84B_4Ke" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-theme="light" data-lang="en" crossorigin="anonymous" async>
   </script>
 
   <footer>
@@ -1071,5 +1639,5 @@ the geometrical story of quantum mechanics and its relation to probability as to
 
 
 
-
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs id="MathJax_SVG_glyphs"><path stroke-width="1" id="MJMATHI-3B8" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"></path><path stroke-width="1" id="MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path stroke-width="1" id="MJMAIN-61" d="M137 305T115 305T78 320T63 359Q63 394 97 421T218 448Q291 448 336 416T396 340Q401 326 401 309T402 194V124Q402 76 407 58T428 40Q443 40 448 56T453 109V145H493V106Q492 66 490 59Q481 29 455 12T400 -6T353 12T329 54V58L327 55Q325 52 322 49T314 40T302 29T287 17T269 6T247 -2T221 -8T190 -11Q130 -11 82 20T34 107Q34 128 41 147T68 188T116 225T194 253T304 268H318V290Q318 324 312 340Q290 411 215 411Q197 411 181 410T156 406T148 403Q170 388 170 359Q170 334 154 320ZM126 106Q126 75 150 51T209 26Q247 26 276 49T315 109Q317 116 318 175Q318 233 317 233Q309 233 296 232T251 223T193 203T147 166T126 106Z"></path><path stroke-width="1" id="MJMAIN-72" d="M36 46H50Q89 46 97 60V68Q97 77 97 91T98 122T98 161T98 203Q98 234 98 269T98 328L97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 60 434T96 436Q112 437 131 438T160 441T171 442H174V373Q213 441 271 441H277Q322 441 343 419T364 373Q364 352 351 337T313 322Q288 322 276 338T263 372Q263 381 265 388T270 400T273 405Q271 407 250 401Q234 393 226 386Q179 341 179 207V154Q179 141 179 127T179 101T180 81T180 66V61Q181 59 183 57T188 54T193 51T200 49T207 48T216 47T225 47T235 46T245 46H276V0H267Q249 3 140 3Q37 3 28 0H20V46H36Z"></path><path stroke-width="1" id="MJMAIN-63" d="M370 305T349 305T313 320T297 358Q297 381 312 396Q317 401 317 402T307 404Q281 408 258 408Q209 408 178 376Q131 329 131 219Q131 137 162 90Q203 29 272 29Q313 29 338 55T374 117Q376 125 379 127T395 129H409Q415 123 415 120Q415 116 411 104T395 71T366 33T318 2T249 -11Q163 -11 99 53T34 214Q34 318 99 383T250 448T370 421T404 357Q404 334 387 320Z"></path><path stroke-width="1" id="MJMAIN-6F" d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z"></path><path stroke-width="1" id="MJMAIN-73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z"></path><path stroke-width="1" id="MJMATHI-70" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path><path stroke-width="1" id="MJMAIN-221A" d="M95 178Q89 178 81 186T72 200T103 230T169 280T207 309Q209 311 212 311H213Q219 311 227 294T281 177Q300 134 312 108L397 -77Q398 -77 501 136T707 565T814 786Q820 800 834 800Q841 800 846 794T853 782V776L620 293L385 -193Q381 -200 366 -200Q357 -200 354 -197Q352 -195 256 15L160 225L144 214Q129 202 113 190T95 178Z"></path><path stroke-width="1" id="MJMAIN-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path><path stroke-width="1" id="MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path stroke-width="1" id="MJMAIN-2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path><path stroke-width="1" id="MJMATHI-44" d="M287 628Q287 635 230 637Q207 637 200 638T193 647Q193 655 197 667T204 682Q206 683 403 683Q570 682 590 682T630 676Q702 659 752 597T803 431Q803 275 696 151T444 3L430 1L236 0H125H72Q48 0 41 2T33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM703 469Q703 507 692 537T666 584T629 613T590 629T555 636Q553 636 541 636T512 636T479 637H436Q392 637 386 627Q384 623 313 339T242 52Q242 48 253 48T330 47Q335 47 349 47T373 46Q499 46 581 128Q617 164 640 212T683 339T703 469Z"></path><path stroke-width="1" id="MJMAIN-5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"></path><path stroke-width="1" id="MJMAIN-3B" d="M78 370Q78 394 95 412T138 430Q162 430 180 414T199 371Q199 346 182 328T139 310T96 327T78 370ZM78 60Q78 85 94 103T137 121Q202 121 202 8Q202 -44 183 -94T144 -169T118 -194Q115 -194 106 -186T95 -174Q94 -171 107 -155T137 -107T160 -38Q161 -32 162 -22T165 -4T165 4Q165 5 161 4T142 0Q110 0 94 18T78 60Z"></path><path stroke-width="1" id="MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path stroke-width="1" id="MJMATHI-3B4" d="M195 609Q195 656 227 686T302 717Q319 716 351 709T407 697T433 690Q451 682 451 662Q451 644 438 628T403 612Q382 612 348 641T288 671T249 657T235 628Q235 584 334 463Q401 379 401 292Q401 169 340 80T205 -10H198Q127 -10 83 36T36 153Q36 286 151 382Q191 413 252 434Q252 435 245 449T230 481T214 521T201 566T195 609ZM112 130Q112 83 136 55T204 27Q233 27 256 51T291 111T309 178T316 232Q316 267 309 298T295 344T269 400L259 396Q215 381 183 342T137 256T118 179T112 130Z"></path><path stroke-width="1" id="MJMAIN-5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"></path><path stroke-width="1" id="MJMAIN-2261" d="M56 444Q56 457 70 464H707Q722 456 722 444Q722 430 706 424H72Q56 429 56 444ZM56 237T56 250T70 270H707Q722 262 722 250T707 230H70Q56 237 56 250ZM56 56Q56 71 72 76H706Q722 70 722 56Q722 44 707 36H70Q56 43 56 56Z"></path><path stroke-width="1" id="MJMAIN-6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path stroke-width="1" id="MJMAIN-67" d="M329 409Q373 453 429 453Q459 453 472 434T485 396Q485 382 476 371T449 360Q416 360 412 390Q410 404 415 411Q415 412 416 414V415Q388 412 363 393Q355 388 355 386Q355 385 359 381T368 369T379 351T388 325T392 292Q392 230 343 187T222 143Q172 143 123 171Q112 153 112 133Q112 98 138 81Q147 75 155 75T227 73Q311 72 335 67Q396 58 431 26Q470 -13 470 -72Q470 -139 392 -175Q332 -206 250 -206Q167 -206 107 -175Q29 -140 29 -75Q29 -39 50 -15T92 18L103 24Q67 55 67 108Q67 155 96 193Q52 237 52 292Q52 355 102 398T223 442Q274 442 318 416L329 409ZM299 343Q294 371 273 387T221 404Q192 404 171 388T145 343Q142 326 142 292Q142 248 149 227T179 192Q196 182 222 182Q244 182 260 189T283 207T294 227T299 242Q302 258 302 292T299 343ZM403 -75Q403 -50 389 -34T348 -11T299 -2T245 0H218Q151 0 138 -6Q118 -15 107 -34T95 -74Q95 -84 101 -97T122 -127T170 -155T250 -167Q319 -167 361 -139T403 -75Z"></path><path stroke-width="1" id="MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="1" id="MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path stroke-width="1" id="MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path><path stroke-width="1" id="MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path stroke-width="1" id="MJMAIN-2248" d="M55 319Q55 360 72 393T114 444T163 472T205 482Q207 482 213 482T223 483Q262 483 296 468T393 413L443 381Q502 346 553 346Q609 346 649 375T694 454Q694 465 698 474T708 483Q722 483 722 452Q722 386 675 338T555 289Q514 289 468 310T388 357T308 404T224 426Q164 426 125 393T83 318Q81 289 69 289Q55 289 55 319ZM55 85Q55 126 72 159T114 210T163 238T205 248Q207 248 213 248T223 249Q262 249 296 234T393 179L443 147Q502 112 553 112Q609 112 649 141T694 220Q694 249 708 249T722 217Q722 153 675 104T555 55Q514 55 468 76T388 123T308 170T224 192Q164 192 125 159T83 84Q80 55 69 55Q55 55 55 85Z"></path><path stroke-width="1" id="MJMAIN-22EF" d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"></path><path stroke-width="1" id="MJMATHI-3C0" d="M132 -11Q98 -11 98 22V33L111 61Q186 219 220 334L228 358H196Q158 358 142 355T103 336Q92 329 81 318T62 297T53 285Q51 284 38 284Q19 284 19 294Q19 300 38 329T93 391T164 429Q171 431 389 431Q549 431 553 430Q573 423 573 402Q573 371 541 360Q535 358 472 358H408L405 341Q393 269 393 222Q393 170 402 129T421 65T431 37Q431 20 417 5T381 -10Q370 -10 363 -7T347 17T331 77Q330 86 330 121Q330 170 339 226T357 318T367 358H269L268 354Q268 351 249 275T206 114T175 17Q164 -11 132 -11Z"></path><path stroke-width="1" id="MJSZ1-221A" d="M263 249Q264 249 315 130T417 -108T470 -228L725 302Q981 837 982 839Q989 850 1001 850Q1008 850 1013 844T1020 832V826L741 243Q645 43 540 -176Q479 -303 469 -324T453 -348Q449 -350 436 -350L424 -349L315 -96Q206 156 205 156L171 130Q138 104 137 104L111 130L263 249Z"></path><path stroke-width="1" id="MJMATHI-3C7" d="M576 -125Q576 -147 547 -175T487 -204H476Q394 -204 363 -157Q334 -114 293 26L284 59Q283 58 248 19T170 -66T92 -151T53 -191Q49 -194 43 -194Q36 -194 31 -189T25 -177T38 -154T151 -30L272 102L265 131Q189 405 135 405Q104 405 87 358Q86 351 68 351Q48 351 48 361Q48 369 56 386T89 423T148 442Q224 442 258 400Q276 375 297 320T330 222L341 180Q344 180 455 303T573 429Q579 431 582 431Q600 431 600 414Q600 407 587 392T477 270Q356 138 353 134L362 102Q392 -10 428 -89T490 -168Q504 -168 517 -156T536 -126Q539 -116 543 -115T557 -114T571 -115Q576 -118 576 -125Z"></path><path stroke-width="1" id="MJMAIN-34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path><path stroke-width="1" id="MJMAIN-68" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 124T102 167T103 217T103 272T103 329Q103 366 103 407T103 482T102 542T102 586T102 603Q99 622 88 628T43 637H25V660Q25 683 27 683L37 684Q47 685 66 686T103 688Q120 689 140 690T170 693T181 694H184V367Q244 442 328 442Q451 442 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"></path><path stroke-width="1" id="MJMAIN-64" d="M376 495Q376 511 376 535T377 568Q377 613 367 624T316 637H298V660Q298 683 300 683L310 684Q320 685 339 686T376 688Q393 689 413 690T443 693T454 694H457V390Q457 84 458 81Q461 61 472 55T517 46H535V0Q533 0 459 -5T380 -11H373V44L365 37Q307 -11 235 -11Q158 -11 96 50T34 215Q34 315 97 378T244 442Q319 442 376 393V495ZM373 342Q328 405 260 405Q211 405 173 369Q146 341 139 305T131 211Q131 155 138 120T173 59Q203 26 251 26Q322 26 373 103V342Z"></path><path stroke-width="1" id="MJMAIN-394" d="M51 0Q46 4 46 7Q46 9 215 357T388 709Q391 716 416 716Q439 716 444 709Q447 705 616 357T786 7Q786 4 781 0H51ZM507 344L384 596L137 92L383 91H630Q630 93 507 344Z"></path><path stroke-width="1" id="MJMAIN-223C" d="M55 166Q55 241 101 304T222 367Q260 367 296 349T362 304T421 252T484 208T554 189Q616 189 655 236T694 338Q694 350 698 358T708 367Q722 367 722 334Q722 260 677 197T562 134H554Q517 134 481 152T414 196T355 248T292 293T223 311Q179 311 145 286Q109 257 96 218T80 156T69 133Q55 133 55 166Z"></path><path stroke-width="1" id="MJMAIN-36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z"></path><path stroke-width="1" id="MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path stroke-width="1" id="MJSZ3-28" d="M701 -940Q701 -943 695 -949H664Q662 -947 636 -922T591 -879T537 -818T475 -737T412 -636T350 -511T295 -362T250 -186T221 17T209 251Q209 962 573 1361Q596 1386 616 1405T649 1437T664 1450H695Q701 1444 701 1441Q701 1436 681 1415T629 1356T557 1261T476 1118T400 927T340 675T308 359Q306 321 306 250Q306 -139 400 -430T690 -924Q701 -936 701 -940Z"></path><path stroke-width="1" id="MJSZ3-29" d="M34 1438Q34 1446 37 1448T50 1450H56H71Q73 1448 99 1423T144 1380T198 1319T260 1238T323 1137T385 1013T440 864T485 688T514 485T526 251Q526 134 519 53Q472 -519 162 -860Q139 -885 119 -904T86 -936T71 -949H56Q43 -949 39 -947T34 -937Q88 -883 140 -813Q428 -430 428 251Q428 453 402 628T338 922T245 1146T145 1309T46 1425Q44 1427 42 1429T39 1433T36 1436L34 1438Z"></path><path stroke-width="1" id="MJMAIN-33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path><path stroke-width="1" id="MJSS-4C" d="M87 0V694H191V79L297 80H451L499 81V0H87Z"></path><path stroke-width="1" id="MJSS-6F" d="M28 222Q28 323 95 391T244 460Q275 460 281 459Q364 445 417 377T471 219Q471 124 408 57T250 -10Q158 -10 93 57T28 222ZM377 230Q377 277 364 310T328 358T287 379T248 385Q233 385 219 382T186 369T155 342T132 297T122 230Q122 146 159 108T250 69H253Q263 69 274 70T305 81T339 106T365 154T377 230Z"></path><path stroke-width="1" id="MJMATHI-3B3" d="M31 249Q11 249 11 258Q11 275 26 304T66 365T129 418T206 441Q233 441 239 440Q287 429 318 386T371 255Q385 195 385 170Q385 166 386 166L398 193Q418 244 443 300T486 391T508 430Q510 431 524 431H537Q543 425 543 422Q543 418 522 378T463 251T391 71Q385 55 378 6T357 -100Q341 -165 330 -190T303 -216Q286 -216 286 -188Q286 -138 340 32L346 51L347 69Q348 79 348 100Q348 257 291 317Q251 355 196 355Q148 355 108 329T51 260Q49 251 47 251Q45 249 31 249Z"></path><path stroke-width="1" id="MJMAIN-69" d="M69 609Q69 637 87 653T131 669Q154 667 171 652T188 609Q188 579 171 564T129 549Q104 549 87 564T69 609ZM247 0Q232 3 143 3Q132 3 106 3T56 1L34 0H26V46H42Q70 46 91 49Q100 53 102 60T104 102V205V293Q104 345 102 359T88 378Q74 385 41 385H30V408Q30 431 32 431L42 432Q52 433 70 434T106 436Q123 437 142 438T171 441T182 442H185V62Q190 52 197 50T232 46H255V0H247Z"></path><path stroke-width="1" id="MJMAIN-6E" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q450 438 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"></path><path stroke-width="1" id="MJMATHI-58" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path><path stroke-width="1" id="MJMATHI-3B2" d="M29 -194Q23 -188 23 -186Q23 -183 102 134T186 465Q208 533 243 584T309 658Q365 705 429 705H431Q493 705 533 667T573 570Q573 465 469 396L482 383Q533 332 533 252Q533 139 448 65T257 -10Q227 -10 203 -2T165 17T143 40T131 59T126 65L62 -188Q60 -194 42 -194H29ZM353 431Q392 431 427 419L432 422Q436 426 439 429T449 439T461 453T472 471T484 495T493 524T501 560Q503 569 503 593Q503 611 502 616Q487 667 426 667Q384 667 347 643T286 582T247 514T224 455Q219 439 186 308T152 168Q151 163 151 147Q151 99 173 68Q204 26 260 26Q302 26 349 51T425 137Q441 171 449 214T457 279Q457 337 422 372Q380 358 347 358H337Q258 358 258 389Q258 396 261 403Q275 431 353 431Z"></path><path stroke-width="1" id="MJMAIN-50" d="M130 622Q123 629 119 631T103 634T60 637H27V683H214Q237 683 276 683T331 684Q419 684 471 671T567 616Q624 563 624 489Q624 421 573 372T451 307Q429 302 328 301H234V181Q234 62 237 58Q245 47 304 46H337V0H326Q305 3 182 3Q47 3 38 0H27V46H60Q102 47 111 49T130 61V622ZM507 488Q507 514 506 528T500 564T483 597T450 620T397 635Q385 637 307 637H286Q237 637 234 628Q231 624 231 483V342H302H339Q390 342 423 349T481 382Q507 411 507 488Z"></path><path stroke-width="1" id="MJMAIN-7B" d="M434 -231Q434 -244 428 -250H410Q281 -250 230 -184Q225 -177 222 -172T217 -161T213 -148T211 -133T210 -111T209 -84T209 -47T209 0Q209 21 209 53Q208 142 204 153Q203 154 203 155Q189 191 153 211T82 231Q71 231 68 234T65 250T68 266T82 269Q116 269 152 289T203 345Q208 356 208 377T209 529V579Q209 634 215 656T244 698Q270 724 324 740Q361 748 377 749Q379 749 390 749T408 750H428Q434 744 434 732Q434 719 431 716Q429 713 415 713Q362 710 332 689T296 647Q291 634 291 499V417Q291 370 288 353T271 314Q240 271 184 255L170 250L184 245Q202 239 220 230T262 196T290 137Q291 131 291 1Q291 -134 296 -147Q306 -174 339 -192T415 -213Q429 -213 431 -216Q434 -219 434 -231Z"></path><path stroke-width="1" id="MJSZ3-7B" d="M618 -943L612 -949H582L568 -943Q472 -903 411 -841T332 -703Q327 -682 327 -653T325 -350Q324 -28 323 -18Q317 24 301 61T264 124T221 171T179 205T147 225T132 234Q130 238 130 250Q130 255 130 258T131 264T132 267T134 269T139 272T144 275Q207 308 256 367Q310 436 323 519Q324 529 325 851Q326 1124 326 1154T332 1205Q369 1358 566 1443L582 1450H612L618 1444V1429Q618 1413 616 1411L608 1406Q599 1402 585 1393T552 1372T515 1343T479 1305T449 1257T429 1200Q425 1180 425 1152T423 851Q422 579 422 549T416 498Q407 459 388 424T346 364T297 318T250 284T214 264T197 254L188 251L205 242Q290 200 345 138T416 3Q421 -18 421 -48T423 -349Q423 -397 423 -472Q424 -677 428 -694Q429 -697 429 -699Q434 -722 443 -743T465 -782T491 -816T519 -845T548 -868T574 -886T595 -899T610 -908L616 -910Q618 -912 618 -928V-943Z"></path><path stroke-width="1" id="MJMAIN-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path stroke-width="1" id="MJMATHI-3C8" d="M161 441Q202 441 226 417T250 358Q250 338 218 252T187 127Q190 85 214 61Q235 43 257 37Q275 29 288 29H289L371 360Q455 691 456 692Q459 694 472 694Q492 694 492 687Q492 678 411 356Q329 28 329 27T335 26Q421 26 498 114T576 278Q576 302 568 319T550 343T532 361T524 384Q524 405 541 424T583 443Q602 443 618 425T634 366Q634 337 623 288T605 220Q573 125 492 57T329 -11H319L296 -104Q272 -198 272 -199Q270 -205 252 -205H239Q233 -199 233 -197Q233 -192 256 -102T279 -9Q272 -8 265 -8Q106 14 106 139Q106 174 139 264T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Q21 299 34 333T82 404T161 441Z"></path><path stroke-width="1" id="MJMAIN-27E9" d="M55 732Q56 739 61 744T75 750Q85 750 92 740Q95 733 186 494T278 250T187 6T92 -240Q85 -250 75 -250Q67 -250 62 -245T55 -232Q55 -227 145 11Q236 248 236 250T145 489Q55 727 55 732Z"></path></defs></svg></body></html>
+</body>
+</html>

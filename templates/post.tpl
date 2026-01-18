@@ -62,9 +62,9 @@
   <header>
     <h3>Alex Alemi's Blog</h3>
     <nav>
-      <a href='https://blog.alexalemi.com' />Index</a> |
-      <a href='https://alexalemi.com' />About Me</a> | 
-      <a rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml" />RSS</a>
+      <a href='https://blog.alexalemi.com'>Index</a> |
+      <a href='https://alexalemi.com'>About Me</a> |
+      <a rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml">RSS</a>
     </nav>
   </header>
 

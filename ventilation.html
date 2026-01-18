@@ -1,10 +1,11 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html><html lang="en">
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>blog.alexalemi.com Ventilation</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-F5SW43T5NT"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5SW43T5NT"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -40,7 +41,7 @@
         })();
     </script>
 
-    <script defer="" src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script>
     MathJax = {
       tex: {
@@ -48,83 +49,1262 @@
         processEscapes: true
       }};
     </script>
-    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <!-- Inline CSS -->
     <link rel="stylesheet" type="text/css" href="assets/style.css">
-<style type="text/css">
-                            .mjpage .MJX-monospace {
-                            font-family: monospace
-                            }
+<style id="MJX-CHTML-styles">
+mjx-container[overflow="scroll"][display] {
+  overflow: auto clip;
+  min-width: initial !important;
+}
 
-                            .mjpage .MJX-sans-serif {
-                            font-family: sans-serif
-                            }
+mjx-container[overflow="truncate"][display] {
+  overflow: hidden clip;
+  min-width: initial !important;
+}
 
-                            .mjpage {
-                            display: inline;
-                            font-style: normal;
-                            font-weight: normal;
-                            line-height: normal;
-                            font-size: 100%;
-                            font-size-adjust: none;
-                            text-indent: 0;
-                            text-align: left;
-                            text-transform: none;
-                            letter-spacing: normal;
-                            word-spacing: normal;
-                            word-wrap: normal;
-                            white-space: nowrap;
-                            float: none;
-                            direction: ltr;
-                            max-width: none;
-                            max-height: none;
-                            min-width: 0;
-                            min-height: 0;
-                            border: 0;
-                            padding: 0;
-                            margin: 0
-                            }
+mjx-container[display] {
+  display: block;
+  text-align: center;
+  justify-content: center;
+  margin: .7em 0;
+  padding: .3em 2px;
+}
 
-                            .mjpage * {
-                            transition: none;
-                            -webkit-transition: none;
-                            -moz-transition: none;
-                            -ms-transition: none;
-                            -o-transition: none
-                            }
+mjx-container[display][width="full"] {
+  display: flex;
+}
 
-                            .mjx-svg-href {
-                            fill: blue;
-                            stroke: blue
-                            }
+mjx-container[justify="left"] {
+  text-align: left;
+  justify-content: left;
+}
 
-                            .MathJax_SVG_LineBox {
-                            display: table!important
-                            }
+mjx-container[justify="right"] {
+  text-align: right;
+  justify-content: right;
+}
 
-                            .MathJax_SVG_LineBox span {
-                            display: table-cell!important;
-                            width: 10000em!important;
-                            min-width: 0;
-                            max-width: none;
-                            padding: 0;
-                            border: 0;
-                            margin: 0
-                            }
+mjx-container[jax="CHTML"] {
+  white-space: nowrap;
+}
 
-                            .mjpage__block {
-                            text-align: center;
-                            margin: 1em 0em;
-                            position: relative;
-                            display: block!important;
-                            text-indent: 0;
-                            max-width: none;
-                            max-height: none;
-                            min-width: 0;
-                            min-height: 0;
-                            width: 100%
-                            }</style></head>
+mjx-mo > mjx-c, mjx-mi > mjx-c, mjx-mn > mjx-c, mjx-ms > mjx-c, mjx-mtext > mjx-c {
+  clip-path: padding-box polygon(-1em -2px, calc(100% + 1em) -2px, calc(100% + 1em) calc(100% + 2px), -1em calc(100% + 2px));
+}
+
+mjx-stretchy-h {
+  clip-path: padding-box polygon(0 -2px, 100% -2px, 100% calc(100% + 2px), 0 calc(100% + 2px));
+  display: inline-block;
+}
+
+mjx-stretchy-v {
+  clip-path: padding-box polygon(-2px 0, calc(100% + 2px) 0, calc(100% + 2px) 100%, -2px 100%);
+  display: inline-block;
+  text-align: center;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > mjx-cell, mjx-row > mjx-base, mjx-row > mjx-under, mjx-row > mjx-over, mjx-row > mjx-den {
+  display: table-cell;
+}
+
+mjx-container [inline-breaks] {
+  display: inline;
+}
+
+mjx-container .mjx-selected {
+  outline: 2px solid black;
+}
+
+@media (prefers-color-scheme: dark) {
+  mjx-container .mjx-selected {
+    outline: 2px solid #C8C8C8;
+  }
+}
+
+mjx-mtext {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+mjx-math {
+  display: inline-block;
+  text-align: left;
+  line-height: 0;
+  text-indent: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  font-size-adjust: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  word-spacing: normal;
+  direction: ltr;
+  padding: 1px 0;
+}
+
+mjx-container[jax="CHTML"][display="true"] mjx-math {
+  padding: 0;
+}
+
+mjx-math[breakable] {
+  display: inline;
+}
+
+mjx-container[jax="CHTML"] mjx-break {
+  white-space: normal;
+  line-height: 0;
+  clip-path: rect(0 0 0 0);
+  font-family: MJX-BRK !important;
+}
+
+mjx-break[size="0"] {
+  letter-spacing: -0.999em;
+}
+
+mjx-break[size="1"] {
+  letter-spacing: -0.889em;
+}
+
+mjx-break[size="2"] {
+  letter-spacing: -0.833em;
+}
+
+mjx-break[size="3"] {
+  letter-spacing: -0.778em;
+}
+
+mjx-break[size="4"] {
+  letter-spacing: -0.722em;
+}
+
+mjx-break[size="5"] {
+  letter-spacing: -0.667em;
+}
+
+mjx-TeXAtom {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-msub {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-msubsup {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-script {
+  display: inline-block;
+  padding-right: .05em;
+  padding-left: .033em;
+}
+
+mjx-script > mjx-spacer {
+  display: block;
+}
+
+mjx-mi {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-c {
+  display: inline-block;
+  width: 0;
+  text-align: right;
+}
+
+mjx-utext {
+  display: inline-block;
+  padding: .75em 0 .2em 0;
+}
+
+mjx-mn {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mover {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mover:not([limits="false"]) {
+  padding-top: .1em;
+}
+
+mjx-mover:not([limits="false"]) > mjx-base, mjx-mover:not([limits="false"]) > mjx-over {
+  display: block;
+  text-align: left;
+}
+
+mjx-mo {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-stretchy-h > mjx-beg, mjx-stretchy-h > mjx-ext, mjx-stretchy-h > mjx-end, mjx-stretchy-h > mjx-mid {
+  display: inline-block;
+  width: 0;
+  text-align: right;
+}
+
+mjx-stretchy-h > mjx-ext {
+  clip-path: padding-box polygon(0 -1em, 100% -1em, 100% calc(100% + 1em), 0 calc(100% + 1em));
+  width: 100%;
+  border: 0px solid transparent;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+mjx-stretchy-v > mjx-beg, mjx-stretchy-v > mjx-ext, mjx-stretchy-v > mjx-end, mjx-stretchy-v > mjx-mid {
+  display: block;
+  height: 0;
+  margin: 0 auto;
+}
+
+mjx-stretchy-v > mjx-ext > mjx-spacer {
+  display: block;
+}
+
+mjx-stretchy-v > mjx-ext {
+  clip-path: padding-box polygon(-1em 0, calc(100% + 1em) 0, calc(100% + 1em) 100%, -1em 100%);
+  height: 100%;
+  border: 0.1px solid transparent;
+  box-sizing: border-box;
+  white-space: pre;
+}
+
+mjx-mark {
+  display: inline-block;
+  height: 0;
+}
+
+mjx-mrow {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-linestack, mjx-mrow[break-top] {
+  display: inline-table;
+  width: 100%;
+}
+
+mjx-linestack[break-align="bottom"], mjx-mrow[break-top][break-align="bottom"] {
+  display: inline-block;
+}
+
+mjx-linestack[break-align="middle"], mjx-mrow[break-top][break-align="middle"] {
+  vertical-align: middle;
+}
+
+mjx-linestack[break-align="center"], mjx-mrow[break-top][break-align="center"] {
+  vertical-align: middle;
+}
+
+mjx-linestack[breakable] {
+  display: inline;
+}
+
+mjx-linestack[breakable] > mjx-linebox {
+  display: inline;
+}
+
+mjx-linestack[breakable] > mjx-linebox::before {
+  white-space: pre;
+  content: "\A";
+}
+
+mjx-linestack[breakable] > mjx-linebox::after {
+  white-space: normal;
+  content: " ";
+  letter-spacing: -.999em;
+  font-family: MJX-BRK;
+}
+
+mjx-linestack[breakable] > mjx-linebox:first-of-type::before {
+  display: none;
+}
+
+mjx-linestack[breakable] > mjx-linebox:last-of-type::after {
+  display: none;
+}
+
+mjx-linebox {
+  display: block;
+}
+
+mjx-linebox[align="left"] {
+  text-align: left;
+}
+
+mjx-linebox[align="center"] {
+  text-align: center;
+}
+
+mjx-linebox[align="right"] {
+  text-align: right;
+}
+
+mjx-linestrut {
+  display: inline-block;
+  height: 1em;
+  vertical-align: -.25em;
+}
+
+mjx-msup {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mfrac {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-frac {
+  display: inline-block;
+  vertical-align: 0.17em;
+  padding: 0 .22em;
+}
+
+mjx-frac[type="d"] {
+  vertical-align: .04em;
+}
+
+mjx-frac[delims] {
+  padding: 0 .1em;
+}
+
+mjx-frac[atop] {
+  padding: 0 .12em;
+}
+
+mjx-frac[atop][delims] {
+  padding: 0;
+}
+
+mjx-dtable {
+  display: inline-table;
+  width: 100%;
+}
+
+mjx-dtable > mjx-line, mjx-dtable > mjx-row {
+  font-size: 2000%;
+}
+
+mjx-dbox {
+  display: block;
+  font-size: 5%;
+}
+
+mjx-num {
+  display: block;
+  text-align: center;
+}
+
+mjx-den {
+  display: block;
+  text-align: center;
+}
+
+mjx-mfrac[bevelled] > mjx-num {
+  display: inline-block;
+}
+
+mjx-mfrac[bevelled] > mjx-den {
+  display: inline-block;
+}
+
+mjx-den[align="right"], mjx-num[align="right"] {
+  text-align: right;
+}
+
+mjx-den[align="left"], mjx-num[align="left"] {
+  text-align: left;
+}
+
+mjx-nstrut {
+  display: inline-block;
+  height: .054em;
+  width: 0;
+  vertical-align: -.054em;
+}
+
+mjx-nstrut[type="d"] {
+  height: .217em;
+  vertical-align: -.217em;
+}
+
+mjx-dstrut {
+  display: inline-block;
+  height: .505em;
+  width: 0;
+}
+
+mjx-dstrut[type="d"] {
+  height: .726em;
+}
+
+mjx-line {
+  display: block;
+  box-sizing: border-box;
+  min-height: 1px;
+  height: .06em;
+  border-top: .075em solid;
+  margin: .06em -.1em;
+  overflow: hidden;
+}
+
+mjx-line[type="d"] {
+  margin: .18em -.1em;
+}
+
+mjx-mspace {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mtable {
+  display: inline-block;
+  text-align: center;
+  vertical-align: .25em;
+  position: relative;
+  box-sizing: border-box;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+mjx-mstyle[size="s"] mjx-mtable {
+  vertical-align: .354em;
+}
+
+mjx-labels {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+mjx-table {
+  display: inline-block;
+  vertical-align: -.5ex;
+  box-sizing: border-box;
+}
+
+mjx-table > mjx-itable {
+  vertical-align: middle;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+mjx-labels > mjx-itable {
+  position: absolute;
+  top: 0;
+}
+
+mjx-mtable[justify="left"] {
+  text-align: left;
+}
+
+mjx-mtable[justify="right"] {
+  text-align: right;
+}
+
+mjx-mtable[justify="left"][side="left"] {
+  padding-right: 0 ! important;
+}
+
+mjx-mtable[justify="left"][side="right"] {
+  padding-left: 0 ! important;
+}
+
+mjx-mtable[justify="right"][side="left"] {
+  padding-right: 0 ! important;
+}
+
+mjx-mtable[justify="right"][side="right"] {
+  padding-left: 0 ! important;
+}
+
+mjx-mtable[align] {
+  vertical-align: baseline;
+}
+
+mjx-mtable[align="top"] > mjx-table {
+  vertical-align: top;
+}
+
+mjx-mtable[align="bottom"] > mjx-table {
+  vertical-align: bottom;
+}
+
+mjx-mtable[side="right"] mjx-labels {
+  min-width: 100%;
+}
+
+mjx-mtr {
+  display: table-row;
+  text-align: left;
+}
+
+mjx-mtr[rowalign="top"] > mjx-mtd {
+  vertical-align: top;
+}
+
+mjx-mtr[rowalign="center"] > mjx-mtd {
+  vertical-align: middle;
+}
+
+mjx-mtr[rowalign="bottom"] > mjx-mtd {
+  vertical-align: bottom;
+}
+
+mjx-mtr[rowalign="baseline"] > mjx-mtd {
+  vertical-align: baseline;
+}
+
+mjx-mtr[rowalign="axis"] > mjx-mtd {
+  vertical-align: .25em;
+}
+
+mjx-mtd {
+  display: table-cell;
+  text-align: center;
+  padding: .215em .4em;
+}
+
+mjx-mtd:first-child {
+  padding-left: 0;
+}
+
+mjx-mtd:last-child {
+  padding-right: 0;
+}
+
+mjx-mtable > * > mjx-itable > *:first-child > mjx-mtd {
+  padding-top: 0;
+}
+
+mjx-mtable > * > mjx-itable > *:last-child > mjx-mtd {
+  padding-bottom: 0;
+}
+
+mjx-tstrut {
+  display: inline-block;
+  height: 1em;
+  vertical-align: -.25em;
+}
+
+mjx-labels[align="left"] > mjx-mtr > mjx-mtd {
+  text-align: left;
+}
+
+mjx-labels[align="right"] > mjx-mtr > mjx-mtd {
+  text-align: right;
+}
+
+mjx-mtd[extra] {
+  padding: 0;
+}
+
+mjx-mtd[rowalign="top"] {
+  vertical-align: top;
+}
+
+mjx-mtd[rowalign="center"] {
+  vertical-align: middle;
+}
+
+mjx-mtd[rowalign="bottom"] {
+  vertical-align: bottom;
+}
+
+mjx-mtd[rowalign="baseline"] {
+  vertical-align: baseline;
+}
+
+mjx-mtd[rowalign="axis"] {
+  vertical-align: .25em;
+}
+
+mjx-container[jax="CHTML"] > mjx-math.NCM-N[breakable] > * {
+  font-family: MJX-NCM-ZERO, MJX-NCM-N;
+}
+
+.NCM-N {
+  font-family: MJX-NCM-ZERO, MJX-NCM-N;
+}
+
+.NCM-B {
+  font-family: MJX-NCM-ZERO, MJX-NCM-B;
+}
+
+.NCM-I {
+  font-family: MJX-NCM-ZERO, MJX-NCM-I;
+}
+
+.NCM-BI {
+  font-family: MJX-NCM-ZERO, MJX-NCM-BI;
+}
+
+.NCM-DS {
+  font-family: MJX-NCM-ZERO, MJX-NCM-DS;
+}
+
+.NCM-F {
+  font-family: MJX-NCM-ZERO, MJX-NCM-F;
+}
+
+.NCM-FB {
+  font-family: MJX-NCM-ZERO, MJX-NCM-FB;
+}
+
+.NCM-SS {
+  font-family: MJX-NCM-ZERO, MJX-NCM-SS;
+}
+
+.NCM-SSB {
+  font-family: MJX-NCM-ZERO, MJX-NCM-SSB;
+}
+
+.NCM-SSI {
+  font-family: MJX-NCM-ZERO, MJX-NCM-SSI;
+}
+
+.NCM-SSBI {
+  font-family: MJX-NCM-ZERO, MJX-NCM-SSBI;
+}
+
+.NCM-M {
+  font-family: MJX-NCM-ZERO, MJX-NCM-M;
+}
+
+.NCM-SO {
+  font-family: MJX-NCM-ZERO, MJX-NCM-SO;
+}
+
+.NCM-LO {
+  font-family: MJX-NCM-ZERO, MJX-NCM-LO;
+}
+
+.NCM-S3 {
+  font-family: MJX-NCM-ZERO, MJX-NCM-S3;
+}
+
+.NCM-S4 {
+  font-family: MJX-NCM-ZERO, MJX-NCM-S4;
+}
+
+.NCM-S5 {
+  font-family: MJX-NCM-ZERO, MJX-NCM-S5;
+}
+
+.NCM-S6 {
+  font-family: MJX-NCM-ZERO, MJX-NCM-S6;
+}
+
+.NCM-S7 {
+  font-family: MJX-NCM-ZERO, MJX-NCM-S7;
+}
+
+.NCM-MI {
+  font-family: MJX-NCM-ZERO, MJX-NCM-MI;
+}
+
+.NCM-C {
+  font-family: MJX-NCM-ZERO, MJX-NCM-C;
+}
+
+.NCM-CB {
+  font-family: MJX-NCM-ZERO, MJX-NCM-CB;
+}
+
+.NCM-OS {
+  font-family: MJX-NCM-ZERO, MJX-NCM-OS;
+}
+
+.NCM-OB {
+  font-family: MJX-NCM-ZERO, MJX-NCM-OB;
+}
+
+.NCM-V {
+  font-family: MJX-NCM-ZERO, MJX-NCM-V;
+}
+
+.NCM-LT {
+  font-family: MJX-NCM-ZERO, MJX-NCM-LT;
+}
+
+.NCM-RB {
+  font-family: MJX-NCM-ZERO, MJX-NCM-RB;
+}
+
+.NCM-EM {
+  font-family: MJX-NCM-ZERO, MJX-NCM-EM;
+}
+
+.NCM-B-a {
+  font-family: MJX-NCM-ZERO, MJX-NCM-B-a;
+}
+
+.NCM-U {
+  font-family: MJX-NCM-ZERO, MJX-NCM-U;
+}
+
+.NCM-U-a {
+  font-family: MJX-NCM-ZERO, MJX-NCM-U-a;
+}
+
+.NCM-S {
+  font-family: MJX-NCM-ZERO, MJX-NCM-S;
+}
+
+.NCM-SB {
+  font-family: MJX-NCM-ZERO, MJX-NCM-SB;
+}
+
+@font-face /* MJX-NCM-ZERO */ {
+  font-family: MJX-NCM-ZERO;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-zero.woff2") format("woff2");
+}
+
+@font-face /* MJX-BRK */ {
+  font-family: MJX-BRK;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-brk.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-N */ {
+  font-family: MJX-NCM-N;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-n.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-B */ {
+  font-family: MJX-NCM-B;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-b.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-I */ {
+  font-family: MJX-NCM-I;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-i.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-BI */ {
+  font-family: MJX-NCM-BI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-bi.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-DS */ {
+  font-family: MJX-NCM-DS;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-ds.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-F */ {
+  font-family: MJX-NCM-F;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-f.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-FB */ {
+  font-family: MJX-NCM-FB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-fb.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-SS */ {
+  font-family: MJX-NCM-SS;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-ss.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-SSB */ {
+  font-family: MJX-NCM-SSB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-ssb.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-SSI */ {
+  font-family: MJX-NCM-SSI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-ssi.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-SSBI */ {
+  font-family: MJX-NCM-SSBI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-ssbi.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-M */ {
+  font-family: MJX-NCM-M;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-m.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-SO */ {
+  font-family: MJX-NCM-SO;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-so.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-LO */ {
+  font-family: MJX-NCM-LO;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-lo.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-S3 */ {
+  font-family: MJX-NCM-S3;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-s3.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-S4 */ {
+  font-family: MJX-NCM-S4;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-s4.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-S5 */ {
+  font-family: MJX-NCM-S5;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-s5.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-S6 */ {
+  font-family: MJX-NCM-S6;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-s6.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-S7 */ {
+  font-family: MJX-NCM-S7;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-s7.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-MI */ {
+  font-family: MJX-NCM-MI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-mi.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-C */ {
+  font-family: MJX-NCM-C;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-c.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-CB */ {
+  font-family: MJX-NCM-CB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-cb.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-OS */ {
+  font-family: MJX-NCM-OS;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-os.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-OB */ {
+  font-family: MJX-NCM-OB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-ob.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-V */ {
+  font-family: MJX-NCM-V;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-v.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-LT */ {
+  font-family: MJX-NCM-LT;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-lt.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-RB */ {
+  font-family: MJX-NCM-RB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-rb.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-EM */ {
+  font-family: MJX-NCM-EM;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-em.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-B-a */ {
+  font-family: MJX-NCM-B-a;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-b-a.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-U */ {
+  font-family: MJX-NCM-U;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-u.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-U-a */ {
+  font-family: MJX-NCM-U-a;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-u-a.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-S */ {
+  font-family: MJX-NCM-S;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-s.woff2") format("woff2");
+}
+
+@font-face /* MJX-NCM-SB */ {
+  font-family: MJX-NCM-SB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-sb.woff2") format("woff2");
+}
+
+mjx-c.mjx-c43 {
+  padding: 0.705em 0.722em 0.022em 0;
+}
+
+mjx-c.mjx-c4F {
+  padding: 0.705em 0.778em 0.022em 0;
+}
+
+mjx-c.mjx-c32 {
+  padding: 0.666em 0.5em 0 0;
+}
+
+mjx-c.mjx-c34 {
+  padding: 0.677em 0.5em 0 0;
+}
+
+mjx-c.mjx-c30 {
+  padding: 0.666em 0.5em 0.022em 0;
+}
+
+mjx-c.mjx-cA0 {
+  padding: 0 0.332em 0 0;
+}
+
+mjx-c.mjx-c70 {
+  padding: 0.442em 0.556em 0.194em 0;
+}
+
+mjx-c.mjx-c6D {
+  padding: 0.442em 0.833em 0 0;
+}
+
+mjx-c.mjx-c2D9 {
+  padding: 0.657em 0.278em 0 0;
+}
+
+mjx-c.mjx-c1D465 {
+  padding: 0.442em 0.572em 0.011em 0;
+}
+
+mjx-c.mjx-c3D {
+  padding: 0.367em 0.778em 0 0;
+}
+
+mjx-c.mjx-c1D44F {
+  padding: 0.694em 0.429em 0.011em 0;
+}
+
+mjx-c.mjx-c2212 {
+  padding: 0.583em 0.778em 0.083em 0;
+}
+
+mjx-c.mjx-c1D705 {
+  padding: 0.442em 0.576em 0.011em 0;
+}
+
+mjx-c.mjx-c28 {
+  padding: 0.748em 0.389em 0.248em 0;
+}
+
+mjx-c.mjx-c29 {
+  padding: 0.748em 0.389em 0.248em 0;
+}
+
+mjx-c.mjx-c394 {
+  padding: 0.716em 0.833em 0 0;
+}
+
+mjx-c.mjx-c1D461 {
+  padding: 0.626em 0.361em 0.011em 0;
+}
+
+mjx-c.mjx-c64 {
+  padding: 0.694em 0.556em 0.011em 0;
+}
+
+mjx-c.mjx-c61 {
+  padding: 0.448em 0.5em 0.011em 0;
+}
+
+mjx-c.mjx-c79 {
+  padding: 0.431em 0.528em 0.205em 0;
+}
+
+mjx-c.mjx-c73 {
+  padding: 0.448em 0.394em 0.011em 0;
+}
+
+mjx-c.mjx-c2F {
+  padding: 0.75em 0.5em 0.25em 0;
+}
+
+mjx-c.mjx-c39 {
+  padding: 0.666em 0.5em 0.022em 0;
+}
+
+mjx-c.mjx-c67 {
+  padding: 0.453em 0.5em 0.206em 0;
+}
+
+mjx-c.mjx-c6B {
+  padding: 0.694em 0.528em 0 0;
+}
+
+mjx-c.mjx-c63 {
+  padding: 0.448em 0.444em 0.011em 0;
+}
+
+mjx-c.mjx-c6C {
+  padding: 0.694em 0.278em 0 0;
+}
+
+mjx-c.mjx-c1D45B {
+  padding: 0.442em 0.6em 0.011em 0;
+}
+
+mjx-c.mjx-c48 {
+  padding: 0.683em 0.75em 0 0;
+}
+
+mjx-c.mjx-c2B {
+  padding: 0.583em 0.778em 0.083em 0;
+}
+
+mjx-c.mjx-c2192 {
+  padding: 0.51em 1em 0.01em 0;
+}
+
+mjx-c.mjx-c65 {
+  padding: 0.448em 0.444em 0.011em 0;
+}
+
+mjx-c.mjx-c6E {
+  padding: 0.442em 0.556em 0 0;
+}
+
+mjx-c.mjx-c72 {
+  padding: 0.442em 0.392em 0 0;
+}
+
+mjx-c.mjx-c33 {
+  padding: 0.666em 0.5em 0.022em 0;
+}
+
+mjx-c.mjx-c37 {
+  padding: 0.676em 0.5em 0.022em 0;
+}
+
+mjx-c.mjx-c31 {
+  padding: 0.666em 0.5em 0 0;
+}
+
+mjx-c.mjx-c66 {
+  padding: 0.705em 0.357em 0 0;
+}
+
+mjx-c.mjx-c74 {
+  padding: 0.615em 0.389em 0.011em 0;
+}
+
+mjx-c.mjx-c38 {
+  padding: 0.666em 0.5em 0.022em 0;
+}
+
+mjx-c.mjx-c22C5 {
+  padding: 0.303em 0.278em 0 0;
+}
+
+mjx-c.mjx-c2E {
+  padding: 0.106em 0.278em 0 0;
+}
+
+mjx-c.mjx-c35 {
+  padding: 0.666em 0.5em 0.022em 0;
+}
+
+mjx-c.mjx-c6F {
+  padding: 0.448em 0.5em 0.011em 0;
+}
+
+mjx-c.mjx-c27F9 {
+  padding: 0.52em 1.457em 0.02em 0;
+}
+
+mjx-c.mjx-c1D712 {
+  padding: 0.442em 0.626em 0.205em 0;
+}
+
+mjx-c.mjx-c2261 {
+  padding: 0.464em 0.778em 0 0;
+}
+
+mjx-c.mjx-c1D70F {
+  padding: 0.431em 0.511em 0.012em 0;
+}
+
+mjx-c.mjx-c1D451 {
+  padding: 0.694em 0.52em 0.011em 0;
+}
+
+mjx-c.mjx-c222B.NCM-LO {
+  padding: 1.361em 0.999em 0.861em 0;
+}
+
+mjx-c.mjx-c2061 {
+  padding: 0 0 0 0;
+}
+
+mjx-c.mjx-c1D452 {
+  padding: 0.442em 0.466em 0.011em 0;
+}
+
+mjx-c.mjx-c36 {
+  padding: 0.666em 0.5em 0.022em 0;
+}
+
+mjx-c.mjx-c2248 {
+  padding: 0.457em 0.773em 0 0;
+}
+
+mjx-c.mjx-c68 {
+  padding: 0.694em 0.556em 0 0;
+}
+
+mjx-c.mjx-c75 {
+  padding: 0.442em 0.556em 0.011em 0;
+}
+
+mjx-c.mjx-c1D70B {
+  padding: 0.431em 0.57em 0.011em 0;
+}
+
+mjx-c.mjx-c1D445 {
+  padding: 0.683em 0.759em 0.022em 0;
+}
+
+mjx-c.mjx-c1D454 {
+  padding: 0.442em 0.477em 0.205em 0;
+}
+
+mjx-c.mjx-cD7 {
+  padding: 0.491em 0.778em 0 0;
+}
+
+mjx-c.mjx-c2C {
+  padding: 0.106em 0.278em 0.193em 0;
+}
+
+mjx-c.mjx-cB1 {
+  padding: 0.583em 0.778em 0.084em 0;
+}
+</style></head>
 
 <body>
 
@@ -133,7 +1313,7 @@
     <h3>Alex Alemi's Blog</h3>
     <nav>
       <a href="https://blog.alexalemi.com">Index</a> |
-      <a href="https://alexalemi.com">About Me</a> | 
+      <a href="https://alexalemi.com">About Me</a> |
       <a rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml">RSS</a>
     </nav>
   </header>
@@ -142,233 +1322,67 @@
 		<h1>Ventilation</h1>
 		<p>Alexander A. Alemi. <time datetime="2023-11-29">2023-11-29</time></p>
     <div class="content">
-    <p>$ \newcommand{\coo}{\mathrm{CO_2}} $</p>
+    <p><mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex=" \newcommand{\coo}{\mathrm{CO_2}} "></mjx-math></mjx-container></p>
 <p>We recently bought an <a href="https://www.airthings.com/en/view-plus">Airthings</a> so I have been geeking out looking at plots of our air quality.</p>
 <p>In general, we don't seem to have any issues with our indoor air, except when we use
 the stovetop without the exhaust on it will spike our PM2.5 and in general we have
-higher $\coo$ concentrations indoors.</p>
+higher <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> concentrations indoors.</p>
 <p>There are four of us in the house, and since we homeschool and I work from
-home, there is a lot of $\coo$ generation happening and I've tried to seal up our
+home, there is a lot of <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> generation happening and I've tried to seal up our
 house as well as I can to make it energy efficient.</p>
-<p>This got me thinking about how to model the $\coo$ concentration in our house.</p>
+<p>This got me thinking about how to model the <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> concentration in our house.</p>
 <h2>The Model</h2>
 <p>Let's start with a basic model, we know that we have sources in the form of the
 four humans in the house, and that we exchange air with the outside air which
-is at something like $420 \textrm{ ppm}$.</p>
+is at something like <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="420 \textrm{ ppm}"><mjx-mn data-latex="420"><mjx-c style="padding-top:0.677em" noic="true" class="mjx-c34">4</mjx-c><mjx-c style="padding-top:0.677em" noic="true" class="mjx-c32">2</mjx-c><mjx-c style="padding-top:0.677em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ ppm}"><mjx-c style="padding-top:0.442em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.442em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.442em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.442em" class="mjx-c6D">m</mjx-c></mjx-mtext></mjx-math></mjx-container>.</p>
 <p>This suggests a simple model of the form:</p>
-<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="17.968ex" height="2.843ex" style="vertical-align: -0.838ex;" viewBox="0 -863.1 7736.4 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
-<title id="MathJax-SVG-1-Title"> \dot x = b - \kappa ( x - x_0 ) </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#MJMATHI-78" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-2D9" x="63" y="2"></use>
- <use xlink:href="#MJMAIN-3D" x="850" y="0"></use>
- <use xlink:href="#MJMATHI-62" x="1906" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="2558" y="0"></use>
- <use xlink:href="#MJMATHI-3BA" x="3559" y="0"></use>
- <use xlink:href="#MJMAIN-28" x="4135" y="0"></use>
- <use xlink:href="#MJMATHI-78" x="4525" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="5319" y="0"></use>
-<g transform="translate(6320,0)">
- <use xlink:href="#MJMATHI-78" x="0" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-30" x="809" y="-213"></use>
-</g>
- <use xlink:href="#MJMAIN-29" x="7346" y="0"></use>
-</g>
-</svg></span></p>
-<p>Where we use $x$ to denote the concentration of $\coo$, $x_0$ for the outdoor
-concentration of $420\textrm{ ppm}$, $b$ represents the constant source from
-the humans in the house and $\kappa$ represents an exchange with the outside.</p>
+<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \dot x = b - \kappa ( x - x_0 ) "><mjx-TeXAtom texclass="ORD" data-latex="\dot x"><mjx-mover><mjx-over style="padding-bottom:0.105em;padding-left:0.329em;margin-bottom:-0.551em"><mjx-mo style="width:0;margin-left:-0.139em"><mjx-c class="mjx-c2D9">˙</mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-TeXAtom><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mi data-latex="b" space="4"><mjx-c class="mjx-c1D44F">𝑏</mjx-c></mjx-mi><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="\kappa" space="3"><mjx-c class="mjx-c1D705">𝜅</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-msub data-latex="x_0" space="3"><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container></p>
+<p>Where we use <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="x"><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi></mjx-math></mjx-container> to denote the concentration of <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container>, <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="x_0"><mjx-msub data-latex="x_0"><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math></mjx-container> for the outdoor
+concentration of <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="420\textrm{ ppm}"><mjx-mn data-latex="420"><mjx-c style="padding-top:0.677em" noic="true" class="mjx-c34">4</mjx-c><mjx-c style="padding-top:0.677em" noic="true" class="mjx-c32">2</mjx-c><mjx-c style="padding-top:0.677em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ ppm}"><mjx-c style="padding-top:0.442em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.442em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.442em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.442em" class="mjx-c6D">m</mjx-c></mjx-mtext></mjx-math></mjx-container>, <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="b"><mjx-mi data-latex="b"><mjx-c class="mjx-c1D44F">𝑏</mjx-c></mjx-mi></mjx-math></mjx-container> represents the constant source from
+the humans in the house and <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\kappa"><mjx-mi data-latex="\kappa"><mjx-c class="mjx-c1D705">𝜅</mjx-c></mjx-mi></mjx-math></mjx-container> represents an exchange with the outside.</p>
 <p>Here we assume that the rate of change is proportional to the difference,
 similar in spirit to <a href="https://en.wikipedia.org/wiki/Thermal_conduction#Fourier%27s_law">Fourier's
 law</a>.  In terms
 of our model, this is equivalent to assuming that within some time window, we
 replace some fraction of the air in the house with fresh air from outside. To
-break it down a bit more, imagine some amount of time $\Delta t$, the change in
-the concentation of $\coo$ inside can be modelled as taking some fraction
-$\kappa \Delta t$ of the total air inside and replacing it with fresh air, this
-means we decrease the concentration by $\kappa x \Delta t$ and then increase it
-by $\kappa x_0 \Delta t$, giving us the form we see above.</p>
+break it down a bit more, imagine some amount of time <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\Delta t"><mjx-mi data-latex="\Delta"><mjx-c class="mjx-c394">Δ</mjx-c></mjx-mi><mjx-mi data-latex="t"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-math></mjx-container>, the change in
+the concentation of <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> inside can be modelled as taking some fraction
+<mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\kappa \Delta t"><mjx-mi data-latex="\kappa"><mjx-c class="mjx-c1D705">𝜅</mjx-c></mjx-mi><mjx-mi data-latex="\Delta"><mjx-c class="mjx-c394">Δ</mjx-c></mjx-mi><mjx-mi data-latex="t"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-math></mjx-container> of the total air inside and replacing it with fresh air, this
+means we decrease the concentration by <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\kappa x \Delta t"><mjx-mi data-latex="\kappa"><mjx-c class="mjx-c1D705">𝜅</mjx-c></mjx-mi><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mi data-latex="\Delta"><mjx-c class="mjx-c394">Δ</mjx-c></mjx-mi><mjx-mi data-latex="t"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-math></mjx-container> and then increase it
+by <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\kappa x_0 \Delta t"><mjx-mi data-latex="\kappa"><mjx-c class="mjx-c1D705">𝜅</mjx-c></mjx-mi><mjx-msub data-latex="x_0"><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mi data-latex="\Delta"><mjx-c class="mjx-c394">Δ</mjx-c></mjx-mi><mjx-mi data-latex="t"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-math></mjx-container>, giving us the form we see above.</p>
 <p>I find its easier to formulate a differential equation or physical model in
 terms of unitful quantities, but then easier to solve them if we take the time
 to non-dimensionalize (which we'll do below).
-Here our $x$ is in units of $\textrm{ppm}$ by volume, a
+Here our <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="x"><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi></mjx-math></mjx-container> is in units of <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\textrm{ppm}"><mjx-mtext data-latex="\textrm{ppm}"><mjx-c style="padding-top:0.442em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.442em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.442em" class="mjx-c6D">m</mjx-c></mjx-mtext></mjx-math></mjx-container> by volume, a
 dimensionless measure of concentration.  We'll imagine our time variable taking
-on the units of $\textrm{days}$ for convenience.  Then our source term $b$ has
-units of $\text{ppm/day}$ and measures the increase in $\coo$ concentration the
+on the units of <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\textrm{days}"><mjx-mtext data-latex="\textrm{days}"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c64">d</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c79">y</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c73">s</mjx-c></mjx-mtext></mjx-math></mjx-container> for convenience.  Then our source term <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="b"><mjx-mi data-latex="b"><mjx-c class="mjx-c1D44F">𝑏</mjx-c></mjx-mi></mjx-math></mjx-container> has
+units of <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\text{ppm/day}"><mjx-mtext data-latex="\text{ppm/day}"><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c6D">m</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c2F">/</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c64">d</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.75em" class="mjx-c79">y</mjx-c></mjx-mtext></mjx-math></mjx-container> and measures the increase in <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> concentration the
 four of us cause each day within the volume of our house. We could look up this
-number and find $900 \textrm{ gCO$_2$/day}$ produced per person.<sup><a href="#co2perperson">1</a></sup></p>
+number and find <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="900 \textrm{ gCO$_2$/day}"><mjx-mn data-latex="900"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c39">9</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-mrow data-latex="\textrm{ gCO$_2$/day}"><mjx-mtext><mjx-c style="padding-top:0.705em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c67">g</mjx-c><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mtext><mjx-TeXAtom texclass="ORD"><mjx-msub data-latex="_2"><mjx-mi></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom><mjx-mtext><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c2F">/</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c64">d</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.75em" class="mjx-c79">y</mjx-c></mjx-mtext></mjx-mrow></mjx-math></mjx-container> produced per person.<sup><a href="#co2perperson">1</a></sup></p>
 <pre><code>	
 </code></pre>
 <h2>Estimating Sources</h2>
 <aside> <sup id="co2perperson">1</sup> 
 	I originally found this number <a href="https://www.globe.gov/explore-science/scientists-blog/archived-posts/sciblog/2008/08/11/release-of-carbon-dioxide-by-individual-humans/comment-page-1/index.html#:~:text=For%20a%20year%2C%20our%20human,the%20carbon%20dioxide%20we%20exhale">here</a> on some goverment blog site which says that wikipedia had the figure and sourced it from a USDA study.  It no longer appears on wikipedia but appears on some <a href="https://www.carbon-dioxide-properties.com/aboutco2.aspx#:~:text=Typically%20the%20gas%20we%20exhale,of%20carbon%20dioxide%20per%20day">clones</a> which use <a href="https://faithscience.org/wp-content/uploads/2019/03/HANNA002.pdf">this article</a> as a reference which cites a USDA study without reference. Other sites include a 2.3 lb/day figure, i.e. <a href="https://www.nrdc.org/stories/do-we-exhale-carbon#:~:text=The%20average%20human%20exhales%20about,CO2%20as%20his%20sedentary%20brethren.)">here</a>.
 </aside>
-<p>Instead of looking up the number, let's see if we can estimate it.  We release carbon dioxide because we respire, our body burns hydrocarbons that we eat to generate energy for our body.  Carbohydrates and sugars have an energy density of $4 \textrm{ kcal/g}$ which you can verify on the back of your favorite candy bar.  The basic chemistry of respiration (and photosynthesis) is the burning of these hydrocarbons:</p>
-<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="44.693ex" height="2.509ex" style="vertical-align: -0.671ex;" viewBox="0 -791.3 19242.9 1080.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-2-Title">
-<title id="MathJax-SVG-2-Title"> \mathrm{C}_n\mathrm{H}_{2n}\mathrm{O}_n + n \mathrm{O}_2 \to n\mathrm{CO}_2 + n \mathrm{H}_2\mathrm{O} + \textrm{energy}  </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#MJMAIN-43" x="0" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMATHI-6E" x="1021" y="-213"></use>
-<g transform="translate(1247,0)">
- <use xlink:href="#MJMAIN-48" x="0" y="0"></use>
-<g transform="translate(750,-150)">
- <use transform="scale(0.707)" xlink:href="#MJMAIN-32" x="0" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMATHI-6E" x="500" y="0"></use>
-</g>
-</g>
-<g transform="translate(2876,0)">
- <use xlink:href="#MJMAIN-4F" x="0" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMATHI-6E" x="1100" y="-213"></use>
-</g>
- <use xlink:href="#MJMAIN-2B" x="4401" y="0"></use>
- <use xlink:href="#MJMATHI-6E" x="5402" y="0"></use>
-<g transform="translate(6002,0)">
- <use xlink:href="#MJMAIN-4F" x="0" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-32" x="1100" y="-213"></use>
-</g>
- <use xlink:href="#MJMAIN-2192" x="7512" y="0"></use>
- <use xlink:href="#MJMATHI-6E" x="8791" y="0"></use>
-<g transform="translate(9391,0)">
- <use xlink:href="#MJMAIN-43" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-4F" x="722" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-32" x="2122" y="-213"></use>
-</g>
- <use xlink:href="#MJMAIN-2B" x="11568" y="0"></use>
- <use xlink:href="#MJMATHI-6E" x="12569" y="0"></use>
-<g transform="translate(13170,0)">
- <use xlink:href="#MJMAIN-48" x="0" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-32" x="1061" y="-213"></use>
-</g>
- <use xlink:href="#MJMAIN-4F" x="14374" y="0"></use>
- <use xlink:href="#MJMAIN-2B" x="15375" y="0"></use>
-<g transform="translate(16375,0)">
- <use xlink:href="#MJMAIN-65"></use>
- <use xlink:href="#MJMAIN-6E" x="444" y="0"></use>
- <use xlink:href="#MJMAIN-65" x="1001" y="0"></use>
- <use xlink:href="#MJMAIN-72" x="1445" y="0"></use>
- <use xlink:href="#MJMAIN-67" x="1838" y="0"></use>
- <use xlink:href="#MJMAIN-79" x="2338" y="0"></use>
-</g>
-</g>
-</svg></span></p>
-<p>If we total up the atomic masses in this formula, we find that for every $30 \textrm{ grams}$ of carbohydrates we burn, we release $44 \textrm{ grams}$ of carbon dioxide. If we typically eat $2000 \textrm{ kcal/day}$, this works out to $730 \textrm{ g/day}$ of $\coo$ per person, a pretty good match to the numbers you'll find online.</p>
-<p>What does this mean for the atmosphere in my house?  Well, we have a $2100 \textrm{ft}^2$ home with $8 \textrm{ ft}$ ceilings. This gives us:</p>
-<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="45.57ex" height="6.843ex" style="vertical-align: -3.005ex;" viewBox="0 -1652.5 19620.3 2946.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-3-Title">
-<title id="MathJax-SVG-3-Title"> \frac{730 \textrm{ g/day}}{2100 \textrm{ ft}^2 \cdot 8 \textrm{ ft} \cdot 1.225 \textrm{ kg/m}^3} = 1300 \textrm{ ppm/day}</title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
-<g transform="translate(120,0)">
-<rect stroke="none" width="11761" height="60" x="0" y="220"></rect>
-<g transform="translate(3711,770)">
- <use xlink:href="#MJMAIN-37"></use>
- <use xlink:href="#MJMAIN-33" x="500" y="0"></use>
- <use xlink:href="#MJMAIN-30" x="1001" y="0"></use>
-<g transform="translate(1501,0)">
- <use xlink:href="#MJMAIN-67" x="250" y="0"></use>
- <use xlink:href="#MJMAIN-2F" x="750" y="0"></use>
- <use xlink:href="#MJMAIN-64" x="1251" y="0"></use>
- <use xlink:href="#MJMAIN-61" x="1807" y="0"></use>
- <use xlink:href="#MJMAIN-79" x="2308" y="0"></use>
-</g>
-</g>
-<g transform="translate(60,-969)">
- <use xlink:href="#MJMAIN-32"></use>
- <use xlink:href="#MJMAIN-31" x="500" y="0"></use>
- <use xlink:href="#MJMAIN-30" x="1001" y="0"></use>
- <use xlink:href="#MJMAIN-30" x="1501" y="0"></use>
-<g transform="translate(2002,0)">
- <use xlink:href="#MJMAIN-66" x="250" y="0"></use>
- <use xlink:href="#MJMAIN-74" x="556" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-32" x="1337" y="612"></use>
-</g>
- <use xlink:href="#MJMAIN-22C5" x="3624" y="0"></use>
- <use xlink:href="#MJMAIN-38" x="4124" y="0"></use>
-<g transform="translate(4625,0)">
- <use xlink:href="#MJMAIN-66" x="250" y="0"></use>
- <use xlink:href="#MJMAIN-74" x="556" y="0"></use>
-</g>
- <use xlink:href="#MJMAIN-22C5" x="5793" y="0"></use>
-<g transform="translate(6294,0)">
- <use xlink:href="#MJMAIN-31"></use>
- <use xlink:href="#MJMAIN-2E" x="500" y="0"></use>
- <use xlink:href="#MJMAIN-32" x="779" y="0"></use>
- <use xlink:href="#MJMAIN-32" x="1279" y="0"></use>
- <use xlink:href="#MJMAIN-35" x="1780" y="0"></use>
-</g>
-<g transform="translate(8574,0)">
- <use xlink:href="#MJMAIN-6B" x="250" y="0"></use>
- <use xlink:href="#MJMAIN-67" x="778" y="0"></use>
- <use xlink:href="#MJMAIN-2F" x="1279" y="0"></use>
- <use xlink:href="#MJMAIN-6D" x="1779" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-33" x="3695" y="675"></use>
-</g>
-</g>
-</g>
- <use xlink:href="#MJMAIN-3D" x="12279" y="0"></use>
-<g transform="translate(13335,0)">
- <use xlink:href="#MJMAIN-31"></use>
- <use xlink:href="#MJMAIN-33" x="500" y="0"></use>
- <use xlink:href="#MJMAIN-30" x="1001" y="0"></use>
- <use xlink:href="#MJMAIN-30" x="1501" y="0"></use>
-</g>
-<g transform="translate(15337,0)">
- <use xlink:href="#MJMAIN-70" x="250" y="0"></use>
- <use xlink:href="#MJMAIN-70" x="806" y="0"></use>
- <use xlink:href="#MJMAIN-6D" x="1363" y="0"></use>
- <use xlink:href="#MJMAIN-2F" x="2196" y="0"></use>
- <use xlink:href="#MJMAIN-64" x="2697" y="0"></use>
- <use xlink:href="#MJMAIN-61" x="3253" y="0"></use>
- <use xlink:href="#MJMAIN-79" x="3754" y="0"></use>
-</g>
-</g>
-</svg></span></p>
-<p>In terms of the mass fraction.  However, $\coo$ concentrations we read about in papers or measure on sensors are volumetric fractions.  Carbon dioxide has a molar mass of $44 \textrm{ g/mol}$ while natural air is $29 \textrm{ g/mol}$<sup><a href="#airmole">2</a></sup>, so to convert the mass fraction to a volume fraction we need to multiply by $44/29$.</p>
+<p>Instead of looking up the number, let's see if we can estimate it.  We release carbon dioxide because we respire, our body burns hydrocarbons that we eat to generate energy for our body.  Carbohydrates and sugars have an energy density of <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="4 \textrm{ kcal/g}"><mjx-mn data-latex="4"><mjx-c class="mjx-c34">4</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ kcal/g}"><mjx-c style="padding-top:0.75em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c6B">k</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c63">c</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c2F">/</mjx-c><mjx-c style="padding-top:0.75em" class="mjx-c67">g</mjx-c></mjx-mtext></mjx-math></mjx-container> which you can verify on the back of your favorite candy bar.  The basic chemistry of respiration (and photosynthesis) is the burning of these hydrocarbons:</p>
+<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \mathrm{C}_n\mathrm{H}_{2n}\mathrm{O}_n + n \mathrm{O}_2 \to n\mathrm{CO}_2 + n \mathrm{H}_2\mathrm{O} + \textrm{energy}  "><mjx-msub data-latex="\mathrm{C}_n"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{C}"><mjx-mi data-latex="C"><mjx-c class="mjx-c43">C</mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align:-0.15em"><mjx-mi data-latex="n" size="s"><mjx-c class="mjx-c1D45B">𝑛</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-msub data-latex="\mathrm{H}_{2n}"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{H}"><mjx-mi data-latex="H"><mjx-c class="mjx-c48">H</mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align:-0.15em"><mjx-TeXAtom texclass="ORD" data-latex="{2n}" size="s"><mjx-mn data-latex="2"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn><mjx-mi data-latex="n"><mjx-c class="mjx-c1D45B">𝑛</mjx-c></mjx-mi></mjx-TeXAtom></mjx-script></mjx-msub><mjx-msub data-latex="\mathrm{O}_n"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{O}"><mjx-mi data-latex="O"><mjx-c class="mjx-c4F">O</mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align:-0.15em"><mjx-mi data-latex="n" size="s"><mjx-c class="mjx-c1D45B">𝑛</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mi data-latex="n" space="3"><mjx-c class="mjx-c1D45B">𝑛</mjx-c></mjx-mi><mjx-msub data-latex="\mathrm{O}_2"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{O}"><mjx-mi data-latex="O"><mjx-c class="mjx-c4F">O</mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex="\to" space="4"><mjx-c class="mjx-c2192">→</mjx-c></mjx-mo><mjx-mi data-latex="n" space="4"><mjx-c class="mjx-c1D45B">𝑛</mjx-c></mjx-mi><mjx-msub data-latex="\mathrm{CO}_2"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO}"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mi data-latex="n" space="3"><mjx-c class="mjx-c1D45B">𝑛</mjx-c></mjx-mi><mjx-msub data-latex="\mathrm{H}_2"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{H}"><mjx-mi data-latex="H"><mjx-c class="mjx-c48">H</mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{O}"><mjx-mi data-latex="O"><mjx-c class="mjx-c4F">O</mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mtext data-latex="\textrm{energy}" space="3"><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c65">e</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c6E">n</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c65">e</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c72">r</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c67">g</mjx-c><mjx-c style="padding-top:0.453em" class="mjx-c79">y</mjx-c></mjx-mtext></mjx-math></mjx-container></p>
+<p>If we total up the atomic masses in this formula, we find that for every <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="30 \textrm{ grams}"><mjx-mn data-latex="30"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c33">3</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ grams}"><mjx-c style="padding-top:0.453em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c67">g</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c72">r</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c6D">m</mjx-c><mjx-c style="padding-top:0.453em" class="mjx-c73">s</mjx-c></mjx-mtext></mjx-math></mjx-container> of carbohydrates we burn, we release <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="44 \textrm{ grams}"><mjx-mn data-latex="44"><mjx-c style="padding-top:0.677em" noic="true" class="mjx-c34">4</mjx-c><mjx-c style="padding-top:0.677em" class="mjx-c34">4</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ grams}"><mjx-c style="padding-top:0.453em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c67">g</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c72">r</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c6D">m</mjx-c><mjx-c style="padding-top:0.453em" class="mjx-c73">s</mjx-c></mjx-mtext></mjx-math></mjx-container> of carbon dioxide. If we typically eat <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="2000 \textrm{ kcal/day}"><mjx-mn data-latex="2000"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c32">2</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ kcal/day}"><mjx-c style="padding-top:0.75em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c6B">k</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c63">c</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c2F">/</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c64">d</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.75em" class="mjx-c79">y</mjx-c></mjx-mtext></mjx-math></mjx-container>, this works out to <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="730 \textrm{ g/day}"><mjx-mn data-latex="730"><mjx-c style="padding-top:0.676em" noic="true" class="mjx-c37">7</mjx-c><mjx-c style="padding-top:0.676em" noic="true" class="mjx-c33">3</mjx-c><mjx-c style="padding-top:0.676em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ g/day}"><mjx-c style="padding-top:0.75em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c67">g</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c2F">/</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c64">d</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.75em" class="mjx-c79">y</mjx-c></mjx-mtext></mjx-math></mjx-container> of <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> per person, a pretty good match to the numbers you'll find online.</p>
+<p>What does this mean for the atmosphere in my house?  Well, we have a <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="2100 \textrm{ft}^2"><mjx-mn data-latex="2100"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c32">2</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-msup data-latex="\textrm{ft}^2"><mjx-mtext data-latex="\textrm{ft}"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c66">f</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c74">t</mjx-c></mjx-mtext><mjx-script style="vertical-align:0.432em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math></mjx-container> home with <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="8 \textrm{ ft}"><mjx-mn data-latex="8"><mjx-c class="mjx-c38">8</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ ft}"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c66">f</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c74">t</mjx-c></mjx-mtext></mjx-math></mjx-container> ceilings. This gives us:</p>
+<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \frac{730 \textrm{ g/day}}{2100 \textrm{ ft}^2 \cdot 8 \textrm{ ft} \cdot 1.225 \textrm{ kg/m}^3} = 1300 \textrm{ ppm/day}"><mjx-mfrac data-latex="\frac{730 \textrm{ g/day}}{2100 \textrm{ ft}^2 \cdot 8 \textrm{ ft} \cdot 1.225 \textrm{ kg/m}^3}"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="730 \textrm{ g/day}"><mjx-mn data-latex="730"><mjx-c style="padding-top:0.676em" noic="true" class="mjx-c37">7</mjx-c><mjx-c style="padding-top:0.676em" noic="true" class="mjx-c33">3</mjx-c><mjx-c style="padding-top:0.676em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ g/day}"><mjx-c style="padding-top:0.75em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c67">g</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c2F">/</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c64">d</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.75em" class="mjx-c79">y</mjx-c></mjx-mtext></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="2100 \textrm{ ft}^2  \cdot 8 \textrm{ ft} \cdot 1.225 \textrm{ kg/m}^3"><mjx-mn data-latex="2100"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c32">2</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-msup data-latex="\textrm{ ft}^2"><mjx-mtext data-latex="\textrm{ ft}"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c66">f</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c74">t</mjx-c></mjx-mtext><mjx-script style="vertical-align:0.432em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo data-latex="\cdot" space="3"><mjx-c class="mjx-c22C5">⋅</mjx-c></mjx-mo><mjx-mn data-latex="8" space="3"><mjx-c class="mjx-c38">8</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ ft}"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c66">f</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c74">t</mjx-c></mjx-mtext><mjx-mo data-latex="\cdot" space="3"><mjx-c class="mjx-c22C5">⋅</mjx-c></mjx-mo><mjx-mn data-latex="1.225" space="3"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c2E">.</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c32">2</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c32">2</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c35">5</mjx-c></mjx-mn><mjx-msup data-latex="\textrm{ kg/m}^3"><mjx-mtext data-latex="\textrm{ kg/m}"><mjx-c style="padding-top:0.75em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c6B">k</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c67">g</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c2F">/</mjx-c><mjx-c style="padding-top:0.75em" class="mjx-c6D">m</mjx-c></mjx-mtext><mjx-script style="vertical-align:0.477em"><mjx-mn data-latex="3" size="s"><mjx-c class="mjx-c33">3</mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mn data-latex="1300" space="4"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c33">3</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ ppm/day}"><mjx-c style="padding-top:0.75em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c6D">m</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c2F">/</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c64">d</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.75em" class="mjx-c79">y</mjx-c></mjx-mtext></mjx-math></mjx-container></p>
+<p>In terms of the mass fraction.  However, <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> concentrations we read about in papers or measure on sensors are volumetric fractions.  Carbon dioxide has a molar mass of <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="44 \textrm{ g/mol}"><mjx-mn data-latex="44"><mjx-c style="padding-top:0.677em" noic="true" class="mjx-c34">4</mjx-c><mjx-c style="padding-top:0.677em" class="mjx-c34">4</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ g/mol}"><mjx-c style="padding-top:0.75em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c67">g</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c2F">/</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c6D">m</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.75em" class="mjx-c6C">l</mjx-c></mjx-mtext></mjx-math></mjx-container> while natural air is <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="29 \textrm{ g/mol}"><mjx-mn data-latex="29"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c32">2</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c39">9</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ g/mol}"><mjx-c style="padding-top:0.75em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c67">g</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c2F">/</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c6D">m</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.75em" class="mjx-c6C">l</mjx-c></mjx-mtext></mjx-math></mjx-container><sup><a href="#airmole">2</a></sup>, so to convert the mass fraction to a volume fraction we need to multiply by <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="44/29"><mjx-mn data-latex="44"><mjx-c style="padding-top:0.677em" noic="true" class="mjx-c34">4</mjx-c><mjx-c style="padding-top:0.677em" class="mjx-c34">4</mjx-c></mjx-mn><mjx-mo data-latex="/"><mjx-c class="mjx-c2F">/</mjx-c></mjx-mo><mjx-mn data-latex="29"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c32">2</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c39">9</mjx-c></mjx-mn></mjx-math></mjx-container>.</p>
 <aside> <sup id="airmole">2</sup> 
 	To zeroth order, Air is nitrogen at 28 g/mol, to next order its 3/4 nitrogen and 1/4 oxygen (at 32 g/mol) for a total of 29 g/mol.
 </aside>
-<p>In the end, we estimate that each person in my house contributes $1900 \textrm{ ppm/day}$ of volumetric $\coo$ concentration.  Outdoor concentrations are $420 \textrm{ ppm}$ and my sensor turns yellow when the indoor concentration exceeds $800 \textrm{ ppm}$ and red above $1000 \textrm{ ppm}$.</p>
-<h2>Estimating $\coo$ conductivity</h2>
-<p>We've estimated $b$, but what about $\kappa$, well, this is a measure of how quickly we exchange air in the house.  If we close the windows and have the AC occasionally run the fan, it seems like the indoor $\coo$ concentration will level out at about $1800 \textrm{ ppm}$.  Meanwhile, in our model, if we solve for the steady state:</p>
-<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="40.443ex" height="5.343ex" style="vertical-align: -1.838ex;" viewBox="0 -1508.9 17412.9 2300.3" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-4-Title">
-<title id="MathJax-SVG-4-Title"> \dot x = 0 = b - \kappa ( x - x_0 ) \implies x = x_0 + \frac{b}{\kappa} </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#MJMATHI-78" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-2D9" x="63" y="2"></use>
- <use xlink:href="#MJMAIN-3D" x="850" y="0"></use>
- <use xlink:href="#MJMAIN-30" x="1906" y="0"></use>
- <use xlink:href="#MJMAIN-3D" x="2684" y="0"></use>
- <use xlink:href="#MJMATHI-62" x="3741" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="4392" y="0"></use>
- <use xlink:href="#MJMATHI-3BA" x="5393" y="0"></use>
- <use xlink:href="#MJMAIN-28" x="5970" y="0"></use>
- <use xlink:href="#MJMATHI-78" x="6359" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="7154" y="0"></use>
-<g transform="translate(8155,0)">
- <use xlink:href="#MJMATHI-78" x="0" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-30" x="809" y="-213"></use>
-</g>
- <use xlink:href="#MJMAIN-29" x="9181" y="0"></use>
- <use xlink:href="#MJMAIN-27F9" x="10126" y="0"></use>
- <use xlink:href="#MJMATHI-78" x="12320" y="0"></use>
- <use xlink:href="#MJMAIN-3D" x="13170" y="0"></use>
-<g transform="translate(14227,0)">
- <use xlink:href="#MJMATHI-78" x="0" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-30" x="809" y="-213"></use>
-</g>
- <use xlink:href="#MJMAIN-2B" x="15475" y="0"></use>
-<g transform="translate(16254,0)">
-<g transform="translate(342,0)">
-<rect stroke="none" width="696" height="60" x="0" y="220"></rect>
- <use xlink:href="#MJMATHI-62" x="133" y="676"></use>
- <use xlink:href="#MJMATHI-3BA" x="60" y="-686"></use>
-</g>
-</g>
-</g>
-</svg></span></p>
-<p>and put in our estimates of a steady state value of $1800 \textrm{ ppm}$ and
-our estimate that for four humans we have $b = 4 \cdot 1800 \textrm{ ppm/day}$
-we get an estimate of $\kappa = 5.5 \textrm{ /day}$.  Honestly, this feels low,
+<p>In the end, we estimate that each person in my house contributes <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="1900 \textrm{ ppm/day}"><mjx-mn data-latex="1900"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c39">9</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ ppm/day}"><mjx-c style="padding-top:0.75em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c6D">m</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c2F">/</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c64">d</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.75em" class="mjx-c79">y</mjx-c></mjx-mtext></mjx-math></mjx-container> of volumetric <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> concentration.  Outdoor concentrations are <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="420 \textrm{ ppm}"><mjx-mn data-latex="420"><mjx-c style="padding-top:0.677em" noic="true" class="mjx-c34">4</mjx-c><mjx-c style="padding-top:0.677em" noic="true" class="mjx-c32">2</mjx-c><mjx-c style="padding-top:0.677em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ ppm}"><mjx-c style="padding-top:0.442em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.442em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.442em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.442em" class="mjx-c6D">m</mjx-c></mjx-mtext></mjx-math></mjx-container> and my sensor turns yellow when the indoor concentration exceeds <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="800 \textrm{ ppm}"><mjx-mn data-latex="800"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c38">8</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ ppm}"><mjx-c style="padding-top:0.442em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.442em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.442em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.442em" class="mjx-c6D">m</mjx-c></mjx-mtext></mjx-math></mjx-container> and red above <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="1000 \textrm{ ppm}"><mjx-mn data-latex="1000"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ ppm}"><mjx-c style="padding-top:0.442em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.442em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.442em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.442em" class="mjx-c6D">m</mjx-c></mjx-mtext></mjx-math></mjx-container>.</p>
+<h2>Estimating <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> conductivity</h2>
+<p>We've estimated <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="b"><mjx-mi data-latex="b"><mjx-c class="mjx-c1D44F">𝑏</mjx-c></mjx-mi></mjx-math></mjx-container>, but what about <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\kappa"><mjx-mi data-latex="\kappa"><mjx-c class="mjx-c1D705">𝜅</mjx-c></mjx-mi></mjx-math></mjx-container>, well, this is a measure of how quickly we exchange air in the house.  If we close the windows and have the AC occasionally run the fan, it seems like the indoor <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> concentration will level out at about <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="1800 \textrm{ ppm}"><mjx-mn data-latex="1800"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c38">8</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ ppm}"><mjx-c style="padding-top:0.442em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.442em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.442em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.442em" class="mjx-c6D">m</mjx-c></mjx-mtext></mjx-math></mjx-container>.  Meanwhile, in our model, if we solve for the steady state:</p>
+<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \dot x = 0 = b - \kappa ( x - x_0 ) \implies x = x_0 + \frac{b}{\kappa} "><mjx-TeXAtom texclass="ORD" data-latex="\dot x"><mjx-mover><mjx-over style="padding-bottom:0.105em;padding-left:0.329em;margin-bottom:-0.551em"><mjx-mo style="width:0;margin-left:-0.139em"><mjx-c class="mjx-c2D9">˙</mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-TeXAtom><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mn data-latex="0" space="4"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mi data-latex="b" space="4"><mjx-c class="mjx-c1D44F">𝑏</mjx-c></mjx-mi><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="\kappa" space="3"><mjx-c class="mjx-c1D705">𝜅</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-msub data-latex="x_0" space="3"><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mspace style="width:0.278em" data-latex="\;"></mjx-mspace><mjx-mo data-latex="\Longrightarrow" space="4"><mjx-c class="mjx-c27F9">⟹</mjx-c></mjx-mo><mjx-mspace style="width:0.278em" data-latex="\;"></mjx-mspace><mjx-mi data-latex="x" space="4"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-msub data-latex="x_0" space="4"><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{b}{\kappa}" space="3"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mi data-latex="b"><mjx-c class="mjx-c1D44F">𝑏</mjx-c></mjx-mi></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mi data-latex="\kappa"><mjx-c class="mjx-c1D705">𝜅</mjx-c></mjx-mi></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-math></mjx-container></p>
+<p>and put in our estimates of a steady state value of <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="1800 \textrm{ ppm}"><mjx-mn data-latex="1800"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c38">8</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ ppm}"><mjx-c style="padding-top:0.442em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.442em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.442em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.442em" class="mjx-c6D">m</mjx-c></mjx-mtext></mjx-math></mjx-container> and
+our estimate that for four humans we have <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" breakable="true" data-latex="b = 4 \cdot 1800 \textrm{ ppm/day}"><mjx-mi data-latex="b"><mjx-c class="mjx-c1D44F">𝑏</mjx-c></mjx-mi><mjx-break size="4"> </mjx-break><mjx-mo data-latex="="><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mn data-latex="4" space="4"><mjx-c class="mjx-c34">4</mjx-c></mjx-mn><mjx-break size="3"> </mjx-break><mjx-mo data-latex="\cdot"><mjx-c class="mjx-c22C5">⋅</mjx-c></mjx-mo><mjx-mn data-latex="1800" space="3"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c38">8</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ ppm/day}"><mjx-c style="padding-top:0.75em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c6D">m</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c2F">/</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c64">d</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.75em" class="mjx-c79">y</mjx-c></mjx-mtext></mjx-math></mjx-container>
+we get an estimate of <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" breakable="true" data-latex="\kappa = 5.5 \textrm{ /day}"><mjx-mi data-latex="\kappa"><mjx-c class="mjx-c1D705">𝜅</mjx-c></mjx-mi><mjx-break size="4"> </mjx-break><mjx-mo data-latex="="><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mn data-latex="5.5" space="4"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c35">5</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c2E">.</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c35">5</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ /day}"><mjx-c style="padding-top:0.75em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c2F">/</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c64">d</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.75em" class="mjx-c79">y</mjx-c></mjx-mtext></mjx-math></mjx-container>.  Honestly, this feels low,
 I know that most houses are supposed to have about 1 air change per hour,
-though here we are discussing specifically $\coo$ but I would expect the rates
+though here we are discussing specifically <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> but I would expect the rates
 to be the same.  I might have to have a blower door test done to see how sealed
 up our home is.  We live in an older home which I generally expect to be fairly
 leaky, but we did some renovations recently and took care to try to seal up
@@ -377,429 +1391,95 @@ look into installing something like an <a href="https://en.wikipedia.org/wiki/He
 Ventilation</a> system to
 ensure we have fresh enough air.</p>
 <p>Then again, we seem to be able to shed our PM2.5, VOCs and other polutants
-rather quickly, so perhaps there is just an issue with our $\coo$ sensor
+rather quickly, so perhaps there is just an issue with our <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> sensor
 itself.  Regardless, now that we have a model we can go on to solve it.</p>
 <h2>Non-dimensionalizing</h2>
 <p>I always find it useful to nondimensionalize differential equations when I'm
 solving them.  This means reparameterizing the equation to be in terms of only nondimensional quantities.
-In this case we'll form a dimensionless measure of the excess concentration, and use our $\kappa$ constant to
+In this case we'll form a dimensionless measure of the excess concentration, and use our <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\kappa"><mjx-mi data-latex="\kappa"><mjx-c class="mjx-c1D705">𝜅</mjx-c></mjx-mi></mjx-math></mjx-container> constant to
 reparameterize in terms of some relevative time:</p>
-<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="29.537ex" height="4.843ex" style="vertical-align: -2.005ex;" viewBox="0 -1221.9 12717.1 2085" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-5-Title">
-<title id="MathJax-SVG-5-Title"> \chi \equiv \frac{\kappa}{b} (x - x_0)  \implies \dot \chi \equiv \frac{\kappa}{b} \dot x </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#MJMATHI-3C7" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-2261" x="904" y="0"></use>
-<g transform="translate(1682,0)">
-<g transform="translate(397,0)">
-<rect stroke="none" width="696" height="60" x="0" y="220"></rect>
- <use xlink:href="#MJMATHI-3BA" x="60" y="676"></use>
- <use xlink:href="#MJMATHI-62" x="133" y="-715"></use>
-</g>
-</g>
- <use xlink:href="#MJMAIN-28" x="2897" y="0"></use>
- <use xlink:href="#MJMATHI-78" x="3286" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="4081" y="0"></use>
-<g transform="translate(5082,0)">
- <use xlink:href="#MJMATHI-78" x="0" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-30" x="809" y="-213"></use>
-</g>
- <use xlink:href="#MJMAIN-29" x="6108" y="0"></use>
- <use xlink:href="#MJMAIN-27F9" x="7053" y="0"></use>
-<g transform="translate(9247,0)">
- <use xlink:href="#MJMATHI-3C7" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-2D9" x="118" y="3"></use>
-</g>
- <use xlink:href="#MJMAIN-2261" x="10151" y="0"></use>
-<g transform="translate(10930,0)">
-<g transform="translate(397,0)">
-<rect stroke="none" width="696" height="60" x="0" y="220"></rect>
- <use xlink:href="#MJMATHI-3BA" x="60" y="676"></use>
- <use xlink:href="#MJMATHI-62" x="133" y="-715"></use>
-</g>
-</g>
-<g transform="translate(12144,0)">
- <use xlink:href="#MJMATHI-78" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-2D9" x="63" y="2"></use>
-</g>
-</g>
-</svg></span>
-<span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="21.414ex" height="2.176ex" style="vertical-align: -0.338ex;" viewBox="0 -791.3 9219.7 936.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-6-Title">
-<title id="MathJax-SVG-6-Title"> \tau = \kappa t \implies dt = \kappa dt </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
- <use xlink:href="#MJMATHI-3C4" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-3D" x="795" y="0"></use>
- <use xlink:href="#MJMATHI-3BA" x="1851" y="0"></use>
- <use xlink:href="#MJMATHI-74" x="2428" y="0"></use>
- <use xlink:href="#MJMAIN-27F9" x="3345" y="0"></use>
- <use xlink:href="#MJMATHI-64" x="5539" y="0"></use>
- <use xlink:href="#MJMATHI-74" x="6062" y="0"></use>
- <use xlink:href="#MJMAIN-3D" x="6701" y="0"></use>
- <use xlink:href="#MJMATHI-3BA" x="7758" y="0"></use>
- <use xlink:href="#MJMATHI-64" x="8334" y="0"></use>
- <use xlink:href="#MJMATHI-74" x="8858" y="0"></use>
-</g>
-</svg></span></p>
+<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \chi \equiv \frac{\kappa}{b} (x - x_0)  \implies \dot \chi \equiv \frac{\kappa}{b} \dot x "><mjx-mi data-latex="\chi"><mjx-c class="mjx-c1D712">𝜒</mjx-c></mjx-mi><mjx-mo data-latex="\equiv" space="4"><mjx-c class="mjx-c2261">≡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{\kappa}{b}" space="4"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mi data-latex="\kappa"><mjx-c class="mjx-c1D705">𝜅</mjx-c></mjx-mi></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mi data-latex="b"><mjx-c class="mjx-c1D44F">𝑏</mjx-c></mjx-mi></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-msub data-latex="x_0" space="3"><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mspace style="width:0.278em" data-latex="\;"></mjx-mspace><mjx-mo data-latex="\Longrightarrow" space="4"><mjx-c class="mjx-c27F9">⟹</mjx-c></mjx-mo><mjx-mspace style="width:0.278em" data-latex="\;"></mjx-mspace><mjx-TeXAtom texclass="ORD" data-latex="\dot \chi" space="4"><mjx-mover><mjx-over style="padding-bottom:0.105em;padding-left:0.331em;margin-bottom:-0.551em"><mjx-mo style="width:0;margin-left:-0.139em"><mjx-c class="mjx-c2D9">˙</mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi data-latex="\chi"><mjx-c class="mjx-c1D712">𝜒</mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-TeXAtom><mjx-mo data-latex="\equiv" space="4"><mjx-c class="mjx-c2261">≡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{\kappa}{b}" space="4"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mi data-latex="\kappa"><mjx-c class="mjx-c1D705">𝜅</mjx-c></mjx-mi></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mi data-latex="b"><mjx-c class="mjx-c1D44F">𝑏</mjx-c></mjx-mi></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-TeXAtom texclass="ORD" data-latex="\dot x"><mjx-mover><mjx-over style="padding-bottom:0.105em;padding-left:0.329em;margin-bottom:-0.551em"><mjx-mo style="width:0;margin-left:-0.139em"><mjx-c class="mjx-c2D9">˙</mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-TeXAtom></mjx-math></mjx-container>
+<mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \tau = \kappa t \implies dt = \kappa dt "><mjx-mi data-latex="\tau"><mjx-c class="mjx-c1D70F">𝜏</mjx-c></mjx-mi><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mi data-latex="\kappa" space="4"><mjx-c class="mjx-c1D705">𝜅</mjx-c></mjx-mi><mjx-mi data-latex="t"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi><mjx-mspace style="width:0.278em" data-latex="\;"></mjx-mspace><mjx-mo data-latex="\Longrightarrow" space="4"><mjx-c class="mjx-c27F9">⟹</mjx-c></mjx-mo><mjx-mspace style="width:0.278em" data-latex="\;"></mjx-mspace><mjx-mi data-latex="d" space="4"><mjx-c class="mjx-c1D451">𝑑</mjx-c></mjx-mi><mjx-mi data-latex="t"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mi data-latex="\kappa" space="4"><mjx-c class="mjx-c1D705">𝜅</mjx-c></mjx-mi><mjx-mi data-latex="d"><mjx-c class="mjx-c1D451">𝑑</mjx-c></mjx-mi><mjx-mi data-latex="t"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-math></mjx-container></p>
 <p>After transforming we obtain:</p>
-<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="12.064ex" height="5.509ex" style="vertical-align: -2.005ex;" viewBox="0 -1508.9 5194 2372" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-7-Title">
-<title id="MathJax-SVG-7-Title"> \frac{d\chi}{d\tau} = 1 - \chi </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
-<g transform="translate(120,0)">
-<rect stroke="none" width="1270" height="60" x="0" y="220"></rect>
-<g transform="translate(60,724)">
- <use xlink:href="#MJMATHI-64" x="0" y="0"></use>
- <use xlink:href="#MJMATHI-3C7" x="523" y="0"></use>
-</g>
-<g transform="translate(114,-715)">
- <use xlink:href="#MJMATHI-64" x="0" y="0"></use>
- <use xlink:href="#MJMATHI-3C4" x="523" y="0"></use>
-</g>
-</g>
- <use xlink:href="#MJMAIN-3D" x="1787" y="0"></use>
- <use xlink:href="#MJMAIN-31" x="2844" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="3566" y="0"></use>
- <use xlink:href="#MJMATHI-3C7" x="4567" y="0"></use>
-</g>
-</svg></span></p>
+<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \frac{d\chi}{d\tau} = 1 - \chi "><mjx-mfrac data-latex="\frac{d\chi}{d\tau}"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="d\chi"><mjx-mi data-latex="d"><mjx-c class="mjx-c1D451">𝑑</mjx-c></mjx-mi><mjx-mi data-latex="\chi"><mjx-c class="mjx-c1D712">𝜒</mjx-c></mjx-mi></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="d\tau"><mjx-mi data-latex="d"><mjx-c class="mjx-c1D451">𝑑</mjx-c></mjx-mi><mjx-mi data-latex="\tau"><mjx-c class="mjx-c1D70F">𝜏</mjx-c></mjx-mi></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mn data-latex="1" space="4"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="\chi" space="3"><mjx-c class="mjx-c1D712">𝜒</mjx-c></mjx-mi></mjx-math></mjx-container></p>
 <p>Which we can solve in typical physicist fashion:</p>
-<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="30.326ex" height="33.176ex" style="vertical-align: -15.8ex; margin-bottom: -0.205ex;" viewBox="0 -7393.2 13056.8 14284" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-8-Title">
-<title id="MathJax-SVG-8-Title"> \begin{align}
-\frac{d\chi}{d\tau} &amp;= 1 - \chi \\
-\frac{d\chi}{1 - \chi} &amp;= d\tau \\
-\int_{\chi_0}^{\chi} \frac{d\chi}{1 - \chi} &amp;= \int_0^\tau d\tau \\
-\log \frac{1 - \chi_0}{1 - \chi} &amp;= \tau\\
-\frac{1 - \chi}{1 - \chi_0} &amp;= e^{-\tau}\\
-\chi &amp;= 1 + (\chi_0 - 1) e^{-\tau}
+<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \begin{align}
+\frac{d\chi}{d\tau} &= 1 - \chi \\
+\frac{d\chi}{1 - \chi} &= d\tau \\
+\int_{\chi_0}^{\chi} \frac{d\chi}{1 - \chi} &= \int_0^\tau d\tau \\
+\log \frac{1 - \chi_0}{1 - \chi} &= \tau\\
+\frac{1 - \chi}{1 - \chi_0} &= e^{-\tau}\\
+\chi &= 1 + (\chi_0 - 1) e^{-\tau}
 \end{align}
-</title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
-<g transform="translate(167,0)">
-<g transform="translate(-11,0)">
-<g transform="translate(3100,5883)">
-<g transform="translate(120,0)">
-<rect stroke="none" width="1270" height="60" x="0" y="220"></rect>
-<g transform="translate(60,724)">
- <use xlink:href="#MJMATHI-64" x="0" y="0"></use>
- <use xlink:href="#MJMATHI-3C7" x="523" y="0"></use>
-</g>
-<g transform="translate(114,-715)">
- <use xlink:href="#MJMATHI-64" x="0" y="0"></use>
- <use xlink:href="#MJMATHI-3C4" x="523" y="0"></use>
-</g>
-</g>
-</g>
-<g transform="translate(1900,3435)">
-<g transform="translate(120,0)">
-<rect stroke="none" width="2469" height="60" x="0" y="220"></rect>
-<g transform="translate(659,724)">
- <use xlink:href="#MJMATHI-64" x="0" y="0"></use>
- <use xlink:href="#MJMATHI-3C7" x="523" y="0"></use>
-</g>
-<g transform="translate(60,-687)">
- <use xlink:href="#MJMAIN-31" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="722" y="0"></use>
- <use xlink:href="#MJMATHI-3C7" x="1723" y="0"></use>
-</g>
-</g>
-</g>
-<g transform="translate(129,824)">
- <use xlink:href="#MJSZ2-222B" x="0" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMATHI-3C7" x="1500" y="1540"></use>
-<g transform="translate(556,-898)">
- <use transform="scale(0.707)" xlink:href="#MJMATHI-3C7" x="0" y="0"></use>
- <use transform="scale(0.574)" xlink:href="#MJMAIN-30" x="771" y="-303"></use>
-</g>
-<g transform="translate(1603,0)">
-<g transform="translate(286,0)">
-<rect stroke="none" width="2469" height="60" x="0" y="220"></rect>
-<g transform="translate(659,724)">
- <use xlink:href="#MJMATHI-64" x="0" y="0"></use>
- <use xlink:href="#MJMATHI-3C7" x="523" y="0"></use>
-</g>
-<g transform="translate(60,-687)">
- <use xlink:href="#MJMAIN-31" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="722" y="0"></use>
- <use xlink:href="#MJMATHI-3C7" x="1723" y="0"></use>
-</g>
-</g>
-</g>
-</g>
-<g transform="translate(0,-1952)">
- <use xlink:href="#MJMAIN-6C"></use>
- <use xlink:href="#MJMAIN-6F" x="278" y="0"></use>
- <use xlink:href="#MJMAIN-67" x="779" y="0"></use>
-<g transform="translate(1279,0)">
-<g transform="translate(286,0)">
-<rect stroke="none" width="2923" height="60" x="0" y="220"></rect>
-<g transform="translate(60,724)">
- <use xlink:href="#MJMAIN-31" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="722" y="0"></use>
-<g transform="translate(1723,0)">
- <use xlink:href="#MJMATHI-3C7" x="0" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-30" x="886" y="-213"></use>
-</g>
-</g>
-<g transform="translate(286,-687)">
- <use xlink:href="#MJMAIN-31" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="722" y="0"></use>
- <use xlink:href="#MJMATHI-3C7" x="1723" y="0"></use>
-</g>
-</g>
-</g>
-</g>
-<g transform="translate(1446,-4535)">
-<g transform="translate(120,0)">
-<rect stroke="none" width="2923" height="60" x="0" y="220"></rect>
-<g transform="translate(286,724)">
- <use xlink:href="#MJMAIN-31" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="722" y="0"></use>
- <use xlink:href="#MJMATHI-3C7" x="1723" y="0"></use>
-</g>
-<g transform="translate(60,-687)">
- <use xlink:href="#MJMAIN-31" x="0" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="722" y="0"></use>
-<g transform="translate(1723,0)">
- <use xlink:href="#MJMATHI-3C7" x="0" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-30" x="886" y="-213"></use>
-</g>
-</g>
-</g>
-</g>
- <use xlink:href="#MJMATHI-3C7" x="3983" y="-6552"></use>
-</g>
-<g transform="translate(4599,0)">
-<g transform="translate(0,5883)">
- <use xlink:href="#MJMAIN-3D" x="277" y="0"></use>
- <use xlink:href="#MJMAIN-31" x="1334" y="0"></use>
- <use xlink:href="#MJMAIN-2212" x="2056" y="0"></use>
- <use xlink:href="#MJMATHI-3C7" x="3057" y="0"></use>
-</g>
-<g transform="translate(0,3435)">
- <use xlink:href="#MJMAIN-3D" x="277" y="0"></use>
- <use xlink:href="#MJMATHI-64" x="1334" y="0"></use>
- <use xlink:href="#MJMATHI-3C4" x="1857" y="0"></use>
-</g>
-<g transform="translate(0,824)">
- <use xlink:href="#MJMAIN-3D" x="277" y="0"></use>
-<g transform="translate(1334,0)">
- <use xlink:href="#MJSZ2-222B" x="0" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMATHI-3C4" x="1500" y="1540"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-30" x="787" y="-1270"></use>
-</g>
- <use xlink:href="#MJMATHI-64" x="3027" y="0"></use>
- <use xlink:href="#MJMATHI-3C4" x="3551" y="0"></use>
-</g>
-<g transform="translate(0,-1952)">
- <use xlink:href="#MJMAIN-3D" x="277" y="0"></use>
- <use xlink:href="#MJMATHI-3C4" x="1334" y="0"></use>
-</g>
-<g transform="translate(0,-4535)">
- <use xlink:href="#MJMAIN-3D" x="277" y="0"></use>
-<g transform="translate(1334,0)">
- <use xlink:href="#MJMATHI-65" x="0" y="0"></use>
-<g transform="translate(466,412)">
- <use transform="scale(0.707)" xlink:href="#MJMAIN-2212" x="0" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMATHI-3C4" x="778" y="0"></use>
-</g>
-</g>
-</g>
-<g transform="translate(0,-6552)">
- <use xlink:href="#MJMAIN-3D" x="277" y="0"></use>
- <use xlink:href="#MJMAIN-31" x="1334" y="0"></use>
- <use xlink:href="#MJMAIN-2B" x="2056" y="0"></use>
- <use xlink:href="#MJMAIN-28" x="3057" y="0"></use>
-<g transform="translate(3447,0)">
- <use xlink:href="#MJMATHI-3C7" x="0" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-30" x="886" y="-213"></use>
-</g>
- <use xlink:href="#MJMAIN-2212" x="4749" y="0"></use>
- <use xlink:href="#MJMAIN-31" x="5750" y="0"></use>
- <use xlink:href="#MJMAIN-29" x="6250" y="0"></use>
-<g transform="translate(6640,0)">
- <use xlink:href="#MJMATHI-65" x="0" y="0"></use>
-<g transform="translate(466,412)">
- <use transform="scale(0.707)" xlink:href="#MJMAIN-2212" x="0" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMATHI-3C4" x="778" y="0"></use>
-</g>
-</g>
-</g>
-</g>
-</g>
-</g>
-</svg></span></p>
+"><mjx-mtable style="min-width:12.749em" data-latex="\begin{align}
+\frac{d\chi}{d\tau} &= 1 - \chi \\
+\frac{d\chi}{1 - \chi} &= d\tau \\
+\int_{\chi_0 }^{\chi} \frac{d\chi}{1 - \chi} &= \int_0 ^\tau d\tau \\
+\log \frac{1 - \chi_0}{1 - \chi} &= \tau\\
+\frac{1 - \chi}{1 - \chi_0} &= e^{-\tau}\\
+\chi &= 1 + (\chi_0  - 1) e^{-\tau}
+\end{align}"><mjx-table><mjx-itable><mjx-mtr style="height:2.068em"><mjx-mtd style="text-align:right;padding-right:0;padding-bottom:0.15em"><mjx-mfrac data-latex="\frac{d\chi}{d\tau}"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="d\chi"><mjx-mi data-latex="d"><mjx-c class="mjx-c1D451">𝑑</mjx-c></mjx-mi><mjx-mi data-latex="\chi"><mjx-c class="mjx-c1D712">𝜒</mjx-c></mjx-mi></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="d\tau"><mjx-mi data-latex="d"><mjx-c class="mjx-c1D451">𝑑</mjx-c></mjx-mi><mjx-mi data-latex="\tau"><mjx-c class="mjx-c1D70F">𝜏</mjx-c></mjx-mi></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align:left;padding-left:0;padding-bottom:0.15em"><mjx-mstyle><mjx-mi></mjx-mi><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mn data-latex="1" space="4"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="\chi" space="3"><mjx-c class="mjx-c1D712">𝜒</mjx-c></mjx-mi></mjx-mstyle><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr style="height:2.261em"><mjx-mtd style="text-align:right;padding-right:0;padding-top:0.15em;padding-bottom:0.15em"><mjx-mfrac data-latex="\frac{d\chi}{1 - \chi}"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="d\chi"><mjx-mi data-latex="d"><mjx-c class="mjx-c1D451">𝑑</mjx-c></mjx-mi><mjx-mi data-latex="\chi"><mjx-c class="mjx-c1D712">𝜒</mjx-c></mjx-mi></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="1 - \chi"><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="\chi" space="3"><mjx-c class="mjx-c1D712">𝜒</mjx-c></mjx-mi></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align:left;padding-left:0;padding-top:0.15em;padding-bottom:0.15em"><mjx-mstyle><mjx-mi></mjx-mi><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mi data-latex="d" space="4"><mjx-c class="mjx-c1D451">𝑑</mjx-c></mjx-mi><mjx-mi data-latex="\tau"><mjx-c class="mjx-c1D70F">𝜏</mjx-c></mjx-mi></mjx-mstyle><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr style="height:2.442em"><mjx-mtd style="text-align:right;padding-right:0;padding-top:0.15em;padding-bottom:0.15em"><mjx-msubsup data-latex="\int_{\chi_0}^{\chi}"><mjx-mo data-latex="\int"><mjx-c class="mjx-c222B NCM-LO">∫</mjx-c></mjx-mo><mjx-script style="vertical-align:-0.896em;margin-left:-0.33em"><mjx-TeXAtom style="margin-left:0.561em" texclass="ORD" data-latex="{\chi}" size="s"><mjx-mi data-latex="\chi"><mjx-c class="mjx-c1D712">𝜒</mjx-c></mjx-mi></mjx-TeXAtom><mjx-spacer style="margin-top:1.527em"></mjx-spacer><mjx-TeXAtom texclass="ORD" data-latex="{\chi_0}" size="s"><mjx-msub data-latex="\chi_0"><mjx-mi data-latex="\chi"><mjx-c class="mjx-c1D712">𝜒</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-script></mjx-msubsup><mjx-mfrac data-latex="\frac{d\chi}{1 - \chi}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="d\chi"><mjx-mi data-latex="d"><mjx-c class="mjx-c1D451">𝑑</mjx-c></mjx-mi><mjx-mi data-latex="\chi"><mjx-c class="mjx-c1D712">𝜒</mjx-c></mjx-mi></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="1 - \chi"><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="\chi" space="3"><mjx-c class="mjx-c1D712">𝜒</mjx-c></mjx-mi></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align:left;padding-left:0;padding-top:0.15em;padding-bottom:0.15em"><mjx-mstyle><mjx-mi></mjx-mi><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-msubsup data-latex="\int_0^\tau" space="4"><mjx-mo data-latex="\int"><mjx-c class="mjx-c222B NCM-LO">∫</mjx-c></mjx-mo><mjx-script style="vertical-align:-0.896em;margin-left:-0.33em"><mjx-mi style="margin-left:0.561em" data-latex="\tau" size="s"><mjx-c class="mjx-c1D70F">𝜏</mjx-c></mjx-mi><mjx-spacer style="margin-top:1.505em"></mjx-spacer><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msubsup><mjx-mi data-latex="d" space="2"><mjx-c class="mjx-c1D451">𝑑</mjx-c></mjx-mi><mjx-mi data-latex="\tau"><mjx-c class="mjx-c1D70F">𝜏</mjx-c></mjx-mi></mjx-mstyle><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr style="height:2.233em"><mjx-mtd style="text-align:right;padding-right:0;padding-top:0.15em;padding-bottom:0.15em"><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{1 - \chi_0}{1 - \chi}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="1 - \chi_0"><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-msub data-latex="\chi_0" space="3"><mjx-mi data-latex="\chi"><mjx-c class="mjx-c1D712">𝜒</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="1 - \chi"><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="\chi" space="3"><mjx-c class="mjx-c1D712">𝜒</mjx-c></mjx-mi></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align:left;padding-left:0;padding-top:0.15em;padding-bottom:0.15em"><mjx-mstyle><mjx-mi></mjx-mi><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mi data-latex="\tau" space="4"><mjx-c class="mjx-c1D70F">𝜏</mjx-c></mjx-mi></mjx-mstyle><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr style="height:2.233em"><mjx-mtd style="text-align:right;padding-right:0;padding-top:0.15em;padding-bottom:0.15em"><mjx-mfrac data-latex="\frac{1 - \chi}{1 - \chi_0}"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="1 - \chi"><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="\chi" space="3"><mjx-c class="mjx-c1D712">𝜒</mjx-c></mjx-mi></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="1 - \chi_0"><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-msub data-latex="\chi_0" space="3"><mjx-mi data-latex="\chi"><mjx-c class="mjx-c1D712">𝜒</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align:left;padding-left:0;padding-top:0.15em;padding-bottom:0.15em"><mjx-mstyle><mjx-mi></mjx-mi><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-msup data-latex="e^{-\tau}" space="4"><mjx-mi data-latex="e"><mjx-c class="mjx-c1D452">𝑒</mjx-c></mjx-mi><mjx-script style="vertical-align:0.413em"><mjx-TeXAtom texclass="ORD" data-latex="{-\tau}" size="s"><mjx-mo data-latex="-"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="\tau"><mjx-c class="mjx-c1D70F">𝜏</mjx-c></mjx-mi></mjx-TeXAtom></mjx-script></mjx-msup></mjx-mstyle><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr style="height:1.073em"><mjx-mtd style="text-align:right;padding-right:0;padding-top:0.15em"><mjx-mi data-latex="\chi"><mjx-c class="mjx-c1D712">𝜒</mjx-c></mjx-mi><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align:left;padding-left:0;padding-top:0.15em"><mjx-mstyle><mjx-mi></mjx-mi><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mn data-latex="1" space="4"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mo data-latex="(" space="3"><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="\chi_0"><mjx-mi data-latex="\chi"><mjx-c class="mjx-c1D712">𝜒</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mn data-latex="1" space="3"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-msup data-latex="e^{-\tau}"><mjx-mi data-latex="e"><mjx-c class="mjx-c1D452">𝑒</mjx-c></mjx-mi><mjx-script style="vertical-align:0.413em"><mjx-TeXAtom texclass="ORD" data-latex="{-\tau}" size="s"><mjx-mo data-latex="-"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="\tau"><mjx-c class="mjx-c1D70F">𝜏</mjx-c></mjx-mi></mjx-TeXAtom></mjx-script></mjx-msup></mjx-mstyle><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable></mjx-math></mjx-container></p>
 <p>To see that the behavior should be a simple exponential relaxation to the steady state.</p>
 <figure id="#relaxation" class="right">
   <center>
   <img width="95%" src="figures/ventilation.png" alt="Simple exponential relexation.">
   <figcaption>
-  Figure 1. Two example evolutions of the $\coo$ given by the model.
+  Figure 1. Two example evolutions of the <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> given by the model.
   </figcaption>
   </center>
 </figure>
 <p>In this nondimensional form, it becomes clear that everything is dominated by
-$\kappa$, if we wanted to either change the equilibrium value or get there
-sooner, we need to adjust $\kappa$, or the air flow rate.  If we open a couple
+<mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\kappa"><mjx-mi data-latex="\kappa"><mjx-c class="mjx-c1D705">𝜅</mjx-c></mjx-mi></mjx-math></mjx-container>, if we wanted to either change the equilibrium value or get there
+sooner, we need to adjust <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\kappa"><mjx-mi data-latex="\kappa"><mjx-c class="mjx-c1D705">𝜅</mjx-c></mjx-mi></mjx-math></mjx-container>, or the air flow rate.  If we open a couple
 windows and turn on the fans in the house, even with all four of us in here,
-the $\coo$ concentration then settles down at something like $600 \textrm{
-ppm}$ suggesting that the $\kappa$ is now something like $42 \text{ /day}$, and
-that the $\coo$ takes about $2/(42 \textrm{ /day}) \approx 1 \textrm{ hour}$ to
+the <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> concentration then settles down at something like <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="600 \textrm{
+ppm}"><mjx-mn data-latex="600"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c36">6</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{
+ppm}"><mjx-c style="padding-top:0.442em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.442em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.442em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.442em" class="mjx-c6D">m</mjx-c></mjx-mtext></mjx-math></mjx-container> suggesting that the <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\kappa"><mjx-mi data-latex="\kappa"><mjx-c class="mjx-c1D705">𝜅</mjx-c></mjx-mi></mjx-math></mjx-container> is now something like <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="42 \text{ /day}"><mjx-mn data-latex="42"><mjx-c style="padding-top:0.677em" noic="true" class="mjx-c34">4</mjx-c><mjx-c style="padding-top:0.677em" class="mjx-c32">2</mjx-c></mjx-mn><mjx-mtext data-latex="\text{ /day}"><mjx-c style="padding-top:0.75em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c2F">/</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c64">d</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.75em" class="mjx-c79">y</mjx-c></mjx-mtext></mjx-math></mjx-container>, and
+that the <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> takes about <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" breakable="true" data-latex="2/(42 \textrm{ /day}) \approx 1 \textrm{ hour}"><mjx-mn data-latex="2"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn><mjx-mo data-latex="/"><mjx-c class="mjx-c2F">/</mjx-c></mjx-mo><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mn data-latex="42"><mjx-c style="padding-top:0.677em" noic="true" class="mjx-c34">4</mjx-c><mjx-c style="padding-top:0.677em" class="mjx-c32">2</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ /day}"><mjx-c style="padding-top:0.75em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c2F">/</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c64">d</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.75em" class="mjx-c79">y</mjx-c></mjx-mtext><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-break size="4"> </mjx-break><mjx-mo data-latex="\approx"><mjx-c class="mjx-c2248">≈</mjx-c></mjx-mo><mjx-mn data-latex="1" space="4"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ hour}"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c68">h</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c75">u</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c72">r</mjx-c></mjx-mtext></mjx-math></mjx-container> to
 fall.</p>
 <h2>Would Plants help?</h2>
-<p>Could we better control our indoor $\coo$ concentration by having some
+<p>Could we better control our indoor <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> concentration by having some
 houseplants? While plants also respire like we do, they also photosynthesis,
 using the sun's energy to run the chemical equation above backward, fixing
-$\coo$ in the air into carbohydrates and sugars.</p>
+<mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> in the air into carbohydrates and sugars.</p>
 <p>Unfortunately, as we saw above, what's really important for the chemistry is
-essentially the weight of the products.  For every $30 \textrm{ grams}$ of
-carbohydrates we burn we release $44 \textrm{ grams}$ of $\coo$ into the air,
-plants go in reverse: for every $30 \textrm{ grams}$ of carbohydrates they
-synthesize they consume $44 \textrm{ grams}$ of $\coo$ from the air.  This
-means that if every person in our house is releasing $730 \textrm{ g/day}$ of
-$\coo$, we would need $500 \textrm{ g/day}$ of sugars being synthesized to
+essentially the weight of the products.  For every <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="30 \textrm{ grams}"><mjx-mn data-latex="30"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c33">3</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ grams}"><mjx-c style="padding-top:0.453em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c67">g</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c72">r</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c6D">m</mjx-c><mjx-c style="padding-top:0.453em" class="mjx-c73">s</mjx-c></mjx-mtext></mjx-math></mjx-container> of
+carbohydrates we burn we release <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="44 \textrm{ grams}"><mjx-mn data-latex="44"><mjx-c style="padding-top:0.677em" noic="true" class="mjx-c34">4</mjx-c><mjx-c style="padding-top:0.677em" class="mjx-c34">4</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ grams}"><mjx-c style="padding-top:0.453em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c67">g</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c72">r</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c6D">m</mjx-c><mjx-c style="padding-top:0.453em" class="mjx-c73">s</mjx-c></mjx-mtext></mjx-math></mjx-container> of <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> into the air,
+plants go in reverse: for every <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="30 \textrm{ grams}"><mjx-mn data-latex="30"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c33">3</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ grams}"><mjx-c style="padding-top:0.453em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c67">g</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c72">r</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c6D">m</mjx-c><mjx-c style="padding-top:0.453em" class="mjx-c73">s</mjx-c></mjx-mtext></mjx-math></mjx-container> of carbohydrates they
+synthesize they consume <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="44 \textrm{ grams}"><mjx-mn data-latex="44"><mjx-c style="padding-top:0.677em" noic="true" class="mjx-c34">4</mjx-c><mjx-c style="padding-top:0.677em" class="mjx-c34">4</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ grams}"><mjx-c style="padding-top:0.453em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c67">g</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c72">r</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.453em" noic="true" class="mjx-c6D">m</mjx-c><mjx-c style="padding-top:0.453em" class="mjx-c73">s</mjx-c></mjx-mtext></mjx-math></mjx-container> of <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> from the air.  This
+means that if every person in our house is releasing <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="730 \textrm{ g/day}"><mjx-mn data-latex="730"><mjx-c style="padding-top:0.676em" noic="true" class="mjx-c37">7</mjx-c><mjx-c style="padding-top:0.676em" noic="true" class="mjx-c33">3</mjx-c><mjx-c style="padding-top:0.676em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ g/day}"><mjx-c style="padding-top:0.75em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c67">g</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c2F">/</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c64">d</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.75em" class="mjx-c79">y</mjx-c></mjx-mtext></mjx-math></mjx-container> of
+<mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container>, we would need <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="500 \textrm{ g/day}"><mjx-mn data-latex="500"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c35">5</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ g/day}"><mjx-c style="padding-top:0.75em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c67">g</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c2F">/</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c64">d</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.75em" class="mjx-c79">y</mjx-c></mjx-mtext></mjx-math></mjx-container> of sugars being synthesized to
 offset each of us.  Unfortunately plants do not grow nearly that fast.  It
 seems most plants grow a couple kilograms a year, let alone a day.  We are
-unlightly to make a dent in our resting $\coo$ concentration indoors unless we
+unlightly to make a dent in our resting <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> concentration indoors unless we
 turned our house into a relative jungle.</p>
 <h2>Impact on Earth</h2>
 <p>To put something like climate change into perspective, we just worked out that
-a typical human releases something like $730 \textrm{ g/day}$ of $\coo$ just by
-breathing.  Granted, this $\coo$ doesn't tend to increase $\coo$ atmospheric
+a typical human releases something like <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="730 \textrm{ g/day}"><mjx-mn data-latex="730"><mjx-c style="padding-top:0.676em" noic="true" class="mjx-c37">7</mjx-c><mjx-c style="padding-top:0.676em" noic="true" class="mjx-c33">3</mjx-c><mjx-c style="padding-top:0.676em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ g/day}"><mjx-c style="padding-top:0.75em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c67">g</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c2F">/</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c64">d</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.75em" class="mjx-c79">y</mjx-c></mjx-mtext></mjx-math></mjx-container> of <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> just by
+breathing.  Granted, this <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> doesn't tend to increase <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> atmospheric
 concentrations because it came from carbon that very recently was in the
 atmosphere itself (before being fixed by our food).  Our breathing is
 essentially carbon neutral, but let's work out how much humanities collective breathing
-compared with atmospheric $\coo$ concentrations.</p>
+compared with atmospheric <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> concentrations.</p>
 <p>As before, we just need to scale up this production by the 8 billion humans on
 the planet and then divide by the total weight of the atmosphere, then correct
 for the volumetic concetration rather than mass based one.</p>
-<p>To estimate the weight of the atmosphere, we know that the $1 \textrm{ atm}$ of air pressure at the
+<p>To estimate the weight of the atmosphere, we know that the <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="1 \textrm{ atm}"><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ atm}"><mjx-c style="padding-top:0.615em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.615em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.615em" noic="true" class="mjx-c74">t</mjx-c><mjx-c style="padding-top:0.615em" class="mjx-c6D">m</mjx-c></mjx-mtext></mjx-math></mjx-container> of air pressure at the
 surface is caused by the weight of air above us, so the total mass of the atmosphere is roughly:</p>
-<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="28.429ex" height="6.176ex" style="vertical-align: -2.338ex;" viewBox="0 -1652.5 12240.2 2659.1" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-9-Title">
-<title id="MathJax-SVG-9-Title"> \frac{1 \textrm{ atm} \cdot 4 \pi R^2}{g} \approx 5.2\times 10^{21} \textrm{ g} </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
-<g transform="translate(120,0)">
-<rect stroke="none" width="5604" height="60" x="0" y="220"></rect>
-<g transform="translate(60,676)">
- <use xlink:href="#MJMAIN-31" x="0" y="0"></use>
-<g transform="translate(500,0)">
- <use xlink:href="#MJMAIN-61" x="250" y="0"></use>
- <use xlink:href="#MJMAIN-74" x="750" y="0"></use>
- <use xlink:href="#MJMAIN-6D" x="1140" y="0"></use>
-</g>
- <use xlink:href="#MJMAIN-22C5" x="2696" y="0"></use>
- <use xlink:href="#MJMAIN-34" x="3196" y="0"></use>
- <use xlink:href="#MJMATHI-3C0" x="3697" y="0"></use>
-<g transform="translate(4270,0)">
- <use xlink:href="#MJMATHI-52" x="0" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-32" x="1074" y="513"></use>
-</g>
-</g>
- <use xlink:href="#MJMATHI-67" x="2561" y="-686"></use>
-</g>
- <use xlink:href="#MJMAIN-2248" x="6122" y="0"></use>
-<g transform="translate(7178,0)">
- <use xlink:href="#MJMAIN-35"></use>
- <use xlink:href="#MJMAIN-2E" x="500" y="0"></use>
- <use xlink:href="#MJMAIN-32" x="779" y="0"></use>
-</g>
- <use xlink:href="#MJMAIN-D7" x="8680" y="0"></use>
-<g transform="translate(9680,0)">
- <use xlink:href="#MJMAIN-31"></use>
- <use xlink:href="#MJMAIN-30" x="500" y="0"></use>
-<g transform="translate(1001,412)">
- <use transform="scale(0.707)" xlink:href="#MJMAIN-32"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-31" x="500" y="0"></use>
-</g>
-</g>
- <use xlink:href="#MJMAIN-67" x="11739" y="0"></use>
-</g>
-</svg></span></p>
-<p>So we can work out that the relative $\coo$ concentration from human breathing is:</p>
-<p><span class="mjpage mjpage__block"><svg xmlns:xlink="http://www.w3.org/1999/xlink" width="42.836ex" height="6.676ex" style="vertical-align: -2.838ex;" viewBox="0 -1652.5 18443.1 2874.4" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-10-Title">
-<title id="MathJax-SVG-10-Title"> \frac{730 \textrm{ g/day}}{5.2 \times 10^{21} \textrm{ g}} \cdot 7\times 10^9 \cdot \frac{44}{29} \approx \frac{2}{3} \textrm{ ppm/year}, </title>
-<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
-<g transform="translate(120,0)">
-<rect stroke="none" width="5181" height="60" x="0" y="220"></rect>
-<g transform="translate(421,770)">
- <use xlink:href="#MJMAIN-37"></use>
- <use xlink:href="#MJMAIN-33" x="500" y="0"></use>
- <use xlink:href="#MJMAIN-30" x="1001" y="0"></use>
-<g transform="translate(1501,0)">
- <use xlink:href="#MJMAIN-67" x="250" y="0"></use>
- <use xlink:href="#MJMAIN-2F" x="750" y="0"></use>
- <use xlink:href="#MJMAIN-64" x="1251" y="0"></use>
- <use xlink:href="#MJMAIN-61" x="1807" y="0"></use>
- <use xlink:href="#MJMAIN-79" x="2308" y="0"></use>
-</g>
-</g>
-<g transform="translate(60,-886)">
- <use xlink:href="#MJMAIN-35"></use>
- <use xlink:href="#MJMAIN-2E" x="500" y="0"></use>
- <use xlink:href="#MJMAIN-32" x="779" y="0"></use>
- <use xlink:href="#MJMAIN-D7" x="1501" y="0"></use>
-<g transform="translate(2502,0)">
- <use xlink:href="#MJMAIN-31"></use>
- <use xlink:href="#MJMAIN-30" x="500" y="0"></use>
-<g transform="translate(1001,393)">
- <use transform="scale(0.707)" xlink:href="#MJMAIN-32"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-31" x="500" y="0"></use>
-</g>
-</g>
- <use xlink:href="#MJMAIN-67" x="4561" y="0"></use>
-</g>
-</g>
- <use xlink:href="#MJMAIN-22C5" x="5643" y="0"></use>
- <use xlink:href="#MJMAIN-37" x="6144" y="0"></use>
- <use xlink:href="#MJMAIN-D7" x="6867" y="0"></use>
-<g transform="translate(7868,0)">
- <use xlink:href="#MJMAIN-31"></use>
- <use xlink:href="#MJMAIN-30" x="500" y="0"></use>
- <use transform="scale(0.707)" xlink:href="#MJMAIN-39" x="1415" y="583"></use>
-</g>
- <use xlink:href="#MJMAIN-22C5" x="9545" y="0"></use>
-<g transform="translate(9823,0)">
-<g transform="translate(342,0)">
-<rect stroke="none" width="1121" height="60" x="0" y="220"></rect>
-<g transform="translate(60,676)">
- <use xlink:href="#MJMAIN-34"></use>
- <use xlink:href="#MJMAIN-34" x="500" y="0"></use>
-</g>
-<g transform="translate(60,-687)">
- <use xlink:href="#MJMAIN-32"></use>
- <use xlink:href="#MJMAIN-39" x="500" y="0"></use>
-</g>
-</g>
-</g>
- <use xlink:href="#MJMAIN-2248" x="11684" y="0"></use>
-<g transform="translate(12463,0)">
-<g transform="translate(397,0)">
-<rect stroke="none" width="620" height="60" x="0" y="220"></rect>
- <use xlink:href="#MJMAIN-32" x="60" y="676"></use>
- <use xlink:href="#MJMAIN-33" x="60" y="-686"></use>
-</g>
-</g>
-<g transform="translate(13601,0)">
- <use xlink:href="#MJMAIN-70" x="250" y="0"></use>
- <use xlink:href="#MJMAIN-70" x="806" y="0"></use>
- <use xlink:href="#MJMAIN-6D" x="1363" y="0"></use>
- <use xlink:href="#MJMAIN-2F" x="2196" y="0"></use>
- <use xlink:href="#MJMAIN-79" x="2697" y="0"></use>
- <use xlink:href="#MJMAIN-65" x="3225" y="0"></use>
- <use xlink:href="#MJMAIN-61" x="3670" y="0"></use>
- <use xlink:href="#MJMAIN-72" x="4170" y="0"></use>
-</g>
- <use xlink:href="#MJMAIN-2C" x="18164" y="0"></use>
-</g>
-</svg></span></p>
+<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \frac{1 \textrm{ atm} \cdot 4 \pi R^2}{g} \approx 5.2\times 10^{21} \textrm{ g} "><mjx-mfrac data-latex="\frac{1 \textrm{ atm} \cdot 4 \pi R^2}{g}"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="1 \textrm{ atm} \cdot 4 \pi R^2"><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ atm}"><mjx-c style="padding-top:0.615em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.615em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.615em" noic="true" class="mjx-c74">t</mjx-c><mjx-c style="padding-top:0.615em" class="mjx-c6D">m</mjx-c></mjx-mtext><mjx-mo data-latex="\cdot" space="3"><mjx-c class="mjx-c22C5">⋅</mjx-c></mjx-mo><mjx-mn data-latex="4" space="3"><mjx-c class="mjx-c34">4</mjx-c></mjx-mn><mjx-mi data-latex="\pi"><mjx-c class="mjx-c1D70B">𝜋</mjx-c></mjx-mi><mjx-msup data-latex="R^2"><mjx-mi data-latex="R"><mjx-c class="mjx-c1D445">𝑅</mjx-c></mjx-mi><mjx-script style="vertical-align:0.363em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mi data-latex="g"><mjx-c class="mjx-c1D454">𝑔</mjx-c></mjx-mi></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\approx" space="4"><mjx-c class="mjx-c2248">≈</mjx-c></mjx-mo><mjx-mn data-latex="5.2" space="4"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c35">5</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c2E">.</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c32">2</mjx-c></mjx-mn><mjx-mo data-latex="\times" space="3"><mjx-c class="mjx-cD7">×</mjx-c></mjx-mo><mjx-msup data-latex="10^{21}" space="3"><mjx-mn data-latex="10"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-script style="vertical-align:0.413em"><mjx-TeXAtom texclass="ORD" data-latex="{21}" size="s"><mjx-mn data-latex="21"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c32">2</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c31">1</mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msup><mjx-mtext data-latex="\textrm{ g}"><mjx-c style="padding-top:0.453em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.453em" class="mjx-c67">g</mjx-c></mjx-mtext></mjx-math></mjx-container></p>
+<p>So we can work out that the relative <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> concentration from human breathing is:</p>
+<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \frac{730 \textrm{ g/day}}{5.2 \times 10^{21} \textrm{ g}} \cdot 7\times 10^9 \cdot \frac{44}{29} \approx \frac{2}{3} \textrm{ ppm/year}, "><mjx-mfrac data-latex="\frac{730 \textrm{ g/day}}{5.2 \times 10^{21} \textrm{ g}}"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="730 \textrm{ g/day}"><mjx-mn data-latex="730"><mjx-c style="padding-top:0.676em" noic="true" class="mjx-c37">7</mjx-c><mjx-c style="padding-top:0.676em" noic="true" class="mjx-c33">3</mjx-c><mjx-c style="padding-top:0.676em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ g/day}"><mjx-c style="padding-top:0.75em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c67">g</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c2F">/</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c64">d</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.75em" class="mjx-c79">y</mjx-c></mjx-mtext></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="5.2 \times 10^{21} \textrm{ g}"><mjx-mn data-latex="5.2"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c35">5</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c2E">.</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c32">2</mjx-c></mjx-mn><mjx-mo data-latex="\times" space="3"><mjx-c class="mjx-cD7">×</mjx-c></mjx-mo><mjx-msup data-latex="10^{21}" space="3"><mjx-mn data-latex="10"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-script style="vertical-align:0.393em"><mjx-TeXAtom texclass="ORD" data-latex="{21}" size="s"><mjx-mn data-latex="21"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c32">2</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c31">1</mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msup><mjx-mtext data-latex="\textrm{ g}"><mjx-c style="padding-top:0.453em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.453em" class="mjx-c67">g</mjx-c></mjx-mtext></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\cdot" space="3"><mjx-c class="mjx-c22C5">⋅</mjx-c></mjx-mo><mjx-mn data-latex="7" space="3"><mjx-c class="mjx-c37">7</mjx-c></mjx-mn><mjx-mo data-latex="\times" space="3"><mjx-c class="mjx-cD7">×</mjx-c></mjx-mo><mjx-msup data-latex="10^9" space="3"><mjx-mn data-latex="10"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-script style="vertical-align:0.413em"><mjx-mn data-latex="9" size="s"><mjx-c class="mjx-c39">9</mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo data-latex="\cdot" space="3"><mjx-c class="mjx-c22C5">⋅</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{44}{29}" space="3"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn data-latex="44"><mjx-c style="padding-top:0.677em" noic="true" class="mjx-c34">4</mjx-c><mjx-c style="padding-top:0.677em" class="mjx-c34">4</mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn data-latex="29"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c32">2</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c39">9</mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\approx" space="4"><mjx-c class="mjx-c2248">≈</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{2}{3}" space="4"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn data-latex="2"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn data-latex="3"><mjx-c class="mjx-c33">3</mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mtext data-latex="\textrm{ ppm/year}"><mjx-c style="padding-top:0.75em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c6D">m</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c2F">/</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c79">y</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c65">e</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.75em" class="mjx-c72">r</mjx-c></mjx-mtext><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo></mjx-math></mjx-container></p>
 <aside> <sup id="coorate">3</sup> 
 	From the <a href="https://mlg.eng.cam.ac.uk/carl/words/carbon.html#:~:text=In%201960%2D1970%20the%20growth,about%202.47%20ppm%20per%20year.">Carl Edward Rasmussen</a>.
 </aside>
-about $0.6 \textrm{ ppm/year}$.  Again, human breathing is actually net neutral, but given the magnitude here, it becomes a bit easier to
-imagine that human activities and burning of fossil fuels might be contributing $2.47 \pm 0.25 \textrm{ ppm/year}$ to the atmosphere.<sup><a href="#coorate">3</a></sup>.  If we could csomehow sequester all of the $\coo$ that all of the humans on the planet breathe out, that would only reduce the atmospheric growth rate of $\coo$ by 25%.
+about <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="0.6 \textrm{ ppm/year}"><mjx-mn data-latex="0.6"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c2E">.</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c36">6</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ ppm/year}"><mjx-c style="padding-top:0.75em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c6D">m</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c2F">/</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c79">y</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c65">e</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.75em" class="mjx-c72">r</mjx-c></mjx-mtext></mjx-math></mjx-container>.  Again, human breathing is actually net neutral, but given the magnitude here, it becomes a bit easier to
+imagine that human activities and burning of fossil fuels might be contributing <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" breakable="true" data-latex="2.47 \pm 0.25 \textrm{ ppm/year}"><mjx-mn data-latex="2.47"><mjx-c style="padding-top:0.677em" noic="true" class="mjx-c32">2</mjx-c><mjx-c style="padding-top:0.677em" noic="true" class="mjx-c2E">.</mjx-c><mjx-c style="padding-top:0.677em" noic="true" class="mjx-c34">4</mjx-c><mjx-c style="padding-top:0.677em" class="mjx-c37">7</mjx-c></mjx-mn><mjx-break size="3"> </mjx-break><mjx-mo data-latex="\pm"><mjx-c class="mjx-cB1">±</mjx-c></mjx-mo><mjx-mn data-latex="0.25" space="3"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c2E">.</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c32">2</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c35">5</mjx-c></mjx-mn><mjx-mtext data-latex="\textrm{ ppm/year}"><mjx-c style="padding-top:0.75em" noic="true" class="mjx-cA0">&#160;</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c70">p</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c6D">m</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c2F">/</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c79">y</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c65">e</mjx-c><mjx-c style="padding-top:0.75em" noic="true" class="mjx-c61">a</mjx-c><mjx-c style="padding-top:0.75em" class="mjx-c72">r</mjx-c></mjx-mtext></mjx-math></mjx-container> to the atmosphere.<sup><a href="#coorate">3</a></sup>.  If we could csomehow sequester all of the <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> that all of the humans on the planet breathe out, that would only reduce the atmospheric growth rate of <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\coo"><mjx-TeXAtom texclass="ORD" data-latex="\mathrm{CO_2}"><mjx-msub data-latex="CO_2"><mjx-mi data-latex="CO"><mjx-c style="padding-top:0.705em" noic="true" class="mjx-c43">C</mjx-c><mjx-c style="padding-top:0.705em" class="mjx-c4F">O</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-math></mjx-container> by 25%.
 Humanity operates on a truly global scale and we now have very direct influences on the chemistry of the planet.
  
     </div>
   </article>
 
-  <script src="https://giscus.app/client.js" data-repo="alexalemi/blog.alexalemi.com" data-repo-id="MDEwOlJlcG9zaXRvcnkyNjk2OTU4MzU=" data-category="Announcements" data-category-id="DIC_kwDOEBM7W84B_4Ke" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
+  <script src="https://giscus.app/client.js" data-repo="alexalemi/blog.alexalemi.com" data-repo-id="MDEwOlJlcG9zaXRvcnkyNjk2OTU4MzU=" data-category="Announcements" data-category-id="DIC_kwDOEBM7W84B_4Ke" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-theme="light" data-lang="en" crossorigin="anonymous" async>
   </script>
 
   <footer>
@@ -811,5 +1491,5 @@ Humanity operates on a truly global scale and we now have very direct influences
 
 
 
-
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs id="MathJax_SVG_glyphs"><path stroke-width="1" id="MJMATHI-78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path><path stroke-width="1" id="MJMAIN-2D9" d="M190 609Q190 637 208 653T252 669Q275 667 292 652T309 609Q309 579 292 564T250 549Q225 549 208 564T190 609Z"></path><path stroke-width="1" id="MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path stroke-width="1" id="MJMATHI-62" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"></path><path stroke-width="1" id="MJMAIN-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path><path stroke-width="1" id="MJMATHI-3BA" d="M83 -11Q70 -11 62 -4T51 8T49 17Q49 30 96 217T147 414Q160 442 193 442Q205 441 213 435T223 422T225 412Q225 401 208 337L192 270Q193 269 208 277T235 292Q252 304 306 349T396 412T467 431Q489 431 500 420T512 391Q512 366 494 347T449 327Q430 327 418 338T405 368Q405 370 407 380L397 375Q368 360 315 315L253 266L240 257H245Q262 257 300 251T366 230Q422 203 422 150Q422 140 417 114T411 67Q411 26 437 26Q484 26 513 137Q516 149 519 151T535 153Q554 153 554 144Q554 121 527 64T457 -7Q447 -10 431 -10Q386 -10 360 17T333 90Q333 108 336 122T339 146Q339 170 320 186T271 209T222 218T185 221H180L155 122Q129 22 126 16Q113 -11 83 -11Z"></path><path stroke-width="1" id="MJMAIN-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path stroke-width="1" id="MJMAIN-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path stroke-width="1" id="MJMAIN-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path stroke-width="1" id="MJMAIN-43" d="M56 342Q56 428 89 500T174 615T283 681T391 705Q394 705 400 705T408 704Q499 704 569 636L582 624L612 663Q639 700 643 704Q644 704 647 704T653 705H657Q660 705 666 699V419L660 413H626Q620 419 619 430Q610 512 571 572T476 651Q457 658 426 658Q322 658 252 588Q173 509 173 342Q173 221 211 151Q232 111 263 84T328 45T384 29T428 24Q517 24 571 93T626 244Q626 251 632 257H660L666 251V236Q661 133 590 56T403 -21Q262 -21 159 83T56 342Z"></path><path stroke-width="1" id="MJMATHI-6E" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path><path stroke-width="1" id="MJMAIN-48" d="M128 622Q121 629 117 631T101 634T58 637H25V683H36Q57 680 180 680Q315 680 324 683H335V637H302Q262 636 251 634T233 622L232 500V378H517V622Q510 629 506 631T490 634T447 637H414V683H425Q446 680 569 680Q704 680 713 683H724V637H691Q651 636 640 634T622 622V61Q628 51 639 49T691 46H724V0H713Q692 3 569 3Q434 3 425 0H414V46H447Q489 47 498 49T517 61V332H232V197L233 61Q239 51 250 49T302 46H335V0H324Q303 3 180 3Q45 3 36 0H25V46H58Q100 47 109 49T128 61V622Z"></path><path stroke-width="1" id="MJMAIN-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path stroke-width="1" id="MJMAIN-4F" d="M56 340Q56 423 86 494T164 610T270 680T388 705Q521 705 621 601T722 341Q722 260 693 191T617 75T510 4T388 -22T267 3T160 74T85 189T56 340ZM467 647Q426 665 388 665Q360 665 331 654T269 620T213 549T179 439Q174 411 174 354Q174 144 277 61Q327 20 385 20H389H391Q474 20 537 99Q603 188 603 354Q603 411 598 439Q577 592 467 647Z"></path><path stroke-width="1" id="MJMAIN-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path stroke-width="1" id="MJMAIN-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path><path stroke-width="1" id="MJMAIN-65" d="M28 218Q28 273 48 318T98 391T163 433T229 448Q282 448 320 430T378 380T406 316T415 245Q415 238 408 231H126V216Q126 68 226 36Q246 30 270 30Q312 30 342 62Q359 79 369 104L379 128Q382 131 395 131H398Q415 131 415 121Q415 117 412 108Q393 53 349 21T250 -11Q155 -11 92 58T28 218ZM333 275Q322 403 238 411H236Q228 411 220 410T195 402T166 381T143 340T127 274V267H333V275Z"></path><path stroke-width="1" id="MJMAIN-6E" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q450 438 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"></path><path stroke-width="1" id="MJMAIN-72" d="M36 46H50Q89 46 97 60V68Q97 77 97 91T98 122T98 161T98 203Q98 234 98 269T98 328L97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 60 434T96 436Q112 437 131 438T160 441T171 442H174V373Q213 441 271 441H277Q322 441 343 419T364 373Q364 352 351 337T313 322Q288 322 276 338T263 372Q263 381 265 388T270 400T273 405Q271 407 250 401Q234 393 226 386Q179 341 179 207V154Q179 141 179 127T179 101T180 81T180 66V61Q181 59 183 57T188 54T193 51T200 49T207 48T216 47T225 47T235 46T245 46H276V0H267Q249 3 140 3Q37 3 28 0H20V46H36Z"></path><path stroke-width="1" id="MJMAIN-67" d="M329 409Q373 453 429 453Q459 453 472 434T485 396Q485 382 476 371T449 360Q416 360 412 390Q410 404 415 411Q415 412 416 414V415Q388 412 363 393Q355 388 355 386Q355 385 359 381T368 369T379 351T388 325T392 292Q392 230 343 187T222 143Q172 143 123 171Q112 153 112 133Q112 98 138 81Q147 75 155 75T227 73Q311 72 335 67Q396 58 431 26Q470 -13 470 -72Q470 -139 392 -175Q332 -206 250 -206Q167 -206 107 -175Q29 -140 29 -75Q29 -39 50 -15T92 18L103 24Q67 55 67 108Q67 155 96 193Q52 237 52 292Q52 355 102 398T223 442Q274 442 318 416L329 409ZM299 343Q294 371 273 387T221 404Q192 404 171 388T145 343Q142 326 142 292Q142 248 149 227T179 192Q196 182 222 182Q244 182 260 189T283 207T294 227T299 242Q302 258 302 292T299 343ZM403 -75Q403 -50 389 -34T348 -11T299 -2T245 0H218Q151 0 138 -6Q118 -15 107 -34T95 -74Q95 -84 101 -97T122 -127T170 -155T250 -167Q319 -167 361 -139T403 -75Z"></path><path stroke-width="1" id="MJMAIN-79" d="M69 -66Q91 -66 104 -80T118 -116Q118 -134 109 -145T91 -160Q84 -163 97 -166Q104 -168 111 -168Q131 -168 148 -159T175 -138T197 -106T213 -75T225 -43L242 0L170 183Q150 233 125 297Q101 358 96 368T80 381Q79 382 78 382Q66 385 34 385H19V431H26L46 430Q65 430 88 429T122 428Q129 428 142 428T171 429T200 430T224 430L233 431H241V385H232Q183 385 185 366L286 112Q286 113 332 227L376 341V350Q376 365 366 373T348 383T334 385H331V431H337H344Q351 431 361 431T382 430T405 429T422 429Q477 429 503 431H508V385H497Q441 380 422 345Q420 343 378 235T289 9T227 -131Q180 -204 113 -204Q69 -204 44 -177T19 -116Q19 -89 35 -78T69 -66Z"></path><path stroke-width="1" id="MJMAIN-37" d="M55 458Q56 460 72 567L88 674Q88 676 108 676H128V672Q128 662 143 655T195 646T364 644H485V605L417 512Q408 500 387 472T360 435T339 403T319 367T305 330T292 284T284 230T278 162T275 80Q275 66 275 52T274 28V19Q270 2 255 -10T221 -22Q210 -22 200 -19T179 0T168 40Q168 198 265 368Q285 400 349 489L395 552H302Q128 552 119 546Q113 543 108 522T98 479L95 458V455H55V458Z"></path><path stroke-width="1" id="MJMAIN-33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path><path stroke-width="1" id="MJMAIN-2F" d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z"></path><path stroke-width="1" id="MJMAIN-64" d="M376 495Q376 511 376 535T377 568Q377 613 367 624T316 637H298V660Q298 683 300 683L310 684Q320 685 339 686T376 688Q393 689 413 690T443 693T454 694H457V390Q457 84 458 81Q461 61 472 55T517 46H535V0Q533 0 459 -5T380 -11H373V44L365 37Q307 -11 235 -11Q158 -11 96 50T34 215Q34 315 97 378T244 442Q319 442 376 393V495ZM373 342Q328 405 260 405Q211 405 173 369Q146 341 139 305T131 211Q131 155 138 120T173 59Q203 26 251 26Q322 26 373 103V342Z"></path><path stroke-width="1" id="MJMAIN-61" d="M137 305T115 305T78 320T63 359Q63 394 97 421T218 448Q291 448 336 416T396 340Q401 326 401 309T402 194V124Q402 76 407 58T428 40Q443 40 448 56T453 109V145H493V106Q492 66 490 59Q481 29 455 12T400 -6T353 12T329 54V58L327 55Q325 52 322 49T314 40T302 29T287 17T269 6T247 -2T221 -8T190 -11Q130 -11 82 20T34 107Q34 128 41 147T68 188T116 225T194 253T304 268H318V290Q318 324 312 340Q290 411 215 411Q197 411 181 410T156 406T148 403Q170 388 170 359Q170 334 154 320ZM126 106Q126 75 150 51T209 26Q247 26 276 49T315 109Q317 116 318 175Q318 233 317 233Q309 233 296 232T251 223T193 203T147 166T126 106Z"></path><path stroke-width="1" id="MJMAIN-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path stroke-width="1" id="MJMAIN-66" d="M273 0Q255 3 146 3Q43 3 34 0H26V46H42Q70 46 91 49Q99 52 103 60Q104 62 104 224V385H33V431H104V497L105 564L107 574Q126 639 171 668T266 704Q267 704 275 704T289 705Q330 702 351 679T372 627Q372 604 358 590T321 576T284 590T270 627Q270 647 288 667H284Q280 668 273 668Q245 668 223 647T189 592Q183 572 182 497V431H293V385H185V225Q185 63 186 61T189 57T194 54T199 51T206 49T213 48T222 47T231 47T241 46T251 46H282V0H273Z"></path><path stroke-width="1" id="MJMAIN-74" d="M27 422Q80 426 109 478T141 600V615H181V431H316V385H181V241Q182 116 182 100T189 68Q203 29 238 29Q282 29 292 100Q293 108 293 146V181H333V146V134Q333 57 291 17Q264 -10 221 -10Q187 -10 162 2T124 33T105 68T98 100Q97 107 97 248V385H18V422H27Z"></path><path stroke-width="1" id="MJMAIN-22C5" d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250Z"></path><path stroke-width="1" id="MJMAIN-38" d="M70 417T70 494T124 618T248 666Q319 666 374 624T429 515Q429 485 418 459T392 417T361 389T335 371T324 363L338 354Q352 344 366 334T382 323Q457 264 457 174Q457 95 399 37T249 -22Q159 -22 101 29T43 155Q43 263 172 335L154 348Q133 361 127 368Q70 417 70 494ZM286 386L292 390Q298 394 301 396T311 403T323 413T334 425T345 438T355 454T364 471T369 491T371 513Q371 556 342 586T275 624Q268 625 242 625Q201 625 165 599T128 534Q128 511 141 492T167 463T217 431Q224 426 228 424L286 386ZM250 21Q308 21 350 55T392 137Q392 154 387 169T375 194T353 216T330 234T301 253T274 270Q260 279 244 289T218 306L210 311Q204 311 181 294T133 239T107 157Q107 98 150 60T250 21Z"></path><path stroke-width="1" id="MJMAIN-2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z"></path><path stroke-width="1" id="MJMAIN-35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path><path stroke-width="1" id="MJMAIN-6B" d="M36 46H50Q89 46 97 60V68Q97 77 97 91T97 124T98 167T98 217T98 272T98 329Q98 366 98 407T98 482T98 542T97 586T97 603Q94 622 83 628T38 637H20V660Q20 683 22 683L32 684Q42 685 61 686T98 688Q115 689 135 690T165 693T176 694H179V463L180 233L240 287Q300 341 304 347Q310 356 310 364Q310 383 289 385H284V431H293Q308 428 412 428Q475 428 484 431H489V385H476Q407 380 360 341Q286 278 286 274Q286 273 349 181T420 79Q434 60 451 53T500 46H511V0H505Q496 3 418 3Q322 3 307 0H299V46H306Q330 48 330 65Q330 72 326 79Q323 84 276 153T228 222L176 176V120V84Q176 65 178 59T189 49Q210 46 238 46H254V0H246Q231 3 137 3T28 0H20V46H36Z"></path><path stroke-width="1" id="MJMAIN-6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"></path><path stroke-width="1" id="MJMAIN-70" d="M36 -148H50Q89 -148 97 -134V-126Q97 -119 97 -107T97 -77T98 -38T98 6T98 55T98 106Q98 140 98 177T98 243T98 296T97 335T97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 61 434T98 436Q115 437 135 438T165 441T176 442H179V416L180 390L188 397Q247 441 326 441Q407 441 464 377T522 216Q522 115 457 52T310 -11Q242 -11 190 33L182 40V-45V-101Q182 -128 184 -134T195 -145Q216 -148 244 -148H260V-194H252L228 -193Q205 -192 178 -192T140 -191Q37 -191 28 -194H20V-148H36ZM424 218Q424 292 390 347T305 402Q234 402 182 337V98Q222 26 294 26Q345 26 384 80T424 218Z"></path><path stroke-width="1" id="MJMAIN-27F9" d="M1218 514Q1218 525 1234 525Q1239 525 1242 525T1247 525T1251 524T1253 523T1255 520T1257 517T1260 512Q1297 438 1358 381T1469 300T1565 263Q1582 258 1582 250T1573 239T1536 228T1478 204Q1334 134 1260 -12Q1256 -21 1253 -22T1238 -24Q1218 -24 1218 -17Q1218 -13 1223 0Q1258 69 1309 123L1319 133H70Q56 140 56 153Q56 168 72 173H1363L1373 181Q1412 211 1490 250Q1489 251 1472 259T1427 283T1373 319L1363 327H710L707 328L390 327H72Q56 332 56 347Q56 360 70 367H1319L1309 377Q1276 412 1247 458T1218 514Z"></path><path stroke-width="1" id="MJMATHI-3C7" d="M576 -125Q576 -147 547 -175T487 -204H476Q394 -204 363 -157Q334 -114 293 26L284 59Q283 58 248 19T170 -66T92 -151T53 -191Q49 -194 43 -194Q36 -194 31 -189T25 -177T38 -154T151 -30L272 102L265 131Q189 405 135 405Q104 405 87 358Q86 351 68 351Q48 351 48 361Q48 369 56 386T89 423T148 442Q224 442 258 400Q276 375 297 320T330 222L341 180Q344 180 455 303T573 429Q579 431 582 431Q600 431 600 414Q600 407 587 392T477 270Q356 138 353 134L362 102Q392 -10 428 -89T490 -168Q504 -168 517 -156T536 -126Q539 -116 543 -115T557 -114T571 -115Q576 -118 576 -125Z"></path><path stroke-width="1" id="MJMAIN-2261" d="M56 444Q56 457 70 464H707Q722 456 722 444Q722 430 706 424H72Q56 429 56 444ZM56 237T56 250T70 270H707Q722 262 722 250T707 230H70Q56 237 56 250ZM56 56Q56 71 72 76H706Q722 70 722 56Q722 44 707 36H70Q56 43 56 56Z"></path><path stroke-width="1" id="MJMATHI-3C4" d="M39 284Q18 284 18 294Q18 301 45 338T99 398Q134 425 164 429Q170 431 332 431Q492 431 497 429Q517 424 517 402Q517 388 508 376T485 360Q479 358 389 358T299 356Q298 355 283 274T251 109T233 20Q228 5 215 -4T186 -13Q153 -13 153 20V30L203 192Q214 228 227 272T248 336L254 357Q254 358 208 358Q206 358 197 358T183 359Q105 359 61 295Q56 287 53 286T39 284Z"></path><path stroke-width="1" id="MJMATHI-74" d="M26 385Q19 392 19 395Q19 399 22 411T27 425Q29 430 36 430T87 431H140L159 511Q162 522 166 540T173 566T179 586T187 603T197 615T211 624T229 626Q247 625 254 615T261 596Q261 589 252 549T232 470L222 433Q222 431 272 431H323Q330 424 330 420Q330 398 317 385H210L174 240Q135 80 135 68Q135 26 162 26Q197 26 230 60T283 144Q285 150 288 151T303 153H307Q322 153 322 145Q322 142 319 133Q314 117 301 95T267 48T216 6T155 -11Q125 -11 98 4T59 56Q57 64 57 83V101L92 241Q127 382 128 383Q128 385 77 385H26Z"></path><path stroke-width="1" id="MJMATHI-64" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path><path stroke-width="1" id="MJSZ2-222B" d="M114 -798Q132 -824 165 -824H167Q195 -824 223 -764T275 -600T320 -391T362 -164Q365 -143 367 -133Q439 292 523 655T645 1127Q651 1145 655 1157T672 1201T699 1257T733 1306T777 1346T828 1360Q884 1360 912 1325T944 1245Q944 1220 932 1205T909 1186T887 1183Q866 1183 849 1198T832 1239Q832 1287 885 1296L882 1300Q879 1303 874 1307T866 1313Q851 1323 833 1323Q819 1323 807 1311T775 1255T736 1139T689 936T633 628Q574 293 510 -5T410 -437T355 -629Q278 -862 165 -862Q125 -862 92 -831T55 -746Q55 -711 74 -698T112 -685Q133 -685 150 -700T167 -741Q167 -789 114 -798Z"></path><path stroke-width="1" id="MJMAIN-6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path stroke-width="1" id="MJMAIN-6F" d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z"></path><path stroke-width="1" id="MJMATHI-65" d="M39 168Q39 225 58 272T107 350T174 402T244 433T307 442H310Q355 442 388 420T421 355Q421 265 310 237Q261 224 176 223Q139 223 138 221Q138 219 132 186T125 128Q125 81 146 54T209 26T302 45T394 111Q403 121 406 121Q410 121 419 112T429 98T420 82T390 55T344 24T281 -1T205 -11Q126 -11 83 42T39 168ZM373 353Q367 405 305 405Q272 405 244 391T199 357T170 316T154 280T149 261Q149 260 169 260Q282 260 327 284T373 353Z"></path><path stroke-width="1" id="MJMAIN-34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path><path stroke-width="1" id="MJMATHI-3C0" d="M132 -11Q98 -11 98 22V33L111 61Q186 219 220 334L228 358H196Q158 358 142 355T103 336Q92 329 81 318T62 297T53 285Q51 284 38 284Q19 284 19 294Q19 300 38 329T93 391T164 429Q171 431 389 431Q549 431 553 430Q573 423 573 402Q573 371 541 360Q535 358 472 358H408L405 341Q393 269 393 222Q393 170 402 129T421 65T431 37Q431 20 417 5T381 -10Q370 -10 363 -7T347 17T331 77Q330 86 330 121Q330 170 339 226T357 318T367 358H269L268 354Q268 351 249 275T206 114T175 17Q164 -11 132 -11Z"></path><path stroke-width="1" id="MJMATHI-52" d="M230 637Q203 637 198 638T193 649Q193 676 204 682Q206 683 378 683Q550 682 564 680Q620 672 658 652T712 606T733 563T739 529Q739 484 710 445T643 385T576 351T538 338L545 333Q612 295 612 223Q612 212 607 162T602 80V71Q602 53 603 43T614 25T640 16Q668 16 686 38T712 85Q717 99 720 102T735 105Q755 105 755 93Q755 75 731 36Q693 -21 641 -21H632Q571 -21 531 4T487 82Q487 109 502 166T517 239Q517 290 474 313Q459 320 449 321T378 323H309L277 193Q244 61 244 59Q244 55 245 54T252 50T269 48T302 46H333Q339 38 339 37T336 19Q332 6 326 0H311Q275 2 180 2Q146 2 117 2T71 2T50 1Q33 1 33 10Q33 12 36 24Q41 43 46 45Q50 46 61 46H67Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628Q287 635 230 637ZM630 554Q630 586 609 608T523 636Q521 636 500 636T462 637H440Q393 637 386 627Q385 624 352 494T319 361Q319 360 388 360Q466 361 492 367Q556 377 592 426Q608 449 619 486T630 554Z"></path><path stroke-width="1" id="MJMATHI-67" d="M311 43Q296 30 267 15T206 0Q143 0 105 45T66 160Q66 265 143 353T314 442Q361 442 401 394L404 398Q406 401 409 404T418 412T431 419T447 422Q461 422 470 413T480 394Q480 379 423 152T363 -80Q345 -134 286 -169T151 -205Q10 -205 10 -137Q10 -111 28 -91T74 -71Q89 -71 102 -80T116 -111Q116 -121 114 -130T107 -144T99 -154T92 -162L90 -164H91Q101 -167 151 -167Q189 -167 211 -155Q234 -144 254 -122T282 -75Q288 -56 298 -13Q311 35 311 43ZM384 328L380 339Q377 350 375 354T369 368T359 382T346 393T328 402T306 405Q262 405 221 352Q191 313 171 233T151 117Q151 38 213 38Q269 38 323 108L331 118L384 328Z"></path><path stroke-width="1" id="MJMAIN-2248" d="M55 319Q55 360 72 393T114 444T163 472T205 482Q207 482 213 482T223 483Q262 483 296 468T393 413L443 381Q502 346 553 346Q609 346 649 375T694 454Q694 465 698 474T708 483Q722 483 722 452Q722 386 675 338T555 289Q514 289 468 310T388 357T308 404T224 426Q164 426 125 393T83 318Q81 289 69 289Q55 289 55 319ZM55 85Q55 126 72 159T114 210T163 238T205 248Q207 248 213 248T223 249Q262 249 296 234T393 179L443 147Q502 112 553 112Q609 112 649 141T694 220Q694 249 708 249T722 217Q722 153 675 104T555 55Q514 55 468 76T388 123T308 170T224 192Q164 192 125 159T83 84Q80 55 69 55Q55 55 55 85Z"></path><path stroke-width="1" id="MJMAIN-D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path><path stroke-width="1" id="MJMAIN-39" d="M352 287Q304 211 232 211Q154 211 104 270T44 396Q42 412 42 436V444Q42 537 111 606Q171 666 243 666Q245 666 249 666T257 665H261Q273 665 286 663T323 651T370 619T413 560Q456 472 456 334Q456 194 396 97Q361 41 312 10T208 -22Q147 -22 108 7T68 93T121 149Q143 149 158 135T173 96Q173 78 164 65T148 49T135 44L131 43Q131 41 138 37T164 27T206 22H212Q272 22 313 86Q352 142 352 280V287ZM244 248Q292 248 321 297T351 430Q351 508 343 542Q341 552 337 562T323 588T293 615T246 625Q208 625 181 598Q160 576 154 546T147 441Q147 358 152 329T172 282Q197 248 244 248Z"></path><path stroke-width="1" id="MJMAIN-2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></defs></svg></body></html>
+</body>
+</html>

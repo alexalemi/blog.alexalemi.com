@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?xml-stylesheet type="text/xsl" href="assets/rss.xsl"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Thu, 02 Oct 2025 13:26:36 +0000</lastBuildDate><item><title>Leap Day</title><link>https://blog.alexalemi.com/ob/nbs/leap-day.html</link><description>Going overboard to prove the local newspaper wrong.</description><guid isPermaLink="true">https://blog.alexalemi.com/ob/nbs/leap-day.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Fri, 29 Mar 2024 00:00:00 -0400</pubDate></item><item><title>Dyson Spheres</title><link>https://blog.alexalemi.com/dyson-spheres.html</link><description>The absurdity of dyson spheres on any timescale we'll experience.</description><content:encoded>&lt;p&gt;In 1960, Freeman Dyson wrote &lt;a href="https://fermatslibrary.com/s/search-for-artificial-stellar-sources-of-infrared-radiation"&gt;a single page&lt;/a&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link><description>Various musings.</description><atom:link href="https://blog.alexalemi.com/rss.xml" rel="self"/><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>http://blog.alexalemi.com/favicon.ico</url><title>Blog.AlexAlemi.com</title><link>https://blog.alexalemi.com/rss.xml</link></image><language>en</language><lastBuildDate>Sun, 18 Jan 2026 17:38:34 +0000</lastBuildDate><item><title>Leap Day</title><link>https://blog.alexalemi.com/ob/nbs/leap-day.html</link><description>Going overboard to prove the local newspaper wrong.</description><guid isPermaLink="true">https://blog.alexalemi.com/ob/nbs/leap-day.html</guid><category domain="https://alexalemi.com/posts/">posts</category><pubDate>Fri, 29 Mar 2024 00:00:00 -0400</pubDate></item><item><title>Dyson Spheres</title><link>https://blog.alexalemi.com/dyson-spheres.html</link><description>The absurdity of dyson spheres on any timescale we'll experience.</description><content:encoded>&lt;p&gt;In 1960, Freeman Dyson wrote &lt;a href="https://fermatslibrary.com/s/search-for-artificial-stellar-sources-of-infrared-radiation"&gt;a single page&lt;/a&gt;
 "little joke"&lt;sup&gt;&lt;a href="#littlejoke"&gt;1&lt;/a&gt;&lt;/sup&gt; about how an advanced civilization
 undergoing exponential energy growth would quickly exeeds the capacity of their planet
 and would have to start harvesting a reasonable fraction of the energy of their host star.&lt;/p&gt;
@@ -196,16 +196,15 @@ An elegant weapon for a more civilized age.&lt;/p&gt;
 &lt;figure id="#sliderule"&gt;
     &lt;center&gt;
     &lt;a href="https://alexalemi.com/random/sliderule/"&gt;
-    &lt;img src="figures/mysliderule.png" 
+    &lt;img src="figures/mysliderule.png"
         style="opacity: 1; border: 1px solid black; transition: opacity 0.1s ease;"
         onmouseover="this.style.opacity='0.6'"
         onmouseout="this.style.opacity='1'" /&gt;
     &lt;/a&gt;
-    &lt;/center&gt;
   &lt;figcaption&gt;
   Figure 2. The digital sliderule I made at &lt;a href="https://sliderule.alexalemi.com"&gt;sliderule.alexalemi.com&lt;/a&gt;.
   &lt;/figcaption&gt;
-  &lt;/center&gt;
+    &lt;/center&gt;
 &lt;/figure&gt;
 &lt;h2&gt;Zine&lt;/h2&gt;
 &lt;p&gt;If you're new to slide rules, in keeping with the tangible, physical theme, I made a &lt;a href="https://en.wikipedia.org/wiki/Zine"&gt;Zine&lt;/a&gt; that attempts to introduce how they work.  You can read it here:&lt;/p&gt;

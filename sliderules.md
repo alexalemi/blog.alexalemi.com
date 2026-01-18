@@ -28,16 +28,15 @@ In order to ensure that I always have a sliderule at my disposal, I recently bui
 <figure id="#sliderule">
     <center>
     <a href="https://alexalemi.com/random/sliderule/">
-    <img src="figures/mysliderule.png" 
+    <img src="figures/mysliderule.png"
         style="opacity: 1; border: 1px solid black; transition: opacity 0.1s ease;"
         onmouseover="this.style.opacity='0.6'"
         onmouseout="this.style.opacity='1'" />
     </a>
-    </center>
   <figcaption>
   Figure xxf-sliderule. The digital sliderule I made at <a href="https://sliderule.alexalemi.com">sliderule.alexalemi.com</a>.
   </figcaption>
-  </center>
+    </center>
 </figure>
 
 

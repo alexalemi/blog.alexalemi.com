@@ -1,5 +1,15 @@
 [
   {
+    "title": "The Missing Middle of Science",
+    "src": "missing-middle.md",
+    "date": "2026-01-18",
+    "tags": ["physics", "popular-science"],
+    "id": "missing-middle",
+    "description": "The missing middle of science education / communication.",
+    "featured": true,
+		"draft": true
+  },
+  {
     "title": "Dyson Spheres",
     "src": "dyson-spheres.md",
     "date": "2025-09-21",
