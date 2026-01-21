@@ -1,5 +1,16 @@
 [
     {
+      "title": "Limits to Growth",
+      "src": "limits-to-growth.html",
+      "date": "2026-01-19",
+      "tags": ["growth"],
+      "id": "limits-to-growth",
+      "description": "Revisiting Limits to Growth for the modern age.",
+			"obtude": true,
+      "featured": true,
+			"draft": true
+    },
+    {
       "title": "Seasons",
       "src": "seasons.html",
       "date": "2025-07-31",

@@ -96,13 +96,10 @@ mjx-mo > mjx-c, mjx-mi > mjx-c, mjx-mn > mjx-c, mjx-ms > mjx-c, mjx-mtext > mjx-
 
 mjx-stretchy-h {
   clip-path: padding-box polygon(0 -2px, 100% -2px, 100% calc(100% + 2px), 0 calc(100% + 2px));
-  display: inline-block;
 }
 
 mjx-stretchy-v {
   clip-path: padding-box polygon(-2px 0, calc(100% + 2px) 0, calc(100% + 2px) 100%, -2px 100%);
-  display: inline-block;
-  text-align: center;
 }
 
 mjx-container [space="1"] {
@@ -235,144 +232,6 @@ mjx-merror {
 
 mjx-mphantom {
   visibility: hidden;
-}
-
-mjx-math {
-  display: inline-block;
-  text-align: left;
-  line-height: 0;
-  text-indent: 0;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 100%;
-  font-size-adjust: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  word-spacing: normal;
-  direction: ltr;
-  padding: 1px 0;
-}
-
-mjx-container[jax="CHTML"][display="true"] mjx-math {
-  padding: 0;
-}
-
-mjx-math[breakable] {
-  display: inline;
-}
-
-mjx-container[jax="CHTML"] mjx-break {
-  white-space: normal;
-  line-height: 0;
-  clip-path: rect(0 0 0 0);
-  font-family: MJX-BRK !important;
-}
-
-mjx-break[size="0"] {
-  letter-spacing: -0.999em;
-}
-
-mjx-break[size="1"] {
-  letter-spacing: -0.889em;
-}
-
-mjx-break[size="2"] {
-  letter-spacing: -0.833em;
-}
-
-mjx-break[size="3"] {
-  letter-spacing: -0.778em;
-}
-
-mjx-break[size="4"] {
-  letter-spacing: -0.722em;
-}
-
-mjx-break[size="5"] {
-  letter-spacing: -0.667em;
-}
-
-mjx-mi {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-c {
-  display: inline-block;
-  width: 0;
-  text-align: right;
-}
-
-mjx-utext {
-  display: inline-block;
-  padding: .75em 0 .2em 0;
-}
-
-mjx-mo {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-stretchy-h > mjx-beg, mjx-stretchy-h > mjx-ext, mjx-stretchy-h > mjx-end, mjx-stretchy-h > mjx-mid {
-  display: inline-block;
-  width: 0;
-  text-align: right;
-}
-
-mjx-stretchy-h > mjx-ext {
-  clip-path: padding-box polygon(0 -1em, 100% -1em, 100% calc(100% + 1em), 0 calc(100% + 1em));
-  width: 100%;
-  border: 0px solid transparent;
-  box-sizing: border-box;
-  text-align: left;
-}
-
-mjx-stretchy-v > mjx-beg, mjx-stretchy-v > mjx-ext, mjx-stretchy-v > mjx-end, mjx-stretchy-v > mjx-mid {
-  display: block;
-  height: 0;
-  margin: 0 auto;
-}
-
-mjx-stretchy-v > mjx-ext > mjx-spacer {
-  display: block;
-}
-
-mjx-stretchy-v > mjx-ext {
-  clip-path: padding-box polygon(-1em 0, calc(100% + 1em) 0, calc(100% + 1em) 100%, -1em 100%);
-  height: 100%;
-  border: 0.1px solid transparent;
-  box-sizing: border-box;
-  white-space: pre;
-}
-
-mjx-mark {
-  display: inline-block;
-  height: 0;
-}
-
-mjx-msup {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-msubsup {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-script {
-  display: inline-block;
-  padding-right: .05em;
-  padding-left: .033em;
-}
-
-mjx-script > mjx-spacer {
-  display: block;
-}
-
-mjx-mn {
-  display: inline-block;
-  text-align: left;
 }
 
 mjx-container[jax="CHTML"] > mjx-math.NCM-N[breakable] > * {
@@ -685,26 +544,6 @@ mjx-container[jax="CHTML"] > mjx-math.NCM-N[breakable] > * {
   font-family: MJX-NCM-SB;
   src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/mjx-ncm-sb.woff2") format("woff2");
 }
-
-mjx-c.mjx-c1D438 {
-  padding: 0.68em 0.766em 0 0;
-}
-
-mjx-c.mjx-c3D {
-  padding: 0.367em 0.778em 0 0;
-}
-
-mjx-c.mjx-c1D45A {
-  padding: 0.442em 0.878em 0.011em 0;
-}
-
-mjx-c.mjx-c1D450 {
-  padding: 0.442em 0.433em 0.011em 0;
-}
-
-mjx-c.mjx-c32 {
-  padding: 0.666em 0.5em 0 0;
-}
 </style></head>
 
 <body>
@@ -723,8 +562,16 @@ mjx-c.mjx-c32 {
 		<h1>The Missing Middle of Science</h1>
 		<p>Alexander A. Alemi. <time datetime="2026-01-18">2026-01-18</time></p>
     <div class="content">
-    <p>The missing middle.</p>
-<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" E = mc^2 "><mjx-mi data-latex="E"><mjx-c class="mjx-c1D438">𝐸</mjx-c></mjx-mi><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mi data-latex="m" space="4"><mjx-c class="mjx-c1D45A">𝑚</mjx-c></mjx-mi><mjx-msup data-latex="c^2"><mjx-mi data-latex="c"><mjx-c class="mjx-c1D450">𝑐</mjx-c></mjx-mi><mjx-script style="vertical-align:0.413em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math></mjx-container></p>
+    <p>One day I sat in a physics colloquium that has stuck with me.  I honestly don't remember
+too many of the details of the talk, but I remember the opening sequence of slides.  The speaker
+(I'm afraid I don't remember whom) was from the <a href="https://en.wikipedia.org/wiki/Wilkinson_Microwave_Anisotropy_Probe">WMAP project</a> whose mission was to map the Cosmic Microwave Background radiation (CMB).</p>
+<p>Normally, the WMAP results, the ones you see in the press look like this:</p>
+<figure>
+<img src="figures/wmap.png" alt="The full WMAP CMB image.">
+<caption>The Final WMAP CMB Image. <i>Credit: <a href="https://map.gsfc.nasa.gov/media/121238/index.html">NASA / WMAP Science Team</a></i></caption>
+</figure>
+<p>But this is the CMB <em>anomaly</em>, its the fluctuations in the CMB that are left if we
+remove all of the parts we know about!</p>
  
     </div>
   </article>
