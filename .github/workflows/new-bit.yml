@@ -1,0 +1,136 @@
+name: New Bit
+
+on:
+  issues:
+    types: [opened, labeled]
+
+jobs:
+  process-bit:
+    # Only run if:
+    # 1. Issue has 'new-bit' label
+    # 2. Issue was created by alexalemi (security check)
+    if: |
+      contains(github.event.issue.labels.*.name, 'new-bit') &&
+      github.event.issue.user.login == 'alexalemi'
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install jinja2
+
+      - name: Parse issue and add bit
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const body = issue.body || '';
+
+            // Parse the issue body - expecting form fields
+            // Format from issue template:
+            // ### Title
+            // value
+            // ### URL
+            // value
+            // etc.
+
+            function parseField(body, fieldName) {
+              const regex = new RegExp(`### ${fieldName}\\s*\\n([^#]*?)(?=###|$)`, 'i');
+              const match = body.match(regex);
+              if (match) {
+                return match[1].trim();
+              }
+              return '';
+            }
+
+            const title = parseField(body, 'Title') || issue.title;
+            const url = parseField(body, 'URL');
+            const content = parseField(body, 'Content');
+            const tags = parseField(body, 'Tags');
+            const via = parseField(body, 'Via');
+
+            // Generate ID from title
+            const id = title.toLowerCase()
+              .replace(/[^a-z0-9]+/g, '-')
+              .replace(/^-|-$/g, '')
+              .substring(0, 50);
+
+            // Get current date
+            const date = new Date().toISOString().split('T')[0];
+
+            // Parse tags (comma-separated)
+            const tagList = tags ? tags.split(',').map(t => t.trim()).filter(t => t) : [];
+
+            // Create new bit object
+            const newBit = {
+              id: `${id}-${Date.now()}`,
+              title: title,
+              date: date
+            };
+
+            if (url && url !== '_No response_') newBit.url = url;
+            if (content && content !== '_No response_') newBit.content = content;
+            if (tagList.length > 0) newBit.tags = tagList;
+            if (via && via !== '_No response_') newBit.via = via;
+
+            // Read existing bits
+            const fs = require('fs');
+            const bitsPath = 'data/bits.json';
+            let bits = [];
+            try {
+              bits = JSON.parse(fs.readFileSync(bitsPath, 'utf8'));
+            } catch (e) {
+              console.log('Creating new bits.json');
+            }
+
+            // Add new bit at the beginning
+            bits.unshift(newBit);
+
+            // Write back
+            fs.writeFileSync(bitsPath, JSON.stringify(bits, null, 2) + '\n');
+
+            console.log('Added new bit:', newBit);
+
+            // Set output for commit message
+            core.setOutput('bit_title', title);
+
+      - name: Build bits page and RSS
+        run: python build_bits.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/bits.json bits.html bits.xml
+          git commit -m "Add new bit: ${{ steps.parse-issue.outputs.bit_title || github.event.issue.title }}"
+          git push
+
+      - name: Close issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              state: 'closed'
+            });
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: '✅ Bit published! View it at https://bits.alexalemi.com'
+            });

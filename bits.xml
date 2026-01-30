@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="assets/rss.xsl"?>
+<rss xmlns:ns0="http://www.w3.org/2005/Atom" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+  <channel>
+    <title>Bits.AlexAlemi.com</title>
+    <link>https://bits.alexalemi.com</link>
+    <description>Alex Alemi's Bits - Short thoughts, links, and finds</description>
+    <language>en</language>
+    <ns0:link href="https://bits.alexalemi.com/bits.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Fri, 30 Jan 2026 23:49:04 +0000</lastBuildDate>
+    <image>
+      <url>https://bits.alexalemi.com/favicon.ico</url>
+      <title>Bits.AlexAlemi.com</title>
+      <link>https://bits.alexalemi.com</link>
+    </image>
+    <item>
+      <title>Welcome to Bits</title>
+      <link>https://bits.alexalemi.com#welcome-to-bits</link>
+      <description>A new home for short thoughts, interesting links, and things I come across.</description>
+      <guid isPermaLink="false">bits-welcome-to-bits</guid>
+      <pubDate>Fri, 30 Jan 2026 00:00:00 -0400</pubDate>
+      <category>meta</category>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,54 @@
+name: New Bit
+description: Add a new bit to bits.alexalemi.com
+title: "[Bit] "
+labels: ["new-bit"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Add a new bit to your microblog. Fill in the fields below.
+
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: A short title for this bit
+      placeholder: "Interesting paper on information theory"
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: Link to the content (optional)
+      placeholder: "https://example.com/article"
+    validations:
+      required: false
+
+  - type: textarea
+    id: content
+    attributes:
+      label: Content
+      description: Your thoughts or commentary (optional)
+      placeholder: "This reminds me of..."
+    validations:
+      required: false
+
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Comma-separated tags (optional)
+      placeholder: "ml, physics, information-theory"
+    validations:
+      required: false
+
+  - type: input
+    id: via
+    attributes:
+      label: Via
+      description: Where you found this (optional)
+      placeholder: "Hacker News"
+    validations:
+      required: false
