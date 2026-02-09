@@ -1,8 +1,9 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' /> 
     <title>blog.alexalemi.com A Path to the Variational Diffusion Loss</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5SW43T5NT"></script>
@@ -24,7 +25,7 @@
 
 
     <!-- RSS Feed -->
-    <link rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml" />
 
     <!-- Fonts -->
     <script type="text/javascript">
@@ -52,1219 +53,8 @@
     <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 
     <!-- Inline CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/style.css">
-<style id="MJX-CHTML-styles">
-mjx-container[overflow="scroll"][display] {
-  overflow: auto clip;
-  min-width: initial !important;
-}
-
-mjx-container[overflow="truncate"][display] {
-  overflow: hidden clip;
-  min-width: initial !important;
-}
-
-mjx-container[display] {
-  display: block;
-  text-align: center;
-  justify-content: center;
-  margin: .7em 0;
-  padding: .3em 2px;
-}
-
-mjx-container[display][width="full"] {
-  display: flex;
-}
-
-mjx-container[justify="left"] {
-  text-align: left;
-  justify-content: left;
-}
-
-mjx-container[justify="right"] {
-  text-align: right;
-  justify-content: right;
-}
-
-mjx-container[jax="CHTML"] {
-  white-space: nowrap;
-}
-
-mjx-mo > mjx-c, mjx-mi > mjx-c, mjx-mn > mjx-c, mjx-ms > mjx-c, mjx-mtext > mjx-c {
-  clip-path: padding-box polygon(-1em -2px, calc(100% + 1em) -2px, calc(100% + 1em) calc(100% + 2px), -1em calc(100% + 2px));
-}
-
-mjx-stretchy-h {
-  clip-path: padding-box polygon(0 -2px, 100% -2px, 100% calc(100% + 2px), 0 calc(100% + 2px));
-  display: inline-block;
-}
-
-mjx-stretchy-v {
-  clip-path: padding-box polygon(-2px 0, calc(100% + 2px) 0, calc(100% + 2px) 100%, -2px 100%);
-  display: inline-block;
-  text-align: center;
-}
-
-mjx-container [space="1"] {
-  margin-left: .111em;
-}
-
-mjx-container [space="2"] {
-  margin-left: .167em;
-}
-
-mjx-container [space="3"] {
-  margin-left: .222em;
-}
-
-mjx-container [space="4"] {
-  margin-left: .278em;
-}
-
-mjx-container [space="5"] {
-  margin-left: .333em;
-}
-
-mjx-container [rspace="1"] {
-  margin-right: .111em;
-}
-
-mjx-container [rspace="2"] {
-  margin-right: .167em;
-}
-
-mjx-container [rspace="3"] {
-  margin-right: .222em;
-}
-
-mjx-container [rspace="4"] {
-  margin-right: .278em;
-}
-
-mjx-container [rspace="5"] {
-  margin-right: .333em;
-}
-
-mjx-container [size="s"] {
-  font-size: 70.7%;
-}
-
-mjx-container [size="ss"] {
-  font-size: 50%;
-}
-
-mjx-container [size="Tn"] {
-  font-size: 60%;
-}
-
-mjx-container [size="sm"] {
-  font-size: 85%;
-}
-
-mjx-container [size="lg"] {
-  font-size: 120%;
-}
-
-mjx-container [size="Lg"] {
-  font-size: 144%;
-}
-
-mjx-container [size="LG"] {
-  font-size: 173%;
-}
-
-mjx-container [size="hg"] {
-  font-size: 207%;
-}
-
-mjx-container [size="HG"] {
-  font-size: 249%;
-}
-
-mjx-container [width="full"] {
-  width: 100%;
-}
-
-mjx-box {
-  display: inline-block;
-}
-
-mjx-block {
-  display: block;
-}
-
-mjx-itable {
-  display: inline-table;
-}
-
-mjx-row {
-  display: table-row;
-}
-
-mjx-row > mjx-cell, mjx-row > mjx-base, mjx-row > mjx-under, mjx-row > mjx-over, mjx-row > mjx-den {
-  display: table-cell;
-}
-
-mjx-container [inline-breaks] {
-  display: inline;
-}
-
-mjx-container .mjx-selected {
-  outline: 2px solid black;
-}
-
-@media (prefers-color-scheme: dark) {
-  mjx-container .mjx-selected {
-    outline: 2px solid #C8C8C8;
-  }
-}
-
-mjx-mtext {
-  display: inline-block;
-}
-
-mjx-mstyle {
-  display: inline-block;
-}
-
-mjx-merror {
-  display: inline-block;
-  color: red;
-  background-color: yellow;
-}
-
-mjx-mphantom {
-  visibility: hidden;
-}
-
-mjx-math {
-  display: inline-block;
-  text-align: left;
-  line-height: 0;
-  text-indent: 0;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 100%;
-  font-size-adjust: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  word-spacing: normal;
-  direction: ltr;
-  padding: 1px 0;
-}
-
-mjx-container[jax="CHTML"][display="true"] mjx-math {
-  padding: 0;
-}
-
-mjx-math[breakable] {
-  display: inline;
-}
-
-mjx-container[jax="CHTML"] mjx-break {
-  white-space: normal;
-  line-height: 0;
-  clip-path: rect(0 0 0 0);
-  font-family: MJX-BRK !important;
-}
-
-mjx-break[size="0"] {
-  letter-spacing: -0.999em;
-}
-
-mjx-break[size="1"] {
-  letter-spacing: -0.889em;
-}
-
-mjx-break[size="2"] {
-  letter-spacing: -0.833em;
-}
-
-mjx-break[size="3"] {
-  letter-spacing: -0.778em;
-}
-
-mjx-break[size="4"] {
-  letter-spacing: -0.722em;
-}
-
-mjx-break[size="5"] {
-  letter-spacing: -0.667em;
-}
-
-mjx-mi {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-c {
-  display: inline-block;
-  width: 0;
-  text-align: right;
-}
-
-mjx-utext {
-  display: inline-block;
-  padding: .75em 0 .2em 0;
-}
-
-mjx-mo {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-stretchy-h > mjx-beg, mjx-stretchy-h > mjx-ext, mjx-stretchy-h > mjx-end, mjx-stretchy-h > mjx-mid {
-  display: inline-block;
-  width: 0;
-  text-align: right;
-}
-
-mjx-stretchy-h > mjx-ext {
-  clip-path: padding-box polygon(0 -1em, 100% -1em, 100% calc(100% + 1em), 0 calc(100% + 1em));
-  width: 100%;
-  border: 0px solid transparent;
-  box-sizing: border-box;
-  text-align: left;
-}
-
-mjx-stretchy-v > mjx-beg, mjx-stretchy-v > mjx-ext, mjx-stretchy-v > mjx-end, mjx-stretchy-v > mjx-mid {
-  display: block;
-  height: 0;
-  margin: 0 auto;
-}
-
-mjx-stretchy-v > mjx-ext > mjx-spacer {
-  display: block;
-}
-
-mjx-stretchy-v > mjx-ext {
-  clip-path: padding-box polygon(-1em 0, calc(100% + 1em) 0, calc(100% + 1em) 100%, -1em 100%);
-  height: 100%;
-  border: 0.1px solid transparent;
-  box-sizing: border-box;
-  white-space: pre;
-}
-
-mjx-mark {
-  display: inline-block;
-  height: 0;
-}
-
-mjx-msub {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-msubsup {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-script {
-  display: inline-block;
-  padding-right: .05em;
-  padding-left: .033em;
-}
-
-mjx-script > mjx-spacer {
-  display: block;
-}
-
-mjx-mrow {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-linestack, mjx-mrow[break-top] {
-  display: inline-table;
-  width: 100%;
-}
-
-mjx-linestack[break-align="bottom"], mjx-mrow[break-top][break-align="bottom"] {
-  display: inline-block;
-}
-
-mjx-linestack[break-align="middle"], mjx-mrow[break-top][break-align="middle"] {
-  vertical-align: middle;
-}
-
-mjx-linestack[break-align="center"], mjx-mrow[break-top][break-align="center"] {
-  vertical-align: middle;
-}
-
-mjx-linestack[breakable] {
-  display: inline;
-}
-
-mjx-linestack[breakable] > mjx-linebox {
-  display: inline;
-}
-
-mjx-linestack[breakable] > mjx-linebox::before {
-  white-space: pre;
-  content: "\A";
-}
-
-mjx-linestack[breakable] > mjx-linebox::after {
-  white-space: normal;
-  content: " ";
-  letter-spacing: -.999em;
-  font-family: MJX-BRK;
-}
-
-mjx-linestack[breakable] > mjx-linebox:first-of-type::before {
-  display: none;
-}
-
-mjx-linestack[breakable] > mjx-linebox:last-of-type::after {
-  display: none;
-}
-
-mjx-linebox {
-  display: block;
-}
-
-mjx-linebox[align="left"] {
-  text-align: left;
-}
-
-mjx-linebox[align="center"] {
-  text-align: center;
-}
-
-mjx-linebox[align="right"] {
-  text-align: right;
-}
-
-mjx-linestrut {
-  display: inline-block;
-  height: 1em;
-  vertical-align: -.25em;
-}
-
-mjx-TeXAtom {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-mspace {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-mfrac {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-frac {
-  display: inline-block;
-  vertical-align: 0.17em;
-  padding: 0 .22em;
-}
-
-mjx-frac[type="d"] {
-  vertical-align: .04em;
-}
-
-mjx-frac[delims] {
-  padding: 0 .1em;
-}
-
-mjx-frac[atop] {
-  padding: 0 .12em;
-}
-
-mjx-frac[atop][delims] {
-  padding: 0;
-}
-
-mjx-dtable {
-  display: inline-table;
-  width: 100%;
-}
-
-mjx-dtable > mjx-line, mjx-dtable > mjx-row {
-  font-size: 2000%;
-}
-
-mjx-dbox {
-  display: block;
-  font-size: 5%;
-}
-
-mjx-num {
-  display: block;
-  text-align: center;
-}
-
-mjx-den {
-  display: block;
-  text-align: center;
-}
-
-mjx-mfrac[bevelled] > mjx-num {
-  display: inline-block;
-}
-
-mjx-mfrac[bevelled] > mjx-den {
-  display: inline-block;
-}
-
-mjx-den[align="right"], mjx-num[align="right"] {
-  text-align: right;
-}
-
-mjx-den[align="left"], mjx-num[align="left"] {
-  text-align: left;
-}
-
-mjx-nstrut {
-  display: inline-block;
-  height: .054em;
-  width: 0;
-  vertical-align: -.054em;
-}
-
-mjx-nstrut[type="d"] {
-  height: .217em;
-  vertical-align: -.217em;
-}
-
-mjx-dstrut {
-  display: inline-block;
-  height: .505em;
-  width: 0;
-}
-
-mjx-dstrut[type="d"] {
-  height: .726em;
-}
-
-mjx-line {
-  display: block;
-  box-sizing: border-box;
-  min-height: 1px;
-  height: .06em;
-  border-top: .075em solid;
-  margin: .06em -.1em;
-  overflow: hidden;
-}
-
-mjx-line[type="d"] {
-  margin: .18em -.1em;
-}
-
-mjx-mn {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-mtable {
-  display: inline-block;
-  text-align: center;
-  vertical-align: .25em;
-  position: relative;
-  box-sizing: border-box;
-  border-spacing: 0;
-  border-collapse: collapse;
-}
-
-mjx-mstyle[size="s"] mjx-mtable {
-  vertical-align: .354em;
-}
-
-mjx-labels {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-mjx-table {
-  display: inline-block;
-  vertical-align: -.5ex;
-  box-sizing: border-box;
-}
-
-mjx-table > mjx-itable {
-  vertical-align: middle;
-  text-align: left;
-  box-sizing: border-box;
-}
-
-mjx-labels > mjx-itable {
-  position: absolute;
-  top: 0;
-}
-
-mjx-mtable[justify="left"] {
-  text-align: left;
-}
-
-mjx-mtable[justify="right"] {
-  text-align: right;
-}
-
-mjx-mtable[justify="left"][side="left"] {
-  padding-right: 0 ! important;
-}
-
-mjx-mtable[justify="left"][side="right"] {
-  padding-left: 0 ! important;
-}
-
-mjx-mtable[justify="right"][side="left"] {
-  padding-right: 0 ! important;
-}
-
-mjx-mtable[justify="right"][side="right"] {
-  padding-left: 0 ! important;
-}
-
-mjx-mtable[align] {
-  vertical-align: baseline;
-}
-
-mjx-mtable[align="top"] > mjx-table {
-  vertical-align: top;
-}
-
-mjx-mtable[align="bottom"] > mjx-table {
-  vertical-align: bottom;
-}
-
-mjx-mtable[side="right"] mjx-labels {
-  min-width: 100%;
-}
-
-mjx-mtr {
-  display: table-row;
-  text-align: left;
-}
-
-mjx-mtr[rowalign="top"] > mjx-mtd {
-  vertical-align: top;
-}
-
-mjx-mtr[rowalign="center"] > mjx-mtd {
-  vertical-align: middle;
-}
-
-mjx-mtr[rowalign="bottom"] > mjx-mtd {
-  vertical-align: bottom;
-}
-
-mjx-mtr[rowalign="baseline"] > mjx-mtd {
-  vertical-align: baseline;
-}
-
-mjx-mtr[rowalign="axis"] > mjx-mtd {
-  vertical-align: .25em;
-}
-
-mjx-mtd {
-  display: table-cell;
-  text-align: center;
-  padding: .215em .4em;
-}
-
-mjx-mtd:first-child {
-  padding-left: 0;
-}
-
-mjx-mtd:last-child {
-  padding-right: 0;
-}
-
-mjx-mtable > * > mjx-itable > *:first-child > mjx-mtd {
-  padding-top: 0;
-}
-
-mjx-mtable > * > mjx-itable > *:last-child > mjx-mtd {
-  padding-bottom: 0;
-}
-
-mjx-tstrut {
-  display: inline-block;
-  height: 1em;
-  vertical-align: -.25em;
-}
-
-mjx-labels[align="left"] > mjx-mtr > mjx-mtd {
-  text-align: left;
-}
-
-mjx-labels[align="right"] > mjx-mtr > mjx-mtd {
-  text-align: right;
-}
-
-mjx-mtd[extra] {
-  padding: 0;
-}
-
-mjx-mtd[rowalign="top"] {
-  vertical-align: top;
-}
-
-mjx-mtd[rowalign="center"] {
-  vertical-align: middle;
-}
-
-mjx-mtd[rowalign="bottom"] {
-  vertical-align: bottom;
-}
-
-mjx-mtd[rowalign="baseline"] {
-  vertical-align: baseline;
-}
-
-mjx-mtd[rowalign="axis"] {
-  vertical-align: .25em;
-}
-
-mjx-msup {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-mover {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-mover:not([limits="false"]) {
-  padding-top: .1em;
-}
-
-mjx-mover:not([limits="false"]) > mjx-base, mjx-mover:not([limits="false"]) > mjx-over {
-  display: block;
-  text-align: left;
-}
-
-mjx-munderover {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-munderover:not([limits="false"]) {
-  padding-top: .1em;
-}
-
-mjx-munderover:not([limits="false"]) > mjx-over, mjx-munderover:not([limits="false"]) > mjx-box {
-  display: block;
-}
-
-mjx-container[jax="CHTML"] > mjx-math.NCM-N[breakable] > * {
-  font-family: MJX-NCM-ZERO, MJX-NCM-N;
-}
-
-.NCM-N {
-  font-family: MJX-NCM-ZERO, MJX-NCM-N;
-}
-
-.NCM-B {
-  font-family: MJX-NCM-ZERO, MJX-NCM-B;
-}
-
-.NCM-I {
-  font-family: MJX-NCM-ZERO, MJX-NCM-I;
-}
-
-.NCM-BI {
-  font-family: MJX-NCM-ZERO, MJX-NCM-BI;
-}
-
-.NCM-DS {
-  font-family: MJX-NCM-ZERO, MJX-NCM-DS;
-}
-
-.NCM-F {
-  font-family: MJX-NCM-ZERO, MJX-NCM-F;
-}
-
-.NCM-FB {
-  font-family: MJX-NCM-ZERO, MJX-NCM-FB;
-}
-
-.NCM-SS {
-  font-family: MJX-NCM-ZERO, MJX-NCM-SS;
-}
-
-.NCM-SSB {
-  font-family: MJX-NCM-ZERO, MJX-NCM-SSB;
-}
-
-.NCM-SSI {
-  font-family: MJX-NCM-ZERO, MJX-NCM-SSI;
-}
-
-.NCM-SSBI {
-  font-family: MJX-NCM-ZERO, MJX-NCM-SSBI;
-}
-
-.NCM-M {
-  font-family: MJX-NCM-ZERO, MJX-NCM-M;
-}
-
-.NCM-SO {
-  font-family: MJX-NCM-ZERO, MJX-NCM-SO;
-}
-
-.NCM-LO {
-  font-family: MJX-NCM-ZERO, MJX-NCM-LO;
-}
-
-.NCM-S3 {
-  font-family: MJX-NCM-ZERO, MJX-NCM-S3;
-}
-
-.NCM-S4 {
-  font-family: MJX-NCM-ZERO, MJX-NCM-S4;
-}
-
-.NCM-S5 {
-  font-family: MJX-NCM-ZERO, MJX-NCM-S5;
-}
-
-.NCM-S6 {
-  font-family: MJX-NCM-ZERO, MJX-NCM-S6;
-}
-
-.NCM-S7 {
-  font-family: MJX-NCM-ZERO, MJX-NCM-S7;
-}
-
-.NCM-MI {
-  font-family: MJX-NCM-ZERO, MJX-NCM-MI;
-}
-
-.NCM-C {
-  font-family: MJX-NCM-ZERO, MJX-NCM-C;
-}
-
-.NCM-CB {
-  font-family: MJX-NCM-ZERO, MJX-NCM-CB;
-}
-
-.NCM-OS {
-  font-family: MJX-NCM-ZERO, MJX-NCM-OS;
-}
-
-.NCM-OB {
-  font-family: MJX-NCM-ZERO, MJX-NCM-OB;
-}
-
-.NCM-V {
-  font-family: MJX-NCM-ZERO, MJX-NCM-V;
-}
-
-.NCM-LT {
-  font-family: MJX-NCM-ZERO, MJX-NCM-LT;
-}
-
-.NCM-RB {
-  font-family: MJX-NCM-ZERO, MJX-NCM-RB;
-}
-
-.NCM-EM {
-  font-family: MJX-NCM-ZERO, MJX-NCM-EM;
-}
-
-.NCM-B-a {
-  font-family: MJX-NCM-ZERO, MJX-NCM-B-a;
-}
-
-.NCM-U {
-  font-family: MJX-NCM-ZERO, MJX-NCM-U;
-}
-
-.NCM-U-a {
-  font-family: MJX-NCM-ZERO, MJX-NCM-U-a;
-}
-
-.NCM-S {
-  font-family: MJX-NCM-ZERO, MJX-NCM-S;
-}
-
-.NCM-SB {
-  font-family: MJX-NCM-ZERO, MJX-NCM-SB;
-}
-
-@font-face /* MJX-NCM-ZERO */ {
-  font-family: MJX-NCM-ZERO;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-zero.woff2") format("woff2");
-}
-
-@font-face /* MJX-BRK */ {
-  font-family: MJX-BRK;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-brk.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-N */ {
-  font-family: MJX-NCM-N;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-n.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-B */ {
-  font-family: MJX-NCM-B;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-b.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-I */ {
-  font-family: MJX-NCM-I;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-i.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-BI */ {
-  font-family: MJX-NCM-BI;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-bi.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-DS */ {
-  font-family: MJX-NCM-DS;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-ds.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-F */ {
-  font-family: MJX-NCM-F;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-f.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-FB */ {
-  font-family: MJX-NCM-FB;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-fb.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-SS */ {
-  font-family: MJX-NCM-SS;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-ss.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-SSB */ {
-  font-family: MJX-NCM-SSB;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-ssb.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-SSI */ {
-  font-family: MJX-NCM-SSI;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-ssi.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-SSBI */ {
-  font-family: MJX-NCM-SSBI;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-ssbi.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-M */ {
-  font-family: MJX-NCM-M;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-m.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-SO */ {
-  font-family: MJX-NCM-SO;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-so.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-LO */ {
-  font-family: MJX-NCM-LO;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-lo.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-S3 */ {
-  font-family: MJX-NCM-S3;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-s3.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-S4 */ {
-  font-family: MJX-NCM-S4;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-s4.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-S5 */ {
-  font-family: MJX-NCM-S5;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-s5.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-S6 */ {
-  font-family: MJX-NCM-S6;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-s6.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-S7 */ {
-  font-family: MJX-NCM-S7;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-s7.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-MI */ {
-  font-family: MJX-NCM-MI;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-mi.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-C */ {
-  font-family: MJX-NCM-C;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-c.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-CB */ {
-  font-family: MJX-NCM-CB;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-cb.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-OS */ {
-  font-family: MJX-NCM-OS;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-os.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-OB */ {
-  font-family: MJX-NCM-OB;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-ob.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-V */ {
-  font-family: MJX-NCM-V;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-v.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-LT */ {
-  font-family: MJX-NCM-LT;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-lt.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-RB */ {
-  font-family: MJX-NCM-RB;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-rb.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-EM */ {
-  font-family: MJX-NCM-EM;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-em.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-B-a */ {
-  font-family: MJX-NCM-B-a;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-b-a.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-U */ {
-  font-family: MJX-NCM-U;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-u.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-U-a */ {
-  font-family: MJX-NCM-U-a;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-u-a.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-S */ {
-  font-family: MJX-NCM-S;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-s.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-SB */ {
-  font-family: MJX-NCM-SB;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-sb.woff2") format("woff2");
-}
-
-mjx-c.mjx-c1D45D {
-  padding: 0.442em 0.503em 0.194em 0;
-}
-
-mjx-c.mjx-c1D45E {
-  padding: 0.442em 0.452em 0.194em 0;
-}
-
-mjx-c.mjx-c28 {
-  padding: 0.748em 0.389em 0.248em 0;
-}
-
-mjx-c.mjx-c1D465 {
-  padding: 0.442em 0.572em 0.011em 0;
-}
-
-mjx-c.mjx-c2C {
-  padding: 0.106em 0.278em 0.193em 0;
-}
-
-mjx-c.mjx-c1D467 {
-  padding: 0.442em 0.467em 0.011em 0;
-}
-
-mjx-c.mjx-c29 {
-  padding: 0.748em 0.389em 0.248em 0;
-}
-
-mjx-c.mjx-c3D {
-  padding: 0.367em 0.778em 0 0;
-}
-
-mjx-c.mjx-c7C {
-  padding: 0.75em 0.278em 0.25em 0;
-}
-
-mjx-c.mjx-c6C {
-  padding: 0.694em 0.278em 0 0;
-}
-
-mjx-c.mjx-c6F {
-  padding: 0.448em 0.5em 0.011em 0;
-}
-
-mjx-c.mjx-c67 {
-  padding: 0.453em 0.5em 0.206em 0;
-}
-
-mjx-c.mjx-c2061 {
-  padding: 0 0 0 0;
-}
-
-mjx-c.mjx-c27E8 {
-  padding: 0.75em 0.389em 0.25em 0;
-}
-
-mjx-c.mjx-c22C5 {
-  padding: 0.303em 0.278em 0 0;
-}
-
-mjx-c.mjx-c27E9 {
-  padding: 0.75em 0.389em 0.25em 0;
-}
-
-mjx-c.mjx-c1D53C.NCM-DS {
-  padding: 0.685em 0.666em 0 0;
-}
-
-mjx-c.mjx-c5B {
-  padding: 0.75em 0.278em 0.25em 0;
-}
-
-mjx-c.mjx-c5D {
-  padding: 0.75em 0.278em 0.25em 0;
-}
-
-mjx-c.mjx-c222B.NCM-LO {
-  padding: 1.361em 0.999em 0.861em 0;
-}
-
-mjx-c.mjx-c1D451 {
-  padding: 0.694em 0.52em 0.011em 0;
-}
-
-mjx-c.mjx-c22EF {
-  padding: 0.303em 0.776em 0 0;
-}
-
-mjx-c.mjx-c27E8.NCM-S6 {
-  padding: 1.45em 0.75em 0.95em 0;
-}
-
-mjx-c.mjx-c27E9.NCM-S6 {
-  padding: 1.45em 0.75em 0.95em 0;
-}
-
-mjx-c.mjx-c2265 {
-  padding: 0.631em 0.778em 0.119em 0;
-}
-
-mjx-c.mjx-c30 {
-  padding: 0.666em 0.5em 0.022em 0;
-}
-
-mjx-c.mjx-c2E {
-  padding: 0.106em 0.278em 0 0;
-}
-
-mjx-c.mjx-c2B {
-  padding: 0.583em 0.778em 0.083em 0;
-}
-
-mjx-c.mjx-c2212 {
-  padding: 0.583em 0.778em 0.083em 0;
-}
-
-mjx-c.mjx-c31 {
-  padding: 0.666em 0.5em 0 0;
-}
-
-mjx-c.mjx-c32 {
-  padding: 0.666em 0.5em 0 0;
-}
-
-mjx-c.mjx-c1D447 {
-  padding: 0.677em 0.704em 0 0;
-}
-
-mjx-c.mjx-c1D461 {
-  padding: 0.626em 0.361em 0.011em 0;
-}
-
-mjx-c.mjx-c223C {
-  padding: 0.366em 0.773em 0 0;
-}
-
-mjx-c.mjx-c4E.NCM-C {
-  padding: 0.706em 1.007em 0.009em 0;
-}
-
-mjx-c.mjx-c1D6FC {
-  padding: 0.442em 0.64em 0.011em 0;
-}
-
-mjx-c.mjx-c1D70E {
-  padding: 0.431em 0.571em 0.011em 0;
-}
-
-mjx-c.mjx-c2DC {
-  padding: 0.653em 0.5em 0 0;
-}
-
-mjx-c.mjx-c1D43C {
-  padding: 0.684em 0.497em 0.001em 0;
-}
-
-mjx-c.mjx-c1D441 {
-  padding: 0.683em 0.881em 0 0;
-}
-
-mjx-c.mjx-c2190 {
-  padding: 0.51em 1em 0.01em 0;
-}
-
-mjx-c.mjx-c2C6 {
-  padding: 0.694em 0.5em 0 0;
-}
-
-mjx-c.mjx-c1D716 {
-  padding: 0.431em 0.406em 0.011em 0;
-}
-
-mjx-c.mjx-c2F {
-  padding: 0.75em 0.5em 0.25em 0;
-}
-
-mjx-c.mjx-c27E8.NCM-S7 {
-  padding: 1.75em 0.908em 1.25em 0;
-}
-
-mjx-c.mjx-c2211.NCM-LO {
-  padding: 0.95em 1.444em 0.45em 0;
-}
-
-mjx-c.mjx-c1D456 {
-  padding: 0.661em 0.345em 0.011em 0;
-}
-
-mjx-c.mjx-c27E9.NCM-S7 {
-  padding: 1.75em 0.908em 1.25em 0;
-}
-
-mjx-c.mjx-c1D6FD {
-  padding: 0.706em 0.574em 0.194em 0;
-}
-
-mjx-c.mjx-c2225.NCM-SO {
-  padding: 0.851em 0.555em 0.351em 0;
-}
-</style></head>
+    <link rel="stylesheet" type="text/css" href="assets/style.css"/>
+</head>
 
 <body>
 
@@ -1272,108 +62,103 @@ mjx-c.mjx-c2225.NCM-SO {
   <header>
     <h3>Alex Alemi's Blog</h3>
     <nav>
-      <a href="https://blog.alexalemi.com">Index</a> |
-      <a href="https://alexalemi.com">About Me</a> |
+      <a href='https://blog.alexalemi.com'>Index</a> |
+      <a href='https://alexalemi.com'>About Me</a> |
       <a rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml">RSS</a>
     </nav>
   </header>
 
   <article>
 		<h1>A Path to the Variational Diffusion Loss</h1>
-		<p>Alexander A. Alemi. <time datetime="2022-09-15">2022-09-15</time></p>
+		<p>Alexander A. Alemi. <time datetime='2022-09-15'>2022-09-15</time></p>
     <div class="content">
     <p>Diffusion models have made quite a splash, especially after the open-source release of <a href="https://huggingface.co/spaces/stabilityai/stable-diffusion">Stable Diffusion</a>.  What are diffusion models, where does the loss come from and what does a simple example look like? I've recently helped open-source a simple, pedagogical, self-contained
 <a href="https://colab.research.google.com/github/google-research/vdm/blob/main/colab/SimpleDiffusionColab.ipynb">example colab</a>
 of a diffusion model trained on EMNIST, which you can find as part of the <a href="https://arxiv.org/abs/2107.00630">Variational Diffusion Models (VDM)</a> <a href="https://github.com/google-research/vdm">github page</a>. In this post, I wanted to give some more background and a simple way to motivate where the loss function comes from.</p>
 <h2>Non-negativity of KL</h2>
 <aside><sup id="#p-and-q">1</sup>
- I tend to reverse the use of <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi></mjx-math></mjx-container> and <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="q"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi></mjx-math></mjx-container> with respect to the rest of the world.  Most people use <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi></mjx-math></mjx-container> for the generative model and <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="q"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi></mjx-math></mjx-container> for the approximate posterior.  They do this because, for most people, the generative model is the star of the show and the approximate posterior is playing second fiddle.  My reversal of the letters is deliberate.  To me, the <i>forward process</i> <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" breakable="true" data-latex="p(x,z)=p(x)p(z|x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="z" space="2"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-break size="4"> </mjx-break><mjx-mo data-latex="="><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mi data-latex="p" space="4"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> composed of the <i>true image distribution</i> <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> and the <i>encoder</i> <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(z|x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> is the star of the show.  <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi></mjx-math></mjx-container> is the joint distribution that exists in the real world, <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="q"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi></mjx-math></mjx-container> is our approximation to it. 
+ I tend to reverse the use of $p$ and $q$ with respect to the rest of the world.  Most people use $p$ for the generative model and $q$ for the approximate posterior.  They do this because, for most people, the generative model is the star of the show and the approximate posterior is playing second fiddle.  My reversal of the letters is deliberate.  To me, the <i>forward process</i> $p(x,z)=p(x)p(z|x)$ composed of the <i>true image distribution</i> $p(x)$ and the <i>encoder</i> $p(z|x)$ is the star of the show.  $p$ is the joint distribution that exists in the real world, $q$ is our approximation to it. 
 </aside>
-<p>Let's say we want to build a latent-variable model, <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="q(x, z)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="z" space="2"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> where the likelihood of the data (<mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container>), has high marginal likelihood: <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\log q(x)"><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mi data-latex="q" space="2"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container>. Unfortunately, computing <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\log q(x)"><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mi data-latex="q" space="2"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> involves an intractable integral over the latent variable, <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="z"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi></mjx-math></mjx-container>.<sup><a href="#p-and-q">1</a></sup></p>
+<p>Let's say we want to build a latent-variable model, $q(x, z)$ where the likelihood of the data ($p(x)$), has high marginal likelihood: $\log q(x)$. Unfortunately, computing $\log q(x)$ involves an intractable integral over the latent variable, $z$.<sup><a href="#p-and-q">1</a></sup></p>
 <aside><sup id="#kl">2</sup>
  <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">Kullback-Leibler Divergence</a>, for more background on KL see my <a href="kl.html">other post</a>.
 </aside>
 <aside><sup id="#brakets">3</sup>
-	I use <a href="https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation">brakets</a> to show expectations and unless noted, always with respect to the full <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi></mjx-math></mjx-container> distribution.
-	<mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \left\langle \cdot \right\rangle_p = \mathbb{E}_p \left[ \cdot \right] = \int dx\, p(x) [\cdot] "><mjx-msub data-latex="\left\langle \cdot \right\rangle_p"><mjx-mrow data-latex="\left\langle \cdot \right\rangle"><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8">⟨</mjx-c></mjx-mo><mjx-mo data-latex="\cdot"><mjx-c class="mjx-c22C5">⋅</mjx-c></mjx-mo><mjx-mo data-latex="\right\rangle"><mjx-c class="mjx-c27E9">⟩</mjx-c></mjx-mo></mjx-mrow><mjx-script style="vertical-align:-0.285em"><mjx-mi data-latex="p" size="s"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-msub data-latex="\mathbb{E}_p" space="4"><mjx-TeXAtom texclass="ORD" data-latex="\mathbb{E}"><mjx-mi data-latex="E"><mjx-c class="mjx-c1D53C NCM-DS">𝔼</mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align:-0.15em"><mjx-mi data-latex="p" size="s"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mrow data-latex="\left[ \cdot \right]" space="2"><mjx-mo data-latex="\left["><mjx-c class="mjx-c5B">[</mjx-c></mjx-mo><mjx-mo data-latex="\cdot"><mjx-c class="mjx-c22C5">⋅</mjx-c></mjx-mo><mjx-mo data-latex="\right]"><mjx-c class="mjx-c5D">]</mjx-c></mjx-mo></mjx-mrow><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mo data-latex="\int" space="4"><mjx-c class="mjx-c222B NCM-LO">∫</mjx-c></mjx-mo><mjx-mi data-latex="d" space="2"><mjx-c class="mjx-c1D451">𝑑</mjx-c></mjx-mi><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mspace style="width:0.167em" data-latex="\,"></mjx-mspace><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="["><mjx-c class="mjx-c5B">[</mjx-c></mjx-mo><mjx-mo data-latex="\cdot"><mjx-c class="mjx-c22C5">⋅</mjx-c></mjx-mo><mjx-mo data-latex="]"><mjx-c class="mjx-c5D">]</mjx-c></mjx-mo></mjx-math></mjx-container>
+	I use <a href="https://en.wikipedia.org/wiki/Bra%E2%80%93ket_notation">brakets</a> to show expectations and unless noted, always with respect to the full $p$ distribution.
+	$$ \left\langle \cdot \right\rangle_p = \mathbb{E}_p \left[ \cdot \right] = \int dx\, p(x) [\cdot] $$
 <pre><code>	
 </code></pre>
-<p>If I don't denote the distribution the expectation is with respect to on the brakets, it's always the full joint <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(x,\cdots)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mo data-latex="\cdots" space="2"><mjx-c class="mjx-c22EF">⋯</mjx-c></mjx-mo><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container>. Notice that this works even if there
+<p>If I don't denote the distribution the expectation is with respect to on the brakets, it's always the full joint $p(x,\cdots)$. Notice that this works even if there
 are fewer variables or conditioning variables left inside the terms in the brakets, as any excess variables will just marginalize out without issue in the expectation and any variables being conditioned on will be evaluated in expectation as desired.</p>
 </aside>
 <p>We can derive the tractable objective used to train these models using the observation that the KL<sup><a href="#kl">2</a></sup> divergence is non-negative and monotonic. The <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">Kullback-Leibler (KL) divergence</a> between any two distributions is non-negative:<sup><a href="#brakets">3</a></sup>
-<mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \left\langle \log \frac{p(x)}{q(x)} \right\rangle_p \geq 0. "><mjx-msub data-latex="\left\langle \log \frac{p(x)}{q(x)} \right\rangle_p"><mjx-mrow data-latex="\left\langle \log \frac{p(x)}{q(x)} \right\rangle"><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8 NCM-S6">⟨</mjx-c></mjx-mo><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p(x)}{q(x)}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="p(x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="q(x)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right\rangle"><mjx-c class="mjx-c27E9 NCM-S6">⟩</mjx-c></mjx-mo></mjx-mrow><mjx-script style="vertical-align:-0.991em"><mjx-mi data-latex="p" size="s"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex="\geq" space="4"><mjx-c class="mjx-c2265">≥</mjx-c></mjx-mo><mjx-mn data-latex="0." space="4"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c30">0</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c2E">.</mjx-c></mjx-mn></mjx-math></mjx-container></p>
+$$ \left\langle \log \frac{p(x)}{q(x)} \right\rangle_p \geq 0. $$</p>
 <p>If we marginalize out some subset of random variables the KL divergence of the marginal distributions has to be less. For any two random variables:
-<mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \begin{align}
-\left\langle \log \frac{p(x,z)}{q(x,z)} \right\rangle &= \left\langle \log \frac{p(x)p(z|x)}{q(x)q(z|x)} \right\rangle  \\
-&= \left\langle \log \frac{p(x)}{q(x)} \right\rangle + \left\langle \log \frac{p(z|x)}{q(z|x)} \right\rangle \\
-&\geq \left\langle \log \frac{p(x)}{q(x)}\right\rangle \geq 0
-\end{align} "><mjx-mtable style="min-width:19.926em" data-latex="\begin{align}
-\left\langle \log \frac{p(x,z)}{q(x,z)} \right\rangle &= \left\langle \log \frac{p(x)p(z|x)}{q(x)q(z|x)} \right\rangle  \\
-&= \left\langle \log \frac{p(x)}{q(x)} \right\rangle + \left\langle \log \frac{p(z|x)}{q(z|x)} \right\rangle \\
-&\geq \left\langle \log \frac{p(x)}{q(x)}\right\rangle \geq 0
-\end{align}"><mjx-table><mjx-itable><mjx-mtr style="height:2.42em"><mjx-mtd style="text-align:right;padding-right:0;padding-bottom:0.15em"><mjx-mrow data-latex="\left\langle \log \frac{p(x,z)}{q(x,z)} \right\rangle "><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8 NCM-S6">⟨</mjx-c></mjx-mo><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p(x,z)}{q(x,z)}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="p(x,z)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="z" space="2"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="q(x,z)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="z" space="2"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right\rangle "><mjx-c class="mjx-c27E9 NCM-S6">⟩</mjx-c></mjx-mo></mjx-mrow><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align:left;padding-left:0;padding-bottom:0.15em"><mjx-mstyle><mjx-mi></mjx-mi><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mrow data-latex="\left\langle \log \frac{p(x)p(z|x)}{q(x)q(z|x)} \right\rangle " space="4"><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8 NCM-S6">⟨</mjx-c></mjx-mo><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p(x)p(z|x)}{q(x)q(z|x)}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="p(x)p(z|x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="q(x)q(z|x)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right\rangle "><mjx-c class="mjx-c27E9 NCM-S6">⟩</mjx-c></mjx-mo></mjx-mrow></mjx-mstyle><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr style="height:2.42em"><mjx-mtd style="text-align:right;padding-right:0;padding-top:0.15em;padding-bottom:0.15em"><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align:left;padding-left:0;padding-top:0.15em;padding-bottom:0.15em"><mjx-mstyle><mjx-mi></mjx-mi><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mrow data-latex="\left\langle \log \frac{p(x)}{q(x)} \right\rangle " space="4"><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8 NCM-S6">⟨</mjx-c></mjx-mo><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p(x)}{q(x)}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="p(x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="q(x)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right\rangle "><mjx-c class="mjx-c27E9 NCM-S6">⟩</mjx-c></mjx-mo></mjx-mrow><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mrow data-latex="\left\langle \log \frac{p(z|x)}{q(z|x)} \right\rangle " space="3"><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8 NCM-S6">⟨</mjx-c></mjx-mo><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p(z|x)}{q(z|x)}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="p(z|x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="q(z|x)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right\rangle "><mjx-c class="mjx-c27E9 NCM-S6">⟩</mjx-c></mjx-mo></mjx-mrow></mjx-mstyle><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr style="height:2.412em"><mjx-mtd style="text-align:right;padding-right:0;padding-top:0.15em"><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align:left;padding-left:0;padding-top:0.15em"><mjx-mstyle><mjx-mi></mjx-mi><mjx-mo data-latex="\geq" space="4"><mjx-c class="mjx-c2265">≥</mjx-c></mjx-mo><mjx-mrow data-latex="\left\langle \log \frac{p(x)}{q(x)}\right\rangle " space="4"><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8 NCM-S6">⟨</mjx-c></mjx-mo><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p(x)}{q(x)}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="p(x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="q(x)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right\rangle "><mjx-c class="mjx-c27E9 NCM-S6">⟩</mjx-c></mjx-mo></mjx-mrow><mjx-mo data-latex="\geq" space="4"><mjx-c class="mjx-c2265">≥</mjx-c></mjx-mo><mjx-mn data-latex="0" space="4"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-mstyle><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable></mjx-math></mjx-container>
+$$ \begin{align}
+\left\langle \log \frac{p(x,z)}{q(x,z)} \right\rangle &amp;= \left\langle \log \frac{p(x)p(z|x)}{q(x)q(z|x)} \right\rangle  \\
+&amp;= \left\langle \log \frac{p(x)}{q(x)} \right\rangle + \left\langle \log \frac{p(z|x)}{q(z|x)} \right\rangle \\
+&amp;\geq \left\langle \log \frac{p(x)}{q(x)}\right\rangle \geq 0
+\end{align} $$
 Intuitively, if we think about KL divergence as a "distance" between probability distributions, two joint distributions always have to be at least as far apart as their marginals.  As we just saw, the KL of the joint is the sum of the KL between the two marginals, as well as the expected KL of the conditional distributions (which has to be positive, as all KLs are).</p>
 <h2>VAEs</h2>
-<p>Imagine designing these joint distributions to have different flavors.  Think of <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(x,z)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="z" space="2"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> as a <em>forward</em> process <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(x) p(z|x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> that takes an image from some natural image distribution <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> and then encodes it into some representation <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="z"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi></mjx-math></mjx-container> with an encoder <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(z|x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container>.  This is a joint distribution over the two variables. Running the forward process would give us <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="(x,z)"><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="z" space="2"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> pairs, pairs of natural images and their encodings.
-Next, imagine a different joint distribution, a <em>reverse process</em> <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="q(x,z)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="z" space="2"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> that takes some sample from a <em>prior</em> <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="q(z)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> and then runs it through a <em>decoder</em> <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="q(x|z)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> to generate a synthetic image.  This is a generative model of the kind we might be used to building.  This is also a fully-fledged joint distribution that we could sample from, in order to generate <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="(x,z)"><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="z" space="2"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> pairs. At initialization, these two distributions are very different. The goal of generative modeling is to bring these two joint distributions into alignment.</p>
+<p>Imagine designing these joint distributions to have different flavors.  Think of $p(x,z)$ as a <em>forward</em> process $p(x) p(z|x)$ that takes an image from some natural image distribution $p(x)$ and then encodes it into some representation $z$ with an encoder $p(z|x)$.  This is a joint distribution over the two variables. Running the forward process would give us $(x,z)$ pairs, pairs of natural images and their encodings.
+Next, imagine a different joint distribution, a <em>reverse process</em> $q(x,z)$ that takes some sample from a <em>prior</em> $q(z)$ and then runs it through a <em>decoder</em> $q(x|z)$ to generate a synthetic image.  This is a generative model of the kind we might be used to building.  This is also a fully-fledged joint distribution that we could sample from, in order to generate $(x,z)$ pairs. At initialization, these two distributions are very different. The goal of generative modeling is to bring these two joint distributions into alignment.</p>
 <p>Based on the properties of the KL divergence, these two joint distributions must have a non-negative KL divergence that is monotonic to marginalizing out one of the variables:
-<mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \left\langle \log \frac{p(x,z)}{q(x,z)} \right\rangle =  \left\langle \log \frac{p(x) p(z|x)}{q(z) q(x|z)} \right\rangle \geq \left\langle \log \frac{p(x)}{q(x)} \right\rangle \geq 0 "><mjx-mrow data-latex="\left\langle \log \frac{p(x,z)}{q(x,z)} \right\rangle "><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8 NCM-S6">⟨</mjx-c></mjx-mo><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p(x,z)}{q(x,z)}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="p(x,z)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="z" space="2"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="q(x,z)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="z" space="2"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right\rangle "><mjx-c class="mjx-c27E9 NCM-S6">⟩</mjx-c></mjx-mo></mjx-mrow><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mrow data-latex="\left\langle \log \frac{p(x) p(z|x)}{q(z) q(x|z)} \right\rangle " space="4"><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8 NCM-S6">⟨</mjx-c></mjx-mo><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p(x) p(z|x)}{q(z) q(x|z)}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="p(x) p(z|x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="q(z) q(x|z)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right\rangle "><mjx-c class="mjx-c27E9 NCM-S6">⟩</mjx-c></mjx-mo></mjx-mrow><mjx-mo data-latex="\geq" space="4"><mjx-c class="mjx-c2265">≥</mjx-c></mjx-mo><mjx-mrow data-latex="\left\langle \log \frac{p(x)}{q(x)} \right\rangle " space="4"><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8 NCM-S6">⟨</mjx-c></mjx-mo><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p(x)}{q(x)}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="p(x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="q(x)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right\rangle "><mjx-c class="mjx-c27E9 NCM-S6">⟩</mjx-c></mjx-mo></mjx-mrow><mjx-mo data-latex="\geq" space="4"><mjx-c class="mjx-c2265">≥</mjx-c></mjx-mo><mjx-mn data-latex="0" space="4"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-math></mjx-container>
-Notice what this is saying. The KL divergence between the joint distributions here is the expected log density ratio of the forward to the reverse model's likelihood, where the expectation -- the samples -- are taken with respect to the <em>forward</em> process <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(x,z)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="z" space="2"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container>.  This joint KL is itself an upper bound for the KL divergence between the marginal distributions <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> and <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="q(x)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container>.  <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> was our original image distribution, while <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="q(x)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> is the distribution of synthetic images drawn from the generative model that is our reverse process:
-<mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" q(x) = \int dz\, q(x|z) q(z) "><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mo data-latex="\int" space="4"><mjx-c class="mjx-c222B NCM-LO">∫</mjx-c></mjx-mo><mjx-mi data-latex="d" space="2"><mjx-c class="mjx-c1D451">𝑑</mjx-c></mjx-mi><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mspace style="width:0.167em" data-latex="\,"></mjx-mspace><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container></p>
-<p>So, by minimizing the KL between our forward and reverse process -- by aligning the two joint distributions -- we can ensure that we make progress towards learning a good generative model of our images <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="q(x)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container>.  We can ensure that we are aligning the marginals <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="q(x)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> and <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container>.</p>
+$$ \left\langle \log \frac{p(x,z)}{q(x,z)} \right\rangle =  \left\langle \log \frac{p(x) p(z|x)}{q(z) q(x|z)} \right\rangle \geq \left\langle \log \frac{p(x)}{q(x)} \right\rangle \geq 0 $$
+Notice what this is saying. The KL divergence between the joint distributions here is the expected log density ratio of the forward to the reverse model's likelihood, where the expectation -- the samples -- are taken with respect to the <em>forward</em> process $p(x,z)$.  This joint KL is itself an upper bound for the KL divergence between the marginal distributions $p(x)$ and $q(x)$.  $p(x)$ was our original image distribution, while $q(x)$ is the distribution of synthetic images drawn from the generative model that is our reverse process:
+$$ q(x) = \int dz\, q(x|z) q(z) $$</p>
+<p>So, by minimizing the KL between our forward and reverse process -- by aligning the two joint distributions -- we can ensure that we make progress towards learning a good generative model of our images $q(x)$.  We can ensure that we are aligning the marginals $q(x)$ and $p(x)$.</p>
 <p>The tightness of this bound is controlled by how close together the remaining conditional distributions are:</p>
-<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \left\langle  \log \frac{p(x,z)}{q(x,z)} \right\rangle = \left\langle \log \frac{p(x)}{q(x)} \right\rangle + \left\langle \log \frac{p(z|x)}{q(z|x)} \right\rangle "><mjx-mrow data-latex="\left\langle  \log \frac{p(x,z)}{q(x,z)} \right\rangle "><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8 NCM-S6">⟨</mjx-c></mjx-mo><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p(x,z)}{q(x,z)}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="p(x,z)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="z" space="2"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="q(x,z)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="z" space="2"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right\rangle "><mjx-c class="mjx-c27E9 NCM-S6">⟩</mjx-c></mjx-mo></mjx-mrow><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mrow data-latex="\left\langle \log \frac{p(x)}{q(x)} \right\rangle " space="4"><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8 NCM-S6">⟨</mjx-c></mjx-mo><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p(x)}{q(x)}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="p(x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="q(x)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right\rangle "><mjx-c class="mjx-c27E9 NCM-S6">⟩</mjx-c></mjx-mo></mjx-mrow><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mrow data-latex="\left\langle \log \frac{p(z|x)}{q(z|x)} \right\rangle " space="3"><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8 NCM-S6">⟨</mjx-c></mjx-mo><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p(z|x)}{q(z|x)}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="p(z|x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="q(z|x)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right\rangle "><mjx-c class="mjx-c27E9 NCM-S6">⟩</mjx-c></mjx-mo></mjx-mrow></mjx-math></mjx-container>
-In other words: the degree to which our encoding distribution (<mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(z|x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container>) matches the Bayesian posterior of our generative model (<mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="q(z|x)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container>) determies the tightness of our bound.</p>
-<p>So, again, all we started with is the idea of two different processes, the <em>forward</em> process that takes images and encodes them and a <em>reverse</em> process that samples some latents from a known distribution and decodes them.  If we try to minimize the KL divergence between these two processes, forward to reverse, we can ensure that this is a valid bound on the marginal KL between the true image distribution <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> and the marginal of our generative model <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="q(x)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container>.  That is, by learning to make the two joint processes look alike we are also as a consequence learning a good generative model of images.</p>
+<p>$$ \left\langle  \log \frac{p(x,z)}{q(x,z)} \right\rangle = \left\langle \log \frac{p(x)}{q(x)} \right\rangle + \left\langle \log \frac{p(z|x)}{q(z|x)} \right\rangle $$
+In other words: the degree to which our encoding distribution ($p(z|x)$) matches the Bayesian posterior of our generative model ($q(z|x)$) determies the tightness of our bound.</p>
+<p>So, again, all we started with is the idea of two different processes, the <em>forward</em> process that takes images and encodes them and a <em>reverse</em> process that samples some latents from a known distribution and decodes them.  If we try to minimize the KL divergence between these two processes, forward to reverse, we can ensure that this is a valid bound on the marginal KL between the true image distribution $p(x)$ and the marginal of our generative model $q(x)$.  That is, by learning to make the two joint processes look alike we are also as a consequence learning a good generative model of images.</p>
 <aside><sup id="#ELBO">4</sup>
 	<a href="https://en.wikipedia.org/wiki/Evidence_lower_bound">Evidence Lower BOund</a>
 </aside>
 We've just derived the ordinary ELBO:<sup><a href="#ELBO">4</a></sup>
-<mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \left\langle \log \frac{p(x,z)}{q(x,z)} \right\rangle = \left\langle \log p(x) -\log q(x|z) + \log \frac{p(z|x)}{q(z)} \right\rangle, "><mjx-mrow data-latex="\left\langle \log \frac{p(x,z)}{q(x,z)} \right\rangle "><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8 NCM-S6">⟨</mjx-c></mjx-mo><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p(x,z)}{q(x,z)}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="p(x,z)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="z" space="2"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="q(x,z)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="z" space="2"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right\rangle "><mjx-c class="mjx-c27E9 NCM-S6">⟩</mjx-c></mjx-mo></mjx-mrow><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mrow data-latex="\left\langle \log p(x) -\log q(x|z) + \log \frac{p(z|x)}{q(z)} \right\rangle" space="4"><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8 NCM-S6">⟨</mjx-c></mjx-mo><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mi data-latex="p" space="2"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="\log" space="3"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mi data-latex="q" space="2"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mi data-latex="\log" space="3"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p(z|x)}{q(z)}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="p(z|x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="q(z)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right\rangle"><mjx-c class="mjx-c27E9 NCM-S6">⟩</mjx-c></mjx-mo></mjx-mrow><mjx-mo data-latex="," space="2"><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo></mjx-math></mjx-container>
-up to a constant outside our control, the entropy of the true image distribution <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container>.  Notice that this term cancels out on both sides if we wish to target
-the cross-entropy from our true <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> to our model's <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="q(x)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> rather than the KL.
-<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex="\begin{align}
-\left\langle \log \frac{p(x,z)}{q(x,z)} \right\rangle = \left\langle \log p(x) - \log q(x|z) + \log \frac{p(z|x)}{q(z)} \right\rangle &\geq \left\langle \log \frac{p(x)}{q(x)} \right\rangle \\
-\left\langle -\log q(x|z) + \log \frac{p(z|x)}{q(z)} \right\rangle &\geq \left\langle -\log q(x) \right\rangle \\
-\left\langle \log q(x) \right\rangle &\geq \left\langle \log q(x|z) - \log \frac{p(z|x)}{q(z)} \right\rangle
-\end{align}"><mjx-mtable style="min-width:35.73em" data-latex="\begin{align}
-\left\langle \log \frac{p(x,z)}{q(x,z)} \right\rangle = \left\langle \log p(x) - \log q(x|z) + \log \frac{p(z|x)}{q(z)} \right\rangle &\geq \left\langle \log \frac{p(x)}{q(x)} \right\rangle \\
-\left\langle -\log q(x|z) + \log \frac{p(z|x)}{q(z)} \right\rangle &\geq \left\langle -\log q(x) \right\rangle \\
-\left\langle \log q(x) \right\rangle &\geq \left\langle \log q(x|z) - \log \frac{p(z|x)}{q(z)} \right\rangle
-\end{align}"><mjx-table><mjx-itable><mjx-mtr style="height:2.416em"><mjx-mtd style="text-align:right;padding-right:0;padding-bottom:0.15em"><mjx-mrow data-latex="\left\langle \log \frac{p(x,z)}{q(x,z)} \right\rangle "><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8 NCM-S6">⟨</mjx-c></mjx-mo><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p(x,z)}{q(x,z)}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="p(x,z)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="z" space="2"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="q(x,z)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="z" space="2"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right\rangle "><mjx-c class="mjx-c27E9 NCM-S6">⟩</mjx-c></mjx-mo></mjx-mrow><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mrow data-latex="\left\langle \log p(x) - \log q(x|z) + \log \frac{p(z|x)}{q(z)} \right\rangle " space="4"><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8 NCM-S6">⟨</mjx-c></mjx-mo><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mi data-latex="p" space="2"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="\log" space="3"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mi data-latex="q" space="2"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mi data-latex="\log" space="3"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p(z|x)}{q(z)}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="p(z|x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="q(z)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right\rangle "><mjx-c class="mjx-c27E9 NCM-S6">⟩</mjx-c></mjx-mo></mjx-mrow><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align:left;padding-left:0;padding-bottom:0.15em"><mjx-mstyle><mjx-mi></mjx-mi><mjx-mo data-latex="\geq" space="4"><mjx-c class="mjx-c2265">≥</mjx-c></mjx-mo><mjx-mrow data-latex="\left\langle \log \frac{p(x)}{q(x)} \right\rangle " space="4"><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8 NCM-S6">⟨</mjx-c></mjx-mo><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p(x)}{q(x)}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="p(x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="q(x)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right\rangle "><mjx-c class="mjx-c27E9 NCM-S6">⟩</mjx-c></mjx-mo></mjx-mrow></mjx-mstyle><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr style="height:2.416em"><mjx-mtd style="text-align:right;padding-right:0;padding-top:0.15em;padding-bottom:0.15em"><mjx-mrow data-latex="\left\langle -\log q(x|z) + \log \frac{p(z|x)}{q(z)} \right\rangle "><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8 NCM-S6">⟨</mjx-c></mjx-mo><mjx-mo data-latex="-"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="\log" space="2"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mi data-latex="q" space="2"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mi data-latex="\log" space="3"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p(z|x)}{q(z)}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="p(z|x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="q(z)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right\rangle "><mjx-c class="mjx-c27E9 NCM-S6">⟩</mjx-c></mjx-mo></mjx-mrow><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align:left;padding-left:0;padding-top:0.15em;padding-bottom:0.15em"><mjx-mstyle><mjx-mi></mjx-mi><mjx-mo data-latex="\geq" space="4"><mjx-c class="mjx-c2265">≥</mjx-c></mjx-mo><mjx-mrow data-latex="\left\langle -\log q(x) \right\rangle " space="4"><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8">⟨</mjx-c></mjx-mo><mjx-mo data-latex="-"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="\log" space="2"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mi data-latex="q" space="2"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="\right\rangle "><mjx-c class="mjx-c27E9">⟩</mjx-c></mjx-mo></mjx-mrow></mjx-mstyle><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr style="height:2.416em"><mjx-mtd style="text-align:right;padding-right:0;padding-top:0.15em"><mjx-mrow data-latex="\left\langle \log q(x) \right\rangle "><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8">⟨</mjx-c></mjx-mo><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mi data-latex="q" space="2"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="\right\rangle "><mjx-c class="mjx-c27E9">⟩</mjx-c></mjx-mo></mjx-mrow><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align:left;padding-left:0;padding-top:0.15em"><mjx-mstyle><mjx-mi></mjx-mi><mjx-mo data-latex="\geq" space="4"><mjx-c class="mjx-c2265">≥</mjx-c></mjx-mo><mjx-mrow data-latex="\left\langle \log q(x|z) - \log \frac{p(z|x)}{q(z)} \right\rangle" space="4"><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8 NCM-S6">⟨</mjx-c></mjx-mo><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mi data-latex="q" space="2"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="\log" space="3"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p(z|x)}{q(z)}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="p(z|x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="q(z)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right\rangle"><mjx-c class="mjx-c27E9 NCM-S6">⟩</mjx-c></mjx-mo></mjx-mrow></mjx-mstyle><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable></mjx-math></mjx-container></p>
-<p>At the end of the day, the hope and the dream we seem to have in doing latent variable modeling is that maybe we will somehow be more successful in learning a reverse <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="q(z)q(x|z)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> process to match some forward <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(x)p(z|x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> than we would have been able to just model the density <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="q(x)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> directly.  We are hoping that by expanding the problem, and making it a harder or larger modeling task, it'll become easier for us to optimize or learn.</p>
+$$ \left\langle \log \frac{p(x,z)}{q(x,z)} \right\rangle = \left\langle \log p(x) -\log q(x|z) + \log \frac{p(z|x)}{q(z)} \right\rangle, $$
+up to a constant outside our control, the entropy of the true image distribution $p(x)$.  Notice that this term cancels out on both sides if we wish to target
+the cross-entropy from our true $p(x)$ to our model's $q(x)$ rather than the KL.
+<p>$$\begin{align}
+\left\langle \log \frac{p(x,z)}{q(x,z)} \right\rangle = \left\langle \log p(x) - \log q(x|z) + \log \frac{p(z|x)}{q(z)} \right\rangle &amp;\geq \left\langle \log \frac{p(x)}{q(x)} \right\rangle \\
+\left\langle -\log q(x|z) + \log \frac{p(z|x)}{q(z)} \right\rangle &amp;\geq \left\langle -\log q(x) \right\rangle \\
+\left\langle \log q(x) \right\rangle &amp;\geq \left\langle \log q(x|z) - \log \frac{p(z|x)}{q(z)} \right\rangle
+\end{align}$$</p>
+<p>At the end of the day, the hope and the dream we seem to have in doing latent variable modeling is that maybe we will somehow be more successful in learning a reverse $q(z)q(x|z)$ process to match some forward $p(x)p(z|x)$ than we would have been able to just model the density $q(x)$ directly.  We are hoping that by expanding the problem, and making it a harder or larger modeling task, it'll become easier for us to optimize or learn.</p>
 <h2>Diffusion</h2>
 <p>For diffusion models, honestly, there isn't much to add except they add many more steps.
 The only difference is that instead of a two-step forward process, in diffusion we imagine a many-stepped (or potentially continuous) forward and reverse process.</p>
 <p>In particular, in most diffusion models we fix the forward process to be a Markov chain:
-<mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" p(x, z_0, z_1, z_2, \cdots, z_{T-1}, z_T) = p(x) p(z_0|x) p(z_1|z_0) \cdots p(z_T|z_{T-1}), "><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_0" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_1" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="1" size="s"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_2" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mo data-latex="\cdots" space="2"><mjx-c class="mjx-c22EF">⋯</mjx-c></mjx-mo><mjx-mo data-latex="," space="2"><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_{T-1}" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-TeXAtom texclass="ORD" data-latex="{T-1}" size="s"><mjx-mi data-latex="T"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi><mjx-mo data-latex="-"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_T" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="T" size="s"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mi data-latex="p" space="4"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_0"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_1"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="1" size="s"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="z_0"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="\cdots" space="2"><mjx-c class="mjx-c22EF">⋯</mjx-c></mjx-mo><mjx-mi data-latex="p" space="2"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_T"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="T" size="s"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="z_{T-1}"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-TeXAtom texclass="ORD" data-latex="{T-1}" size="s"><mjx-mi data-latex="T"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi><mjx-mo data-latex="-"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo></mjx-math></mjx-container>
-which starts with a sample from a natural image distribution <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> and then adds <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="T"><mjx-mi data-latex="T"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi></mjx-math></mjx-container> steps of additive Gaussian noise <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" breakable="true" data-latex="p(z_t| z_{t-1})  \sim \mathcal N(\alpha_{t} z_{t-1}, \sigma_{t}^2) "><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_t"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="t" size="s"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="z_{t-1}"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-TeXAtom texclass="ORD" data-latex="{t-1}" size="s"><mjx-mi data-latex="t"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi><mjx-mo data-latex="-"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-break size="4"> </mjx-break><mjx-mo data-latex="\sim"><mjx-c class="mjx-c223C">∼</mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD" data-latex="\mathcal N" space="4"><mjx-mi data-latex="N"><mjx-c class="mjx-c4E NCM-C">N</mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="\alpha_{t}"><mjx-mi data-latex="\alpha"><mjx-c class="mjx-c1D6FC">𝛼</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-TeXAtom texclass="ORD" data-latex="{t}" size="s"><mjx-mi data-latex="t"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-TeXAtom></mjx-script></mjx-msub><mjx-msub data-latex="z_{t-1}"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-TeXAtom texclass="ORD" data-latex="{t-1}" size="s"><mjx-mi data-latex="t"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi><mjx-mo data-latex="-"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msubsup data-latex="\sigma_{t}^2" space="2"><mjx-mi data-latex="\sigma"><mjx-c class="mjx-c1D70E">𝜎</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.26em;margin-left:0"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn><mjx-spacer style="margin-top:0.18em"></mjx-spacer><mjx-TeXAtom texclass="ORD" data-latex="{t}" size="s"><mjx-mi data-latex="t"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-TeXAtom></mjx-script></mjx-msubsup><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container>.</p>
+$$ p(x, z_0, z_1, z_2, \cdots, z_{T-1}, z_T) = p(x) p(z_0|x) p(z_1|z_0) \cdots p(z_T|z_{T-1}), $$
+which starts with a sample from a natural image distribution $p(x)$ and then adds $T$ steps of additive Gaussian noise $p(z_t| z_{t-1})  \sim \mathcal N(\alpha_{t} z_{t-1}, \sigma_{t}^2) $.</p>
 <figure id="#diffusion-forward">
- <img src="figures/diffusion-forward.svg" alt="Graphical model showing the forward process for diffusion.">
+ <img src="figures/diffusion-forward.svg"
+      alt="Graphical model showing the forward process for diffusion.">
  <figcaption>
    Figure 1. The graphical model for the forward process in diffusion.
  </figcaption>
 </figure>
 <aside><sup id="#variance-preserving">5</sup>
 In a lot of the diffusion work, the process is taken to be *variance preserving* by setting:
-<mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \alpha^2 = 1 - \sigma^2 "><mjx-msup data-latex="\alpha^2"><mjx-mi data-latex="\alpha"><mjx-c class="mjx-c1D6FC">𝛼</mjx-c></mjx-mi><mjx-script style="vertical-align:0.413em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mn data-latex="1" space="4"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-msup data-latex="\sigma^2" space="3"><mjx-mi data-latex="\sigma"><mjx-c class="mjx-c1D70E">𝜎</mjx-c></mjx-mi><mjx-script style="vertical-align:0.413em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math></mjx-container>
+$$ \alpha^2 = 1 - \sigma^2 $$
 </aside>
 <p>This takes an ordinary image and then adds more and more noise to it until it looks more or less indistinguishable from just isotropic Gaussian noise.<sup><a href="#variance-preserving">5</a></sup></p>
 <figure id="#forward-diffusion">
   <center>
-  <img src="figures/forward-diffusion.png" alt="Illustration of standard forward diffusion process as additive Gaussian noise.">
+  <img src="figures/forward-diffusion.png"
+    alt="Illustration of standard forward diffusion process as additive Gaussian noise.">
   <figcaption>
   Figure 2. A demonstration of the typical forward process in diffusion models.
   </figcaption>
   </center>
 </figure>
 <p>One particularly nice thing about using Gaussians for every step of the forward process here is that the composition of a bunch of conditional Gaussians is itself Gaussian so we will have a closed form for the marginal distribution at any intermediate time:
-<mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" p(z_t|x) = \mathcal N(\tilde \alpha_t x, \tilde \sigma_t^2 I )."><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_t"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="t" size="s"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD" data-latex="\mathcal N" space="4"><mjx-mi data-latex="N"><mjx-c class="mjx-c4E NCM-C">N</mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="\tilde \alpha_t"><mjx-TeXAtom texclass="ORD" data-latex="\tilde \alpha"><mjx-mover><mjx-over style="padding-bottom:0.105em;padding-left:0.392em;margin-bottom:-0.556em"><mjx-mo style="width:0;margin-left:-0.25em"><mjx-c class="mjx-c2DC">˜</mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi data-latex="\alpha"><mjx-c class="mjx-c1D6FC">𝛼</mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-TeXAtom><mjx-script style="vertical-align:-0.15em"><mjx-mi data-latex="t" size="s"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msubsup data-latex="\tilde \sigma_t^2" space="2"><mjx-TeXAtom texclass="ORD" data-latex="\tilde \sigma"><mjx-mover><mjx-over style="padding-bottom:0.105em;padding-left:0.285em;margin-bottom:-0.556em"><mjx-mo style="width:0;margin-left:-0.25em"><mjx-c class="mjx-c2DC">˜</mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi data-latex="\sigma"><mjx-c class="mjx-c1D70E">𝜎</mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-TeXAtom><mjx-script style="vertical-align:-0.247em;margin-left:0"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn><mjx-spacer style="margin-top:0.217em"></mjx-spacer><mjx-mi data-latex="t" size="s"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-script></mjx-msubsup><mjx-mi data-latex="I"><mjx-c class="mjx-c1D43C">𝐼</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="."><mjx-c class="mjx-c2E">.</mjx-c></mjx-mo></mjx-math></mjx-container></p>
+$$ p(z_t|x) = \mathcal N(\tilde \alpha_t x, \tilde \sigma_t^2 I ).$$</p>
 <p>With a forward process defined, we parameterize or learn the reverse process, a Markov chain that operates in the opposite direction:
-<mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" q(x,z_0,z_1,\cdots,z_T) = q(z_T) q(z_{T-1}|z_T) \cdots q(z_1|z_2)q(z_0|z_1)q(x|z_0) "><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_0" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_1" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="1" size="s"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mo data-latex="\cdots" space="2"><mjx-c class="mjx-c22EF">⋯</mjx-c></mjx-mo><mjx-mo data-latex="," space="2"><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_T" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="T" size="s"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mi data-latex="q" space="4"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_T"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="T" size="s"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_{T-1}"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-TeXAtom texclass="ORD" data-latex="{T-1}" size="s"><mjx-mi data-latex="T"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi><mjx-mo data-latex="-"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="z_T"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="T" size="s"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="\cdots" space="2"><mjx-c class="mjx-c22EF">⋯</mjx-c></mjx-mo><mjx-mi data-latex="q" space="2"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_1"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="1" size="s"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="z_2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_0"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="z_1"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="1" size="s"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="z_0"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container></p>
+$$ q(x,z_0,z_1,\cdots,z_T) = q(z_T) q(z_{T-1}|z_T) \cdots q(z_1|z_2)q(z_0|z_1)q(x|z_0) $$</p>
 <figure id="#diffusion-reverse">
- <img src="figures/diffusion-backward.svg" alt="Graphical model showing the reverse process for diffusion.">
+ <img src="figures/diffusion-backward.svg"
+      alt="Graphical model showing the reverse process for diffusion.">
  <figcaption>
    Figure 3. The graphical model for the reverse process in diffusion.
  </figcaption>
@@ -1382,56 +167,53 @@ In a lot of the diffusion work, the process is taken to be *variance preserving*
 	Aside, again, from the constant entropy of the data outside our control which we can ignore for purposes of optimization.	
 </aside>
 <p>The VDM loss is<sup><a href="#extra-entropy">6</a></sup> simply the KL between these two joints, which serves as an upper bound on the KL of the image marginals:
-<mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \left\langle \log \frac{p(x,z_0,z_1,\cdots,z_T)}{q(x,z_0,z_1,\cdots,z_T)} \right\rangle \geq \left\langle \log \frac{p(x)}{q(x)}\right\rangle "><mjx-mrow data-latex="\left\langle \log \frac{p(x,z_0,z_1,\cdots,z_T)}{q(x,z_0,z_1,\cdots,z_T)} \right\rangle "><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8 NCM-S6">⟨</mjx-c></mjx-mo><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p(x,z_0,z_1,\cdots,z_T)}{q(x,z_0,z_1,\cdots,z_T)}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="p(x,z_0 ,z_1 ,\cdots,z_T)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_0" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_1" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="1" size="s"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mo data-latex="\cdots" space="2"><mjx-c class="mjx-c22EF">⋯</mjx-c></mjx-mo><mjx-mo data-latex="," space="2"><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_T" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="T" size="s"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="q(x,z_0 ,z_1 ,\cdots,z_T)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_0" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_1" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="1" size="s"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mo data-latex="\cdots" space="2"><mjx-c class="mjx-c22EF">⋯</mjx-c></mjx-mo><mjx-mo data-latex="," space="2"><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_T" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="T" size="s"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right\rangle "><mjx-c class="mjx-c27E9 NCM-S6">⟩</mjx-c></mjx-mo></mjx-mrow><mjx-mo data-latex="\geq" space="4"><mjx-c class="mjx-c2265">≥</mjx-c></mjx-mo><mjx-mrow data-latex="\left\langle \log \frac{p(x)}{q(x)}\right\rangle " space="4"><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8 NCM-S6">⟨</mjx-c></mjx-mo><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p(x)}{q(x)}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="p(x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="q(x)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right\rangle "><mjx-c class="mjx-c27E9 NCM-S6">⟩</mjx-c></mjx-mo></mjx-mrow></mjx-math></mjx-container></p>
+$$ \left\langle \log \frac{p(x,z_0,z_1,\cdots,z_T)}{q(x,z_0,z_1,\cdots,z_T)} \right\rangle \geq \left\langle \log \frac{p(x)}{q(x)}\right\rangle $$</p>
 <aside><sup id="#deep-unsupervised">7</sup>
 See <a href="https://arxiv.org/abs/1503.03585">Deep Unsupervised Learning Using Nonequilibrium Thermodynamics</a> by Sohl-Dickstein et al.
 </aside>
 <p>Just as in the case of a VAE, here, the hope is that it might actually be easier to model the larger joint distribution than it was to try to model the density directly.  In the case of simple diffusion models, the forward process is fixed additive Gaussian noise. If we make enough steps in the forward process we believe we ought to be able to learn the reverse process exactly.<sup><a href="#deep-unsupervised">7</a></sup></p>
 <h3>Various Sundry Tricks</h3>
 <p>The joint KL is equivalent to the VDM loss. However, in practice, to make this loss efficient to train, diffusion models leverage a lot of the known structure
-of the forward process to power a very clever parameterization of the reverse process. This requires some tricky rearranging of terms and some stochastic approximation to make the whole thing efficient.<br>
+of the forward process to power a very clever parameterization of the reverse process. This requires some tricky rearranging of terms and some stochastic approximation to make the whole thing efficient.<br />
 To see the code, please check out the <a href="https://colab.research.google.com/github/google-research/vdm/blob/main/colab/SimpleDiffusionColab.ipynb">example colab</a> as well as its accompanying text that walks through some of these details in more detail.</p>
 <p>To utilize our knowledge of the forward process, we're actually going to rewrite the forward process not as a sequence of conditional Gaussian steps (a <em>bottom-up</em> forward process):
-<mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" p(x,z_0,z_1,z_2,\cdots,z_T) = p(x) p(z_0|x) p(z_1|z_0) p(z_2|z_1) \cdots p(z_T|z_{T-1}) "><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_0" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_1" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="1" size="s"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_2" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mo data-latex="\cdots" space="2"><mjx-c class="mjx-c22EF">⋯</mjx-c></mjx-mo><mjx-mo data-latex="," space="2"><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_T" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="T" size="s"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mi data-latex="p" space="4"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_0"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_1"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="1" size="s"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="z_0"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="z_1"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="1" size="s"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="\cdots" space="2"><mjx-c class="mjx-c22EF">⋯</mjx-c></mjx-mo><mjx-mi data-latex="p" space="2"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_T"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="T" size="s"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="z_{T-1}"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-TeXAtom texclass="ORD" data-latex="{T-1}" size="s"><mjx-mi data-latex="T"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi><mjx-mo data-latex="-"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container>
+$$ p(x,z_0,z_1,z_2,\cdots,z_T) = p(x) p(z_0|x) p(z_1|z_0) p(z_2|z_1) \cdots p(z_T|z_{T-1}) $$
 but instead we'll rearrange this to be a product of a bunch of conditional reverse steps (as a <em>top-down</em> forward process):
-<mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" 
+$$ 
 \begin{align}
-p(x, z_0, z_1, z_2,\cdots, z_N) &= p(z_0,z_1,z_2,\cdots, z_T|x) p(x) \\
-&= p(z_0|z_1,\cdots,z_T,x)p(z_1|z_2,\cdots,z_T,x)\cdots p(z_T|x)p(x) \\
-&= p(z_0|z_1,x)p(z_1|z_2,x)\cdots p(z_{T-1}|z_{T},x)p(z_T|x)p(x)
-\end{align}"><mjx-mtable style="min-width:30.88em" data-latex="\begin{align}
-p(x, z_0 , z_1 , z_2 ,\cdots, z_N) &= p(z_0 ,z_1 ,z_2 ,\cdots, z_T|x) p(x) \\
-&= p(z_0 |z_1 ,\cdots,z_T,x)p(z_1 |z_2 ,\cdots,z_T,x)\cdots p(z_T|x)p(x) \\
-&= p(z_0 |z_1 ,x)p(z_1 |z_2 ,x)\cdots p(z_{T-1}|z_{T},x)p(z_T|x)p(x)
-\end{align}"><mjx-table><mjx-itable><mjx-mtr style="height:1em"><mjx-mtd style="text-align:right;padding-right:0;padding-bottom:0.15em"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_0" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_1" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="1" size="s"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_2" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mo data-latex="\cdots" space="2"><mjx-c class="mjx-c22EF">⋯</mjx-c></mjx-mo><mjx-mo data-latex="," space="2"><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_N" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="N" size="s"><mjx-c class="mjx-c1D441">𝑁</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align:left;padding-left:0;padding-bottom:0.15em"><mjx-mstyle><mjx-mi></mjx-mi><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mi data-latex="p" space="4"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_0"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_1" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="1" size="s"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_2" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mo data-latex="\cdots" space="2"><mjx-c class="mjx-c22EF">⋯</mjx-c></mjx-mo><mjx-mo data-latex="," space="2"><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_T" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="T" size="s"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mstyle><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr style="height:1em"><mjx-mtd style="text-align:right;padding-right:0;padding-top:0.15em;padding-bottom:0.15em"><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align:left;padding-left:0;padding-top:0.15em;padding-bottom:0.15em"><mjx-mstyle><mjx-mi></mjx-mi><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mi data-latex="p" space="4"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_0"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="z_1"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="1" size="s"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mo data-latex="\cdots" space="2"><mjx-c class="mjx-c22EF">⋯</mjx-c></mjx-mo><mjx-mo data-latex="," space="2"><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_T" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="T" size="s"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="x" space="2"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_1"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="1" size="s"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="z_2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mo data-latex="\cdots" space="2"><mjx-c class="mjx-c22EF">⋯</mjx-c></mjx-mo><mjx-mo data-latex="," space="2"><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-msub data-latex="z_T" space="2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="T" size="s"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="x" space="2"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="\cdots" space="2"><mjx-c class="mjx-c22EF">⋯</mjx-c></mjx-mo><mjx-mi data-latex="p" space="2"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_T"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="T" size="s"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mstyle><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr style="height:1em"><mjx-mtd style="text-align:right;padding-right:0;padding-top:0.15em"><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align:left;padding-left:0;padding-top:0.15em"><mjx-mstyle><mjx-mi></mjx-mi><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mi data-latex="p" space="4"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_0"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="z_1"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="1" size="s"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="x" space="2"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_1"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="1" size="s"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="z_2"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="x" space="2"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="\cdots" space="2"><mjx-c class="mjx-c22EF">⋯</mjx-c></mjx-mo><mjx-mi data-latex="p" space="2"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_{T-1}"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-TeXAtom texclass="ORD" data-latex="{T-1}" size="s"><mjx-mi data-latex="T"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi><mjx-mo data-latex="-"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="z_{T}"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-TeXAtom texclass="ORD" data-latex="{T}" size="s"><mjx-mi data-latex="T"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi></mjx-TeXAtom></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="x" space="2"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_T"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="T" size="s"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mstyle><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable></mjx-math></mjx-container>
-For the Gaussian diffusion, we can analytically figure out what these conditional reverse steps should be for the forward process <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(z_{t-1}|z_t,x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_{t-1}"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-TeXAtom texclass="ORD" data-latex="{t-1}" size="s"><mjx-mi data-latex="t"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi><mjx-mo data-latex="-"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="z_t"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="t" size="s"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="x" space="2"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container>. These distributions compute the probability of seeing a particular noisy image from the previous step if we get to observe both the noisy image as well as the original image.</p>
+p(x, z_0, z_1, z_2,\cdots, z_N) &amp;= p(z_0,z_1,z_2,\cdots, z_T|x) p(x) \\
+&amp;= p(z_0|z_1,\cdots,z_T,x)p(z_1|z_2,\cdots,z_T,x)\cdots p(z_T|x)p(x) \\
+&amp;= p(z_0|z_1,x)p(z_1|z_2,x)\cdots p(z_{T-1}|z_{T},x)p(z_T|x)p(x)
+\end{align}$$
+For the Gaussian diffusion, we can analytically figure out what these conditional reverse steps should be for the forward process $p(z_{t-1}|z_t,x)$. These distributions compute the probability of seeing a particular noisy image from the previous step if we get to observe both the noisy image as well as the original image.</p>
 <figure id="#diffusion-forward-reverse">
- <img src="figures/diffusion-forward-backward.svg" alt="Graphical model showing the top-down generative process for diffusion.">
+ <img src="figures/diffusion-forward-backward.svg"
+      alt="Graphical model showing the top-down generative process for diffusion.">
  <figcaption>
    Figure 4. The graphical model for the top-down forward process in diffusion.
  </figcaption>
 </figure>
-<p>We'll then parameterize our reverse process <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="q(z_{t-1}|z_t)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_{t-1}"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-TeXAtom texclass="ORD" data-latex="{t-1}" size="s"><mjx-mi data-latex="t"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi><mjx-mo data-latex="-"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="z_t"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="t" size="s"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> to have this same <em>functional form</em>:
-<mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" q(z_{t-1}|z_t) \leftarrow p(z_{t-1}|z_t, \hat x(z_t, t)). "><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_{t-1}"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-TeXAtom texclass="ORD" data-latex="{t-1}" size="s"><mjx-mi data-latex="t"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi><mjx-mo data-latex="-"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="z_t"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="t" size="s"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="\leftarrow" space="4"><mjx-c class="mjx-c2190">←</mjx-c></mjx-mo><mjx-mi data-latex="p" space="4"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_{t-1}"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-TeXAtom texclass="ORD" data-latex="{t-1}" size="s"><mjx-mi data-latex="t"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi><mjx-mo data-latex="-"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="z_t"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="t" size="s"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD" data-latex="\hat x" space="2"><mjx-mover><mjx-over style="padding-bottom:0.105em;padding-left:0.329em;margin-bottom:-0.515em"><mjx-mo style="width:0;margin-left:-0.25em"><mjx-c class="mjx-c2C6">ˆ</mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-TeXAtom><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_t"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="t" size="s"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="t" space="2"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="."><mjx-c class="mjx-c2E">.</mjx-c></mjx-mo></mjx-math></mjx-container>
-We'll model the reverse process as if it were the exact reversed conditional forward process, but of course, for the true reverse process we don't get to observe the true original image.  Still, we'll use the same functional form, it's just we'll spend our modeling budget on trying to impute the original clean image <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\hat x"><mjx-TeXAtom texclass="ORD" data-latex="\hat x"><mjx-mover><mjx-over style="padding-bottom:0.105em;padding-left:0.329em;margin-bottom:-0.515em"><mjx-mo style="width:0;margin-left:-0.25em"><mjx-c class="mjx-c2C6">ˆ</mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-TeXAtom></mjx-math></mjx-container> after observing the noisy image <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="z_t"><mjx-msub data-latex="z_t"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="t" size="s"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math></mjx-container> and which step we are on <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="t"><mjx-mi data-latex="t"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-math></mjx-container>.</p>
+<p>We'll then parameterize our reverse process $q(z_{t-1}|z_t)$ to have this same <em>functional form</em>:
+$$ q(z_{t-1}|z_t) \leftarrow p(z_{t-1}|z_t, \hat x(z_t, t)). $$
+We'll model the reverse process as if it were the exact reversed conditional forward process, but of course, for the true reverse process we don't get to observe the true original image.  Still, we'll use the same functional form, it's just we'll spend our modeling budget on trying to impute the original clean image $\hat x$ after observing the noisy image $z_t$ and which step we are on $t$.</p>
 <aside><sup id="#epshat">8</sup>
 	The two are affinely related:
-	<mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \hat x_t = (z_t - \sigma_t \hat \epsilon_t) / \alpha_t "><mjx-msub data-latex="\hat x_t"><mjx-TeXAtom texclass="ORD" data-latex="\hat x"><mjx-mover><mjx-over style="padding-bottom:0.105em;padding-left:0.329em;margin-bottom:-0.515em"><mjx-mo style="width:0;margin-left:-0.25em"><mjx-c class="mjx-c2C6">ˆ</mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-TeXAtom><mjx-script style="vertical-align:-0.15em"><mjx-mi data-latex="t" size="s"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mo data-latex="(" space="4"><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_t"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="t" size="s"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-msub data-latex="\sigma_t" space="3"><mjx-mi data-latex="\sigma"><mjx-c class="mjx-c1D70E">𝜎</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mi data-latex="t" size="s"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-msub data-latex="\hat \epsilon_t"><mjx-TeXAtom texclass="ORD" data-latex="\hat \epsilon"><mjx-mover><mjx-over style="padding-bottom:0.105em;padding-left:0.269em;margin-bottom:-0.515em"><mjx-mo style="width:0;margin-left:-0.25em"><mjx-c class="mjx-c2C6">ˆ</mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi data-latex="\epsilon"><mjx-c class="mjx-c1D716">𝜖</mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-TeXAtom><mjx-script style="vertical-align:-0.15em"><mjx-mi data-latex="t" size="s"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="/"><mjx-c class="mjx-c2F">/</mjx-c></mjx-mo><mjx-msub data-latex="\alpha_t"><mjx-mi data-latex="\alpha"><mjx-c class="mjx-c1D6FC">𝛼</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mi data-latex="t" size="s"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math></mjx-container>
+	$$ \hat x_t = (z_t - \sigma_t \hat \epsilon_t) / \alpha_t $$
 </aside>
-<p>The actual parametric model in a diffusion model is this bit, <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\hat x(z_t, t)"><mjx-TeXAtom texclass="ORD" data-latex="\hat x"><mjx-mover><mjx-over style="padding-bottom:0.105em;padding-left:0.329em;margin-bottom:-0.515em"><mjx-mo style="width:0;margin-left:-0.25em"><mjx-c class="mjx-c2C6">ˆ</mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-TeXAtom><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_t"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="t" size="s"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="t" space="2"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container>. It is a neural network that takes as input the noisy image <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="z_t"><mjx-msub data-latex="z_t"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="t" size="s"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math></mjx-container> and the step we are on in the diffusion process <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="t"><mjx-mi data-latex="t"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-math></mjx-container> and has the job of trying to predict what the corresponding clean image was that generated the noisy image.  In most diffusion models this is implemented as a <a href="https://en.wikipedia.org/wiki/U-Net">U-Net</a> style architecture. In practice, it's been found that if instead of predicting the clean image <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\hat x"><mjx-TeXAtom texclass="ORD" data-latex="\hat x"><mjx-mover><mjx-over style="padding-bottom:0.105em;padding-left:0.329em;margin-bottom:-0.515em"><mjx-mo style="width:0;margin-left:-0.25em"><mjx-c class="mjx-c2C6">ˆ</mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-TeXAtom></mjx-math></mjx-container>, you predict the noise <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\hat \epsilon"><mjx-TeXAtom texclass="ORD" data-latex="\hat \epsilon"><mjx-mover><mjx-over style="padding-bottom:0.105em;padding-left:0.269em;margin-bottom:-0.515em"><mjx-mo style="width:0;margin-left:-0.25em"><mjx-c class="mjx-c2C6">ˆ</mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi data-latex="\epsilon"><mjx-c class="mjx-c1D716">𝜖</mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-TeXAtom></mjx-math></mjx-container> from the noisy image, you get better-looking samples.<sup><a href="#epshat">8</a></sup> The full reverse generative model then consists of many steps of looking at a noisy image and trying to infer the clean one; rinse and repeat.</p>
+<p>The actual parametric model in a diffusion model is this bit, $\hat x(z_t, t)$. It is a neural network that takes as input the noisy image $z_t$ and the step we are on in the diffusion process $t$ and has the job of trying to predict what the corresponding clean image was that generated the noisy image.  In most diffusion models this is implemented as a <a href="https://en.wikipedia.org/wiki/U-Net">U-Net</a> style architecture. In practice, it's been found that if instead of predicting the clean image $\hat x$, you predict the noise $\hat \epsilon$ from the noisy image, you get better-looking samples.<sup><a href="#epshat">8</a></sup> The full reverse generative model then consists of many steps of looking at a noisy image and trying to infer the clean one; rinse and repeat.</p>
 <p>With these choices in place, we can now look at the full joint KL and organize terms.</p>
-<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \left\langle \log p(x) - \log q(x|z_0) + \log \frac{p(z_T|x)}{q(z_T)}  + \sum_{i=0}^{T-1} \log \frac{p(z_i|z_{i+1},x)}{q(z_i|z_{i+1})} \right\rangle_p "><mjx-msub data-latex="\left\langle \log p(x) - \log q(x|z_0 ) + \log \frac{p(z_T|x)}{q(z_T)}  + \sum_{i=0}^{T-1} \log \frac{p(z_i|z_{i+1},x)}{q(z_i|z_{i+1})} \right\rangle_p"><mjx-mrow data-latex="\left\langle \log p(x) - \log q(x|z_0 ) + \log \frac{p(z_T|x)}{q(z_T)}  + \sum_{i=0}^{T-1} \log \frac{p(z_i|z_{i+1},x)}{q(z_i|z_{i+1})} \right\rangle"><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8 NCM-S7">⟨</mjx-c></mjx-mo><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mi data-latex="p" space="2"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="\log" space="3"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mi data-latex="q" space="2"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="z_0"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mi data-latex="\log" space="3"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p(z_T|x)}{q(z_T)}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="p(z_T|x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_T"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="T" size="s"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="q(z_T)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_T"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="T" size="s"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-munderover data-latex="\sum_{i=0}^{T-1}" space="3"><mjx-over style="padding-bottom:0.141em;padding-left:0.021em"><mjx-TeXAtom texclass="ORD" data-latex="{T-1}" size="s"><mjx-mi data-latex="T"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi><mjx-mo data-latex="-"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-TeXAtom></mjx-over><mjx-box><mjx-munder><mjx-row><mjx-base><mjx-mo data-latex="\sum"><mjx-c class="mjx-c2211 NCM-LO">∑</mjx-c></mjx-mo></mjx-base></mjx-row><mjx-row><mjx-under style="padding-top:0.167em;padding-left:0.148em"><mjx-TeXAtom texclass="ORD" data-latex="{i=0}" size="s"><mjx-mi data-latex="i"><mjx-c class="mjx-c1D456">𝑖</mjx-c></mjx-mi><mjx-mo data-latex="="><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mn data-latex="0"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-TeXAtom></mjx-under></mjx-row></mjx-munder></mjx-box></mjx-munderover><mjx-mi data-latex="\log" space="2"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p(z_i|z_{i+1},x)}{q(z_i|z_{i+1})}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="p(z_i|z_{i+1},x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_i"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="i" size="s"><mjx-c class="mjx-c1D456">𝑖</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="z_{i+1}"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-TeXAtom texclass="ORD" data-latex="{i+1}" size="s"><mjx-mi data-latex="i"><mjx-c class="mjx-c1D456">𝑖</mjx-c></mjx-mi><mjx-mo data-latex="+"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="x" space="2"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="q(z_i|z_{i+1})"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_i"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="i" size="s"><mjx-c class="mjx-c1D456">𝑖</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="z_{i+1}"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-TeXAtom texclass="ORD" data-latex="{i+1}" size="s"><mjx-mi data-latex="i"><mjx-c class="mjx-c1D456">𝑖</mjx-c></mjx-mi><mjx-mo data-latex="+"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right\rangle"><mjx-c class="mjx-c27E9 NCM-S7">⟩</mjx-c></mjx-mo></mjx-mrow><mjx-script style="vertical-align:-1.285em"><mjx-mi data-latex="p" size="s"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math></mjx-container></p>
+<p>$$ \left\langle \log p(x) - \log q(x|z_0) + \log \frac{p(z_T|x)}{q(z_T)}  + \sum_{i=0}^{T-1} \log \frac{p(z_i|z_{i+1},x)}{q(z_i|z_{i+1})} \right\rangle_p $$</p>
 <p>The last trick we're going to use is that we're going to avoid computing all of the terms in our sum by simply not computing all of the terms in our sum.  We'll approximate the sum with Monte Carlo: we'll simply randomly choose one of the terms and upweight it appropriately.
 At that point, we have the loss function used to train VDM models.  A very nice thing about the VDM loss is that it is clear that we are optimizing a bound on the marginal likelihood of our generative model.  As you can learn in the <a href="https://arxiv.org/abs/2107.00630">VDM Paper</a>, many of the diffusion models you've heard about correspond to a <em>weighted</em> form of this same objective, where different terms in the sum get different weights.</p>
 <p>After going through all of the fancy math, the analytic KL divergences involved in the diffusion loss simplify quite nicely:
-<mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" \left\langle \log p(x) - \log q(x|z_0) + \log \frac{p(z_T|x)}{q(z_T)} + \frac 1 2 \sum_{t=0}^{T-1} \beta_t \left\lVert \epsilon - \hat \epsilon(z_t,t) \right\rVert^2  \right\rangle "><mjx-mrow data-latex="\left\langle \log p(x) - \log q(x|z_0 ) + \log \frac{p(z_T|x)}{q(z_T)} + \frac 1 2 \sum_{t=0}^{T-1} \beta_t \left\lVert \epsilon - \hat \epsilon(z_t,t) \right\rVert^2   \right\rangle"><mjx-mo data-latex="\left\langle "><mjx-c class="mjx-c27E8 NCM-S7">⟨</mjx-c></mjx-mo><mjx-mi data-latex="\log"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mi data-latex="p" space="2"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="\log" space="3"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mi data-latex="q" space="2"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="z_0"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mi data-latex="\log" space="3"><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6C">l</mjx-c><mjx-c style="padding-top:0.694em" noic="true" class="mjx-c6F">o</mjx-c><mjx-c style="padding-top:0.694em" class="mjx-c67">g</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{p(z_T|x)}{q(z_T)}" space="2"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="p(z_T|x)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_T"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="T" size="s"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="x"><mjx-c class="mjx-c1D465">𝑥</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="q(z_T)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_T"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="T" size="s"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac 1 2" space="3"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn data-latex="2"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-munderover data-latex="\sum_{t=0}^{T-1}" space="2"><mjx-over style="padding-bottom:0.141em;padding-left:0.021em"><mjx-TeXAtom texclass="ORD" data-latex="{T-1}" size="s"><mjx-mi data-latex="T"><mjx-c class="mjx-c1D447">𝑇</mjx-c></mjx-mi><mjx-mo data-latex="-"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-TeXAtom></mjx-over><mjx-box><mjx-munder><mjx-row><mjx-base><mjx-mo data-latex="\sum"><mjx-c class="mjx-c2211 NCM-LO">∑</mjx-c></mjx-mo></mjx-base></mjx-row><mjx-row><mjx-under style="padding-top:0.167em;padding-left:0.143em"><mjx-TeXAtom texclass="ORD" data-latex="{t=0}" size="s"><mjx-mi data-latex="t"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi><mjx-mo data-latex="="><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mn data-latex="0"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-TeXAtom></mjx-under></mjx-row></mjx-munder></mjx-box></mjx-munderover><mjx-msub data-latex="\beta_t" space="2"><mjx-mi data-latex="\beta"><mjx-c class="mjx-c1D6FD">𝛽</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.008em"><mjx-mi data-latex="t" size="s"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-msup data-latex="\left\lVert \epsilon - \hat \epsilon(z_t,t) \right\rVert^2"><mjx-mrow data-latex="\left\lVert \epsilon - \hat \epsilon(z_t,t) \right\rVert"><mjx-mo data-latex="\left\lVert "><mjx-c class="mjx-c2225 NCM-SO">∥</mjx-c></mjx-mo><mjx-mi data-latex="\epsilon"><mjx-c class="mjx-c1D716">𝜖</mjx-c></mjx-mi><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD" data-latex="\hat \epsilon" space="3"><mjx-mover><mjx-over style="padding-bottom:0.105em;padding-left:0.269em;margin-bottom:-0.515em"><mjx-mo style="width:0;margin-left:-0.25em"><mjx-c class="mjx-c2C6">ˆ</mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi data-latex="\epsilon"><mjx-c class="mjx-c1D716">𝜖</mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-TeXAtom><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="z_t"><mjx-mi data-latex="z"><mjx-c class="mjx-c1D467">𝑧</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.002em"><mjx-mi data-latex="t" size="s"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="t" space="2"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="\right\rVert"><mjx-c class="mjx-c2225 NCM-SO">∥</mjx-c></mjx-mo></mjx-mrow><mjx-script style="vertical-align:0.578em"><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo data-latex="\right\rangle "><mjx-c class="mjx-c27E9 NCM-S7">⟩</mjx-c></mjx-mo></mjx-mrow></mjx-math></mjx-container>
-For variational diffusion the weight terms <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\beta_t"><mjx-msub data-latex="\beta_t"><mjx-mi data-latex="\beta"><mjx-c class="mjx-c1D6FD">𝛽</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.008em"><mjx-mi data-latex="t" size="s"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math></mjx-container> depend on your choice of <em>noise schedule</em>.  For most other diffusion models in the wild, these <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\beta_t"><mjx-msub data-latex="\beta_t"><mjx-mi data-latex="\beta"><mjx-c class="mjx-c1D6FD">𝛽</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em;margin-left:-0.008em"><mjx-mi data-latex="t" size="s"><mjx-c class="mjx-c1D461">𝑡</mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math></mjx-container> weights are conventionally set to 1.</p>
+$$ \left\langle \log p(x) - \log q(x|z_0) + \log \frac{p(z_T|x)}{q(z_T)} + \frac 1 2 \sum_{t=0}^{T-1} \beta_t \left\lVert \epsilon - \hat \epsilon(z_t,t) \right\rVert^2  \right\rangle $$
+For variational diffusion the weight terms $\beta_t$ depend on your choice of <em>noise schedule</em>.  For most other diffusion models in the wild, these $\beta_t$ weights are conventionally set to 1.</p>
 <h2>Closing Thoughts</h2>
 <p>So, why are diffusion models so interesting?  Well, first and foremost, the reason they are drawing so much attention is that they have shown tremendous performance.  It feels like for the first time we have models that are able to generate very high resolution, very high fidelity natural images. Projects like <a href="https://openai.com/dall-e-2/">DALL-E2</a>, <a href="https://imagen.research.google/">Imagen</a>, and <a href="https://github.com/CompVis/stable-diffusion#stable-diffusion-v1">Stable Diffusion</a> show really impressive results.  What is the magic driving these models?</p>
 <p>At a high level, I think we can say that diffusion models start to realize the dream of latent variable models.  Sometimes, when you are faced with a problem that is too difficult, you can crack it if you consider an even harder, related problem.  As I tried to demonstrate here, even for simple latent variable models like VAEs and especially for diffusion models, one reason we can point to for their success is that instead of directly modeling the distribution over images, they model a much larger joint distribution.  That larger joint distribution is strictly speaking a bigger thing to attempt to model, but here we get to design the forward process in such a way that even if there are many pieces to the forward process, those pieces individually are easier to tackle.</p>
 <p>However, if that were the case, shouldn't we have expected deep hierarchical models to perform similarly awesomely?  Probably, though here I think there is another real trick that diffusion has up its sleeve.  For a general deep hierarchical generative model, even if by splitting the problem up into smaller pieces you might have split it up into easier-to-model tasks, to evaluate the joint KL you still need to evaluate all of those terms.  That is, as your model becomes richer and more computationally expressive because of its depth, so does the cost of training your model, as you have to evaluate all of the layers at each step in the training process.</p>
 <p>Diffusion models avoid this by structuring their forward process in such a way that all of the steps share a great deal of structural similarity.  This allows diffusion to approximate a sum of a potentially large number of steps by a single randomly chosen step.  If each step looks more or less the same, you can get a good estimate for the whole sum by looking at an individual, random, term.</p>
-<p>The last trick up its sleeve is, even if you managed to design a deep hierarchical generative model with this structural homogeneity property, if you wanted to get to some intermediate position in the hierarchy you'd still have to run roughly half of the full forward process.  That would still be expensive in general.  Here, diffusion avoids that entirely.<br>
+<p>The last trick up its sleeve is, even if you managed to design a deep hierarchical generative model with this structural homogeneity property, if you wanted to get to some intermediate position in the hierarchy you'd still have to run roughly half of the full forward process.  That would still be expensive in general.  Here, diffusion avoids that entirely.<br />
 As boring as a sequence of conditional Gaussians is as a forward process, it is also beautiful: it enables exact analytic marginalization to intermediate steps.  You can very quickly mimic the result of adding hundreds of steps of additive Gaussian noise by simply adding a moderate amount of Gaussian noise in a single shot.</p>
 <p>So, ultimately, what do I think is one of the main reasons diffusion models do so well? I think it's because they <em>can</em> do so well! I think it's because they are very powerful, expressive, generative models.  Sampling from them is generally rather expensive.  Drawing a sample means running the full reverse process, which might mean calling the central score net a thousand or so times.  That is a very powerful and very expressive generative model, but magically, we can train that generative model's likelihood without ever having to actually instantiate the full generative process at training time due to our set of sundry tricks.</p>
 <p>I'm excited to see where this all goes and hope this post and the <a href="https://colab.sandbox.google.com/github/google-research/vdm/blob/main/colab/SimpleDiffusionColab.ipynb">colab</a> help to introduce these magical models to a wider audience.</p>
@@ -1440,7 +222,18 @@ As boring as a sequence of conditional Gaussians is as a forward process, it is 
     </div>
   </article>
 
-  <script src="https://giscus.app/client.js" data-repo="alexalemi/blog.alexalemi.com" data-repo-id="MDEwOlJlcG9zaXRvcnkyNjk2OTU4MzU=" data-category="Announcements" data-category-id="DIC_kwDOEBM7W84B_4Ke" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-theme="light" data-lang="en" crossorigin="anonymous" async>
+  <script src="https://giscus.app/client.js"
+        data-repo="alexalemi/blog.alexalemi.com"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkyNjk2OTU4MzU="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOEBM7W84B_4Ke"
+        data-mapping="pathname"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
   </script>
 
   <footer>

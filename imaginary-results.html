@@ -1,8 +1,9 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' /> 
     <title>blog.alexalemi.com The Method of Imaginary Results</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5SW43T5NT"></script>
@@ -24,7 +25,7 @@
 
 
     <!-- RSS Feed -->
-    <link rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml" />
 
     <!-- Fonts -->
     <script type="text/javascript">
@@ -52,1140 +53,8 @@
     <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 
     <!-- Inline CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/style.css">
-<style id="MJX-CHTML-styles">
-mjx-container[overflow="scroll"][display] {
-  overflow: auto clip;
-  min-width: initial !important;
-}
-
-mjx-container[overflow="truncate"][display] {
-  overflow: hidden clip;
-  min-width: initial !important;
-}
-
-mjx-container[display] {
-  display: block;
-  text-align: center;
-  justify-content: center;
-  margin: .7em 0;
-  padding: .3em 2px;
-}
-
-mjx-container[display][width="full"] {
-  display: flex;
-}
-
-mjx-container[justify="left"] {
-  text-align: left;
-  justify-content: left;
-}
-
-mjx-container[justify="right"] {
-  text-align: right;
-  justify-content: right;
-}
-
-mjx-container[jax="CHTML"] {
-  white-space: nowrap;
-}
-
-mjx-mo > mjx-c, mjx-mi > mjx-c, mjx-mn > mjx-c, mjx-ms > mjx-c, mjx-mtext > mjx-c {
-  clip-path: padding-box polygon(-1em -2px, calc(100% + 1em) -2px, calc(100% + 1em) calc(100% + 2px), -1em calc(100% + 2px));
-}
-
-mjx-stretchy-h {
-  clip-path: padding-box polygon(0 -2px, 100% -2px, 100% calc(100% + 2px), 0 calc(100% + 2px));
-  display: inline-block;
-}
-
-mjx-stretchy-v {
-  clip-path: padding-box polygon(-2px 0, calc(100% + 2px) 0, calc(100% + 2px) 100%, -2px 100%);
-  display: inline-block;
-  text-align: center;
-}
-
-mjx-container [space="1"] {
-  margin-left: .111em;
-}
-
-mjx-container [space="2"] {
-  margin-left: .167em;
-}
-
-mjx-container [space="3"] {
-  margin-left: .222em;
-}
-
-mjx-container [space="4"] {
-  margin-left: .278em;
-}
-
-mjx-container [space="5"] {
-  margin-left: .333em;
-}
-
-mjx-container [rspace="1"] {
-  margin-right: .111em;
-}
-
-mjx-container [rspace="2"] {
-  margin-right: .167em;
-}
-
-mjx-container [rspace="3"] {
-  margin-right: .222em;
-}
-
-mjx-container [rspace="4"] {
-  margin-right: .278em;
-}
-
-mjx-container [rspace="5"] {
-  margin-right: .333em;
-}
-
-mjx-container [size="s"] {
-  font-size: 70.7%;
-}
-
-mjx-container [size="ss"] {
-  font-size: 50%;
-}
-
-mjx-container [size="Tn"] {
-  font-size: 60%;
-}
-
-mjx-container [size="sm"] {
-  font-size: 85%;
-}
-
-mjx-container [size="lg"] {
-  font-size: 120%;
-}
-
-mjx-container [size="Lg"] {
-  font-size: 144%;
-}
-
-mjx-container [size="LG"] {
-  font-size: 173%;
-}
-
-mjx-container [size="hg"] {
-  font-size: 207%;
-}
-
-mjx-container [size="HG"] {
-  font-size: 249%;
-}
-
-mjx-container [width="full"] {
-  width: 100%;
-}
-
-mjx-box {
-  display: inline-block;
-}
-
-mjx-block {
-  display: block;
-}
-
-mjx-itable {
-  display: inline-table;
-}
-
-mjx-row {
-  display: table-row;
-}
-
-mjx-row > mjx-cell, mjx-row > mjx-base, mjx-row > mjx-under, mjx-row > mjx-over, mjx-row > mjx-den {
-  display: table-cell;
-}
-
-mjx-container [inline-breaks] {
-  display: inline;
-}
-
-mjx-container .mjx-selected {
-  outline: 2px solid black;
-}
-
-@media (prefers-color-scheme: dark) {
-  mjx-container .mjx-selected {
-    outline: 2px solid #C8C8C8;
-  }
-}
-
-mjx-mtext {
-  display: inline-block;
-}
-
-mjx-mstyle {
-  display: inline-block;
-}
-
-mjx-merror {
-  display: inline-block;
-  color: red;
-  background-color: yellow;
-}
-
-mjx-mphantom {
-  visibility: hidden;
-}
-
-mjx-math {
-  display: inline-block;
-  text-align: left;
-  line-height: 0;
-  text-indent: 0;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 100%;
-  font-size-adjust: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  word-spacing: normal;
-  direction: ltr;
-  padding: 1px 0;
-}
-
-mjx-container[jax="CHTML"][display="true"] mjx-math {
-  padding: 0;
-}
-
-mjx-math[breakable] {
-  display: inline;
-}
-
-mjx-container[jax="CHTML"] mjx-break {
-  white-space: normal;
-  line-height: 0;
-  clip-path: rect(0 0 0 0);
-  font-family: MJX-BRK !important;
-}
-
-mjx-break[size="0"] {
-  letter-spacing: -0.999em;
-}
-
-mjx-break[size="1"] {
-  letter-spacing: -0.889em;
-}
-
-mjx-break[size="2"] {
-  letter-spacing: -0.833em;
-}
-
-mjx-break[size="3"] {
-  letter-spacing: -0.778em;
-}
-
-mjx-break[size="4"] {
-  letter-spacing: -0.722em;
-}
-
-mjx-break[size="5"] {
-  letter-spacing: -0.667em;
-}
-
-mjx-mi {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-c {
-  display: inline-block;
-  width: 0;
-  text-align: right;
-}
-
-mjx-utext {
-  display: inline-block;
-  padding: .75em 0 .2em 0;
-}
-
-mjx-mo {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-stretchy-h > mjx-beg, mjx-stretchy-h > mjx-ext, mjx-stretchy-h > mjx-end, mjx-stretchy-h > mjx-mid {
-  display: inline-block;
-  width: 0;
-  text-align: right;
-}
-
-mjx-stretchy-h > mjx-ext {
-  clip-path: padding-box polygon(0 -1em, 100% -1em, 100% calc(100% + 1em), 0 calc(100% + 1em));
-  width: 100%;
-  border: 0px solid transparent;
-  box-sizing: border-box;
-  text-align: left;
-}
-
-mjx-stretchy-v > mjx-beg, mjx-stretchy-v > mjx-ext, mjx-stretchy-v > mjx-end, mjx-stretchy-v > mjx-mid {
-  display: block;
-  height: 0;
-  margin: 0 auto;
-}
-
-mjx-stretchy-v > mjx-ext > mjx-spacer {
-  display: block;
-}
-
-mjx-stretchy-v > mjx-ext {
-  clip-path: padding-box polygon(-1em 0, calc(100% + 1em) 0, calc(100% + 1em) 100%, -1em 100%);
-  height: 100%;
-  border: 0.1px solid transparent;
-  box-sizing: border-box;
-  white-space: pre;
-}
-
-mjx-mark {
-  display: inline-block;
-  height: 0;
-}
-
-mjx-msub {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-msubsup {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-script {
-  display: inline-block;
-  padding-right: .05em;
-  padding-left: .033em;
-}
-
-mjx-script > mjx-spacer {
-  display: block;
-}
-
-mjx-mn {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-mfrac {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-frac {
-  display: inline-block;
-  vertical-align: 0.17em;
-  padding: 0 .22em;
-}
-
-mjx-frac[type="d"] {
-  vertical-align: .04em;
-}
-
-mjx-frac[delims] {
-  padding: 0 .1em;
-}
-
-mjx-frac[atop] {
-  padding: 0 .12em;
-}
-
-mjx-frac[atop][delims] {
-  padding: 0;
-}
-
-mjx-dtable {
-  display: inline-table;
-  width: 100%;
-}
-
-mjx-dtable > mjx-line, mjx-dtable > mjx-row {
-  font-size: 2000%;
-}
-
-mjx-dbox {
-  display: block;
-  font-size: 5%;
-}
-
-mjx-num {
-  display: block;
-  text-align: center;
-}
-
-mjx-den {
-  display: block;
-  text-align: center;
-}
-
-mjx-mfrac[bevelled] > mjx-num {
-  display: inline-block;
-}
-
-mjx-mfrac[bevelled] > mjx-den {
-  display: inline-block;
-}
-
-mjx-den[align="right"], mjx-num[align="right"] {
-  text-align: right;
-}
-
-mjx-den[align="left"], mjx-num[align="left"] {
-  text-align: left;
-}
-
-mjx-nstrut {
-  display: inline-block;
-  height: .054em;
-  width: 0;
-  vertical-align: -.054em;
-}
-
-mjx-nstrut[type="d"] {
-  height: .217em;
-  vertical-align: -.217em;
-}
-
-mjx-dstrut {
-  display: inline-block;
-  height: .505em;
-  width: 0;
-}
-
-mjx-dstrut[type="d"] {
-  height: .726em;
-}
-
-mjx-line {
-  display: block;
-  box-sizing: border-box;
-  min-height: 1px;
-  height: .06em;
-  border-top: .075em solid;
-  margin: .06em -.1em;
-  overflow: hidden;
-}
-
-mjx-line[type="d"] {
-  margin: .18em -.1em;
-}
-
-mjx-mrow {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-linestack, mjx-mrow[break-top] {
-  display: inline-table;
-  width: 100%;
-}
-
-mjx-linestack[break-align="bottom"], mjx-mrow[break-top][break-align="bottom"] {
-  display: inline-block;
-}
-
-mjx-linestack[break-align="middle"], mjx-mrow[break-top][break-align="middle"] {
-  vertical-align: middle;
-}
-
-mjx-linestack[break-align="center"], mjx-mrow[break-top][break-align="center"] {
-  vertical-align: middle;
-}
-
-mjx-linestack[breakable] {
-  display: inline;
-}
-
-mjx-linestack[breakable] > mjx-linebox {
-  display: inline;
-}
-
-mjx-linestack[breakable] > mjx-linebox::before {
-  white-space: pre;
-  content: "\A";
-}
-
-mjx-linestack[breakable] > mjx-linebox::after {
-  white-space: normal;
-  content: " ";
-  letter-spacing: -.999em;
-  font-family: MJX-BRK;
-}
-
-mjx-linestack[breakable] > mjx-linebox:first-of-type::before {
-  display: none;
-}
-
-mjx-linestack[breakable] > mjx-linebox:last-of-type::after {
-  display: none;
-}
-
-mjx-linebox {
-  display: block;
-}
-
-mjx-linebox[align="left"] {
-  text-align: left;
-}
-
-mjx-linebox[align="center"] {
-  text-align: center;
-}
-
-mjx-linebox[align="right"] {
-  text-align: right;
-}
-
-mjx-linestrut {
-  display: inline-block;
-  height: 1em;
-  vertical-align: -.25em;
-}
-
-mjx-mspace {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-TeXAtom {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-msup {
-  display: inline-block;
-  text-align: left;
-}
-
-mjx-mtable {
-  display: inline-block;
-  text-align: center;
-  vertical-align: .25em;
-  position: relative;
-  box-sizing: border-box;
-  border-spacing: 0;
-  border-collapse: collapse;
-}
-
-mjx-mstyle[size="s"] mjx-mtable {
-  vertical-align: .354em;
-}
-
-mjx-labels {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-mjx-table {
-  display: inline-block;
-  vertical-align: -.5ex;
-  box-sizing: border-box;
-}
-
-mjx-table > mjx-itable {
-  vertical-align: middle;
-  text-align: left;
-  box-sizing: border-box;
-}
-
-mjx-labels > mjx-itable {
-  position: absolute;
-  top: 0;
-}
-
-mjx-mtable[justify="left"] {
-  text-align: left;
-}
-
-mjx-mtable[justify="right"] {
-  text-align: right;
-}
-
-mjx-mtable[justify="left"][side="left"] {
-  padding-right: 0 ! important;
-}
-
-mjx-mtable[justify="left"][side="right"] {
-  padding-left: 0 ! important;
-}
-
-mjx-mtable[justify="right"][side="left"] {
-  padding-right: 0 ! important;
-}
-
-mjx-mtable[justify="right"][side="right"] {
-  padding-left: 0 ! important;
-}
-
-mjx-mtable[align] {
-  vertical-align: baseline;
-}
-
-mjx-mtable[align="top"] > mjx-table {
-  vertical-align: top;
-}
-
-mjx-mtable[align="bottom"] > mjx-table {
-  vertical-align: bottom;
-}
-
-mjx-mtable[side="right"] mjx-labels {
-  min-width: 100%;
-}
-
-mjx-mtr {
-  display: table-row;
-  text-align: left;
-}
-
-mjx-mtr[rowalign="top"] > mjx-mtd {
-  vertical-align: top;
-}
-
-mjx-mtr[rowalign="center"] > mjx-mtd {
-  vertical-align: middle;
-}
-
-mjx-mtr[rowalign="bottom"] > mjx-mtd {
-  vertical-align: bottom;
-}
-
-mjx-mtr[rowalign="baseline"] > mjx-mtd {
-  vertical-align: baseline;
-}
-
-mjx-mtr[rowalign="axis"] > mjx-mtd {
-  vertical-align: .25em;
-}
-
-mjx-mtd {
-  display: table-cell;
-  text-align: center;
-  padding: .215em .4em;
-}
-
-mjx-mtd:first-child {
-  padding-left: 0;
-}
-
-mjx-mtd:last-child {
-  padding-right: 0;
-}
-
-mjx-mtable > * > mjx-itable > *:first-child > mjx-mtd {
-  padding-top: 0;
-}
-
-mjx-mtable > * > mjx-itable > *:last-child > mjx-mtd {
-  padding-bottom: 0;
-}
-
-mjx-tstrut {
-  display: inline-block;
-  height: 1em;
-  vertical-align: -.25em;
-}
-
-mjx-labels[align="left"] > mjx-mtr > mjx-mtd {
-  text-align: left;
-}
-
-mjx-labels[align="right"] > mjx-mtr > mjx-mtd {
-  text-align: right;
-}
-
-mjx-mtd[extra] {
-  padding: 0;
-}
-
-mjx-mtd[rowalign="top"] {
-  vertical-align: top;
-}
-
-mjx-mtd[rowalign="center"] {
-  vertical-align: middle;
-}
-
-mjx-mtd[rowalign="bottom"] {
-  vertical-align: bottom;
-}
-
-mjx-mtd[rowalign="baseline"] {
-  vertical-align: baseline;
-}
-
-mjx-mtd[rowalign="axis"] {
-  vertical-align: .25em;
-}
-
-mjx-container[jax="CHTML"] > mjx-math.NCM-N[breakable] > * {
-  font-family: MJX-NCM-ZERO, MJX-NCM-N;
-}
-
-.NCM-N {
-  font-family: MJX-NCM-ZERO, MJX-NCM-N;
-}
-
-.NCM-B {
-  font-family: MJX-NCM-ZERO, MJX-NCM-B;
-}
-
-.NCM-I {
-  font-family: MJX-NCM-ZERO, MJX-NCM-I;
-}
-
-.NCM-BI {
-  font-family: MJX-NCM-ZERO, MJX-NCM-BI;
-}
-
-.NCM-DS {
-  font-family: MJX-NCM-ZERO, MJX-NCM-DS;
-}
-
-.NCM-F {
-  font-family: MJX-NCM-ZERO, MJX-NCM-F;
-}
-
-.NCM-FB {
-  font-family: MJX-NCM-ZERO, MJX-NCM-FB;
-}
-
-.NCM-SS {
-  font-family: MJX-NCM-ZERO, MJX-NCM-SS;
-}
-
-.NCM-SSB {
-  font-family: MJX-NCM-ZERO, MJX-NCM-SSB;
-}
-
-.NCM-SSI {
-  font-family: MJX-NCM-ZERO, MJX-NCM-SSI;
-}
-
-.NCM-SSBI {
-  font-family: MJX-NCM-ZERO, MJX-NCM-SSBI;
-}
-
-.NCM-M {
-  font-family: MJX-NCM-ZERO, MJX-NCM-M;
-}
-
-.NCM-SO {
-  font-family: MJX-NCM-ZERO, MJX-NCM-SO;
-}
-
-.NCM-LO {
-  font-family: MJX-NCM-ZERO, MJX-NCM-LO;
-}
-
-.NCM-S3 {
-  font-family: MJX-NCM-ZERO, MJX-NCM-S3;
-}
-
-.NCM-S4 {
-  font-family: MJX-NCM-ZERO, MJX-NCM-S4;
-}
-
-.NCM-S5 {
-  font-family: MJX-NCM-ZERO, MJX-NCM-S5;
-}
-
-.NCM-S6 {
-  font-family: MJX-NCM-ZERO, MJX-NCM-S6;
-}
-
-.NCM-S7 {
-  font-family: MJX-NCM-ZERO, MJX-NCM-S7;
-}
-
-.NCM-MI {
-  font-family: MJX-NCM-ZERO, MJX-NCM-MI;
-}
-
-.NCM-C {
-  font-family: MJX-NCM-ZERO, MJX-NCM-C;
-}
-
-.NCM-CB {
-  font-family: MJX-NCM-ZERO, MJX-NCM-CB;
-}
-
-.NCM-OS {
-  font-family: MJX-NCM-ZERO, MJX-NCM-OS;
-}
-
-.NCM-OB {
-  font-family: MJX-NCM-ZERO, MJX-NCM-OB;
-}
-
-.NCM-V {
-  font-family: MJX-NCM-ZERO, MJX-NCM-V;
-}
-
-.NCM-LT {
-  font-family: MJX-NCM-ZERO, MJX-NCM-LT;
-}
-
-.NCM-RB {
-  font-family: MJX-NCM-ZERO, MJX-NCM-RB;
-}
-
-.NCM-EM {
-  font-family: MJX-NCM-ZERO, MJX-NCM-EM;
-}
-
-.NCM-B-a {
-  font-family: MJX-NCM-ZERO, MJX-NCM-B-a;
-}
-
-.NCM-U {
-  font-family: MJX-NCM-ZERO, MJX-NCM-U;
-}
-
-.NCM-U-a {
-  font-family: MJX-NCM-ZERO, MJX-NCM-U-a;
-}
-
-.NCM-S {
-  font-family: MJX-NCM-ZERO, MJX-NCM-S;
-}
-
-.NCM-SB {
-  font-family: MJX-NCM-ZERO, MJX-NCM-SB;
-}
-
-@font-face /* MJX-NCM-ZERO */ {
-  font-family: MJX-NCM-ZERO;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-zero.woff2") format("woff2");
-}
-
-@font-face /* MJX-BRK */ {
-  font-family: MJX-BRK;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-brk.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-N */ {
-  font-family: MJX-NCM-N;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-n.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-B */ {
-  font-family: MJX-NCM-B;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-b.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-I */ {
-  font-family: MJX-NCM-I;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-i.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-BI */ {
-  font-family: MJX-NCM-BI;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-bi.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-DS */ {
-  font-family: MJX-NCM-DS;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-ds.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-F */ {
-  font-family: MJX-NCM-F;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-f.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-FB */ {
-  font-family: MJX-NCM-FB;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-fb.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-SS */ {
-  font-family: MJX-NCM-SS;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-ss.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-SSB */ {
-  font-family: MJX-NCM-SSB;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-ssb.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-SSI */ {
-  font-family: MJX-NCM-SSI;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-ssi.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-SSBI */ {
-  font-family: MJX-NCM-SSBI;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-ssbi.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-M */ {
-  font-family: MJX-NCM-M;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-m.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-SO */ {
-  font-family: MJX-NCM-SO;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-so.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-LO */ {
-  font-family: MJX-NCM-LO;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-lo.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-S3 */ {
-  font-family: MJX-NCM-S3;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-s3.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-S4 */ {
-  font-family: MJX-NCM-S4;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-s4.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-S5 */ {
-  font-family: MJX-NCM-S5;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-s5.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-S6 */ {
-  font-family: MJX-NCM-S6;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-s6.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-S7 */ {
-  font-family: MJX-NCM-S7;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-s7.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-MI */ {
-  font-family: MJX-NCM-MI;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-mi.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-C */ {
-  font-family: MJX-NCM-C;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-c.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-CB */ {
-  font-family: MJX-NCM-CB;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-cb.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-OS */ {
-  font-family: MJX-NCM-OS;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-os.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-OB */ {
-  font-family: MJX-NCM-OB;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-ob.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-V */ {
-  font-family: MJX-NCM-V;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-v.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-LT */ {
-  font-family: MJX-NCM-LT;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-lt.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-RB */ {
-  font-family: MJX-NCM-RB;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-rb.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-EM */ {
-  font-family: MJX-NCM-EM;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-em.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-B-a */ {
-  font-family: MJX-NCM-B-a;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-b-a.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-U */ {
-  font-family: MJX-NCM-U;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-u.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-U-a */ {
-  font-family: MJX-NCM-U-a;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-u-a.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-S */ {
-  font-family: MJX-NCM-S;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-s.woff2") format("woff2");
-}
-
-@font-face /* MJX-NCM-SB */ {
-  font-family: MJX-NCM-SB;
-  src: url("https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2/mjx-ncm-sb.woff2") format("woff2");
-}
-
-mjx-c.mjx-c1D45D {
-  padding: 0.442em 0.503em 0.194em 0;
-}
-
-mjx-c.mjx-c28 {
-  padding: 0.748em 0.389em 0.248em 0;
-}
-
-mjx-c.mjx-c1D437 {
-  padding: 0.683em 0.828em 0 0;
-}
-
-mjx-c.mjx-c2C {
-  padding: 0.106em 0.278em 0.193em 0;
-}
-
-mjx-c.mjx-c1D703 {
-  padding: 0.705em 0.469em 0.011em 0;
-}
-
-mjx-c.mjx-c29 {
-  padding: 0.748em 0.389em 0.248em 0;
-}
-
-mjx-c.mjx-c7C {
-  padding: 0.75em 0.278em 0.25em 0;
-}
-
-mjx-c.mjx-c1D441 {
-  padding: 0.683em 0.881em 0 0;
-}
-
-mjx-c.mjx-c1D43F {
-  padding: 0.684em 0.681em 0 0;
-}
-
-mjx-c.mjx-c1D70B {
-  padding: 0.431em 0.57em 0.011em 0;
-}
-
-mjx-c.mjx-c3D {
-  padding: 0.367em 0.778em 0 0;
-}
-
-mjx-c.mjx-c1D45E {
-  padding: 0.442em 0.452em 0.194em 0;
-}
-
-mjx-c.mjx-c30 {
-  padding: 0.666em 0.5em 0.022em 0;
-}
-
-mjx-c.mjx-c221D {
-  padding: 0.442em 0.778em 0.011em 0;
-}
-
-mjx-c.mjx-c222B {
-  padding: 0.805em 0.665em 0.306em 0;
-}
-
-mjx-c.mjx-c1D451 {
-  padding: 0.694em 0.52em 0.011em 0;
-}
-
-mjx-c.mjx-c2E {
-  padding: 0.106em 0.278em 0 0;
-}
-
-mjx-c.mjx-c1D43B {
-  padding: 0.683em 0.881em 0 0;
-}
-
-mjx-c.mjx-c28.NCM-S5 {
-  padding: 1.296em 0.663em 0.796em 0;
-}
-
-mjx-c.mjx-c29.NCM-S5 {
-  padding: 1.296em 0.663em 0.796em 0;
-}
-
-mjx-c.mjx-c31 {
-  padding: 0.666em 0.5em 0 0;
-}
-
-mjx-c.mjx-c2212 {
-  padding: 0.583em 0.778em 0.083em 0;
-}
-
-mjx-c.mjx-c2B {
-  padding: 0.583em 0.778em 0.083em 0;
-}
-
-mjx-c.mjx-c1D6FF {
-  padding: 0.712em 0.452em 0.011em 0;
-}
-
-mjx-c.mjx-c42 {
-  padding: 0.683em 0.708em 0 0;
-}
-
-mjx-c.mjx-c65 {
-  padding: 0.448em 0.444em 0.011em 0;
-}
-
-mjx-c.mjx-c74 {
-  padding: 0.615em 0.389em 0.011em 0;
-}
-
-mjx-c.mjx-c61 {
-  padding: 0.448em 0.5em 0.011em 0;
-}
-
-mjx-c.mjx-c2061 {
-  padding: 0 0 0 0;
-}
-
-mjx-c.mjx-c32 {
-  padding: 0.666em 0.5em 0 0;
-}
-
-mjx-c.mjx-c34 {
-  padding: 0.677em 0.5em 0 0;
-}
-
-mjx-c.mjx-c36 {
-  padding: 0.666em 0.5em 0.022em 0;
-}
-
-mjx-c.mjx-c28.NCM-LO {
-  padding: 0.847em 0.458em 0.347em 0;
-}
-
-mjx-c.mjx-c29.NCM-LO {
-  padding: 0.847em 0.458em 0.347em 0;
-}
-
-mjx-c.mjx-c33 {
-  padding: 0.666em 0.5em 0.022em 0;
-}
-
-mjx-c.mjx-c37 {
-  padding: 0.676em 0.5em 0.022em 0;
-}
-
-mjx-c.mjx-c35 {
-  padding: 0.666em 0.5em 0.022em 0;
-}
-</style></head>
+    <link rel="stylesheet" type="text/css" href="assets/style.css"/>
+</head>
 
 <body>
 
@@ -1193,29 +62,29 @@ mjx-c.mjx-c35 {
   <header>
     <h3>Alex Alemi's Blog</h3>
     <nav>
-      <a href="https://blog.alexalemi.com">Index</a> |
-      <a href="https://alexalemi.com">About Me</a> |
+      <a href='https://blog.alexalemi.com'>Index</a> |
+      <a href='https://alexalemi.com'>About Me</a> |
       <a rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml">RSS</a>
     </nav>
   </header>
 
   <article>
 		<h1>The Method of Imaginary Results</h1>
-		<p>Alexander A. Alemi. <time datetime="2023-11-30">2023-11-30</time></p>
+		<p>Alexander A. Alemi. <time datetime='2023-11-30'>2023-11-30</time></p>
     <div class="content">
     <p>Performing Bayesian inference requires a full joint distribution over both our
-data and parameters <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(D,\theta)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="\theta" space="2"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container>.  In the usual way of doing things, we
+data and parameters $p(D,\theta)$.  In the usual way of doing things, we
 specify that joint distribution by providing two pieces: a likelihood
-<mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(D|\theta)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> that specifies how we believe the data would be
+$p(D|\theta)$ that specifies how we believe the data would be
 generated if we happened to know the exact parameter values and some prior
-<mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(\theta)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> over parameters that represents our state of belief about what the
+$p(\theta)$ over parameters that represents our state of belief about what the
 parameters are before we look at any data.</p>
 <p>Most people don't have any deep philosophical issues with specifying a
-likelihood <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(D|\theta)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container>. We're aware that our likelihoods might not be
+likelihood $p(D|\theta)$. We're aware that our likelihoods might not be
 perfect, that they are some approximation of what is happening in the real
 world. Still, we have opinions about them, we feel as though we can reason about
 whether a given likelihood is good or bad for some situation.</p>
-<p>I believe I can model a series of <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="D"><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi></mjx-math></mjx-container> heads in <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="N"><mjx-mi data-latex="N"><mjx-c class="mjx-c1D441">𝑁</mjx-c></mjx-mi></mjx-math></mjx-container> coin flips with a <a href="https://en.wikipedia.org/wiki/Binomial_distribution">Binomial
+<p>I believe I can model a series of $D$ heads in $N$ coin flips with a <a href="https://en.wikipedia.org/wiki/Binomial_distribution">Binomial
 likelihood</a> for instance,
 and I don't really have any qualms about that.
 I might decide to model the heights of my pea plants with a <a href="https://en.wikipedia.org/wiki/Normal_distribution">Normal
@@ -1223,11 +92,11 @@ Distribution</a> or perform a
 <a href="https://en.wikipedia.org/wiki/Linear_regression">linear fit</a> to some data, or
 do image classification with some <a href="https://en.wikipedia.org/wiki/Convolutional_neural_network">convolutional neural
 network</a> or
-<a href="https://en.wikipedia.org/wiki/Transformer_(machine_learning_model)">transformer</a>. In any case, I often have a good idea of what I should use as a likelihood <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(D|\theta)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container>.</p>
+<a href="https://en.wikipedia.org/wiki/Transformer_(machine_learning_model)">transformer</a>. In any case, I often have a good idea of what I should use as a likelihood $p(D|\theta)$.</p>
 <aside><sup id="yesterday">1</sup>
 This quote is often attributed to Lindley (1970), but I see no such occurance in that work. Looking around the original quote appears to be "Today's posterior is tomorrow's prior." From <a href="https://people.umass.edu/stanek/pubhlth892d/Lindley-The-Statist-2000.pdf"><i>The Philosophy of Statistics</i></a> by Dennis V Lindley, The Statistician 2000.  There do not appear to be any earlier occurrences of "today's prior" used in the sense of Bayesian inference that appear on Google Scholar.
 </aside>
-<p>Choosing the prior <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(\theta)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> is what all the fuss is about.  This is the part that raises various philosophical issues.  This is the part that, if we are being honest, is much harder.  What do I believe the bias of a coin is before I ever flip the coin?  I'm not really sure to be honest.  In many contexts I might have previously done some experiments, in which case I could use yesterday's posterior as today's prior.<sup><a href="#yesterday">1</a></sup></p>
+<p>Choosing the prior $p(\theta)$ is what all the fuss is about.  This is the part that raises various philosophical issues.  This is the part that, if we are being honest, is much harder.  What do I believe the bias of a coin is before I ever flip the coin?  I'm not really sure to be honest.  In many contexts I might have previously done some experiments, in which case I could use yesterday's posterior as today's prior.<sup><a href="#yesterday">1</a></sup></p>
 <aside><sup id="indifference">2</sup>
 Originally coined the <i>principle of insufficient reason</i> by Johannes on Kries, John Maynard Keyes renamed it the <i>principle of indifference</i>. <a href="https://en.wikipedia.org/wiki/Principle_of_indifference#History">[wiki]</a>
 </aside>
@@ -1246,20 +115,21 @@ There are even whole <a href="https://github.com/stan-dev/stan/wiki/Prior-Choice
 <aside><sup id="gelman-speed">5</sup>
 See the first page of the nice little paper <a href="http://www.stat.columbia.edu/~gelman/research/published/GelmanSpeed.pdf"><i>Characterizing a Joint Probability Distribution By Conditionals</i></a> by Gelman and Speed, 1991.
 </aside>
-<p>Enter <em>the method of imaginary results</em>.  It turns out<sup><a href="#gelman-speed">5</a></sup> that we can uniquely characterize a joint distribution in a different way.  Specifying a likelihood <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="L(D|\theta)"><mjx-mi data-latex="L"><mjx-c class="mjx-c1D43F">𝐿</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> and a prior <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\pi(\theta)"><mjx-mi data-latex="\pi"><mjx-c class="mjx-c1D70B">𝜋</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> uniquely characterizes the joint <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" breakable="true" data-latex="p(D,\theta) = L(D|\theta)\pi(\theta)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="\theta" space="2"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-break size="4"> </mjx-break><mjx-mo data-latex="="><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mi data-latex="L" space="4"><mjx-c class="mjx-c1D43F">𝐿</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mi data-latex="\pi"><mjx-c class="mjx-c1D70B">𝜋</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container>.  You know what else uniquely characterizes the joint? Specifying a likelihood <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="L(D|\theta)"><mjx-mi data-latex="L"><mjx-c class="mjx-c1D43F">𝐿</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> and some <em>hypothetical</em> posterior <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="q(\theta|D_0)"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="D_0"><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container>. The corresponding unique joint <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="p(\theta,D)"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="D" space="2"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> is given by:</p>
-<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" p(\theta, D) \propto L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)} = \frac{ L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)} }{\int d\theta\, L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)}}.  "><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="D" space="2"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="\propto" space="4"><mjx-c class="mjx-c221D">∝</mjx-c></mjx-mo><mjx-mi data-latex="L" space="4"><mjx-c class="mjx-c1D43F">𝐿</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{q(\theta|D_0)}{L(D_0|\theta)}"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="q(\theta|D_0 )"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="D_0"><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="L(D_0 |\theta)"><mjx-mi data-latex="L"><mjx-c class="mjx-c1D43F">𝐿</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="D_0"><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{ L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)} }{\int d\theta\, L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)}}" space="4"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)}"><mjx-mi data-latex="L"><mjx-c class="mjx-c1D43F">𝐿</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{q(\theta|D_0)}{L(D_0|\theta)}"><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mrow data-latex="q(\theta|D_0 )" size="s"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="D_0"><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mrow data-latex="L(D_0 |\theta)" size="s"><mjx-mi data-latex="L"><mjx-c class="mjx-c1D43F">𝐿</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="D_0"><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="\int d\theta\, L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)}"><mjx-mo data-latex="\int"><mjx-c class="mjx-c222B">∫</mjx-c></mjx-mo><mjx-mi data-latex="d" space="2"><mjx-c class="mjx-c1D451">𝑑</mjx-c></mjx-mi><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mspace style="width:0.167em" data-latex="\,"></mjx-mspace><mjx-mi data-latex="L"><mjx-c class="mjx-c1D43F">𝐿</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{q(\theta|D_0)}{L(D_0|\theta)}"><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mrow data-latex="q(\theta|D_0 )" size="s"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="D_0"><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mrow data-latex="L(D_0 |\theta)" size="s"><mjx-mi data-latex="L"><mjx-c class="mjx-c1D43F">𝐿</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="D_0"><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="."><mjx-c class="mjx-c2E">.</mjx-c></mjx-mo></mjx-math></mjx-container></p>
+<p>Enter <em>the method of imaginary results</em>.  It turns out<sup><a href="#gelman-speed">5</a></sup> that we can uniquely characterize a joint distribution in a different way.  Specifying a likelihood $L(D|\theta)$ and a prior $\pi(\theta)$ uniquely characterizes the joint $p(D,\theta) = L(D|\theta)\pi(\theta)$.  You know what else uniquely characterizes the joint? Specifying a likelihood $L(D|\theta)$ and some <em>hypothetical</em> posterior $q(\theta|D_0)$. The corresponding unique joint $p(\theta,D)$ is given by:</p>
+<p>$$ p(\theta, D) \propto L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)} = \frac{ L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)} }{\int d\theta\, L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)}}.  $$</p>
 <p>Which naturally satisfies the two inputs we provided:
-<mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" p(D|\theta) = L(D|\theta) \qquad p(\theta|D_0) = q(\theta|D_0). "><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mi data-latex="L" space="4"><mjx-c class="mjx-c1D43F">𝐿</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mspace style="width:2em" data-latex="\qquad"></mjx-mspace><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="D_0"><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mi data-latex="q" space="4"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="D_0"><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="."><mjx-c class="mjx-c2E">.</mjx-c></mjx-mo></mjx-math></mjx-container></p>
-<p>This flips the problem on its head.  We no longer have to specify a <em>prior</em>.  Instead we can specify a <em>hypothetical posterior</em>.  We can say what we would believe, if, hypothetically we had observed some dataset <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="D_0"><mjx-msub data-latex="D_0"><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math></mjx-container>.</p>
+$$ p(D|\theta) = L(D|\theta) \qquad p(\theta|D_0) = q(\theta|D_0). $$</p>
+<p>This flips the problem on its head.  We no longer have to specify a <em>prior</em>.  Instead we can specify a <em>hypothetical posterior</em>.  We can say what we would believe, if, hypothetically we had observed some dataset $D_0$.</p>
 <p>I think that this is an easier task to do.  It is easier for me to reason about what beliefs I should hypothetically hold in light of some data than it is for me to reason about what I believe independent of any data.</p>
 <h2>Coin Example</h2>
-<p>Let's work the simple example of some coin flips.  I believe I can model a coin as being a simple Bernoulli process. There is some probability <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\theta"><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi></mjx-math></mjx-container> that the coin will land heads and each flip is independent and identically distributed.  Therefore, I can model observing <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="H"><mjx-mi data-latex="H"><mjx-c class="mjx-c1D43B">𝐻</mjx-c></mjx-mi></mjx-math></mjx-container> heads out of sequence of <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="N"><mjx-mi data-latex="N"><mjx-c class="mjx-c1D441">𝑁</mjx-c></mjx-mi></mjx-math></mjx-container> flips with a <a href="https://en.wikipedia.org/wiki/Binomial_distribution">Binomial Likelihood</a>:</p>
-<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" L({H,N}|\theta) = { N \choose H} \theta^H (1- \theta)^{N-H} "><mjx-mi data-latex="L"><mjx-c class="mjx-c1D43F">𝐿</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD" data-latex="{H,N}"><mjx-mi data-latex="H"><mjx-c class="mjx-c1D43B">𝐻</mjx-c></mjx-mi><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mi data-latex="N" space="2"><mjx-c class="mjx-c1D441">𝑁</mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD" data-latex="{}" space="4"><mjx-mrow><mjx-TeXAtom texclass="OPEN" data-latex="\biggl ("><mjx-mo><mjx-c class="mjx-c28 NCM-S5">(</mjx-c></mjx-mo></mjx-TeXAtom><mjx-mfrac><mjx-frac delims="true" atop="true" type="d" style="vertical-align:-0.686em"><mjx-num style="padding-bottom:0.679em"><mjx-mi data-latex="N"><mjx-c class="mjx-c1D441">𝑁</mjx-c></mjx-mi></mjx-num><mjx-den><mjx-mi data-latex="H"><mjx-c class="mjx-c1D43B">𝐻</mjx-c></mjx-mi></mjx-den></mjx-frac></mjx-mfrac><mjx-TeXAtom texclass="CLOSE" data-latex="\biggr )"><mjx-mo><mjx-c class="mjx-c29 NCM-S5">)</mjx-c></mjx-mo></mjx-TeXAtom></mjx-mrow></mjx-TeXAtom><mjx-msup data-latex="\theta^H"><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-script style="vertical-align:0.413em"><mjx-mi data-latex="H" size="s"><mjx-c class="mjx-c1D43B">𝐻</mjx-c></mjx-mi></mjx-script></mjx-msup><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="\theta" space="3"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-msup data-latex=")^{N-H}"><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-script style="vertical-align:0.413em"><mjx-TeXAtom texclass="ORD" data-latex="{N-H}" size="s"><mjx-mi data-latex="N"><mjx-c class="mjx-c1D441">𝑁</mjx-c></mjx-mi><mjx-mo data-latex="-"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="H"><mjx-c class="mjx-c1D43B">𝐻</mjx-c></mjx-mi></mjx-TeXAtom></mjx-script></mjx-msup></mjx-math></mjx-container></p>
-<p>Now, we imagine I actually observe some sequence of coin flips, let's say 6 out of 10 flips were heads. Now what should I believe about the bias of my coin?  To answer this I need to specify a prior belief I have about the bias of the coin.  In most textbook examples, that prior is taken to be uniform <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" breakable="true" data-latex="p(\theta) = 1"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-break size="4"> </mjx-break><mjx-mo data-latex="="><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mn data-latex="1" space="4"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-math></mjx-container>, saying that our prior belief is that it is equally likely that the coin should have a bias in an interval <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" breakable="true" data-latex="\theta + \delta \theta"><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-break size="3"> </mjx-break><mjx-mo data-latex="+"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mi data-latex="\delta" space="3"><mjx-c class="mjx-c1D6FF">𝛿</mjx-c></mjx-mi><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi></mjx-math></mjx-container> for any <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\theta"><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi></mjx-math></mjx-container>, i.e. this prior says its just as likely the bias of the coin is between 0.1 and 0.2 as it is that it is between 0.5 and 0.6.</p>
+<p>Let's work the simple example of some coin flips.  I believe I can model a coin as being a simple Bernoulli process. There is some probability $\theta$ that the coin will land heads and each flip is independent and identically distributed.  Therefore, I can model observing $H$ heads out of sequence of $N$ flips with a <a href="https://en.wikipedia.org/wiki/Binomial_distribution">Binomial Likelihood</a>:</p>
+<p>$$ L({H,N}|\theta) = { N \choose H} \theta^H (1- \theta)^{N-H} $$</p>
+<p>Now, we imagine I actually observe some sequence of coin flips, let's say 6 out of 10 flips were heads. Now what should I believe about the bias of my coin?  To answer this I need to specify a prior belief I have about the bias of the coin.  In most textbook examples, that prior is taken to be uniform $p(\theta) = 1$, saying that our prior belief is that it is equally likely that the coin should have a bias in an interval $\theta + \delta \theta$ for any $\theta$, i.e. this prior says its just as likely the bias of the coin is between 0.1 and 0.2 as it is that it is between 0.5 and 0.6.</p>
 <p>Alternatively, I could take Jeffrey's advice and adopt a non-informative prior that is reparameterization independent, or I could try to adopt Gelman's advice and start with an informative prior concentrated near fairness. Below is a representation of these three standard choices where the prior is shown in blue and the posterior from 6 heads out of 10 flips is shown in orange.</p>
 <figure id="#standard-priors" class="right">
   <center>
-  <img width="95%" src="figures/standard-coin-priors.svg" alt="A visualization of some standard prior and posterior pairs, a uniform prior, jeffrey's prior and a weakly informative prior.">
+  <img width="95%" src="figures/standard-coin-priors.svg"
+    alt="A visualization of some standard prior and posterior pairs, a uniform prior, jeffrey's prior and a weakly informative prior.">
   <figcaption>
   Figure 1. Some standard textbook priors and the resulting posterior for 6 heads out of 10 coin flips.
   </figcaption>
@@ -1270,10 +140,11 @@ See the first page of the nice little paper <a href="http://www.stat.columbia.ed
 Despite there being <a href="https://statweb.stanford.edu/~cgates/PERSI/papers/dyn_coin_07.pdf">arguments</a> and <a href="https://arxiv.org/abs/2310.04153">strong evidence</a> that there is a <i>dynamical</i> bias, meaning that coins tend to land on the same side they start as showing up in human flips.
 </aside>
 <p>As this stage, trying to adjust the parameters of our <em>prior</em> without any evidence or data is difficult.  I have a hard time talking to my gut to decide what I should set my prior beliefs to apropro of <em>nothing</em>.  Instead, let's try to invoke the method of imaginary results and imagine some hypothetical dataset and probe our beliefs.  Imagine we've just observed 10 coin flips, and all 10 of them were heads!  What do you believe now?  Now that I've hypothesized a dataset I have an easier time talking to my gut.</p>
-<p>In this scenario, I feel as though I would place a reasonable probability on the coin being unfair, let's say 50%.  At the same time, I think I would still place a reasonable probability on the coin being <em>exactly</em> fair, let's say 25%.  The remaining 25% probability I would want to spread around but biased towards heads, for that let's use a <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\operatorname{Beta}(11,1)"><mjx-mi data-latex="\operatorname{Beta}"><mjx-c style="padding-top:0.683em" noic="true" class="mjx-c42">B</mjx-c><mjx-c style="padding-top:0.683em" noic="true" class="mjx-c65">e</mjx-c><mjx-c style="padding-top:0.683em" noic="true" class="mjx-c74">t</mjx-c><mjx-c style="padding-top:0.683em" class="mjx-c61">a</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mn data-latex="11"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mn data-latex="1" space="2"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> distribution or <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" breakable="true" data-latex="11\, \theta^{10}"><mjx-mn data-latex="11"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c31">1</mjx-c></mjx-mn><mjx-break size="0"> </mjx-break><mjx-mspace style="width:0.167em" data-latex="\,"></mjx-mspace><mjx-msup data-latex="\theta^{10}"><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-script style="vertical-align:0.363em"><mjx-TeXAtom texclass="ORD" data-latex="{10}" size="s"><mjx-mn data-latex="10"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msup></mjx-math></mjx-container>.  I've attempted to visualize this distribution below.<a href="#deltas"><sup>7</sup></a></p>
+<p>In this scenario, I feel as though I would place a reasonable probability on the coin being unfair, let's say 50%.  At the same time, I think I would still place a reasonable probability on the coin being <em>exactly</em> fair, let's say 25%.  The remaining 25% probability I would want to spread around but biased towards heads, for that let's use a $\operatorname{Beta}(11,1)$ distribution or $11\, \theta^{10}$.  I've attempted to visualize this distribution below.<a href="#deltas"><sup>7</sup></a></p>
 <figure id="#imaginary-result-coin" class="right">
   <center>
-  <img width="95%" src="figures/imaginary-result.svg" alt="A mixture of 25\% mass on 0.5, 50\% mass on 1.0 and 25\% mass on a Beta(11, 1).">
+  <img width="95%" src="figures/imaginary-result.svg"
+    alt="A mixture of 25\% mass on 0.5, 50\% mass on 1.0 and 25\% mass on a Beta(11, 1).">
   <figcaption>
   Figure 2. My attempt at illiciting an imaginary result of a posterior I'm comfortable with if I were to observe 10 heads in a row from a coin.
   </figcaption>
@@ -1283,32 +154,40 @@ Despite there being <a href="https://statweb.stanford.edu/~cgates/PERSI/papers/d
 I don't know a good way to visualize probability distributions with delta components. I like the idea of putting vertical lines with balls at the top, but I don't know how to demonstrate how much mass the deltas have in reference to the rest of the density, it doesn't feel like there would be a good choice for the right scale to use.  Here I've done something I'm not proud of but I feel like is honest at least, I've just discretized the distribution into 100 bins, so you can see both the width and the corresponding height, I choose a fairly course discretization so that you can still see the bit of the Beta underneath the spikes.
 </aside>
 <p>Or in equation form:</p>
-<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex=" q(\theta|D_0) = \frac 12 \delta(\theta -1 ) + \frac 14 \delta\left(\theta - \frac 12 \right) + \frac {11} 4 \theta^{10} "><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="D_0"><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac 12" space="4"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn data-latex="2"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mi data-latex="\delta"><mjx-c class="mjx-c1D6FF">𝛿</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mn data-latex="1" space="3"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac 14" space="3"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn data-latex="4"><mjx-c class="mjx-c34">4</mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mi data-latex="\delta"><mjx-c class="mjx-c1D6FF">𝛿</mjx-c></mjx-mi><mjx-mrow data-latex="\left(\theta - \frac 12 \right)" space="2"><mjx-mo data-latex="\left("><mjx-c class="mjx-c28 NCM-S5">(</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac 12" space="3"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn data-latex="2"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right)"><mjx-c class="mjx-c29 NCM-S5">)</mjx-c></mjx-mo></mjx-mrow><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac {11} 4" space="3"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn data-latex="11"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c31">1</mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn data-latex="4"><mjx-c class="mjx-c34">4</mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-msup data-latex="\theta^{10}"><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-script style="vertical-align:0.413em"><mjx-TeXAtom texclass="ORD" data-latex="{10}" size="s"><mjx-mn data-latex="10"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msup></mjx-math></mjx-container></p>
+<p>$$ q(\theta|D_0) = \frac 12 \delta(\theta -1 ) + \frac 14 \delta\left(\theta - \frac 12 \right) + \frac {11} 4 \theta^{10} $$</p>
 <p>Once we've specified this imaginary result, we have everything we need to form a posterior for our original problem with 6 heads out of 10 flips.</p>
-<p><mjx-container display="true" style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" display="true" data-latex="\begin{align}
-p(\theta|D) &\propto L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)} \\
-&\propto 210 \theta^6 (1-\theta)^4 \frac{\frac 14 \delta\left(\theta - \frac 12 \right) + \frac 12 \delta(\theta - 1) + \frac{11}{4} \theta^{10}}{\theta^{10}} \\
-&= \frac{210}{211} \delta\left(\theta -\frac 12 \right) + \frac{1}{211} \left( 2310 \theta^{6} (1-\theta)^4 \right)
-\end{align} "><mjx-mtable style="min-width:24.32em" data-latex="\begin{align}
-p(\theta|D) &\propto L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)} \\
-&\propto 210 \theta^6  (1-\theta)^4  \frac{\frac 14 \delta\left(\theta - \frac 12 \right) + \frac 12 \delta(\theta - 1) + \frac{11}{4} \theta^{10}}{\theta^{10}} \\
-&= \frac{210}{211} \delta\left(\theta -\frac 12 \right) + \frac{1}{211} \left( 2310 \theta^{6} (1-\theta)^4  \right)
-\end{align}"><mjx-table><mjx-itable><mjx-mtr style="height:2.42em"><mjx-mtd style="text-align:right;padding-right:0;padding-bottom:0.15em"><mjx-mi data-latex="p"><mjx-c class="mjx-c1D45D">𝑝</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align:left;padding-left:0;padding-bottom:0.15em"><mjx-mstyle><mjx-mi></mjx-mi><mjx-mo data-latex="\propto" space="4"><mjx-c class="mjx-c221D">∝</mjx-c></mjx-mo><mjx-mi data-latex="L" space="4"><mjx-c class="mjx-c1D43F">𝐿</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{q(\theta|D_0)}{L(D_0|\theta)}"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="q(\theta|D_0 )"><mjx-mi data-latex="q"><mjx-c class="mjx-c1D45E">𝑞</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-msub data-latex="D_0"><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mrow data-latex="L(D_0 |\theta)"><mjx-mi data-latex="L"><mjx-c class="mjx-c1D43F">𝐿</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-msub data-latex="D_0"><mjx-mi data-latex="D"><mjx-c class="mjx-c1D437">𝐷</mjx-c></mjx-mi><mjx-script style="vertical-align:-0.15em"><mjx-mn data-latex="0" size="s"><mjx-c class="mjx-c30">0</mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo data-latex="|"><mjx-c class="mjx-c7C">|</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-mrow></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-mstyle><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr style="height:2.403em"><mjx-mtd style="text-align:right;padding-right:0;padding-top:0.15em;padding-bottom:0.15em"><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align:left;padding-left:0;padding-top:0.15em;padding-bottom:0.15em"><mjx-mstyle><mjx-mi></mjx-mi><mjx-mo data-latex="\propto" space="4"><mjx-c class="mjx-c221D">∝</mjx-c></mjx-mo><mjx-mn data-latex="210" space="4"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c32">2</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-msup data-latex="\theta^6"><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-script style="vertical-align:0.413em"><mjx-mn data-latex="6" size="s"><mjx-c class="mjx-c36">6</mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="\theta" space="3"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-msup data-latex=")^4"><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-script style="vertical-align:0.413em"><mjx-mn data-latex="4" size="s"><mjx-c class="mjx-c34">4</mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mfrac data-latex="\frac{\frac 14 \delta\left(\theta - \frac 12 \right) + \frac 12 \delta(\theta - 1) + \frac{11}{4} \theta^{10}}{\theta^{10}}"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mrow data-latex="\frac 14 \delta\left(\theta - \frac 12 \right) + \frac 12 \delta(\theta - 1) + \frac{11}{4} \theta^{10}"><mjx-mfrac data-latex="\frac 14"><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mn data-latex="1" size="s"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mn data-latex="4" size="s"><mjx-c class="mjx-c34">4</mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mi data-latex="\delta"><mjx-c class="mjx-c1D6FF">𝛿</mjx-c></mjx-mi><mjx-mrow data-latex="\left(\theta - \frac 12 \right)" space="2"><mjx-mo data-latex="\left("><mjx-c class="mjx-c28 NCM-LO">(</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac 12" space="3"><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mn data-latex="1" size="s"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right)"><mjx-c class="mjx-c29 NCM-LO">)</mjx-c></mjx-mo></mjx-mrow><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac 12" space="3"><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mn data-latex="1" size="s"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mn data-latex="2" size="s"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mi data-latex="\delta"><mjx-c class="mjx-c1D6FF">𝛿</mjx-c></mjx-mi><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mn data-latex="1" space="3"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{11}{4}" space="3"><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mn data-latex="11" size="s"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c31">1</mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mn data-latex="4" size="s"><mjx-c class="mjx-c34">4</mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-msup data-latex="\theta^{10}"><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-script style="vertical-align:0.363em"><mjx-TeXAtom texclass="ORD" data-latex="{10}" size="s"><mjx-mn data-latex="10"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msup></mjx-mrow></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-msup data-latex="\theta^{10}"><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-script style="vertical-align:0.289em"><mjx-TeXAtom texclass="ORD" data-latex="{10}" size="s"><mjx-mn data-latex="10"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msup></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-mstyle><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr style="height:2.138em"><mjx-mtd style="text-align:right;padding-right:0;padding-top:0.15em"><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="text-align:left;padding-left:0;padding-top:0.15em"><mjx-mstyle><mjx-mi></mjx-mi><mjx-mo data-latex="=" space="4"><mjx-c class="mjx-c3D">=</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{210}{211}" space="4"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn data-latex="210"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c32">2</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn data-latex="211"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c32">2</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c31">1</mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mi data-latex="\delta"><mjx-c class="mjx-c1D6FF">𝛿</mjx-c></mjx-mi><mjx-mrow data-latex="\left(\theta -\frac 12 \right)" space="2"><mjx-mo data-latex="\left("><mjx-c class="mjx-c28 NCM-S5">(</mjx-c></mjx-mo><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac 12" space="3"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn data-latex="2"><mjx-c class="mjx-c32">2</mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mo data-latex="\right)"><mjx-c class="mjx-c29 NCM-S5">)</mjx-c></mjx-mo></mjx-mrow><mjx-mo data-latex="+" space="3"><mjx-c class="mjx-c2B">+</mjx-c></mjx-mo><mjx-mfrac data-latex="\frac{1}{211}" space="3"><mjx-frac type="d"><mjx-num><mjx-nstrut type="d"></mjx-nstrut><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line type="d"></mjx-line><mjx-row><mjx-den><mjx-dstrut type="d"></mjx-dstrut><mjx-mn data-latex="211"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c32">2</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c31">1</mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac><mjx-mrow data-latex="\left( 2310 \theta^{6} (1-\theta)^4  \right)"><mjx-mo data-latex="\left("><mjx-c class="mjx-c28 NCM-LO">(</mjx-c></mjx-mo><mjx-mn data-latex="2310"><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c32">2</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c33">3</mjx-c><mjx-c style="padding-top:0.666em" noic="true" class="mjx-c31">1</mjx-c><mjx-c style="padding-top:0.666em" class="mjx-c30">0</mjx-c></mjx-mn><mjx-msup data-latex="\theta^{6}"><mjx-mi data-latex="\theta"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-script style="vertical-align:0.413em"><mjx-TeXAtom texclass="ORD" data-latex="{6}" size="s"><mjx-mn data-latex="6"><mjx-c class="mjx-c36">6</mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msup><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mn data-latex="1"><mjx-c class="mjx-c31">1</mjx-c></mjx-mn><mjx-mo data-latex="-" space="3"><mjx-c class="mjx-c2212">−</mjx-c></mjx-mo><mjx-mi data-latex="\theta" space="3"><mjx-c class="mjx-c1D703">𝜃</mjx-c></mjx-mi><mjx-msup data-latex=")^4"><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo><mjx-script style="vertical-align:0.413em"><mjx-mn data-latex="4" size="s"><mjx-c class="mjx-c34">4</mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo data-latex="\right)"><mjx-c class="mjx-c29 NCM-LO">)</mjx-c></mjx-mo></mjx-mrow></mjx-mstyle><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable></mjx-math></mjx-container></p>
+<p>$$\begin{align}
+p(\theta|D) &amp;\propto L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)} \\
+&amp;\propto 210 \theta^6 (1-\theta)^4 \frac{\frac 14 \delta\left(\theta - \frac 12 \right) + \frac 12 \delta(\theta - 1) + \frac{11}{4} \theta^{10}}{\theta^{10}} \\
+&amp;= \frac{210}{211} \delta\left(\theta -\frac 12 \right) + \frac{1}{211} \left( 2310 \theta^{6} (1-\theta)^4 \right)
+\end{align} $$</p>
 <figure id="#imaginary-result-posterior-coin" class="right">
   <center>
-  <img width="95%" src="figures/imaginary-result-posterior.svg" alt="A mixture of 99.5\% mass on 0.5, 0.50\% mass on a Beta(7, 5).">
+  <img width="95%" src="figures/imaginary-result-posterior.svg"
+    alt="A mixture of 99.5\% mass on 0.5, 0.50\% mass on a Beta(7, 5).">
   <figcaption>
   Figure 3. The posterior I get from my illicited imaginary posterior if I actually observe 6 heads and 4 tails. The blue curve is the true posterior, the dashed orange is a blown up version of the small residual component.
   </figcaption>
   </center>
 </figure>
-<p>The posterior we find is 99.5% probability on the coin being exactly fair, and 0.5% probability assigned to a <mjx-container style="font-size:113.1%" overflow="overflow" jax="CHTML" class="MathJax"><mjx-math class="NCM-N" data-latex="\operatorname{Beta}(7,5)"><mjx-mi data-latex="\operatorname{Beta}"><mjx-c style="padding-top:0.683em" noic="true" class="mjx-c42">B</mjx-c><mjx-c style="padding-top:0.683em" noic="true" class="mjx-c65">e</mjx-c><mjx-c style="padding-top:0.683em" noic="true" class="mjx-c74">t</mjx-c><mjx-c style="padding-top:0.683em" class="mjx-c61">a</mjx-c></mjx-mi><mjx-mo><mjx-c class="mjx-c2061">⁡</mjx-c></mjx-mo><mjx-mo data-latex="("><mjx-c class="mjx-c28">(</mjx-c></mjx-mo><mjx-mn data-latex="7"><mjx-c class="mjx-c37">7</mjx-c></mjx-mn><mjx-mo data-latex=","><mjx-c class="mjx-c2C">,</mjx-c></mjx-mo><mjx-mn data-latex="5" space="2"><mjx-c class="mjx-c35">5</mjx-c></mjx-mn><mjx-mo data-latex=")"><mjx-c class="mjx-c29">)</mjx-c></mjx-mo></mjx-math></mjx-container> type posterior, which is buried in the true form above, but I've blown up in the dashed line so you can see its shape.  This posterior has a very heavy weight on the coin being exactly fair, which I think is reflective of my actual beliefs but I would have had difficulty specifying in terms of a prior.  Instead, if I imagine the coin coming up heads 10 times in a row, the fact that I wanted to still give the coin a 25% chance of being fair is obviously mathematically equivalent to me having a 98.7% prior belief the coin is fair, but I feel as though I have a much higher sensitivity to the right number when I express this as a hypothetical posterior.</p>
+<p>The posterior we find is 99.5% probability on the coin being exactly fair, and 0.5% probability assigned to a $\operatorname{Beta}(7,5)$ type posterior, which is buried in the true form above, but I've blown up in the dashed line so you can see its shape.  This posterior has a very heavy weight on the coin being exactly fair, which I think is reflective of my actual beliefs but I would have had difficulty specifying in terms of a prior.  Instead, if I imagine the coin coming up heads 10 times in a row, the fact that I wanted to still give the coin a 25% chance of being fair is obviously mathematically equivalent to me having a 98.7% prior belief the coin is fair, but I feel as though I have a much higher sensitivity to the right number when I express this as a hypothetical posterior.</p>
 <p>The method of imaginary results let's us ask ourselves what we would believe in light of some data, rather than ask us to express what we believe apropos of <em>nothing</em>.  I think this helps resolve some of the philosophical issues have with prior selection in Bayesian inference.</p>
  
     </div>
   </article>
 
-  <script src="https://giscus.app/client.js" data-repo="alexalemi/blog.alexalemi.com" data-repo-id="MDEwOlJlcG9zaXRvcnkyNjk2OTU4MzU=" data-category="Announcements" data-category-id="DIC_kwDOEBM7W84B_4Ke" data-mapping="pathname" data-reactions-enabled="1" data-emit-metadata="0" data-theme="light" data-lang="en" crossorigin="anonymous" async>
+  <script src="https://giscus.app/client.js"
+        data-repo="alexalemi/blog.alexalemi.com"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkyNjk2OTU4MzU="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOEBM7W84B_4Ke"
+        data-mapping="pathname"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
   </script>
 
   <footer>

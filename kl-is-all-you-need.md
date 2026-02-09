@@ -179,9 +179,6 @@ There are two caveats worth discussing but I've pushed them to appendices.  [The
 
 Let's complicate things slightly.  Instead of imagining that we have a single random variable in the real world, imagine instead we have a pair of variables, $X$ and $Y$.  For concreteness, imagine the $X$ are images and the $Y$ are their associated labels in some dataset. 
 
-What are we after? What does success look like? Let's imagine that what we desire is the ability to assign labels to data.  What we wish were the case was that we used the same process to draw the images $q(x) = p(x)$, but instead of using the real world process to assign labels, ideally the labels would instead come from a device under our control: $q_\theta(y|x)$. <a href="#theta"><sup>xxa5</sup></a>.  Just as before, we simply minimize the KL divergence between these two joints and we obtain an objective:
-
-
 <figure id="#supervised-learning" class="right">
   <center>
   <img width="95%" src="figures/kl-is-all-you-need/supervised-learning.png"
@@ -191,6 +188,9 @@ What are we after? What does success look like? Let's imagine that what we desir
   </figcaption>
   </center>
 </figure> 
+
+What are we after? What does success look like? Let's imagine that what we desire is the ability to assign labels to data.  What we wish were the case was that we used the same process to draw the images $q(x) = p(x)$, but instead of using the real world process to assign labels, ideally the labels would instead come from a device under our control: $q_\theta(y|x)$. <a href="#theta"><sup>xxa5</sup></a>  Just as before, we simply minimize the KL divergence between these two joints and we obtain an objective:
+
 
 <aside> <sup id="theta">xxa5</sup>
 I'm going to start dropping the subscript $\theta$ for the parameters.
@@ -438,9 +438,9 @@ If I'm being honest, this is something that bothers me that I don't fully unders
 </span>
 
  We motivated that a useful objective for learning a parametric distribution is to minimize the KL divergence between the true distribution and our parametric distribution, i.e. we should adjust the parameters of our distribution to maximize the likelihood of samples from the true distribution.  In practice however, we typically only have access to a *finite* number of samples from the true distribution and this introduces a difficulty.  If we wanted to, we could generate an unbiased estimate of the expected likelihood of our model using a finite number of samples from the true distribution:
-$$ -\left\langle \log q(x|\theta) \right\rangle_p \approx -\frac 1 N \sum_{i=1}^N \log q(x_i|\theta). $$
+$$ -\left\langle \log q(x|\theta) \right\rangle_p \approx -\frac{1}{N} \sum_{i=1}^{N} \log q(x_i|\theta). $$
 Nothing wrong here.  There is similarly nothing wrong with taking the gradient of this Monte Carlo estimate to generate an unbiased estimate of the gradient of the true likelihood:
-$$ -\nabla_\theta \left\langle \log q(x|\theta) \right\rangle_p \approx -\frac 1 N \sum_{i=1}^N \nabla_\theta \log q(x_i|\theta). $$
+$$ -\nabla_\theta \left\langle \log q(x|\theta) \right\rangle_p \approx -\frac{1}{N} \sum_{i=1}^{N} \nabla_\theta \log q(x_i|\theta). $$
 The problem only occurs if we start to *reuse* the same samples.  These Monte Carlo estimates are only *unbiased* estimates of the true expectation if the samples are independent.  If we start to take multiple gradient steps with overlapping samples we start to introduce some bias.  Taken to the extreme, if we simply maximize the *empirical* likelihood on a fixed set of finite samples:
 $$ \sum_{i=1}^N \log q(x_i|\theta), $$
 We are no longer minimizing the KL divergence between the *true* distribution $p(x)$ and our parametric distribution $q(x|\theta)$, instead we are minimizing the KL divergence between the *empirical* distribution $\hat p$ and our parametric distribution $q(x|\theta)$:
@@ -460,5 +460,3 @@ TODO:
  * Learning from human preferences ala. DPO and a density estimation perspective on learning from human feedback.
  * Other Semi-supervised or Contrastive learning.
 -->
- 
- 
