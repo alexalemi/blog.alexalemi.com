@@ -58,7 +58,7 @@ First, if we assume that our dynamics is Hamiltonian, and thus deterministic and
 <aside><sup id="#heat-caveat">3</sup>
     Alternatively, if you trust our identification of heat, you could imagine an isolated system where the heat flow is zero.
 </aside>
-so the ratio of conditional probabilities actually cancels and we generate <a href="https://en.wikipedia.org/wiki/Crooks_fluctuation_theorem">Crook's Fluctuation Theorem</a>:
+so the ratio of conditional probabilities actually cancels and we generate <a href="https://en.wikipedia.org/wiki/Crooks_fluctuation_theorem">Crooks' Fluctuation Theorem</a>:
 $$ \frac{q_R}{p_F} =  e^{\beta (W - \Delta F)}. $$
 The ratio of the reverse process probability to the forward probability for a given initial and final point is given by the exponential $e^{\beta (W - \Delta F)}$.  If we now take the integral of this with respect to the forward process, we generate the <a href="https://en.wikipedia.org/wiki/Jarzynski_equality">Jarzynski equality</a>:<sup><a href="#langle">4</a></sup>
 <aside><sup id="#langle">4</sup>
@@ -71,7 +71,7 @@ The free energy only depends on the partition function $Z$ which is a constant s
 which simplifies to<sup><a href="#free-energy">5</a></sup>:
 $$ \left\langle e^{-\beta W}\right\rangle_p = e^{-\beta \Delta F}. $$
 So, recapping, what have we just done?  
-Since we can take density ratios of arbitrary probability distributions, we could choose those two densities to mean something we care about.  Consider $p$ the forward, Hamiltonian evolution of a system from $x_0$ to $x_1$ and $q$ the reverse process.  If we imagine that both the forward and reverse processes start in a state of canonical equilibrium, we can generate both Crook's Fluctuation Theorem as well as the Jarzynski equality. 
+Since we can take density ratios of arbitrary probability distributions, we could choose those two densities to mean something we care about.  Consider $p$ the forward, Hamiltonian evolution of a system from $x_0$ to $x_1$ and $q$ the reverse process.  If we imagine that both the forward and reverse processes start in a state of canonical equilibrium, we can generate both Crooks' Fluctuation Theorem as well as the Jarzynski equality. 
 
 The power of this result is that it allows us to relate an expectation computed with respect to non-equilibrium processes (the exponential of the beta weighted stochastic work needed for a bunch of non-equilibrium realizations of our trajectory) to a pure equilibrium quantity (a difference of equilibrium free energies).
 In the context of the physical sciences, this lets us perform non-equilibrium simulations or experiments, and provided we measure the work performed over many such runs, even with the system driven far from equilibrium, we can estimate equilibrium free energy differences.
