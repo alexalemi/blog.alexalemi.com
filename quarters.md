@@ -200,6 +200,46 @@ So, this doesn't really add any sort of mental burden, but increases our accurac
 
 I think everyone should be done one-few-ten type arithmetic as a default, and wish it was more popular.  Can we do better than this without increasing the mental burden too much?
 
+## 1-2-5
+
+If we go from tracking half orders of magnitude to thirds and round we get the common [1-2-5 series](https://en.wikipedia.org/wiki/Preferred_number#1-2-5_series) used in much of the world's currencies.
+
+<figure id="half">
+  <center>
+  <img width="100%" src="figures/thirddial.svg" alt="The layout of the half-orders of magnitude.">
+  <figcaption>
+  Figure xxf-third. Third orders of magnitude.
+  </figcaption>
+  </center>
+</figure>
+
+The multiplication rules here are quite simple but slighly unintuitive.
+
+<figure id="third-table">
+<center>
+    <table>
+        <thead><tr><td></td>
+            <td>$1$</td><td>$2$</td><td>$5$</td>
+        </tr></thead>
+        <tbody>
+        <tr><td>$1$</td>
+            <td>$1$</td><td>$2$</td><td>$5$</td>
+        </tr>
+        <tr><td>$2$</td>
+            <td>$2$</td><td>$5$</td><td>$10$</td>
+        </tr>
+        <tr><td>$5$</td>
+            <td>$5$</td><td>$10$</td><td>$20$</td>
+        </tr>
+        </tbody>
+    </table>
+  <figcaption>
+  Figure xxf-tablethird. Third-orders-of-magnitude aka 1-2-5 multiplication table.
+  </figcaption>
+</center>
+</figure>
+
+In the worst case, we have a gap of 5/2 = 2.5 between subsequent symbols in this formulation, nearly as good as zequals but not quite.  Can we do better?
 
 ## Quarter-Orders-of-Magnitude
 
@@ -291,7 +331,7 @@ then lexigraphically order them:
 $$ 128, 16, 2, 256, 32, 4, 512, 64, 8 $$
 then insert decimals after the first digits:
 $$ 1.28, 1.6, 2, 2.56, 3.2, 4, 5.12, 6.4, 8 . $$
-As you can see, this very well approximates the locations of the integer decibels on the scale above.  
+As you can see, this very well approximates the locations of the integer decibels on the scale above.  Without this trick, as long as you can remember that $3 \text{ dB} = 2$, and that $10 \text{ dB} = 10$ you can also create the approximate scale on the fly as I show in the appendix below.
 
 Fortunately, this turns multiplication and division into simple addition and subtraction of integers, something we are much better primed to do.  If we wanted to match the precision of two-significant-digit arithmetic we would need to track the nearest half decibel as well, but even this is pretty easy to do in our head. Quick, what is 4.5 + 8?  Now try to do 2.8 * 6.3 to two sigfigs.  How about 4.5 - 8 and 2.8 / 6.3?  Which of those was easier?  I think doing arithmetic with half integers is a lot easier, especially subtraction compared to division.
 
@@ -307,4 +347,35 @@ There are corners of the internet where people argue whether [Seximal](https://w
 ## Conclusion
 
 Try out the quarters thing.  Its fun and gives as good precision as single-significant-digit arithmetic.  If you are feeling more adventurous and want higher precision, try decibels.
- 
+
+
+## Appendix: Recreating the logarithm scale
+
+If we start with the facts that $0 \text{ dB} = 10^{0/10} = 1, 10 \text{ dB} = 10^{10/10} = 10$ and remember just a single fact that $3 \text{ dB} = 10^{3/10} \approx 2$ and $\sqrt{10} \approx \pi$ we can fill in the rest of the logarithms, at least approximately.
+
+The first thing we do is recognize that $3 \text{ dB} + 3 \text{ dB} = 6 \text{ dB} = 2 \times 2 = 4$ and then also that $9 \text{ dB} = 8$
+
+Then we can also fill in $10 \text{ dB} - 3 \text{ dB} = 7 \text{ dB} = 10/2 = 5$ and $4 \text{ dB} = 5/2 = 2.5$ and $1 \text{ dB} = 10/2/2 = 1.25$.  
+
+Finally we use the fact that $5 \text{ dB} = \sqrt{ 10 } \approx \pi$ to fill in that as well as $2 \text{ dB} = 5 \text{ dB} - 3 \text{ dB} = \frac \pi 2$ and $8 \text{ dB} = 2 \pi$.
+
+<figure id="decibel-table">
+<center>
+    <table>
+        <thead><tr>
+            <td>$\text{dB}$</td><td>$0$</td><td>$1$</td><td>$2$</td><td>$3$</td><td>$4$</td><td>$5$</td><td>$6$</td><td>$7$</td><td>$8$</td><td>$9$</td><td>$10$</td>
+        </tr></thead>
+        <tbody>
+        <tr>
+            <td>$\approx$</td><td>$1$</td><td>$1.25$</td><td>$1.6$</td><td>$2$</td><td>$2.5$</td><td>$\pi$</td><td>$4$</td><td>$5$</td><td>$2\pi$</td><td>$8$</td><td>$10$</td>
+        </tr>
+        <tr>
+            <td>hint</td><td>$10^0$</td><td>$\frac{10}{2^3}$</td><td>$\frac{\pi}{2}$</td><td>$2$</td><td>$\frac{10}{2^2}$</td><td>$\sqrt{10}$</td><td>$2^2$</td><td>$\frac{10}{2}$</td><td>$2\pi$</td><td>$2^3$</td><td>$10^1$</td>
+        </tr>
+        </tbody>
+    </table>
+  <figcaption>
+  Figure xxf-decibeltable. Decibel estimates and their derivations. Remember $3 \text{ dB} = 2$ and $\sqrt{10} \approx \pi$.
+  </figcaption>
+</center>
+</figure>
