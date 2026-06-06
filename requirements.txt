@@ -3,13 +3,13 @@ certifi==2026.1.4
 charset-normalizer==3.4.4
 feedgen==1.0.0
 feedparser==6.0.12
-idna==3.11
+idna==3.15
 Jinja2==3.1.6
-lxml==6.0.2
+lxml==6.1.0
 MarkupSafe==3.0.3
 mistletoe==1.5.1
 python-dateutil==2.9.0.post0
-requests==2.32.5
+requests==2.33.0
 sgmllib3k==1.0.0
 six==1.17.0
-urllib3==2.6.3
+urllib3==2.7.0
