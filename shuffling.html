@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' /> 
+    <title>blog.alexalemi.com Statistics Through Randomization</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5SW43T5NT"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-F5SW43T5NT');
+    </script>
+
+		<!-- favicon stuff -->
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+
+
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml" />
+
+    <!-- Fonts -->
+    <script type="text/javascript">
+        WebFontConfig = {
+            google: { families: [ 'Muli', 'Lato' ] }
+        };
+        (function() {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        processEscapes: true
+      }
+    };
+    </script>
+    <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+
+    <!-- Inline CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/style.css"/>
+</head>
+
+<body>
+
+
+  <header>
+    <h3>Alex Alemi's Blog</h3>
+    <nav>
+      <a href='https://blog.alexalemi.com'>Index</a> |
+      <a href='https://alexalemi.com'>About Me</a> |
+      <a rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml">RSS</a>
+    </nav>
+  </header>
+
+  <article>
+		<h1>Statistics Through Randomization</h1>
+		<p>Alexander A. Alemi. <time datetime='2026-09-09'>2026-09-09</time></p>
+    <div class="content">
+    <!-- Intro note goes here: adaptation of the lecture (link), also available as a booklet. -->
+<p><i>I recently took the time to turn an old <a href="https://www.alexalemi.com/talks/intro-to-statistics.html">lecture</a> of mine into a <a href="assets/shuffling-booklet.pdf">booklet</a>. This is that same story rendered as a blog post.</i></p>
+<p>Most published research findings are false.<sup><a href="#ioannidis">1</a></sup> Psychology and medicine are having a replication crisis.</p>
+<aside> <sup id="ioannidis">1</sup>
+Ioannidis, John P. A. 2005. <a href="https://doi.org/10.1371/journal.pmed.0020124">"Why Most Published Research Findings Are False."</a> <em>PLoS Medicine</em> 2 (8): e124.
+</aside>
+<p>I blame statistics. Or rather, I blame the classic teaching of statistics, which presents the field as an archaic and confusing set of rules that must be memorized, incantations that must be recited in the precise order prescribed by the textbook. This leads to no one understanding statistics at all, and everyone continually messing it up.</p>
+<p>Statistics isn't confusing. The core ideas are <em>simple</em>. The central idea of statistics is that <em>a number is meaningless without context</em>. In order to make sense of measurements, we need to have something to compare them against.</p>
+<figure id="rats" class="right" style="width: 42%">
+  <center>
+  <img width="95%" src="figures/shuffling/watson_rats.svg"
+    alt="Average weight of rats over time on two diets. The porridge group loses weight and dies; the bread and milk group gains weight.">
+  <figcaption>
+  Figure 1. Watson and Hunter, 1906, redrawn from their Chart 5. The thin line averages 8 control rats fed bread and skimmed milk; the thick one averages 14 fed porridge, oatmeal cooked in milk and water. All began at two and a half months. Each arrow is a death. Porridge kills rats.
+  </figcaption>
+  </center>
+</figure>
+<p>If you're lucky, you're studying a phenomenon with such a large effect that fancy math is not necessary to make its point. Figure 1 is a reproduction of a plot from Watson and Hunter's 1906 feeding experiments. In fact, this paper contributed to the discovery of vitamins. The two lines show the trajectories of the average weight of rats fed two different diets. The thick line represents rats fed only porridge. The thin line represents rats fed bread and skimmed milk. Each arrow represents a death. You don't need math to tell you that the two results are different. If you feed rats porridge, they die. If you feed them bread and milk, they don't.</p>
+<p>This chart is making an <em>argument</em> by means of <em>comparison</em>. Two similar groups behaved very differently; surely the difference is important. The results are convincing because the only measurement apparatus you need is your eye. You can <em>see</em> the difference in the two results.</p>
+<p>Unfortunately, or perhaps fortunately for the rats, not all interventions have so large an effect as a complete lack of vitamins. When effects are more subtle, we need more elaborate tools to evaluate them, hence <em>statistics</em>.</p>
+<h2>The Nature of Statistical Argument</h2>
+<figure id="bradman-portrait" class="right" style="width: 36%">
+  <center>
+  <img width="80%" src="figures/shuffling/bradman-portrait.jpg"
+    alt="Sir Donald Bradman in 1932, seated, holding a cricket bat.">
+  <figcaption>
+  Figure 2. Sir Donald Bradman in 1932, with a bat carrying his own signature. Photograph by Sam Hood, State Library of New South Wales.
+  </figcaption>
+  </center>
+</figure>
+<p>Let's start with a caricature of what a statistical argument even is, and with this fellow. Sir Donald Bradman was an Australian cricketer active in the twenties and thirties, and I'm going to argue for the hypothesis that <em>Donald Bradman was an alien</em>.</p>
+<p>How would I make such an argument? The first thing I could try is to just tell you. Why was Donald Bradman an alien? Because <em>I say so</em>. This is obviously not much of an argument, but depending on what you know about me, and about cricket, you might still find it a little convincing. You shouldn't, or at least not very. Argument from authority is one of the lowest forms of argument, and you shouldn't give it much weight.</p>
+<p>Here's another thing I could say: <em>"a one-sample $t$-test allows me to reject the null hypothesis that he wasn't an alien at the $p = 0.05$ level"</em>. Is that convincing? I'd like to point out that, unless you have some context, this is also an argument from authority. If you don't know what those words mean, if you don't know how to do that yourself, if you don't know what has to be true for that sentence to mean anything, then it's little more than "because I said so" with bigger words. And I think that's the sad state of affairs we're in: papers are filled with "evidence" readers can't check.</p>
+<p>So let's try to do better. As scientists we like numbers, so here's one: <em>99.94</em>. Why was Donald Bradman an alien? Because <em>99.94</em>. Now, a number by itself shouldn't mean anything to you. Minimally you need some context, some units, some description of the procedure that produced it. So: <em>99.94 runs per inning</em>, his career average in test cricket. That's a measurement, but unless you know something about cricket you still don't know if that's a good number or a bad one.</p>
+<p>Where can that context come from? The natural next step is to compare it to things <em>in kind</em>. Virat Kohli, one of the great modern batsmen, averaged 46.85 runs per inning over his career. So now we have the same measurement applied to two different cricketers, and we can see that Bradman's number is bigger. This is real evidence that Bradman was better than Kohli, but it's an epsilon amount of evidence that he was an alien. We could add Steve Smith at 56.00, and now we have two epsilons.</p>
+<p>Let's keep going and look at all of them. Take every cricketer who has scored at least 2,000 runs in test cricket, all 348 of them, and plot the distribution of their career averages. Now we have what I think is a reasonable stand-in population for Donald Bradman: cricketers who have played a while. We can put Bradman on the same axis, as a single line, and see where he lands.</p>
+<figure id="bradman">
+  <center>
+  <img width="95%" src="figures/shuffling/bradman.svg"
+    alt="Histogram of career test batting averages, clustered around 40, with a single red line far to the right at 99.94 marked Bradman.">
+  <figcaption>
+  Figure 3. Career test batting averages for every cricketer with at least 2,000 runs, and Bradman. The best of the rest is RG Pollock at 60.97; the median is 39.22.
+  </figcaption>
+  </center>
+</figure>
+<p>Notice that everyone else is in a lump around 40 runs per inning. The very best of them get up into the low sixties. Then there's a lot of empty space, and then there's Bradman. If you want a number, he's 7.2 standard deviations above the mean of everyone else, but I don't think you need the number. Your eye should be telling you that there is just no way that line came out of that pile.</p>
+<p>I want to pause on this comparison, because I think it really is the fundamental nature of statistical argument. We made a single measurement in the world. We put it in the context of a population that we could convince our opponent was a reasonable stand-in, and then we asked whether it was credible that our measurement was a draw from that population. That's it. Every statistical argument is an argument from incredulity: <em>"oh yeah, how do you explain this?"</em></p>
+<p>Now, I wanted this argument to be a bit silly, and I want to be honest about why it's silly, because the same silliness shows up in real papers. The hypothesis I was interested in was that <em>Donald Bradman was an alien</em>. What I actually showed you was that his career average is not a plausible draw from the distribution of long-run cricketers' career averages. Those are not the same claim. There are a lot of steps missing between them (several involving spaceships). I'd argue it does lend <em>some</em> credence to the original hypothesis, in the sense that if he's that unlike his peers then he's <em>superhuman</em>, and maybe we should entertain that he's <em>extraterrestrial</em>. But you should see the leap: he could simply be <em>exceptional</em>.</p>
+<p>You'll often see the same kind of fantastical leap when you read a real paper. A paper is usually trying to convince you of something broad, like "my optimizer is better than yours" or "superstition improves performance," and what it actually has is some fairly narrow data. A lot gets left implied, and the strength of the argument depends on how well the narrow thing supports the broad thing.</p>
+<h2>The Experiment</h2>
+<p>A little while ago there was a run of articles saying that lucky charms work. Athletes have their superstitions, and the claim was that studies had shown these actually improve performance. Most of those articles trace back to a single paper, Damisch, Stoberock and Mussweiler's <em>Keep your fingers crossed! How superstition improves performance</em>.<sup><a href="#damisch">2</a></sup> At a high level, the paper is trying to convince you that if you believe a thing will help you, and you use it, you'll perform better.</p>
+<aside> <sup id="damisch">2</sup>
+Damisch, Lysann, Barbara Stoberock, and Thomas Mussweiler. 2010. <a href="https://doi.org/10.1177/0956797610372631">"Keep Your Fingers Crossed! How Superstition Improves Performance."</a> <em>Psychological Science</em> 21 (7): 1014–20.
+</aside>
+<p>The paper has three experiments. Let's look at the first one. They recruited twenty-eight university students, split them into two groups, and put down a little putting green. One group was handed a golf ball and told "here is your ball, so far it has turned out to be a lucky ball." The other group was handed a ball and told "this is the ball everyone has used so far." Then everyone tried to sink ten putts, and the experimenters counted how many went in. Notice how much of a gap there is between what was actually done, handing some undergraduates a golf ball and telling them it's lucky, and the top-line claim that <em>superstition improves performance in sport</em>.</p>
+<figure id="observed">
+  <center>
+  <img width="95%" src="figures/shuffling/lucky_observed.svg"
+    alt="Dot plot of putts sunk out of ten for the control and lucky groups, with red bars at each group's mean.">
+  <figcaption>
+  Figure 4. The experiment. Each dot is one student. The red bars are the group means: 4.79 putts for the control group and 6.43 for the lucky group.
+  </figcaption>
+  </center>
+</figure>
+<aside> <sup id="reconstructed">3</sup>
+The paper doesn't share its data, but it gives enough summary statistics that I was able to use a constrained optimization to find a data set consistent with them. So we're going to pretend this is the data. It reproduces the reported means and $t$ to two figures.
+</aside>
+<p>The lucky group averaged 6.43 putts and the control group averaged 4.79, a difference of 1.64.<sup><a href="#reconstructed">3</a></sup> That difference of means is going to be our <em>statistic</em>: a single number we compute from the whole data set, chosen because it's the number our claim is about.</p>
+<p>So do lucky charms work? Just looking at the data by eye, the claim doesn't seem absurd. Three people in the lucky group got nines, and nobody in the control group did. But of course there are lots of skeptical people in the world, and the skeptic is going to say: "No, that's not what's going on. People sink putts by different amounts all the time. It's random. You shouldn't take this as evidence that luck matters." And honestly, looking at the picture, they're not being unreasonable. We need to do better than pointing at it.</p>
+<h2>The Skeptic</h2>
+<p>So let's write down what the skeptic believes. Our hypothesis is that luck matters. The skeptic's hypothesis, the null hypothesis, is:</p>
+<center><em>Being told the ball is lucky makes no difference at all.</em></center>
+<p>It's worth being careful about what this says. It doesn't say the two groups will come out equal. It says something much stronger: the <em>label</em> is irrelevant. Each student would have sunk exactly the putts they sank no matter which group we'd put them in. As far as the skeptic is concerned, the "lucky" and "control" tags are just decoration.</p>
+<p>And that is a very useful thing for the skeptic to have committed to, because it tells us what else could have happened. If the tags are decoration, then the fourteen students we happened to call lucky could just as well have been any other fourteen of the twenty-eight. The scores were what they were. The only random thing was which fourteen got which tag.</p>
+<h2>Godlike Powers</h2>
+<p>Here's what we need to do. We have one number, our computed statistic, the difference in the means for the two groups: 1.64. To make our argument from incredulity we need to replace that one number with a whole population of numbers, one that the skeptic has to admit is representative of a world where <em>they're</em> right, and then see whether our number fits in it. There are a few ways to build such a population, and they differ mostly in what kind of godlike powers you have available.</p>
+<p>Let's start with the most convincing thing you could possibly do. If you were God, if you had intimate control over the entire universe, you could reach in and make it so that the skeptic <em>is right</em> and luck has no effect on putting. Then you could rerun that Tuesday afternoon. Reset the clock and run the same experiment a hundred thousand times in a world where you've mandated that luck doesn't matter, and each time compute the difference of means. The skeptic would have to agree that the resulting distribution is what they should expect, and then we could look at where our 1.64 falls in it. This would be perfect. Unfortunately, none of us are gods.</p>
+<p>So let's talk about alternatives. The closest thing our forebears had to godlike powers, a hundred years ago, was the ability to do integrals on paper, and that's what most of classical statistics is built on. The idea is to replace the real world, complications and all, with a theoretical one: something simple enough that you can manipulate the formulas, but that you can still convince the skeptic applies. Then you work out, on paper, what the consequences would be in a world where luck had no effect.</p>
+<aside> <sup id="assumptions">4</sup>
+That's a lot of steps and a lot of assumptions, and I'm skipping some. To be fair to the ancients, a great deal of careful work has gone into working out how safe those assumptions are, but it's context an outsider usually isn't privy to, and none of it is something you can check by eye.
+</aside>
+<aside> <sup id="gosset">5</sup>
+William Sealy Gosset worked out the $t$-distribution while working on brewing at Guinness. Guinness didn't let its staff publish, so he wrote as "Student", hence Student's $t$-test.
+</aside>
+<p>Here's roughly how that goes for a $t$-test. You don't need to follow this; that it's hard to follow is the point. I don't know how people sink putts, but I do know how to do Gaussian integrals, so I'm going to assume that the number of putts each student sinks is normally distributed with some mean and standard deviation. That's step one. Step two: if I take fourteen draws from a normal in each of two groups and compute the difference of the means, I can work out how that difference is distributed. It's also normally distributed, because normals are nice that way. Unfortunately, the answer depends on the true standard deviation, which I don't know. So, step three: I decide to use the standard deviation I <em>observed</em> in the data instead, and now I have to ask how <em>that</em> quantity is distributed. I do a bunch of math and get a formula, and it's important enough that it gets a name: the chi-squared distribution. Step four: I look at the difference of means divided by a pooled standard deviation, do some more math, and discover that this particular combination has a distribution that doesn't depend on anything I don't know. It only depends on how many observations I made. At that point I declare victory. That's the $t$-distribution.<sup><a href="#assumptions">4</a></sup> <sup><a href="#gosset">5</a></sup></p>
+<p>It works, and it's what the paper does. They report $t(26) = 2.14$ and $p &lt; 0.05$; a one-sided $p$ works out to about 0.017. And I'd argue that unless you're a statistician with a lot of practice, that sentence is the "because I said so" argument again, just with more jargon.</p>
+<p>These days we have a different set of godlike powers. We can write a <code>for</code> loop. A <code>for</code> loop lets you create millions of fake little worlds and look at them, and that's an ability the ancients simply didn't have. So that's what we're going to do next.</p>
+<h2>Shuffling</h2>
+<p>Remember what the skeptic believes: the lucky tags don't matter. Well, if the tags don't matter, then it shouldn't matter to the skeptic if I go into the computer and shuffle them around. Take the twenty-eight scores, deal out fourteen "lucky" tags and fourteen "control" tags at random, and compute the difference of means again. As far as the skeptic is concerned, that's just as valid a measurement as the one we actually made. It would take a very special sort of skeptic to object, since all we did was change the one thing they told us they don't care about.</p>
+<figure id="shuffles">
+  <center>
+  <img width="95%" src="figures/shuffling/lucky_shuffles.svg"
+    alt="Four dot plots side by side: the observed experiment and three random re-deals of the same scores, each with its difference of means.">
+  <figcaption>
+  Figure 5. The real experiment, and three re-deals of the same twenty-eight scores. Under the null hypothesis, all four are the same kind of thing.
+  </figcaption>
+  </center>
+</figure>
+<aside> <sup id="enumerate">6</sup>
+There are only 40,116,600 distinct ways to deal twenty-eight scores into two groups of fourteen, so we could have enumerated them all. Shuffling a couple hundred thousand times is easier and agrees to three decimals.
+</aside>
+<aside> <sup id="byhand">7</sup>
+Do a few of these yourself before you read on. Twenty-eight index cards, one score on each: shuffle, deal into two piles of fourteen, add up each pile and subtract. Three or four deals is plenty. Get a feel for the process.
+</aside>
+<p>Sometimes when you do this, the lucky group comes out ahead and sometimes it comes out behind, because, as the skeptic said, random things happen. But now we can do it 200,000 times<sup><a href="#enumerate">6</a></sup> and build up an entire population of differences, and that population is exactly what the skeptic has to believe the world looks like.<sup><a href="#byhand">7</a></sup> This is what you get:</p>
+<figure id="null">
+  <center>
+  <img width="95%" src="figures/shuffling/lucky_null.svg"
+    alt="Histogram of differences of means from 200,000 shuffles, centered on zero, with the observed 1.64 marked out in the right tail.">
+  <figcaption>
+  Figure 6. Differences of means from 200,000 re-deals. This is the skeptic's world: everything that could have happened if the tag does nothing. Our observation is out at the edge.
+  </figcaption>
+  </center>
+</figure>
+<p>Only 2.5% of the time do you observe a difference as large as the one we saw. It <em>strains</em> credulity to say that what we observed was simply random, but it's entirely <em>possible</em>. It's not nearly as convincing as the argument that Donald Bradman was an alien, but you have to admit it was unlikely.</p>
+<p>Notice that this picture is the entire argument. There are no hidden pieces. You can understand all of the steps and <em>feel</em> the strength (or lack thereof) of the argument. We didn't assume the scores were normal, we didn't look anything up in a table, we didn't need $n &gt; 30$ or equal variances or any of the other conditions that get recited and never checked. We took the skeptic's belief, worked out what it implied, and drew it. The whole thing fits on one slide, and I'd argue it can also fit in your head all at once.</p>
+<h2>$p$-values</h2>
+<p>Now we can <em>quantify</em> how strange our observation is. In 200,000 shuffles, how often did the shuffled difference come out as large as the 1.64 we actually saw?</p>
+<p>$$ p = \frac{\#\{\text{shuffles with difference} \geq 1.64\}}{\#\,\text{shuffles}} = 0.025 $$</p>
+<aside> <sup id="zero">8</sup>
+Count the real experiment as one of the shuffles, since it is one, and add one to the numerator and the denominator. A $p$-value of exactly zero is never honest.
+</aside>
+<aside> <sup id="custom">9</sup>
+The usual custom is to reject the null hypothesis if $p < 0.05$, i.e. if you observe something that would occur by chance only one time in twenty.
+</aside>
+<p>That's a $p$-value.<sup><a href="#zero">8</a></sup> It's a measure of how rare your observation is with respect to the population you offered the skeptic, and that's all it is. Here it says that chance beats us about one time in forty. It's rare, but not impossible.<sup><a href="#custom">9</a></sup></p>
+<p>In code the whole thing is a few lines, and it's the same few lines no matter what statistic you choose.<sup><a href="#scipy">10</a></sup></p>
+<aside> <sup id="scipy">10</sup>
+See also <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.permutation_test.html"><code>scipy.stats.permutation_test</code></a>, which does exactly this.
+</aside>
+<!-- The code block runs the full column width, so drop below the floated
+     sidenote above rather than running underneath it. -->
+<div style="clear: right"></div>
+<pre><code class="language-python">data = collect_data()
+observed = statistic(data)
+resampled = [statistic(permute(data)) for _ in range(N)]
+
+p = (resampled &gt;= observed).mean()      # or &lt;=, or both
+if p &lt; threshold:
+    reject_null()
+</code></pre>
+<p>That last part is worth dwelling on. In the analytic approach we were forced into one particular combination, the difference of means divided by a pooled standard deviation, because that was the combination whose distribution we could work out. Once we're shuffling we have a tremendous amount of freedom. We could look at the difference of medians, or the ratio of the means, or the standard deviations, or whatever we darn well please, and make the same argument from incredulity about it. In fact every named test you've heard of is this same process, played out once under a particular set of assumptions for a particular statistic, and named after whoever did the integrals.</p>
+<p>It's not a completely free lunch. Permutation tests have a couple of downsides. The first is that the analytic argument needed nothing from the real world except the sample size. The permutation argument is explicitly downstream of the particular sample we took. If the Tuesday afternoon we ran the experiment was a weird day, shuffling inherits that weirdness in a way the $t$-test partly doesn't. That's a real trade. But notice which assumption is easier to defend to a skeptic: "you may shuffle tags you've said are meaningless," or "the number of putts out of ten is normally distributed."</p>
+<p>The second came up as a question when I gave this as a lecture, and it's a good one. It isn't enough that your shuffle be consistent with the skeptic's belief. It also has to be inconsistent with yours. If luck really does matter, then shuffling the lucky tags destroys that effect, and that's exactly why the shuffled differences come out centered on zero. If you'd invented some resampling that preserved your effect, the resulting population wouldn't tell you anything at all.</p>
+<h2>A Quiz</h2>
+<p>Here is where almost everybody goes wrong, including a lot of people who teach this. We observed $p = 0.025$. True or false?</p>
+<ol>
+<li>You have absolutely disproved the null hypothesis.</li>
+<li>There is a 0.025 probability that the null hypothesis is true.</li>
+<li>You have absolutely proved that lucky charms work.</li>
+<li>You can deduce the probability that lucky charms work.</li>
+<li>You have a reliable finding, in the sense that if you repeated the experiment many times you'd get a significant result about 97% of the time.</li>
+</ol>
+<aside> <sup id="cohen">11</sup>
+Cohen, Jacob. 1994. <a href="https://doi.org/10.1037/0003-066X.49.12.997">"The Earth Is Round (p &lt; .05)."</a> <em>American Psychologist</em> 49 (12): 997–1003.
+</aside>
+<p>Every one of these is false.<sup><a href="#cohen">11</a></sup> Explaining why, to your own satisfaction, is left as an exercise for the reader, below. But let's at least look at the logic.</p>
+<p>The following argument is completely valid. It's <em>modus tollens</em>:</p>
+<blockquote>
+<p>If the null hypothesis is true, $X$ is impossible.<br>
+We saw $X$.<br>
+$\therefore$ the null hypothesis is false.</p>
+</blockquote>
+<p>What we're actually relying on is a relaxation of it, and the relaxation is not valid:</p>
+<blockquote>
+<p><strong>Wrong.</strong> If the null hypothesis is true, $X$ is unlikely.<br>
+We saw $X$.<br>
+$\therefore$ the null hypothesis is unlikely.</p>
+</blockquote>
+<p>To see that it isn't, keep the form and change the words:</p>
+<blockquote>
+<p><strong>Wrong.</strong> If a person is American, they're unlikely to be a member of Congress.<br>
+Bob is a member of Congress.<br>
+$\therefore$ Bob is not American.</p>
+</blockquote>
+<aside> <sup id="bayes">12</sup>
+If you already know Bayes' rule, here is the same complaint as an equation. Write $H_0$ for the skeptic's world and $H_1$ for the one where the charm works. In odds form,
+$$ \frac{P(H_1 \mid D)}{P(H_0 \mid D)} = \frac{P(H_1)}{P(H_0)} \cdot \frac{P(D \mid H_1)}{P(D \mid H_0)} $$
+The left side is what you wanted. On the right are your prior odds and the likelihood ratio, and you have to supply both.
+Your $p$-value is neither. The nearest term is $P(D \mid H_0)$, and even that isn't it: $p$ is the chance of the observed difference <em>or anything more extreme</em>, a tail area rather than the probability of what you actually saw. Nothing you computed says a word about $P(D \mid H_1)$. Arguing from incredulity is assuming that the prior odds are near even and that the alternative predicts this data far better than the null does; where those assumptions fail, so does the argument.
+</aside>
+<p>So why does the argument from incredulity carry any weight at all? The thing you actually want to know is the probability that the null hypothesis is true given the data. The thing you computed is the probability of seeing data like yours given that the null hypothesis is true. These are not the same thing, and it really is as simple as that. They are <em>related</em>, though. If you write out Bayes' rule, the thing you computed shows up as one of the terms, right alongside your prior odds and the term everyone forgets, how likely the data would have been under the alternative. The argument from incredulity is really an assumption that those other terms don't matter much, and most of the ways this goes wrong are cases where they do.<sup><a href="#bayes">12</a></sup></p>
+<p>So what have we actually established? Only this: if the tag doesn't matter, data like ours turns up about one time in forty. That's a real thing to have established. It's also less than we'd like.</p>
+<h2>Effect Sizes and the Bootstrap</h2>
+<p>Not all questions are binary, and honestly it's a little silly to only ask whether luck matters. What we'd usually rather know is how much it matters, so we need a way to talk about <em>magnitudes</em>.</p>
+<p>Let's start with something simpler than the effect. Just look at the control group. Their mean was 4.79, but that was one experiment and one number, and I might wonder how much I should trust it. Is the data consistent with college students sinking nine out of ten on average? Five out of ten? Some way to say what range of means the data supports would be useful.</p>
+<p>The textbook answer is the <em>standard error of the mean</em>: take the standard deviation, divide by the square root of $n$, and call that your uncertainty. Where does that come from? It's the same analytic argument again. Assume the data is normal and work out the math. It isn't wrong, but it rests on assumptions, and again it's not something you can check by eye.</p>
+<aside> <sup id="empirical">13</sup>
+We're still making a modeling assumption here, but a fairly innocuous one. Rather than saying the data is normal, we're saying we can use the empirical distribution of the data itself as the model. We aren't saying anything about its shape or its tails.
+</aside>
+<aside> <sup id="fourteen">14</sup>
+Why draw exactly fourteen? Because the width of the answer should reflect the fact that we measured fourteen people. Draw 140 and you'd get a much tighter interval, for an experiment you didn't run.
+</aside>
+<p>The bootstrap is the <code>for</code>-loop version. The logic goes like this. I don't know what distribution governs how well college students putt. It might be bimodal, it might be anything. But I do think these fourteen measurements are all fair samples from it, and none of them is special. So it isn't unreasonable to treat each one as equally likely.<sup><a href="#empirical">13</a></sup> Throw all fourteen numbers into a hat and draw fourteen back out, with replacement, so that any of them can show up more than once.<sup><a href="#fourteen">14</a></sup> That gives you a new data set that's just as credible as the one you had. Compute its mean. Do it again. Again. Do it 200,000 times and you have a whole distribution of means that are consistent with your data. In this case, 90% of them fall between 3.86 and 5.64.</p>
+<p>Now we can do the same thing for the effect. Resample <em>within</em> each group, keeping the tags this time, and compute the difference of means for each resample.</p>
+<figure id="bootstrap">
+  <center>
+  <img width="95%" src="figures/shuffling/lucky_bootstrap.svg"
+    alt="Histogram of bootstrapped effect sizes, centered near 1.6, with the central 90% shaded darker.">
+  <figcaption>
+  Figure 7. The effect size under resampling. Ninety percent of the resamples land between 0.43 and 2.86 putts.
+  </figcaption>
+  </center>
+</figure>
+<p>So we could tell the world that we're reasonably confident the lucky ball is worth somewhere between 0.43 and 2.86 extra putts. Notice how wide that is. The charm might be worth half a putt or it might be worth three, and fourteen students per group just can't tell us which.</p>
+<h2>Power</h2>
+<p>So far we've just been talking about what you can do with the data you've already collected. An underappreciated aspect of statistics is that, especially if you have access to a computer, you can plan before you collect the data at all.</p>
+<p>Suppose luck really does matter, and it's worth about the 1.64 putts we saw. If you ran this experiment, would you notice? I don't mean is there an effect; assume there is. I mean, would an experiment of this size be able to see it? That's the <em>power</em> of the study. Given your plan to look at only so many students, there is a limit to the <em>resolution</em> you have for effects of different sizes. Very large effects don't need much data before they are obvious; subtle ones need a lot more. Invent a world where the effect is real, run the experiment in that world a few hundred times, and count how often you'd have rejected the null.</p>
+<figure id="power">
+  <center>
+  <img width="95%" src="figures/shuffling/lucky_power.svg"
+    alt="Curve of the chance of detecting a 1.64 putt effect against students per group, rising from 0.4 at 7 to nearly 1 at 60, with the 80% target marked.">
+  <figcaption>
+  Figure 8. Chance of detecting a 1.64 putt effect at $\alpha = 0.05$, against the number of students in each group.
+  </figcaption>
+  </center>
+</figure>
+<aside> <sup id="mde">15</sup>
+The same question backwards: what is the smallest effect this study could reliably catch? Held at 14 per group and $\alpha = 0.05$, the charm would have to be worth about 2.1 putts before you'd detect it 80% of the time. That's 1.3 times the effect the paper actually reported. Below that, a null result mostly tells you the study was small.
+</aside>
+<p>With 14 students per group the answer is about 0.63. In other words, even when the charm really works, an experiment this size misses it more than a third of the time. To get to the usual target of 80%, you'd want something closer to twenty-five per group.<sup><a href="#mde">15</a></sup></p>
+<aside> <sup id="reinhart">16</sup>
+Reinhart, Alex. 2015. <a href="https://www.statisticsdonewrong.com/"><em>Statistics Done Wrong: The Woefully Complete Guide</em></a>. No Starch Press. The Cohen story is Cohen (1962) and Sedlmeier and Cohen (1989).
+</aside>
+<p>Power is entirely essential and entirely ignored. Fewer than 3% of articles in <em>Science</em> and <em>Nature</em> calculate power before starting the study.<sup><a href="#reinhart">16</a></sup> In 1962, Jacob Cohen looked at the statistical power of studies published in the <em>Journal of Abnormal and Social Psychology</em> and found that the average study had a power of 0.48 for detecting medium-sized effects. His paper was cited hundreds of times and many similar reviews followed, all calling for larger samples. Then, in 1989, a review showed that in the decades since, the average study's power had actually <em>decreased</em>.</p>
+<h2>It Didn't Replicate</h2>
+<p>In 2014, Calin-Jageman and Caldwell ran the lucky ball experiment again,<sup><a href="#calinjageman">17</a></sup> this time with 124 students instead of 28, and put their data online. Here's what they found.</p>
+<aside> <sup id="calinjageman">17</sup>
+Calin-Jageman, Robert J., and Tracy L. Caldwell. 2014. <a href="https://doi.org/10.1027/1864-9335/a000190">"Replication of the Superstition and Performance Study by Damisch, Stoberock, and Mussweiler (2010)."</a> <em>Social Psychology</em> 45 (3): 239–45. Data <a href="https://osf.io/53es8">on the OSF</a>.
+</aside>
+<figure id="replication-data">
+  <center>
+  <img width="95%" src="figures/shuffling/lucky_replication_data.svg"
+    alt="Dot plot of the replication's scores for the control and lucky groups; the two group means are nearly equal.">
+  <figcaption>
+  Figure 9. The replication's own scores, drawn the way we drew the original. The red bars are the group means.
+  </figcaption>
+  </center>
+</figure>
+<figure id="replication">
+  <center>
+  <img width="95%" src="figures/shuffling/lucky_replication.svg"
+    alt="Two effect-size intervals: the original study's, centered at 1.64 and above zero, and the replication's, centered at 0.11 and straddling zero.">
+  <figcaption>
+  Figure 10. The original and the replication. Four times the students, and the effect is gone.
+  </figcaption>
+  </center>
+</figure>
+<p>The lucky group beat the control group by 0.11 putts, which works out to a $p$-value of 0.40. Shuffle the tags and you beat that four times out of ten. There's nothing there.</p>
+<aside> <sup id="repinterval">18</sup>
+Bootstrapping the replication's data the same way gives a 90% interval from −0.49 to 0.71 extra putts, which includes zero.
+</aside>
+<aside> <sup id="crisis">19</sup>
+This is, I think, most of the replication crisis. Not fraud and not incompetence, but underpowered studies, and the ones that got published are the ones that got lucky.
+</aside>
+<p>It's worth being clear about what happened here, because it isn't what people usually assume. The original study wasn't fraudulent and it wasn't incompetent. It was honestly run and correctly analyzed and correctly reported, and its $p$-value was under 0.05. It was also, as we just worked out, a study with about a 60% chance of detecting its own effect. That means that whenever a study like that does clear the bar, it mostly clears it by getting a lucky draw, and a lucky draw is by definition one that overstates the effect. Small studies that reach significance have usually overestimated the effect they're reporting, because overestimating it is how small studies reach significance. The original study reported an effect of 1.64 extra putts. The replication found something indistinguishable from zero.<sup><a href="#repinterval">18</a></sup> <sup><a href="#crisis">19</a></sup></p>
+<h2>Designing Your Study</h2>
+<p>Before you collect anything:</p>
+<ol>
+<li>Write the hypothesis down.</li>
+<li>Write the null down: what the skeptic says. Usually it's "the thing you varied is irrelevant, and the tags could be shuffled."</li>
+<li>Pick the statistic.</li>
+<li>Guess how big the effect could plausibly be.</li>
+<li>Simulate. How many people before you'd notice an effect that size? If that's more people than you can get, redesign the study now.</li>
+<li>Randomize the assignment for real. The whole argument rests on the shuffle being an honest description of what you actually did.</li>
+</ol>
+<p>Afterward:</p>
+<ol>
+<li>Compute the <em>observed</em> statistic in your actual data.</li>
+<li>Shuffle ten thousand times and recompute the statistic in those imagined data sets.</li>
+<li>Count how often the simulated statistics exceed the observed one. That's your $p$-value.</li>
+<li>Bootstrap, to say how big the effect is and how sure you are.</li>
+<li>Report the bootstrap interval, not just the $p$-value.</li>
+<li>Report what you did, including what didn't work.</li>
+</ol>
+<p>So, what are you waiting for?</p>
+<h2>Further Reading</h2>
+<p>Julian Simon's <a href="https://www.resample.com/intro-text-online/"><em>Resampling: The New Statistics</em></a> is the book that argues this is how statistics should have been taught all along, and Shasha and Wilson's <a href="https://doi.org/10.2200/S00295ED1V01Y201009MAS008"><em>Statistics is Easy!</em></a> is a short and practical version of the same idea. Alex Reinhart's <a href="https://www.statisticsdonewrong.com/"><em>Statistics Done Wrong</em></a> is a tour of everything that goes wrong, and is where the power numbers above come from. Jacob Cohen's <a href="https://doi.org/10.1037/0003-066X.49.12.997"><em>The Earth is Round (p &lt; .05)</em></a> is a six-page paper about $p$-values. And Freedman, Pisani and Purves' <em>Statistics</em> is the standard textbook that takes all of this seriously.</p>
+<p>The lecture this post grew out of is <a href="https://www.youtube.com/watch?v=7gIZXB1lY7Y">on YouTube</a>, and covers most of the same ground, though it runs out of time before power and the replication. And an earlier post of mine <a href="https://blog.alexalemi.com/ob/nbs/leap-day.html">on leap-day births</a> uses exactly these two tools, a permutation test and a bootstrap, on fifteen years of Social Security birth records, to check a newspaper's claim that leaplings arrive at a rate of one in 1,461. They don't.</p>
+<h2>Exercises</h2>
+<p>These are meant to help develop better intuitions and to explore a few ideas we didn't have room for. Collaboration is strongly encouraged. Try to have fun with them. Exercises marked † are more involved, and ones marked ‡ are the most involved.</p>
+<ol>
+<li>
+<p>Do the shuffle by hand. Twenty-eight index cards, one score on each. Shuffle, deal into two piles of fourteen, subtract the means. Do it ten times and plot your ten numbers. How many of them beat 1.64?</p>
+</li>
+<li>
+<p>Calin-Jageman and Caldwell's replication is summarized below and available in full <a href="https://osf.io/53es8">on the OSF</a>. Test the hypothesis that lucky charms work using this data and a permutation test. You should be able to reproduce the 0.11 and the $p = 0.40$ quoted above.</p>
+<table>
+<tr><th>hits</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>total</th></tr>
+<tr><td>control</td><td>2</td><td>3</td><td>6</td><td>5</td><td>11</td><td>8</td><td>12</td><td>7</td><td>3</td><td>1</td><td>0</td><td>58</td></tr>
+<tr><td>lucky</td><td>0</td><td>2</td><td>5</td><td>10</td><td>20</td><td>8</td><td>7</td><td>6</td><td>6</td><td>2</td><td>0</td><td>66</td></tr>
+</table>
+</li>
+<li>
+<p>We used the difference of means. Redo the permutation test with the difference of medians. Does the conclusion change? Which statistic would you have wanted to commit to in advance, and why isn't "whichever gave the smaller $p$" an acceptable answer?</p>
+</li>
+<li>
+<p>Our test was one-sided; we counted only the shuffles where the lucky group did better. Now count the shuffles where either group beat the other by 1.64 or more, and you should get about 0.050. Which was the right question to have asked, and when did you have to decide?</p>
+</li>
+<li>
+<p>† Get a feel for the accuracy of bootstrap confidence intervals. Flip a coin ten times and count the heads, then use the bootstrap to estimate an interval for the fairness of the coin. Now, in the computer, simulate ten flips of a fair coin, ten thousand times over, and for each of those compute a bootstrap interval. How often is the true probability of 0.5 inside the interval? Does this depend on the bias of the coin, or on the number of flips?</p>
+</li>
+<li>
+<p>† Repeat the analysis in <a href="https://blogs.sas.com/content/iml/2017/02/20/proportion-of-colors-mandms.html">the original M&amp;M blog post</a>, but using simulation. The author ate and recorded the colors of 712 M&amp;Ms, and the hypothesis to check is that these came from a different distribution than the one published in 2008. How would you check this using simulation? How convinced are you?</p>
+</li>
+<li>
+<p>† Repeat the analysis in the previous question, but this time for <a href="https://docs.google.com/spreadsheets/d/1pnyWVv7m60tDSlE0a5PK5Xasq1rt74A9BZc1_7h3MWM/edit">my M&amp;M data</a>: 11,211 M&amp;Ms, 38 bags, by factory and type. In particular, the blog post claims that Mars told its author that the two plants use the color proportions below. Are these still accurate?</p>
+<table>
+<tr><th></th><th>brown</th><th>red</th><th>yellow</th><th>green</th><th>orange</th><th>blue</th></tr>
+<tr><td>Cleveland</td><td>0.124</td><td>0.131</td><td>0.135</td><td>0.198</td><td>0.205</td><td>0.207</td></tr>
+<tr><td>Hackettstown</td><td>0.125</td><td>0.125</td><td>0.125</td><td>0.125</td><td>0.25</td><td>0.25</td></tr>
+</table>
+</li>
+<li>
+<p>† Same data: are the two factories even different from each other? State the null, pick a statistic, and shuffle the factory labels.</p>
+</li>
+<li>
+<p>‡ Choose your own hypothesis to investigate using the M&amp;M data, and formulate a statistical argument for it.</p>
+</li>
+<li>
+<p>‡ Perform your own statistical analysis to test a hypothesis you have. It could be a hypothesis in machine learning, like "gelu is better than relu," or it could be something you've wondered about, like "people named Fred make more money." Choose your hypothesis, design an experiment, work out how much data you'd need, collect it, and formulate a statistical argument. Then repeat that argument a different way, using an analytical method, or resampling, or Bayesian inference.</p>
+</li>
+</ol>
+ 
+    </div>
+  </article>
+
+  <script src="https://giscus.app/client.js"
+        data-repo="alexalemi/blog.alexalemi.com"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkyNjk2OTU4MzU="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOEBM7W84B_4Ke"
+        data-mapping="pathname"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+  </script>
+
+  <footer>
+    <!-- <p>
+    &copy; 2020 Alexander A. Alemi
+    </p>
+    -->
+  </footer>
+
+
+
+</body>
+</html>
