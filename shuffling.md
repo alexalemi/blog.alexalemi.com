@@ -22,7 +22,7 @@ Statistics isn't confusing. The core ideas are *simple*. The central idea of sta
   </center>
 </figure>
 
-If you're lucky, you're studying a phenomenon with such a large effect that fancy math is not necessary to make its point. Figure xxf-rats is a reproduction of a plot from Watson and Hunter's 1906 feeding experiments. In fact, this paper contributed to the discovery of vitamins. The two lines show the trajectories of the average weight of rats fed two different diets. The thick line represents rats fed only porridge. The thin line represents rats fed bread and skimmed milk. Each arrow represents a death. You don't need math to tell you that the two results are different. If you feed rats porridge, they die. If you feed them bread and milk, they don't.
+If you're lucky, you're studying a phenomenon with such a large effect that fancy math is not necessary to make its point. Figure xxf-rats reproduces a plot from Watson and Hunter's 1906 feeding experiments. In fact, this paper contributed to the discovery of vitamins. The two lines show the trajectories of the average weight of rats fed two different diets. The thick line represents rats fed only porridge. The thin line represents rats fed bread and skimmed milk. Each arrow represents a death. You don't need math to tell you that the two results are different. If you feed rats porridge, they die. If you feed them bread and milk, they don't.
 
 This chart is making an *argument* by means of *comparison*. Two similar groups behaved very differently; surely the difference is important. The results are convincing because the only measurement apparatus you need is your eye. You can *see* the difference in the two results.
 
@@ -164,7 +164,7 @@ Sometimes when you do this, the lucky group comes out ahead and sometimes it com
   </center>
 </figure>
 
-Only 2.5% of the time do you observe a difference as large as the one we saw. It *strains* credulity to say that what we observed was simply random, but it's entirely *possible*. It's not nearly as convincing as the argument that Donald Bradman was an alien, but you have to admit it was unlikely.
+In all of the shuffled replications, you only observe an effect as large as the one we saw in the actual data 2.5% of the time. It *strains* credulity to say that what we observed was simply random, but it's entirely *possible*. It's not nearly as convincing as the argument that Donald Bradman was an alien, but you have to admit it was unlikely.
 
 Notice that this picture is the entire argument. There are no hidden pieces. You can understand all of the steps and *feel* the strength (or lack thereof) of the argument. We didn't assume the scores were normal, we didn't look anything up in a table, we didn't need $n > 30$ or equal variances or any of the other conditions that get recited and never checked. We took the skeptic's belief, worked out what it implied, and drew it. The whole thing fits on one slide, and I'd argue it can also fit in your head all at once.
 
@@ -206,9 +206,11 @@ if p < threshold:
 
 That last part is worth dwelling on. In the analytic approach we were forced into one particular combination, the difference of means divided by a pooled standard deviation, because that was the combination whose distribution we could work out. Once we're shuffling we have a tremendous amount of freedom. We could look at the difference of medians, or the ratio of the means, or the standard deviations, or whatever we darn well please, and make the same argument from incredulity about it. In fact every named test you've heard of is this same process, played out once under a particular set of assumptions for a particular statistic, and named after whoever did the integrals.
 
-It's not a completely free lunch. Permutation tests have a couple of downsides. The first is that the analytic argument needed nothing from the real world except the sample size. The permutation argument is explicitly downstream of the particular sample we took. If the Tuesday afternoon we ran the experiment was a weird day, shuffling inherits that weirdness in a way the $t$-test partly doesn't. That's a real trade. But notice which assumption is easier to defend to a skeptic: "you may shuffle tags you've said are meaningless," or "the number of putts out of ten is normally distributed."
+## Caveats
 
-The second came up as a question when I gave this as a lecture, and it's a good one. It isn't enough that your shuffle be consistent with the skeptic's belief. It also has to be inconsistent with yours. If luck really does matter, then shuffling the lucky tags destroys that effect, and that's exactly why the shuffled differences come out centered on zero. If you'd invented some resampling that preserved your effect, the resulting population wouldn't tell you anything at all.
+Permutation tests aren't a completely free lunch. The shuffle gets all of its authority from one fact about the experiment: the tags were handed out at random. That fact is what lets us shuffle them, and it also limits what the shuffle can tell us. It speaks about these twenty-eight students, sorted by this coin flip and nobody else. If you never randomized (if the lucky group were volunteers, say), the shuffle has nothing to stand on. The $t$-test seems to reach further, to students in general, but only by assuming the twenty-eight were a random sample from a normal population, and undergraduates who turned up for a putting study are neither. So the question is which assumption you'd rather defend to the skeptic: "The tags were assigned by a coin I flipped" or "the number of putts out of ten is normally distributed".
+
+There's also a requirement that's easy to miss, which came up as a question when I gave this as a lecture. It isn't enough that your shuffle be consistent with the skeptic's belief; it also has to be inconsistent with yours. Shuffling the lucky tags works because it would destroy a real luck effect, which is why the shuffled differences center on zero. A resampling scheme that kept your effect intact would build a population that looks like your world rather than the skeptic's, and comparing against it would tell you nothing.
 
 ## A Quiz
 
