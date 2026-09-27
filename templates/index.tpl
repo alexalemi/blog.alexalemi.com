@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>blog.alexalemi.com</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -21,49 +20,49 @@
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 		<link rel="manifest" href="/site.webmanifest">
 		<meta name="msapplication-TileColor" content="#da532c">
-		<meta name="theme-color" content="#ffffff">
+		<meta name="theme-color" content="#fefefe" media="(prefers-color-scheme: light)">
+		<meta name="theme-color" content="#16171F" media="(prefers-color-scheme: dark)">
 
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml" />
 
     <!-- Search Engine -->
     <meta name="description" content="Alex Alemi's Blog">
-    <meta name="image" content="https://alexalemi.com/images/me_small.jpg">
+    <link rel="canonical" href="https://blog.alexalemi.com/">
 
-    <!-- Schema.org for Google -->
-    <meta itemprop="name" content="blog.alexalemi.com">
-    <meta itemprop="description" content="Alex Alemi's Blog">
-    <meta itemprop="image" content="https://alexalemi.com/images/me_small.jpg">
+    <!-- Open Graph (Facebook, LinkedIn, Slack, Bluesky, ...) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Alex Alemi's Blog">
+    <meta property="og:description" content="Alex Alemi's Blog">
+    <meta property="og:url" content="https://blog.alexalemi.com/">
+    <meta property="og:site_name" content="blog.alexalemi.com">
+    <meta property="og:image" content="https://alexalemi.com/assets/images/me_small.jpg">
+    <meta property="og:image:alt" content="Headshot of Alex Alemi">
 
-    <!-- Twitter -->
+    <!-- Twitter / X (falls back to og:* for title, description, image) -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="blog.alexalemi.com">
-    <meta name="twitter:description" content="Alex Alemi's Blog">
-    <meta name="twitter:creator" content="alemi">
-    <meta name="twitter:image:src" content="https://alexalemi.com/images/me_small.jpg">
+    <meta name="twitter:creator" content="@alemi">
 
-    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
-    <meta name="og:title" content="blog.alexalemi.com">
-    <meta name="og:description" content="Alex Alemi's Blog">
-    <meta name="og:image" content="https://alexalemi.com/images/me_small.jpg">
-    <meta name="og:url" content="https://blog.alexalemi.com">
-    <meta name="og:site_name" content="blog.alexalemi.com">
-    <meta name="og:type" content="website">
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Alex Alemi's Blog",
+      "url": "https://blog.alexalemi.com/",
+      "author": { "@type": "Person", "name": "Alexander A. Alemi", "url": "https://alexalemi.com/" }
+    }
+    </script>
+
+    <!-- Prerender same-origin links on hover -->
+    <script type="speculationrules">
+    { "prerender": [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }] }
+    </script>
 
     <!-- Fonts -->
-    <script type="text/javascript">
-        WebFontConfig = {
-            google: { families: [ 'Muli', 'Lato' ] }
-        };
-        (function() {
-            var wf = document.createElement('script');
-            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-            wf.type = 'text/javascript';
-            wf.async = 'true';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(wf, s);
-        })();
-    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Mulish:wght@700&display=swap">
 
     <!-- Inline CSS -->
     <link rel="stylesheet" type="text/css" href="assets/style.css"/>
@@ -75,10 +74,10 @@
     <!-- Header with social links -->
     <header>
         <h1 style="margin-top: 0px; margin-bottom: 4px">Alex Alemi's Blog</h1>
-        <nav>
-          <a href='https://blog.alexalemi.com' />Index</a> |
-          <a href='https://alexalemi.com' />About Me</a> | 
-          <a rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml" />RSS</a>
+        <nav aria-label="Site">
+          <a href="https://blog.alexalemi.com" aria-current="page">Index</a> |
+          <a href="https://alexalemi.com">About Me</a> |
+          <a rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml">RSS</a>
         </nav>
         <!--    <a href="rss.xml" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="256px" height="250px"
@@ -89,11 +88,10 @@
         -->
     </header>
 
-    <!-- Bio and stuff -->
     <main>
+      <!-- Bio and stuff -->
       <p>Some of <a href="https://alexalemi.com">my</a> thoughts...</p>
-      <p>If you have feedback, please reach out on <a href="https://twitter.com/alemi">twitter</a> or <a rel="me" href="https://sigmoid.social/@alemi">mastodon</a> or have a discussion on <a href="https://github.com/alexalemi/blog.alexalemi.com/discussions">github</a>.
-    </main>
+      <p>If you have feedback, please reach out on <a href="https://twitter.com/alemi">twitter</a> or <a rel="me" href="https://sigmoid.social/@alemi">mastodon</a> or have a discussion on <a href="https://github.com/alexalemi/blog.alexalemi.com/discussions">github</a>.</p>
 
     <!--- Writings section --->
     <div class="listing">
@@ -102,14 +100,15 @@
           <article>
            <cite><a href="{% if a.obtude %}ob/nbs/{{a.src}}{% else %}{{ a.src.replace('.md', '.html') }}{% endif %}">{{ a.title }}</a></cite>
            <p>
-             <date>{{ a.date }}</date>
-             <summary>{{ a.description }}</summary>
+             <time datetime="{{ a.date }}">{{ a.date }}</time>
+             <span class="summary">{{ a.description }}</span>
            </p>
           </article>
         <hr />
         {% endif %}
       {% endfor %}
     </div>
+    </main>
 
 		<footer>
 		<p>

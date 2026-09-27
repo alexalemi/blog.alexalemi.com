@@ -1,6 +1,9 @@
+@view-transition { navigation: auto; }
+
 /* Browser reset */
 html {
     box-sizing: border-box;
+    color-scheme: light dark;
     /* line-height: 1.15; */
     -webkit-text-size-adjust: 100%;
 }
@@ -16,6 +19,43 @@ html {
   --alt-color: DimGray;
   /* offwhite */
   --bg-color: #fefefe;
+  --rule-color: #ddd;
+  --chip-color: #eee;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent-color: #6FB3DE;
+    --default-color: #E3E4F0;
+    --em-color: #7CC4F0;
+    --highlight-color: #A6D8F0;
+    --alt-color: #A0A3AE;
+    --bg-color: #16171F;
+    --rule-color: #3A3C4A;
+    --chip-color: #262833;
+  }
+
+  /* Figures were drawn for a white page (black axes, transparent PNG/SVG
+     backgrounds), so they need help to stay legible on a dark one. */
+  /* Default: set each figure on a white card, so it looks exactly as drawn.
+     Line art can opt in to inversion with class="invertible" instead, which
+     keeps hues roughly intact while blending into the dark page. */
+  .content img,
+  .content svg {
+    background: #fefefe;
+    border-radius: 4px;
+  }
+  .content img {
+    padding: 0.4em;
+  }
+  .content img.invertible,
+  .content svg.invertible,
+  .content .invertible img,
+  .content .invertible svg {
+    background: none;
+    padding: 0;
+    filter: invert(1) hue-rotate(180deg);
+  }
 }
 * {
   box-sizing: border-box;
@@ -41,16 +81,23 @@ body {
 	margin-inline: auto;
 	line-height: 1.5;
 	font-size: clamp(1em, 0.909em + 0.45vmin, 1.25em);
-  font-family: "Lato", sans-serif, system-ui;
+  font-family: "Lato", system-ui, sans-serif;
 
   /* System fonts as fallbacks */
   scroll-behavior: smooth;
 }
 h1,
 h2,
-strong {
+strong,
+.site-title {
     color: var(--default-color);
-    font-family: "Muli", sans-serif;
+    font-family: "Mulish", "Muli", sans-serif;
+}
+
+.site-title {
+  font-size: 1.17em;
+  font-weight: bold;
+  margin: 1em 0;
 }
 h2 {
     margin-top: 1em;
@@ -66,6 +113,41 @@ h2 a {
   color: var(--default-color);
 }
 
+
+/* Keep wide content from widening the page: scroll it in place instead. */
+mjx-container[display="true"] {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-block: 0.2em;
+}
+
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.content table {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+iframe,
+video {
+  max-width: 100%;
+}
+
+.content {
+  overflow-wrap: break-word;
+}
+
+aside {
+  overflow-wrap: anywhere;
+}
 
 .mjpage__block {
 	/* text-align: center;
@@ -163,23 +245,23 @@ figcaption {
 
 table {
   margin-bottom: 2em;
-  border-bottom: 1px solid #ddd;
-  border-right: 1px solid #ddd;
+  border-bottom: 1px solid var(--rule-color);
+  border-right: 1px solid var(--rule-color);
   border-spacing: 0;
   border-collapse: collapse;
 }
 
 table th {
   padding: .2em 1em;
-  background-color: #eee;
-  border-top: 1px solid #ddd;
-  border-left: 1px solid #ddd;
+  background-color: var(--chip-color);
+  border-top: 1px solid var(--rule-color);
+  border-left: 1px solid var(--rule-color);
 }
 
 table td {
   padding: .2em 1em;
-  border-top: 1px solid #ddd;
-  border-left: 1px solid #ddd;
+  border-top: 1px solid var(--rule-color);
+  border-left: 1px solid var(--rule-color);
   vertical-align: top;
 }
 
@@ -188,7 +270,7 @@ table td {
   font-size: 1.2em;
 }
 
-.listing date {
+.listing time {
   float: right;
 }
 

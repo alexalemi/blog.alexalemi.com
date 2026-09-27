@@ -2,9 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' /> 
-    <title>blog.alexalemi.com A Simple Demonstration of Benford's Law</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>A Simple Demonstration of Benford's Law - blog.alexalemi.com</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5SW43T5NT"></script>
     <script>
@@ -21,26 +20,61 @@
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 		<link rel="manifest" href="/site.webmanifest">
 		<meta name="msapplication-TileColor" content="#da532c">
-		<meta name="theme-color" content="#ffffff">
+		<meta name="theme-color" content="#fefefe" media="(prefers-color-scheme: light)">
+		<meta name="theme-color" content="#16171F" media="(prefers-color-scheme: dark)">
 
 
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml" />
 
-    <!-- Fonts -->
-    <script type="text/javascript">
-        WebFontConfig = {
-            google: { families: [ 'Muli', 'Lato' ] }
-        };
-        (function() {
-            var wf = document.createElement('script');
-            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-            wf.type = 'text/javascript';
-            wf.async = 'true';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(wf, s);
-        })();
+    
+    <!-- Search Engine -->
+    <meta name="description" content="Benford&#39;s law is a natural consequence of scale invariance, this is relatively easy to see in the face of a circular sliderule.">
+    <meta name="author" content="Alexander A. Alemi">
+    <link rel="canonical" href="https://blog.alexalemi.com/benford.html">
+
+    <!-- Open Graph (Facebook, LinkedIn, Slack, Bluesky, ...) -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="A Simple Demonstration of Benford&#39;s Law">
+    <meta property="og:description" content="Benford&#39;s law is a natural consequence of scale invariance, this is relatively easy to see in the face of a circular sliderule.">
+    <meta property="og:url" content="https://blog.alexalemi.com/benford.html">
+    <meta property="og:site_name" content="blog.alexalemi.com">
+    <meta property="og:image" content="https://alexalemi.com/assets/images/me_small.jpg">
+    <meta property="og:image:alt" content="Headshot of Alex Alemi">
+    <meta property="article:published_time" content="2022-05-03">
+    <meta property="article:author" content="https://alexalemi.com/">
+    <meta property="article:tag" content="math">
+    
+
+    <!-- Twitter / X (falls back to og:* for title, description, image) -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@alemi">
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "A Simple Demonstration of Benford\u0027s Law",
+      "description": "Benford\u0027s law is a natural consequence of scale invariance, this is relatively easy to see in the face of a circular sliderule.",
+      "datePublished": "2022-05-03",
+      "url": "https://blog.alexalemi.com/benford.html",
+      "keywords": ["math"],
+      "author": { "@type": "Person", "name": "Alexander A. Alemi", "url": "https://alexalemi.com/" },
+      "publisher": { "@type": "Person", "name": "Alexander A. Alemi", "url": "https://alexalemi.com/" },
+      "isPartOf": { "@type": "Blog", "name": "Alex Alemi's Blog", "url": "https://blog.alexalemi.com/" }
+    }
     </script>
+
+    <!-- Prerender same-origin links on hover -->
+    <script type="speculationrules">
+    { "prerender": [{ "where": { "href_matches": "/*" }, "eagerness": "moderate" }] }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Mulish:wght@700&display=swap">
 
     <script>
     MathJax = {
@@ -60,17 +94,18 @@
 
 
   <header>
-    <h3>Alex Alemi's Blog</h3>
-    <nav>
+    <p class="site-title">Alex Alemi's Blog</p>
+    <nav aria-label="Site">
       <a href='https://blog.alexalemi.com'>Index</a> |
       <a href='https://alexalemi.com'>About Me</a> |
       <a rel="alternate" type="application/rss+xml" title="blog.AlexAlemi.com" href="https://blog.alexalemi.com/rss.xml">RSS</a>
     </nav>
   </header>
 
+  <main>
   <article>
 		<h1>A Simple Demonstration of Benford's Law</h1>
-		<p>Alexander A. Alemi. <time datetime='2022-05-03'>2022-05-03</time></p>
+		<p>Alexander A. Alemi. <time datetime="2022-05-03">2022-05-03</time></p>
     <div class="content">
     <p><a href="https://en.wikipedia.org/wiki/Benford%27s_law">Benford's Law</a> is the
 observation that in a list of "naturally occuring numbers",
@@ -137,6 +172,7 @@ Pun very much intended.
     </div>
   </article>
 
+  <section class="comments" aria-label="Comments">
   <script src="https://giscus.app/client.js"
         data-repo="alexalemi/blog.alexalemi.com"
         data-repo-id="MDEwOlJlcG9zaXRvcnkyNjk2OTU4MzU="
@@ -145,11 +181,13 @@ Pun very much intended.
         data-mapping="pathname"
         data-reactions-enabled="1"
         data-emit-metadata="0"
-        data-theme="light"
+        data-theme="preferred_color_scheme"
         data-lang="en"
         crossorigin="anonymous"
         async>
   </script>
+  </section>
+  </main>
 
   <footer>
     <!-- <p>
