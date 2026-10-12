@@ -98,7 +98,7 @@
 		<h1>A Degree of Certainty</h1>
 		<p>Alexander A. Alemi. <time datetime="2024-08-14">2024-08-14</time></p>
     <div class="content">
-<style>
+    <style>
     svg { font-family: Merriweather; }
     pre { white-space: pre-wrap; }
 </style>
@@ -137,7 +137,7 @@ For two Bernoulli distributions with probabilities $p$ and $p + \delta$, the KL 
 <p>$$ p(p) = \frac{1}{\pi \sqrt{p (1-p)} }. $$</p>
 <figure id="jeffreys">
   <center>
-  <img src="figures/KLsmallchange_standard.png"
+  <img loading="lazy" decoding="async" src="figures/KLsmallchange_standard.png"
     alt="Jeffrey's prior for the Bernoulli problem.">
   <figcaption>
   Figure 2. Unit infinitestimal changes in the probability have different statistical effects.  The effect is fairly extreme at the extremes.
@@ -155,7 +155,7 @@ For two Bernoulli distributions with probabilities $p$ and $p + \delta$, the KL 
 <p>which has the opposite problem as seen below.  There is no divergence at the ends, there is a disappearance.</p>
 <figure id="logits">
   <center>
-  <img src="figures/KLsmallchange_logits.png"
+  <img loading="lazy" decoding="async" src="figures/KLsmallchange_logits.png"
     alt="Jeffrey's prior for the Bernoulli problem, in logit space.">
   <figcaption>
   Figure 3. Unit infinitestimal changes in logits have different statistical effects.  They vanish at the extremes.
@@ -186,7 +186,7 @@ parameterization for which Jeffrey's prior is uniform.<a href="#alternative"><su
 <p>It is in this parameterization that a small change in the parameter means the same thing at every value of the parameter.  This parameterization is <em>uniform</em> in a deep sense.  Jeffrey's prior, expressed in this $\theta$ parameter is uniform.</p>
 <figure id="thetas">
   <center>
-  <img src="figures/KLsmallchange_theta.png"
+  <img loading="lazy" decoding="async" src="figures/KLsmallchange_theta.png"
     alt="Jeffrey's prior for the Bernoulli problem, in theta space.">
   <figcaption>
   Figure 4. Unit infinitestimal changes in angles have uniform statistical effects.  
@@ -260,7 +260,7 @@ labels='{"angles": [10, 80], "labels": ["Trump", "Harris"]}'>
 <p>In the meters on this page, as a visual aid, I've colored six bands of 15° increments.  It turns out that these perfectly line up with <a href="https://en.wikipedia.org/wiki/Words_of_estimative_probability">Kent's words of Estimative Probability</a>.</p>
 <figure id="kent">
   <center>
-  <img src="figures/kent-needle.svg"
+  <img loading="lazy" decoding="async" src="figures/kent-needle.svg"
     alt="Kent's words of estimative probability line up perfectly on the degree scale.">
   <figcaption>
   Figure 5. Kent's words of estimative probability line up perfectly on the degree scale.
@@ -286,7 +286,7 @@ $$ \Delta\theta(p) \sim 60 \sqrt{\Delta p}. $$</p>
 <p>This simple to compute approximate mapping turns out to be very accurate.  It is good to half a degree over the whole range as shown below in Figure 6.</p>
 <figure id="approx-error">
   <center>
-  <img src="figures/degree_approx.png"
+  <img loading="lazy" decoding="async" src="figures/degree_approx.png"
     alt="Errors in the simple approximate method.">
   <figcaption>
   Figure 6. Errors in the Approximate mapping.
@@ -339,7 +339,7 @@ Zhang, Hang, and Laurence T. Maloney. "Ubiquitous log odds: a common representat
 <p>In the field of human perception, I've often seen references to Zhang et al.<a href="#ubiquitous"><sup>15</sup></a> to justify the claim that human perception is well aligned with log-odds.  In the paper they collected a bunch of human perceptual studies and show that you can use a mapping that is linear in log odds to explain the data.  For example, here is Figure 1 from the paper:</p>
 <figure>
   <center>
-  <img width="100%" src="figures/ubiquitouslogodds.jpg"
+  <img loading="lazy" decoding="async" width="100%" src="figures/ubiquitouslogodds.jpg"
     alt="Figure 1 from the Ubiquitous log odds paper.">
   <figcaption>
   Figure 7. Figure 1 from Zhang et al. showing the linear in log-odds fit to the perceptual data.
@@ -354,7 +354,7 @@ Zhang, Hang, and Laurence T. Maloney. "Ubiquitous log odds: a common representat
 <p>This is the same as our proposed mapping (just with the opposite sign).</p>
 <figure>
   <center>
-  <img width="100%" src="figures/arcsinetransform.png"
+  <img loading="lazy" decoding="async" width="100%" src="figures/arcsinetransform.png"
     alt="Arcsine transformation over the same ranges.">
   <figcaption>
   Figure 8. Arcsine transformation over the same sort of ranges as in the Figure above.

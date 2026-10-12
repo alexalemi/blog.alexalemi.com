@@ -154,7 +154,7 @@ I think weight of evidence is one of the most underappreciated concepts.  For a 
 <p>Now, the <i>posterior log odds</i> is expressed as the sum of the <i>weight of evidence</i> plus the <i>prior log odds</i> of the two hypotheses.</p>
 <figure id="#belief-of-meter class="right">
   <center>
-  <img width="95%" src="figures/kl-is-all-you-need/belief-o-meter.png"
+  <img loading="lazy" decoding="async" width="95%" src="figures/kl-is-all-you-need/belief-o-meter.png"
     alt="A cartoon representation of a Belief-O-Meter as an old school linear analog meter.">
   <figcaption>
   Figure 2. Belief-O-Meter.
@@ -203,7 +203,7 @@ which is easy to show if you decompose $p(x,y) = p(x) p(y|x)$ and use the fact t
 <p>We'll start with the problem of density estimation.  Let's say we have some black box that generates samples.  This is the real world $P$, outside of our control.  Despite not knowing how $p(x)$ is structured, we can push the button on the black box to generate samples.  What do we wish for? We wish we instead have a nice description of those same images.  We wish that those images instead came from a box of our own design, some parametric model or probability distribution with knobs that we can adjust to bring it into alignment with the real world, our dream world $q_\theta(x)$ with parameters $\theta$.</p>
 <figure id="#density-estimation" class="right">
   <center>
-  <img width="95%" src="figures/kl-is-all-you-need/density-estimation.png"
+  <img loading="lazy" decoding="async" width="95%" src="figures/kl-is-all-you-need/density-estimation.png"
     alt="A graphical version of density estimation, the left shows the distribution $p(x)$ where $X$ is a random variable denoting images. The right shows the same, but labeled as $q_\theta(x)$.">
   <figcaption>
   Figure 3. Density Estimation. <a href="#imgkey"><sup>6</sup></a>
@@ -224,7 +224,7 @@ These figures are meant to be graphical models, where the plates represent repea
 <p>Let's complicate things slightly.  Instead of imagining that we have a single random variable in the real world, imagine instead we have a pair of variables, $X$ and $Y$.  For concreteness, imagine the $X$ are images and the $Y$ are their associated labels in some dataset.</p>
 <figure id="#supervised-learning" class="right">
   <center>
-  <img width="95%" src="figures/kl-is-all-you-need/supervised-learning.png"
+  <img loading="lazy" decoding="async" width="95%" src="figures/kl-is-all-you-need/supervised-learning.png"
     alt="A graphical version of supervised learning, the left shows the distribution $p(y,x)$ where $X$ is a random variable denoting images and $Y$ are some labels. The right shows the world of our dreams, where we draw the images $X$ from the same process as in the real world $p(x)$ but we have a machine that applies the labels: $q(y|x)$.">
   <figcaption>
   Figure 4. Supervised Learning.
@@ -250,7 +250,7 @@ We want to consider a whole slew of possible <em>real worlds</em>, each world co
 a wide array of possible joint distributions $p(x,z)$.  How do we decide amongst these?  What does success look like?  We are seeking a world in which we can <em>encode</em> images into a useful representation $p(z|x)$, one way to define success would be if those learned representations were really like <em>latents</em> for the images themselves.  Wouldn't it be swell if instead the world worked by looking at our own learned representation and used that to formulate the images themselves?  Wouldn't it be grand if that joint distribution factorized in the opposite direction: $q(x,z) = q(z)q(x|z)$.  This is the usual generative model story, where we first draw a latent variable $z$ from some prior distribution and then <em>decode</em> it through a stochastic map $q(x|z)$ to formulate our image.  Such a latent would be demonstrably useful for generating images.</p>
 <figure id="vae" class="right">
   <center>
-  <img width="95%" src="figures/kl-is-all-you-need/vae.png"
+  <img loading="lazy" decoding="async" width="95%" src="figures/kl-is-all-you-need/vae.png"
     alt="A graphical version of a VAE.">
   <figcaption>
   Figure 5. Variational Autoencoders.
@@ -281,7 +281,7 @@ I Higgens et al. ICLR 2016. <a href="https://openreview.net/forum?id=Sy2fzU9gl">
 <p>If we want to be a bit more explicit in our representation learning objectives, we could <em>color the bits</em> by bringing and auxiliary variable to the table.  Imagine our real world distribution consists of pairs, $(x,y)$ drawn from some joint distribution $p(x,y)$ outside of our control.  Imagine images $X$ and labels $Y$.  As before, we can augment this world with a new random variable $Z$, a <em>representation</em>, which, in this example, we are interested in depending only on the image part, $p(z|x)$.  We do this because we'd like to be able to compute the representation of some downstream image without having access to its label.  As before, we've now defined a whole slew of possible worlds, consisting of all possible encoding distributions paired with our joint input distribution $p(x,y,z) =p(x,y)p(z|x)$.  How do we decide amongst these? What does success look like?  Let's define success as being able to use our learned representation $Z$, not to recreate the image, but only predict the auxiliary information $Y$.  This gives us a set of diagrams as in Figure 6 below.</p>
 <figure id="vib" class="right">
   <center>
-  <img width="95%" src="figures/kl-is-all-you-need/vib.png"
+  <img loading="lazy" decoding="async" width="95%" src="figures/kl-is-all-you-need/vib.png"
     alt="A graphical version of VIB.">
   <figcaption>
   Figure 6. Variational Information Bottleneck.
@@ -299,7 +299,7 @@ Because KL is monotonic, this joint objective bounds the marginal conditional li
 <p>We say that VAEs came from trying to design a representation that could use the learned representation could recreate the images, and that VIB was motivated by saying we could use the learned representation to predict an auxiliary variable.  What if we instead wanted to do both?</p>
 <figure id="semi-supervised" class="right">
   <center>
-  <img width="95%" src="figures/kl-is-all-you-need/semi-supervised.png"
+  <img loading="lazy" decoding="async" width="95%" src="figures/kl-is-all-you-need/semi-supervised.png"
     alt="A graphical version of a Semi-supervised VAE.">
   <figcaption>
   Figure 7. Semi-Supervised Variational Autoencoder.
@@ -313,7 +313,7 @@ Here $\beta$ and $\gamma$ have been inserted to let us play with the trade-offs 
 <p>As I outline in more detail in an <a href="diffusion.html">earlier post</a>, modern diffusion models can also be cast in this universal objective form.  We imagine a simple fixed forward process that iteratively adds Gaussian noise to an image, and try to learn a reverse process parameterized in a clever way.</p>
 <figure id="diffusion" class="right">
   <center>
-  <img width="95%" src="figures/kl-is-all-you-need/diffusion.png"
+  <img loading="lazy" decoding="async" width="95%" src="figures/kl-is-all-you-need/diffusion.png"
     alt="A graphical version of Diffusion.">
   <figcaption>
   Figure 8. Variational Diffusion.
@@ -327,7 +327,7 @@ $$ q(\theta) q(D|\theta), $$
 where we draw the summary $\theta$ from some <em>prior</em> and use it to generate the data with some <em>likelihood</em> which we can take to decompose: $q(D|\theta) = \prod_i q(x_i|\theta)$.</p>
 <figure id="bayes" class="right">
   <center>
-  <img width="95%" src="figures/kl-is-all-you-need/bayes.png"
+  <img loading="lazy" decoding="async" width="95%" src="figures/kl-is-all-you-need/bayes.png"
     alt="A graphical version of Bayesian Inference.">
   <figcaption>
   Figure 9. (Variational) Bayesian Inference.
@@ -343,7 +343,7 @@ If we set $\beta=1$ and make our $p(\theta|D)$ expressive enough to cover the sp
 <p>We don't have to stop now, let's imagine we want to generate a global summary of data in the form of the best settings of the parameters of a neural network to make some supervised predictions.  We can do that to, we simply follow the universal recipe.  We draw the real world and the world of our desires.</p>
 <figure id="bnn" class="right">
   <center>
-  <img width="95%" src="figures/kl-is-all-you-need/bnn.png"
+  <img loading="lazy" decoding="async" width="95%" src="figures/kl-is-all-you-need/bnn.png"
     alt="A graphical version of Bayesian Neural Networks.">
   <figcaption>
   Figure 10. Bayesian Neural Networks.
@@ -364,7 +364,7 @@ AA Alemi, I Fisher. ICML2018 TFADGM Workshop. arXiv:<a href="https://arxiv.org/a
 </aside>
 <figure id="therml" class="right">
   <center>
-  <img width="95%" src="figures/kl-is-all-you-need/therml.png"
+  <img loading="lazy" decoding="async" width="95%" src="figures/kl-is-all-you-need/therml.png"
     alt="A graphical version of TherML.">
   <figcaption>
   Figure 10. TherML.
@@ -379,7 +379,7 @@ as we discuss in the paper we get an objective that let's us trade off between t
 <p>While most of the previous diagrams were all retellings of essentially the same story, more recently we've begun to wonder what it might look like if we try some more extreme rewirings of these kinds of diagrams.  What if we wanted to try to be so brazen as to invent something that might be an alternative to Bayesian inference, as a different sort of diagram that could provide a global representation learning objective.  One candidate would be the following:</p>
 <figure id="vp" class="right">
   <center>
-  <img width="95%" src="figures/kl-is-all-you-need/vp.png"
+  <img loading="lazy" decoding="async" width="95%" src="figures/kl-is-all-you-need/vp.png"
     alt="A graphical version of Variational Prediction.">
   <figcaption>
   Figure 11. Variational Prediction.

@@ -167,7 +167,7 @@ Despite there being <a href="https://statweb.stanford.edu/~cgates/PERSI/papers/d
 <p>In this scenario, I feel as though I would place a reasonable probability on the coin being unfair, let's say 50%.  At the same time, I think I would still place a reasonable probability on the coin being <em>exactly</em> fair, let's say 25%.  The remaining 25% probability I would want to spread around but biased towards heads, for that let's use a $\operatorname{Beta}(11,1)$ distribution or $11\, \theta^{10}$.  I've attempted to visualize this distribution below.<a href="#deltas"><sup>7</sup></a></p>
 <figure id="#imaginary-result-coin" class="right">
   <center>
-  <img width="95%" src="figures/imaginary-result.svg"
+  <img loading="lazy" decoding="async" width="95%" src="figures/imaginary-result.svg"
     alt="A mixture of 25\% mass on 0.5, 50\% mass on 1.0 and 25\% mass on a Beta(11, 1).">
   <figcaption>
   Figure 2. My attempt at illiciting an imaginary result of a posterior I'm comfortable with if I were to observe 10 heads in a row from a coin.
@@ -187,7 +187,7 @@ p(\theta|D) &amp;\propto L(D|\theta) \frac{q(\theta|D_0)}{L(D_0|\theta)} \\
 \end{align} $$</p>
 <figure id="#imaginary-result-posterior-coin" class="right">
   <center>
-  <img width="95%" src="figures/imaginary-result-posterior.svg"
+  <img loading="lazy" decoding="async" width="95%" src="figures/imaginary-result-posterior.svg"
     alt="A mixture of 99.5\% mass on 0.5, 0.50\% mass on a Beta(7, 5).">
   <figcaption>
   Figure 3. The posterior I get from my illicited imaginary posterior if I actually observe 6 heads and 4 tails. The blue curve is the true posterior, the dashed orange is a blown up version of the small residual component.

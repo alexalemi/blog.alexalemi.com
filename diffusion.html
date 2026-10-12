@@ -169,7 +169,7 @@ $$ \alpha^2 = 1 - \sigma^2 $$
 <p>This takes an ordinary image and then adds more and more noise to it until it looks more or less indistinguishable from just isotropic Gaussian noise.<sup><a href="#variance-preserving">5</a></sup></p>
 <figure id="#forward-diffusion">
   <center>
-  <img src="figures/forward-diffusion.png"
+  <img loading="lazy" decoding="async" src="figures/forward-diffusion.png"
     alt="Illustration of standard forward diffusion process as additive Gaussian noise.">
   <figcaption>
   Figure 2. A demonstration of the typical forward process in diffusion models.
@@ -181,7 +181,7 @@ $$ p(z_t|x) = \mathcal N(\tilde \alpha_t x, \tilde \sigma_t^2 I ).$$</p>
 <p>With a forward process defined, we parameterize or learn the reverse process, a Markov chain that operates in the opposite direction:
 $$ q(x,z_0,z_1,\cdots,z_T) = q(z_T) q(z_{T-1}|z_T) \cdots q(z_1|z_2)q(z_0|z_1)q(x|z_0) $$</p>
 <figure id="#diffusion-reverse">
- <img src="figures/diffusion-backward.svg"
+ <img loading="lazy" decoding="async" src="figures/diffusion-backward.svg"
       alt="Graphical model showing the reverse process for diffusion.">
  <figcaption>
    Figure 3. The graphical model for the reverse process in diffusion.
@@ -211,7 +211,7 @@ p(x, z_0, z_1, z_2,\cdots, z_N) &amp;= p(z_0,z_1,z_2,\cdots, z_T|x) p(x) \\
 \end{align}$$
 For the Gaussian diffusion, we can analytically figure out what these conditional reverse steps should be for the forward process $p(z_{t-1}|z_t,x)$. These distributions compute the probability of seeing a particular noisy image from the previous step if we get to observe both the noisy image as well as the original image.</p>
 <figure id="#diffusion-forward-reverse">
- <img src="figures/diffusion-forward-backward.svg"
+ <img loading="lazy" decoding="async" src="figures/diffusion-forward-backward.svg"
       alt="Graphical model showing the top-down generative process for diffusion.">
  <figcaption>
    Figure 4. The graphical model for the top-down forward process in diffusion.

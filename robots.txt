@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /drafts/
+
+Sitemap: https://blog.alexalemi.com/sitemap.xml

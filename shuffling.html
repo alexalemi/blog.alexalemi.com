@@ -120,7 +120,7 @@ Ioannidis, John P. A. 2005. <a href="https://doi.org/10.1371/journal.pmed.002012
 <h2>The Nature of Statistical Argument</h2>
 <figure id="bradman-portrait" class="right" style="width: 36%">
   <center>
-  <img width="80%" src="figures/shuffling/bradman-portrait.jpg"
+  <img loading="lazy" decoding="async" width="80%" src="figures/shuffling/bradman-portrait.jpg"
     alt="Sir Donald Bradman in 1932, seated, holding a cricket bat.">
   <figcaption>
   Figure 2. Sir Donald Bradman in 1932, with a bat carrying his own signature. Photograph by Sam Hood, State Library of New South Wales.
@@ -135,7 +135,7 @@ Ioannidis, John P. A. 2005. <a href="https://doi.org/10.1371/journal.pmed.002012
 <p>Let's keep going and look at all of them. Take every cricketer who has scored at least 2,000 runs in test cricket, all 348 of them, and plot the distribution of their career averages. Now we have what I think is a reasonable stand-in population for Donald Bradman: cricketers who have played a while. We can put Bradman on the same axis, as a single line, and see where he lands.</p>
 <figure id="bradman">
   <center>
-  <img width="95%" src="figures/shuffling/bradman.svg"
+  <img loading="lazy" decoding="async" width="95%" src="figures/shuffling/bradman.svg"
     alt="Histogram of career test batting averages, clustered around 40, with a single red line far to the right at 99.94 marked Bradman.">
   <figcaption>
   Figure 3. Career test batting averages for every cricketer with at least 2,000 runs, and Bradman. The best of the rest is RG Pollock at 60.97; the median is 39.22.
@@ -154,7 +154,7 @@ Damisch, Lysann, Barbara Stoberock, and Thomas Mussweiler. 2010. <a href="https:
 <p>The paper has three experiments. Let's look at the first one. They recruited twenty-eight university students, split them into two groups, and put down a little putting green. One group was handed a golf ball and told "here is your ball, so far it has turned out to be a lucky ball." The other group was handed a ball and told "this is the ball everyone has used so far." Then everyone tried to sink ten putts, and the experimenters counted how many went in. Notice how much of a gap there is between what was actually done, handing some undergraduates a golf ball and telling them it's lucky, and the top-line claim that <em>superstition improves performance in sport</em>.</p>
 <figure id="observed">
   <center>
-  <img width="95%" src="figures/shuffling/lucky_observed.svg"
+  <img loading="lazy" decoding="async" width="95%" src="figures/shuffling/lucky_observed.svg"
     alt="Dot plot of putts sunk out of ten for the control and lucky groups, with red bars at each group's mean.">
   <figcaption>
   Figure 4. The experiment. Each dot is one student. The red bars are the group means: 4.79 putts for the control group and 6.43 for the lucky group.
@@ -188,7 +188,7 @@ William Sealy Gosset worked out the $t$-distribution while working on brewing at
 <p>Remember what the skeptic believes: the lucky tags don't matter. Well, if the tags don't matter, then it shouldn't matter to the skeptic if I go into the computer and shuffle them around. Take the twenty-eight scores, deal out fourteen "lucky" tags and fourteen "control" tags at random, and compute the difference of means again. As far as the skeptic is concerned, that's just as valid a measurement as the one we actually made. It would take a very special sort of skeptic to object, since all we did was change the one thing they told us they don't care about.</p>
 <figure id="shuffles">
   <center>
-  <img width="95%" src="figures/shuffling/lucky_shuffles.svg"
+  <img loading="lazy" decoding="async" width="95%" src="figures/shuffling/lucky_shuffles.svg"
     alt="Four dot plots side by side: the observed experiment and three random re-deals of the same scores, each with its difference of means.">
   <figcaption>
   Figure 5. The real experiment, and three re-deals of the same twenty-eight scores. Under the null hypothesis, all four are the same kind of thing.
@@ -204,7 +204,7 @@ Do a few of these yourself before you read on. Twenty-eight index cards, one sco
 <p>Sometimes when you do this, the lucky group comes out ahead and sometimes it comes out behind, because, as the skeptic said, random things happen. But now we can do it 200,000 times<sup><a href="#enumerate">6</a></sup> and build up an entire population of differences, and that population is exactly what the skeptic has to believe the world looks like.<sup><a href="#byhand">7</a></sup> This is what you get:</p>
 <figure id="null">
   <center>
-  <img width="95%" src="figures/shuffling/lucky_null.svg"
+  <img loading="lazy" decoding="async" width="95%" src="figures/shuffling/lucky_null.svg"
     alt="Histogram of differences of means from 200,000 shuffles, centered on zero, with the observed 1.64 marked out in the right tail.">
   <figcaption>
   Figure 6. Differences of means from 200,000 re-deals. This is the skeptic's world: everything that could have happened if the tag does nothing. Our observation is out at the edge.
@@ -295,7 +295,7 @@ Why draw exactly fourteen? Because the width of the answer should reflect the fa
 <p>Now we can do the same thing for the effect. Resample <em>within</em> each group, keeping the tags this time, and compute the difference of means for each resample.</p>
 <figure id="bootstrap">
   <center>
-  <img width="95%" src="figures/shuffling/lucky_bootstrap.svg"
+  <img loading="lazy" decoding="async" width="95%" src="figures/shuffling/lucky_bootstrap.svg"
     alt="Histogram of bootstrapped effect sizes, centered near 1.6, with the central 90% shaded darker.">
   <figcaption>
   Figure 7. The effect size under resampling. Ninety percent of the resamples land between 0.43 and 2.86 putts.
@@ -308,7 +308,7 @@ Why draw exactly fourteen? Because the width of the answer should reflect the fa
 <p>Suppose luck really does matter, and it's worth about the 1.64 putts we saw. If you ran this experiment, would you notice? I don't mean is there an effect; assume there is. I mean, would an experiment of this size be able to see it? That's the <em>power</em> of the study. Given your plan to look at only so many students, there is a limit to the <em>resolution</em> you have for effects of different sizes. Very large effects don't need much data before they are obvious; subtle ones need a lot more. Invent a world where the effect is real, run the experiment in that world a few hundred times, and count how often you'd have rejected the null.</p>
 <figure id="power">
   <center>
-  <img width="95%" src="figures/shuffling/lucky_power.svg"
+  <img loading="lazy" decoding="async" width="95%" src="figures/shuffling/lucky_power.svg"
     alt="Curve of the chance of detecting a 1.64 putt effect against students per group, rising from 0.4 at 7 to nearly 1 at 60, with the 80% target marked.">
   <figcaption>
   Figure 8. Chance of detecting a 1.64 putt effect at $\alpha = 0.05$, against the number of students in each group.
@@ -330,7 +330,7 @@ Calin-Jageman, Robert J., and Tracy L. Caldwell. 2014. <a href="https://doi.org/
 </aside>
 <figure id="replication-data">
   <center>
-  <img width="95%" src="figures/shuffling/lucky_replication_data.svg"
+  <img loading="lazy" decoding="async" width="95%" src="figures/shuffling/lucky_replication_data.svg"
     alt="Dot plot of the replication's scores for the control and lucky groups; the two group means are nearly equal.">
   <figcaption>
   Figure 9. The replication's own scores, drawn the way we drew the original. The red bars are the group means.
@@ -339,7 +339,7 @@ Calin-Jageman, Robert J., and Tracy L. Caldwell. 2014. <a href="https://doi.org/
 </figure>
 <figure id="replication">
   <center>
-  <img width="95%" src="figures/shuffling/lucky_replication.svg"
+  <img loading="lazy" decoding="async" width="95%" src="figures/shuffling/lucky_replication.svg"
     alt="Two effect-size intervals: the original study's, centered at 1.64 and above zero, and the replication's, centered at 0.11 and straddling zero.">
   <figcaption>
   Figure 10. The original and the replication. Four times the students, and the effect is gone.
