@@ -1,5 +1,4 @@
 
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;1,300&amp;display=swap" rel="stylesheet">
 <style>
     svg { font-family: Merriweather; }
     pre { white-space: pre-wrap; }
