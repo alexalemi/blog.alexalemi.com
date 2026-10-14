@@ -80,7 +80,7 @@
     <main>
       <!-- Bio and stuff -->
       <p>Some of <a href="https://alexalemi.com">my</a> thoughts...</p>
-      <p>If you have feedback, please reach out on <a href="https://twitter.com/alemi">twitter</a> or <a rel="me" href="https://sigmoid.social/@alemi">mastodon</a> or have a discussion on <a href="https://github.com/alexalemi/blog.alexalemi.com/discussions">github</a>.</p>
+      <p>If you have feedback, please reach out on <a href="https://twitter.com/alemi">twitter</a> or <a rel="me" href="https://bsky.app/profile/alexalemi.bsky.social">bluesky</a> or have a discussion on <a href="https://github.com/alexalemi/blog.alexalemi.com/discussions">github</a>.</p>
 
     <!--- Writings section --->
     <div class="listing">
