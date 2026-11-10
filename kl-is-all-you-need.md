@@ -31,7 +31,7 @@ This is also essentially my own retelling of <a href="https://www.cs.huji.ac.il/
 
 <figure id="#conditional" class="right">
   <center>
-  <img width="95%" src="figures/kl-is-all-you-need/kl-elephant.png"
+  <img width="95%" src="figures/kl-is-all-you-need/kl-elephant.webp"
     alt="A cartoon depicting several blindfolded scientists analyzing different parts of an elephant, the different scientists think they are looking at VIB, or Diffusion or BNNs or VAEs or Semi-supervised Learning or Bayesian inference, but really its all just KL Divergence.">
   <figcaption>
   Figure xxf1. The elephant in the room is KL divergence or the relevant entropy.<a href="#figattribution"><sup>xxa2</sup></a>

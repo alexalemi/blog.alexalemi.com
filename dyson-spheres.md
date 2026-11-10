@@ -67,7 +67,7 @@ If we look at [ourworldindata](https://ourworldindata.org/energy-production-cons
 
 <figure id="owid">
   <center>
-  <img width="95%" src="figures/owid-change-energy-consumption.png"
+  <img width="95%" src="figures/owid-change-energy-consumption.webp"
     alt="Annual change in primary energy consumption.">
   <figcaption>
   Figure xxf-energy. Annual change in primary energy consumption from <a href="https://ourworldindata.org/grapher/change-energy-consumption">ourworldindata</a>.
