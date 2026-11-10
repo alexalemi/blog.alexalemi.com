@@ -32,7 +32,7 @@ Unfortunately, or perhaps fortunately for the rats, not all interventions have s
 
 <figure id="bradman-portrait" class="right" style="width: 36%">
   <center>
-  <img width="80%" src="figures/shuffling/bradman-portrait.jpg"
+  <img width="80%" src="figures/shuffling/bradman-portrait.webp"
     alt="Sir Donald Bradman in 1932, seated, holding a cricket bat.">
   <figcaption>
   Figure xxf-portrait. Sir Donald Bradman in 1932, with a bat carrying his own signature. Photograph by Sam Hood, State Library of New South Wales.

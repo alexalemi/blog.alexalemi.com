@@ -23,7 +23,7 @@ Perhaps the simplest way to see this is to realize that if there is going to be 
 Perhaps the easiest way to *see* Benford's law is to look at a Circular [slide rule](https://en.wikipedia.org/wiki/Slide_rule):<sup><a href="#kl-1">1</a></sup>
 <figure id="#circular-slide-rule" class="right">
   <center>
-  <img width="95%" src="figures/circular-slide-rule.jpg"
+  <img width="95%" src="figures/circular-slide-rule.webp"
     alt="Circular slide rule.">
   <figcaption>
   Figure 2. An old soviet circular slide rule.  The inner dial is the main dial.  Notice that the digits follow Benford's law.

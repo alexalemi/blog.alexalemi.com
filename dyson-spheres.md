@@ -93,7 +93,7 @@ The problem with exponentials, as we are well aware, is that if you extrapolate 
 
 <figure id="tomblogfig">
   <center>
-  <img width="95%" src="figures/galaxy-1024x768.png"
+  <img width="95%" src="figures/galaxy-1024x768.webp"
     alt="Projecting exponential energy growth into the future.">
   <figcaption>
   Figure xxf-tomblog. Projecting 2.3% energy growth into the future. From <a href="https://dothemath.ucsd.edu/2011/07/galactic-scale-energy/">Tom Murphy's blog post</a>.

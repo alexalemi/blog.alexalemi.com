@@ -98,7 +98,7 @@ This takes an ordinary image and then adds more and more noise to it until it lo
 
 <figure id="#forward-diffusion">
   <center>
-  <img src="figures/forward-diffusion.png"
+  <img src="figures/forward-diffusion.webp"
     alt="Illustration of standard forward diffusion process as additive Gaussian noise.">
   <figcaption>
   Figure 2. A demonstration of the typical forward process in diffusion models.

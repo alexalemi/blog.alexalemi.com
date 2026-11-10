@@ -17,7 +17,7 @@ Overall, I feel as though science education is too formulaic and rigid. My exper
 
 <figure id="#loop-de-loop" class="right">
   <center>
-  <img width="100%" src="figures/loop-de-loop-problem.png"
+  <img width="100%" src="figures/loop-de-loop-problem.webp"
     alt="An example loop-de-loop mechanics from from a physics textbook.">
   <figcaption>
   Figure xxf-loop. An example problem from 

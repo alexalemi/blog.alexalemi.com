@@ -106,7 +106,7 @@ end of a rope.  For this I think the
 
 <figure class="right">
   <center>
-  <img width="50%" src="figures/knots/bowline.jpg" />
+  <img width="50%" src="figures/knots/bowline.webp" />
   <figcaption>
     <small>
       "Bowline knot", 
@@ -159,7 +159,7 @@ To *bend* or join two ropes together, we don't actually need a new knot, we can 
 
 <figure>
   <center>
-  <img width="50%" src="figures/knots/alpine-butterfly-bend.jpg" />
+  <img width="50%" src="figures/knots/alpine-butterfly-bend.webp" />
   <figcaption>
     <small>
       "AlpineButterflyBend", 
@@ -240,7 +240,7 @@ A modern, relatively slim, nicely symmetrical tie knot.  It has served me well, 
 
 <figure>
   <center>
-  <img width="50%" src="figures/knots/pratt.png" />
+  <img width="50%" src="figures/knots/pratt.webp" />
   <figcaption>
     <small>
       "Blue Pratt Knot", 

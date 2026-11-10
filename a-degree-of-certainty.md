@@ -284,7 +284,7 @@ This simple to compute approximate mapping turns out to be very accurate.  It is
 
 <figure id="approx-error">
   <center>
-  <img src="figures/degree_approx.png"
+  <img src="figures/degree_approx.webp"
     alt="Errors in the simple approximate method.">
   <figcaption>
   Figure xxf-error. Errors in the Approximate mapping.

@@ -7,7 +7,7 @@ is my old <a href="https://collection.maas.museum/object/383283">Soviet KL-1</a>
 
 <figure id="#benford">
   <center>
-  <img width="95%" src="figures/circular-slide-rule.jpg"
+  <img width="95%" src="figures/circular-slide-rule.webp"
     alt="Benford's distribution.">
   <figcaption>
   Figure xxf-physical. This is a picture of one of my <a href="https://collection.maas.museum/object/383283">Soviet KL-1 circular slide rules</a>, which previously featured in <a href="benfords.html">my post about Benford's law</a>.
@@ -161,7 +161,7 @@ Another option would be to 3D print your own. <a href="https://www.youtube.com/w
 
 <figure id="#printed-sliderule">
   <center>
-  <img src="figures/printed-sliderule.jpg" width="100%" alt='3d printed sliderule'/>
+  <img src="figures/printed-sliderule.webp" width="100%" alt='3d printed sliderule'/>
   <figcaption>
   Figure xxf-printed. A circular sliderule I 3d printed.
   </figcaption>
