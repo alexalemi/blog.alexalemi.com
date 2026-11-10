@@ -65,6 +65,7 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="assets/fonts/fonts.css">
 
+    {% if not prerender_math %}
     <script>
     MathJax = {
       tex: {
@@ -74,6 +75,7 @@
     };
     </script>
     <script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    {% endif %}
 
     <!-- Inline CSS -->
     <link rel="stylesheet" type="text/css" href="assets/style.css"/>
