@@ -22,4 +22,5 @@ function simulate() {
 
 const results = Float64Array.from({length: n}, simulate)
 
-process.stdout.write(JSON.stringify(results));
+// One decimal is far finer than the histogram bins, and cuts the file ~4x.
+process.stdout.write(JSON.stringify(Array.from(results, (x) => Math.round(x * 10) / 10)));
